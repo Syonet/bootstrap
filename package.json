@@ -1,15 +1,16 @@
 {
-	"name": "syo-framework",
-	"version": "0.1.0",
-	"title": "SyoFramework",
-	"author": {
-		"name": "Syonet CRM",
-		"email": "syonet@syonet.com"
-	},
-	"homepage": "http://www.syonet.com",
-	"devDependencies": {
-		"grunt": ">0.4.x",
-		"grunt-contrib-less": "*",
-		"grunt-contrib-clean": "*"
-	}
+  "name": "syo-framework",
+  "version": "0.1.0",
+  "title": "SyoFramework",
+  "author": {
+    "name": "Syonet CRM",
+    "email": "syonet@syonet.com"
+  },
+  "homepage": "http://www.syonet.com",
+  "devDependencies": {
+    "grunt": ">0.4.x",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-watch": "~0.3.1"
+  }
 }

@@ -16,6 +16,8 @@
                     <li><a href="components.html">Componentes</a></li>
                     <li><a href="jquery-ui.html">jQuery UI</a></li>
                 </ul>
+
+                <a href="index.html" class="syo-navbar-title syo-pull-right">SyoFramework</a>
             </div>
         </div>
 
@@ -36,6 +38,7 @@
                         <li><a href="#lists">Listas</a></li>
                         <li><a href="#forms">Formulários</a></li>
                         <li><a href="#tables">Tabelas</a></li>
+                        <li><a href="#utils">Utilitários</a></li>
                     </ul>
                 </aside>
 
@@ -504,12 +507,36 @@
                             <pre class="prettyprint">&lt;table class="syo-data-table syo-data-table-striped"&gt;...&lt;/table&gt;</pre>
                         </div>
                     </section>
+
+                    <!-- Utils -->
+                    <section id="utils">
+                        <div class="syo-header">
+                            <h2>Classes Utilitárias</h2>
+                        </div>
+
+                        <p>Algumas classes que podem lhe ajudar em um desenvolvimento mais rápido.</p>
+
+                        <h3>.syo-hidden</h3>
+                        <p>Oculta um elemento da página.</p>
+                        <pre class="prettyprint">&lt;div class="syo-hidden"&gt;&lt;/div&gt;</pre>
+
+                        <h3>.syo-pull-left/.syo-pull-right</h3>
+                        <p>Coloca a propriedade CSS <code>float</code> de um elemento para o lado respectivo.</p>
+<pre class="prettyprint">
+&lt;div class="syo-pull-left"&gt;...&lt;/div&gt;
+&lt;div class="syo-pull-right"&gt;...&lt;/div&gt;
+</pre>
+
+                        <h3>.clearfix</h3>
+                        <p>Limpa o <code>float</code> em qualquer elemento.</p>
+                        <pre class="prettyprint">&lt;div class="clearfix"&gt;&lt;/div&gt;</pre>
+                    </section>
                 </div>
             </div>
         </div>
 
 		<script src="docs/prettify/prettify.js" type="text/javascript"></script>
-		<script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+		<script src="docs/jquery.js" type="text/javascript"></script>
 		<script src="docs/main.js" type="text/javascript"></script>
 	</body>
 </html>

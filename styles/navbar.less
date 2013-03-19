@@ -21,8 +21,10 @@
     color: @gray;
   }
 
-  > :first-child { padding-left: 0; }
-  > :last-child { padding-right: 0; }
+  > .syo-navbar-inner {
+    > :first-child { padding-left: 0; }
+    > :last-child { padding-right: 0; }
+  }
 
   .syo-navbar-title {
     display: block;
@@ -31,6 +33,11 @@
     #font .shorthand(@gray, 1em, @baseFontSize * 1.5, @baseFontFamily, bold);
     text-decoration: none;
     vertical-align: middle;
+
+    &.syo-pull-right {
+      // Sobrescreve a propriedade float
+      float: right;
+    }
   }
 
   // Navegação na navbar

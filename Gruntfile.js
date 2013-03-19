@@ -3,7 +3,17 @@ module.exports = function( grunt ) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
-		clean: [ "dist" ],
+		watch: {
+			files: [ "**/*.less" ],
+			tasks: [ "default" ]
+		},
+		clean: {
+			// Limpa antes da execução
+			pre: [ "dist" ],
+
+			// Remove arquivo do Fireworks
+			post: [ "dist/images/ui-progressbar-anim.png" ]
+		},
 		less: {
 			main: {
 				options: {
@@ -63,7 +73,8 @@ module.exports = function( grunt ) {
 
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadTasks("build");
 
-	grunt.registerTask( "default", [ "clean", "less", "copy", "linestrip" ] );
+	grunt.registerTask( "default", [ "clean:pre", "less", "copy", "linestrip", "clean:post" ] );
 };
