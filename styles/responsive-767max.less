@@ -1,0 +1,19 @@
+@media (max-width: 767px) {
+  [class*="span"] {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: @baseLineHeight;
+  }
+
+  .syo-field > .syo-field-controls {
+    margin-left: 0;
+  }
+
+  table {
+    td, th, col {
+      &[class*="span"] {
+        width: auto;
+      }
+    }
+  }
+}

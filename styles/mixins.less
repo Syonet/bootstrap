@@ -1,0 +1,184 @@
+// Utils
+// -------------------------
+
+// Hack clearfix
+.clearfix() {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Rápido switch de propriedades de fonte
+#font {
+  .sans-serif() {
+    font-family: @baseFontFamily;
+  }
+
+  .monospace() {
+    font-family: @monoFontFamily;
+  }
+
+  .shorthand (@color: @textColor, @lineHeight: @baseLineHeight, @size: @baseFontSize, @family: @baseFontFamily, @weight: normal, @style: normal) {
+    line-height:	@lineHeight;
+    color:				@color;
+    font-size:		@size;
+    font-family:	@family;
+    font-style:		@style;
+    font-weight: 	@weight;
+  }
+}
+
+// Helpers
+// -------------------------
+
+// border-radius
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// border-radius top left
+.border-top-left-radius(@radius) {
+  -webkit-border-top-left-radius: @radius;
+     -moz-border-top-left-radius: @radius;
+          border-top-left-radius: @radius;
+}
+
+// border-radius top right
+.border-top-right-radius(@radius) {
+  -webkit-border-top-right-radius: @radius;
+     -moz-border-top-right-radius: @radius;
+          border-top-right-radius: @radius;
+}
+
+// border-radius bottom left
+.border-bottom-left-radius(@radius) {
+  -webkit-border-bottom-left-radius: @radius;
+     -moz-border-bottom-left-radius: @radius;
+          border-bottom-left-radius: @radius;
+}
+
+// border-radius bottom right
+.border-bottom-right-radius(@radius) {
+  -webkit-border-bottom-right-radius: @radius;
+     -moz-border-bottom-right-radius: @radius;
+          border-bottom-right-radius: @radius;
+}
+
+// border-radius left
+.border-radius-left(@radius) {
+  .border-top-left-radius(@radius);
+  .border-bottom-left-radius(@radius);
+}
+
+// border-radius right
+.border-radius-right(@radius) {
+  .border-top-right-radius(@radius);
+  .border-bottom-right-radius(@radius);
+}
+
+// border-radius top
+.border-radius-top(@radius) {
+  .border-top-left-radius(@radius);
+  .border-top-right-radius(@radius);
+}
+
+// border-radius bottom
+.border-radius-bottom(@radius) {
+  .border-bottom-left-radius(@radius);
+  .border-bottom-right-radius(@radius);
+}
+
+// box-sizing
+.box-sizing (@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+      -ms-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+// box-shadow
+.box-shadow (@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+.transition (@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+// Gradient
+#gradient {
+  .vertical(@startColor, @endColor) {
+    background-color: mix(@startColor, @endColor, 60%);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@startColor), argb(@endColor))); // IE9 and down
+  }
+}
+
+// Grid
+// -------------------------
+#grid (@columns, @colWidth, @colGutterWidth, @rowWidth) {
+  // Columns
+  .spanX (@index) when (@index > 0) {
+    .span@{index} { .span(@index); }
+    .spanX(@index - 1);
+  }
+  .spanX (0) { }
+
+  .span (@columns) {
+    width: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1));
+    .box-sizing(border-box);
+  }
+
+  // Offset
+  .offsetX (@index) when (@index > 0) {
+    .offset@{index} { .offset(@index); }
+    .offsetX(@index - 1);
+  }
+  .offsetX (0) { }
+
+  .offset (@columns) {
+    margin-left: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1)) + (@colGutterWidth * 2);
+  }
+
+  // -----
+
+  [class*="span"] {
+    min-height: 1px;
+    float: left;
+    margin-left: @colGutterWidth;
+  }
+
+  [class*="span"]:first-child {
+    margin-left: 0;
+  }
+
+  // -----
+
+  .spanX(@columns);
+  .offsetX(@columns);
+}
+
+.navbarMargin(@lineHeight: @baseLineHeight) {
+  padding: ((@navbarHeight - @lineHeight) / 2) @lineHeight;
+}

@@ -1,0 +1,21 @@
+#syo-wrapper-header {
+  position: relative;
+  border: 1px solid #000;
+  border-top: 0;
+
+  .syo-wrapper-header-full {
+    border-left: none;
+  }
+
+  h1 {
+    margin: 0 5px 0 0;
+    padding: 7px 0 5px 35px;
+    #font .shorthand(#000, 1em, 20px);
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &.syo-wrapper-header-logo {
+      background: url(@imageLogo) no-repeat 10px;
+    }
+  }
+}

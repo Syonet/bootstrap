@@ -1,0 +1,128 @@
+table {
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  // Tira o float: none para que seja possível definir larguras do grid em uma tabela qualquer
+  td, th, col {
+    &[class*="span"] {
+      float: none;
+    }
+  }
+}
+
+.syo-data-table, .syo-datagrid {
+  width: 100%;
+  margin-bottom: @baseLineHeight;
+  border-collapse: separate;
+
+  border: 1px solid @tableBorderColor;
+  border-left: 0;
+  .border-radius(@baseBorderRadius);
+
+  td, th {
+    padding: 4px 8px;
+    line-height: @baseLineHeight;
+    border-top: 1px solid @tableBorderColor;
+    border-left: 1px solid @tableBorderColor;
+    color: @grayDarker;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  > thead, tfoot {
+    > td, th {
+      padding: 8px;
+      background: url(@imageGlassBackground) repeat-x center center;
+      text-shadow: 0 1px 0 #fff;
+    }
+  }
+
+  // Prevent a double border
+  caption + thead tr:first-child th,
+  caption + tbody tr:first-child th,
+  caption + tbody tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + tbody tr:first-child th,
+  colgroup + tbody tr:first-child td,
+  thead:first-child tr:first-child th,
+  tbody:first-child tr:first-child th,
+  tbody:first-child tr:first-child td {
+    border-top: 0;
+  }
+  // For first th/td in the first row in the first thead or tbody
+  thead:first-child tr:first-child > th:first-child,
+  tbody:first-child tr:first-child > td:first-child,
+  tbody:first-child tr:first-child > th:first-child {
+    .border-top-left-radius(@baseBorderRadius);
+  }
+  // For last th/td in the first row in the first thead or tbody
+  thead:first-child tr:first-child > th:last-child,
+  tbody:first-child tr:first-child > td:last-child,
+  tbody:first-child tr:first-child > th:last-child {
+    .border-top-right-radius(@baseBorderRadius);
+  }
+  // For first th/td (can be either) in the last row in the last thead, tbody, and tfoot
+  thead:last-child tr:last-child > th:first-child,
+  tbody:last-child tr:last-child > td:first-child,
+  tbody:last-child tr:last-child > th:first-child,
+  tfoot:last-child tr:last-child > td:first-child,
+  tfoot:last-child tr:last-child > th:first-child {
+    .border-bottom-left-radius(@baseBorderRadius);
+  }
+  // For last th/td (can be either) in the last row in the last thead, tbody, and tfoot
+  thead:last-child tr:last-child > th:last-child,
+  tbody:last-child tr:last-child > td:last-child,
+  tbody:last-child tr:last-child > th:last-child,
+  tfoot:last-child tr:last-child > td:last-child,
+  tfoot:last-child tr:last-child > th:last-child {
+    .border-bottom-right-radius(@baseBorderRadius);
+  }
+
+  // Clear border-radius for first and last td in the last row in the last tbody for table with tfoot
+  tfoot + tbody:last-child tr:last-child td:first-child {
+    .border-bottom-left-radius(0);
+  }
+  tfoot + tbody:last-child tr:last-child td:last-child {
+    .border-bottom-right-radius(0);
+  }
+
+  // Special fixes to round the left border on the first td/th
+  caption + thead tr:first-child th:first-child,
+  caption + tbody tr:first-child td:first-child,
+  colgroup + thead tr:first-child th:first-child,
+  colgroup + tbody tr:first-child td:first-child {
+    .border-top-left-radius(@baseBorderRadius);
+  }
+  caption + thead tr:first-child th:last-child,
+  caption + tbody tr:first-child td:last-child,
+  colgroup + thead tr:first-child th:last-child,
+  colgroup + tbody tr:first-child td:last-child {
+    .border-top-right-radius(@baseBorderRadius);
+  }
+
+  > tbody > tr:hover,
+  .syo-datagrid-state-hover {
+    cursor: pointer;
+    background-color: @tableStripeColor;
+  }
+
+  > tbody > tr.syo-state-active,
+  tr.syo-datagrid-state-clicked {
+    cursor: pointer;
+    background-color: @greenLight !important;
+  }
+}
+
+.syo-data-table-striped {
+  > tbody {
+    > tr:nth-child(even) > td,
+    > tr:nth-child(even) > th {
+      background-color: @tableStripeColor;
+    }
+  }
+}

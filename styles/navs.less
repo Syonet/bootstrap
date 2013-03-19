@@ -1,0 +1,54 @@
+ol.syo-nav,
+ul.syo-nav {
+  margin-left: 0;
+  margin-bottom: @baseLineHeight;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+ul.syo-nav-list,
+ol.syo-nav-list {
+  border: 1px solid @grayLight;
+  .border-radius(@baseBorderRadius);
+
+  > li {
+    border-bottom: 1px solid @grayLight;
+    background: @bodyColor;
+
+    // Corrige o border-radius do primeiro elemento
+    &:first-child {
+      &, > a {
+        .border-radius-top(@baseBorderRadius);
+      }
+    }
+
+    // Corrige o border-radius do último elemento
+    &:last-child {
+      border-bottom: 0;
+
+      &, > a {
+        .border-radius-bottom(@baseBorderRadius);
+      }
+    }
+
+    > a {
+      display: block;
+      padding: @baseLineHeight / 2;
+
+      &:hover {
+        background: lighten(@grayLighter, 3%);
+      }
+    }
+
+    &.syo-nav-header {
+      padding: @baseLineHeight / 2;
+      color: @grayDark;
+      font-weight: bold;
+      background: url(@imageGlassBackground) repeat-x center center;
+      text-shadow: 0 1px 0 #fff;
+    }
+  }
+}

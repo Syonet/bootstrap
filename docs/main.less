@@ -1,0 +1,73 @@
+@import "../styles/variables.less";
+@import "../styles/mixins.less";
+
+.header {
+	padding-top: @baseLineHeight * 2;
+	padding-bottom: @baseLineHeight * 2;
+	background: @grayLighter;
+}
+
+#sidebar-wrapper {
+  position: relative;
+}
+
+#sidebar {
+  position: absolute;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  #sidebar {
+    position: static;
+  }
+}
+
+section {
+  padding-top: @navbarHeight;
+}
+
+.syo-docs-example {
+  margin: @baseLineHeight 0;
+  padding: (@baseLineHeight * 2) 0 0;
+  border: 1px solid @grayLight;
+  background: #fdfdfd;
+  .border-radius(@baseBorderRadius);
+
+  &:before {
+    position: relative;
+    top: ceil(-(@baseLineHeight * 1.5) + 1);
+    left: -1px;
+    padding: 10px;
+    border: 1px solid @grayLight;
+    #font .shorthand(@grayDark, @baseLineHeight, @baseFontSize, @baseFontFamily, bold);
+    background: @grayLighter;
+    content: "Exemplo";
+    .border-radius(@baseBorderRadius 0 @baseBorderRadius 0);
+  }
+
+  .syo-docs-example-inner {
+    padding: 0 @baseLineHeight @baseLineHeight;
+  }
+
+  pre.prettyprint {
+    margin: 0;
+    .border-radius-bottom(@baseBorderRadius);
+  }
+}
+
+.grid-example {
+  .row {
+    margin-bottom: @baseLineHeight;
+  }
+
+  [class*="span"] {
+    padding: 5px;
+    font-size: .9;
+    background: @grayLighter;
+    .border-radius(@baseBorderRadius);
+
+	  &:hover {
+      background: lighten(@grayLight, 3%);
+    }
+  }
+}

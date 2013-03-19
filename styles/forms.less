@@ -1,0 +1,193 @@
+// Forms
+// -------------------------
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="range"],
+input[type="color"],
+input[type="submit"].syo-button,
+input[type="reset"].syo-button,
+input[type="button"].syo-button,
+button.syo-button,
+select,
+textarea {
+  min-height: @inputHeight;
+  padding: 3px;
+  border: 1px solid @inputBorder;
+  background-color: @inputBackground;
+
+  // Tem que usar line-height: normal por causa de um bug do Firefox.
+  #font .shorthand(@inputTextColor, normal);
+  .border-radius(@inputBorderRadius);
+  .box-sizing(border-box);
+  .transition(all .15s linear);
+
+  &:hover {
+    border-color: @inputHoverBorder;
+    color: @inputHoverTextColor;
+    background-color: @inputHoverBackground;
+    .box-shadow(0 1px 2px rgb(210, 210, 210));
+  }
+
+  &:focus {
+    border-color: @inputFocusBorder;
+    background-color: @inputBackground;
+    .box-shadow(none);
+  }
+
+  &.input-block-level {
+    display: block;
+    width: 100%;
+  }
+
+  &[disabled],
+  .syo-disabled {
+    border-color: @inputDisabledBorder !important;
+    color: @inputDisabledTextColor !important;
+    background: @inputDisabledBackground !important;
+    .box-shadow(~"none !important");
+    cursor: default;
+  }
+}
+
+input[type="button"].syo-button,
+input[type="submit"].syo-button,
+input[type="reset"].syo-button,
+button.syo-button {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
+  white-space: nowrap;
+
+  &, &:focus  { background: url(@imageGlassBackground) repeat-x center center; }
+  &:hover     { background-color: @buttonHoverBackrgoundColor; }
+  &:active    { background-color: @buttonActiveBackgroundColor; }
+}
+
+// Labels, fieldsets, legends
+// -------------------------
+fieldset {
+  padding: .5em;
+  border: 1px solid @grayLight;
+  .border-radius(@borderRadiusLarge);
+  .box-sizing(border-box);
+}
+
+legend {
+  padding: 0 10px;
+  border: 1px solid @grayLight;
+  #font .shorthand(@textColor, @baseLineHeight, @baseFontSize, @baseFontFamily, bold);
+  background-color: @grayLighter;
+  .border-radius(@baseBorderRadius);
+}
+
+label {
+  display: inline-block;
+  min-height: @inputHeight;
+  #font .shorthand(@textColor, @inputHeight);
+  vertical-align: middle;
+  text-align: right;
+
+  > input,
+  + input,
+  > select,
+  + select,
+  > textarea,
+  + textarea,
+  > button,
+  + button {
+    margin-left: 3px;
+  }
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    position: relative;
+    top: 0.2em;
+  }
+}
+
+input, textarea, select, button {
+  + label {
+    margin-left: 3px;
+  }
+}
+
+// syo-field
+// -------------------------
+.syo-field {
+  min-height: @inputHeight;
+  margin-bottom: 3px;
+  #font .shorthand();
+
+  &.syo-field-inline {
+    display: inline-block;
+  }
+
+  > .syo-field-controls {
+    display: inline-block;
+    vertical-align: top;
+
+    &:not([class*="span"]) {
+      margin-left: 3px;
+    }
+  }
+
+  > input,
+  > textarea,
+  > select,
+  > button {
+    vertical-align: top;
+  }
+
+  > input[type="radio"],
+  > input[type="checkbox"] {
+    position: relative;
+    top: 0.4em;
+  }
+
+  .syo-field-help {
+    display: block;
+    color: @inputTextColor;
+  }
+}
+
+// Estados
+// -------------------------
+button,
+input,
+select,
+textarea {
+  // Antigo .syo-green
+  &.syo-success {
+    color: #159f15;
+    font-weight: bold;
+    background: #ade1c9;
+
+    &:hover {
+      color: #008000;
+      background: #81dbb2;
+    }
+  }
+
+  // Antigo .syo-red
+  &.syo-error {
+    color: #f55050;
+    font-weight: bold;
+    background: #fef1ec;
+
+    &:hover {
+      color: #ff0000;
+      background: #f9e0d7;
+    }
+  }
+}

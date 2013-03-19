@@ -1,0 +1,42 @@
+.syo-block {
+  border: 1px solid @blockBorderColor;
+  .border-radius(@blockBorderRadius);
+}
+
+.syo-block-title {
+  padding: (@baseLineHeight / 2);
+  color: @blockTitleTextColor;
+  background: url(@imageGlassBackground) repeat-x center center;
+  text-shadow: 0 1px 0 #fff;
+  cursor: default;
+
+  .syo-block-title-toolbar {
+    margin-top: -@baseLineHeight / 2;
+    padding: @baseLineHeight / 2;
+
+    &.syo-pull-left  {
+      padding-left: 0;
+      margin-right: @baseLineHeight / 2;
+      border-right: 1px solid @blockBorderColor;
+    }
+
+    &.syo-pull-right {
+      padding-right: 0;
+      margin-left: @baseLineHeight / 2;
+      border-left: 1px solid @blockBorderColor;
+    }
+  }
+}
+
+.syo-block-content {
+  padding: (@baseLineHeight / 2);
+}
+
+.syo-block-title + .syo-block-content,
+.syo-block-content + .syo-block-title {
+  border-top: 1px solid @blockBorderColor;
+}
+
+// Seta o border-radius corretamente
+.syo-block-title:first-child  { .border-radius-top(@blockBorderRadius); }
+.syo-block-title:last-child   { .border-radius-bottom(@blockBorderRadius); }

@@ -1,0 +1,23 @@
+// Body
+// --------------
+body {
+  #font .shorthand();
+  background: @bodyColor;
+}
+
+// Links
+// --------------
+a {
+  color: @linkColor;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    color: @linkColorHover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+}

@@ -1,0 +1,147 @@
+// Cores
+// -------------------------
+@grayDarker:  #222;
+@grayDark:    #444;
+@gray:        #666;
+@grayLight:   #AAA;
+@grayLighter: #EEE;
+
+@green:       #008000;
+@greenLight:  #81DBB2;
+@blue:        #336699;
+
+// Imagens
+// -------------------------
+@imagesPath:            "images";
+@imageGlassBackground:  "@{imagesPath}/bg_glass_30_fff_e1e1e1_1x400.png";
+@imageLogo:             "@{imagesPath}/logo.gif";
+
+// Body
+// -------------------------
+@bodyColor: #fff;
+
+// Links
+// -------------------------
+@linkColor:       @blue;
+@linkColorHover:  darken(@blue, 10%);
+
+// Tamanhos Base
+// -------------------------
+@baseBorderRadius:	4px;
+@borderRadiusLarge: 6px;
+@borderRadiusSmall: 2px;
+
+// Tipografia
+// -------------------------
+@textColor:         #000;
+@baseFontSize:      11px;
+@baseLineHeight:    15px;
+
+@baseFontFamily:    Tahoma, Verdana, Arial, Helvetica, sans-serif;
+@monoFontFamily:    Monaco, Menlo, Consolas, "Courier New", monospace;
+
+// Forms
+// -------------------------
+
+// Inputs
+@inputHeight:           2em;
+@inputBackground:       #f5f5f5;
+@inputBorder:           @grayLight;
+@inputTextColor:        @gray;
+@inputBorderRadius:     @borderRadiusSmall;
+@inputFocusBorder:      @green;
+
+// Inputs - hover
+@inputHoverBackground:      #f8f8f8;
+@inputHoverBorder:          darken(@inputBorder, 5%);
+@inputHoverTextColor:       @grayDarker;
+
+// Inputs - disabled
+@inputDisabledBackground: #fff;
+@inputDisabledBorder:     @grayLight;
+@inputDisabledTextColor:  @grayLight;
+
+// Botões
+@buttonBackgroundColor:       #E8E8E8;
+@buttonHoverBackrgoundColor:  #DADADA;
+@buttonActiveBackgroundColor: @inputBackground;
+
+// Tabelas
+// -------------------------
+@tableBorderColor:      #ccc;
+@tableStripeColor:      #f5f5f5;
+
+// Paginação
+// -------------------------
+@paginationItemBackground:    @grayLighter;
+@paginationActiveBackground:  #fff;
+@paginationHoverBackground:   #f8f8f8;
+@paginationTextColor:         @textColor;
+
+@paginationBorder:       @inputBorder;
+@paginationActiveBorder: @inputFocusBorder;
+
+// Blocos
+// -------------------------
+@blockBorderColor:      #ccc;
+@blockTitleTextColor:   @grayDark;
+@blockBorderRadius:     @baseBorderRadius;
+
+// Navbar
+// -------------------------
+@navbarBorderColor: #ccc;
+@navbarZIndex:      1000;
+@navbarHeight:      45px;
+
+// Grid
+// -------------------------
+
+// Default
+@gridColumns:             12;
+@gridColumnWidth:         60px;
+@gridGutterWidth:         20px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// 1200px min
+@gridColumnWidth1200:     70px;
+@gridGutterWidth1200:     30px;
+@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+
+// 768px-979px
+@gridColumnWidth768:      42px;
+@gridGutterWidth768:      20px;
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+// Fluido
+// -------------------------
+
+// Default
+@fluidGridColumnWidth:    percentage(@gridColumnWidth / @gridRowWidth);
+@fluidGridGutterWidth:    percentage(@gridGutterWidth / @gridRowWidth);
+
+// 1200px min
+@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200 / @gridRowWidth1200);
+@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200 / @gridRowWidth1200);
+
+// 768px-979px
+@fluidGridColumnWidth768:      percentage(@gridColumnWidth768 / @gridRowWidth768);
+@fluidGridGutterWidth768:      percentage(@gridGutterWidth768 / @gridRowWidth768);
+
+// jQuery UI
+// -------------------------
+@jqTextColor:       @grayDarker;
+@jqHoverTextColor:  darken(@grayDarker, 3%);
+
+@jqHighlightColor:  @greenLight;
+@jqHighlightBorder: #456B5A;
+
+@jqBorder:          @grayLight;
+@jqOverlay:         fade(@grayLight, 40%);
+
+@jqIconsHighlight:  "@{imagesPath}/ui-icons_2e83ff_256x240.png";
+@jqIconsActive:     "@{imagesPath}/ui-icons_454545_256x240.png";
+@jqIconsHover:      "@{imagesPath}/ui-icons_454545_256x240.png";
+@jqIconsError:      "@{imagesPath}/ui-icons_cd0a0a_256x240.png";
+@jqIcons:           "@{imagesPath}/ui-icons_222222_256x240.png";
+@jqIcons2:          "@{imagesPath}/ui-icons_888888_256x240.png";
+@jqProgressbarAnim: "@{imagesPath}/ui-progressbar-anim.gif";
