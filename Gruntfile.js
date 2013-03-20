@@ -22,6 +22,8 @@ module.exports = function( grunt ) {
 				files: {
 					"dist/framework.css": "styles/framework.less",
 					"dist/jquery.ui.css": [
+						// Junta TODOS os arquivos do jQuery UI, na sua ordem certa.
+						// @TODO usar apenas o core + glob *.css. Será que vai excluir o core deste glob pra ficar na ordem certa?
 						"styles/jquery.ui/*core.css",
 						"styles/jquery.ui/*accordion.css",
 						"styles/jquery.ui/*autocomplete.css",
@@ -62,7 +64,8 @@ module.exports = function( grunt ) {
 			}
 		},
 		linestrip: {
-			dist: {
+			// Remove a linha com o background especificado no regex. Evita que cause erros 404, pois a imagem não existirá em nosso repo.
+			jqueryui: {
 				src: [ "dist/jquery.ui.css" ],
 				regex: [
 					/images\/animated-overlay.gif/

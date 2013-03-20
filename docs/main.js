@@ -42,12 +42,12 @@
 
 	function jQueryUIAdjusts() {
 		$(".open-dialog").button({
-	icons: {
-		primary: "ui-icon-newwin"
+			icons: {
+				primary: "ui-icon-newwin"
+			}
+		}).click(function() {
+			$(".dialog").dialog("open");
+		});
 	}
-}).click(function() {
-		$(".dialog").dialog("open");
-	});
-}
 
 })( jQuery );
