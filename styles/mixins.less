@@ -205,6 +205,7 @@
   // Offset
   .offsetX (@index) when (@index > 0) {
     .offset@{index} { .offset(@index); }
+    .offset@{index}:first-child { .offsetFirstChild(@index); }
     .offsetX(@index - 1);
   }
   .offsetX (0) { }
@@ -213,16 +214,14 @@
     margin-left: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1)) + (@colGutterWidth * 2);
   }
 
+  .offsetFirstChild (@columns) {
+    margin-left: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1)) + (@colGutterWidth);
+  }
+
   // -----
 
   [class*="span"] {
-    min-height: 1px;
-    float: left;
     margin-left: @colGutterWidth;
-  }
-
-  [class*="span"]:first-child {
-    margin-left: 0;
   }
 
   // -----
