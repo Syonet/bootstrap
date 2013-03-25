@@ -12,7 +12,7 @@
             <div class="container">
                 <ul class="syo-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li class="syo-state-active"><a href="base.html">CSS Base</a></li>
+                    <li class="syo-active"><a href="base.html">CSS Base</a></li>
                     <li><a href="components.html">Componentes</a></li>
                     <li><a href="jquery-ui.html">jQuery UI</a></li>
                 </ul>
@@ -356,8 +356,6 @@
                                     <div class="syo-field">
                                         <input type="submit" value="Botão" class="syo-button" />
                                         <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled" />
-                                        <button class="syo-button syo-success">Sucesso</button>
-                                        <button class="syo-button syo-error">Erro</button>
                                     </div>
                                 </fieldset>
                             </div>
@@ -393,13 +391,42 @@
         &lt;div class="syo-field"&gt;
             &lt;input type="submit" value="Bot&atilde;o" class="syo-button" /&gt;
             &lt;input type="reset" value="Bot&atilde;o desabilitado" class="syo-button" disabled="disabled" /&gt;
-            &lt;button class="syo-button syo-success"&gt;Sucesso&lt;/button&gt;
-            &lt;button class="syo-button syo-error"&gt;Erro&lt;/button&gt;
         &lt;/div&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;
 </pre>
                         </div>
+
+                        <h3>Estados de sucesso/erro</h3>
+                        <p>É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe devida no elemento que você deseja aplicar tal estado:</p>
+
+                        <table class="syo-data-table">
+                            <colgroup>
+                                <col class="span1" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Classe</th>
+                                    <th>Exemplo visual</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>.syo-success</code></td>
+                                    <td>
+                                        <button class="syo-button syo-success">Concluir com Sucesso</button>
+                                        <input type="text" class="syo-success" value="Campo text preenchido com sucesso" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>.syo-error</code></td>
+                                    <td>
+                                        <button class="syo-button syo-error">Concluir com Insucesso</button>
+                                        <input type="text" class="syo-error" value="Erro ao preencher este campo!" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </section>
 
                     <!-- Tabelas -->
@@ -410,7 +437,7 @@
 
                         <p>
                             Tabelas para dados tabulares! Basta adicionar a classe <code>.syo-data-table</code>, ou utilizar o nosso plugin <b>syoDataGrid</b>. Compatível com ambos.<br />
-                            É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <b>.syo-state-active</b> (para <code>.syo-data-table</code>). O mesmo estilo será aplicado para uma linha clicada pelo <b>syoDataGrid</b>.<br /><br />
+                            É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <b>.syo-active</b> (para <code>.syo-data-table</code>). O mesmo estilo será aplicado para uma linha clicada pelo <b>syoDataGrid</b>.<br /><br />
                             <b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas :)
                         </p>
                         <div class="syo-docs-example">
@@ -438,7 +465,7 @@
                                             <td>Texto 1</td>
                                             <td>Texto 2</td>
                                         </tr>
-                                        <tr class="syo-state-active">
+                                        <tr class="syo-active">
                                             <td>Texto 1</td>
                                             <td>Texto 2</td>
                                             <td>Texto 3</td>
@@ -470,7 +497,7 @@
             &lt;td&gt;Texto 1&lt;/td&gt;
             &lt;td&gt;Texto 2&lt;/td&gt;
         &lt;/tr&gt;
-        &lt;tr class=&quot;syo-state-active&quot;&gt;
+        &lt;tr class=&quot;syo-active&quot;&gt;
             &lt;td&gt;Texto 1&lt;/td&gt;
             &lt;td&gt;Texto 2&lt;/td&gt;
             &lt;td&gt;Texto 3&lt;/td&gt;

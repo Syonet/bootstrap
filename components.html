@@ -13,7 +13,7 @@
                 <ul class="syo-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="base.html">CSS Base</a></li>
-                    <li class="syo-state-active"><a href="components.html">Componentes</a></li>
+                    <li class="syo-active"><a href="components.html">Componentes</a></li>
                     <li><a href="jquery-ui.html">jQuery UI</a></li>
                 </ul>
 
@@ -54,24 +54,43 @@
                             <div class="syo-docs-example-inner">
                                 <div class="syo-pagination">
                                     <ul>
-                                        <li class="syo-state-active"><a href="#">1</a></li>
+                                        <li class="syo-active"><a href="#">1</a></li>
                                         <li><a href="#">2</a></li>
                                         <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
+                                        <li class="syo-disabled"><a href="#">4</a></li>
                                     </ul>
                                 </div>
                             </div>
 <pre class="prettyprint">
 &lt;div class="syo-pagination"&gt;
     &lt;ul&gt;
-        &lt;li class="syo-state-active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="syo-active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="syo-disabled"&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
                         </div>
+
+                        <p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
+                        <div class="syo-docs-example">
+                            <div class="syo-docs-example-inner">
+                                <div class="syo-pagination">
+                                    <ul>
+                                        <li class="syo-disabled"><a href="#">1</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+<pre class="prettyprint">
+&lt;div class="syo-pagination"&gt;
+    &lt;ul&gt;
+        &lt;li class="syo-disabled"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+                        </div>
+                        <p><strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas como um indicador visual de que o item <em>deve estar</em> desabilitado.</p>
                     </section>
 
                     <!-- Blocos -->
@@ -180,7 +199,7 @@
                                     <div class="container">
                                         <a href="#" class="syo-navbar-title">Projeto</a>
                                         <ul class="syo-nav">
-                                            <li class="syo-state-active"><a href="#">Link 1</a></li>
+                                            <li class="syo-active"><a href="#">Link 1</a></li>
                                             <li><a href="#">Link 2</a></li>
                                             <li><a href="#">Link 3</a></li>
                                         </ul>
@@ -193,7 +212,7 @@
     &lt;div class="container"&gt;
         &lt;a href="#" class="syo-navbar-title"&gt;Projeto&lt;/a&gt;
         &lt;ul class="syo-nav"&gt;
-            &lt;li class="syo-state-active"&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="syo-active"&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;

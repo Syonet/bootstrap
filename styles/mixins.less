@@ -114,6 +114,7 @@
           box-shadow: @shadow;
 }
 
+// transition
 .transition (@transition) {
   -webkit-transition: @transition;
      -moz-transition: @transition;
@@ -123,6 +124,45 @@
 
 // Gradient
 #gradient {
+  .component() {
+    @startColor:  #e3e3e3;
+    @endColor:    #e0e0e0;
+    @whiteFaded:  fade(#fff, 30%);
+    @white0:      fade(#fff, 0%);
+
+    background-color: mix(@startColor, @endColor, 60%);
+
+    // FF 3.6+
+    background-image:
+      -moz-linear-gradient(@whiteFaded, @whiteFaded 50%, @white0 51%),
+      -moz-linear-gradient(top, @startColor, @endColor);
+
+    // Safari 4+, Chrome 2+
+    background-image:
+      -webkit-gradient(linear, 0 0, 0 100%, from(@whiteFaded), color-stop(50%, @whiteFaded), color-stop(51%, @white0)),
+      -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor));
+
+    // Safari 5.1+, Chrome 10+
+    background-image:
+      -webkit-linear-gradient(@whiteFaded, @whiteFaded 50%, @white0 51%),
+      -webkit-linear-gradient(top, @startColor, @endColor);
+
+    // Opera 11.10
+    background-image:
+      -o-linear-gradient(@whiteFaded @whiteFaded 50%, @white0 51%),
+      -o-linear-gradient(top, @startColor, @endColor);
+
+    // Standard, IE10
+    background-image:
+      linear-gradient(to bottom, @whiteFaded 0%, @whiteFaded 50%, @white0 51%),
+      linear-gradient(to bottom, @startColor, @endColor);
+
+    background-repeat: repeat-x, repeat-x;
+
+    // IE9 and down
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@startColor), argb(@endColor)));
+  }
+
   .vertical(@startColor, @endColor) {
     background-color: mix(@startColor, @endColor, 60%);
     background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
@@ -132,6 +172,18 @@
     background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
     background-repeat: repeat-x;
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@startColor), argb(@endColor))); // IE9 and down
+  }
+}
+
+// ::selection
+.selection (@background, @color) {
+  &::-moz-selection,
+  &::selection {
+    color: @color;
+    background: @background;
+
+    // Força o text-shadow: none, afinal texto selecionado com shadow fica péssimo
+    text-shadow: none;
   }
 }
 
@@ -179,6 +231,49 @@
   .offsetX(@columns);
 }
 
-.navbarMargin(@lineHeight: @baseLineHeight) {
+// Navbar
+// -------------------------
+.navbar-spacing (@lineHeight: @baseLineHeight) {
   padding: ((@navbarHeight - @lineHeight) / 2) @lineHeight;
+}
+
+// Tables
+// -------------------------
+
+// Isto está aqui basicamente para reaproveitamento entre o syo-data-table e syo-datagrid,
+// sem utilização de seletores complexos inúteis entre um e outro
+.table-base-styles() {
+  width: 100%;
+  margin-bottom: @baseLineHeight;
+  border-collapse: separate;
+
+  border: 1px solid @tableBorderColor;
+  border-left: 0;
+
+  td, th {
+    padding: 4px 8px;
+    line-height: @baseLineHeight;
+    border-top: 1px solid @tableBorderColor;
+    border-left: 1px solid @tableBorderColor;
+    color: @grayDarker;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  // Prevent a double border
+  caption + thead tr:first-child th,
+  caption + tbody tr:first-child th,
+  caption + tbody tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + tbody tr:first-child th,
+  colgroup + tbody tr:first-child td,
+  thead:first-child tr:first-child th,
+  tbody:first-child tr:first-child th,
+  tbody:first-child tr:first-child td {
+    border-top: 0;
+  }
 }

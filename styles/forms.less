@@ -1,5 +1,6 @@
 // Forms
 // -------------------------
+input:not([type]),
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -21,6 +22,7 @@ button.syo-button,
 select,
 textarea {
   min-height: @inputHeight;
+  height: @inputHeight;
   padding: 3px;
   border: 1px solid @inputBorder;
   background-color: @inputBackground;
@@ -30,10 +32,11 @@ textarea {
   .border-radius(@inputBorderRadius);
   .box-sizing(border-box);
   .transition(all .15s linear);
+  text-shadow: 0 1px 0 #fff;
 
   &:hover {
     border-color: @inputHoverBorder;
-    color: @inputHoverTextColor;
+    color: @inputHoverText;
     background-color: @inputHoverBackground;
     .box-shadow(0 1px 2px rgb(210, 210, 210));
   }
@@ -50,13 +53,28 @@ textarea {
   }
 
   &[disabled],
-  .syo-disabled {
+  &.syo-disabled {
     border-color: @inputDisabledBorder !important;
-    color: @inputDisabledTextColor !important;
+    color: @inputDisabledText !important;
     background: @inputDisabledBackground !important;
     .box-shadow(~"none !important");
     cursor: default;
   }
+}
+
+textarea {
+  // Reseta o height do textarea, afinal eles tem rows!
+  height: auto;
+}
+
+select {
+  padding: 2px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: relative;
+  top: 0.2em;
 }
 
 input[type="button"].syo-button,
@@ -68,10 +86,12 @@ button.syo-button {
   padding-left: 4px;
   padding-right: 4px;
   white-space: nowrap;
+  .transition(~"border-color 0.15s linear, color 0.15s linear, box-shadow 0.15s linear");
 
-  &, &:focus  { background: url(@imageGlassBackground) repeat-x center center; }
-  &:hover     { background-color: @buttonHoverBackrgoundColor; }
-  &:active    { background-color: @buttonActiveBackgroundColor; }
+  &, &:focus  { #gradient .component(); }
+  // Usamos imagem de background, desnecessário setar a cor.
+  //&:hover     { background-color: @buttonHoverBackrgoundColor; }
+  &:active    { background: @buttonActiveBackgroundColor; }
 }
 
 // Labels, fieldsets, legends
@@ -94,7 +114,6 @@ legend {
 
 label {
   display: inline-block;
-  min-height: @inputHeight;
   #font .shorthand(@textColor, @inputHeight);
   vertical-align: middle;
   text-align: right;
@@ -113,7 +132,7 @@ label {
   > input[type="checkbox"],
   > input[type="radio"] {
     position: relative;
-    top: 0.2em;
+    top: 0.3em;
   }
 }
 
@@ -126,7 +145,6 @@ input, textarea, select, button {
 // syo-field
 // -------------------------
 .syo-field {
-  min-height: @inputHeight;
   margin-bottom: 3px;
   #font .shorthand();
 
@@ -153,7 +171,7 @@ input, textarea, select, button {
   > input[type="radio"],
   > input[type="checkbox"] {
     position: relative;
-    top: 0.4em;
+    top: 0.5em;
   }
 
   .syo-field-help {
@@ -170,25 +188,48 @@ select,
 textarea {
   // Antigo .syo-green
   &.syo-success {
-    color: #159f15;
+    color: @inputSuccessText;
     font-weight: bold;
-    background: #ade1c9;
+    background: @inputSuccessBackground;
 
-    &:hover {
-      color: #008000;
-      background: #81dbb2;
+    &:hover, &:active, &:focus {
+      color: @inputSuccessHoverText;
+    }
+
+    &:focus {
+      border-color: @inputSuccessText;
+    }
+
+    &:hover, &:focus {
+      background: @inputSuccessHoverBackground;
     }
   }
 
   // Antigo .syo-red
   &.syo-error {
-    color: #f55050;
+    color: @inputErrorText;
     font-weight: bold;
-    background: #fef1ec;
+    background: @inputErrorBackground;
 
-    &:hover {
-      color: #ff0000;
-      background: #f9e0d7;
+    &:hover, &:active, &:focus {
+      color: @inputErrorHoverText;
+    }
+
+    &:focus {
+      border-color: @inputErrorText;
+    }
+
+    &:hover, &:focus {
+      background: @inputErrorHoverBackground;
+    }
+  }
+
+  // Remove aquele text-shadow branco que não combina com as cores de sucesso/erro
+  &.syo-error, &.syo-success {
+    text-shadow: none;
+
+    &.syo-button:active {
+      background: @buttonActiveBackgroundColor;
     }
   }
 }

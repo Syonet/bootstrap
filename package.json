@@ -1,12 +1,17 @@
 {
   "name": "syo-framework",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "title": "SyoFramework",
   "author": {
     "name": "Syonet CRM",
     "email": "syonet@syonet.com"
   },
   "homepage": "http://www.syonet.com",
+  "projectUrl": "http://syonet.github.com/syo-framework/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/syonet/syo-framework"
+  },
   "devDependencies": {
     "grunt": ">0.4.x",
     "grunt-contrib-less": "*",

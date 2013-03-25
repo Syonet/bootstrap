@@ -10,13 +10,13 @@
       a {
         padding: 2px 4px;
         border: 1px solid @paginationBorder;
-        color: @paginationTextColor;
+        color: @paginationText;
         background-color: @paginationItemBackground;
         .border-radius(@baseBorderRadius);
         .transition(all .15s linear);
 
         &:hover, &:active {
-          color: @paginationTextColor;
+          color: @paginationText;
           text-decoration: none;
           background: @paginationHoverBackground;
         }
@@ -26,10 +26,16 @@
         }
       }
 
-      &.syo-state-active {
+      &.syo-active {
         a {
           border-color: @paginationActiveBorder;
           background-color: @paginationActiveBackground;
+        }
+      }
+
+      &.syo-disabled {
+        a {
+          color: @paginationDisabledText;
         }
       }
 

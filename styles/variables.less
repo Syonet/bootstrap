@@ -44,7 +44,7 @@
 // -------------------------
 
 // Inputs
-@inputHeight:           2em;
+@inputHeight:           @baseFontSize * 2;
 @inputBackground:       #f5f5f5;
 @inputBorder:           @grayLight;
 @inputTextColor:        @gray;
@@ -52,19 +52,31 @@
 @inputFocusBorder:      @green;
 
 // Inputs - hover
-@inputHoverBackground:      #f8f8f8;
-@inputHoverBorder:          darken(@inputBorder, 5%);
-@inputHoverTextColor:       @grayDarker;
+@inputHoverBackground:  #f8f8f8;
+@inputHoverBorder:      darken(@inputBorder, 5%);
+@inputHoverText:        @grayDarker;
 
 // Inputs - disabled
 @inputDisabledBackground: #fff;
 @inputDisabledBorder:     @grayLight;
-@inputDisabledTextColor:  @grayLight;
+@inputDisabledText:       @grayLight;
+
+// Input - status - success
+@inputSuccessBackground:      #ade1c9;
+@inputSuccessText:            #159f15;
+@inputSuccessHoverBackground: #81dbb2;
+@inputSuccessHoverText:       #008000;
+
+// Input - status - error
+@inputErrorBackground:      #fef1ec;
+@inputErrorText:            #f55050;
+@inputErrorHoverBackground: #f9e0d7;
+@inputErrorHoverText:       #ff0000;
 
 // Botões
 @buttonBackgroundColor:       #E8E8E8;
 @buttonHoverBackrgoundColor:  #DADADA;
-@buttonActiveBackgroundColor: @inputBackground;
+@buttonActiveBackgroundColor: #fff;//@inputBackground;
 
 // Tabelas
 // -------------------------
@@ -76,16 +88,17 @@
 @paginationItemBackground:    @grayLighter;
 @paginationActiveBackground:  #fff;
 @paginationHoverBackground:   #f8f8f8;
-@paginationTextColor:         @textColor;
+@paginationText:              @textColor;
+@paginationDisabledText:      @grayLight;
 
 @paginationBorder:       @inputBorder;
 @paginationActiveBorder: @inputFocusBorder;
 
 // Blocos
 // -------------------------
-@blockBorderColor:      #ccc;
-@blockTitleTextColor:   @grayDark;
-@blockBorderRadius:     @baseBorderRadius;
+@blockBorderColor:  #ccc;
+@blockTitleText:    @grayDark;
+@blockBorderRadius: @baseBorderRadius;
 
 // Navbar
 // -------------------------

@@ -1,3 +1,5 @@
+// Qualquer tabela
+// -------------------------
 table {
   max-width: 100%;
   border-collapse: collapse;
@@ -11,49 +13,16 @@ table {
   }
 }
 
-.syo-data-table, .syo-datagrid {
-  width: 100%;
-  margin-bottom: @baseLineHeight;
-  border-collapse: separate;
+// Tabelas do framework
+// -------------------------
+// Estilos comuns pra syo-datagrid e syo-data-table
+.syo-data-table, .syo-datagrid table {
+  .table-base-styles();
+}
 
-  border: 1px solid @tableBorderColor;
-  border-left: 0;
+.syo-data-table {
   .border-radius(@baseBorderRadius);
 
-  td, th {
-    padding: 4px 8px;
-    line-height: @baseLineHeight;
-    border-top: 1px solid @tableBorderColor;
-    border-left: 1px solid @tableBorderColor;
-    color: @grayDarker;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  th {
-    font-weight: bold;
-  }
-
-  > thead, tfoot {
-    > td, th {
-      padding: 8px;
-      background: url(@imageGlassBackground) repeat-x center center;
-      text-shadow: 0 1px 0 #fff;
-    }
-  }
-
-  // Prevent a double border
-  caption + thead tr:first-child th,
-  caption + tbody tr:first-child th,
-  caption + tbody tr:first-child td,
-  colgroup + thead tr:first-child th,
-  colgroup + tbody tr:first-child th,
-  colgroup + tbody tr:first-child td,
-  thead:first-child tr:first-child th,
-  tbody:first-child tr:first-child th,
-  tbody:first-child tr:first-child td {
-    border-top: 0;
-  }
   // For first th/td in the first row in the first thead or tbody
   thead:first-child tr:first-child > th:first-child,
   tbody:first-child tr:first-child > td:first-child,
@@ -104,25 +73,76 @@ table {
   colgroup + tbody tr:first-child td:last-child {
     .border-top-right-radius(@baseBorderRadius);
   }
+}
 
-  > tbody > tr:hover,
-  .syo-datagrid-state-hover {
-    cursor: pointer;
-    background-color: @tableStripeColor;
+.syo-datagrid {
+  table { margin-bottom: 0; }
+
+  .syo-datagrid-header table {
+    .border-radius-top(@baseBorderRadius);
+
+    tr:last-child td:first-child,
+    tr:last-child th:first-child {
+      .border-top-left-radius(@baseBorderRadius);
+    }
+
+    tr:last-child td:last-child,
+    tr:last-child th:last-child {
+      .border-top-right-radius(@baseBorderRadius);
+    }
   }
 
-  > tbody > tr.syo-state-active,
-  tr.syo-datagrid-state-clicked {
+  .syo-datagrid-body {
+    margin-top: -1px; // Evita borda dupla na separação do body e do header
+
+    table {
+      .border-radius-bottom(@baseBorderRadius);
+
+      tr:last-child td:first-child,
+      tr:last-child th:first-child {
+        .border-bottom-left-radius(@baseBorderRadius);
+      }
+
+      tr:last-child td:last-child,
+      tr:last-child th:last-child {
+        .border-bottom-right-radius(@baseBorderRadius);
+      }
+    }
+  }
+}
+
+// Pra simplificar os seletores finais (CSS puro), move-se estes seletores pra fora do ".syo-data-table, .syo-datagrid"
+.syo-data-table > tbody > tr:hover,
+.syo-datagrid tr.syo-datagrid-state-hover {
+  cursor: pointer;
+  background-color: @tableStripeColor;
+}
+
+// Se colocar o background na <tr> buga as bordas arredondadas
+.syo-data-table > tbody > tr.syo-active,
+.syo-datagrid tr.syo-datagrid-state-clicked {
+  td, th {
     cursor: pointer;
     background-color: @greenLight !important;
   }
 }
 
-.syo-data-table-striped {
-  > tbody {
-    > tr:nth-child(even) > td,
-    > tr:nth-child(even) > th {
-      background-color: @tableStripeColor;
-    }
+// O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo
+.syo-datagrid .syo-datagrid-header,
+.syo-data-table > thead,
+.syo-data-table > tfoot {
+  td, th {
+    padding: 8px;
+    #gradient .component();
+    text-shadow: 0 1px 0 #fff;
+  }
+}
+
+// Tabela striped
+// -------------------------
+.syo-data-table-striped > tbody {
+  > tr:nth-child(even) > td,
+  > tr:nth-child(even) > th {
+    background-color: @tableStripeColor;
   }
 }

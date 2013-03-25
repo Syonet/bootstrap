@@ -3,7 +3,7 @@
   height: @navbarHeight;
   display: block;
   border: 1px solid @navbarBorderColor;
-  background: url(@imageGlassBackground) repeat-x center center;
+  #gradient .component();
   .box-shadow(0 0 5px 0px fade(@grayLight, 60%));
   text-shadow: 0 1px 0 #fff;
 
@@ -29,10 +29,16 @@
   .syo-navbar-title {
     display: block;
     float: left;
-    .navbarMargin(@baseFontSize * 1.5);
-    #font .shorthand(@gray, 1em, @baseFontSize * 1.5, @baseFontFamily, bold);
+    .navbar-spacing(@baseFontSize * 1.5);
+    #font .shorthand(@grayDark, 1em, @baseFontSize * 1.5, @baseFontFamily, bold);
     text-decoration: none;
     vertical-align: middle;
+    .transition(~"color 0.1s linear, text-shadow 0.1s linear");
+
+    &:hover {
+      color: lighten(@gray, 3%);
+      text-shadow: 0 1px 3px #fff;
+    }
 
     &.syo-pull-right {
       // Sobrescreve a propriedade float
@@ -50,16 +56,20 @@
 
       > a {
         display: inline-block;
-        .navbarMargin();
+        .navbar-spacing();
 
         &:hover {
           color: @grayDarker;
+          .transition(~"color 0.1s linear");
         }
       }
 
-      &.syo-state-active > a {
-        background: fade(#fff, 70%);
-        .box-shadow(inset 0 0 5px 3px #ccc);
+      &.syo-active > a {
+        background: fade(#fff, 30%);
+
+        // Analisar uso destas 2 propriedades abaixo
+        //.border-radius(@baseBorderRadius);
+        .box-shadow(inset 0 0 3px 1px darken(@grayLighter, 3%));
       }
     }
   }
@@ -67,7 +77,7 @@
   // Container para conteúdo diversificado
   .syo-navbar-content {
     display: inline-block;
-    .navbarMargin();
+    .navbar-spacing();
   }
 }
 

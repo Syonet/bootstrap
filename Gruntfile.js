@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON("package.json"),
 		watch: {
 			files: [ "**/*.less" ],
-			tasks: [ "default" ]
+			tasks: [ "full" ]
 		},
 		clean: {
 			// Limpa antes da execução
@@ -79,5 +79,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadTasks("build");
 
-	grunt.registerTask( "default", [ "clean:pre", "less", "copy", "linestrip", "clean:post" ] );
+	grunt.registerTask( "full", [ "clean:pre", "less", "copy", "linestrip", "clean:post" ] )
+	grunt.registerTask( "default", [ "full", "watch" ] );
 };
