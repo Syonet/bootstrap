@@ -1,16 +1,16 @@
 {
-  "name": "syo-framework",
+  "name": "syo-bootstrap",
   "version": "0.0.0",
-  "title": "SyoFramework",
+  "title": "Syonet Bootstrap",
   "author": {
     "name": "Syonet CRM",
     "email": "syonet@syonet.com"
   },
   "homepage": "http://www.syonet.com",
-  "projectUrl": "http://syonet.github.com/syo-framework/",
+  "projectUrl": "http://syonet.github.com/bootstrap/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/syonet/syo-framework"
+    "url": "git://github.com/syonet/bootstrap"
   },
   "devDependencies": {
     "grunt": ">0.4.x",
