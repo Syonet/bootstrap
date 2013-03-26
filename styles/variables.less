@@ -10,10 +10,12 @@
 @greenLight:  #81DBB2;
 @blue:        #336699;
 
-// Imagens
+// Imagens/fontes
 // -------------------------
-@imagesPath:            "images";
-@imageLogo:             "@{imagesPath}/logo.gif";
+@imagesPath:  "images";
+@imageLogo:   "@{imagesPath}/logo.gif";
+
+@fontsPath:   "fonts";
 
 // Body
 // -------------------------
@@ -33,10 +35,10 @@
 // Tipografia
 // -------------------------
 @textColor:         #000;
-@baseFontSize:      11px;
-@baseLineHeight:    15px;
+@baseFontSize:      14px;
+@baseLineHeight:    20px;
 
-@baseFontFamily:    Tahoma, Verdana, Arial, Helvetica, sans-serif;
+@baseFontFamily:    "Helvetica Neue", Helvetica, Arial, sans-serif;
 @monoFontFamily:    Monaco, Menlo, Consolas, "Courier New", monospace;
 
 // Forms
@@ -61,16 +63,12 @@
 @inputDisabledText:       @grayLight;
 
 // Input - status - success
-@inputSuccessBackground:      #ade1c9;
-@inputSuccessText:            #159f15;
-@inputSuccessHoverBackground: #81dbb2;
-@inputSuccessHoverText:       #008000;
+@inputSuccessColor:          #51a351;
+@inputSuccessHighlightColor: #62c462;
 
 // Input - status - error
-@inputErrorBackground:      #fef1ec;
-@inputErrorText:            #f55050;
-@inputErrorHoverBackground: #f9e0d7;
-@inputErrorHoverText:       #ff0000;
+@inputErrorColor:          #bd362f;
+@inputErrorHighlightColor: #ee5f5b;
 
 // Botões
 @buttonBackgroundColor:       #E8E8E8;
@@ -103,7 +101,11 @@
 // -------------------------
 @navbarBorderColor: #ccc;
 @navbarZIndex:      1000;
-@navbarHeight:      45px;
+@navbarHeight:      40px;
+
+// Nav
+// -------------------------
+@navBorderColor: darken(@grayLighter, 5%);
 
 // Grid
 // -------------------------

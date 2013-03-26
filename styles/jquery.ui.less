@@ -17,7 +17,7 @@
 }
 .ui-widget-content {
   border: 1px solid @jqBorder;
-  background: #ffffff;
+  background: @bodyColor;
   color: @jqTextColor;
 }
 .ui-widget-content a {
@@ -25,7 +25,7 @@
 }
 .ui-widget-header {
   border: 1px solid @jqBorder;
-  #gradient .component();
+  #gradient .vertical();
   color: @jqTextColor;
   font-weight: bold;
 }
@@ -39,9 +39,10 @@
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid #d3d3d3;
-  #gradient .component();
+  #gradient .vertical();
   font-weight: normal;
   color: #555555;
+  .transition(~"background 0.15s linear, border 0.15s linear");
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -56,7 +57,7 @@
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
   border: 1px solid #999999;
-  #gradient .component();
+  #gradient .vertical();
   font-weight: normal;
   color: @jqHoverTextColor;
 }
@@ -121,15 +122,13 @@
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
-  opacity: .7;
-  filter:Alpha(Opacity=70);
+  .opacity(.7);
   font-weight: normal;
 }
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
-  opacity: .35;
-  filter:Alpha(Opacity=35);
+  .opacity(.35);
   background-image: none;
 }
 .ui-state-disabled .ui-icon {
@@ -380,15 +379,13 @@
 /* Overlays */
 .ui-widget-overlay {
   background: @jqOverlay;
-  opacity: .3;
-  filter: Alpha(Opacity=30);
+  .opacity(.3);
 }
 .ui-widget-shadow {
   margin: -8px 0 0 -8px;
   padding: 8px;
   background: @jqOverlay;
-  opacity: .3;
-  filter: Alpha(Opacity=30);
+  .opacity(.3);
   border-radius: 8px;
 }
 
@@ -398,9 +395,12 @@
 // Button
 .ui-button {
   display: inline-block;
-  min-height: 2em;
-  padding: 3px 4px;
-  line-height: normal;
+  min-height: @inputHeight;
+
+  // Explicação do cálculo:
+  // (Altura mínima do input - tamanho da fonte) / 2, pra deixar metade pra cima, metade pra baixo
+  // E ainda subtrai 2px da borda do botão.
+  padding: (((@inputHeight - @baseFontSize) / 2) - 2px) 5px;
   vertical-align: middle;
   .box-sizing(border-box);
   .transition(all .15s linear);
@@ -409,6 +409,10 @@
   a&:active {
     // Sobrescreve a cor do link do scaffolding quando for a.ui-button
     color: @jqHoverTextColor;
+  }
+
+  &.ui-state-active, &.ui-state-focus {
+    border-color: @inputFocusBorder;
   }
 
   // Arredonda os cantos pro mesmo tamanho do .syo-button.

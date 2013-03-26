@@ -57,7 +57,8 @@ module.exports = function( grunt ) {
 				src: [
 					"*.json",
 					"images/*",
-					"dist/*.css"
+					"dist/*.css",
+					"fonts/*"
 				],
 				strip: /^dist/,
 				dest: "dist"

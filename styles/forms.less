@@ -68,7 +68,9 @@ textarea {
 }
 
 select {
-  padding: 2px;
+  line-height: @inputHeight;
+  // Padding necessário para alinhar verticalmente o texto do option selecionado.
+  padding: ((@inputHeight - @baseLineHeight) / 2) 2px;
 }
 
 input[type="checkbox"],
@@ -83,12 +85,18 @@ input[type="reset"].syo-button,
 button.syo-button {
   display: inline-block;
   cursor: pointer;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
   white-space: nowrap;
   .transition(~"border-color 0.15s linear, color 0.15s linear, box-shadow 0.15s linear");
 
-  &, &:focus  { #gradient .component(); }
+  &, &:focus { #gradient .vertical(); }
+
+  &:focus {
+    outline: dotted thin @grayDark;
+    outline-offset: 1px;
+  }
+
   // Usamos imagem de background, desnecessário setar a cor.
   //&:hover     { background-color: @buttonHoverBackrgoundColor; }
   &:active    { background: @buttonActiveBackgroundColor; }
@@ -107,7 +115,7 @@ fieldset {
 legend {
   padding: 0 10px;
   border: 1px solid @grayLight;
-  #font .shorthand(@textColor, @baseLineHeight, @baseFontSize, @baseFontFamily, bold);
+  #font .shorthand(@textColor, @baseLineHeight, @baseFontSize - 1, @baseFontFamily, bold);
   background-color: @grayLighter;
   .border-radius(@baseBorderRadius);
 }
@@ -132,7 +140,7 @@ label {
   > input[type="checkbox"],
   > input[type="radio"] {
     position: relative;
-    top: 0.3em;
+    top: 0.15em;
   }
 }
 
@@ -171,7 +179,7 @@ input, textarea, select, button {
   > input[type="radio"],
   > input[type="checkbox"] {
     position: relative;
-    top: 0.5em;
+    top: 0.45em;
   }
 
   .syo-field-help {
@@ -182,54 +190,78 @@ input, textarea, select, button {
 
 // Estados
 // -------------------------
-button,
-input,
-select,
-textarea {
+
+// Inputs
+input {
+  &.syo-success {
+    &, &:hover, &:focus {
+      border-color: @inputSuccessColor;
+      color: @inputSuccessColor;
+    }
+  }
+
+  &.syo-error {
+    &, &:hover, &:focus {
+      border-color: @inputErrorColor;
+      color: @inputErrorColor;
+    }
+  }
+}
+
+// Botão
+.syo-button {
   // Antigo .syo-green
   &.syo-success {
-    color: @inputSuccessText;
-    font-weight: bold;
-    background: @inputSuccessBackground;
+    border-color: @inputSuccessColor;
 
-    &:hover, &:active, &:focus {
-      color: @inputSuccessHoverText;
-    }
-
-    &:focus {
-      border-color: @inputSuccessText;
+    &, &:focus {
+      #gradient .vertical(@inputSuccessHighlightColor, @inputSuccessColor);
     }
 
     &:hover, &:focus {
-      background: @inputSuccessHoverBackground;
+      border-color: darken(@inputSuccessColor, 5%);
+      background-color: @inputSuccessColor;
+    }
+
+    &:active {
+      color: @inputSuccessColor;
     }
   }
 
   // Antigo .syo-red
   &.syo-error {
-    color: @inputErrorText;
-    font-weight: bold;
-    background: @inputErrorBackground;
+    border-color: @inputErrorColor;
 
-    &:hover, &:active, &:focus {
-      color: @inputErrorHoverText;
-    }
-
-    &:focus {
-      border-color: @inputErrorText;
+    &, &:focus {
+      #gradient .vertical(@inputErrorHighlightColor, @inputErrorColor);
     }
 
     &:hover, &:focus {
-      background: @inputErrorHoverBackground;
+      border-color: darken(@inputErrorColor, 5%);
+      background-color: @inputErrorColor;
     }
   }
 
   // Remove aquele text-shadow branco que não combina com as cores de sucesso/erro
   &.syo-error, &.syo-success {
     text-shadow: none;
+    .transition(none);
 
-    &.syo-button:active {
+    &, &:focus, &:hover {
+      color: #fff;
+    }
+
+    &:active {
       background: @buttonActiveBackgroundColor;
     }
+
+    &:hover, &:focus {
+      background-position: 0 -15px;
+      .transition(~"background-position 0.15s linear");
+    }
   }
+
+  // Sobrescreve o color quando active + hover
+  &.syo-success:active { color: @inputSuccessColor; }
+  &.syo-error:active { color: @inputErrorColor; }
 }

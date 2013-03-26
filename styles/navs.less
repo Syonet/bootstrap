@@ -11,12 +11,12 @@ ul.syo-nav {
 
 ul.syo-nav-list,
 ol.syo-nav-list {
-  border: 1px solid @grayLight;
+  border: 1px solid @navBorderColor;
   .border-radius(@baseBorderRadius);
   .box-shadow(0 1px 4px fade(#000, 10%));
 
   > li {
-    border-bottom: 1px solid @grayLight;
+    border-bottom: 1px solid @navBorderColor;
     background: @bodyColor;
 
     // Corrige o border-radius do primeiro elemento
@@ -37,7 +37,8 @@ ol.syo-nav-list {
 
     > a {
       display: block;
-      padding: @baseLineHeight / 2;
+      padding: (@baseLineHeight / 3) (@baseLineHeight / 2);
+      .transition(background 0.15s linear);
 
       &:hover {
         background: lighten(@grayLighter, 3%);
@@ -45,10 +46,11 @@ ol.syo-nav-list {
     }
 
     &.syo-nav-header {
-      padding: @baseLineHeight / 2;
+      padding: (@baseLineHeight / 3) (@baseLineHeight / 2);
       color: @grayDark;
       font-weight: bold;
-      #gradient .component();
+      font-size: floor(@baseFontSize * 0.9);
+      #gradient .vertical();
       text-shadow: 0 1px 0 #fff;
     }
   }

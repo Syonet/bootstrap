@@ -114,6 +114,13 @@
           box-shadow: @shadow;
 }
 
+// opacity
+.opacity(@opacity: 1) {
+  opacity: @opacity;
+  @ieOpacity: @opacity * 100;
+  filter: ~"Alpha(Opacity=@{ieOpacity})";
+}
+
 // transition
 .transition (@transition) {
   -webkit-transition: @transition;
@@ -124,46 +131,7 @@
 
 // Gradient
 #gradient {
-  .component() {
-    @startColor:  #e3e3e3;
-    @endColor:    #e0e0e0;
-    @whiteFaded:  fade(#fff, 30%);
-    @white0:      fade(#fff, 0%);
-
-    background-color: mix(@startColor, @endColor, 60%);
-
-    // FF 3.6+
-    background-image:
-      -moz-linear-gradient(@whiteFaded, @whiteFaded 50%, @white0 51%),
-      -moz-linear-gradient(top, @startColor, @endColor);
-
-    // Safari 4+, Chrome 2+
-    background-image:
-      -webkit-gradient(linear, 0 0, 0 100%, from(@whiteFaded), color-stop(50%, @whiteFaded), color-stop(51%, @white0)),
-      -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor));
-
-    // Safari 5.1+, Chrome 10+
-    background-image:
-      -webkit-linear-gradient(@whiteFaded, @whiteFaded 50%, @white0 51%),
-      -webkit-linear-gradient(top, @startColor, @endColor);
-
-    // Opera 11.10
-    background-image:
-      -o-linear-gradient(@whiteFaded @whiteFaded 50%, @white0 51%),
-      -o-linear-gradient(top, @startColor, @endColor);
-
-    // Standard, IE10
-    background-image:
-      linear-gradient(to bottom, @whiteFaded 0%, @whiteFaded 50%, @white0 51%),
-      linear-gradient(to bottom, @startColor, @endColor);
-
-    background-repeat: repeat-x, repeat-x;
-
-    // IE9 and down
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@startColor), argb(@endColor)));
-  }
-
-  .vertical(@startColor, @endColor) {
+  .vertical(@startColor: #fff, @endColor: #eee) {
     background-color: mix(@startColor, @endColor, 60%);
     background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
@@ -233,7 +201,7 @@
 // Navbar
 // -------------------------
 .navbar-spacing (@lineHeight: @baseLineHeight) {
-  padding: ((@navbarHeight - @lineHeight) / 2) @lineHeight;
+  padding: ((@navbarHeight - @lineHeight) / 2) (@lineHeight / 1.5);
 }
 
 // Tables

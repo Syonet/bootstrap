@@ -35,12 +35,14 @@ section {
   .box-shadow(0 1px 4px fade(#000, 10%));
 
   &:before {
+    @lineHeight: 15px;
+
     position: relative;
-    top: ceil(-(@baseLineHeight * 1.5) + 1);
+    top: -(@baseLineHeight + @lineHeight - 1px); // @baseLineHeight (padding-top do container) + line-height do seletor atual - 1px da borda
     left: -1px;
     padding: 10px;
     border: 1px solid @grayLight;
-    #font .shorthand(@grayDark, @baseLineHeight, @baseFontSize, @baseFontFamily, bold);
+    #font .shorthand(@grayDark, @lineHeight, 11px, @baseFontFamily, bold);
     background: @grayLighter;
     content: "Exemplo";
     .border-radius(@baseBorderRadius 0 @baseBorderRadius 0);
