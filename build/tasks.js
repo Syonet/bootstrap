@@ -1,6 +1,7 @@
 module.exports = function( grunt ) {
 	"use strict";
-	var banner = grunt.file.read("build/banner.txt");
+	var banner = grunt.file.read("build/banner.txt"),
+		path = require("path");
 
 	// Original by the jQuery UI Team http://jqueryui.com
 	// https://github.com/jquery/jquery-ui/blob/1.10.0/build/tasks/build.js#L87
@@ -81,5 +82,38 @@ module.exports = function( grunt ) {
 
 			grunt.file.copy( fileName, fileName, copyOptions );
 		});
+	});
+
+	grunt.registerMultiTask( "hogan", "Compila templates pelo Hogan.js", function() {
+		var hogan = require("hogan.js"),
+			files = grunt.file.expand( this.data.src ),
+			layout = grunt.file.read( this.data.layout ),
+			dest = this.data.dest + "/";
+
+		layout = hogan.compile( layout );
+
+		files.forEach(function( file ) {
+			var basename = path.basename( file.replace( path.extname( file ), ".html" ) ),
+				destFile = dest + basename;
+
+			grunt.file.copy( file, destFile, {
+				process:        compile,
+				src:            file,
+				dest:           destFile,
+				destBasename:   basename
+			});
+
+			// Exibe algum log de debug
+			grunt.log.writeln( file + " -> " + destFile );
+		});
+
+		function compile( code ) {
+			var context = {};
+			context[ this.destBasename.replace( ".html", "" ) ] = "syo-active";
+
+			return layout.render( context, {
+				body: code
+			});
+		}
 	});
 };

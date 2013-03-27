@@ -4,8 +4,14 @@ module.exports = function( grunt ) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
 		watch: {
-			files: [ "styles/*.less", "docs/main.less" ],
-			tasks: [ "default" ]
+			bootstrap: {
+				files: [ "styles/*.less", "docs/main.less" ],
+				tasks: [ "dist" ]
+			},
+			docs: {
+				files: [ "docs/templates/**/*.hbs" ],
+				tasks: [ "hogan" ]
+			}
 		},
 		clean: {
 			// Limpa antes da execução
@@ -52,6 +58,15 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
+		hogan: {
+			docs: {
+				layout: "docs/templates/layout.hbs",
+				src: [
+					"docs/templates/pages/*.hbs"
+				],
+				dest: "."
+			}
+		},
 		copy: {
 			dist: {
 				src: [
@@ -80,5 +95,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadTasks("build");
 
-	grunt.registerTask( "default", [ "clean:pre", "less", "copy", "linestrip", "clean:post" ] );
+	grunt.registerTask( "dist", [ "clean:pre", "less", "copy", "linestrip", "clean:post" ] );
+	grunt.registerTask( "default", [ "dist", "hogan" ] );
 };

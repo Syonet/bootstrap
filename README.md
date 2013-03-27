@@ -1,4 +1,5 @@
 # Syonet Bootstrap
+O conjunto de ferramentas front-end da Syonet
 
 ## Build
 Para fazer build do código do Syonet Bootstrap, é necessário que você siga as seguintes etapas:

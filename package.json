@@ -2,6 +2,7 @@
   "name": "syo-bootstrap",
   "version": "0.0.0",
   "title": "Syonet Bootstrap",
+  "description": "O conjunto de ferramentas front-end da Syonet",
   "author": {
     "name": "Syonet CRM",
     "email": "syonet@syonet.com"
@@ -16,6 +17,7 @@
     "grunt": ">0.4.x",
     "grunt-contrib-less": "*",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-watch": "~0.3.1"
+    "grunt-contrib-watch": "*",
+    "hogan.js": "*"
   }
 }

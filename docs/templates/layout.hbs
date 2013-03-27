@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Syonet Bootstrap</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="docs/prettify/prettify.css" />
+        <link rel="stylesheet" type="text/css" href="dist/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="dist/jquery.ui.css" />
+        <link rel="stylesheet" type="text/css" href="docs/main.css" />
+    </head>
+    <body class="syo-body-navbar">
+        <div class="syo-navbar syo-navbar-fixed-top" id="topbar">
+            <div class="syo-navbar-inner container">
+                <ul class="syo-nav">
+                    <li class="{{index}}"><a href="index.html"><i class="icon-home"></i> Home</a></li>
+                    <li class="{{base}}"><a href="base.html"><i class="icon-css"></i> CSS Base</a></li>
+                    <li class="{{components}}"><a href="components.html"><i class="icon-website"></i> Componentes</a></li>
+                    <li class="{{jquery-ui}}"><a href="jquery-ui.html"><i class="icon-flag"></i> jQuery UI</a></li>
+                </ul>
+
+                <a href="index.html" class="syo-navbar-title syo-pull-right">Syonet Bootstrap</a>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="container">
+                <h1>Syonet Bootstrap</h1>
+                <p class="lead">O conjunto de ferramentas front-end da Syonet.</p>
+            </div>
+        </header>
+
+        <div class="container container-vertical" role="main">
+            <div class="row" style="position: relative">
+                {{>body}}
+            </div>
+        </div>
+
+        <script src="docs/prettify/prettify.js" type="text/javascript"></script>
+        <script src="docs/jquery.js" type="text/javascript"></script>
+        <script src="docs/jquery.ui.js" type="text/javascript"></script>
+        <script src="docs/main.js" type="text/javascript"></script>
+    </body>
+</html>

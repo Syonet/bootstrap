@@ -1,5 +1,6 @@
 /*!
  * <%= pkg.title || pkg.name %> v<%= pkg.version %> - <%= grunt.template.today('isoDate') %>
+ * <%= pkg.description %>
  * <%= pkg.projectUrl %>
  *
  * Created by <%= pkg.author.name %> <<%= pkg.author.email %>>
