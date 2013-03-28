@@ -15,10 +15,7 @@ module.exports = function( grunt ) {
 		},
 		clean: {
 			// Limpa antes da execução
-			pre: [ "dist" ],
-
-			// Remove arquivo do Fireworks
-			post: [ "dist/images/ui-progressbar-anim.png" ]
+			pre: [ "dist" ]
 		},
 		less: {
 			main: {
@@ -95,6 +92,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadTasks("build");
 
-	grunt.registerTask( "dist", [ "clean:pre", "less", "copy", "linestrip", "clean:post" ] );
+	grunt.registerTask( "dist", [ "clean:pre", "less", "copy", "linestrip" ] );
 	grunt.registerTask( "default", [ "dist", "hogan" ] );
 };

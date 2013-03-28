@@ -1,3 +1,6 @@
+// Navbar
+// -------------------------
+
 .syo-navbar {
   width: 100%;
   height: @navbarHeight;
@@ -7,16 +10,6 @@
   font-size: @baseFontSize - 1;
   .box-shadow(0 0 5px 0px fade(@grayLight, 60%));
   text-shadow: 0 1px 0 #fff;
-
-  &.syo-navbar-fixed-top,
-  &.syo-navbar-fixed-bottom {
-    position: fixed;
-    left: 0;
-    z-index: @navbarZIndex;
-  }
-
-  &.syo-navbar-fixed-top    { top: 0; }
-  &.syo-navbar-fixed-bottom { bottom: 0; }
 
   a {
     color: @gray;
@@ -82,6 +75,20 @@
   }
 }
 
+// Navbar fixo
+// -------------------------
+
+.syo-navbar.syo-navbar-fixed-top,
+.syo-navbar.syo-navbar-fixed-bottom {
+  position: fixed;
+  left: 0;
+  z-index: @navbarZIndex;
+}
+
+.syo-navbar.syo-navbar-fixed-top    { top: 0; }
+.syo-navbar.syo-navbar-fixed-bottom { bottom: 0; }
+
+// Classe utilitária pra adicionar um padding-top da mesma altura do navbar
 body.syo-body-navbar {
   padding-top: @navbarHeight;
 }

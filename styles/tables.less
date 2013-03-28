@@ -1,3 +1,6 @@
+// Tabelas
+// -------------------------
+
 // Qualquer tabela
 // -------------------------
 table {
@@ -23,19 +26,21 @@ table {
 .syo-data-table {
   .border-radius(@baseBorderRadius);
 
-  // For first th/td in the first row in the first thead or tbody
+  // Arredonda canto superior esquerdo do primeiro tr
   thead:first-child tr:first-child > th:first-child,
   tbody:first-child tr:first-child > td:first-child,
   tbody:first-child tr:first-child > th:first-child {
     .border-top-left-radius(@baseBorderRadius);
   }
-  // For last th/td in the first row in the first thead or tbody
+
+  // Arredonda canto superior direito do primeiro tr
   thead:first-child tr:first-child > th:last-child,
   tbody:first-child tr:first-child > td:last-child,
   tbody:first-child tr:first-child > th:last-child {
     .border-top-right-radius(@baseBorderRadius);
   }
-  // For first th/td (can be either) in the last row in the last thead, tbody, and tfoot
+
+  // Arredonda canto inferior esquerdo do último tr
   thead:last-child tr:last-child > th:first-child,
   tbody:last-child tr:last-child > td:first-child,
   tbody:last-child tr:last-child > th:first-child,
@@ -43,7 +48,8 @@ table {
   tfoot:last-child tr:last-child > th:first-child {
     .border-bottom-left-radius(@baseBorderRadius);
   }
-  // For last th/td (can be either) in the last row in the last thead, tbody, and tfoot
+
+  // Arredonda canto inferior direito do último tr
   thead:last-child tr:last-child > th:last-child,
   tbody:last-child tr:last-child > td:last-child,
   tbody:last-child tr:last-child > th:last-child,
@@ -52,7 +58,7 @@ table {
     .border-bottom-right-radius(@baseBorderRadius);
   }
 
-  // Clear border-radius for first and last td in the last row in the last tbody for table with tfoot
+  // Remove os cantos arredondados inferiores do ultimo tr do ultimo tbody de uma tabela com tfoot
   tfoot + tbody:last-child tr:last-child td:first-child {
     .border-bottom-left-radius(0);
   }
@@ -60,13 +66,14 @@ table {
     .border-bottom-right-radius(0);
   }
 
-  // Special fixes to round the left border on the first td/th
+  // Arredonda os cantos superiores da primeiro tr
   caption + thead tr:first-child th:first-child,
   caption + tbody tr:first-child td:first-child,
   colgroup + thead tr:first-child th:first-child,
   colgroup + tbody tr:first-child td:first-child {
     .border-top-left-radius(@baseBorderRadius);
   }
+
   caption + thead tr:first-child th:last-child,
   caption + tbody tr:first-child td:last-child,
   colgroup + thead tr:first-child th:last-child,

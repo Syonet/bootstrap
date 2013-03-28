@@ -137,6 +137,7 @@ label {
     margin-left: 3px;
   }
 
+  // Alinha o checkbox/radio com a primeira linha de texto do label pai
   > input[type="checkbox"],
   > input[type="radio"] {
     position: relative;
@@ -182,6 +183,7 @@ input, textarea, select, button {
     top: 0.45em;
   }
 
+  // Bloco de ajuda de um syo-field
   .syo-field-help {
     display: block;
     color: @inputTextColor;
@@ -193,6 +195,7 @@ input, textarea, select, button {
 
 // Inputs
 input {
+  // Sucesso
   &.syo-success {
     &, &:hover, &:focus {
       border-color: @inputSuccessColor;
@@ -200,6 +203,7 @@ input {
     }
   }
 
+  // Erro
   &.syo-error {
     &, &:hover, &:focus {
       border-color: @inputErrorColor;
@@ -210,7 +214,7 @@ input {
 
 // Botão
 .syo-button {
-  // Antigo .syo-green
+  // Sucesso
   &.syo-success {
     border-color: @inputSuccessColor;
 
@@ -228,7 +232,7 @@ input {
     }
   }
 
-  // Antigo .syo-red
+  // Erro
   &.syo-error {
     border-color: @inputErrorColor;
 
@@ -242,9 +246,8 @@ input {
     }
   }
 
-  // Remove aquele text-shadow branco que não combina com as cores de sucesso/erro
   &.syo-error, &.syo-success {
-    text-shadow: none;
+    text-shadow: none; // Remove aquele text-shadow branco que não combina com as cores de sucesso/erro
     .transition(none);
 
     &, &:focus, &:hover {

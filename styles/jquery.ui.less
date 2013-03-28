@@ -471,7 +471,55 @@
 }
 
 // Progressbar
+
+// Animações
+// Webkit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Firefox
+@-moz-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// IE9
+@-ms-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Opera
+@-o-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+// Spec
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
 .ui-progressbar .ui-progressbar-value {
   // @TODO usar na classe .ui-progressbar-overlay
-  background-image: url(@jqProgressbarAnim);
+  @stripeColor: fade(@grayLight, 10%);
+
+  background-color: #d0d0d0;
+
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @stripeColor), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @stripeColor), color-stop(.75, @stripeColor), color-stop(.75, transparent), to(transparent)), -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#eee));
+  background-image: -webkit-linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), -webkit-linear-gradient(top, #fff, #eee);
+  background-image: -moz-linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), -moz-linear-gradient(top, #fff, #eee);
+  background-image: -o-linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), -o-linear-gradient(top, #fff, #eee);
+  background-image: linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), linear-gradient(to bottom, #fff, #eee);
+
+  .background-size(40px 40px);
+
+  -webkit-animation: progress-bar-stripes 1.5s linear infinite;
+     -moz-animation: progress-bar-stripes 1.5s linear infinite;
+      -ms-animation: progress-bar-stripes 1.5s linear infinite;
+       -o-animation: progress-bar-stripes 1.5s linear infinite;
+          animation: progress-bar-stripes 1.5s linear infinite;
 }

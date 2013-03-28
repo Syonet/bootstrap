@@ -1,5 +1,8 @@
+// Paginação
+// -------------------------
+
 .syo-pagination {
-  ul {
+  > ul {
     list-style: none;
     .clearfix();
 
@@ -21,26 +24,33 @@
           background: @paginationHoverBackground;
         }
 
-        &:active {
+        &:active, &:focus {
           border-color: @paginationActiveBorder;
         }
       }
 
-      &.syo-active {
-        a {
-          border-color: @paginationActiveBorder;
-          background-color: @paginationActiveBackground;
-        }
-      }
-
-      &.syo-disabled {
-        a {
-          color: @paginationDisabledText;
-        }
-      }
-
+      // Remove o margin-left do first-child
       &:first-child {
         margin-left: 0;
+      }
+
+      // Item ativo na paginação
+      &.syo-active > a {
+        border-color: @paginationActiveBorder;
+        background-color: @paginationActiveBackground;
+      }
+
+
+      // Item desabilitado na paginação
+      // Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo
+      &.syo-disabled > a {
+        border-color: @paginationBorder;
+        color: @paginationDisabledText;
+        background-color: @paginationItemBackground;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

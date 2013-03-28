@@ -1,3 +1,6 @@
+// Blocos
+// -------------------------
+
 .syo-block {
   border: 1px solid @blockBorderColor;
   .border-radius(@blockBorderRadius);
@@ -14,12 +17,14 @@
     margin-top: -@baseLineHeight / 2;
     padding: @baseLineHeight / 2;
 
+    // Alinha a toolbar à esquerda
     &.syo-pull-left  {
       padding-left: 0;
       margin-right: @baseLineHeight / 2;
       border-right: 1px solid @blockBorderColor;
     }
 
+    // Alinha a toolbar à direita
     &.syo-pull-right {
       padding-right: 0;
       margin-left: @baseLineHeight / 2;

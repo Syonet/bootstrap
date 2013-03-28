@@ -1,3 +1,6 @@
+// Mixins
+// -------------------------
+
 // Utils
 // -------------------------
 
@@ -39,6 +42,14 @@
 
 // Helpers
 // -------------------------
+
+// background-size
+.background-size (@size) {
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
+}
 
 // border-radius
 .border-radius (@radius) {
@@ -200,6 +211,8 @@
 
 // Navbar
 // -------------------------
+
+// Alinha um elemento da navbar com padding
 .navbar-spacing (@lineHeight: @baseLineHeight) {
   padding: ((@navbarHeight - @lineHeight) / 2) (@lineHeight / 1.5);
 }
