@@ -28,20 +28,20 @@ table {
 }
 
 .syo-data-table {
-  .border-radius(@baseBorderRadius);
+  .border-radius(@base-border-radius);
 
   // Arredonda canto superior esquerdo do primeiro tr
   thead:first-child tr:first-child > th:first-child,
   tbody:first-child tr:first-child > td:first-child,
   tbody:first-child tr:first-child > th:first-child {
-    .border-top-left-radius(@baseBorderRadius);
+    .border-top-left-radius(@base-border-radius);
   }
 
   // Arredonda canto superior direito do primeiro tr
   thead:first-child tr:first-child > th:last-child,
   tbody:first-child tr:first-child > td:last-child,
   tbody:first-child tr:first-child > th:last-child {
-    .border-top-right-radius(@baseBorderRadius);
+    .border-top-right-radius(@base-border-radius);
   }
 
   // Arredonda canto inferior esquerdo do último tr
@@ -50,7 +50,7 @@ table {
   tbody:last-child tr:last-child > th:first-child,
   tfoot:last-child tr:last-child > td:first-child,
   tfoot:last-child tr:last-child > th:first-child {
-    .border-bottom-left-radius(@baseBorderRadius);
+    .border-bottom-left-radius(@base-border-radius);
   }
 
   // Arredonda canto inferior direito do último tr
@@ -59,7 +59,7 @@ table {
   tbody:last-child tr:last-child > th:last-child,
   tfoot:last-child tr:last-child > td:last-child,
   tfoot:last-child tr:last-child > th:last-child {
-    .border-bottom-right-radius(@baseBorderRadius);
+    .border-bottom-right-radius(@base-border-radius);
   }
 
   // Remove os cantos arredondados inferiores do ultimo tr do ultimo tbody de uma tabela com tfoot
@@ -75,14 +75,14 @@ table {
   caption + tbody tr:first-child td:first-child,
   colgroup + thead tr:first-child th:first-child,
   colgroup + tbody tr:first-child td:first-child {
-    .border-top-left-radius(@baseBorderRadius);
+    .border-top-left-radius(@base-border-radius);
   }
 
   caption + thead tr:first-child th:last-child,
   caption + tbody tr:first-child td:last-child,
   colgroup + thead tr:first-child th:last-child,
   colgroup + tbody tr:first-child td:last-child {
-    .border-top-right-radius(@baseBorderRadius);
+    .border-top-right-radius(@base-border-radius);
   }
 }
 
@@ -90,16 +90,16 @@ table {
   table { margin-bottom: 0; }
 
   .syo-datagrid-header table {
-    .border-radius-top(@baseBorderRadius);
+    .border-radius-top(@base-border-radius);
 
     tr:last-child td:first-child,
     tr:last-child th:first-child {
-      .border-top-left-radius(@baseBorderRadius);
+      .border-top-left-radius(@base-border-radius);
     }
 
     tr:last-child td:last-child,
     tr:last-child th:last-child {
-      .border-top-right-radius(@baseBorderRadius);
+      .border-top-right-radius(@base-border-radius);
     }
   }
 
@@ -107,16 +107,16 @@ table {
     margin-top: -1px; // Evita borda dupla na separação do body e do header
 
     table {
-      .border-radius-bottom(@baseBorderRadius);
+      .border-radius-bottom(@base-border-radius);
 
       tr:last-child td:first-child,
       tr:last-child th:first-child {
-        .border-bottom-left-radius(@baseBorderRadius);
+        .border-bottom-left-radius(@base-border-radius);
       }
 
       tr:last-child td:last-child,
       tr:last-child th:last-child {
-        .border-bottom-right-radius(@baseBorderRadius);
+        .border-bottom-right-radius(@base-border-radius);
       }
     }
   }
@@ -126,7 +126,7 @@ table {
 .syo-data-table > tbody > tr:hover,
 .syo-datagrid tr.syo-datagrid-state-hover {
   cursor: pointer;
-  background-color: @tableStripeColor;
+  background-color: @table-stripe-color;
 }
 
 // Se colocar o background na <tr> buga as bordas arredondadas
@@ -134,7 +134,7 @@ table {
 .syo-datagrid tr.syo-datagrid-state-clicked {
   td, th {
     cursor: pointer;
-    background-color: @greenLight !important;
+    background-color: @green-light !important;
   }
 }
 
@@ -144,7 +144,7 @@ table {
 .syo-data-table > tfoot {
   td, th {
     padding: 8px;
-    color: @grayDark;
+    color: @gray-dark;
     #gradient .vertical();
     text-shadow: 0 1px 0 #fff;
   }
@@ -155,6 +155,6 @@ table {
 .syo-data-table-striped > tbody {
   > tr:nth-child(even) > td,
   > tr:nth-child(even) > th {
-    background-color: @tableStripeColor;
+    background-color: @table-stripe-color;
   }
 }

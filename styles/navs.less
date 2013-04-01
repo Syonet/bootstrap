@@ -5,7 +5,7 @@
 ol.syo-nav,
 ul.syo-nav {
   margin-left: 0;
-  margin-bottom: @baseLineHeight;
+  margin-bottom: @base-line-height;
   list-style: none;
 
   a {
@@ -17,30 +17,30 @@ ul.syo-nav {
 // -------------------------
 ul.syo-nav-list,
 ol.syo-nav-list {
-  border: 1px solid @navBorderColor;
-  .border-radius(@baseBorderRadius);
+  border: 1px solid @nav-border-color;
+  .border-radius(@base-border-radius);
   .box-shadow(0 1px 4px fade(#000, 10%));
 
   > li {
-    border-bottom: 1px solid @navBorderColor;
-    background: @bodyColor;
+    border-bottom: 1px solid @nav-border-color;
+    background: @body-color;
 
     > a {
       display: block;
-      padding: (@baseLineHeight / 3) (@baseLineHeight / 2);
+      padding: (@base-line-height / 3) (@base-line-height / 2);
       .transition(background 0.15s linear);
 
       &:hover {
-        background: lighten(@grayLighter, 3%);
+        background: lighten(@gray-lighter, 3%);
       }
     }
 
     // Estilo do header
     &.syo-nav-header {
-      padding: (@baseLineHeight / 3) (@baseLineHeight / 2);
-      color: @grayDark;
+      padding: (@base-line-height / 3) (@base-line-height / 2);
+      color: @gray-dark;
       font-weight: bold;
-      font-size: floor(@baseFontSize * 0.9);
+      font-size: floor(@base-font-size * 0.9);
       #gradient .vertical();
       text-shadow: 0 1px 0 #fff;
     }
@@ -48,7 +48,7 @@ ol.syo-nav-list {
     // Corrige o border-radius do primeiro elemento
     &:first-child {
       &, > a {
-        .border-radius-top(@baseBorderRadius);
+        .border-radius-top(@base-border-radius);
       }
     }
 
@@ -57,7 +57,7 @@ ol.syo-nav-list {
       border-bottom: 0;
 
       &, > a {
-        .border-radius-bottom(@baseBorderRadius);
+        .border-radius-bottom(@base-border-radius);
       }
     }
   }

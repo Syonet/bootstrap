@@ -2,9 +2,9 @@
 @import "../styles/mixins.less";
 
 .header {
-	padding-top: @baseLineHeight * 2;
-	padding-bottom: @baseLineHeight * 2;
-	background: @grayLighter;
+	padding-top: @base-line-height * 2;
+	padding-bottom: @base-line-height * 2;
+	background: @gray-lighter;
 }
 
 #sidebar-wrapper {
@@ -23,54 +23,54 @@
 }
 
 section {
-  padding-top: @navbarHeight;
+  padding-top: @navbar-height;
 }
 
 .syo-docs-example {
-  margin: @baseLineHeight 0;
-  padding: (@baseLineHeight * 2) 0 0;
-  border: 1px solid @grayLight;
+  margin: @base-line-height 0;
+  padding: (@base-line-height * 2) 0 0;
+  border: 1px solid @gray-light;
   background: #fdfdfd;
-  .border-radius(@baseBorderRadius);
+  .border-radius(@base-border-radius);
   .box-shadow(0 1px 4px fade(#000, 10%));
 
   &:before {
-    @lineHeight: 15px;
+    @line-height: 15px;
 
     position: relative;
-    top: -(@baseLineHeight + @lineHeight - 1px); // @baseLineHeight (padding-top do container) + line-height do seletor atual - 1px da borda
+    top: -(@base-line-height + @line-height - 1px); // @base-line-height (padding-top do container) + line-height do seletor atual - 1px da borda
     left: -1px;
     padding: 10px;
-    border: 1px solid @grayLight;
-    #font .shorthand(@grayDark, @lineHeight, 11px, @baseFontFamily, bold);
-    background: @grayLighter;
+    border: 1px solid @gray-light;
+    #font .shorthand(@gray-dark, @line-height, 11px, @base-font-family, bold);
+    background: @gray-lighter;
     content: "Exemplo";
-    .border-radius(@baseBorderRadius 0 @baseBorderRadius 0);
+    .border-radius(@base-border-radius 0 @base-border-radius 0);
   }
 
   .syo-docs-example-inner {
-    padding: 0 @baseLineHeight @baseLineHeight;
+    padding: 0 @base-line-height @base-line-height;
   }
 
   pre.prettyprint {
     margin: 0;
-    .border-radius-bottom(@baseBorderRadius);
+    .border-radius-bottom(@base-border-radius);
   }
 }
 
 .grid-example {
   .row {
-    margin-bottom: @baseLineHeight;
+    margin-bottom: @base-line-height;
   }
 
   [class*="span"] {
     padding: 5px;
     font-size: .9;
-    background: @grayLighter;
-    .border-radius(@baseBorderRadius);
+    background: @gray-lighter;
+    .border-radius(@base-border-radius);
 
 	  &:hover {
-      background: lighten(@grayLight, 3%);
+      background: lighten(@gray-light, 3%);
     }
   }
 }

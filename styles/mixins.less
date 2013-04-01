@@ -23,14 +23,14 @@
 // Rápido switch de propriedades de fonte
 #font {
   .sans-serif() {
-    font-family: @baseFontFamily;
+    font-family: @base-font-family;
   }
 
   .monospace() {
-    font-family: @monoFontFamily;
+    font-family: @mono-font-family;
   }
 
-  .shorthand (@color: @textColor, @lineHeight: @baseLineHeight, @size: @baseFontSize, @family: @baseFontFamily, @weight: normal, @style: normal) {
+  .shorthand (@color: @text-color, @lineHeight: @base-line-height, @size: @base-font-size, @family: @base-font-family, @weight: normal, @style: normal) {
     line-height:	@lineHeight;
     color:				@color;
     font-size:		@size;
@@ -213,10 +213,10 @@
 // -------------------------
 
 // Alinha um elemento da navbar com padding e reseta margin
-.navbar-spacing (@lineHeight: @baseLineHeight) {
+.navbar-spacing (@lineHeight: @base-line-height) {
   margin-top: 0;
   margin-bottom: 0;
-  padding: ((@navbarHeight - @lineHeight) / 2) (@lineHeight / 1.5);
+  padding: ((@navbar-height - @lineHeight) / 2) (@lineHeight / 1.5);
 }
 
 // Tables
@@ -226,18 +226,18 @@
 // sem utilização de seletores complexos inúteis entre um e outro
 .table-base-styles() {
   width: 100%;
-  margin-bottom: @baseLineHeight;
+  margin-bottom: @base-line-height;
   border-collapse: separate;
 
-  border: 1px solid @tableBorderColor;
+  border: 1px solid @table-border-color;
   border-left: 0;
 
   td, th {
     padding: 4px 8px;
-    line-height: @baseLineHeight;
-    border-top: 1px solid @tableBorderColor;
-    border-left: 1px solid @tableBorderColor;
-    color: @grayDarker;
+    line-height: @base-line-height;
+    border-top: 1px solid @table-border-color;
+    border-left: 1px solid @table-border-color;
+    color: @gray-darker;
     text-align: left;
     vertical-align: top;
   }

@@ -2,46 +2,46 @@
 // -------------------------
 
 .syo-block {
-  border: 1px solid @blockBorderColor;
-  .border-radius(@blockBorderRadius);
+  border: 1px solid @block-border-color;
+  .border-radius(@block-border-radius);
 }
 
 .syo-block-title {
-  padding: (@baseLineHeight / 2);
-  color: @blockTitleText;
+  padding: (@base-line-height / 2);
+  color: @block-title-text;
   #gradient .vertical();
   text-shadow: 0 1px 0 #fff;
   cursor: default;
 
   .syo-block-title-toolbar {
-    margin-top: -@baseLineHeight / 2;
-    padding: @baseLineHeight / 2;
+    margin-top: -@base-line-height / 2;
+    padding: @base-line-height / 2;
 
     // Alinha a toolbar à esquerda
     &.syo-pull-left  {
       padding-left: 0;
-      margin-right: @baseLineHeight / 2;
-      border-right: 1px solid @blockBorderColor;
+      margin-right: @base-line-height / 2;
+      border-right: 1px solid @block-border-color;
     }
 
     // Alinha a toolbar à direita
     &.syo-pull-right {
       padding-right: 0;
-      margin-left: @baseLineHeight / 2;
-      border-left: 1px solid @blockBorderColor;
+      margin-left: @base-line-height / 2;
+      border-left: 1px solid @block-border-color;
     }
   }
 }
 
 .syo-block-content {
-  padding: (@baseLineHeight / 2);
+  padding: (@base-line-height / 2);
 }
 
 .syo-block-title + .syo-block-content,
 .syo-block-content + .syo-block-title {
-  border-top: 1px solid @blockBorderColor;
+  border-top: 1px solid @block-border-color;
 }
 
 // Seta o border-radius corretamente
-.syo-block-title:first-child  { .border-radius-top(@blockBorderRadius); }
-.syo-block-title:last-child   { .border-radius-bottom(@blockBorderRadius); }
+.syo-block-title:first-child  { .border-radius-top(@block-border-radius); }
+.syo-block-title:last-child   { .border-radius-bottom(@block-border-radius); }

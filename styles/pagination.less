@@ -12,20 +12,20 @@
 
       a {
         padding: 2px 4px;
-        border: 1px solid @paginationBorder;
-        color: @paginationText;
-        background-color: @paginationItemBackground;
-        .border-radius(@baseBorderRadius);
+        border: 1px solid @pagination-border;
+        color: @pagination-text;
+        background-color: @pagination-item-background;
+        .border-radius(@base-border-radius);
         .transition(all .15s linear);
 
         &:hover, &:active {
-          color: @paginationText;
+          color: @pagination-text;
           text-decoration: none;
-          background: @paginationHoverBackground;
+          background: @pagination-hover-background;
         }
 
         &:active, &:focus {
-          border-color: @paginationActiveBorder;
+          border-color: @pagination-active-border;
         }
       }
 
@@ -36,17 +36,17 @@
 
       // Item ativo na paginação
       &.syo-active > a {
-        border-color: @paginationActiveBorder;
-        background-color: @paginationActiveBackground;
+        border-color: @pagination-active-border;
+        background-color: @pagination-active-background;
       }
 
 
       // Item desabilitado na paginação
       // Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo
       &.syo-disabled > a {
-        border-color: @paginationBorder;
-        color: @paginationDisabledText;
-        background-color: @paginationItemBackground;
+        border-color: @pagination-border;
+        color: @pagination-disabled-text;
+        background-color: @pagination-item-background;
 
         &:focus {
           outline: none;
@@ -60,7 +60,7 @@
   > ul {
     display: inline-block;
     vertical-align: top; // Alinha com um possível texto ao lado da paginação
-    margin-left: (@baseLineHeight / 2);
-    margin-right: (@baseLineHeight / 2);
+    margin-left: (@base-line-height / 2);
+    margin-right: (@base-line-height / 2);
   }
 }

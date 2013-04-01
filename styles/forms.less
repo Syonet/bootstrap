@@ -21,29 +21,29 @@ input[type="button"].syo-button,
 button.syo-button,
 select,
 textarea {
-  min-height: @inputHeight;
-  height: @inputHeight;
+  min-height: @input-height;
+  height: @input-height;
   padding: 3px;
-  border: 1px solid @inputBorder;
-  background-color: @inputBackground;
+  border: 1px solid @input-border;
+  background-color: @input-background;
 
   // Tem que usar line-height: normal por causa de um bug do Firefox.
-  #font .shorthand(@inputTextColor, normal);
-  .border-radius(@inputBorderRadius);
+  #font .shorthand(@input-text-color, normal);
+  .border-radius(@input-border-radius);
   .box-sizing(border-box);
   .transition(all .15s linear);
   text-shadow: 0 1px 0 #fff;
 
   &:hover {
-    border-color: @inputHoverBorder;
-    color: @inputHoverText;
-    background-color: @inputHoverBackground;
+    border-color: @input-hover-border;
+    color: @input-hover-text;
+    background-color: @input-hover-background;
     .box-shadow(0 1px 2px rgb(210, 210, 210));
   }
 
   &:focus {
-    border-color: @inputFocusBorder;
-    background-color: @inputBackground;
+    border-color: @input-focus-border;
+    background-color: @input-background;
     .box-shadow(none);
   }
 
@@ -58,9 +58,9 @@ textarea {
 
   &[disabled],
   &.syo-disabled {
-    border-color: @inputDisabledBorder !important;
-    color: @inputDisabledText !important;
-    background: @inputDisabledBackground !important;
+    border-color: @input-disabled-border !important;
+    color: @input-disabled-text !important;
+    background: @input-disabled-background !important;
     .box-shadow(~"none !important");
     cursor: default;
   }
@@ -72,9 +72,9 @@ textarea {
 }
 
 select {
-  line-height: @inputHeight;
+  line-height: @input-height;
   // Padding necessário para alinhar verticalmente o texto do option selecionado.
-  padding: ((@inputHeight - @baseLineHeight) / 2) 2px;
+  padding: ((@input-height - @base-line-height) / 2) 2px;
 }
 
 input[type="checkbox"],
@@ -97,13 +97,13 @@ button.syo-button {
   &, &:focus { #gradient .vertical(); }
 
   &:focus {
-    outline: dotted thin @grayDark;
+    outline: dotted thin @gray-dark;
     outline-offset: 1px;
   }
 
   // Usamos imagem de background, desnecessário setar a cor.
   //&:hover     { background-color: @buttonHoverBackrgoundColor; }
-  &:active    { background: @buttonActiveBackgroundColor; }
+  &:active    { background: @button-active-background-color; }
 }
 
 // Labels, fieldsets, legends
@@ -111,22 +111,22 @@ button.syo-button {
 fieldset {
   margin: 2px;
   padding: .5em;
-  border: 1px solid @grayLight;
-  .border-radius(@borderRadiusLarge);
+  border: 1px solid @gray-light;
+  .border-radius(@border-radius-large);
   .box-sizing(border-box);
 }
 
 legend {
   padding: 0 10px;
-  border: 1px solid @grayLight;
-  #font .shorthand(@textColor, @baseLineHeight, @baseFontSize - 1, @baseFontFamily, bold);
-  background-color: @grayLighter;
-  .border-radius(@baseBorderRadius);
+  border: 1px solid @gray-light;
+  #font .shorthand(@text-color, @base-line-height, @base-font-size - 1, @base-font-family, bold);
+  background-color: @gray-lighter;
+  .border-radius(@base-border-radius);
 }
 
 label {
   display: inline-block;
-  #font .shorthand(@textColor, @inputHeight);
+  #font .shorthand(@text-color, @input-height);
   vertical-align: middle;
   text-align: right;
 
@@ -190,7 +190,7 @@ input, textarea, select, button {
   // Bloco de ajuda de um syo-field
   .syo-field-help {
     display: block;
-    color: @inputTextColor;
+    color: @input-text-color;
   }
 }
 
@@ -202,16 +202,16 @@ input {
   // Sucesso
   &.syo-success {
     &, &:hover, &:focus {
-      border-color: @inputSuccessColor;
-      color: @inputSuccessColor;
+      border-color: @input-success-color;
+      color: @input-success-color;
     }
   }
 
   // Erro
   &.syo-error {
     &, &:hover, &:focus {
-      border-color: @inputErrorColor;
-      color: @inputErrorColor;
+      border-color: @input-error-color;
+      color: @input-error-color;
     }
   }
 }
@@ -220,33 +220,33 @@ input {
 .syo-button {
   // Sucesso
   &.syo-success {
-    border-color: @inputSuccessColor;
+    border-color: @input-success-color;
 
     &, &:focus {
-      #gradient .vertical(@inputSuccessHighlightColor, @inputSuccessColor);
+      #gradient .vertical(@input-success-highlight-color, @input-success-color);
     }
 
     &:hover, &:focus {
-      border-color: darken(@inputSuccessColor, 5%);
-      background-color: @inputSuccessColor;
+      border-color: darken(@input-success-color, 5%);
+      background-color: @input-success-color;
     }
 
     &:active {
-      color: @inputSuccessColor;
+      color: @input-success-color;
     }
   }
 
   // Erro
   &.syo-error {
-    border-color: @inputErrorColor;
+    border-color: @input-error-color;
 
     &, &:focus {
-      #gradient .vertical(@inputErrorHighlightColor, @inputErrorColor);
+      #gradient .vertical(@input-error-highlight-color, @input-error-color);
     }
 
     &:hover, &:focus {
-      border-color: darken(@inputErrorColor, 5%);
-      background-color: @inputErrorColor;
+      border-color: darken(@input-error-color, 5%);
+      background-color: @input-error-color;
     }
   }
 
@@ -259,7 +259,7 @@ input {
     }
 
     &:active {
-      background: @buttonActiveBackgroundColor;
+      background: @button-active-background-color;
     }
 
     &:hover, &:focus {
@@ -269,6 +269,6 @@ input {
   }
 
   // Sobrescreve o color quando active + hover
-  &.syo-success:active { color: @inputSuccessColor; }
-  &.syo-error:active { color: @inputErrorColor; }
+  &.syo-success:active { color: @input-success-color; }
+  &.syo-error:active { color: @input-error-color; }
 }

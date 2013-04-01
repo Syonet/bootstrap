@@ -3,112 +3,112 @@
 
 // Cores
 // -------------------------
-@grayDarker:  #222;
-@grayDark:    #444;
-@gray:        #666;
-@grayLight:   #AAA;
-@grayLighter: #EEE;
+@gray-darker:   #222;
+@gray-dark:     #444;
+@gray:          #666;
+@gray-light:    #AAA;
+@gray-lighter:  #EEE;
 
-@green:       #008000;
-@greenLight:  #81DBB2;
-@blue:        #336699;
+@green:         #008000;
+@green-light:   #81DBB2;
+@blue:          #336699;
 
 // Imagens/fontes
 // -------------------------
-@imagesPath:  "images";
-@imageLogo:   "@{imagesPath}/logo.gif";
+@images-path: "images";
+@image-logo:  "@{images-path}/logo.gif";
 
-@fontsPath:   "fonts";
+@fonts-path:  "fonts";
 
 // Body
 // -------------------------
-@bodyColor: #fff;
+@body-color: #fff;
 
 // Links
 // -------------------------
-@linkColor:       @blue;
-@linkColorHover:  darken(@blue, 10%);
+@link-color:        @blue;
+@link-color-hover:  darken(@blue, 10%);
 
 // Tamanhos Base
 // -------------------------
-@baseBorderRadius:	4px;
-@borderRadiusLarge: 6px;
-@borderRadiusSmall: 2px;
+@base-border-radius:	4px;
+@border-radius-large: 6px;
+@border-radius-small: 2px;
 
 // Tipografia
 // -------------------------
-@textColor:         #000;
-@baseFontSize:      14px;
-@baseLineHeight:    20px;
+@text-color:        #000;
+@base-font-size:    14px;
+@base-line-height:  20px;
 
-@baseFontFamily:    "Helvetica Neue", Helvetica, Arial, sans-serif;
-@monoFontFamily:    Monaco, Menlo, Consolas, "Courier New", monospace;
+@base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mono-font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 
 // Forms
 // -------------------------
 
 // Inputs
-@inputHeight:           @baseFontSize * 2;
-@inputBackground:       #f5f5f5;
-@inputBorder:           @grayLight;
-@inputTextColor:        @gray;
-@inputBorderRadius:     @borderRadiusSmall;
-@inputFocusBorder:      @green;
+@input-height:        @base-font-size * 2;
+@input-background:    #f5f5f5;
+@input-border:        @gray-light;
+@input-text-color:    @gray;
+@input-border-radius: @border-radius-small;
+@input-focus-border:  @green;
 
 // Inputs - hover
-@inputHoverBackground:  #f8f8f8;
-@inputHoverBorder:      darken(@inputBorder, 5%);
-@inputHoverText:        @grayDarker;
+@input-hover-background:  #f8f8f8;
+@input-hover-border:      darken(@input-border, 5%);
+@input-hover-text:        @gray-darker;
 
 // Inputs - disabled
-@inputDisabledBackground: #fff;
-@inputDisabledBorder:     @grayLight;
-@inputDisabledText:       @grayLight;
+@input-disabled-background: #fff;
+@input-disabled-border:     @gray-light;
+@input-disabled-text:       @gray-light;
 
 // Input - status - success
-@inputSuccessColor:          #51a351;
-@inputSuccessHighlightColor: #62c462;
+@input-success-color:           #51a351;
+@input-success-highlight-color: #62c462;
 
 // Input - status - error
-@inputErrorColor:          #bd362f;
-@inputErrorHighlightColor: #ee5f5b;
+@input-error-color:           #bd362f;
+@input-error-highlight-color: #ee5f5b;
 
 // Botões
-@buttonBackgroundColor:       #E8E8E8;
-@buttonHoverBackrgoundColor:  #DADADA;
-@buttonActiveBackgroundColor: #fff;//@inputBackground;
+@button-background-color:         #E8E8E8;
+@button-hover-background-color:   #DADADA;
+@button-active-background-color:  #fff;
 
 // Tabelas
 // -------------------------
-@tableBorderColor:      #ccc;
-@tableStripeColor:      #f5f5f5;
+@table-border-color:      #ccc;
+@table-stripe-color:      #f5f5f5;
 
 // Paginação
 // -------------------------
-@paginationItemBackground:    @grayLighter;
-@paginationActiveBackground:  #fff;
-@paginationHoverBackground:   #f8f8f8;
-@paginationText:              @textColor;
-@paginationDisabledText:      @grayLight;
+@pagination-item-background:    @gray-lighter;
+@pagination-active-background:  #fff;
+@pagination-hover-background:   #f8f8f8;
+@pagination-text:               @text-color;
+@pagination-disabled-text:      @gray-light;
 
-@paginationBorder:       @inputBorder;
-@paginationActiveBorder: @inputFocusBorder;
+@pagination-border:         @input-border;
+@pagination-active-border:  @input-focus-border;
 
 // Blocos
 // -------------------------
-@blockBorderColor:  #ccc;
-@blockTitleText:    @grayDark;
-@blockBorderRadius: @baseBorderRadius;
+@block-border-color:  #ccc;
+@block-title-text:    @gray-dark;
+@block-border-radius: @base-border-radius;
 
 // Navbar
 // -------------------------
-@navbarBorderColor: #ccc;
-@navbarZIndex:      1000;
-@navbarHeight:      40px;
+@navbar-border-color: #ccc;
+@navbar-zindex:       1000;
+@navbar-height:       40px;
 
 // Nav
 // -------------------------
-@navBorderColor: darken(@grayLighter, 5%);
+@nav-border-color: darken(@gray-lighter, 5%);
 
 // Grid
 // -------------------------
@@ -146,19 +146,19 @@
 
 // jQuery UI
 // -------------------------
-@jqTextColor:       @grayDarker;
-@jqHoverTextColor:  darken(@grayDarker, 3%);
+@jq-text-color:       @gray-darker;
+@jq-hover-text-color: darken(@gray-darker, 3%);
 
-@jqHighlightColor:  @greenLight;
-@jqHighlightBorder: #456B5A;
+@jq-highlight-color:  @green-light;
+@jq-highlight-border: #456B5A;
 
-@jqBorder:          @grayLight;
-@jqOverlay:         fade(@grayLight, 40%);
+@jq-border:          @gray-light;
+@jq-overlay:         fade(@gray-light, 40%);
 
 // Paths de imagens do jQuery UI
-@jqIconsHighlight:  "@{imagesPath}/ui-icons_2e83ff_256x240.png";
-@jqIconsActive:     "@{imagesPath}/ui-icons_454545_256x240.png";
-@jqIconsHover:      "@{imagesPath}/ui-icons_454545_256x240.png";
-@jqIconsError:      "@{imagesPath}/ui-icons_cd0a0a_256x240.png";
-@jqIcons:           "@{imagesPath}/ui-icons_222222_256x240.png";
-@jqIcons2:          "@{imagesPath}/ui-icons_888888_256x240.png";
+@jq-icons-highlight:  "@{images-path}/ui-icons_2e83ff_256x240.png";
+@jq-icons-active:     "@{images-path}/ui-icons_454545_256x240.png";
+@jq-icons-hover:      "@{images-path}/ui-icons_454545_256x240.png";
+@jq-icons-error:      "@{images-path}/ui-icons_cd0a0a_256x240.png";
+@jq-icons:            "@{images-path}/ui-icons_222222_256x240.png";
+@jq-icons2:           "@{images-path}/ui-icons_888888_256x240.png";

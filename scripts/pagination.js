@@ -42,7 +42,7 @@
 
 			this.list.on( "click", "> li > a", function( e ) {
 				e.stopPropagation();
-				widget.activate( widget.items.index( this.parentNode ) );
+				widget._activate( widget.items.index( this.parentNode ) );
 			});
 		},
 		_setOption: function( key, value ) {
