@@ -18,6 +18,8 @@
     "grunt-contrib-less": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-watch": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-jshint": "*",
     "hogan.js": "*"
   }
 }

@@ -448,8 +448,12 @@
 }
 
 // Buttonset
-.ui-buttonset .ui-helper-hidden-accessible {
-  position: absolute !important; // Sobrescreve o estilo principal dos checkboxes/radio, que é relative
+.ui-buttonset {
+  vertical-align: top;
+
+  .ui-helper-hidden-accessible {
+    position: absolute !important; // Sobrescreve o estilo principal dos checkboxes/radio, que é relative
+  }
 }
 
 // Spinner

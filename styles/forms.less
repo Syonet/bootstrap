@@ -52,6 +52,10 @@ textarea {
     width: 100%;
   }
 
+  &[class*="span"] {
+    float: none;
+  }
+
   &[disabled],
   &.syo-disabled {
     border-color: @inputDisabledBorder !important;
@@ -180,7 +184,7 @@ input, textarea, select, button {
   > input[type="radio"],
   > input[type="checkbox"] {
     position: relative;
-    top: 0.45em;
+    top: 0.5em;
   }
 
   // Bloco de ajuda de um syo-field

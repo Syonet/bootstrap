@@ -212,8 +212,10 @@
 // Navbar
 // -------------------------
 
-// Alinha um elemento da navbar com padding
+// Alinha um elemento da navbar com padding e reseta margin
 .navbar-spacing (@lineHeight: @baseLineHeight) {
+  margin-top: 0;
+  margin-bottom: 0;
   padding: ((@navbarHeight - @lineHeight) / 2) (@lineHeight / 1.5);
 }
 

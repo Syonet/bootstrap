@@ -8,8 +8,11 @@
 	"noempty":  true,
 	"nonew":    true,
 	"unused":   true,
+	"expr":     true,
 	"maxlen":   100,
 
 	"browser":  true,
-	"jquery":   true
+	"jquery":   true,
+
+	"predef": [ "module", "test", "strictEqual", "ok" ]
 }
