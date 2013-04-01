@@ -1,0 +1,15 @@
+{
+	"strict":   true,
+	"bitwise":  true,
+	"undef":    true,
+	"curly":    true,
+	"eqeqeq":   true,
+	"forin":    true,
+	"noempty":  true,
+	"nonew":    true,
+	"unused":   true,
+	"maxlen":   100,
+
+	"browser":  true,
+	"jquery":   true
+}

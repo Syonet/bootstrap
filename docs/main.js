@@ -1,4 +1,5 @@
 (function( $ ) {
+	"use strict";
 
 	var main, mainPos, sidebar, firstSection;
 
@@ -14,14 +15,13 @@
 		firstSection    = main.find("section:first");
 
 		// Instancia os plugins jQuery UI
-		if ( $("#jqueryui").val() === "true" ) {
-			$("[data-widget]").each(function() {
-				var data = $( this).data();
-				$( this )[ data.widget ]( data );
-			});
+		$("[data-widget]").each(function() {
+			var data = $( this).data();
+			$( this )[ data.widget ]( data );
+		});
 
-			jQueryUIAdjusts();
-		}
+		// Realiza alguns fixes relativos aos plugins jQuery UI
+		jQueryUIAdjusts();
 
 		// Ajusta o posicionamento do menu lateral
 		sidebarScrolling.call( window );
