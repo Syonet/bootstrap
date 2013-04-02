@@ -1,6 +1,10 @@
+// Imports
+// -------------------------
 @import "../styles/variables.less";
 @import "../styles/mixins.less";
 
+// Geral
+// -------------------------
 .header {
 	padding-top: @base-line-height * 2;
 	padding-bottom: @base-line-height * 2;
@@ -16,16 +20,12 @@
   width: 100%;
 }
 
-@media (max-width: 767px) {
-  #sidebar {
-    position: static;
-  }
-}
-
 section {
   padding-top: @navbar-height;
 }
 
+// Exemplos
+// -------------------------
 .syo-docs-example {
   margin: @base-line-height 0;
   padding: (@base-line-height * 2) 0 0;
@@ -58,6 +58,8 @@ section {
   }
 }
 
+// Grid
+// -------------------------
 .grid-example {
   .row {
     margin-bottom: @base-line-height;
@@ -71,6 +73,74 @@ section {
 
 	  &:hover {
       background: lighten(@gray-light, 3%);
+    }
+  }
+}
+
+// Seção "Design responsivo"
+// -------------------------
+.responsive-test, .responsive-table {
+  .visible, .hidden {
+    text-align: center;
+  }
+
+  .hidden {
+    color: @gray-light;
+  }
+
+  .visible {
+    background: @light-green;
+    color: @green;
+
+    &:before {
+      position: absolute;
+      content: "✔";
+      margin-left: -@base-font-size;
+    }
+  }
+}
+
+ul.responsive-test {
+  list-style: none;
+
+  li {
+    @padding: (@base-line-height / 2) 0;
+
+    position: relative;
+    display: inline-block;
+    width: 24%;
+    margin-right: 1%;
+    padding: @padding;
+    border: 1px solid @gray-light;
+    color: @gray-light;
+    text-align: center;
+    .border-radius(@base-border-radius);
+
+    > span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: @padding;
+      .border-radius(@base-border-radius);
+    }
+  }
+}
+
+// Responsividade
+// -------------------------
+
+// Celulares
+@media (max-width: 767px) {
+  // Num celular, a navegação "lateral" não precisa necessariamente ser lateral.
+  #sidebar {
+    position: static;
+  }
+
+  // Oculta o check de "efeito ativo" da seção "design responsivo"
+  .responsive-test, .responsive-table {
+    .visible:before {
+      content: "";
     }
   }
 }

@@ -1,0 +1,33 @@
+// Desktops
+.visible-phone    { display: none !important; }
+.visible-tablet   { display: none !important; }
+.hidden-phone     { }
+.hidden-tablet    { }
+.hidden-desktop   { display: none !important; }
+.visible-desktop  { display: inherit !important; }
+
+// Tablets e pequenos desktops
+@media (min-width: 768px) and (max-width: 979px) {
+  // Esconde qualquer outra coisa
+  .hidden-desktop    { display: inherit !important; }
+  .visible-desktop   { display: none !important ; }
+
+  // Exibe
+  .visible-tablet    { display: inherit !important; }
+
+  // Esconde
+  .hidden-tablet     { display: none !important; }
+}
+
+// Celulares
+@media (max-width: 767px) {
+  // Esconde qualquer outra coisa
+  .hidden-desktop    { display: inherit !important; }
+  .visible-desktop   { display: none !important; }
+
+  // Exibe
+  .visible-phone     { display: inherit !important; }
+
+  // Esconde
+  .hidden-phone      { display: none !important; }
+}

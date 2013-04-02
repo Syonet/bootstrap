@@ -6,6 +6,7 @@
         <li><a href="#lists">Listas</a></li>
         <li><a href="#forms">Formulários</a></li>
         <li><a href="#tables">Tabelas</a></li>
+        <li><a href="#responsive">Design Responsivo</a></li>
         <li><a href="#utils">Utilitários</a></li>
     </ul>
 </aside>
@@ -506,6 +507,111 @@
             </div>
             <pre class="prettyprint">&lt;table class="syo-data-table syo-data-table-striped"&gt;...&lt;/table&gt;</pre>
         </div>
+    </section>
+
+    <!-- Responsive -->
+    <section id="responsive">
+        <div class="syo-header">
+            <h2>Design Responsivo</h2>
+        </div>
+
+        <p>
+            Para facilitar o desenvolvimento responsivo, utilize estas classes, que exibem/ocultam conteúdo por tamanho de telas.<br />
+            Abaixo está uma tabela com as classes disponíveis e o seu efeito em uma tela diferente.
+        </p>
+
+        <table class="syo-data-table responsive-table">
+            <colgroup>
+                <col class="span3" />
+                <col class="span3" />
+                <col class="span3" />
+                <col class="span3" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Classe</th>
+                    <th>Celulares <small>(menor que 768px)</small></th>
+                    <th>Tablets <small>(maior que 768px, menor que 980px)</small></th>
+                    <th>Desktops <small>(maior ou igual a 980px)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>.visible-phone</code></td>
+                    <td class="visible">Visível</td>
+                    <td class="hidden">Oculto</td>
+                    <td class="hidden">Oculto</td>
+                </tr>
+                <tr>
+                    <td><code>.visible</code></td>
+                    <td class="hidden">Oculto</td>
+                    <td class="visible">Visível</td>
+                    <td class="hidden">Oculto</td>
+                </tr>
+                <tr>
+                    <td><code>.visible</code></td>
+                    <td class="hidden">Oculto</td>
+                    <td class="hidden">Oculto</td>
+                    <td class="visible">Visível</td>
+                </tr>
+                <tr>
+                    <td><code>.hidden</code></td>
+                    <td class="hidden">Oculto</td>
+                    <td class="visible">Visível</td>
+                    <td class="visible">Visível</td>
+                </tr>
+                <tr>
+                    <td><code>.hidden</code></td>
+                    <td class="visible">Visível</td>
+                    <td class="hidden">Oculto</td>
+                    <td class="visible">Visível</td>
+                </tr>
+                <tr>
+                    <td><code>.hidden</code></td>
+                    <td class="visible">Visível</td>
+                    <td class="visible">Visível</td>
+                    <td class="hidden">Oculto</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Teste das classes responsivas</h3>
+        <p>
+            Redimensione o seu browser ou então carregue esta página noutros dispositivos para testar as classes abaixo.<br />
+            Retângulos com um <i>check</i> verde querem dizer que o efeito está ativo na sua resolução de tela atual.
+        </p>
+
+        <h4>Visível em...</h4>
+        <ul class="responsive-test">
+            <li>
+                Celular
+                <span class="visible-phone visible"><i class="ok"></i> Celular</span>
+            </li>
+            <li>
+                Tablet
+                <span class="visible-tablet visible"><i class="ok"></i> Tablet</span>
+            </li>
+            <li>
+                Desktop
+                <span class="visible-desktop visible"><i class="ok"></i> Desktop</span>
+            </li>
+        </ul>
+
+        <h4>Oculto em...</h4>
+        <ul class="responsive-test">
+            <li>
+                Celular
+                <span class="hidden-phone visible"><i class="ok"></i> Celular</span>
+            </li>
+            <li>
+                Tablet
+                <span class="hidden-tablet visible"><i class="ok"></i> Tablet</span>
+            </li>
+            <li>
+                Desktop
+                <span class="hidden-desktop visible"><i class="ok"></i> Desktop</span>
+            </li>
+        </ul>
     </section>
 
     <!-- Utils -->
