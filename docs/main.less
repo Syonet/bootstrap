@@ -58,7 +58,7 @@ section {
   }
 }
 
-// Grid
+// Seção Grid
 // -------------------------
 .grid-example {
   .row {
@@ -74,6 +74,20 @@ section {
 	  &:hover {
       background: lighten(@gray-light, 3%);
     }
+  }
+}
+
+// Seção Icones
+// -------------------------
+.icons {
+  .clearfix();
+  margin: 0 0 @base-line-height;
+  list-style: none;
+
+  li {
+    float: left;
+    width: 24%;
+    margin: 0 1% 5px 0;
   }
 }
 
@@ -135,6 +149,11 @@ ul.responsive-test {
   // Num celular, a navegação "lateral" não precisa necessariamente ser lateral.
   #sidebar {
     position: static;
+  }
+
+  // Aumenta o tamanho da apresentação de cada icone num celular, pra não ficar tão horrível
+  .icons li {
+    width: 49%;
   }
 
   // Oculta o check de "efeito ativo" da seção "design responsivo"
