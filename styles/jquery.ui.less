@@ -395,12 +395,15 @@
 // Button
 .ui-button {
   display: inline-block;
-  min-height: @input-height;
+
+  // Nas versões mais antigas do Firefox, quando é utilizado um buttonset (elementos label.ui-button),
+  // o min-height aumentava MUITO o tamanho final do botão.
+  //min-height: @input-height;
 
   // Explicação do cálculo:
-  // (Altura mínima do input - tamanho da fonte) / 2, pra deixar metade pra cima, metade pra baixo
-  // E ainda subtrai 2px da borda do botão.
-  padding: (((@input-height - @base-font-size) / 2) - 2px) 5px;
+  // (Altura mínima do input - tamanho da linha) - 2px (da borda do botão),
+  // E divide por 2, pra deixar metade pra cima, metade pra baixo.
+  padding: (((@input-height - @base-line-height) - 2px) / 2) 5px;
   vertical-align: middle;
   .box-sizing(border-box);
   .transition(all .15s linear);
@@ -413,6 +416,10 @@
 
   &.ui-state-active, &.ui-state-focus {
     border-color: @input-focus-border;
+  }
+
+  .ui-button-text {
+    line-height: @base-line-height;
   }
 
   // Arredonda os cantos pro mesmo tamanho do .syo-button.
