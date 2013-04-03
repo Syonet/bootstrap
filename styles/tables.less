@@ -26,9 +26,12 @@ table {
 .syo-data-table, .syo-datagrid table {
   .table-base-styles();
 
-  td.text-center    { text-align: center; }
-  td.text-right     { text-align: right; }
-  td.text-justify   { text-align: justify; }
+  // Sobrescreve a especifidade de alinhamento de texto com estas classes
+  td, th {
+    &.text-center    { text-align: center; }
+    &.text-right     { text-align: right; }
+    &.text-justify   { text-align: justify; }
+  }
 }
 
 .syo-data-table {
