@@ -8,34 +8,50 @@
 
     li {
       float: left;
-      margin-left: 3px;
 
       a {
-        padding: 2px 4px;
+        position: relative;
+        display: inline-block;
+        height: @base-line-height;
+        margin-right: -1px;
+        padding: 4px 12px;
         border: 1px solid @pagination-border;
         color: @pagination-text;
+        line-height: @base-line-height;
         background-color: @pagination-item-background;
-        .border-radius(@base-border-radius);
-        .transition(all .15s linear);
+        .transition(background .15s linear);
 
-        &:hover, &:active {
+        &:hover, &:active, &:focus {
           color: @pagination-text;
           text-decoration: none;
           background: @pagination-hover-background;
         }
 
         &:active, &:focus {
+          // Mostra a borda com mais prioridade que os itens sem :focus/:active
+          z-index: @pagination-active-zindex - 1;
           border-color: @pagination-active-border;
+        }
+
+        &:focus {
+          // Corrige o outline
+          outline-offset: -2px;
         }
       }
 
-      // Remove o margin-left do first-child
-      &:first-child {
-        margin-left: 0;
+      &:first-child a {
+        .border-radius-left(@base-border-radius);
+      }
+
+      &:last-child a {
+        .border-radius-right(@base-border-radius);
       }
 
       // Item ativo na paginação
       &.syo-active > a {
+        // Sempre mostrará todas as bordas
+        z-index: @pagination-active-zindex;
+
         border-color: @pagination-active-border;
         background-color: @pagination-active-background;
       }
@@ -44,6 +60,7 @@
       // Item desabilitado na paginação
       // Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo
       &.syo-disabled > a {
+        cursor: default !important;
         border-color: @pagination-border;
         color: @pagination-disabled-text;
         background-color: @pagination-item-background;
@@ -62,5 +79,83 @@
     vertical-align: top; // Alinha com um possível texto ao lado da paginação
     margin-left: (@base-line-height / 2);
     margin-right: (@base-line-height / 2);
+  }
+}
+
+// Quando utilizada como paginação de uma tabela, mudam vários estilos da tabela e do paginador.
+.syo-data-table {
+  th.syo-pagination,
+  td.syo-pagination {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: @base-line-height + 8px;
+    vertical-align: middle;
+
+    // Retira os paddings laterais
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    // Sobrepõe a paginação sobre as bordas da célula
+    > ul {
+      margin-top: -1px;
+      margin-bottom: -1px;
+
+      &:first-child {
+        margin-left: -1px;
+      }
+
+      &:last-child {
+        margin-right: -1px;
+      }
+
+      li a {
+        .border-radius(0);
+      }
+    }
+  }
+
+  // Corrige border-radius top do paginador na primeira tr da tabela
+  > tr:first-child,
+  > thead:first-child > tr:first-child,
+  > tbody:first-child > tr:first-child,
+  > tfoot:first-child > tr:first-child {
+    > td.syo-pagination:first-child,
+    > th.syo-pagination:first-child {
+      > ul:first-child li:first-child a {
+        .border-top-left-radius(@base-border-radius);
+      }
+    }
+
+    > td.syo-pagination:last-child,
+    > th.syo-pagination:last-child {
+      > ul:last-child li:last-child a {
+        .border-top-right-radius(@base-border-radius);
+      }
+    }
+  }
+
+  // Corrige border-radius bottom do paginador na última tr da tabela
+  > tr:last-child,
+  > thead:last-child > tr:last-child,
+  > tbody:last-child > tr:last-child,
+  > tfoot:last-child > tr:last-child {
+    > td.syo-pagination:first-child,
+    > th.syo-pagination:first-child {
+      > ul:first-child li:first-child a {
+        .border-bottom-left-radius(@base-border-radius);
+      }
+    }
+
+    > td.syo-pagination:last-child,
+    > th.syo-pagination:last-child {
+      > ul:last-child li:last-child a {
+        .border-bottom-right-radius(@base-border-radius);
+      }
+    }
   }
 }
