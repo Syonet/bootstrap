@@ -139,7 +139,9 @@
 
 			// Variável helper pra resetar o estado de itens ativos
 			this.active = -1;
-			this._activate( this.options.active );
+
+			// Retorna à página 0
+			this._activate( 0 );
 		},
 
 		_toggleDisable: function( item, disabled ) {

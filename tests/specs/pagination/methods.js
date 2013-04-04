@@ -40,4 +40,15 @@
 		strictEqual( this.pagination.find("li:not(.syo-disabled)").length, 3, "deve habilitar todos os itens, se não passar parâmetro" );
 	});
 
+	test( "refresh", function() {
+		var before = this.pagination.find("li:eq(0)");
+
+		this.pagination
+			.syoPagination( "option", "active", 2 )
+			.syoPagination("refresh");
+
+		ok( !this.pagination.find("li:eq(0)").is( before ), "deve recriar a lista ao chamar o método" );
+		strictEqual( this.pagination.syoPagination( "option", "active" ), 0, "a página ativa deve ser a primeira" );
+	});
+
 })( jQuery );
