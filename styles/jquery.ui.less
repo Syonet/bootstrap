@@ -12,7 +12,6 @@
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-  //font-family: Verdana,Arial,sans-serif;
   font-size: 1em;
 }
 .ui-widget-content {
@@ -38,7 +37,7 @@
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  border: 1px solid #d3d3d3;
+  border: 1px solid @jq-border;
   #gradient .vertical();
   font-weight: normal;
   color: #555555;
@@ -392,18 +391,14 @@
 /* Custom
 ----------------------------------*/
 
-// Button
-.ui-button {
+// Estilos compartilhados Button + Dialog titlebar close (jQuery UI < 1.10)
+.ui-button, .ui-dialog .ui-dialog-titlebar-close {
   display: inline-block;
 
   // Nas versões mais antigas do Firefox, quando é utilizado um buttonset (elementos label.ui-button),
   // o min-height aumentava MUITO o tamanho final do botão.
   //min-height: @input-height;
 
-  // Explicação do cálculo:
-  // (Altura mínima do input - tamanho da linha) - 2px (da borda do botão),
-  // E divide por 2, pra deixar metade pra cima, metade pra baixo.
-  padding: (((@input-height - @base-line-height) - 2px) / 2) 5px;
   vertical-align: middle;
   .box-sizing(border-box);
   .transition(all .15s linear);
@@ -417,6 +412,14 @@
   &.ui-state-active, &.ui-state-focus {
     border-color: @input-focus-border;
   }
+}
+
+// Button
+.ui-button {
+  // Explicação do cálculo:
+  // (Altura mínima do input - tamanho da linha) - 2px (da borda do botão),
+  // E divide por 2, pra deixar metade pra cima, metade pra baixo.
+  padding: (((@input-height - @base-line-height) - 2px) / 2) 5px;
 
   .ui-button-text {
     line-height: @base-line-height;
@@ -452,6 +455,24 @@
 .ui-button-text-icon-primary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
   padding: 0 0 0 1.8em;
+}
+
+// Dialog titlebar closethick (jQuery UI < 1.10)
+.ui-dialog .ui-dialog-titlebar-close {
+  border: 1px solid @jq-border;
+
+  // No caso do closethick do Dialog, todos lados sempre vão ter bordas arredondadas.
+  .border-radius(@input-border-radius);
+
+  // O icone normal tem uma tonalidade mais forte, que não fica legal.
+  .ui-icon {
+    background-image: url(@jq-icons2);
+  }
+
+  // Sobrescreve a especificidade acima
+  &.ui-state-hover .ui-icon {
+    background-image: url(@jq-icons-hover);
+  }
 }
 
 // Buttonset
