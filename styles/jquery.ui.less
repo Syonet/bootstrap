@@ -394,6 +394,8 @@
 // Estilos compartilhados Button + Dialog titlebar close (jQuery UI < 1.10)
 .ui-button, .ui-dialog .ui-dialog-titlebar-close {
   display: inline-block;
+  border-color: fade(@input-border, 35%);
+  border-bottom-color: lighten(@input-border, 10%);
 
   // Nas versões mais antigas do Firefox, quando é utilizado um buttonset (elementos label.ui-button),
   // o min-height aumentava MUITO o tamanho final do botão.
@@ -401,7 +403,7 @@
 
   vertical-align: middle;
   .box-sizing(border-box);
-  .transition(all .15s linear);
+  .transition(background .15s linear);
 
   a&:hover,
   a&:active {
@@ -409,8 +411,9 @@
     color: @jq-hover-text-color;
   }
 
-  &.ui-state-active, &.ui-state-focus {
-    border-color: @input-focus-border;
+  &.ui-state-active,
+  &.ui-state-hover {
+    background: #eee;
   }
 }
 
@@ -419,33 +422,24 @@
   // Explicação do cálculo:
   // (Altura mínima do input - tamanho da linha) - 2px (da borda do botão),
   // E divide por 2, pra deixar metade pra cima, metade pra baixo.
-  padding: (((@input-height - @base-line-height) - 2px) / 2) 5px;
+  padding: (((@input-height - @base-line-height) - 2px) / 2) 12px;
 
   .ui-button-text {
     line-height: @base-line-height;
   }
 
-  // Arredonda os cantos pro mesmo tamanho do .syo-button.
-  // É necessário setar para cada classe por causa dos buttonsets.
-  &.ui-corner-all,
-  &.ui-corner-top,
-  &.ui-corner-left,
-  &.ui-corner-tl { .border-top-left-radius(@input-border-radius); }
+  &.ui-state-focus {
+    outline: dotted thin #333;
+    outline-offset: 2px;
+  }
 
-  &.ui-corner-all,
-  &.ui-corner-top,
-  &.ui-corner-right,
-  &.ui-corner-tr { .border-top-right-radius(@input-border-radius); }
-
-  &.ui-corner-all,
-  &.ui-corner-bottom,
-  &.ui-corner-right,
-  &.ui-corner-br { .border-bottom-right-radius(@input-border-radius); }
-
-  &.ui-corner-all,
-  &.ui-corner-bottom,
-  &.ui-corner-left,
-  &.ui-corner-bl { .border-bottom-left-radius(@input-border-radius); }
+  &.ui-state-active {
+    z-index: 3;
+    outline: 0;
+    border-color: fade(@jq-border, 80%);
+    border-bottom-color: lighten(@jq-border, 5%);
+    .box-shadow(0 2px 4px fade(#000, 15%) inset);
+  }
 }
 
 .ui-button-text-only .ui-button-text {
@@ -454,7 +448,7 @@
 
 .ui-button-text-icon-primary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
-  padding: 0 0 0 1.8em;
+  padding: 0 0 0 1.4em;
 }
 
 // Dialog titlebar closethick (jQuery UI < 1.10)
@@ -469,6 +463,11 @@
     background-image: url(@jq-icons2);
   }
 
+  // Outline neste closethick fica horrível.
+  &.ui-state-focus {
+    outline: 0;
+  }
+
   // Sobrescreve a especificidade acima
   &.ui-state-hover .ui-icon {
     background-image: url(@jq-icons-hover);
@@ -481,6 +480,11 @@
 
   .ui-helper-hidden-accessible {
     position: absolute !important; // Sobrescreve o estilo principal dos checkboxes/radio, que é relative
+  }
+
+  .ui-button.ui-state-focus {
+    // Coloca o outline sobre os vizinhos
+    z-index: 5;
   }
 }
 
@@ -499,6 +503,15 @@
     height: @input-height - 2; // Deduz as bordas do .ui-spinner
     margin: 0;
     border: 0;
+  }
+
+  a.ui-spinner-button {
+    padding: 0;
+    border-bottom: 1px solid @jq-border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 }
 

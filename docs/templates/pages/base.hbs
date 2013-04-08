@@ -5,6 +5,7 @@
         <li><a href="#type">Tipografia</a></li>
         <li><a href="#lists">Listas</a></li>
         <li><a href="#forms">Formulários</a></li>
+        <li><a href="#buttons">Botões</a></li>
         <li><a href="#tables">Tabelas</a></li>
         <li><a href="#icons">Icones</a></li>
         <li><a href="#responsive">Design Responsivo</a></li>
@@ -362,11 +363,6 @@
             &lt;input type="radio" id="radiobox" /&gt;
             &lt;label for="radiobox"&gt;Radio&lt;/label&gt;
         &lt;/div&gt;
-
-        &lt;div class="syo-field"&gt;
-            &lt;input type="submit" value="Bot&atilde;o" class="syo-button" /&gt;
-            &lt;input type="reset" value="Bot&atilde;o desabilitado" class="syo-button" disabled="disabled" /&gt;
-        &lt;/div&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;
 </pre>
@@ -390,19 +386,73 @@
             <tr>
                 <td class="text-right"><code>.syo-success</code></td>
                 <td>
-                    <button class="syo-button syo-success">Concluir com Sucesso</button>
                     <input type="text" class="syo-success" value="Campo text preenchido com sucesso" />
+	                <select class="syo-success">
+		                <option selected="selected">Estou selecionado!</option>
+	                </select>
                 </td>
             </tr>
             <tr>
                 <td class="text-right"><code>.syo-error</code></td>
                 <td>
-                    <button class="syo-button syo-error">Concluir com Insucesso</button>
                     <input type="text" class="syo-error" value="Erro ao preencher este campo!" />
+                    <select class="syo-error">
+                        <option>Selecione-me</option>
+                    </select>
                 </td>
             </tr>
             </tbody>
         </table>
+    </section>
+
+    <!-- Botões -->
+    <section id="buttons">
+        <div class="syo-header">
+            <h2>Botões</h2>
+        </div>
+
+        <p>Vários <i>markups</i> possíveis, apenas um estilo. Estilize qualquer tag com a classe <code>.syo-button</code> - no entanto, é preferível utilizá-la com as tags <code>&lt;a&gt;</code> e <code>&lt;button&gt;</code> para uma melhor renderização.</p>
+
+        <table class="syo-data-table">
+            <colgroup>
+                <col class="span2" />
+                <col class="span2" />
+                <col class="span8" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Botão</th>
+                    <th>Classes</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button type="button" class="syo-button">Botão</button></td>
+                    <td><code>syo-button</code></td>
+                    <td>Botão padrão, cinza. Útil para ações sem muita importância.</td>
+                </tr>
+                <tr>
+	                <td><button type="button" class="syo-button syo-success">Sucesso</button></td>
+	                <td><code>syo-button syo-success</code></td>
+	                <td>Indica uma ação positiva ou de sucesso.</td>
+                </tr>
+                <tr>
+	                <td><button type="button" class="syo-button syo-error">Erro</button></td>
+	                <td><code>syo-button syo-error</code></td>
+	                <td>Indica uma ação negativa ou de erro.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Estado Desabilitado</h3>
+        <p>Para dar o efeito de botão desabilitado, adicione a classe <code>.syo-disabled</code> ou atribua a propriedade <code>disabled</code> (disponível apenas para a tag <code>&lt;button&gt;</code>).</p>
+        <div class="syo-docs-example">
+            <div class="syo-docs-example-inner">
+	            <button class="syo-button" type="button" disabled="disabled">Botão Desabilitado</button>
+	            <a href="#" class="syo-disabled syo-button">Link Desabilitado</a>
+            </div>
+        </div>
     </section>
 
     <!-- Tabelas -->

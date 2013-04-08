@@ -15,10 +15,6 @@ input[type="tel"],
 input[type="number"],
 input[type="range"],
 input[type="color"],
-input[type="submit"].syo-button,
-input[type="reset"].syo-button,
-input[type="button"].syo-button,
-button.syo-button,
 select,
 textarea {
   min-height: @input-height;
@@ -75,35 +71,16 @@ select {
   line-height: @input-height;
   // Padding necessário para alinhar verticalmente o texto do option selecionado.
   padding: ((@input-height - @base-line-height) / 2) 2px;
+
+  option {
+    text-shadow: none;
+  }
 }
 
 input[type="checkbox"],
 input[type="radio"] {
   position: relative;
   top: 0.2em;
-}
-
-input[type="button"].syo-button,
-input[type="submit"].syo-button,
-input[type="reset"].syo-button,
-button.syo-button {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
-  white-space: nowrap;
-  cursor: pointer;
-  .transition(~"border-color 0.15s linear, color 0.15s linear, box-shadow 0.15s linear");
-
-  &, &:focus { #gradient .vertical(); }
-
-  &:focus {
-    outline: dotted thin @gray-dark;
-    outline-offset: 1px;
-  }
-
-  // Usamos imagem de background, desnecessário setar a cor.
-  //&:hover     { background-color: @buttonHoverBackrgoundColor; }
-  &:active    { background: @button-active-background-color; }
 }
 
 // Labels, fieldsets, legends
@@ -198,7 +175,8 @@ input, textarea, select, button {
 // -------------------------
 
 // Inputs
-input {
+input,
+select {
   // Sucesso
   &.syo-success {
     &, &:hover, &:focus {
@@ -214,61 +192,4 @@ input {
       color: @input-error-color;
     }
   }
-}
-
-// Botão
-.syo-button {
-  // Sucesso
-  &.syo-success {
-    border-color: @input-success-color;
-
-    &, &:focus {
-      #gradient .vertical(@input-success-highlight-color, @input-success-color);
-    }
-
-    &:hover, &:focus {
-      border-color: darken(@input-success-color, 5%);
-      background-color: @input-success-color;
-    }
-
-    &:active {
-      color: @input-success-color;
-    }
-  }
-
-  // Erro
-  &.syo-error {
-    border-color: @input-error-color;
-
-    &, &:focus {
-      #gradient .vertical(@input-error-highlight-color, @input-error-color);
-    }
-
-    &:hover, &:focus {
-      border-color: darken(@input-error-color, 5%);
-      background-color: @input-error-color;
-    }
-  }
-
-  &.syo-error, &.syo-success {
-    text-shadow: none; // Remove aquele text-shadow branco que não combina com as cores de sucesso/erro
-    .transition(none);
-
-    &, &:focus, &:hover {
-      color: #fff;
-    }
-
-    &:active {
-      background: @button-active-background-color;
-    }
-
-    &:hover, &:focus {
-      background-position: 0 -15px;
-      .transition(~"background-position 0.15s linear");
-    }
-  }
-
-  // Sobrescreve o color quando active + hover
-  &.syo-success:active { color: @input-success-color; }
-  &.syo-error:active { color: @input-error-color; }
 }

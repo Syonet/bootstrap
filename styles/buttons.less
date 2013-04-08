@@ -1,0 +1,101 @@
+.syo-button {
+  display: inline-block;
+  padding: ((@input-height - @base-line-height) / 2) 12px;
+  border: 1px solid fade(@input-border, 35%);
+  border-bottom-color: lighten(@input-border, 10%);
+  #font .shorthand(@input-text-color);
+  #gradient .vertical();
+  .border-radius(@base-border-radius);
+  .box-shadow(0 1px 0 fade(#fff, 20%) inset);
+
+  &:hover {
+    border-color: fade(@input-border, 50%);
+    border-bottom-color: lighten(@input-border, 5%);
+    background: #eee;
+    .transition(background 0.15s linear);
+  }
+
+  &:focus {
+    outline: dotted thin #333;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    .box-shadow(0 2px 4px fade(#000, 15%) inset);
+    outline: 0;
+  }
+
+  // Desabilita efeitos de links
+  &:hover, &:active {
+    color: @input-text-color;
+    text-decoration: none;
+  }
+}
+
+// Buttonset
+// ---------
+.syo-buttonset {
+  display: inline-block;
+  font-size: 0;
+  white-space: nowrap;
+
+  > .syo-button {
+    position: relative;
+    .border-radius(0);
+
+    + .syo-button {
+      margin-left: -1px;
+    }
+
+    &:hover,
+    &:focus {
+      z-index: 3;
+    }
+
+    &:first-child {
+      .border-radius-left(@base-border-radius);
+    }
+
+    &:last-child {
+      .border-radius-right(@base-border-radius);
+    }
+  }
+}
+
+// Estados
+// -------
+
+// Sucesso
+.syo-button.syo-success {
+  #gradient .vertical(@input-success-highlight-color, @input-success-color);
+  border-color: @input-success-color;
+
+  &:hover {
+    background-color: @input-success-color;
+  }
+}
+
+// Erro
+.syo-button.syo-error {
+  #gradient .vertical(@input-error-highlight-color, @input-error-color);
+  border-color: @input-error-color;
+
+  &:hover {
+    background-color: @input-error-color;
+  }
+}
+
+.syo-button.syo-success,
+.syo-button.syo-error {
+  color: #fff;
+}
+
+// Desabilitado
+.syo-button[disabled],
+.syo-button.syo-disabled {
+  border-color: lighten(@input-border, 5%);
+  background: #eee;
+  cursor: default;
+  .box-shadow(none);
+  .opacity(0.8);
+}
