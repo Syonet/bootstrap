@@ -1,0 +1,15 @@
+.syo-progressbar {
+  height: 2em;
+  border: 1px solid @gray-light;
+  .border-radius(@base-border-radius);
+  overflow: hidden;
+
+  > .syo-progressbar-value {
+    float: left;
+    width: 0;
+    height: 100%;
+    margin: -1px;
+    border: 1px solid @gray-light;
+    .progressbar();
+  }
+}

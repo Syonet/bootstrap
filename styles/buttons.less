@@ -1,6 +1,6 @@
 .syo-button {
   display: inline-block;
-  padding: ((@input-height - @base-line-height) / 2) 12px;
+  padding: (((@input-height - @base-line-height) - 2px) / 2) 12px;
   border: 1px solid fade(@input-border, 35%);
   border-bottom-color: lighten(@input-border, 10%);
   #font .shorthand(@input-text-color);
@@ -20,6 +20,7 @@
     outline-offset: 2px;
   }
 
+  &.syo-active,
   &:active {
     .box-shadow(0 2px 4px fade(#000, 15%) inset);
     outline: 0;
@@ -30,6 +31,11 @@
     color: @input-text-color;
     text-decoration: none;
   }
+}
+
+// Corrige altura de quando é uma tag input
+input.syo-button {
+  height: @input-height;
 }
 
 // Buttonset

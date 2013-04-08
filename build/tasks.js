@@ -15,7 +15,7 @@ module.exports = function( grunt ) {
 				source = source.replace( /^\/\*!([^>]*?)\*\//mg, "" );
 			}
 
-			return grunt.template.process( banner, grunt.config() ) + source;
+			return replaceVersion( grunt.template.process( banner, grunt.config() ) + source );
 		}
 		function copyFile( src, dest ) {
 			var options = {};
