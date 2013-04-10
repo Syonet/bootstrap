@@ -22,6 +22,8 @@
 
   &.syo-active,
   &:active {
+    background: @gray-lighter;
+    border-color: fade(@input-border, 70%);
     .box-shadow(0 2px 4px fade(#000, 15%) inset);
     outline: 0;
   }
@@ -53,6 +55,7 @@ input.syo-button {
       margin-left: -1px;
     }
 
+    &.syo-active,
     &:hover,
     &:focus {
       z-index: 3;

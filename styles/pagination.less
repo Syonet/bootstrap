@@ -52,8 +52,9 @@
         // Sempre mostrará todas as bordas
         z-index: @pagination-active-zindex;
 
-        color: @pagination-disabled-text;
+        color: darken(@pagination-disabled-text, 20%);
         background: @pagination-hover-background;
+        .box-shadow(0 2px 4px fade(#000, 15%) inset);
       }
 
       // Item desabilitado na paginação
