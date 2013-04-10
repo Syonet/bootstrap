@@ -48,6 +48,8 @@
 		}).click(function() {
 			$(".dialog").dialog("open");
 		});
+
+		$(".pagination-component").syoPagination( "disable", 3 );
 	}
 
 })( jQuery );

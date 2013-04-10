@@ -85,16 +85,11 @@
 
 // Paginação
 // -------------------------
-@pagination-item-background:    @gray-lighter;
-@pagination-active-background:  #fff;
-@pagination-hover-background:   #f8f8f8;
-@pagination-text:               @text-color;
+@pagination-item-background:    #fff;
+@pagination-hover-background:   lighten(@gray-lighter, 2%);
 @pagination-disabled-text:      @gray-light;
-
-@pagination-border:         @input-border;
-@pagination-active-border:  @input-focus-border;
-
-@pagination-active-zindex: 100;
+@pagination-border:             fade(@gray-light, 70%);
+@pagination-active-zindex:      100;
 
 // Blocos
 // -------------------------

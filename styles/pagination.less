@@ -3,26 +3,27 @@
 
 .syo-pagination {
   > ul {
+    display: inline-block;
     list-style: none;
     .clearfix();
+    .box-shadow(0 1px 2px fade(@gray-light, 30%));
+    .border-radius(@base-border-radius);
 
     li {
-      float: left;
+      display: inline;
 
       a {
         position: relative;
-        display: inline-block;
+        float: left;
         height: @base-line-height;
         margin-right: -1px;
         padding: 4px 12px;
         border: 1px solid @pagination-border;
-        color: @pagination-text;
         line-height: @base-line-height;
         background-color: @pagination-item-background;
         .transition(background .15s linear);
 
         &:hover, &:active, &:focus {
-          color: @pagination-text;
           text-decoration: none;
           background: @pagination-hover-background;
         }
@@ -30,7 +31,6 @@
         &:active, &:focus {
           // Mostra a borda com mais prioridade que os itens sem :focus/:active
           z-index: @pagination-active-zindex - 1;
-          border-color: @pagination-active-border;
         }
 
         &:focus {
@@ -52,15 +52,13 @@
         // Sempre mostrará todas as bordas
         z-index: @pagination-active-zindex;
 
-        border-color: @pagination-active-border;
-        background-color: @pagination-active-background;
+        color: @pagination-disabled-text;
+        background: @pagination-hover-background;
       }
-
 
       // Item desabilitado na paginação
       // Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo
       &.syo-disabled > a {
-        cursor: default !important;
         border-color: @pagination-border;
         color: @pagination-disabled-text;
         background-color: @pagination-item-background;
@@ -68,6 +66,12 @@
         &:focus {
           outline: none;
         }
+      }
+
+      // Nem itens desabilitados nem itens ativos terão cursor aqui
+      &.syo-disabled > a,
+      &.syo-active > a {
+        cursor: default !important;
       }
     }
   }
