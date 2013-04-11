@@ -3,16 +3,16 @@
 
 // Cores
 // -------------------------
-@gray-darker:   #222;
-@gray-dark:     #444;
-@gray:          #666;
-@gray-light:    #AAA;
-@gray-lighter:  #EEE;
+@gray-darker:         #222;
+@gray-dark:           #444;
+@gray:                #666;
+@gray-light:          #AAA;
+@gray-lighter:        #EEE;
 
-@green:         #008000;
-@light-green:   #DFF0D8;
-@spring-green:  #81DBB2;
-@blue:          #336699;
+@green:               #008000;
+@light-green:         #DFF0D8;
+@spring-green:        #81DBB2;
+@blue:                #336699;
 
 // Componentes
 // -------------------------
@@ -21,19 +21,19 @@
 
 // Imagens/fontes
 // -------------------------
-@images-path: "images";
-@image-logo:  "@{images-path}/logo.gif";
+@images-path:         "images";
+@image-logo:          "@{images-path}/logo.gif";
 
-@fonts-path:  "fonts";
+@fonts-path:          "fonts";
 
 // Body
 // -------------------------
-@body-color: #fff;
+@body-color:          #fff;
 
 // Links
 // -------------------------
-@link-color:        @blue;
-@link-color-hover:  darken(@blue, 10%);
+@link-color:          @blue;
+@link-color-hover:    darken(@blue, 10%);
 
 // Tamanhos Base
 // -------------------------
@@ -43,46 +43,47 @@
 
 // Tipografia
 // -------------------------
-@text-color:        #000;
-@base-font-size:    14px;
-@base-line-height:  20px;
+@text-color:          #000;
+@base-font-size:      14px;
+@base-line-height:    20px;
 
-@base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-@mono-font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+@base-font-family:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mono-font-family:    Monaco, Menlo, Consolas, "Courier New", monospace;
 
 // Forms
 // -------------------------
 
 // Inputs
-@input-height:        @base-font-size * 2;
-@input-background:    #f5f5f5;
-@input-border:        @gray-light;
-@input-text-color:    @gray;
-@input-border-radius: @border-radius-small;
-@input-focus-border:  @green;
+@input-height:                  @base-font-size * 2;
+@input-background:              #f5f5f5;
+@input-border:                  @gray-light;
+@input-text-color:              @gray;
+@input-border-radius:           @border-radius-small;
+@input-focus-border:            @green;
 
 // Inputs - hover
-@input-hover-background:  #f8f8f8;
-@input-hover-border:      darken(@input-border, 5%);
-@input-hover-text:        @gray-darker;
+@input-hover-background:        #f8f8f8;
+@input-hover-border:            darken(@input-border, 5%);
+@input-hover-text:              @gray-darker;
 
 // Inputs - disabled
-@input-disabled-background: #fff;
-@input-disabled-border:     @gray-light;
-@input-disabled-text:       @gray-light;
+@input-disabled-background:     #fff;
+@input-disabled-border:         @gray-light;
+@input-disabled-text:           @gray-light;
 
 // Input - status - success
 @input-success-color:           #51a351;
 @input-success-highlight-color: #62c462;
 
 // Input - status - error
-@input-error-color:           #bd362f;
-@input-error-highlight-color: #ee5f5b;
+@input-error-color:             #bd362f;
+@input-error-highlight-color:   #ee5f5b;
 
 // Tabelas
 // -------------------------
-@table-border-color:      #ccc;
-@table-stripe-color:      #f5f5f5;
+@table-bg:                      #fff;
+@table-border-color:            #ccc;
+@table-stripe-color:            #f5f5f5;
 
 // Paginação
 // -------------------------
@@ -94,25 +95,26 @@
 
 // Blocos
 // -------------------------
-@block-border-color:  #ccc;
-@block-title-text:    @gray-dark;
-@block-border-radius: @base-border-radius;
+@block-border-color:            #ccc;
+@block-title-text:              @gray-dark;
+@block-border-radius:           @base-border-radius;
 
 // Navbar
 // -------------------------
-@navbar-border-color: #ccc;
-@navbar-zindex:       1000;
-@navbar-height:       40px;
+@navbar-border-color:           #ccc;
+@navbar-zindex:                 1000;
+@navbar-height:                 40px;
 
 // Nav
 // -------------------------
-@nav-border-color:  darken(@gray-lighter, 5%);
+@nav-border-color:              darken(@gray-lighter, 5%);
 
 // Popover
 // -------------------------
-@popover-border:        darken(@component-bg, 15%);
-@popover-arrow-color:   lighten(@component-bg, 5%);
-@popover-arrow-size:    (@base-line-height / 2);
+@popover-border:                darken(@component-bg, 15%);
+@popover-arrow-color:           lighten(@component-bg, 5%);
+@popover-arrow-size:            (@base-line-height / 2);
+@popover-zindex:                1000;
 
 // Grid
 // -------------------------
@@ -137,32 +139,32 @@
 // -------------------------
 
 // Default
-@fluidGridColumnWidth:    percentage(@gridColumnWidth / @gridRowWidth);
-@fluidGridGutterWidth:    percentage(@gridGutterWidth / @gridRowWidth);
+@fluidGridColumnWidth:          percentage(@gridColumnWidth / @gridRowWidth);
+@fluidGridGutterWidth:          percentage(@gridGutterWidth / @gridRowWidth);
 
 // 1200px min
-@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200 / @gridRowWidth1200);
-@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200 / @gridRowWidth1200);
+@fluidGridColumnWidth1200:      percentage(@gridColumnWidth1200 / @gridRowWidth1200);
+@fluidGridGutterWidth1200:      percentage(@gridGutterWidth1200 / @gridRowWidth1200);
 
 // 768px-979px
-@fluidGridColumnWidth768:      percentage(@gridColumnWidth768 / @gridRowWidth768);
-@fluidGridGutterWidth768:      percentage(@gridGutterWidth768 / @gridRowWidth768);
+@fluidGridColumnWidth768:       percentage(@gridColumnWidth768 / @gridRowWidth768);
+@fluidGridGutterWidth768:       percentage(@gridGutterWidth768 / @gridRowWidth768);
 
 // jQuery UI
 // -------------------------
-@jq-text-color:       @gray-darker;
-@jq-hover-text-color: darken(@gray-darker, 3%);
+@jq-text-color:         @gray-darker;
+@jq-hover-text-color:   darken(@gray-darker, 3%);
 
-@jq-highlight-color:  @spring-green;
-@jq-highlight-border: #456B5A;
+@jq-highlight-color:    @spring-green;
+@jq-highlight-border:   #456B5A;
 
-@jq-border:          @gray-light;
-@jq-overlay:         fade(@gray-light, 40%);
+@jq-border:             @gray-light;
+@jq-overlay:            fade(@gray-light, 40%);
 
 // Paths de imagens do jQuery UI
-@jq-icons-highlight:  "@{images-path}/ui-icons_2e83ff_256x240.png";
-@jq-icons-active:     "@{images-path}/ui-icons_454545_256x240.png";
-@jq-icons-hover:      "@{images-path}/ui-icons_454545_256x240.png";
-@jq-icons-error:      "@{images-path}/ui-icons_cd0a0a_256x240.png";
-@jq-icons:            "@{images-path}/ui-icons_222222_256x240.png";
-@jq-icons2:           "@{images-path}/ui-icons_888888_256x240.png";
+@jq-icons-highlight:    "@{images-path}/ui-icons_2e83ff_256x240.png";
+@jq-icons-active:       "@{images-path}/ui-icons_454545_256x240.png";
+@jq-icons-hover:        "@{images-path}/ui-icons_454545_256x240.png";
+@jq-icons-error:        "@{images-path}/ui-icons_cd0a0a_256x240.png";
+@jq-icons:              "@{images-path}/ui-icons_222222_256x240.png";
+@jq-icons2:             "@{images-path}/ui-icons_888888_256x240.png";
