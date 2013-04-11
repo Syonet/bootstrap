@@ -142,7 +142,7 @@
 
 // Gradient
 #gradient {
-  .vertical(@startColor: #fff, @endColor: #eee) {
+  .vertical(@startColor: @component-bg-light, @endColor: @component-bg) {
     background-color: mix(@startColor, @endColor, 60%);
     background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+

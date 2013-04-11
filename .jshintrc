@@ -14,5 +14,5 @@
 	"browser":  true,
 	"jquery":   true,
 
-	"predef": [ "module", "test", "strictEqual", "ok" ]
+	"predef": [ "module", "test", "strictEqual", "ok", "start", "stop" ]
 }

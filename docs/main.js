@@ -12,7 +12,7 @@
 		main            = $("[role='main']");
 		mainPos         = main.offset().top;
 		sidebar         = $("#sidebar");
-		firstSection    = main.find("section:first");
+		firstSection    = main.find("article:first");
 
 		// Instancia os plugins jQuery UI
 		$("[data-widget]").each(function() {

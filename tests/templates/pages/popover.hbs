@@ -1,0 +1,13 @@
+<button id="button"></button>
+<div id="popover-content">Lorem ipsum</div>
+<div id="popover-title">Teste</div>
+
+<script>
+QUnit.done(function() {
+    $("#button, #popover-content, #popover-title").remove();
+});
+</script>
+<script src="../scripts/popover.js"></script>
+<script src="specs/popover/general.js"></script>
+<script src="specs/popover/options.js"></script>
+<script src="specs/popover/methods.js"></script>
