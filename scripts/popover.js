@@ -1,12 +1,16 @@
-(function( $ ) {
+(function( $, document ) {
 	"use strict";
 
 	$.widget( "ui.syoPopover", {
 		version: "@VERSION",
 		options: {
-			title: "",
-			content: "",
-			position: "top"
+			title:      "",
+			element:    null,
+			position:   "top",
+
+			// Opções de animação
+			show: null,
+			hide: null
 		},
 
 		classes: {
@@ -19,26 +23,40 @@
 			hidden:     "syo-hidden"
 		},
 
+		_isOpen: false,
+		parent: null,
+
 		_create: function() {
+			// Guarda posição atual pra quando chamar destroy restaurar
+			this.oldPosition = {
+				parent: this.element.parent(),
+				index:  this.element.parent().children().index( this.element )
+			};
+
 			this.refresh();
 			this._setupEvents();
+
+			// Seta novamente, pro caso do cara não ter passado a propriedade na inicialização
+			this._setOption( "element", this.options.element );
 		},
 
 		_setOption: function( key, value ) {
-			if ( key === "position" ) {
-				if ( [ "top", "right", "bottom", "left" ].indexOf( value ) === -1 ) {
-					value = "top";
+			if ( key === "element" ) {
+				// Se valor falso passado, utiliza o primeiro elemento do body.
+				value = value || document.body.children[ 0 ];
+
+				if ( value instanceof $ || value.nodeType || typeof value === "string" ) {
+					this.parent = $( value );
+					this._super( key, value );
+					this._position();
 				}
 
-				this._super( key, value );
-				this._position();
 				return;
 			}
 
-			if ( key === "content" ) {
-				value = value || "";
-				if ( value instanceof $ || value instanceof HTMLElement ) {
-					value = $( value ).eq( 0 ).removeClass( this.classes.hidden );
+			if ( key === "position" ) {
+				if ( [ "top", "right", "bottom", "left" ].indexOf( value ) === -1 ) {
+					value = "top";
 				}
 			}
 
@@ -47,17 +65,6 @@
 		},
 
 		_setupEvents: function() {
-			var widget = this;
-
-			// Abre/fecha no click do elemento
-			$( this.element ).on( "click." + this.widgetEventPrefix, function( e ) {
-				if ( widget.isOpen() ) {
-					widget.close( e );
-				} else {
-					widget.open( e );
-				}
-			});
-
 			// Fecha no click do closethick
 			$( this.popover ).on(
 				"click." + this.widgetEventPrefix,
@@ -84,8 +91,12 @@
 		},
 
 		_position: function() {
+			if ( !this._isOpen ) {
+				return;
+			}
+
 			var position = {},
-				myPos = this.element.offset(),
+				myPos = this.parent.offset(),
 				posClass = this.options.position;
 
 			switch ( this.options.position ) {
@@ -110,8 +121,8 @@
 					break;
 			}
 
-			position.of = this.element;
-			position.within = this.element;
+			position.of     = this.parent;
+			position.within = this.parent;
 
 			position = this.popover.position( position ).offset();
 
@@ -131,13 +142,14 @@
 		},
 
 		isOpen: function() {
-			return this.popover.is(":visible");
+			return this._isOpen;
 		},
 
 		open: function() {
-			this.popover.fadeIn( 300 );
+			this.popover.show( this.options.show );
 
 			// Reposiciona o popover com o elemento
+			this._isOpen = true;
 			this._position();
 		},
 
@@ -148,7 +160,8 @@
 				e.preventDefault();
 			}
 
-			this.popover.fadeOut( 300 );
+			this._isOpen = false;
+			this.popover.hide( this.options.hide );
 		},
 
 		refresh: function() {
@@ -156,7 +169,7 @@
 			if ( !this.popover ) {
 				this.popover = $( "<div />", {
 					class: this.classes.widget
-				}).insertAfter( this.element );
+				}).appendTo( document.body );
 
 				this.popover.append(
 					"<div class='" + this.classes.arrow + "'></div>" +
@@ -165,20 +178,20 @@
 						"<div class='" + this.classes.close + "'>" +
 							"<i class='icon-remove-sign'></i>" +
 						"</div>" +
-					"</div>" +
-					"<div class='" + this.classes.content + "'></div>"
+					"</div>"
 				);
+
+				// Seta o elemento em que foi chamado o plugin como conteudo do popover
+				this.popover.append( this.element.addClass( this.classes.content ) );
 			}
 
 			this.popover
 				// Seta o titulo no popover
 				.find( "." + this.classes.title )
-					.html( this._getTitle() ).end()
+					.html( this._getTitle() );
 
-				// Seta o conteúdo
-				.find( "." + this.classes.content )
-					.empty()
-					.append( this.options.content );
+			// Reposiciona o popover, se ele estiver aberto
+			this._position();
 		},
 
 		// Sobrescreve o método pai 'widget', do jQuery UI, e retorna o que interessa
@@ -187,8 +200,19 @@
 		},
 
 		_destroy: function() {
+			var oldPosition = this.oldPosition,
+				next = oldPosition.parent.children().eq( oldPosition.index );
+
+			// Não tenta colocar o popover próximo dele mesmo.
+			if ( next.length && next[ 0 ] !== this.element[ 0 ] ) {
+				this.element.insertBefore( next );
+			} else {
+				oldPosition.parent.append( this.element );
+			}
+
+			this.element.removeClass( this.classes.content );
 			this.popover.remove();
 		}
 	});
 
-})( jQuery );
+})( jQuery, document );

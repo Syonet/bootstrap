@@ -150,6 +150,7 @@
 	    </table>
     </article>
 
+    <!-- syoPopover -->
     <article id="popover">
         <div class="syo-header">
             <h2>syoPopover</h2>
@@ -159,25 +160,12 @@
 
         <div class="syo-docs-example">
             <div class="syo-docs-example-inner">
-                <button class="syo-button" type="button" data-widget="syoPopover"
-                        data-position="top" data-title="Titulo" data-content="Estou acima!">
-                    No topo
-                </button>
+                <div class="popover-component" data-widget="syoPopover" data-title="Título">Lorem ipsum dolor sit amet</div>
 
-	            <button class="syo-button" type="button" data-widget="syoPopover"
-	                    data-position="right" data-title="Titulo" data-content="Estou acima!">
-		            À direita
-	            </button>
-
-	            <button class="syo-button" type="button" data-widget="syoPopover"
-	                    data-position="bottom" data-title="Titulo" data-content="Estou embaixo!">
-		            Embaixo
-	            </button>
-
-	            <button class="syo-button" type="button" data-widget="syoPopover"
-	                    data-position="left" data-title="Titulo" data-content="Estou à esquerda!">
-		            À esquerda
-	            </button>
+                <button class="syo-button popover-trigger" data-position="top" type="button">No topo</button>
+	            <button class="syo-button popover-trigger" data-position="right" type="button">À direita</button>
+	            <button class="syo-button popover-trigger" data-position="bottom" type="button">Embaixo</button>
+	            <button class="syo-button popover-trigger" data-position="left" type="button">À esquerda</button>
             </div>
         </div>
 

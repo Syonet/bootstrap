@@ -78,7 +78,8 @@ module.exports = function( grunt ) {
 			tests: {
 				layout: "tests/templates/layout.hbs",
 				src: [
-					"tests/templates/pages/*.hbs"
+					"tests/templates/pages/*.hbs",
+					"tests/templates/index.hbs"
 				],
 				dest: "tests"
 			}
@@ -112,7 +113,7 @@ module.exports = function( grunt ) {
 			}
 		},
 		qunit: {
-			files: [ "tests/*.html" ]
+			files: [ "tests/index.html" ]
 		},
 		jshint: {
 			options: {

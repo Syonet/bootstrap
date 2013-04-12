@@ -3,11 +3,11 @@
 
 	module( "Geral", {
 		setup: function() {
-			this.button = $("#button").syoPopover();
-			this.popover = this.button.syoPopover("widget");
+			this.element = $("#popover").syoPopover();
+			this.popover = this.element.syoPopover("widget");
 		},
-		destroy: function() {
-			this.button.syoPopover("destroy");
+		teardown: function() {
+			this.element.syoPopover("destroy");
 		}
 	});
 

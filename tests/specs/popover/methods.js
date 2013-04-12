@@ -3,48 +3,30 @@
 
 	module( "Métodos", {
 		setup: function() {
-			this.button = $("#button").syoPopover();
-			this.popover = this.button.syoPopover("widget");
+			this.element = $("#popover").syoPopover();
+			this.popover = this.element.syoPopover("widget");
 		},
-		destroy: function() {
-			this.button.syoPopover("destroy");
+		teardown: function() {
+			this.element.syoPopover("destroy");
 		}
 	});
 
-	/**
-	 * 1. Porque nós não incluímos o CSS (onde está o display: none do popover), escondemos ele manualmente.
-	 */
-
 	test( "open", 1, function() {
-		var context = this;
-
-		this.popover.hide(); /* 1 */
-		this.button.syoPopover("open");
-
-		stop();
-		setTimeout(function() {
-			ok( context.button.syoPopover("isOpen"), "deve exibir o popover" );
-			start();
-		}, 300);
+		this.element.syoPopover("open");
+		ok( this.popover.is(":visible"), "deve exibir o popover" );
 	});
 
 	test( "close", 1, function() {
-		var context = this;
-		this.button.syoPopover("close");
+		this.element.syoPopover("close");
 
-		stop();
-		setTimeout(function() {
-			ok( !context.button.syoPopover("isOpen"), "deve fechar o popover" );
-			start();
-		}, 300);
+		ok( !this.popover.is(":visible"), "deve fechar o popover" );
 	});
 
 	test( "isOpen", 2, function() {
-		this.popover.hide();  /* 1 */
-		ok( !this.button.syoPopover("isOpen"), "deve retornar false quando o popover não está aberto" );
+		ok( !this.element.syoPopover("isOpen"), "deve retornar false quando o popover não está aberto" );
 
-		this.popover.show();
-		ok( this.button.syoPopover("isOpen"), "deve retornar true quando o popover está aberto" );
+		this.element.syoPopover("open");
+		ok( this.element.syoPopover("isOpen"), "deve retornar true quando o popover está aberto" );
 	});
 
 })( jQuery );
