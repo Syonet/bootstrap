@@ -97,6 +97,7 @@
 
 			var position = {},
 				myPos = this.parent.offset(),
+				posClassPrefix = this.classes.widget + "-",
 				posClass = this.options.position;
 
 			switch ( this.options.position ) {
@@ -121,8 +122,11 @@
 					break;
 			}
 
-			position.of     = this.parent;
-			position.within = this.parent;
+			position.of         = this.parent;
+			position.within     = this.parent;
+
+			// @FIXME collision = flip não funciona no Firefox Android :'(
+			position.collision  = "none";
 
 			position = this.popover.position( position ).offset();
 
@@ -133,12 +137,10 @@
 				posClass = position.left > myPos.left ? "right" : "left";
 			}
 
-			// Setando a classe desta forma "reseta" a propriedade,
-			// limpando a classe de posição anterior
-			this.popover.attr(
-				"class",
-				this.classes.widget + " " + this.classes.widget + "-" + posClass
-			);
+			// Removemos outras classes de posicionamento do popover e setamos uma nova
+			this.popover.removeClass(
+				posClassPrefix + [ "top", "right", "bottom", "left" ].join( " " + posClassPrefix )
+			).addClass( posClassPrefix + posClass );
 		},
 
 		isOpen: function() {

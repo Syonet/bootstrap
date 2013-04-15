@@ -142,4 +142,17 @@
   &, &:after {
     border-right-style: none;
   }
+  }
+
+// Popover + Nav
+// -------------
+.syo-popover-content.syo-nav.syo-nav-list {
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  .box-shadow(none);
+
+  > li:first-child > a {
+    .border-radius-top(0);
+  }
 }
