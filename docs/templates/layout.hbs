@@ -43,6 +43,26 @@
             </div>
         </div>
 
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <section class="span6 text-right">
+                        <a href="{{ pkg.homepage }}">
+                            <img src="docs/images/logo.png" alt="Logo {{ pkg.author.name }}" title="{{ pkg.author.name }}" />
+                        </a>
+                    </section>
+                    <section class="span6 text-left">
+                        <p>Criado por <strong>{{ pkg.author.name }}</strong></p>
+                        <ul class="inline">
+                            <li><a href="{{ pkg.homepage }}">Site</a></li>
+                            <li><a href="{{ pkg.github }}">GitHub</a></li>
+                            <li><a href="{{ pkg.homepage }}/blog">Blog</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </footer>
+
         <script src="external/modernizr.js" type="text/javascript"></script>
         <script src="docs/prettify/prettify.js" type="text/javascript"></script>
         <script src="external/jquery.js" type="text/javascript"></script>

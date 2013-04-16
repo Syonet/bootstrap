@@ -1,3 +1,4 @@
+/*jshint node:true, forin:false*/
 module.exports = function( grunt ) {
 	"use strict";
 	var banner = grunt.file.read("build/banner.txt"),
@@ -110,6 +111,7 @@ module.exports = function( grunt ) {
 		function compile( code ) {
 			var context = {};
 			context[ this.destBasename.replace( ".html", "" ) ] = "syo-active";
+			context.pkg = grunt.file.readJSON("package.json");
 
 			return layout.render( context, {
 				body: code

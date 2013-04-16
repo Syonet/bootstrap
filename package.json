@@ -8,6 +8,7 @@
     "email": "syonet@syonet.com"
   },
   "homepage": "http://www.syonet.com",
+  "github": "http://github.com/syonet",
   "projectUrl": "http://syonet.github.com/bootstrap/",
   "repository": {
     "type": "git",
