@@ -28,11 +28,6 @@
           background: @pagination-hover-background;
         }
 
-        &:active, &:focus {
-          // Mostra a borda com mais prioridade que os itens sem :focus/:active
-          z-index: @pagination-active-zindex - 1;
-        }
-
         &:focus {
           // Corrige o outline
           outline-offset: -2px;
@@ -49,9 +44,6 @@
 
       // Item ativo na paginação
       &.syo-active > a {
-        // Sempre mostrará todas as bordas
-        z-index: @pagination-active-zindex;
-
         color: darken(@pagination-disabled-text, 20%);
         background: @pagination-hover-background;
         .box-shadow(0 2px 4px fade(#000, 15%) inset);

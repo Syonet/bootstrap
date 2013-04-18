@@ -49,6 +49,13 @@
 			$(".dialog").dialog("open");
 		});
 
+		// Exemplos para o autocomplete
+		$(".input-autocomplete").autocomplete( "option", "source", [
+			"C", "C#", "C++", "COBOL",
+			"Java", "JavaScript", "Lua", "Perl",
+			"PHP", "Python", "Ruby"
+		]);
+
 		$(".pagination-component").syoPagination( "disable", 3 );
 
 		// Elementos que abrem o popover

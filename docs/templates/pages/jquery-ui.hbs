@@ -2,9 +2,11 @@
     <ul class="syo-nav syo-nav-list" id="sidebar">
         <li class="syo-nav-header"><i class="icon-flag"></i> jQuery UI</li>
         <li><a href="#accordion">Accordion</a></li>
+        <li><a href="#autocomplete">Autocomplete</a></li>
         <li><a href="#button">Button/Buttonset</a></li>
         <li><a href="#datepicker">Datepicker</a></li>
         <li><a href="#dialog">Dialog</a></li>
+        <li><a href="#menu">Menu</a></li>
         <li><a href="#progressbar">Progressbar</a></li>
         <li><a href="#slider">Slider</a></li>
         <li><a href="#spinner">Spinner</a></li>
@@ -33,6 +35,20 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate volutpat.
                     </div>
                 </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Autocomplete -->
+    <article id="autocomplete">
+        <div class="syo-header">
+            <h2>Autocomplete</h2>
+        </div>
+
+        <div class="syo-docs-example">
+	        <div class="syo-docs-example-inner">
+		        <p>Digite o nome de uma linguagem de programação:</p>
+                <input type="text" class="input-autocomplete" data-widget="autocomplete" />
             </div>
         </div>
     </article>
@@ -86,6 +102,31 @@
             <div class="syo-docs-example-inner">
                 <button class="open-dialog" data-widget="button">Abrir Dialog</button>
                 <div class="dialog" data-auto-open="false" data-widget="dialog" data-title="Lorem ipsum">Lorem ipsum dolor sit amet</div>
+            </div>
+        </div>
+    </article>
+
+    <article id="menu">
+        <div class="syo-header">
+            Menu
+        </div>
+
+        <div class="syo-docs-example">
+	        <div class="syo-docs-example-inner">
+                <ul data-widget="menu">
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li>
+                        <a href="#">Item 3</a>
+                        <ul>
+                            <li><a href="#">Item 3.1</a></li>
+                            <li><a href="#">Item 3.2</a></li>
+                            <li><a href="#">Item 3.3</a></li>
+                        </ul>
+                    </li>
+	                <li><a href="#">Item 4</a></li>
+	                <li><a href="#">Item 5</a></li>
+                </ul>
             </div>
         </div>
     </article>
