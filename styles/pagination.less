@@ -70,6 +70,7 @@
   }
 }
 
+// Paginação inline - evita que o componente ocupe a linha toda.
 .syo-pagination-inline {
   > ul {
     display: inline-block;
@@ -89,26 +90,16 @@
     vertical-align: middle;
 
     // Retira os paddings laterais
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
-    }
+    &:first-child { padding-left: 0; }
+    &:last-child  { padding-right: 0; }
 
     // Sobrepõe a paginação sobre as bordas da célula
     > ul {
       margin-top: -1px;
       margin-bottom: -1px;
 
-      &:first-child {
-        margin-left: -1px;
-      }
-
-      &:last-child {
-        margin-right: -1px;
-      }
+      &:first-child { margin-left: -1px; }
+      &:last-child  { margin-right: -1px; }
 
       li a {
         .border-radius(0);

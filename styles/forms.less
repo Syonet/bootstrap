@@ -62,8 +62,10 @@ textarea {
   }
 }
 
+// Reseta o height de select multiplo/textarea
+select[size],
+select[multiple],
 textarea {
-  // Reseta o height do textarea, afinal eles tem rows!
   height: auto;
 }
 
@@ -73,6 +75,7 @@ select {
   padding: ((@input-height - @base-line-height) / 2) 2px;
 
   option {
+    // Evita que fique o text-shadow ao botar o mouse sobre um item no select
     text-shadow: none;
   }
 }

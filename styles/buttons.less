@@ -1,3 +1,6 @@
+// Botões
+// -------------------------
+
 .syo-button {
   display: inline-block;
   padding: (((@input-height - @base-line-height) - 2px) / 2) 12px;
@@ -52,22 +55,20 @@ input.syo-button {
     .border-radius(0);
 
     + .syo-button {
+      // Evita borda dupla
       margin-left: -1px;
     }
 
+    // Aumentando o z-index faz com que a borda do item ativo/hover fique sobre a dos seus vizinhos
     &.syo-active,
     &:hover,
     &:focus {
       z-index: 1;
     }
 
-    &:first-child {
-      .border-radius-left(@base-border-radius);
-    }
-
-    &:last-child {
-      .border-radius-right(@base-border-radius);
-    }
+    // Corrige border-radius no primeiro e no último botões do buttonset
+    &:first-child { .border-radius-left(@base-border-radius); }
+    &:last-child  { .border-radius-right(@base-border-radius); }
   }
 }
 
@@ -94,6 +95,8 @@ input.syo-button {
   }
 }
 
+// Cor do texto do botão.
+// Padrão é branco pra todos os botões não-default
 .syo-button.syo-success,
 .syo-button.syo-error {
   color: #fff;

@@ -2,6 +2,7 @@
 // -------------------------
 
 .syo-block {
+  margin-bottom: @base-line-height; // Espaçamento vertical para não colar 2 blocks seguidos
   border: 1px solid @block-border-color;
   .border-radius(@block-border-radius);
 }
@@ -14,7 +15,7 @@
   cursor: default;
 
   .syo-block-title-toolbar {
-    margin-top: -@base-line-height / 2;
+    margin-top: -@base-line-height / 2; // Retira o padding-top do elemento pai
     padding: @base-line-height / 2;
 
     // Alinha a toolbar à esquerda
@@ -37,6 +38,7 @@
   padding: (@base-line-height / 2);
 }
 
+// Adiciona uma borda separadora entre conteúdo e título
 .syo-block-title + .syo-block-content,
 .syo-block-content + .syo-block-title {
   border-top: 1px solid @block-border-color;
