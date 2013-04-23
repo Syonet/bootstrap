@@ -5,6 +5,7 @@
   margin-bottom: @base-line-height; // Espaçamento vertical para não colar 2 blocks seguidos
   border: 1px solid @block-border-color;
   .border-radius(@block-border-radius);
+  .box-shadow(0 1px 4px fade(#000, 10%));
 }
 
 .syo-block-title {
@@ -13,32 +14,40 @@
   #gradient .vertical();
   text-shadow: 0 1px 0 #fff;
   cursor: default;
+}
 
-  .syo-block-title-toolbar {
-    margin-top: -@base-line-height / 2; // Retira o padding-top do elemento pai
-    padding: @base-line-height / 2;
+.syo-block-title-toolbar {
+  margin-top: -@base-line-height / 2; // Retira o padding-top do elemento pai
+  padding: @base-line-height / 2;
 
-    // Alinha a toolbar à esquerda
-    &.syo-pull-left  {
-      padding-left: 0;
-      margin-right: @base-line-height / 2;
-      border-right: 1px solid @block-border-color;
-    }
+  // Alinha a toolbar à esquerda
+  &.syo-pull-left  {
+    padding-left: 0;
+    margin-right: @base-line-height / 2;
+    border-right: 1px solid @block-border-color;
+  }
 
-    // Alinha a toolbar à direita
-    &.syo-pull-right {
-      padding-right: 0;
-      margin-left: @base-line-height / 2;
-      border-left: 1px solid @block-border-color;
-    }
+  // Alinha a toolbar à direita
+  &.syo-pull-right {
+    padding-right: 0;
+    margin-left: @base-line-height / 2;
+    border-left: 1px solid @block-border-color;
+  }
+
+  // Alinha o botão corretamente dentro da toolbar
+  > .syo-button {
+    margin-top: -4px;
+    margin-bottom: -4px;
   }
 }
 
 .syo-block-content {
+  margin: -1px 0 0;
   padding: (@base-line-height / 2);
 }
 
-// Adiciona uma borda separadora entre conteúdo e título
+// Adiciona uma borda separadora entre conteúdo + título ou conteúdo + conteúdo
+.syo-block-content + .syo-block-content,
 .syo-block-title + .syo-block-content,
 .syo-block-content + .syo-block-title {
   border-top: 1px solid @block-border-color;
