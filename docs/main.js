@@ -29,6 +29,7 @@
 	});
 
 	function sidebarScrolling() {
+		/*jshint validthis: true */
 		var top = $( this ).scrollTop();
 
 		if ( top > mainPos ) {

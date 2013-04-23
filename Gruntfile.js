@@ -14,8 +14,12 @@ module.exports = function( grunt ) {
 				tasks: [ "js" ]
 			},
 			jsTest: {
-				files: [ "tests/specs/**/*.js", "tests/templates/**/*.hbs" ],
+				files: [ "tests/specs/**/*.js", "tests/templates/unit/**/*.hbs" ],
 				tasks: [ "js-test" ]
+			},
+			cssTest: {
+				files: [ "tests/templates/visual/**/*.hbs" ],
+				tasks: [ "css-test" ]
 			},
 			docs: {
 				files: [ "docs/templates/**/*.hbs", "docs/main.less" ],
@@ -68,6 +72,7 @@ module.exports = function( grunt ) {
 			}
 		},
 		hogan: {
+			// Documentação
 			docs: {
 				layout: "docs/templates/layout.hbs",
 				src: [
@@ -75,13 +80,25 @@ module.exports = function( grunt ) {
 				],
 				dest: "."
 			},
-			tests: {
-				layout: "tests/templates/layout.hbs",
+
+			// Testes de unidade QUnit
+			unit: {
+				layout: "tests/templates/unit/layout.hbs",
 				src: [
-					"tests/templates/pages/*.hbs",
-					"tests/templates/index.hbs"
+					"tests/templates/unit/pages/*.hbs",
+					"tests/templates/unit/index.hbs"
 				],
-				dest: "tests"
+				dest: "tests/unit"
+			},
+
+			// Testes visuais
+			visual: {
+				layout: "tests/templates/visual/layout.hbs",
+				src: [
+					"tests/templates/visual/pages/*.hbs",
+					"tests/templates/visual/index.hbs"
+				],
+				dest: "tests/visual"
 			}
 		},
 		copy: {
@@ -104,7 +121,8 @@ module.exports = function( grunt ) {
 			}
 		},
 		linestrip: {
-			// Remove a linha com o background especificado no regex. Evita que cause erros 404, pois a imagem não existirá em nosso repo.
+			// Remove a linha com o background especificado no regex. Evita que cause erros 404,
+			// pois a imagem não existirá em nosso repo.
 			jqueryui: {
 				src: [ "dist/jquery.ui.css" ],
 				regex: [
@@ -113,7 +131,7 @@ module.exports = function( grunt ) {
 			}
 		},
 		qunit: {
-			files: [ "tests/index.html" ]
+			files: [ "tests/unit/index.html" ]
 		},
 		jshint: {
 			options: {
@@ -126,17 +144,10 @@ module.exports = function( grunt ) {
 					maxlen: 0
 				},
 				files: {
-					src: [ "tests/**/*.js" ]
+					src: [ "tests/specs/**/*.js" ]
 				}
 			},
-			docs: {
-				options: {
-					validthis: true
-				},
-				files: {
-					src: "docs/main.js"
-				}
-			}
+			docs: [ "docs/main.js" ]
 		}
 	});
 
@@ -152,8 +163,9 @@ module.exports = function( grunt ) {
 
 	// Registra as tasks alias
 
-	grunt.registerTask( "css",      [ "clean:css", "less:main", "copy:css", "linestrip" ] );
-	grunt.registerTask( "js-test",  [ "hogan:tests", "jshint:tests", "qunit" ] );
+	grunt.registerTask( "css-test", [ "hogan:visual" ] );
+	grunt.registerTask( "css",      [ "clean:css", "css-test", "less:main", "copy:css", "linestrip" ] );
+	grunt.registerTask( "js-test",  [ "hogan:unit", "jshint:tests", "qunit" ] );
 	grunt.registerTask( "js",       [ "clean:js", "jshint:js", "js-test", "copy:js" ] );
 	grunt.registerTask( "docs",     [ "clean:docs", "less:docs", "jshint:docs", "hogan:docs" ] );
 	grunt.registerTask( "default",  [ "clean:dist", "css", "js", "docs", "copy:dist" ] );
