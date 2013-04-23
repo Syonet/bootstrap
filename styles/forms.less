@@ -118,7 +118,9 @@ label {
   + textarea,
   > button,
   + button {
-    margin-left: 3px;
+    &:not(.input-block-level) {
+      margin-left: 3px;
+    }
   }
 
   // Alinha o checkbox/radio com a primeira linha de texto do label pai
