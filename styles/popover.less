@@ -63,8 +63,8 @@
 }
 
 // Alinha horizontalmente as setas top/bottom
-.syo-popover-top .syo-popover-arrow,
-.syo-popover-bottom .syo-popover-arrow {
+[class*="syo-popover-top"] .syo-popover-arrow,
+[class*="syo-popover-bottom"] .syo-popover-arrow {
   left: 50%;
   margin-left: -@popover-arrow-size;
 
@@ -73,9 +73,22 @@
   }
 }
 
+// Realinha horizontalmente se for top/bottom + start
+.syo-popover-top-start .syo-popover-arrow,
+.syo-popover-bottom-start .syo-popover-arrow {
+  left: @popover-arrow-size * 3;
+}
+
+// Realinha horizontalmente se for top/bottom + end
+.syo-popover-top-end .syo-popover-arrow,
+.syo-popover-bottom-end .syo-popover-arrow {
+  left: auto;
+  right: @popover-arrow-size * 3;
+}
+
 // Alinha verticalmente as setas left/right
-.syo-popover-left .syo-popover-arrow,
-.syo-popover-right .syo-popover-arrow {
+[class*="syo-popover-left"] .syo-popover-arrow,
+[class*="syo-popover-right"] .syo-popover-arrow {
   top: 50%;
   margin-top: -@popover-arrow-size;
 
@@ -84,8 +97,22 @@
   }
 }
 
+// Realinha verticalmente se for left/right + start
+.syo-popover-left-start .syo-popover-arrow,
+.syo-popover-right-start .syo-popover-arrow {
+  top: @popover-arrow-size;
+  margin-top: 0;
+}
+
+// Realinha verticalmente se for left/right + end
+.syo-popover-left-end .syo-popover-arrow,
+.syo-popover-right-end .syo-popover-arrow {
+  top: auto;
+  bottom: @popover-arrow-size;
+}
+
 // Seta embaixo
-.syo-popover-top .syo-popover-arrow {
+[class*="syo-popover-top"] .syo-popover-arrow {
   border-top-color: fade(#000, 30%);
   top: 100%;
 
@@ -100,7 +127,7 @@
 }
 
 // Seta à esquerda
-.syo-popover-right .syo-popover-arrow {
+[class*="syo-popover-right"] .syo-popover-arrow {
   border-right-color: fade(#000, 30%);
   right: 100%;
 
@@ -115,7 +142,7 @@
 }
 
 // Seta acima
-.syo-popover-bottom .syo-popover-arrow {
+[class*="syo-popover-bottom"] .syo-popover-arrow {
   border-bottom-color: fade(#000, 30%);
   bottom: 100%;
 
@@ -130,7 +157,7 @@
 }
 
 // Seta à direita
-.syo-popover-left .syo-popover-arrow {
+[class*="syo-popover-left"] .syo-popover-arrow {
   border-left-color: fade(@popover-border, 40%);
   left: 100%;
 
