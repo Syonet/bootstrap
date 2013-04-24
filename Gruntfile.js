@@ -14,12 +14,8 @@ module.exports = function( grunt ) {
 				tasks: [ "js" ]
 			},
 			jsTest: {
-				files: [ "tests/specs/**/*.js", "tests/templates/unit/**/*.hbs" ],
+				files: [ "tests/specs/**/*.js", "tests/templates/**/*.hbs" ],
 				tasks: [ "js-test" ]
-			},
-			cssTest: {
-				files: [ "tests/templates/visual/**/*.hbs" ],
-				tasks: [ "css-test" ]
 			},
 			docs: {
 				files: [ "docs/templates/**/*.hbs", "docs/main.less" ],
@@ -27,11 +23,14 @@ module.exports = function( grunt ) {
 			}
 		},
 		clean: {
-			// Limpa antes da execução - CSS
+			// Limpado antes da execução
 			css:    [ "dist/*.css", "dist/fonts/", "dist/images/" ],
 			js:     [ "dist/scripts/", "tests/*.html" ],
 			docs:   [ "*.html" ],
-			dist:   [ "dist/*.json" ]
+			dist:   [ "dist/*.json" ],
+
+			// Remove a fonte e configuração utilizada no IcoMoon
+			font:   [ "dist/fonts/*.json", "dist/fonts/*dev.svg" ]
 		},
 		less: {
 			main: {
@@ -79,25 +78,13 @@ module.exports = function( grunt ) {
 				],
 				dest: "."
 			},
-
-			// Testes de unidade QUnit
-			unit: {
-				layout: "tests/templates/unit/layout.hbs",
+			tests: {
+				layout: "tests/templates/layout.hbs",
 				src: [
-					"tests/templates/unit/pages/*.hbs",
-					"tests/templates/unit/index.hbs"
+					"tests/templates/pages/*.hbs",
+					"tests/templates/index.hbs"
 				],
-				dest: "tests/unit"
-			},
-
-			// Testes visuais
-			visual: {
-				layout: "tests/templates/visual/layout.hbs",
-				src: [
-					"tests/templates/visual/pages/*.hbs",
-					"tests/templates/visual/index.hbs"
-				],
-				dest: "tests/visual"
+				dest: "tests"
 			}
 		},
 		copy: {
@@ -120,8 +107,7 @@ module.exports = function( grunt ) {
 			}
 		},
 		linestrip: {
-			// Remove a linha com o background especificado no regex. Evita que cause erros 404,
-			// pois a imagem não existirá em nosso repo.
+			// Remove a linha com o background especificado no regex. Evita que cause erros 404, pois a imagem não existirá em nosso repo.
 			jqueryui: {
 				src: [ "dist/jquery.ui.css" ],
 				regex: [
@@ -130,7 +116,7 @@ module.exports = function( grunt ) {
 			}
 		},
 		qunit: {
-			files: [ "tests/unit/index.html" ]
+			files: [ "tests/index.html" ]
 		},
 		jshint: {
 			options: {
@@ -156,10 +142,8 @@ module.exports = function( grunt ) {
 	grunt.loadTasks("build");
 
 	// Registra as tasks alias
-
-	grunt.registerTask( "css-test", [ "hogan:visual" ] );
-	grunt.registerTask( "css",      [ "clean:css", "css-test", "less:main", "copy:css", "linestrip" ] );
-	grunt.registerTask( "js-test",  [ "hogan:unit", "jshint:js", "qunit" ] );
+	grunt.registerTask( "css",      [ "clean:css", "less:main", "copy:css", "clean:font", "linestrip" ] );
+	grunt.registerTask( "js-test",  [ "hogan:tests", "jshint:js", "qunit" ] );
 	grunt.registerTask( "js",       [ "clean:js", "jshint:js", "js-test", "copy:js" ] );
 	grunt.registerTask( "docs",     [ "clean:docs", "less:docs", "jshint:docs", "hogan:docs" ] );
 	grunt.registerTask( "default",  [ "clean:dist", "css", "js", "docs", "copy:dist" ] );
