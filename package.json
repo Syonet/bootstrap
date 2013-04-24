@@ -15,12 +15,12 @@
     "url": "git://github.com/syonet/bootstrap"
   },
   "devDependencies": {
-    "grunt": ">0.4.x",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-qunit": "*",
-    "grunt-contrib-jshint": "*",
-    "hogan.js": "*"
+    "grunt": "0.4.x",
+    "grunt-contrib-less": "0.5.x",
+    "grunt-contrib-clean": "0.4.x",
+    "grunt-contrib-watch": "0.3.x",
+    "grunt-contrib-qunit": "0.2.x",
+    "grunt-contrib-jshint": "0.4.x",
+    "hogan.js": "2.0.x"
   }
 }
