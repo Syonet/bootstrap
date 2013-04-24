@@ -23,11 +23,14 @@ module.exports = function( grunt ) {
 			}
 		},
 		clean: {
-			// Limpa antes da execução - CSS
+			// Limpado antes da execução
 			css:    [ "dist/*.css", "dist/fonts/", "dist/images/" ],
 			js:     [ "dist/scripts/", "tests/*.html" ],
 			docs:   [ "*.html" ],
-			dist:   [ "dist/*.json" ]
+			dist:   [ "dist/*.json" ],
+
+			// Remove a fonte e configuração utilizada no IcoMoon
+			font:   [ "dist/fonts/*.json", "dist/fonts/*dev.svg" ]
 		},
 		less: {
 			main: {
@@ -151,8 +154,7 @@ module.exports = function( grunt ) {
 	grunt.loadTasks("build");
 
 	// Registra as tasks alias
-
-	grunt.registerTask( "css",      [ "clean:css", "less:main", "copy:css", "linestrip" ] );
+	grunt.registerTask( "css",      [ "clean:css", "less:main", "copy:css", "clean:font", "linestrip" ] );
 	grunt.registerTask( "js-test",  [ "hogan:tests", "jshint:tests", "qunit" ] );
 	grunt.registerTask( "js",       [ "clean:js", "jshint:js", "js-test", "copy:js" ] );
 	grunt.registerTask( "docs",     [ "clean:docs", "less:docs", "jshint:docs", "hogan:docs" ] );
