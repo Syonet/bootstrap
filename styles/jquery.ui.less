@@ -405,15 +405,18 @@
   .box-sizing(border-box);
   .transition(background .15s linear);
 
-  a&:hover,
-  a&:active {
-    // Sobrescreve a cor do link do scaffolding quando for a.ui-button
-    color: @jq-hover-text-color;
-  }
-
   &.ui-state-active,
   &.ui-state-hover {
     background: #eee;
+  }
+}
+
+// https://github.com/vtst/ow/issues/138
+a.ui-button, a.ui-dialog .ui-dialog-titlebar-close {
+  &:hover,
+  &:active {
+    // Sobrescreve a cor do link do scaffolding quando for a.ui-button
+    color: @jq-hover-text-color;
   }
 }
 
