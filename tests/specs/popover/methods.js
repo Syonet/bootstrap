@@ -23,10 +23,12 @@
 	});
 
 	test( "isOpen", 2, function() {
-		ok( !this.element.syoPopover("isOpen"), "deve retornar false quando o popover não está aberto" );
+		ok( !this.element.syoPopover("isOpen"),
+			"deve retornar false quando o popover não está aberto" );
 
 		this.element.syoPopover("open");
-		ok( this.element.syoPopover("isOpen"), "deve retornar true quando o popover está aberto" );
+		ok( this.element.syoPopover("isOpen"),
+			"deve retornar true quando o popover está aberto" );
 	});
 
 })( jQuery );

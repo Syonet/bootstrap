@@ -55,7 +55,9 @@
 			}
 
 			if ( key === "position" ) {
-				if ( [ "top", "right", "bottom", "left" ].indexOf( value ) === -1 ) {
+				value = value.toLowerCase();
+
+				if ( !/(top|right|bottom|left)(-(start|end))?/.test( value ) ) {
 					value = "top";
 				}
 			}
@@ -96,11 +98,12 @@
 			}
 
 			var position = {},
+				positionValue = this.options.position.split("-"),
 				myPos = this.parent.offset(),
 				posClassPrefix = this.classes.widget + "-",
 				posClass = this.options.position;
 
-			switch ( this.options.position ) {
+			switch ( positionValue[ 0 ] ) {
 				case "top":
 					position.at = "center top-20";
 					position.my = "center bottom";
@@ -122,6 +125,21 @@
 					break;
 			}
 
+			if ( positionValue[ 1 ] ) {
+				var atStart = positionValue[ 1 ] === "start";
+
+				if ( positionValue[ 0 ] === "top" || positionValue[ 0 ] === "bottom" ) {
+					position.at = position.at.replace( "center", atStart ? "left" : "right" );
+				} else {
+					position.at = position.at.replace( "center", atStart ? "top" : "bottom" );
+				}
+
+				position.my = position.my.replace(
+					"center",
+					atStart ? "center+40%" : "center-40%"
+				);
+			}
+
 			position.of         = this.parent;
 			position.within     = this.parent;
 
@@ -131,16 +149,18 @@
 			position = this.popover.position( position ).offset();
 
 			// Adiciona a classe certa, de acordo com a posição do popover em relação ao botão
-			if ( this.options.position === "top" || this.options.position === "bottom" ) {
+			if ( positionValue[ 0 ] === "top" || positionValue[ 0 ] === "bottom" ) {
 				posClass = position.top > myPos.top ? "bottom" : "top";
 			} else {
 				posClass = position.left > myPos.left ? "right" : "left";
 			}
 
+			posClass += positionValue[ 1 ] ? "-" + positionValue[ 1 ] : "";
+
 			// Removemos outras classes de posicionamento do popover e setamos uma nova
-			this.popover.removeClass(
-				posClassPrefix + [ "top", "right", "bottom", "left" ].join( " " + posClassPrefix )
-			).addClass( posClassPrefix + posClass );
+			this.popover
+				.attr( "class", this.classes.widget )
+				.addClass( posClassPrefix + posClass );
 		},
 
 		isOpen: function() {

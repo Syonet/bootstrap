@@ -523,3 +523,37 @@ input.ui-button {
 .ui-progressbar .ui-progressbar-value {
   .progressbar();
 }
+
+// Menu
+.ui-menu .ui-menu-item {
+  a {
+    padding: 5px 0.4em;
+    border: none;
+    border-bottom: 1px solid darken(@component-bg, 5%);
+    line-height: inherit;
+    cursor: pointer;
+    .transition(background 0.15s linear);
+    .border-radius(0);
+
+    &.ui-state-focus {
+      border: none;
+      border-bottom: 1px solid darken(@component-bg, 5%);
+      background: darken(@component-bg-light, 3%);
+    }
+
+    &.ui-state-focus,
+    &.ui-state-active {
+      margin: 0;
+    }
+
+    // Os icones ficavam desalinhados com o texto
+    [class^="icon-"]:before,
+    [class*=" icon-"]:before {
+      vertical-align: baseline;
+    }
+  }
+
+  &:last-child a {
+    border-bottom: 0;
+  }
+}

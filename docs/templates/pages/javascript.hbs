@@ -1,6 +1,6 @@
 <aside class="span2" id="sidebar-wrapper">
 	<ul class="syo-nav syo-nav-list" id="sidebar">
-		<li class="syo-nav-header"><i class="icon-tasks"></i> JavaScript</li>
+		<li class="syo-nav-header"><i class="icon-code"></i> JavaScript</li>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#button">syoButton</a></li>
         <li><a href="#pagination">syoPagination</a></li>
@@ -165,10 +165,18 @@
             <div class="syo-docs-example-inner">
                 <div class="popover-component" data-widget="syoPopover" data-title="Título">Lorem ipsum dolor sit amet</div>
 
-                <button class="syo-button popover-trigger" data-position="top" type="button">No topo</button>
-	            <button class="syo-button popover-trigger" data-position="right" type="button">À direita</button>
-	            <button class="syo-button popover-trigger" data-position="bottom" type="button">Embaixo</button>
-	            <button class="syo-button popover-trigger" data-position="left" type="button">À esquerda</button>
+                <div class="container-vertical">
+                    <button class="syo-button popover-trigger" data-position="top" type="button">Em cima</button>
+                    <button class="syo-button popover-trigger" data-position="right" type="button">À direita</button>
+                    <button class="syo-button popover-trigger" data-position="bottom" type="button">Embaixo</button>
+                    <button class="syo-button popover-trigger" data-position="left" type="button">À esquerda</button>
+                </div>
+	            <div class="container-vertical">
+		            <button class="syo-button popover-trigger" data-position="top-start" type="button">Em cima, à esquerda</button>
+		            <button class="syo-button popover-trigger" data-position="right-start" type="button">À direita, no topo</button>
+		            <button class="syo-button popover-trigger" data-position="bottom-end" type="button">Embaixo, à direita</button>
+		            <button class="syo-button popover-trigger" data-position="left-end" type="button">À esquerda, embaixo</button>
+	            </div>
             </div>
         </div>
 

@@ -72,7 +72,6 @@ module.exports = function( grunt ) {
 			}
 		},
 		hogan: {
-			// Documentação
 			docs: {
 				layout: "docs/templates/layout.hbs",
 				src: [
@@ -137,17 +136,12 @@ module.exports = function( grunt ) {
 			options: {
 				jshintrc: ".jshintrc"
 			},
-			js: [ "scripts/*.js" ],
-			tests: {
-				options: {
-					// Nos testes, libera a opção maxlen, pois a descrição das asserções fica inline.
-					maxlen: 0
-				},
+			js: [ "scripts/*.js", "tests/**/*.js" ],
+			docs: {
 				files: {
-					src: [ "tests/specs/**/*.js" ]
+					src: "docs/main.js"
 				}
-			},
-			docs: [ "docs/main.js" ]
+			}
 		}
 	});
 
@@ -165,7 +159,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( "css-test", [ "hogan:visual" ] );
 	grunt.registerTask( "css",      [ "clean:css", "css-test", "less:main", "copy:css", "linestrip" ] );
-	grunt.registerTask( "js-test",  [ "hogan:unit", "jshint:tests", "qunit" ] );
+	grunt.registerTask( "js-test",  [ "hogan:unit", "jshint:js", "qunit" ] );
 	grunt.registerTask( "js",       [ "clean:js", "jshint:js", "js-test", "copy:js" ] );
 	grunt.registerTask( "docs",     [ "clean:docs", "less:docs", "jshint:docs", "hogan:docs" ] );
 	grunt.registerTask( "default",  [ "clean:dist", "css", "js", "docs", "copy:dist" ] );

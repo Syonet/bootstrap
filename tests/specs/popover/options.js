@@ -13,18 +13,22 @@
 	});
 
 	/**
-	 * 1. Porque nós não incluímos o CSS, onde define que o popover virá com display: none, temos que ocultar manualmente aqui.
+	 * 1. Porque nós não incluímos o CSS, onde define que o popover virá com display: none, temos
+	 * que ocultar manualmente aqui.
 	 */
 
 	test( "title", function() {
 		this.element.syoPopover( "option", "title", "Teste" );
-		strictEqual( this.popover.find(".syo-popover-title").text(), "Teste", "deve setar o título no popover" );
+		strictEqual( this.popover.find(".syo-popover-title").text(), "Teste",
+			"deve setar o título no popover" );
 
 		this.element.syoPopover( "option", "title", this.title );
-		strictEqual( this.popover.find(".syo-popover-title").text(), "Teste", "seta o título a partir do HTML de um objeto jQuery" );
+		strictEqual( this.popover.find(".syo-popover-title").text(), "Teste",
+			"seta o título a partir do HTML de um objeto jQuery" );
 
 		this.element.syoPopover( "option", "title", this.title.get( 0 ) );
-		strictEqual( this.popover.find(".syo-popover-title").text(), "Teste", "seta o título a partir do HTML de um elemento DOM" );
+		strictEqual( this.popover.find(".syo-popover-title").text(), "Teste",
+			"seta o título a partir do HTML de um elemento DOM" );
 	});
 
 	test( "show", function() {

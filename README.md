@@ -17,4 +17,4 @@ __Dica:__ Para não ter que rodar com frequência o comando `grunt`, rode apenas
 Para ler a documentação (e também testar o framework), após fazer o build, acesse o arquivo `index.html` em seu browser favorito.
 
 Opcionalmente, você pode acessar a documentação online:
-http://syonet.github.com/bootstrap
+http://syonet.github.io/bootstrap/

@@ -12,7 +12,8 @@
 		var buttonset = $("#buttonset").syoButton();
 
 		ok( buttonset.is(".syo-buttonset"), "elemento é .syo-buttonset" );
-		strictEqual( buttonset.find(".syo-button").length, 3, "todos botões filhos são .syo-button" );
+		strictEqual( buttonset.find(".syo-button").length, 3,
+			"todos botões filhos são .syo-button" );
 	});
 
 })( jQuery );

@@ -1,4 +1,6 @@
 .idea
+bootstrap.iml
 node_modules
 dist
 *.html
+/docs/main.css
