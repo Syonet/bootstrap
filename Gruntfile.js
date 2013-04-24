@@ -122,20 +122,8 @@ module.exports = function( grunt ) {
 			options: {
 				jshintrc: ".jshintrc"
 			},
-			js: [ "scripts/*.js" ],
-			tests: {
-				options: {
-					// Nos testes, libera a opção maxlen, pois a descrição das asserções fica inline.
-					maxlen: 0
-				},
-				files: {
-					src: [ "tests/**/*.js" ]
-				}
-			},
+			js: [ "scripts/*.js", "tests/**/*.js" ],
 			docs: {
-				options: {
-					validthis: true
-				},
 				files: {
 					src: "docs/main.js"
 				}
@@ -155,7 +143,7 @@ module.exports = function( grunt ) {
 
 	// Registra as tasks alias
 	grunt.registerTask( "css",      [ "clean:css", "less:main", "copy:css", "clean:font", "linestrip" ] );
-	grunt.registerTask( "js-test",  [ "hogan:tests", "jshint:tests", "qunit" ] );
+	grunt.registerTask( "js-test",  [ "hogan:tests", "jshint:js", "qunit" ] );
 	grunt.registerTask( "js",       [ "clean:js", "jshint:js", "js-test", "copy:js" ] );
 	grunt.registerTask( "docs",     [ "clean:docs", "less:docs", "jshint:docs", "hogan:docs" ] );
 	grunt.registerTask( "default",  [ "clean:dist", "css", "js", "docs", "copy:dist" ] );

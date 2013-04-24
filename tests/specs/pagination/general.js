@@ -15,7 +15,8 @@
 		strictEqual( this.pagination.has("> ul").length, 1, "elemento tem um <ul> filho" );
 
 		this.pagination.syoPagination( "option", "inline", true );
-		ok( this.pagination.is(".syo-pagination-inline"), "tem classe específica quando opção inline = true" );
+		ok( this.pagination.is(".syo-pagination-inline"),
+			"tem classe específica quando opção inline = true" );
 	});
 
 })( jQuery );
