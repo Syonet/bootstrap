@@ -128,6 +128,14 @@ module.exports = function( grunt ) {
 					src: "docs/main.js"
 				}
 			}
+		},
+		connect: {
+			visual: {
+				options: {
+					keepalive: true,
+					port: 8001
+				}
+			}
 		}
 	});
 
@@ -137,6 +145,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-contrib-qunit");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-connect");
 
 	// ...inclusive as criadas por nós!
 	grunt.loadTasks("build");
