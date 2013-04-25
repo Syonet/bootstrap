@@ -11,8 +11,6 @@ Para fazer build do código do Syonet Bootstrap, é necessário que você siga a
  * `grunt`
 1. Para confirmar que tudo deu certo, confira se foi criado um diretório `dist` na raíz do repositório e se o output do último comando retornou `Done, without errors.`.
 
-__Dica:__ Para não ter que rodar com frequência o comando `grunt`, rode apenas o comando `grunt watch`. Ele irá observar por modificações nos arquivos `LESS` e irá compilar automaticamente.
-
 ##Utilidades
 Existem alguns processos no build que podem ser rodados para facilitar o desenvolvimento.
 

@@ -132,6 +132,7 @@ module.exports = function( grunt ) {
 		connect: {
 			visual: {
 				options: {
+					hostname: "*",
 					keepalive: true,
 					port: 8001
 				}
