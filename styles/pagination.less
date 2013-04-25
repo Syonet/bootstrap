@@ -2,26 +2,21 @@
 // -------------------------
 
 .syo-pagination {
+
   > ul {
-    display: inline-block;
     list-style: none;
     .clearfix();
     .box-shadow(0 1px 2px fade(@gray-light, 30%));
-    .border-radius(@base-border-radius);
 
     li {
       display: inline;
 
       a {
-        position: relative;
         float: left;
-        height: @base-line-height;
         margin-right: -1px;
         padding: 4px 12px;
         border: 1px solid @pagination-border;
-        line-height: @base-line-height;
         background-color: @pagination-item-background;
-        .transition(background .15s linear);
 
         &:hover, &:active, &:focus {
           text-decoration: none;
