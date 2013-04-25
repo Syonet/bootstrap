@@ -6,33 +6,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="../../dist/bootstrap.css">
-		<style>
-			.test-container {
-				max-width: 1000px;
-				margin: auto;
-			}
-			.test {
-				margin: 5px;
-				padding: 5px;
-				border: 1px dashed;
-			}
-			.test .title {
-				border-bottom: thin silver solid;
-			}
-			
-			/* Destaque do background para inspeção visual */
-			.test-bg-highlight1 {
-				background-color: rgba( 255, 0, 0, .2 );
-			}
-			.test-bg-highlight2 {
-				background-color: rgba( 255, 0, 0, .4 );
-			}
-			
-			/* Remove as margens do elemento para melhor inspeção de outros estilos */
-			.test-trimmed {
-				margin: 0;
-			}
-		</style>
+		<link rel="stylesheet" href="tests.css">
 	</head>
 	<body>
 		<div class="container">
@@ -82,7 +56,7 @@
 			<div class="row">
 				<div class="span6">
 					<div class="test" title="Todos os controles de formulário devem estar alinhados horizontalmente (pixel perfect)">
-						<div class="test-bg-highlight1">
+						<div class="test-bg-highlight1" style="min-width: 600px;">
 							<div class="syo-field syo-field-inline test-trimmed">
 								<button class="syo-button">Button tag</button>
 							</div>
@@ -114,13 +88,9 @@
 		<script src="../../external/jquery.js"></script>
 		<script src="../../external/jquery.ui.js"></script>
 		<script src="../../scripts/pagination.js"></script>
+		<script src="tests.js"></script>
 		<script>
 			(function() {
-				$( ".test" ).prepend(function() {
-					var title = this.title;
-					this.title = "";
-					return "<div class='title'>" + title + "</div>";
-				});
 				$( ".pagination" ).syoPagination({
 					size: 13
 				});
