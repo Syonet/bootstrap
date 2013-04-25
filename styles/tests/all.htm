@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../../dist/bootstrap.css">
+		<style>
+			.test-container {
+				max-width: 1000px;
+				margin: auto;
+			}
+			.test {
+				margin: 5px;
+				padding: 5px;
+				border: 1px dashed;
+			}
+			.test .title {
+				border-bottom: thin silver solid;
+			}
+			
+			/* Destaque do background para inspeção visual */
+			.test-bg-highlight1 {
+				background-color: rgba( 255, 0, 0, .2 );
+			}
+			.test-bg-highlight2 {
+				background-color: rgba( 255, 0, 0, .4 );
+			}
+			
+			/* Remove as margens do elemento para melhor inspeção de outros estilos */
+			.test-trimmed {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h1> Visual <small> Estilos genéricos </small> </h1>
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test" title="Deve garantir uma margem aceitável entre os headers">
+						<div class="test-bg-highlight1">
+							<div class="test-bg-highlight2">
+								<h1>Heading</h1>
+							</div>
+							<div class="test-bg-highlight2">
+								<h2>Heading</h2>
+							</div>
+							<div class="test-bg-highlight2">
+								<h3>Heading</h3>
+							</div>
+							<div class="test-bg-highlight2">
+								<h4>Heading</h4>
+							</div>
+							<div class="test-bg-highlight2">
+								<h5>Heading</h5>
+							</div>
+							<div class="test-bg-highlight2">
+								<h6>Heading</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test" title="Todos os controles de formulário devem estar alinhados horizontalmente (pixel perfect)">
+						<div class="test-bg-highlight1">
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button">Button tag</button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="button" value="Input button" class="syo-button">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="text" placeholder="Text">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<select><option>Select<option></select>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<textarea>Textarea</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../../external/jquery.js"></script>
+		<script>
+			(function() {
+				$( ".test" ).prepend(function() {
+					return "<div class='title'>" + this.title + "</div>";
+				});
+			}());
+		</script>
+	</body>
+</html>

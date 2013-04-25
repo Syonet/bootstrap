@@ -64,10 +64,14 @@ textarea {
   }
 }
 
+textarea {
+  // Sem animação no drag do textarea
+  .transition( none );
+}
+
 // Reseta o height de select multiplo/textarea
 select[size],
-select[multiple],
-textarea {
+select[multiple] {
   height: auto;
 }
 
