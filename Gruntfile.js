@@ -123,11 +123,7 @@ module.exports = function( grunt ) {
 				jshintrc: ".jshintrc"
 			},
 			js: [ "scripts/*.js", "tests/**/*.js" ],
-			docs: {
-				files: {
-					src: "docs/main.js"
-				}
-			}
+			docs: [ "docs/main.js" ]
 		},
 		connect: {
 			visual: {
