@@ -1,0 +1,34 @@
+.test-container {
+  max-width: 1000px;
+  margin: auto;
+}
+.test {
+  margin: 5px;
+  padding: 5px;
+  border: 1px dashed;
+  overflow: auto;
+}
+/* 
+ * 1. Os elementos filho do .test possuem um width
+ * para não serem contraídos em resoluções menores
+ * (inclui o título do bloco)
+ */
+.test > * {
+  min-width: 700px; /* 1 */
+}
+.test .title {
+  border-bottom: thin silver solid;
+}
+
+/* Destaque do background para inspeção visual */
+.test-bg-highlight1 {
+  background-color: rgba( 255, 0, 0, .2 );
+}
+.test-bg-highlight2 {
+  background-color: rgba( 255, 0, 0, .4 );
+}
+
+/* Remove as margens do elemento para melhor inspeção de outros estilos */
+.test-trimmed {
+  margin: 0;
+}

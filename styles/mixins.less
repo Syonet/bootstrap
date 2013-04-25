@@ -32,7 +32,7 @@
 
   .shorthand (@color: @text-color, @lineHeight: @base-line-height, @size: @base-font-size, @family: @base-font-family, @weight: normal, @style: normal) {
     line-height:	@lineHeight;
-    color:				@color;
+    color:			@color;
     font-size:		@size;
     font-family:	@family;
     font-style:		@style;
@@ -172,7 +172,6 @@
 
   .span (@columns) {
     width: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1));
-    .box-sizing(border-box);
   }
 
   // Offset
