@@ -5,7 +5,7 @@
 		version: "@VERSION",
 		options: {
 			active: 0,
-			size: 1,
+			items: 1,
 			inline: false,
 
 			// Callbacks
@@ -54,7 +54,7 @@
 				return;
 			}
 
-			if ( key === "size" ) {
+			if ( key === "items" ) {
 				// Faz o cast correto para number
 				value = +value;
 
@@ -127,7 +127,7 @@
 			this.list.empty();
 			this.items = $();
 
-			for ( ; i < this.options.size; i++ ) {
+			for ( ; i < this.options.items; i++ ) {
 				li = $( "<li />", {
 					"aria-selected": "false",
 					"aria-hidden": "false"

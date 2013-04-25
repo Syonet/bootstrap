@@ -4,7 +4,7 @@
 	module( "Eventos", {
 		setup: function() {
 			this.pagination = $("#pagination").syoPagination({
-				size: 3
+				items: 3
 			});
 		},
 		teardown: function() {
