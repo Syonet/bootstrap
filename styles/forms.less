@@ -38,6 +38,8 @@ textarea {
   }
 
   &:focus {
+    // Remove o outline azul do safaris
+    outline: none;
     border-color: @input-focus-border;
     background-color: @input-background;
     .box-shadow(none);
@@ -70,7 +72,9 @@ textarea {
 }
 
 select {
-  line-height: @input-height;
+  // Safari controla o height baseado no line-height
+  // TODO: Descobrir pq para o safari precisamos reduzir 6px do line-height
+  line-height: @input-height - 6px;
   // Padding necessário para alinhar verticalmente o texto do option selecionado.
   padding: ((@input-height - @base-line-height) / 2) 2px;
 
