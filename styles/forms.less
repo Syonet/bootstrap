@@ -26,7 +26,6 @@ textarea {
   // Tem que usar line-height: normal por causa de um bug do Firefox.
   #font .shorthand(@input-text-color, normal);
   .border-radius(@input-border-radius);
-  .box-sizing(border-box);
   .transition(all .15s linear);
   text-shadow: 0 1px 0 #fff;
 
@@ -38,6 +37,8 @@ textarea {
   }
 
   &:focus {
+    // Remove o outline azul do safaris
+    outline: none;
     border-color: @input-focus-border;
     background-color: @input-background;
     .box-shadow(none);
@@ -62,15 +63,21 @@ textarea {
   }
 }
 
+textarea {
+  // Sem animação no drag do textarea
+  .transition( none );
+}
+
 // Reseta o height de select multiplo/textarea
 select[size],
-select[multiple],
-textarea {
+select[multiple] {
   height: auto;
 }
 
 select {
-  line-height: @input-height;
+  // Safari controla o height baseado no line-height
+  // TODO: Descobrir pq para o safari precisamos reduzir 6px do line-height
+  line-height: @input-height - 6px;
   // Padding necessário para alinhar verticalmente o texto do option selecionado.
   padding: ((@input-height - @base-line-height) / 2) 2px;
 
@@ -93,7 +100,6 @@ fieldset {
   padding: .5em;
   border: 1px solid @gray-light;
   .border-radius(@border-radius-large);
-  .box-sizing(border-box);
 }
 
 legend {
