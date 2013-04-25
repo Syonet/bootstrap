@@ -8,16 +8,16 @@
   border: 1px dashed;
   overflow: auto;
 }
-.test .title {
-  min-width: 700px;
-  border-bottom: thin silver solid;
-}
 /* 
- * Os elementos filho do .test possuem um width
+ * 1. Os elementos filho do .test possuem um width
  * para não serem contraídos em resoluções menores
+ * (inclui o título do bloco)
  */
 .test > * {
-  min-width: 700px;
+  min-width: 700px; /* 1 */
+}
+.test .title {
+  border-bottom: thin silver solid;
 }
 
 /* Destaque do background para inspeção visual */
