@@ -1,5 +1,9 @@
-$( ".test" ).prepend(function() {
-	var title = this.title;
-	this.title = "";
-	return "<div class='title'>" + title + "</div>";
-});
+(function() {
+	$(function() {
+		$( ".test" ).prepend(function() {
+			var title = this.title;
+			this.title = "";
+			return "<div class='title'>" + title + "</div>";
+		});
+	});
+}());

@@ -523,6 +523,10 @@ input.ui-button {
 // Progressbar
 .ui-progressbar .ui-progressbar-value {
   .progressbar();
+  
+  // Reseta os estilos do jquery UI porque usamos "box-sizing: border-box" agora.
+  margin: 0;
+  border-width: 0 1px 0 0;
 }
 
 // Menu

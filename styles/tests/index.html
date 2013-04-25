@@ -6,6 +6,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="../../dist/bootstrap.css">
+		<link rel="stylesheet" href="../../dist/jquery.ui.css">
 		<link rel="stylesheet" href="tests.css">
 	</head>
 	<body>
@@ -41,11 +42,20 @@
 			</div>
 			<div class="row">
 				<div class="span12">
-					<div class="test" title="O conteúdo deve preencher todo o container da progressbar">
+					<div class="test" title="syo-progressbar, o conteúdo deve preencher todo o container da progressbar">
 						<div class="test-bg-highlight1">
 							<div class="syo-progressbar">
 								<div class="syo-progressbar-value" style="width:60%"></div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test" title="ui-progressbar, o conteúdo deve preencher todo o container da progressbar">
+						<div class="test-bg-highlight1">
+							<div data-value="60" class="progressbar"></div>
 						</div>
 					</div>
 				</div>
@@ -90,6 +100,9 @@
 			(function() {
 				$( ".pagination" ).syoPagination({
 					items: 13
+				});
+				$( ".progressbar" ).progressbar({
+					value: 60
 				});
 			}());
 		</script>
