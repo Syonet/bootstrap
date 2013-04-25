@@ -23,5 +23,8 @@
     "grunt-contrib-jshint": "0.4.x",
     "grunt-contrib-connect": "0.3.x",
     "hogan.js": "2.0.x"
+  },
+  "scripts": {
+    "test": "grunt"
   }
 }

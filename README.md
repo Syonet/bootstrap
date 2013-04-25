@@ -1,4 +1,4 @@
-# Syonet Bootstrap
+# Syonet Bootstrap [![Build Status](https://travis-ci.org/Syonet/bootstrap.png?branch=master)](https://travis-ci.org/Syonet/bootstrap)
 O conjunto de ferramentas front-end da Syonet
 
 ## Build
