@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Unit Test</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<link rel="stylesheet" href="../../external/qunit/qunit.css">
+		
+		<script src="../../external/jquery.js"></script>
+		<script src="../../external/jquery.ui.js"></script>
+		<script src="../../external/qunit/qunit.js"></script>
+	</head>
+	<body>
+		<div id="qunit"></div>
+		<div id="qunit-fixture"></div>
+		<div id="buttonset">
+			<button type="button">1</button>
+			<button type="button">2</button>
+			<input type="button" value="3" />
+			<span id="not-a-button"></span>
+		</div>
+		<button id="button" type="button">4</button>
+		<script>
+			QUnit.done(function() {
+				$("#buttonset, #button").remove();
+			});
+		</script>
+		<script src="../button.js"></script>
+		<script src="specs/button/general.js"></script>
+		<script src="specs/button/options.js"></script>
+		<script src="specs/button/methods.js"></script>
+		<script src="specs/button/events.js"></script>
+	</body>
+</html>

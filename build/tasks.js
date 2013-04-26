@@ -6,7 +6,8 @@ module.exports = function( grunt ) {
 
 	// Original by the jQuery UI Team http://jqueryui.com
 	// https://github.com/jquery/jquery-ui/blob/1.10.0/build/tasks/build.js#L87
-	grunt.registerMultiTask( "copy", "Copia/renomeia arquivos, aplica o banner neles e faz o replace de @VERSION com o pkg.version", function() {
+	// Mudado para "process" para não confundir com "grunt-contrib-copy" e esclarecer o seu uso (que é mais para processamento do que para cópia)
+	grunt.registerMultiTask( "process", "Copia/renomeia arquivos, aplica o banner neles e faz o replace de @VERSION com o pkg.version", function() {
 		function replaceVersion( source ) {
 			return source.replace( /@VERSION/g, grunt.config("pkg.version") );
 		}
