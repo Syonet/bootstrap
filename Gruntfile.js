@@ -5,38 +5,23 @@ module.exports = function( grunt ) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
 		watch: {
-			css: {
-				files: [ "styles/*.less" ],
-				tasks: [ "css" ]
-			},
-			js: {
-				files: [ "scripts/*.js" ],
-				tasks: [ "js" ]
-			},
-			jsTest: {
-				files: [ "tests/specs/**/*.js", "tests/templates/**/*.hbs" ],
-				tasks: [ "js-test" ]
-			},
-			docs: {
-				files: [ "docs/templates/**/*.hbs", "docs/main.less" ],
-				tasks: [ "docs" ]
-			}
+			files: [
+				"styles/*.less",
+				"scripts/**/*.js"
+			],
+			tasks: [
+				"clean:main",
+				"less:main",
+				"jshint:main",
+				"process"
+			]
 		},
 		clean: {
-			// Limpado antes da execução
-			css:    [ "dist/*.css", "dist/fonts/", "dist/images/" ],
-			js:     [ "dist/scripts/", "tests/*.html" ],
-			docs:   [ "*.html" ],
-			dist:   [ "dist/*.json" ],
-
-			// Remove a fonte e configuração utilizada no IcoMoon
-			font:   [ "dist/fonts/*.json", "dist/fonts/*dev.svg" ]
+			main: "dist/",
+			docs: "*.html"
 		},
 		less: {
 			main: {
-				options: {
-					strictImports: true
-				},
 				files: {
 					"dist/bootstrap.css": "styles/bootstrap.less",
 					"dist/jquery.ui.css": [
@@ -61,12 +46,8 @@ module.exports = function( grunt ) {
 				}
 			},
 			docs: {
-				options: {
-					strictImports: true,
-					yuicompressor: true
-				},
 				files: {
-					"docs/main.css": "docs/main.less"
+					"docs/main.css": "docs/main.less",
 				}
 			}
 		},
@@ -77,56 +58,44 @@ module.exports = function( grunt ) {
 					"docs/templates/pages/*.hbs"
 				],
 				dest: "."
-			},
-			tests: {
-				layout: "tests/templates/layout.hbs",
-				src: [
-					"tests/templates/pages/*.hbs",
-					"tests/templates/index.hbs"
-				],
-				dest: "tests"
 			}
 		},
-		copy: {
-			dist: {
-				src: [ "*.json" ],
-				dest: "dist"
-			},
-			css: {
+		process: {
+			all: {
 				src: [
 					"images/*",
+					
+					// Copia apenas as fontes utilizadas em produção
+					"fonts/SyoBootstrap.eot",
+					"fonts/SyoBootstrap.svg",
+					"fonts/SyoBootstrap.ttf",
+					"fonts/SyoBootstrap.woff",
+					
+					// Processa novamente os arquivos CSS para a inclusão do banner
 					"dist/*.css",
-					"fonts/*"
+					
+					// Copia e processa os arquivos Javascript do projeto
+					"scripts/*.js"
+					
 				],
 				strip: /^dist/,
 				dest: "dist"
-			},
-			js: {
-				src: [ "scripts/*.js" ],
-				dest: "dist"
-			}
-		},
-		linestrip: {
-			// Remove a linha com o background especificado no regex. Evita que cause erros 404, pois a imagem não existirá em nosso repo.
-			jqueryui: {
-				src: [ "dist/jquery.ui.css" ],
-				regex: [
-					/images\/animated-overlay.gif/
-				]
 			}
 		},
 		qunit: {
-			files: [ "tests/index.html" ]
+			files: [
+				"scripts/tests/index.html"
+			]
 		},
 		jshint: {
 			options: {
 				jshintrc: ".jshintrc"
 			},
-			js: [ "scripts/*.js", "tests/**/*.js" ],
-			docs: [ "docs/main.js" ]
+			main: "scripts/**/*.js",
+			docs: "docs/main.js"
 		},
 		connect: {
-			visual: {
+			main: {
 				options: {
 					hostname: "*",
 					keepalive: true,
@@ -146,11 +115,14 @@ module.exports = function( grunt ) {
 
 	// ...inclusive as criadas por nós!
 	grunt.loadTasks("build");
-
-	// Registra as tasks alias
-	grunt.registerTask( "css",      [ "clean:css", "less:main", "copy:css", "clean:font", "linestrip" ] );
-	grunt.registerTask( "js-test",  [ "hogan:tests", "jshint:js", "qunit" ] );
-	grunt.registerTask( "js",       [ "clean:js", "jshint:js", "js-test", "copy:js" ] );
-	grunt.registerTask( "docs",     [ "clean:docs", "less:docs", "jshint:docs", "hogan:docs" ] );
-	grunt.registerTask( "default",  [ "clean:dist", "css", "js", "docs", "copy:dist" ] );
+	
+	// Processo principal de build
+	grunt.registerTask( "default", [
+		"clean", // Limpa todo o diretório dist
+		"less", // Compila os arquivos LESS
+		"jshint", // Faz o linting em todos os arquivos JS relevantes
+		"process", // Copia e inclui o banner nos arquivos de distribuição
+		"hogan", // Compila a documentação do projeto
+		"qunit" // Roda os testes JS
+	]);
 };

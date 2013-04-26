@@ -1,8 +1,0 @@
-{
-  "name": "syo-framework",
-  "version": "@VERSION",
-  "dependencies": {
-    "jquery": ">=1.8.0",
-    "jquery-ui": "1.10.1"
-  }
-}

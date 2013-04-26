@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Unit Test</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<link rel="stylesheet" href="../../external/qunit/qunit.css">
+		<link rel="stylesheet" href="../../external/qunit/qunit.composite.css">
+		
+		<script src="../../external/jquery.js"></script>
+		<script src="../../external/jquery.ui.js"></script>
+		<script src="../../external/qunit/qunit.js"></script>
+		<script src="../../external/qunit/qunit.composite.js"></script>
+	</head>
+	<body>
+		<div id="qunit"></div>
+		<div id="qunit-fixture"></div>
+		<script>
+			QUnit.testSuites( "Syonet Bootstrap", [{
+				path: "button.html",
+				name: "Button"
+			}, {
+				path: "pagination.html",
+				name: "Pagination"
+			}, {
+				path: "popover.html",
+				name: "Popover"
+			}]);
+		</script>
+	</body>
+</html>
