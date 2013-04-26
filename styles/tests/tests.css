@@ -13,16 +13,27 @@
 }
 
 /* Destaque do background para inspeção visual */
-.test-bg-highlight1 {
+.test-highlight1 {
   background-color: rgba( 255, 0, 0, .2 );
 }
-.test-bg-highlight2 {
+.test-highlight2 {
   background-color: rgba( 255, 0, 0, .4 );
 }
 
-/* Remove as margens do elemento para melhor inspeção de outros estilos */
+/*
+ * Remove as margens do elemento para melhor
+ * inspeção de outros estilos
+ */
 .test-trimmed {
   margin: 0;
+}
+
+/*
+ * Utilizado para expandir o espaço em volta do elemento a fim de
+ * impedir que os estilos padrões do teste atrapalhem a inspeção
+ */
+.test-lone >:not(.title) {
+	padding: 30px;
 }
 
 /* 
