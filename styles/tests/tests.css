@@ -8,14 +8,6 @@
   border: 1px dashed;
   overflow: auto;
 }
-/* 
- * 1. Os elementos filho do .test possuem um width
- * para não serem contraídos em resoluções menores
- * (inclui o título do bloco)
- */
-.test > * {
-  min-width: 700px; /* 1 */
-}
 .test .title {
   border-bottom: thin silver solid;
 }
@@ -31,4 +23,11 @@
 /* Remove as margens do elemento para melhor inspeção de outros estilos */
 .test-trimmed {
   margin: 0;
+}
+
+/* 
+ * Tamanho fixo para não contrair em resoluções menores
+ */
+.test-fixed > * {
+	min-width: 700px;
 }
