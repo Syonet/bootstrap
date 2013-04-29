@@ -531,6 +531,14 @@ input.ui-button {
   border-width: 0 1px 0 0;
 }
 
+// Accordion
+.ui-accordion .ui-accordion-content {
+  // jqueryUI tem sérios problemas com animações e "box-sizing: border-box"
+  // Isso corrige um destes problemas retornando a configuração padrão para que a animação do
+  // accordion não "pule" por causa do padding.
+  .box-sizing( content-box );
+}
+
 // Menu
 .ui-menu .ui-menu-item {
   a {
