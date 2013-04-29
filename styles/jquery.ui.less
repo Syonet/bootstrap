@@ -436,12 +436,10 @@ a.ui-button, a.ui-dialog .ui-dialog-titlebar-close {
 
   &.ui-state-focus {
     outline: dotted thin #333;
-    outline-offset: 2px;
   }
 
-  &.ui-state-active {
+  &:active, &.ui-state-active {
     z-index: 3;
-    outline: 0;
     border-color: fade(@jq-border, 80%);
     border-bottom-color: lighten(@jq-border, 5%);
     .box-shadow(0 2px 4px fade(#000, 15%) inset);
