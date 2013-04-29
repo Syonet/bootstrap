@@ -42,6 +42,10 @@
   font-weight: normal;
   color: #555555;
   .transition(~"background 0.15s linear, border 0.15s linear");
+  &:active {
+    // outline deve servir apenas para foco na navegação com o teclado no FF
+    outline: none;
+  }
 }
 .ui-state-default a,
 .ui-state-default a:link,
