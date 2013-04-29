@@ -26,6 +26,7 @@ textarea {
   // Tem que usar line-height: normal por causa de um bug do Firefox.
   #font .shorthand(@input-text-color, normal);
   .border-radius(@input-border-radius);
+  .transition( ~"box-shadow .15s linear, color .15s linear" );
   text-shadow: 0 1px 0 #fff;
 
   &:hover {
