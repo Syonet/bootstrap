@@ -47,12 +47,10 @@ input.syo-button {
 // Buttonset
 // ---------
 .syo-buttonset {
-  display: inline-block;
-  font-size: 0;
-  white-space: nowrap;
+  .clearfix();
 
   > .syo-button {
-    position: relative;
+    float: left;
     .border-radius(0);
 
     + .syo-button {
