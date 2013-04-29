@@ -97,7 +97,7 @@
 				<div class="span12">
 					<div class="test test-fixed" title="ui-progressbar, o conteúdo deve preencher todo o container da progressbar">
 						<div class="test-highlight1">
-							<div data-value="60" class="progressbar"></div>
+							<div data-widget="progressbar" data-value="60"></div>
 						</div>
 					</div>
 				</div>
@@ -130,7 +130,7 @@
 				<div class="span6">
 					<div class="test test-fixed" title="Os botões da paginação deve ficar bem alinhados com o texto interno e o background">
 						<div class="test-highlight1">
-							<div class="pagination"></div>
+							<div data-widget="syoPagination" data-items="13"></div>
 						</div>
 					</div>
 				</div>
@@ -138,7 +138,7 @@
 			<div class="row">
 				<div class="span12">
 					<div class="test test-lone" title="Não deve renderizar uma sombra fora do item de paginação">
-						<div class="pagination2"></div>
+						<div data-widget="syoPagination" data-items="3"></div>
 					</div>
 				</div>
 			</div>
@@ -148,12 +148,5 @@
 		<script src="../../external/jquery.ui.js"></script>
 		<script src="../../scripts/pagination.js"></script>
 		<script src="tests.js"></script>
-		<script>
-			(function() {
-				$( ".pagination" ).syoPagination({ items: 13 });
-				$( ".pagination2" ).syoPagination({ items: 3 });
-				$( ".progressbar" ).progressbar({ value: 60 });
-			}());
-		</script>
 	</body>
 </html>

@@ -38,7 +38,7 @@
 				</div>
 				<div class="span6">
 					<div class="test test-fixed test-lone" title="Paginação">
-						<div class="pagination"></div>
+						<div data-widget="syoPagination" data-items="3"></div>
 					</div>
 				</div>
 			</div>
@@ -83,14 +83,14 @@
 			<div class="row">
 				<div class="span12">
 					<div class="test test-fixed" title="Slider">
-						<div class="slider"></div>
+						<div data-widget="slider"></div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span12">
 					<div class="test test-fixed" title="Tabs">
-						<div class="tabs">
+						<div data-widget="tabs">
 							<ul>
 								<li><a href="#tabs-1">Tab 1</a></li>
 								<li><a href="#tabs-2">Tab 2</a></li>
@@ -112,7 +112,7 @@
 			<div class="row">
 				<div class="span12">
 					<div class="test test-fixed" title="Datepicker">
-						<div class="datepicker"></div>
+						<div data-widget="datepicker"></div>
 					</div>
 				</div>
 			</div>
@@ -122,14 +122,5 @@
 		<script src="../../external/jquery.ui.js"></script>
 		<script src="../../scripts/pagination.js"></script>
 		<script src="tests.js"></script>
-		<script>
-			(function() {
-				$( ".pagination" ).syoPagination({ items: 3 });
-				$( ".progressbar" ).progressbar({ value: 60 });
-				$( ".slider" ).slider();
-				$( ".tabs" ).tabs();
-				$( ".datepicker" ).datepicker();
-			}());
-		</script>
 	</body>
 </html>
