@@ -539,13 +539,12 @@ input.ui-button {
     border-bottom: 1px solid darken(@component-bg, 5%);
     line-height: inherit;
     cursor: pointer;
-    .transition(background 0.15s linear);
     .border-radius(0);
 
     &.ui-state-focus {
       border: none;
       border-bottom: 1px solid darken(@component-bg, 5%);
-      background: darken(@component-bg-light, 3%);
+      background: @component-bg-hover;
     }
 
     &.ui-state-focus,
