@@ -26,7 +26,6 @@ textarea {
   // Tem que usar line-height: normal por causa de um bug do Firefox.
   #font .shorthand(@input-text-color, normal);
   .border-radius(@input-border-radius);
-  .transition(all .15s linear);
   text-shadow: 0 1px 0 #fff;
 
   &:hover {
@@ -61,11 +60,6 @@ textarea {
     .box-shadow(~"none !important");
     cursor: default;
   }
-}
-
-textarea {
-  // Sem animação no drag do textarea
-  .transition( none );
 }
 
 // Reseta o height de select multiplo/textarea
