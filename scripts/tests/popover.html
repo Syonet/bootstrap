@@ -14,13 +14,9 @@
 	</head>
 	<body>
 		<div id="qunit"></div>
-		<div id="qunit-fixture"></div>
-		<div id="popover">Lorem ipsum</div>
-		<script>
-		QUnit.done(function() {
-			$("#popover").remove();
-		});
-		</script>
+		<div id="qunit-fixture">
+			<div id="popover">Lorem ipsum</div>
+		</div>
 		<script src="../popover.js"></script>
 		<script src="specs/popover/general.js"></script>
 		<script src="specs/popover/options.js"></script>
