@@ -6,6 +6,8 @@
   padding: (((@input-height - @base-line-height) - 2px) / 2) 12px;
   border: 1px solid fade(@input-border, 35%);
   border-bottom-color: lighten(@input-border, 10%);
+  // Anchor tags não possuem o alinhamento centralizado por default
+  text-align: center;
   #font .shorthand(@input-text-color);
   #gradient .vertical();
   .border-radius(@base-border-radius);
@@ -20,7 +22,6 @@
 
   &:focus {
     outline: dotted thin #333;
-    outline-offset: 2px;
   }
 
   &.syo-active,

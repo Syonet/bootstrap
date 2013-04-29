@@ -7,153 +7,29 @@
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="../../dist/bootstrap.css">
 		<link rel="stylesheet" href="../../dist/jquery.ui.css">
-		<link rel="stylesheet" href="tests.css">
+		<style>
+			.large-button {
+				padding: 5rem 0;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="syo-header">
-				<h1>Visual <small> Estilos genéricos </small></h1>
-			</div>
-			<div clas="row">
+			<div class="row">
 				<div class="span12">
-					<div class="test" title="A navbar deve quebrar graciosamente em resoluções menores. O ícone dos títulos devem ficar alinhados com o texto">
-						<div class="syo-navbar">
-							<div class="container">
-								<a href="#" class="syo-navbar-title">
-									<i class="icon-task"></i>Conteúdo Esquerda
-								</a>
-								<ul class="syo-nav">
-									<li class="syo-active"><a href="#"><i class="icon-droplet"></i>Item 1</a></li>
-									<li><a href="#"><i class="icon-filter"></i>Item 2</a></li>
-									<li><a href="#"><i class="icon-eye"></i>Item 3</a></li>
-									<li><a href="#"><i class="icon-contract"></i>Item 4</a></li>
-									<li><a href="#"><i class="icon-airplane"></i>Item 5</a></li>
-									<li><a href="#"><i class="icon-task"></i>Item 6</a></li>
-								</ul>
-								<a href="#" class="syo-pull-right syo-navbar-title">
-									<i class="icon-bug"></i>Conteúdo Direita
-								</a>
-							</div>
-						</div>
+					<div class="syo-header">
+						<h1>Testes visuais</h1>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="Deve garantir uma margem aceitável entre os headers">
-						<div class="test-highlight1">
-							<div class="test-highlight2">
-								<h1>
-									<i class="icon-film"></i>
-									Heading
-								</h1>
-							</div>
-							<div class="test-highlight2">
-								<h2>
-									<i class="icon-certificate"></i>
-									Heading
-								</h2>
-							</div>
-							<div class="test-highlight2">
-								<h3>
-									<i class="icon-group"></i>
-									Heading
-								</h3>
-							</div>
-							<div class="test-highlight2">
-								<h4>
-									<i class="icon-calendar"></i>
-									Heading
-								</h4>
-							</div>
-							<div class="test-highlight2">
-								<h5>
-									<i class="icon-heart-broken"></i>
-									Heading
-								</h5>
-							</div>
-							<div class="test-highlight2">
-								<h6>
-									<i class="icon-link"></i>
-									Heading
-								</h6>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="syo-progressbar, o conteúdo deve preencher todo o container da progressbar">
-						<div class="test-highlight1">
-							<div class="syo-progressbar">
-								<div class="syo-progressbar-value" style="width:60%"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="ui-progressbar, o conteúdo deve preencher todo o container da progressbar">
-						<div class="test-highlight1">
-							<div data-value="60" class="progressbar"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span6">
-					<div class="test test-fixed" title="Todos os controles de formulário devem estar alinhados horizontalmente (pixel perfect)">
-						<div class="test-highlight1">
-							<div class="syo-field syo-field-inline test-trimmed">
-								<button class="syo-button">
-									<i class="icon-apple"></i>
-									Button tag
-								</button>
-							</div>
-							<div class="syo-field syo-field-inline test-trimmed">
-								<input type="button" value="Input button" class="syo-button">
-							</div>
-							<div class="syo-field syo-field-inline test-trimmed">
-								<input type="text" placeholder="Text">
-							</div>
-							<div class="syo-field syo-field-inline test-trimmed">
-								<select><option>Select<option></select>
-							</div>
-							<div class="syo-field syo-field-inline test-trimmed">
-								<textarea>Textarea</textarea>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="span6">
-					<div class="test test-fixed" title="Os botões da paginação deve ficar bem alinhados com o texto interno e o background">
-						<div class="test-highlight1">
-							<div class="pagination"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-					<div class="test test-lone" title="Não deve renderizar uma sombra fora do item de paginação">
-						<div class="pagination2"></div>
-					</div>
-				</div>
+				<a href="geral.html" class="syo-button span6 large-button">
+					Geral
+				</a>
+				<a href="keyboard.html" class="syo-button span6 large-button">
+					Navegação Teclado
+				</a>
 			</div>
 		</div>
-		
-		<script src="../../external/jquery.js"></script>
-		<script src="../../external/jquery.ui.js"></script>
-		<script src="../../scripts/pagination.js"></script>
-		<script src="tests.js"></script>
-		<script>
-			(function() {
-				$( ".pagination" ).syoPagination({ items: 13 });
-				$( ".pagination2" ).syoPagination({ items: 3 });
-				$( ".progressbar" ).progressbar({ value: 60 });
-			}());
-		</script>
 	</body>
 </html>

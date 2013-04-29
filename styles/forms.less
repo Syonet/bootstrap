@@ -150,7 +150,10 @@ input, textarea, select, button {
   #font .shorthand();
 
   &.syo-field-inline {
-    display: inline-block;
+    // Muda de inline para inline-block para corrigir um bug no IE10 onde o textarea não fica
+    // alinhado com os outros inputs. O tamanho do field fica sendo controlado pelo input dentro
+    // dele.
+    display: inline;
   }
 
   > .syo-field-controls {
