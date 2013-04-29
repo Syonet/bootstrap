@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../../dist/bootstrap.css">
+		<link rel="stylesheet" href="../../dist/jquery.ui.css">
+		<link rel="stylesheet" href="tests.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="syo-header">
+				<h1> Navegação com o teclado </h1>
+			</div>
+			<div class="row">
+				<div class="span6">
+					<div class="test test-fixed test-lone" title="Controles de formulário">
+						<div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="text" placeholder="Focus">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button"> Focus </button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="button" value="Focus" class="syo-button">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<select><option>Focus<option></select>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<textarea>Focus</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span6">
+					<div class="test test-fixed test-lone" title="Paginação">
+						<div class="pagination"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test test-fixed" title="Navbar">
+						<div class="syo-navbar">
+							<div class="container">
+								<a href="#" class="syo-navbar-title">Focus</a>
+								<ul class="syo-nav">
+									<li class="syo-active"><a href="#">Focus</a></li>
+									<li><a href="#">Focus</a></li>
+									<li><a href="#">Focus</a></li>
+								</ul>
+								<a href="#" class="syo-pull-right syo-navbar-title">Focus</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test test-fixed" title="Slider">
+						<div class="slider"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test test-fixed" title="Tabs">
+						<div class="tabs">
+							<ul>
+								<li><a href="#tabs-1">Tab 1</a></li>
+								<li><a href="#tabs-2">Tab 2</a></li>
+								<li><a href="#tabs-3">Tab 3</a></li>
+							</ul>
+							<div id="tabs-1">
+								<p>Tabs test</p>
+							</div>
+							<div id="tabs-2">
+								<p>Tabs test</p>
+							</div>
+							<div id="tabs-3">
+								<p>Tabs test</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../../external/jquery.js"></script>
+		<script src="../../external/jquery.ui.js"></script>
+		<script src="../../scripts/pagination.js"></script>
+		<script src="tests.js"></script>
+		<script>
+			(function() {
+				$( ".pagination" ).syoPagination({ items: 3 });
+				$( ".progressbar" ).progressbar({ value: 60 });
+				$( ".slider" ).slider();
+				$( ".tabs" ).tabs();
+			}());
+		</script>
+	</body>
+</html>
