@@ -71,11 +71,9 @@ module.exports = function( grunt ) {
 					"fonts/SyoBootstrap.ttf",
 					"fonts/SyoBootstrap.woff",
 					
-					// Processa novamente os arquivos CSS para a inclusão do banner
+					// Processa novamente os arquivos JS/CSS para a inclusão do banner
 					"dist/*.css",
-					
-					// Copia e processa os arquivos Javascript do projeto
-					"scripts/*.js"
+					"dist/*.js"
 					
 				],
 				strip: /^dist/,
@@ -93,6 +91,12 @@ module.exports = function( grunt ) {
 			},
 			main: "scripts/**/*.js",
 			docs: "docs/main.js"
+		},
+		concat: {
+			main: {
+				src: "scripts/*.js",
+				dest: "dist/bootstrap.js"
+			}
 		},
 		connect: {
 			main: {
@@ -112,6 +116,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-qunit");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-connect");
+	grunt.loadNpmTasks("grunt-contrib-concat");
 
 	// ...inclusive as criadas por nós!
 	grunt.loadTasks("build");
@@ -121,6 +126,7 @@ module.exports = function( grunt ) {
 		"clean", // Limpa todo o diretório dist
 		"less", // Compila os arquivos LESS
 		"jshint", // Faz o linting em todos os arquivos JS relevantes
+		"concat", // Concatena os arquivos javascript em um só
 		"process", // Copia e inclui o banner nos arquivos de distribuição
 		"hogan", // Compila a documentação do projeto
 		"qunit" // Roda os testes JS
