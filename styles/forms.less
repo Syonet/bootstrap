@@ -56,8 +56,8 @@ textarea {
   &[disabled],
   &.syo-disabled {
     border-color: @input-disabled-border !important;
-    color: @input-disabled-text !important;
     background: @input-disabled-background !important;
+    color: @input-disabled-text !important;
     .box-shadow(~"none !important");
     cursor: default;
   }
@@ -164,13 +164,15 @@ input, textarea, select, button {
   > textarea,
   > select,
   > button {
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   > input[type="radio"],
   > input[type="checkbox"] {
     position: relative;
-    top: 0.5em;
+    top: 0.6em;
+    height: auto; // Reseta o height
+    vertical-align: top;
   }
 
   // Bloco de ajuda de um syo-field

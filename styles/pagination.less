@@ -19,8 +19,16 @@
         background-color: @pagination-item-background;
 
         &:hover, &:active, &:focus {
+          //Garante que a borda vai ficar por cima do vizinho quando em destaque
+          z-index: 1;
+          
           text-decoration: none;
           background: @pagination-hover-background;
+          border-color: @component-border-hover;
+          
+          // Permite mudança do z-index
+          position: relative;
+          
         }
 
         &:focus {

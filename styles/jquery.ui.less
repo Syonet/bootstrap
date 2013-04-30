@@ -62,13 +62,14 @@
   border: 1px solid #999999;
   #gradient .vertical();
   font-weight: normal;
-  color: @jq-hover-text-color;
+  color: @input-hover-text;
+  border-color: @component-border-hover;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
-  color: @jq-hover-text-color;
+  color: @input-hover-text;
   text-decoration: none;
 }
 .ui-state-active,
@@ -77,12 +78,12 @@
   border: 1px solid @jq-border;
   background: #ffffff;
   font-weight: normal;
-  color: @jq-hover-text-color;
+  color: @input-hover-text;
 }
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-  color: @jq-hover-text-color;
+  color: @input-hover-text;
   text-decoration: none;
 }
 
@@ -401,17 +402,21 @@
   border-color: fade(@input-border, 35%);
   border-bottom-color: lighten(@input-border, 10%);
 
-  // Nas versões mais antigas do Firefox, quando é utilizado um buttonset (elementos label.ui-button),
-  // o min-height aumentava MUITO o tamanho final do botão.
-  //min-height: @input-height;
-
+  // Alinha com os outros botões do bootstrap
   vertical-align: middle;
-  .transition(background .15s linear);
+  .transition( @button-bg-transition );
 
   &.ui-state-active,
   &.ui-state-hover {
-    background: #eee;
+    background: @component-bg;
+    border-color: @input-hover-border;
   }
+}
+
+.ui-button {
+  // Nas versões mais antigas do Firefox, quando é utilizado um buttonset (elementos label.ui-button),
+  // o min-height aumentava MUITO o tamanho final do botão.
+  height: @input-height;
 }
 
 // https://github.com/vtst/ow/issues/138
@@ -419,7 +424,7 @@ a.ui-button, a.ui-dialog .ui-dialog-titlebar-close {
   &:hover,
   &:active {
     // Sobrescreve a cor do link do scaffolding quando for a.ui-button
-    color: @jq-hover-text-color;
+    color: @input-hover-text;
   }
 }
 
@@ -502,8 +507,13 @@ input.ui-button {
   vertical-align: top;
   .border-radius(@input-border-radius);
 
-  .ui-button, .ui-spinner-input {
-    min-height: auto;
+  .ui-button {
+    height: 13px;
+  }
+
+  // Remove o "clear" do IE 10 que aparece no spinner
+  input::-ms-clear {
+      display: none !important;
   }
 
   .ui-spinner-input {

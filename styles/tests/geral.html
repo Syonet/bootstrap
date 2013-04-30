@@ -10,6 +10,9 @@
 		<link rel="stylesheet" href="tests.css">
 	</head>
 	<body>
+		<div data-widget="dialog" title="ui dialog">
+			Dialog deve se posicionar no centro da tela e possuir um estilo consistente com os demais
+		</div>
 		<div class="container">
 			<div class="syo-header">
 				<h1> Geral </h1>
@@ -103,7 +106,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span6">
+				<div class="span12">
 					<div class="test test-fixed" title="Todos os controles de formulário devem estar alinhados horizontalmente (pixel perfect)">
 						<div class="test-highlight1">
 							<div class="syo-field syo-field-inline test-trimmed">
@@ -119,14 +122,23 @@
 								<input type="text" placeholder="Text">
 							</div>
 							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="radio">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="checkbox">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
 								<select><option>Select<option></select>
 							</div>
 							<div class="syo-field syo-field-inline test-trimmed">
 								<textarea>Textarea</textarea>
 							</div>
+							<input type="text" data-widget="spinner">
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="span6">
 					<div class="test test-fixed" title="Os botões da paginação deve ficar bem alinhados com o texto interno e o background">
 						<div class="test-highlight1">
@@ -137,11 +149,58 @@
 			</div>
 			<div class="row">
 				<div class="span12">
-					<div class="test test-fixed" title="Deve haver uma animação no ':hover' de todos os tipos de botões">
+					<div class="test test-fixed" title="Deve haver uma animação no ':hover' de todos os tipos de botões e eles devem ser iguais em todos os sentidos">
 						<div>
 							<button class="syo-button">Regular</button>
 							<button class="syo-button syo-success">Success</button>
 							<button class="syo-button syo-error">Error</button>
+							<button data-widget="button">ui button</button>
+							<div data-widget="buttonset" style="display: inline">
+								<input type="checkbox" id="chk-button1">
+								<label for="chk-button1">ui buttonset</label>
+								
+								<input type="checkbox" id="chk-button2">
+								<label for="chk-button2">ui buttonset</label>
+								
+								<input type="checkbox" id="chk-button3">
+								<label for="chk-button3">ui buttonset</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test test-fixed" title="Botões desabilitados devem possuir um estilo para diferenciação">
+						<div class="syo-field syo-field-inline test-trimmed">
+							<button class="syo-button syo-success" disabled>Success</button>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<button class="syo-button syo-error" disabled>Error</button>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<button class="syo-button" disabled>
+								<i class="icon-apple"></i>
+								Button tag
+							</button>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<input type="button" value="Input button" class="syo-button" disabled>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<input type="text" placeholder="Text" disabled>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<input type="radio" disabled>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<input type="checkbox" disabled>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<select disabled><option>Select<option></select>
+						</div>
+						<div class="syo-field syo-field-inline test-trimmed">
+							<textarea disabled>Textarea</textarea>
 						</div>
 					</div>
 				</div>

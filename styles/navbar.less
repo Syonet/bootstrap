@@ -10,7 +10,7 @@
   font-size: @base-font-size - 1;
   .box-shadow(0 0 5px 0px fade(@gray-light, 30%));
   text-shadow: 0 1px 0 #fff;
-
+  
   a {
     color: @gray;
   }
@@ -24,13 +24,13 @@
     display: block;
     float: left;
     .navbar-spacing(@base-font-size * 1.5);
-    #font .shorthand(@gray-dark, 1em, @base-font-size * 1.5, @base-font-family, bold);
+    #font .shorthand(@gray, 1em, @base-font-size * 1.5, @base-font-family, bold);
     text-decoration: none;
     vertical-align: middle;
     .transition(~"color 0.1s linear, text-shadow 0.1s linear");
 
     &:hover {
-      color: lighten(@gray, 3%);
+      color: @gray-darker;
       text-shadow: 0 1px 3px #fff;
     }
 

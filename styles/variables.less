@@ -16,9 +16,10 @@
 
 // Componentes
 // -------------------------
-@component-bg:        #e2e2e2;
-@component-bg-light:  #fff;
-@component-bg-hover:  #eee;
+@component-bg:           #e2e2e2;
+@component-bg-light:     #fff;
+@component-bg-hover:     #eee;
+@component-border-hover: darken(@gray-light, 10%);
 
 // Imagens/fontes
 // -------------------------
@@ -64,8 +65,8 @@
 
 // Inputs - hover
 @input-hover-background:        #f8f8f8;
-@input-hover-border:            darken(@input-border, 5%);
-@input-hover-text:              @gray-darker;
+@input-hover-border:            darken(@input-border, 10%);
+@input-hover-text:              darken(@gray-darker, 3%);
 
 // Inputs - disabled
 @input-disabled-background:     #fff;
@@ -75,10 +76,15 @@
 // Input - status - success
 @input-success-color:           #51a351;
 @input-success-highlight-color: #62c462;
+@input-success-hover-border:    darken(@input-success-color, 15%);
 
 // Input - status - error
 @input-error-color:             #bd362f;
 @input-error-highlight-color:   #ee5f5b;
+@input-error-hover-border:      darken(@input-error-color, 15%);
+
+// Buttons only
+@button-bg-transition: background .15s linear;
 
 // Tabelas
 // -------------------------
@@ -153,7 +159,6 @@
 // jQuery UI
 // -------------------------
 @jq-text-color:         @gray-darker;
-@jq-hover-text-color:   darken(@gray-darker, 3%);
 
 @jq-highlight-color:    @spring-green;
 @jq-highlight-border:   #456B5A;
