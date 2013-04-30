@@ -490,6 +490,15 @@ input.ui-button {
 // Buttonset
 .ui-buttonset {
   vertical-align: top;
+  .clearfix();
+
+  // Em algumas situações o uso de margin -.3em para controle do espaçamento do inline-block
+  // causa problemas na exibição da borda, ou seja, essa técnica não é garantida e depende muito do
+  // tamanho da fonte do container. Usar float é mais garantido.
+  .ui-button {
+    margin: 0;
+    float: left;
+  }
 
   .ui-helper-hidden-accessible {
     position: absolute !important; // Sobrescreve o estilo principal dos checkboxes/radio, que é relative
