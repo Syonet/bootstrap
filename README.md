@@ -21,10 +21,26 @@ $ grunt connect
 
 ### Grunt watch
 Detecta mudanças nos arquivos do projeto e faz o build de forma automática.  
-Este processo realiza apenas as tarefas de build quando os arquivos `*.less` e `*.js` relevantes forem modificados. Neste fluxo de desenvolvimento você deve ser responsável por criar e executar os testes do QUnit.
+
+**default:**  
+Este processo realiza as tarefas de build padrões quando qualquer arquivo relevante for modificado.
 
 ```shell
 $ grunt watch
+```
+
+**main:**  
+Este processo realiza as tarefas de build sem a documentação quando os arquivos relevantes forem modificados.
+
+```shell
+$ grunt watch:main
+```
+
+**docs:**  
+Este processo realiza as tarefas de build da documentação quando os arquivos relevantes forem modificados.
+
+```shell
+$ grunt watch:docs
 ```
 
 ### Grunt clean

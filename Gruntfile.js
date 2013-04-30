@@ -5,16 +5,31 @@ module.exports = function( grunt ) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
 		watch: {
-			files: [
-				"styles/*.less",
-				"scripts/**/*.js"
-			],
-			tasks: [
-				"clean:main",
-				"less:main",
-				"jshint:main",
-				"process"
-			]
+			main: {
+				files: [
+					"styles/*.less",
+					"scripts/**/*.js"
+				],
+				tasks: [
+					"clean:main",
+					"less:main",
+					"jshint:main",
+					"process"
+				]
+			},
+			docs: {
+				files: [
+					"docs/**/*.less",
+					"docs/**/*.hbs",
+					"docs/**/*.js"
+				],
+				tasks: [
+					"clean:docs",
+					"less:docs",
+					"jshint:docs",
+					"hogan"
+				]
+			}
 		},
 		clean: {
 			main: "dist/",
