@@ -63,3 +63,11 @@ Para ler a documentação (e também testar o framework), após fazer o build, a
 
 Opcionalmente, você pode acessar a documentação online:
 http://syonet.github.io/bootstrap/
+
+## Suporte a browsers
+Os seguintes browsers em sua última versão serão suportados:
+* Internet Explorer 10
+* Firefox 20
+* Chrome 26
+* Safari iOS 6
+* Firefox Android 20
