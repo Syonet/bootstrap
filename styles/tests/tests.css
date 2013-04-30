@@ -40,5 +40,5 @@
  * Tamanho fixo para não contrair em resoluções menores
  */
 .test-fixed > * {
-	min-width: 700px;
+	min-width: 900px;
 }
