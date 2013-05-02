@@ -3,7 +3,12 @@
 
 // Custom normalize
 // --------------
-* {
+
+/*
+ * 1. Sobrescreve o box-sizing utilizado no Normalize
+ */
+*,
+input[type="search"] { /* 1 */
   .box-sizing( border-box );
 }
 
