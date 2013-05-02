@@ -9,7 +9,7 @@
     li {
       .box-shadow(0 1px 2px fade(@gray-light, 30%));
       display: table-cell;
-      .clearfix();
+      .clear-float();
 
       a {
         float: left;
@@ -21,14 +21,14 @@
         &:hover, &:active, &:focus {
           //Garante que a borda vai ficar por cima do vizinho quando em destaque
           z-index: 1;
-          
+
           text-decoration: none;
           background: @pagination-hover-background;
           border-color: @component-border-hover;
-          
+
           // Permite mudança do z-index
           position: relative;
-          
+
         }
 
         &:focus {
