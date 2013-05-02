@@ -42,21 +42,21 @@ module.exports = function( grunt ) {
 					"dist/jquery.ui.css": [
 						// Junta TODOS os arquivos do jQuery UI, na sua ordem certa.
 						// @TODO usar apenas o core + glob *.css. Será que vai excluir o core deste glob pra ficar na ordem certa?
-						"styles/jquery.ui/*core.css",
-						"styles/jquery.ui/*accordion.css",
-						"styles/jquery.ui/*autocomplete.css",
-						"styles/jquery.ui/*button.css",
-						"styles/jquery.ui/*datepicker.css",
-						"styles/jquery.ui/*dialog.css",
-						"styles/jquery.ui/*menu.css",
-						"styles/jquery.ui/*progressbar.css",
-						"styles/jquery.ui/*resizable.css",
-						"styles/jquery.ui/*selectable.css",
-						"styles/jquery.ui/*slider.css",
-						"styles/jquery.ui/*spinner.css",
-						"styles/jquery.ui/*tabs.css",
-						"styles/jquery.ui/*tooltip.css",
-						"styles/jquery.ui.less"
+						"styles/vendor/jquery-ui/*core.css",
+						"styles/vendor/jquery-ui/*accordion.css",
+						"styles/vendor/jquery-ui/*autocomplete.css",
+						"styles/vendor/jquery-ui/*button.css",
+						"styles/vendor/jquery-ui/*datepicker.css",
+						"styles/vendor/jquery-ui/*dialog.css",
+						"styles/vendor/jquery-ui/*menu.css",
+						"styles/vendor/jquery-ui/*progressbar.css",
+						"styles/vendor/jquery-ui/*resizable.css",
+						"styles/vendor/jquery-ui/*selectable.css",
+						"styles/vendor/jquery-ui/*slider.css",
+						"styles/vendor/jquery-ui/*spinner.css",
+						"styles/vendor/jquery-ui/*tabs.css",
+						"styles/vendor/jquery-ui/*tooltip.css",
+						"styles/vendor/jquery-ui.less"
 					]
 				}
 			},

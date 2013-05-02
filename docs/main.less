@@ -1,26 +1,24 @@
-// Imports
-// -------------------------
 @import "../styles/variables.less";
 @import "../styles/mixins.less";
 
-// Prettify
-// -------------------------
+/* =================================================================================================================
+   Geral
+   ================================================================================================================= */
+   
+/*
+ * 1. O conteúdo é manipulado por JS por isso não queremos que ele seja exibido enquanto a página é carregada!
+ */
 .prettyprint {
-  // O conteúdo é manipulado por JS por isso não queremos que ele seja exibido enquanto a página
-  // é carregada!
-  display: none;
+  display: none; /* 1 */
 }
 
-// Geral
-// -------------------------
 .header {
-	padding-top: @base-line-height * 2;
-	padding-bottom: @base-line-height * 2;
-	background: url("images/noise.png") @gray-lighter;
-  text-align: center;
   border-bottom: 1px solid @gray-lighter;
-  .box-shadow(-2px 2px 5px 0 fade(#000, 25%));
-
+  padding-top: @base-line-height * 2;
+  padding-bottom: @base-line-height * 2;
+  background: url("images/noise.png") @gray-lighter;
+  text-align: center;
+  .box-shadow( -2px 2px 5px 0 fade( #000, 25% ) );
   h1 {
     font-size: @base-font-size * 4;
     line-height: @base-line-height * 4;
@@ -47,67 +45,67 @@ article {
   background-color: lighten(@gray-lighter, 3%);
 }
 
-// Exemplos
-// -------------------------
+/* =================================================================================================================
+   Exemplos
+   ================================================================================================================= */
+   
 .syo-docs-example {
   margin: @base-line-height 0;
-  padding: (@base-line-height * 2) 0 0;
+  padding: ( @base-line-height * 2 ) 0 0;
   border: 1px solid @gray-light;
-  background: #fdfdfd;
-  .border-radius(@base-border-radius);
-  .box-shadow(0 1px 4px fade(#000, 10%));
-
+  background: #FDFDFD;
+  .border-radius( @base-border-radius );
+  .box-shadow( 0 1px 4px fade( #000, 10% ) );
   &:before {
     @line-height: 15px;
-
     position: relative;
-    top: -(@base-line-height + @line-height - 1px); // @base-line-height (padding-top do container) + line-height do seletor atual - 1px da borda
+    // @base-line-height (padding-top do container) + line-height do seletor atual - 1px da borda
+    top: -( @base-line-height + @line-height - 1px );
     left: -1px;
     padding: 10px;
     border: 1px solid @gray-light;
-    #font .shorthand(@gray-dark, @line-height, 11px, @base-font-family, bold);
+    #font .shorthand( @gray-dark, @line-height, 11px, @base-font-family, bold );
     background: @gray-lighter;
     content: "Exemplo";
-    .border-radius(@base-border-radius 0 @base-border-radius 0);
+    .border-radius( @base-border-radius 0 @base-border-radius 0 );
   }
-
   .syo-docs-example-inner {
     position: relative;
     padding: 0 @base-line-height @base-line-height;
   }
-
   pre.prettyprint {
     margin: 0;
-    .border-radius-bottom(@base-border-radius);
+    .border-radius-bottom( @base-border-radius );
   }
 }
 
-// Seção Grid
-// -------------------------
+/* =================================================================================================================
+   Seção Grid
+   ================================================================================================================= */
+   
 .grid-example {
   .row {
     margin-bottom: @base-line-height;
   }
-
   [class*="span"] {
     padding: 5px;
     font-size: .9;
     background: @gray-lighter;
-    .border-radius(@base-border-radius);
-
-	  &:hover {
-      background: lighten(@gray-light, 3%);
+    .border-radius( @base-border-radius );
+    &:hover {
+      background: lighten( @gray-light, 3% );
     }
   }
 }
 
-// Seção Icones
-// -------------------------
+/* =================================================================================================================
+   Seção Ícones
+   ================================================================================================================= */
+   
 .icons {
   .clearfix();
   margin: 0 0 @base-line-height;
   list-style: none;
-
   li {
     float: left;
     width: 24%;
@@ -115,21 +113,20 @@ article {
   }
 }
 
-// Seção "Design responsivo"
-// -------------------------
+/* =================================================================================================================
+   Seção "Design responsivo"
+   ================================================================================================================= */
+   
 .responsive-test, .responsive-table {
   .visible, .hidden {
     text-align: center;
   }
-
   .hidden {
     color: @gray-light;
   }
-
   .visible {
     background: @light-green;
     color: @green;
-
     &:before {
       position: absolute;
       content: "✔";
@@ -140,10 +137,8 @@ article {
 
 ul.responsive-test {
   list-style: none;
-
   li {
-    @padding: (@base-line-height / 2) 0;
-
+    @padding: ( @base-line-height / 2 ) 0;
     position: relative;
     display: inline-block;
     width: 24%;
@@ -152,41 +147,45 @@ ul.responsive-test {
     border: 1px solid @gray-light;
     color: @gray-light;
     text-align: center;
-    .border-radius(@base-border-radius);
-
+    .border-radius( @base-border-radius );
     > span {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       padding: @padding;
-      .border-radius(@base-border-radius);
+      .border-radius( @base-border-radius);
     }
   }
 }
 
-// Responsividade
-// -------------------------
+/* =================================================================================================================
+   Responsividade
+   ================================================================================================================= */
+   
+@media ( max-width: 979px ) and ( orientation: portrait ) {
 
-@media (max-width: 979px) and (orientation: portrait) {
-  // Num tablet em posição retrato, a navegação "lateral" não precisa necessariamente ser lateral.
+  /* 
+   * Num tablet em posição retrato, a navegação "lateral" não precisa necessariamente ser lateral.
+   */
   #sidebar {
     position: static;
   }
-
-  // Aumenta o tamanho da apresentação de cada icone num celular, pra não ficar tão horrível
+  
+  /* Aumenta o tamanho da apresentação de cada icone num celular, pra não ficar tão horrível */
   .icons li {
     width: 32.3%;
   }
-
-  // Oculta o check de "efeito ativo" da seção "design responsivo"
+  
+  /* Oculta o check de "efeito ativo" da seção "design responsivo" */
   .responsive-test, .responsive-table {
     .visible:before {
       content: "";
     }
   }
-
+  
   .footer section {
     text-align: center;
   }
+  
 }

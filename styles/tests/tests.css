@@ -1,44 +1,51 @@
+/* =================================================================================================================
+   Geral
+   ================================================================================================================= */
+   
 .test-container {
   max-width: 1000px;
   margin: auto;
 }
+
 .test {
   margin: 5px;
   padding: 5px;
   border: 1px dashed;
   overflow: auto;
 }
+
 .test .title {
   border-bottom: thin silver solid;
 }
 
+/* =================================================================================================================
+   Utilidades
+   ================================================================================================================= */
+   
 /* Destaque do background para inspeção visual */
 .test-highlight1 {
   background-color: rgba( 255, 0, 0, .2 );
 }
+
+/* Destaque do background para inspeção visual */
 .test-highlight2 {
   background-color: rgba( 255, 0, 0, .4 );
 }
 
-/*
- * Remove as margens do elemento para melhor
- * inspeção de outros estilos
- */
+/* Remove as margens do elemento para melhor inspeção de outros estilos como sombra ou borda */
 .test-trimmed {
   margin: 0;
 }
 
 /*
- * Utilizado para expandir o espaço em volta do elemento a fim de
- * impedir que os estilos padrões do teste atrapalhem a inspeção
+ * Utilizado para expandir o espaço em volta do elemento a fim de impedir que os estilos padrões do teste atrapalhem
+ * a inspeção
  */
 .test-lone >:not(.title) {
-	padding: 30px;
+  padding: 30px;
 }
 
-/* 
- * Tamanho fixo para não contrair em resoluções menores
- */
+/* Tamanho fixo para não contrair o conteúdo em resoluções menores */
 .test-fixed > * {
-	min-width: 900px;
+  min-width: 900px;
 }
