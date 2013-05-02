@@ -62,7 +62,7 @@ module.exports = function( grunt ) {
 			},
 			docs: {
 				files: {
-					"docs/main.css": "docs/main.less",
+					"docs/compiled/main.css": "docs/main.less",
 				}
 			}
 		},
