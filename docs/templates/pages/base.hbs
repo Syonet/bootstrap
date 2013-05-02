@@ -1,992 +1,1044 @@
 <aside class="span2" id="sidebar-wrapper">
-    <ul class="syo-nav syo-nav-list" id="sidebar">
-        <li class="syo-nav-header"><i class="icon-file-css"></i> CSS Base</li>
-        <li><a href="#grid">Grid</a></li>
-        <li><a href="#type">Tipografia</a></li>
-        <li><a href="#lists">Listas</a></li>
-        <li><a href="#forms">Formulários</a></li>
-        <li><a href="#buttons">Botões</a></li>
-        <li><a href="#tables">Tabelas</a></li>
-        <li><a href="#icons">Ícones</a></li>
-        <li><a href="#responsive">Design Responsivo</a></li>
-        <li><a href="#utils">Utilitários</a></li>
-    </ul>
+	<ul class="syo-nav syo-nav-list" id="sidebar">
+		<li class="syo-nav-header"><i class="icon-file-css"></i> CSS Base</li>
+		<li><a href="#grid">Grid</a></li>
+		<li><a href="#type">Tipografia</a></li>
+		<li><a href="#lists">Listas</a></li>
+		<li><a href="#forms">Formulários</a></li>
+		<li><a href="#buttons">Botões</a></li>
+		<li><a href="#tables">Tabelas</a></li>
+		<li><a href="#icons">Ícones</a></li>
+		<li><a href="#responsive">Design Responsivo</a></li>
+		<li><a href="#utils">Utilitários</a></li>
+	</ul>
 </aside>
 
 <div class="span10">
-    <!-- Grid -->
-    <article id="grid">
-        <div class="syo-header">
-            <h2>Grid</h2>
-        </div>
 
-        <p>Grid responsivo de 12 colunas.</p>
+	<!-- Grid -->
+	<article id="grid">
+	
+		<div class="syo-header">
+			<h2>Grid</h2>
+		</div>
+		<p>Grid responsivo de 12 colunas.</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="grid-example">
+					<div class="row">
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+						<div class="span1">.span1</div>
+					</div>
+					<div class="row">
+						<div class="span2">.span2</div>
+						<div class="span2">.span2</div>
+						<div class="span2">.span2</div>
+						<div class="span2">.span2</div>
+						<div class="span2">.span2</div>
+						<div class="span2">.span2</div>
+					</div>
+					<div class="row">
+						<div class="span3">.span3</div>
+						<div class="span3">.span3</div>
+						<div class="span3">.span3</div>
+						<div class="span3">.span3</div>
+					</div>
+					<div class="row">
+						<div class="span4">.span4</div>
+						<div class="span4">.span4</div>
+						<div class="span4">.span4</div>
+					</div>
+					<div class="row">
+						<div class="span5">.span5</div>
+						<div class="span5">.span5</div>
+					</div>
+					<div class="row">
+						<div class="span6">.span6</div>
+						<div class="span6">.span6</div>
+					</div>
+					<div class="row">
+						<div class="span7">.span7</div>
+					</div>
+					<div class="row">
+						<div class="span8">.span8</div>
+					</div>
+					<div class="row">
+						<div class="span9">.span9</div>
+					</div>
+					<div class="row">
+						<div class="span10">.span10</div>
+					</div>
+					<div class="row">
+						<div class="span11">.span11</div>
+					</div>
+					<div class="row">
+						<div class="span12">.span12</div>
+					</div>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="row">
+					<div class="span1"></div>
+					<div class="span1"></div>
+					<div class="span1"></div>
+					...
+				</div>
+			</div>
+		</div>
+		
+		<p>Para dar um distanciamento extra entre 2 elementos, basta usar uma classe <code>.offset</code>:</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="grid-example">
+					<div class="row">
+						<div class="span2">.span2</div>
+						<div class="span2 offset2">.span2 .offset2</div>
+						<div class="span2 offset2">.span2 .offset2</div>
+						<div class="span2">.span2</div>
+					</div>
+					<div class="row">
+						<div class="span2 offset4">.span2 .offset4</div>
+						<div class="span2">.span2</div>
+						<div class="span4">.span4</div>
+					</div>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="row">
+					<div class="span2"></div>
+					<div class="span2 offset2"></div>
+					...
+				</div>
+			</div>
+		</div>
+		
+	</article>
+	
+	<!-- Tipografia -->
+	<article id="type">
+	
+		<div class="syo-header">
+			<h2>Tipografia</h2>
+		</div>
+		
+		<h3>Headings</h3>
+		<p>Todos os headings HTML, do <code>h1</code> ao <code>h6</code>.</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<h1>h1. Heading 1</h1>
+				<h2>h2. Heading 2</h2>
+				<h3>h3. Heading 3</h3>
+				<h4>h4. Heading 4</h4>
+				<h5>h5. Heading 5</h5>
+				<h6>h6. Heading 6</h6>
+			</div>
+			<div class="prettyprint"><h1>...</h1></div>
+		</div>
+		
+		<h3>Parágrafos</h3>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tristique vehicula.
+					In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur massa, sit amet egestas
+					 tellus metus eget eros.
+				</p>
+				<p>
+					Praesent in tellus ut magna tincidunt volutpat. Praesent eleifend erat eget risus gravida cursus
+					fermentum urna placerat.
+				</p>
+				<p>
+					Vestibulum interdum orci sed enim egestas quis vehicula mauris accumsan. Donec mattis rhoncus augue,
+					convallis gravida lacus congue vitae. Pellentesque tortor purus, blandit non consequat at, mattis
+					elementum enim.
+				</p>
+				<p>
+					Morbi urna libero, blandit a rutrum sed, rutrum id arcu. Sed ac dolor quis erat fermentum feugiat a
+					et sapien. Nam sit amet eros ac ipsum varius lacinia. Suspendisse nisi odio, pretium et dictum in,
+					blandit vitae lectus.
+				</p>
+			</div>
+			<div class="prettyprint"><p>...</p></div>
+		</div>
+		<p>Para dar um destaque extra a um parágrafo, adicione a ele a classe <code>.lead</code>.</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+			<div class="prettyprint"><p class="lead">...</p></div>
+		</div>
+		
+		<h3>Links</h3>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<p><a href="#">Lorem ipsum dolor sit amet</a></p>
+			</div>
+			<div class="prettyprint"><a href="#">...</a></div>
+		</div>
+		
+		<h3>Ênfase</h3>
+		<p>Para dar ênfase a um determinado bloco de texto, pode-se usar qualquer uma das tags abaixo:</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<p><code>em</code>, <code>i</code>: <em>Texto enfatizado em itálico</em></p>
+				<p><code>strong</code>, <code>b</code>: <strong>Texto com muita importância, em negrito.</strong></p>
+				<p><code>small</code>: <small>Texto sem importância, letras pequenas!</small></p>
+			</div>
+			<div class="prettyprint">
+				<em>...</em> ou <i>...</i>
+				<strong>...</strong> ou <b>...</b>
+				<small>...</small>
+			</div>
+		</div>
+		
+	</article>
+	
+	<!-- Listas -->
+	<article id="lists">
+	
+		<div class="syo-header">
+			<h2>Listas</h2>
+		</div>
+		<p>Elementos <code>ul</code> e <code>ol</code>, como sempre!</p>
+		
+		<h3>Não ordenadas</h3>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						<ul>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="prettyprint">
+				<ul>
+					<li>...</li>
+				</ul>
+			</div>
+		</div>
+		
+		<h3>Ordenadas</h3>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<ol>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						<ol>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div class="prettyprint">
+				<ol>
+					<li>...</li>
+				</ol>
+			</div>
+		</div>
+		
+		<h3>Não estilizadas</h3>
+		<p>
+			Adicione a classe <code>.unstyled</code> para ter listas cujos itens não tem um estilo.
+			<strong>Nota:</strong> Apenas os itens diretos da lista com a classe não serão estilizados.
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<ul class="unstyled">
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						<ul>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="prettyprint">
+				<ul class="unstyled">
+					<li>...</li>
+				</ul>
+			</div>
+		</div>
+		
+		<h3>Inline</h3>
+		<p>Adicione a classe <code>.inline</code> para ter uma lista inline.</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<ul class="inline">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</div>
+			<div class="prettyprint">
+				<ul class="inline">
+					<li>...</li>
+				</ul>
+			</div>
+		</div>
+		
+	</article>
+	
+	<!-- Forms -->
+	<article id="forms">
+	
+		<div class="syo-header">
+			<h2>Formulários</h2>
+		</div>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<fieldset>
+					<legend>Formulário</legend>
+					<div class="row">
+						<div class="syo-field span3">
+							<label for="input1" class="span6">Label à direita (default):</label>
+							<div class="syo-field-controls span6">
+								<input type="text" id="input1" class="input-block-level"
+										placeholder="Digite alguma coisa...">
+								<span class="syo-field-help">Texto de ajuda para o campo acima</span>
+							</div>
+						</div>
+					</div>
+					<div class="syo-field row">
+						<div class="span3">
+							<select id="input6" class="input-block-level">
+								<option value="1">Opção 1</option>
+								<option value="2">Opção 2</option>
+								<option value="3">Opção 3</option>
+							</select>
+						</div>
+					</div>
+					<div class="syo-field syo-field-inline">
+						<label>
+							<input type="checkbox">
+							Checkbox
+						</label>
+					</div>
+					<div class="syo-field syo-field-inline">
+						<input type="radio" id="input8">
+						<label for="input8">Radio</label>
+					</div>
+					<div class="syo-field syo-field-inline">
+						<label>
+							<input type="radio">
+							Radio
+						</label>
+					</div>
+					<div class="syo-field">
+						<input type="submit" value="Botão" class="syo-button">
+						<input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
+					</div>
+				</fieldset>
+			</div>
+			<div class="prettyprint">
+				<form method="POST" action="#">
+					<fieldset>
+						<legend>Formulário</legend>
+						<div class="syo-field">
+							<label for="input-id">Label à direita (default):</label>
+							<div class="syo-field-controls">
+								<input type="text" id="input-id" placeholder="Digite alguma coisa...">
+								<span class="syo-field-help">Texto de ajuda para o campo acima</span>
+							</div>
+						</div>
+						
+						<div class="syo-field">
+							<select>
+								<option value="1">...</option>
+							</select>
+						</div>
+						
+						<div class="syo-field syo-field-inline">
+							<label>
+								<input type="checkbox">
+								Checkbox
+							</label>
+						</div>
+						<div class="syo-field syo-field-inline">
+							<input type="radio" id="radiobox">
+							<label for="radiobox">Radio</label>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		
+		<h3>Estados de sucesso/erro</h3>
+		<p>
+			É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
+			devida no elemento que você deseja aplicar tal estado:
+		</p>
+		<table class="syo-data-table">
+			<colgroup>
+				<col class="span3">
+				<col class="span9">
+			</colgroup>
+			<thead>
+			<tr>
+				<th class="text-right">Classe</th>
+				<th>Exemplo visual</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="text-right"><code>.syo-success</code></td>
+				<td>
+					<input type="text" class="syo-success" value="Campo text preenchido com sucesso">
+					<select class="syo-success">
+						<option selected="selected">Estou selecionado!</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right"><code>.syo-error</code></td>
+				<td>
+					<input type="text" class="syo-error" value="Erro ao preencher este campo!">
+					<select class="syo-error">
+						<option>Selecione-me</option>
+					</select>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		
+	</article>
+	
+	<!-- Botões -->
+	<article id="buttons">
+	
+		<div class="syo-header">
+			<h2>Botões</h2>
+		</div>
+		<p>
+			Vários <i>markups</i> possíveis, apenas um estilo. Estilize qualquer tag com a classe
+			<code>.syo-button</code> - no entanto, é preferível utilizá-la com as tags <code>&lt;a&gt;</code> e
+			<code>&lt;button&gt;</code> para uma melhor renderização.
+		</p>
+		
+		<table class="syo-data-table">
+			<colgroup>
+				<col class="span2">
+				<col class="span2">
+				<col class="span8">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Botão</th>
+					<th>Classes</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><button type="button" class="syo-button">Botão</button></td>
+					<td><code>syo-button</code></td>
+					<td>Botão padrão, cinza. Útil para ações sem muita importância.</td>
+				</tr>
+				<tr>
+					<td><button type="button" class="syo-button syo-success">Sucesso</button></td>
+					<td><code>syo-button syo-success</code></td>
+					<td>Indica uma ação positiva ou de sucesso.</td>
+				</tr>
+				<tr>
+					<td><button type="button" class="syo-button syo-error">Erro</button></td>
+					<td><code>syo-button syo-error</code></td>
+					<td>Indica uma ação negativa ou de erro.</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h3>Estado Desabilitado</h3>
+		<p>
+			Para dar o efeito de botão desabilitado, adicione a classe <code>.syo-disabled</code> ou atribua a
+			propriedade <code>disabled</code> (disponível apenas para a tag <code>&lt;button&gt;</code>).
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<button class="syo-button" type="button" disabled="disabled">Botão Desabilitado</button>
+				<a href="#" class="syo-disabled syo-button">Link Desabilitado</a>
+			</div>
+		</div>
+	</article>
+	
+	<!-- Tabelas -->
+	<article id="tables">
+	
+		<div class="syo-header">
+			<h2>Tabelas</h2>
+		</div>
+		<p>
+			Tabelas para dados tabulares! Basta adicionar a classe <code>.syo-data-table</code>, ou utilizar o nosso
+			plugin <b>syoDataGrid</b>. Compatível com ambos.<br>
+			É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <b>.syo-active</b>
+			(para <code>.syo-data-table</code>). O mesmo estilo será aplicado para uma linha clicada pelo
+			<b>syoDataGrid</b>.<br><br>
+			<b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas :)
+		</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<table class="syo-data-table">
+					<colgroup>
+						<col class="span3">
+						<col class="span3">
+						<col class="span6">
+					</colgroup>
+					<thead>
+					<tr>
+						<th>Coluna 1</th>
+						<th>Coluna 2</th>
+						<th>Coluna 3</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Texto 1</td>
+						<td>Texto 2</td>
+						<td rowspan="2">Texto 3</td>
+					</tr>
+					<tr>
+						<td>Texto 1</td>
+						<td>Texto 2</td>
+					</tr>
+					<tr class="syo-active">
+						<td>Texto 1</td>
+						<td>Texto 2</td>
+						<td>Texto 3</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="prettyprint">
+				<table class="syo-data-table">
+					<colgroup>
+						<col class="span3">
+						<col class="span3">
+						<col class="span6">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Coluna 1</th>
+							<th>Coluna 2</th>
+							<th>Coluna 3</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td rowspan="2">Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+						</tr>
+						<tr class="syo-active">
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<p>
+			Para que sua tabela tenha linhas de cores alternadas, adicione a classe
+			<code>.syo-data-table-striped</code>.
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<table class="syo-data-table syo-data-table-striped">
+					<thead>
+					<tr>
+						<th>Coluna 1</th>
+						<th>Coluna 2</th>
+						<th>Coluna 3</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Texto 1</td>
+						<td>Texto 2</td>
+						<td>Texto 3</td>
+					</tr>
+					<tr>
+						<td colspan="2">Texto 1</td>
+						<td>Texto 2</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="prettyprint">
+				<table class="syo-data-table syo-data-table-striped">
+					<thead>
+						<tr>
+							<td></td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+		
+	</article>
 
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="grid-example">
-                    <div class="row">
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                        <div class="span1">.span1</div>
-                    </div>
-                    <div class="row">
-                        <div class="span2">.span2</div>
-                        <div class="span2">.span2</div>
-                        <div class="span2">.span2</div>
-                        <div class="span2">.span2</div>
-                        <div class="span2">.span2</div>
-                        <div class="span2">.span2</div>
-                    </div>
-                    <div class="row">
-                        <div class="span3">.span3</div>
-                        <div class="span3">.span3</div>
-                        <div class="span3">.span3</div>
-                        <div class="span3">.span3</div>
-                    </div>
-                    <div class="row">
-                        <div class="span4">.span4</div>
-                        <div class="span4">.span4</div>
-                        <div class="span4">.span4</div>
-                    </div>
-                    <div class="row">
-                        <div class="span5">.span5</div>
-                        <div class="span5">.span5</div>
-                    </div>
-                    <div class="row">
-                        <div class="span6">.span6</div>
-                        <div class="span6">.span6</div>
-                    </div>
-                    <div class="row">
-                        <div class="span7">.span7</div>
-                    </div>
-                    <div class="row">
-                        <div class="span8">.span8</div>
-                    </div>
-                    <div class="row">
-                        <div class="span9">.span9</div>
-                    </div>
-                    <div class="row">
-                        <div class="span10">.span10</div>
-                    </div>
-                    <div class="row">
-                        <div class="span11">.span11</div>
-                    </div>
-                    <div class="row">
-                        <div class="span12">.span12</div>
-                    </div>
-                </div>
-            </div>
-<pre class="prettyprint">
-    &lt;div class="row"&gt;
-        &lt;div class="span1"&gt;&lt;/div&gt;
-        &lt;div class="span1"&gt;&lt;/div&gt;
-        &lt;div class="span1"&gt;&lt;/div&gt;
-        ...
-    &lt;/div&gt;
-</pre>
-        </div>
+	<!-- Ícones -->
+	<article id="icons">
+	
+		<div class="syo-header">
+			<h2>Ícones</h2>
+		</div>
+		<p>
+			O Syonet Bootstrap vem com os quase 300 ícones abaixo, disponibilizados pela combinação das fontes icônicas
+			<a href="http://icomoon.io/">IcoMoon</a> e 
+			<a href="http://fortawesome.github.com/Font-Awesome/">FontAwesome</a>.<br>
+			Abaixo uma lista de todos eles e suas respectivas classes CSS:
+		</p>
+		
+		<div class="syo-header">
+			<h4> Setas <small>Indicação e manipulação</small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-arrow-up-left"></i> icon-arrow-up-left</li>
+			<li><i class="icon-arrow-up"></i> icon-arrow-up</li>
+			<li><i class="icon-arrow-up-right"></i> icon-arrow-up-right</li>
+			<li><i class="icon-arrow-right"></i> icon-arrow-right</li>
+			<li><i class="icon-arrow-down-right"></i> icon-arrow-down-right</li>
+			<li><i class="icon-arrow-down"></i> icon-arrow-down</li>
+			<li><i class="icon-arrow-down-left"></i> icon-arrow-down-left</li>
+			<li><i class="icon-arrow-left"></i> icon-arrow-left</li>
+			<li><i class="icon-arrow-up-left-2"></i> icon-arrow-up-left-2</li>
+			<li><i class="icon-arrow-up-2"></i> icon-arrow-up-2</li>
+			<li><i class="icon-arrow-up-right-2"></i> icon-arrow-up-right-2</li>
+			<li><i class="icon-arrow-right-2"></i> icon-arrow-right-2</li>
+			<li><i class="icon-arrow-down-right-2"></i> icon-arrow-down-right-2</li>
+			<li><i class="icon-arrow-down-2"></i> icon-arrow-down-2</li>
+			<li><i class="icon-arrow-down-left-2"></i> icon-arrow-down-left-2</li>
+			<li><i class="icon-arrow-left-2"></i> icon-arrow-left-2</li>
+			<li><i class="icon-arrow-up-left-3"></i> icon-arrow-up-left-3</li>
+			<li><i class="icon-arrow-up-3"></i> icon-arrow-up-3</li>
+			<li><i class="icon-arrow-up-right-3"></i> icon-arrow-up-right-3</li>
+			<li><i class="icon-arrow-right-3"></i> icon-arrow-right-3</li>
+			<li><i class="icon-arrow-down-right-3"></i> icon-arrow-down-right-3</li>
+			<li><i class="icon-arrow-down-3"></i> icon-arrow-down-3</li>
+			<li><i class="icon-arrow-down-left-3"></i> icon-arrow-down-left-3</li>
+			<li><i class="icon-arrow-left-3"></i> icon-arrow-left-3</li>
+			<li><i class="icon-chevron-up"></i> icon-chevron-up</li>
+			<li><i class="icon-chevron-down"></i> icon-chevron-down</li>
+			<li><i class="icon-chevron-left"></i> icon-chevron-left</li>
+			<li><i class="icon-chevron-right"></i> icon-chevron-right</li>
+			<li><i class="icon-expand"></i> icon-expand</li>
+			<li><i class="icon-contract"></i> icon-contract</li>
+			<li><i class="icon-expand-2"></i> icon-expand-2</li>
+			<li><i class="icon-contract-2"></i> icon-contract-2</li>
+			<li><i class="icon-undo"></i> icon-undo</li>
+			<li><i class="icon-redo"></i> icon-redo</li>
+			<li><i class="icon-forward"></i> icon-forward</li>
+			<li><i class="icon-reply"></i> icon-reply</li>
+			<li><i class="icon-sort"></i> icon-sort</li>
+			<li><i class="icon-sort-down"></i> icon-sort-down</li>
+			<li><i class="icon-sort-up"></i> icon-sort-up</li>
+		</ul>
+		<div class="syo-header">
+			<h4> Logos <small>Empresas e serviços</small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-html5"></i> icon-html5</li>
+			<li><i class="icon-html5-2"></i> icon-html5-2</li>
+			<li><i class="icon-css3"></i> icon-css3</li>
+			<li><i class="icon-chrome"></i> icon-chrome</li>
+			<li><i class="icon-firefox"></i> icon-firefox</li>
+			<li><i class="icon-IE"></i> icon-IE</li>
+			<li><i class="icon-opera"></i> icon-opera</li>
+			<li><i class="icon-safari"></i> icon-safari</li>
+			<li><i class="icon-libreoffice"></i> icon-libreoffice</li>
+			<li><i class="icon-android"></i> icon-android</li>
+			<li><i class="icon-windows"></i> icon-windows</li>
+			<li><i class="icon-windows8"></i> icon-windows8</li>
+			<li><i class="icon-tux"></i> icon-tux</li>
+			<li><i class="icon-apple"></i> icon-apple</li>
+			<li><i class="icon-finder"></i> icon-finder</li>
+			<li><i class="icon-twitter"></i> icon-twitter</li>
+			<li><i class="icon-twitter-2"></i> icon-twitter-2</li>
+			<li><i class="icon-facebook"></i> icon-facebook</li>
+			<li><i class="icon-facebook-2"></i> icon-facebook-2</li>
+			<li><i class="icon-github"></i> icon-github</li>
+			<li><i class="icon-linkedin"></i> icon-linkedin</li>
+			<li><i class="icon-youtube"></i> icon-youtube</li>
+			<li><i class="icon-youtube-2"></i> icon-youtube-2</li>
+			<li><i class="icon-skype"></i> icon-skype</li>
+			<li><i class="icon-google-plus"></i> icon-google-plus</li>
+			<li><i class="icon-google-plus-2"></i> icon-google-plus-2</li>
+		</ul>
+		<div class="syo-header">
+			<h4> Comunicação <small>Ferramentas,  serviços ou conceitos</small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-connection"></i> icon-connection</li>
+			<li><i class="icon-book"></i> icon-book</li>
+			<li><i class="icon-books"></i> icon-books</li>
+			<li><i class="icon-image"></i> icon-image</li>
+			<li><i class="icon-images"></i> icon-images</li>
+			<li><i class="icon-camera"></i> icon-camera</li>
+			<li><i class="icon-music"></i> icon-music</li>
+			<li><i class="icon-cloud"></i> icon-cloud</li>
+			<li><i class="icon-cloud-download"></i> icon-cloud-download</li>
+			<li><i class="icon-cloud-upload"></i> icon-cloud-upload</li>
+			<li><i class="icon-screen"></i> icon-screen</li>
+			<li><i class="icon-laptop"></i> icon-laptop</li>
+			<li><i class="icon-mobile"></i> icon-mobile</li>
+			<li><i class="icon-tablet"></i> icon-tablet</li>
+			<li><i class="icon-tv"></i> icon-tv</li>
+			<li><i class="icon-keyboard"></i> icon-keyboard</li>
+			<li><i class="icon-phone"></i> icon-phone</li>
+			<li><i class="icon-address-book"></i> icon-address-book</li>
+			<li><i class="icon-bubble"></i> icon-bubble</li>
+			<li><i class="icon-bubbles"></i> icon-bubbles</li>
+			<li><i class="icon-bubbles-2"></i> icon-bubbles-2</li>
+			<li><i class="icon-bubble-2"></i> icon-bubble-2</li>
+			<li><i class="icon-bubbles-3"></i> icon-bubbles-3</li>
+			<li><i class="icon-bubbles-4"></i> icon-bubbles-4</li>
+			<li><i class="icon-feed"></i> icon-feed</li>
+			<li><i class="icon-envelope"></i> icon-envelope</li>
+			<li><i class="icon-envelope-alt"></i> icon-envelope-alt</li>
+			<li><i class="icon-share"></i> icon-share</li>
+		</ul>
+		<div class="syo-header">
+			<h4> Controles de Mídia <small> Áudio e vídeo </small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-headphones"></i> icon-headphones</li>
+			<li><i class="icon-play"></i> icon-play</li>
+			<li><i class="icon-pause"></i> icon-pause</li>
+			<li><i class="icon-stop"></i> icon-stop</li>
+			<li><i class="icon-backward"></i> icon-backward</li>
+			<li><i class="icon-forward-2"></i> icon-forward-2</li>
+			<li><i class="icon-first"></i> icon-first</li>
+			<li><i class="icon-last"></i> icon-last</li>
+			<li><i class="icon-previous"></i> icon-previous</li>
+			<li><i class="icon-next"></i> icon-next</li>
+			<li><i class="icon-eject"></i> icon-eject</li>
+			<li><i class="icon-volume-high"></i> icon-volume-high</li>
+			<li><i class="icon-volume-medium"></i> icon-volume-medium</li>
+			<li><i class="icon-volume-low"></i> icon-volume-low</li>
+			<li><i class="icon-volume-mute"></i> icon-volume-mute</li>
+			<li><i class="icon-volume-mute-2"></i> icon-volume-mute-2</li>
+			<li><i class="icon-volume-increase"></i> icon-volume-increase</li>
+			<li><i class="icon-volume-decrease"></i> icon-volume-decrease</li>
+			<li><i class="icon-equalizer"></i> icon-equalizer</li>
+			<li><i class="icon-shuffle"></i> icon-shuffle</li>
+			<li><i class="icon-film"></i> icon-film</li>
+			<li><i class="icon-brightness-medium"></i> icon-brightness-medium</li>
+			<li><i class="icon-brightness-contrast"></i> icon-brightness-contrast</li>
+			<li><i class="icon-switch"></i> icon-switch</li>
+			<li><i class="icon-contrast"></i> icon-contrast</li>
+		</ul>
+		<div class="syo-header">
+			<h4>Arquivos <small> Representação e manipulação </small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-file-pdf"></i> icon-file-pdf</li>
+			<li><i class="icon-file-openoffice"></i> icon-file-openoffice</li>
+			<li><i class="icon-file-word"></i> icon-file-word</li>
+			<li><i class="icon-file-excel"></i> icon-file-excel</li>
+			<li><i class="icon-file-zip"></i> icon-file-zip</li>
+			<li><i class="icon-file-powerpoint"></i> icon-file-powerpoint</li>
+			<li><i class="icon-file-xml"></i> icon-file-xml</li>
+			<li><i class="icon-file-css"></i> icon-file-css</li>
+			<li><i class="icon-file"></i> icon-file</li>
+			<li><i class="icon-download"></i> icon-download</li>
+			<li><i class="icon-upload"></i> icon-upload</li>
+			<li><i class="icon-folder"></i> icon-folder</li>
+			<li><i class="icon-folder-open"></i> icon-folder-open</li>
+			<li><i class="icon-file-3"></i> icon-file-3</li>
+			<li><i class="icon-file-4"></i> icon-file-4</li>
+			<li><i class="icon-download-alt"></i> icon-download-alt</li>
+			<li><i class="icon-upload-alt"></i> icon-upload-alt</li>
+			<li><i class="icon-file-2"></i> icon-file-2</li>
+			<li><i class="icon-copy"></i> icon-copy</li>
+			<li><i class="icon-copy-2"></i> icon-copy-2</li>
+			<li><i class="icon-copy-3"></i> icon-copy-3</li>
+		</ul>
+		<div class="syo-header">
+			<h4> Edição de Texto <small> Ferramentas </small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-quotes-left"></i> icon-quotes-left</li>
+			<li><i class="icon-print"></i> icon-print</li>
+			<li><i class="icon-paste"></i> icon-paste</li>
+			<li><i class="icon-paste-2"></i> icon-paste-2</li>
+			<li><i class="icon-paste-3"></i> icon-paste-3</li>
+			<li><i class="icon-embed"></i> icon-embed</li>
+			<li><i class="icon-code"></i> icon-code</li>
+			<li><i class="icon-paragraph-left"></i> icon-paragraph-left</li>
+			<li><i class="icon-paragraph-center"></i> icon-paragraph-center</li>
+			<li><i class="icon-paragraph-right"></i> icon-paragraph-right</li>
+			<li><i class="icon-paragraph-justify"></i> icon-paragraph-justify</li>
+			<li><i class="icon-indent-increase"></i> icon-indent-increase</li>
+			<li><i class="icon-indent-decrease"></i> icon-indent-decrease</li>
+			<li><i class="icon-tab"></i> icon-tab</li>
+			<li><i class="icon-table"></i> icon-table</li>
+			<li><i class="icon-scissors"></i> icon-scissors</li>
+			<li><i class="icon-list"></i> icon-list</li>
+			<li><i class="icon-list-2"></i> icon-list-2</li>
+			<li><i class="icon-numbered-list"></i> icon-numbered-list</li>
+			<li><i class="icon-link"></i> icon-link</li>
+			<li><i class="icon-edit"></i> icon-edit</li>
+			<li><i class="icon-strikethrough"></i> icon-strikethrough</li>
+			<li><i class="icon-underline"></i> icon-underline</li>
+			<li><i class="icon-bold"></i> icon-bold</li>
+			<li><i class="icon-italic"></i> icon-italic</li>
+			<li><i class="icon-text-height"></i> icon-text-height</li>
+			<li><i class="icon-text-width"></i> icon-text-width</li>
+			<li><i class="icon-font"></i> icon-font</li>
+			<li><i class="icon-save"></i> icon-save</li>
+		</ul>
+		<div class="syo-header">
+			<h4> Outros <small> Sem categoria específica </small> </h4>
+		</div>
+		<ul class="icons">
+			<li><i class="icon-pencil"></i> icon-pencil</li>
+			<li><i class="icon-newspaper"></i> icon-newspaper</li>
+			<li><i class="icon-office"></i> icon-office</li>
+			<li><i class="icon-home"></i> icon-home</li>
+			<li><i class="icon-home-2"></i> icon-home-2</li>
+			<li><i class="icon-task"></i> icon-task</li>
+			<li><i class="icon-menu"></i> icon-menu</li>
+			<li><i class="icon-tree"></i> icon-tree</li>
+			<li><i class="icon-remove"></i> icon-remove</li>
+			<li><i class="icon-hammer"></i> icon-hammer</li>
+			<li><i class="icon-fire"></i> icon-fire</li>
+			<li><i class="icon-lab"></i> icon-lab</li>
+			<li><i class="icon-magnet"></i> icon-magnet</li>
+			<li><i class="icon-key"></i> icon-key</li>
+			<li><i class="icon-lock"></i> icon-lock</li>
+			<li><i class="icon-unlocked"></i> icon-unlocked</li>
+			<li><i class="icon-wrench"></i> icon-wrench</li>
+			<li><i class="icon-settings"></i> icon-settings</li>
+			<li><i class="icon-cogs"></i> icon-cogs</li>
+			<li><i class="icon-hourglass"></i> icon-hourglass</li>
+			<li><i class="icon-location"></i> icon-location</li>
+			<li><i class="icon-compass"></i> icon-compass</li>
+			<li><i class="icon-tag"></i> icon-tag</li>
+			<li><i class="icon-tags"></i> icon-tags</li>
+			<li><i class="icon-barcode"></i> icon-barcode</li>
+			<li><i class="icon-qrcode"></i> icon-qrcode</li>
+			<li><i class="icon-ticket"></i> icon-ticket</li>
+			<li><i class="icon-cart"></i> icon-cart</li>
+			<li><i class="icon-credit"></i> icon-credit</li>
+			<li><i class="icon-coin"></i> icon-coin</li>
+			<li><i class="icon-clock"></i> icon-clock</li>
+			<li><i class="icon-shield"></i> icon-shield</li>
+			<li><i class="icon-lightning"></i> icon-lightning</li>
+			<li><i class="icon-power-cord"></i> icon-power-cord</li>
+			<li><i class="icon-star"></i> icon-star</li>
+			<li><i class="icon-star-2"></i> icon-star-2</li>
+			<li><i class="icon-star-3"></i> icon-star-3</li>
+			<li><i class="icon-heart"></i> icon-heart</li>
+			<li><i class="icon-heart-2"></i> icon-heart-2</li>
+			<li><i class="icon-info"></i> icon-info</li>
+			<li><i class="icon-blocked"></i> icon-blocked</li>
+			<li><i class="icon-warning"></i> icon-warning</li>
+			<li><i class="icon-notification"></i> icon-notification</li>
+			<li><i class="icon-question"></i> icon-question</li>
+			<li><i class="icon-info-2"></i> icon-info-2</li>
+			<li><i class="icon-earth"></i> icon-earth</li>
+			<li><i class="icon-flag"></i> icon-flag</li>
+			<li><i class="icon-attachment"></i> icon-attachment</li>
+			<li><i class="icon-eye"></i> icon-eye</li>
+			<li><i class="icon-eye-blocked"></i> icon-eye-blocked</li>
+			<li><i class="icon-bookmark"></i> icon-bookmark</li>
+			<li><i class="icon-bookmarks"></i> icon-bookmarks</li>
+			<li><i class="icon-trophy"></i> icon-trophy</li>
+			<li><i class="icon-rocket"></i> icon-rocket</li>
+			<li><i class="icon-glass"></i> icon-glass</li>
+			<li><i class="icon-mug"></i> icon-mug</li>
+			<li><i class="icon-food"></i> icon-food</li>
+			<li><i class="icon-leaf"></i> icon-leaf</li>
+			<li><i class="icon-key-2"></i> icon-key-2</li>
+			<li><i class="icon-spinner"></i> icon-spinner</li>
+			<li><i class="icon-spinner-2"></i> icon-spinner-2</li>
+			<li><i class="icon-hammer-2"></i> icon-hammer-2</li>
+			<li><i class="icon-wand"></i> icon-wand</li>
+			<li><i class="icon-aid"></i> icon-aid</li>
+			<li><i class="icon-bug"></i> icon-bug</li>
+			<li><i class="icon-pie"></i> icon-pie</li>
+			<li><i class="icon-road"></i> icon-road</li>
+			<li><i class="icon-accessibility"></i> icon-accessibility</li>
+			<li><i class="icon-target"></i> icon-target</li>
+			<li><i class="icon-remove-2"></i> icon-remove-2</li>
+			<li><i class="icon-airplane"></i> icon-airplane</li>
+			<li><i class="icon-truck"></i> icon-truck</li>
+			<li><i class="icon-bars"></i> icon-bars</li>
+			<li><i class="icon-stats"></i> icon-stats</li>
+			<li><i class="icon-bars-2"></i> icon-bars-2</li>
+			<li><i class="icon-search"></i> icon-search</li>
+			<li><i class="icon-zoom-in"></i> icon-zoom-in</li>
+			<li><i class="icon-zoom-out"></i> icon-zoom-out</li>
+			<li><i class="icon-binoculars"></i> icon-binoculars</li>
+			<li><i class="icon-droplet"></i> icon-droplet</li>
+			<li><i class="icon-stack"></i> icon-stack</li>
+			<li><i class="icon-map"></i> icon-map</li>
+			<li><i class="icon-map-2"></i> icon-map-2</li>
+			<li><i class="icon-location-2"></i> icon-location-2</li>
+			<li><i class="icon-pushpin"></i> icon-pushpin</li>
+			<li><i class="icon-notebook"></i> icon-notebook</li>
+			<li><i class="icon-console"></i> icon-console</li>
+			<li><i class="icon-new-tab"></i> icon-new-tab</li>
+			<li><i class="icon-crop"></i> icon-crop</li>
+			<li><i class="icon-filter"></i> icon-filter</li>
+			<li><i class="icon-filter-2"></i> icon-filter-2</li>
+			<li><i class="icon-checkmark"></i> icon-checkmark</li>
+			<li><i class="icon-checkmark-2"></i> icon-checkmark-2</li>
+			<li><i class="icon-close"></i> icon-close</li>
+			<li><i class="icon-cancel-circle"></i> icon-cancel-circle</li>
+			<li><i class="icon-checkmark-circle"></i> icon-checkmark-circle</li>
+			<li><i class="icon-spam"></i> icon-spam</li>
+			<li><i class="icon-minus"></i> icon-minus</li>
+			<li><i class="icon-plus"></i> icon-plus</li>
+			<li><i class="icon-enter"></i> icon-enter</li>
+			<li><i class="icon-exit"></i> icon-exit</li>
+			<li><i class="icon-checkbox-checked"></i> icon-checkbox-checked</li>
+			<li><i class="icon-checkbox-unchecked"></i> icon-checkbox-unchecked</li>
+			<li><i class="icon-radio-checked"></i> icon-radio-checked</li>
+			<li><i class="icon-radio-unchecked"></i> icon-radio-unchecked</li>
+			<li><i class="icon-checkbox-partial"></i> icon-checkbox-partial</li>
+			<li><i class="icon-menu-2"></i> icon-menu-2</li>
+			<li><i class="icon-cog"></i> icon-cog</li>
+			<li><i class="icon-drawer"></i> icon-drawer</li>
+			<li><i class="icon-cabinet"></i> icon-cabinet</li>
+			<li><i class="icon-profile"></i> icon-profile</li>
+			<li><i class="icon-support"></i> icon-support</li>
+			<li><i class="icon-bell"></i> icon-bell</li>
+			<li><i class="icon-heart-broken"></i> icon-heart-broken</li>
+			<li><i class="icon-thumbs-up"></i> icon-thumbs-up</li>
+			<li><i class="icon-thumbs-up-2"></i> icon-thumbs-up-2</li>
+			<li><i class="icon-calendar"></i> icon-calendar</li>
+			<li><i class="icon-calendar-2"></i> icon-calendar-2</li>
+			<li><i class="icon-stopwatch"></i> icon-stopwatch</li>
+			<li><i class="icon-certificate"></i> icon-certificate</li>
+			<li><i class="icon-off"></i> icon-off</li>
+			<li><i class="icon-beaker"></i> icon-beaker</li>
+			<li><i class="icon-meter"></i> icon-meter</li>
+			<li><i class="icon-group"></i> icon-group</li>
+			<li><i class="icon-user"></i> icon-user</li>
+			<li><i class="icon-gift"></i> icon-gift</li>
+			<li><i class="icon-refresh"></i> icon-refresh</li>
+			<li><i class="icon-bullhorn"></i> icon-bullhorn</li>
+			<li><i class="icon-alarm"></i> icon-alarm</li>
+			<li><i class="icon-briefcase"></i> icon-briefcase</li>
+		</ul>
+		
+		<p>
+			Para utilizar qualquer um deles, basta colocar a classe desejada em seu elemento. Por exemplo:
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<i class="icon-home"></i>
+			</div>
+			<div class="prettyprint"><i class="icon-home"></i></div>
+		</div>
+		
+	</article>
+	
+	<!-- Responsive -->
+	<article id="responsive">
+	
+		<div class="syo-header">
+			<h2>Design Responsivo</h2>
+		</div>
+		<p>
+			Para facilitar o desenvolvimento responsivo, utilize estas classes, que exibem/ocultam conteúdo por tamanho
+			de telas.<br>
+			Abaixo está uma tabela com as classes disponíveis e o seu efeito em uma tela diferente.
+		</p>
+		
+		<table class="syo-data-table responsive-table">
+			<colgroup>
+				<col class="span4">
+				<col class="span4">
+				<col class="span4">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Classe</th>
+					<th>Tablets <small>(menor que 980px)</small></th>
+					<th>Desktops <small>(maior ou igual a 980px)</small></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>.visible-tablet</code></td>
+					<td class="visible">Visível</td>
+					<td class="hidden">Oculto</td>
+				</tr>
+				<tr>
+					<td><code>.visible-desktop</code></td>
+					<td class="hidden">Oculto</td>
+					<td class="visible">Visível</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h3>Teste das classes responsivas</h3>
+		<p>
+			Redimensione o seu browser ou então carregue esta página noutros dispositivos para testar as classes abaixo.
+			<br>
+			O retângulo com um <i>check</i> verde quer dizer que o efeito está ativo na sua resolução de tela atual.
+		</p>
+		
+		<h4>Visível em...</h4>
+		<ul class="responsive-test">
+			<li>
+				Tablet
+				<span class="visible-tablet visible"><i class="ok"></i> Tablet</span>
+			</li>
+			<li>
+				Desktop
+				<span class="visible-desktop visible"><i class="ok"></i> Desktop</span>
+			</li>
+		</ul>
+		
+	</article>
 
-        <p>Para dar um distanciamento extra entre 2 elementos, basta usar uma classe <code>.offset</code>:</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="grid-example">
-                    <div class="row">
-                        <div class="span2">.span2</div>
-                        <div class="span2 offset2">.span2 .offset2</div>
-                        <div class="span2 offset2">.span2 .offset2</div>
-                        <div class="span2">.span2</div>
-                    </div>
-                    <div class="row">
-                        <div class="span2 offset4">.span2 .offset4</div>
-                        <div class="span2">.span2</div>
-                        <div class="span4">.span4</div>
-                    </div>
-                </div>
-            </div>
-<pre class="prettyprint">
-    &lt;div class="row"&gt;
-        &lt;div class="span2"&gt;&lt;/div&gt;
-        &lt;div class="span2 offset2"&gt;&lt;/div&gt;
-        ...
-    &lt;/div&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Tipografia -->
-    <article id="type">
-        <div class="syo-header">
-            <h2>Tipografia</h2>
-        </div>
-
-        <h3>Headings</h3>
-        <p>Todos os headings HTML, do <code>h1</code> ao <code>h6</code>.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <h1>h1. Heading 1</h1>
-                <h2>h2. Heading 2</h2>
-                <h3>h3. Heading 3</h3>
-                <h4>h4. Heading 4</h4>
-                <h5>h5. Heading 5</h5>
-                <h6>h6. Heading 6</h6>
-            </div>
-            <pre class="prettyprint">&lt;h1&gt;...&lt;/h1&gt;</pre>
-        </div>
-
-        <h3>Parágrafos</h3>
-        <p>No SyoFramework, o <code>font-size</code> global é de <b>11px</b>, com <code>line-height</code> de <b>15px</b>. Cada parágrafo ainda recebe um <code>margin-bottom</code> da metade da altura da linha - <b>7.5px</b>.</p>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tristique vehicula. In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur massa, sit amet egestas tellus metus eget eros.</p>
-                <p>Praesent in tellus ut magna tincidunt volutpat. Praesent eleifend erat eget risus gravida cursus fermentum urna placerat.</p>
-                <p>Vestibulum interdum orci sed enim egestas quis vehicula mauris accumsan. Donec mattis rhoncus augue, convallis gravida lacus congue vitae. Pellentesque tortor purus, blandit non consequat at, mattis elementum enim.</p>
-                <p>Morbi urna libero, blandit a rutrum sed, rutrum id arcu. Sed ac dolor quis erat fermentum feugiat a et sapien. Nam sit amet eros ac ipsum varius lacinia. Suspendisse nisi odio, pretium et dictum in, blandit vitae lectus.</p>
-            </div>
-            <pre class="prettyprint">&lt;p&gt;...&lt;/p&gt;</pre>
-        </div>
-
-        <p>Para dar um destaque extra à um parágrafo inicial, adicione a ele a classe <code>.lead</code>.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <pre class="prettyprint">&lt;p class="lead"&gt;...&lt;/p&gt;</pre>
-        </div>
-
-        <h3>Links</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-            </div>
-            <pre class="prettyprint">&lt;a href="#"&gt;...&lt;/a&gt;</pre>
-        </div>
-
-        <h3>Ênfase</h3>
-        <p>Para dar ênfase a um determinado bloco de texto, pode-se usar qualquer uma das tags abaixo:</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p><code>em</code>, <code>i</code>: <em>Texto enfatizado em itálico</em></p>
-                <p><code>strong</code>, <code>b</code>: <strong>Texto com muita importância, em negrito.</strong></p>
-                <p><code>small</code>: <small>Texto sem importância, letras pequenas!</small></p>
-            </div>
-<pre class="prettyprint">
-&lt;em&gt;...&lt;/em&gt; ou &lt;i&gt;...&lt;/i&gt;
-&lt;strong&gt;...&lt;/strong&gt; ou &lt;b&gt;...&lt;/b&gt;
-&lt;small&gt;...&lt;/small&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Listas -->
-    <article id="lists">
-        <div class="syo-header">
-            <h2>Listas</h2>
-        </div>
-
-        <p>Elementos <code>ul</code> e <code>ol</code>, como sempre!</p>
-
-        <h3>Não ordenadas</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-<pre class="prettyprint">
-&lt;ul&gt;
-    &lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
-        </div>
-
-        <h3>Ordenadas</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ol>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <ol>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ol>
-                    </li>
-                </ol>
-            </div>
-<pre class="prettyprint">
-&lt;ol&gt;
-    &lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;
-</pre>
-        </div>
-
-        <h3>Não estilizadas</h3>
-        <p>Adicione a classe <code>.unstyled</code> para ter listas cujos itens não tem um estilo. <strong>Nota:</strong> Apenas os itens diretos da lista com a classe não serão estilizados.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ul class="unstyled">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-<pre class="prettyprint">
-&lt;ul class="unstyled"&gt;
-    &lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
-        </div>
-
-        <h3>Inline</h3>
-        <p>Adicione a classe <code>.inline</code> para ter uma lista inline.</p>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ul class="inline">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
-            </div>
-<pre class="prettyprint">
-&lt;ul class="inline"&gt;
-    &lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Forms -->
-    <article id="forms">
-        <div class="syo-header">
-            <h2>Formulários</h2>
-        </div>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <fieldset>
-                    <legend>Formulário</legend>
-                    <div class="row">
-                        <div class="syo-field span3">
-                            <label for="input1" class="span6">Label à direita (default):</label>
-                            <div class="syo-field-controls span6">
-                                <input type="text" id="input1" class="input-block-level" placeholder="Digite alguma coisa..." />
-                                <span class="syo-field-help">Texto de ajuda para o campo acima</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="syo-field row">
-                        <div class="span3">
-                            <select id="input6" class="input-block-level">
-                                <option value="1">Opção 1</option>
-                                <option value="2">Opção 2</option>
-                                <option value="3">Opção 3</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="syo-field syo-field-inline">
-                        <label>
-                            <input type="checkbox" />
-                            Checkbox
-                        </label>
-                    </div>
-                    <div class="syo-field syo-field-inline">
-                        <input type="radio" id="input8" />
-                        <label for="input8">Radio</label>
-                    </div>
-                    <div class="syo-field syo-field-inline">
-                        <label>
-                            <input type="radio" />
-                            Radio
-                        </label>
-                    </div>
-
-                    <div class="syo-field">
-                        <input type="submit" value="Botão" class="syo-button" />
-                        <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled" />
-                    </div>
-                </fieldset>
-            </div>
-<pre class="prettyprint">
-&lt;form method="POST" action="#"&gt;
-    &lt;fieldset&gt;
-        &lt;legend&gt;Formul&aacute;rio&lt;/legend&gt;
-        &lt;div class="syo-field"&gt;
-            &lt;label for="input-id"&gt;Label à direita (default):&lt;/label&gt;
-            &lt;div class="syo-field-controls"&gt;
-                &lt;input type="text" id="input-id" placeholder="Digite alguma coisa..." /&gt;
-                &lt;span class="syo-field-help"&gt;Texto de ajuda para o campo acima&lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class="syo-field"&gt;
-            &lt;select&gt;
-                &lt;option value="1"&gt;...&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/div&gt;
-
-        &lt;div class="syo-field syo-field-inline"&gt;
-            &lt;label&gt;
-                &lt;input type="checkbox" /&gt;
-                Checkbox
-            &lt;/label&gt;
-        &lt;/div&gt;
-        &lt;div class="syo-field syo-field-inline"&gt;
-            &lt;input type="radio" id="radiobox" /&gt;
-            &lt;label for="radiobox"&gt;Radio&lt;/label&gt;
-        &lt;/div&gt;
-    &lt;/fieldset&gt;
-&lt;/form&gt;
-</pre>
-        </div>
-
-        <h3>Estados de sucesso/erro</h3>
-        <p>É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe devida no elemento que você deseja aplicar tal estado:</p>
-
-        <table class="syo-data-table">
-            <colgroup>
-                <col class="span3" />
-                <col class="span9" />
-            </colgroup>
-            <thead>
-            <tr>
-                <th class="text-right">Classe</th>
-                <th>Exemplo visual</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="text-right"><code>.syo-success</code></td>
-                <td>
-                    <input type="text" class="syo-success" value="Campo text preenchido com sucesso" />
-	                <select class="syo-success">
-		                <option selected="selected">Estou selecionado!</option>
-	                </select>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-right"><code>.syo-error</code></td>
-                <td>
-                    <input type="text" class="syo-error" value="Erro ao preencher este campo!" />
-                    <select class="syo-error">
-                        <option>Selecione-me</option>
-                    </select>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </article>
-
-    <!-- Botões -->
-    <article id="buttons">
-        <div class="syo-header">
-            <h2>Botões</h2>
-        </div>
-
-        <p>Vários <i>markups</i> possíveis, apenas um estilo. Estilize qualquer tag com a classe <code>.syo-button</code> - no entanto, é preferível utilizá-la com as tags <code>&lt;a&gt;</code> e <code>&lt;button&gt;</code> para uma melhor renderização.</p>
-
-        <table class="syo-data-table">
-            <colgroup>
-                <col class="span2" />
-                <col class="span2" />
-                <col class="span8" />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Botão</th>
-                    <th>Classes</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><button type="button" class="syo-button">Botão</button></td>
-                    <td><code>syo-button</code></td>
-                    <td>Botão padrão, cinza. Útil para ações sem muita importância.</td>
-                </tr>
-                <tr>
-	                <td><button type="button" class="syo-button syo-success">Sucesso</button></td>
-	                <td><code>syo-button syo-success</code></td>
-	                <td>Indica uma ação positiva ou de sucesso.</td>
-                </tr>
-                <tr>
-	                <td><button type="button" class="syo-button syo-error">Erro</button></td>
-	                <td><code>syo-button syo-error</code></td>
-	                <td>Indica uma ação negativa ou de erro.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Estado Desabilitado</h3>
-        <p>Para dar o efeito de botão desabilitado, adicione a classe <code>.syo-disabled</code> ou atribua a propriedade <code>disabled</code> (disponível apenas para a tag <code>&lt;button&gt;</code>).</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-	            <button class="syo-button" type="button" disabled="disabled">Botão Desabilitado</button>
-	            <a href="#" class="syo-disabled syo-button">Link Desabilitado</a>
-            </div>
-        </div>
-    </article>
-
-    <!-- Tabelas -->
-    <article id="tables">
-        <div class="syo-header">
-            <h2>Tabelas</h2>
-        </div>
-
-        <p>
-            Tabelas para dados tabulares! Basta adicionar a classe <code>.syo-data-table</code>, ou utilizar o nosso plugin <b>syoDataGrid</b>. Compatível com ambos.<br />
-            É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <b>.syo-active</b> (para <code>.syo-data-table</code>). O mesmo estilo será aplicado para uma linha clicada pelo <b>syoDataGrid</b>.<br /><br />
-            <b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas :)
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <table class="syo-data-table">
-                    <colgroup>
-                        <col class="span3" />
-                        <col class="span3" />
-                        <col class="span6" />
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th>Coluna 1</th>
-                        <th>Coluna 2</th>
-                        <th>Coluna 3</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Texto 1</td>
-                        <td>Texto 2</td>
-                        <td rowspan="2">Texto 3</td>
-                    </tr>
-                    <tr>
-                        <td>Texto 1</td>
-                        <td>Texto 2</td>
-                    </tr>
-                    <tr class="syo-active">
-                        <td>Texto 1</td>
-                        <td>Texto 2</td>
-                        <td>Texto 3</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-<pre class="prettyprint">
-&lt;table class=&quot;syo-data-table&quot;&gt;
-    &lt;colgroup&gt;
-        &lt;col class="span3" /&gt;
-        &lt;col class="span3" /&gt;
-        &lt;col class="span6" /&gt;
-    &lt;/colgroup&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Coluna 1&lt;/th&gt;
-            &lt;th&gt;Coluna 2&lt;/th&gt;
-            &lt;th&gt;Coluna 3&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Texto 1&lt;/td&gt;
-            &lt;td&gt;Texto 2&lt;/td&gt;
-            &lt;td rowspan="2"&gt;Texto 3&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Texto 1&lt;/td&gt;
-            &lt;td&gt;Texto 2&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr class=&quot;syo-active&quot;&gt;
-            &lt;td&gt;Texto 1&lt;/td&gt;
-            &lt;td&gt;Texto 2&lt;/td&gt;
-            &lt;td&gt;Texto 3&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-</pre>
-        </div>
-
-        <p>Para que sua tabela tenha linhas de cores alternadas, adicione a classe <code>.syo-data-table-striped</code>.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <table class="syo-data-table syo-data-table-striped">
-                    <thead>
-                    <tr>
-                        <th>Coluna 1</th>
-                        <th>Coluna 2</th>
-                        <th>Coluna 3</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Texto 1</td>
-                        <td>Texto 2</td>
-                        <td>Texto 3</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Texto 1</td>
-                        <td>Texto 2</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <pre class="prettyprint">&lt;table class="syo-data-table syo-data-table-striped"&gt;...&lt;/table&gt;</pre>
-        </div>
-    </article>
-
-    <!-- Ícones -->
-    <article id="icons">
-        <div class="syo-header">
-            <h2>Ícones</h2>
-        </div>
-
-        <p>
-            O Syonet Bootstrap vem com os quase 300 ícones abaixo, disponibilizados pela combinação das fontes icônicas
-            <a href="http://icomoon.io/">IcoMoon</a> e <a href="http://fortawesome.github.com/Font-Awesome/">FontAwesome</a>.<br />
-            Abaixo uma lista de todos eles e suas respectivas classes CSS:
-        </p>
-
-        <div class="syo-header">
-            <h4> Setas <small>Indicação e manipulação</small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-arrow-up-left"></i> icon-arrow-up-left</li>
-            <li><i class="icon-arrow-up"></i> icon-arrow-up</li>
-            <li><i class="icon-arrow-up-right"></i> icon-arrow-up-right</li>
-            <li><i class="icon-arrow-right"></i> icon-arrow-right</li>
-            <li><i class="icon-arrow-down-right"></i> icon-arrow-down-right</li>
-            <li><i class="icon-arrow-down"></i> icon-arrow-down</li>
-            <li><i class="icon-arrow-down-left"></i> icon-arrow-down-left</li>
-            <li><i class="icon-arrow-left"></i> icon-arrow-left</li>
-            <li><i class="icon-arrow-up-left-2"></i> icon-arrow-up-left-2</li>
-            <li><i class="icon-arrow-up-2"></i> icon-arrow-up-2</li>
-            <li><i class="icon-arrow-up-right-2"></i> icon-arrow-up-right-2</li>
-            <li><i class="icon-arrow-right-2"></i> icon-arrow-right-2</li>
-            <li><i class="icon-arrow-down-right-2"></i> icon-arrow-down-right-2</li>
-            <li><i class="icon-arrow-down-2"></i> icon-arrow-down-2</li>
-            <li><i class="icon-arrow-down-left-2"></i> icon-arrow-down-left-2</li>
-            <li><i class="icon-arrow-left-2"></i> icon-arrow-left-2</li>
-            <li><i class="icon-arrow-up-left-3"></i> icon-arrow-up-left-3</li>
-            <li><i class="icon-arrow-up-3"></i> icon-arrow-up-3</li>
-            <li><i class="icon-arrow-up-right-3"></i> icon-arrow-up-right-3</li>
-            <li><i class="icon-arrow-right-3"></i> icon-arrow-right-3</li>
-            <li><i class="icon-arrow-down-right-3"></i> icon-arrow-down-right-3</li>
-            <li><i class="icon-arrow-down-3"></i> icon-arrow-down-3</li>
-            <li><i class="icon-arrow-down-left-3"></i> icon-arrow-down-left-3</li>
-            <li><i class="icon-arrow-left-3"></i> icon-arrow-left-3</li>
-            <li><i class="icon-chevron-up"></i> icon-chevron-up</li>
-            <li><i class="icon-chevron-down"></i> icon-chevron-down</li>
-            <li><i class="icon-chevron-left"></i> icon-chevron-left</li>
-            <li><i class="icon-chevron-right"></i> icon-chevron-right</li>
-            <li><i class="icon-expand"></i> icon-expand</li>
-            <li><i class="icon-contract"></i> icon-contract</li>
-            <li><i class="icon-expand-2"></i> icon-expand-2</li>
-            <li><i class="icon-contract-2"></i> icon-contract-2</li>
-            <li><i class="icon-undo"></i> icon-undo</li>
-            <li><i class="icon-redo"></i> icon-redo</li>
-            <li><i class="icon-forward"></i> icon-forward</li>
-            <li><i class="icon-reply"></i> icon-reply</li>
-            <li><i class="icon-sort"></i> icon-sort</li>
-            <li><i class="icon-sort-down"></i> icon-sort-down</li>
-            <li><i class="icon-sort-up"></i> icon-sort-up</li>
-        </ul>
-        <div class="syo-header">
-            <h4> Logos <small>Empresas e serviços</small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-html5"></i> icon-html5</li>
-            <li><i class="icon-html5-2"></i> icon-html5-2</li>
-            <li><i class="icon-css3"></i> icon-css3</li>
-            <li><i class="icon-chrome"></i> icon-chrome</li>
-            <li><i class="icon-firefox"></i> icon-firefox</li>
-            <li><i class="icon-IE"></i> icon-IE</li>
-            <li><i class="icon-opera"></i> icon-opera</li>
-            <li><i class="icon-safari"></i> icon-safari</li>
-            <li><i class="icon-libreoffice"></i> icon-libreoffice</li>
-            <li><i class="icon-android"></i> icon-android</li>
-            <li><i class="icon-windows"></i> icon-windows</li>
-            <li><i class="icon-windows8"></i> icon-windows8</li>
-            <li><i class="icon-tux"></i> icon-tux</li>
-            <li><i class="icon-apple"></i> icon-apple</li>
-            <li><i class="icon-finder"></i> icon-finder</li>
-            <li><i class="icon-twitter"></i> icon-twitter</li>
-            <li><i class="icon-twitter-2"></i> icon-twitter-2</li>
-            <li><i class="icon-facebook"></i> icon-facebook</li>
-            <li><i class="icon-facebook-2"></i> icon-facebook-2</li>
-            <li><i class="icon-github"></i> icon-github</li>
-            <li><i class="icon-linkedin"></i> icon-linkedin</li>
-            <li><i class="icon-youtube"></i> icon-youtube</li>
-            <li><i class="icon-youtube-2"></i> icon-youtube-2</li>
-            <li><i class="icon-skype"></i> icon-skype</li>
-            <li><i class="icon-google-plus"></i> icon-google-plus</li>
-            <li><i class="icon-google-plus-2"></i> icon-google-plus-2</li>
-        </ul>
-        <div class="syo-header">
-            <h4> Comunicação <small>Ferramentas,  serviços ou conceitos</small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-connection"></i> icon-connection</li>
-            <li><i class="icon-book"></i> icon-book</li>
-            <li><i class="icon-books"></i> icon-books</li>
-            <li><i class="icon-image"></i> icon-image</li>
-            <li><i class="icon-images"></i> icon-images</li>
-            <li><i class="icon-camera"></i> icon-camera</li>
-            <li><i class="icon-music"></i> icon-music</li>
-            <li><i class="icon-cloud"></i> icon-cloud</li>
-            <li><i class="icon-cloud-download"></i> icon-cloud-download</li>
-            <li><i class="icon-cloud-upload"></i> icon-cloud-upload</li>
-            <li><i class="icon-screen"></i> icon-screen</li>
-            <li><i class="icon-laptop"></i> icon-laptop</li>
-            <li><i class="icon-mobile"></i> icon-mobile</li>
-            <li><i class="icon-tablet"></i> icon-tablet</li>
-            <li><i class="icon-tv"></i> icon-tv</li>
-            <li><i class="icon-keyboard"></i> icon-keyboard</li>
-            <li><i class="icon-phone"></i> icon-phone</li>
-            <li><i class="icon-address-book"></i> icon-address-book</li>
-            <li><i class="icon-bubble"></i> icon-bubble</li>
-            <li><i class="icon-bubbles"></i> icon-bubbles</li>
-            <li><i class="icon-bubbles-2"></i> icon-bubbles-2</li>
-            <li><i class="icon-bubble-2"></i> icon-bubble-2</li>
-            <li><i class="icon-bubbles-3"></i> icon-bubbles-3</li>
-            <li><i class="icon-bubbles-4"></i> icon-bubbles-4</li>
-            <li><i class="icon-feed"></i> icon-feed</li>
-            <li><i class="icon-envelope"></i> icon-envelope</li>
-            <li><i class="icon-envelope-alt"></i> icon-envelope-alt</li>
-            <li><i class="icon-share"></i> icon-share</li>
-        </ul>
-        <div class="syo-header">
-            <h4> Controles de Mídia <small> Áudio e vídeo </small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-headphones"></i> icon-headphones</li>
-            <li><i class="icon-play"></i> icon-play</li>
-            <li><i class="icon-pause"></i> icon-pause</li>
-            <li><i class="icon-stop"></i> icon-stop</li>
-            <li><i class="icon-backward"></i> icon-backward</li>
-            <li><i class="icon-forward-2"></i> icon-forward-2</li>
-            <li><i class="icon-first"></i> icon-first</li>
-            <li><i class="icon-last"></i> icon-last</li>
-            <li><i class="icon-previous"></i> icon-previous</li>
-            <li><i class="icon-next"></i> icon-next</li>
-            <li><i class="icon-eject"></i> icon-eject</li>
-            <li><i class="icon-volume-high"></i> icon-volume-high</li>
-            <li><i class="icon-volume-medium"></i> icon-volume-medium</li>
-            <li><i class="icon-volume-low"></i> icon-volume-low</li>
-            <li><i class="icon-volume-mute"></i> icon-volume-mute</li>
-            <li><i class="icon-volume-mute-2"></i> icon-volume-mute-2</li>
-            <li><i class="icon-volume-increase"></i> icon-volume-increase</li>
-            <li><i class="icon-volume-decrease"></i> icon-volume-decrease</li>
-            <li><i class="icon-equalizer"></i> icon-equalizer</li>
-            <li><i class="icon-shuffle"></i> icon-shuffle</li>
-            <li><i class="icon-film"></i> icon-film</li>
-            <li><i class="icon-brightness-medium"></i> icon-brightness-medium</li>
-            <li><i class="icon-brightness-contrast"></i> icon-brightness-contrast</li>
-            <li><i class="icon-switch"></i> icon-switch</li>
-            <li><i class="icon-contrast"></i> icon-contrast</li>
-        </ul>
-        <div class="syo-header">
-            <h4>Arquivos <small> Representação e manipulação </small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-file-pdf"></i> icon-file-pdf</li>
-            <li><i class="icon-file-openoffice"></i> icon-file-openoffice</li>
-            <li><i class="icon-file-word"></i> icon-file-word</li>
-            <li><i class="icon-file-excel"></i> icon-file-excel</li>
-            <li><i class="icon-file-zip"></i> icon-file-zip</li>
-            <li><i class="icon-file-powerpoint"></i> icon-file-powerpoint</li>
-            <li><i class="icon-file-xml"></i> icon-file-xml</li>
-            <li><i class="icon-file-css"></i> icon-file-css</li>
-            <li><i class="icon-file"></i> icon-file</li>
-            <li><i class="icon-download"></i> icon-download</li>
-            <li><i class="icon-upload"></i> icon-upload</li>
-            <li><i class="icon-folder"></i> icon-folder</li>
-            <li><i class="icon-folder-open"></i> icon-folder-open</li>
-            <li><i class="icon-file-3"></i> icon-file-3</li>
-            <li><i class="icon-file-4"></i> icon-file-4</li>
-            <li><i class="icon-download-alt"></i> icon-download-alt</li>
-            <li><i class="icon-upload-alt"></i> icon-upload-alt</li>
-            <li><i class="icon-file-2"></i> icon-file-2</li>
-            <li><i class="icon-copy"></i> icon-copy</li>
-            <li><i class="icon-copy-2"></i> icon-copy-2</li>
-            <li><i class="icon-copy-3"></i> icon-copy-3</li>
-        </ul>
-        <div class="syo-header">
-            <h4> Edição de Texto <small> Ferramentas </small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-quotes-left"></i> icon-quotes-left</li>
-            <li><i class="icon-print"></i> icon-print</li>
-            <li><i class="icon-paste"></i> icon-paste</li>
-            <li><i class="icon-paste-2"></i> icon-paste-2</li>
-            <li><i class="icon-paste-3"></i> icon-paste-3</li>
-            <li><i class="icon-embed"></i> icon-embed</li>
-            <li><i class="icon-code"></i> icon-code</li>
-            <li><i class="icon-paragraph-left"></i> icon-paragraph-left</li>
-            <li><i class="icon-paragraph-center"></i> icon-paragraph-center</li>
-            <li><i class="icon-paragraph-right"></i> icon-paragraph-right</li>
-            <li><i class="icon-paragraph-justify"></i> icon-paragraph-justify</li>
-            <li><i class="icon-indent-increase"></i> icon-indent-increase</li>
-            <li><i class="icon-indent-decrease"></i> icon-indent-decrease</li>
-            <li><i class="icon-tab"></i> icon-tab</li>
-            <li><i class="icon-table"></i> icon-table</li>
-            <li><i class="icon-scissors"></i> icon-scissors</li>
-            <li><i class="icon-list"></i> icon-list</li>
-            <li><i class="icon-list-2"></i> icon-list-2</li>
-            <li><i class="icon-numbered-list"></i> icon-numbered-list</li>
-            <li><i class="icon-link"></i> icon-link</li>
-            <li><i class="icon-edit"></i> icon-edit</li>
-            <li><i class="icon-strikethrough"></i> icon-strikethrough</li>
-            <li><i class="icon-underline"></i> icon-underline</li>
-            <li><i class="icon-bold"></i> icon-bold</li>
-            <li><i class="icon-italic"></i> icon-italic</li>
-            <li><i class="icon-text-height"></i> icon-text-height</li>
-            <li><i class="icon-text-width"></i> icon-text-width</li>
-            <li><i class="icon-font"></i> icon-font</li>
-            <li><i class="icon-save"></i> icon-save</li>
-        </ul>
-        <div class="syo-header">
-            <h4> Outros <small> Sem categoria específica </small> </h4>
-        </div>
-        <ul class="icons">
-            <li><i class="icon-pencil"></i> icon-pencil</li>
-            <li><i class="icon-newspaper"></i> icon-newspaper</li>
-            <li><i class="icon-office"></i> icon-office</li>
-            <li><i class="icon-home"></i> icon-home</li>
-            <li><i class="icon-home-2"></i> icon-home-2</li>
-            <li><i class="icon-task"></i> icon-task</li>
-            <li><i class="icon-menu"></i> icon-menu</li>
-            <li><i class="icon-tree"></i> icon-tree</li>
-            <li><i class="icon-remove"></i> icon-remove</li>
-            <li><i class="icon-hammer"></i> icon-hammer</li>
-            <li><i class="icon-fire"></i> icon-fire</li>
-            <li><i class="icon-lab"></i> icon-lab</li>
-            <li><i class="icon-magnet"></i> icon-magnet</li>
-            <li><i class="icon-key"></i> icon-key</li>
-            <li><i class="icon-lock"></i> icon-lock</li>
-            <li><i class="icon-unlocked"></i> icon-unlocked</li>
-            <li><i class="icon-wrench"></i> icon-wrench</li>
-            <li><i class="icon-settings"></i> icon-settings</li>
-            <li><i class="icon-cogs"></i> icon-cogs</li>
-            <li><i class="icon-hourglass"></i> icon-hourglass</li>
-            <li><i class="icon-location"></i> icon-location</li>
-            <li><i class="icon-compass"></i> icon-compass</li>
-            <li><i class="icon-tag"></i> icon-tag</li>
-            <li><i class="icon-tags"></i> icon-tags</li>
-            <li><i class="icon-barcode"></i> icon-barcode</li>
-            <li><i class="icon-qrcode"></i> icon-qrcode</li>
-            <li><i class="icon-ticket"></i> icon-ticket</li>
-            <li><i class="icon-cart"></i> icon-cart</li>
-            <li><i class="icon-credit"></i> icon-credit</li>
-            <li><i class="icon-coin"></i> icon-coin</li>
-            <li><i class="icon-clock"></i> icon-clock</li>
-            <li><i class="icon-shield"></i> icon-shield</li>
-            <li><i class="icon-lightning"></i> icon-lightning</li>
-            <li><i class="icon-power-cord"></i> icon-power-cord</li>
-            <li><i class="icon-star"></i> icon-star</li>
-            <li><i class="icon-star-2"></i> icon-star-2</li>
-            <li><i class="icon-star-3"></i> icon-star-3</li>
-            <li><i class="icon-heart"></i> icon-heart</li>
-            <li><i class="icon-heart-2"></i> icon-heart-2</li>
-            <li><i class="icon-info"></i> icon-info</li>
-            <li><i class="icon-blocked"></i> icon-blocked</li>
-            <li><i class="icon-warning"></i> icon-warning</li>
-            <li><i class="icon-notification"></i> icon-notification</li>
-            <li><i class="icon-question"></i> icon-question</li>
-            <li><i class="icon-info-2"></i> icon-info-2</li>
-            <li><i class="icon-earth"></i> icon-earth</li>
-            <li><i class="icon-flag"></i> icon-flag</li>
-            <li><i class="icon-attachment"></i> icon-attachment</li>
-            <li><i class="icon-eye"></i> icon-eye</li>
-            <li><i class="icon-eye-blocked"></i> icon-eye-blocked</li>
-            <li><i class="icon-bookmark"></i> icon-bookmark</li>
-            <li><i class="icon-bookmarks"></i> icon-bookmarks</li>
-            <li><i class="icon-trophy"></i> icon-trophy</li>
-            <li><i class="icon-rocket"></i> icon-rocket</li>
-            <li><i class="icon-glass"></i> icon-glass</li>
-            <li><i class="icon-mug"></i> icon-mug</li>
-            <li><i class="icon-food"></i> icon-food</li>
-            <li><i class="icon-leaf"></i> icon-leaf</li>
-            <li><i class="icon-key-2"></i> icon-key-2</li>
-            <li><i class="icon-spinner"></i> icon-spinner</li>
-            <li><i class="icon-spinner-2"></i> icon-spinner-2</li>
-            <li><i class="icon-hammer-2"></i> icon-hammer-2</li>
-            <li><i class="icon-wand"></i> icon-wand</li>
-            <li><i class="icon-aid"></i> icon-aid</li>
-            <li><i class="icon-bug"></i> icon-bug</li>
-            <li><i class="icon-pie"></i> icon-pie</li>
-            <li><i class="icon-road"></i> icon-road</li>
-            <li><i class="icon-accessibility"></i> icon-accessibility</li>
-            <li><i class="icon-target"></i> icon-target</li>
-            <li><i class="icon-remove-2"></i> icon-remove-2</li>
-            <li><i class="icon-airplane"></i> icon-airplane</li>
-            <li><i class="icon-truck"></i> icon-truck</li>
-            <li><i class="icon-bars"></i> icon-bars</li>
-            <li><i class="icon-stats"></i> icon-stats</li>
-            <li><i class="icon-bars-2"></i> icon-bars-2</li>
-            <li><i class="icon-search"></i> icon-search</li>
-            <li><i class="icon-zoom-in"></i> icon-zoom-in</li>
-            <li><i class="icon-zoom-out"></i> icon-zoom-out</li>
-            <li><i class="icon-binoculars"></i> icon-binoculars</li>
-            <li><i class="icon-droplet"></i> icon-droplet</li>
-            <li><i class="icon-stack"></i> icon-stack</li>
-            <li><i class="icon-map"></i> icon-map</li>
-            <li><i class="icon-map-2"></i> icon-map-2</li>
-            <li><i class="icon-location-2"></i> icon-location-2</li>
-            <li><i class="icon-pushpin"></i> icon-pushpin</li>
-            <li><i class="icon-notebook"></i> icon-notebook</li>
-            <li><i class="icon-console"></i> icon-console</li>
-            <li><i class="icon-new-tab"></i> icon-new-tab</li>
-            <li><i class="icon-crop"></i> icon-crop</li>
-            <li><i class="icon-filter"></i> icon-filter</li>
-            <li><i class="icon-filter-2"></i> icon-filter-2</li>
-            <li><i class="icon-checkmark"></i> icon-checkmark</li>
-            <li><i class="icon-checkmark-2"></i> icon-checkmark-2</li>
-            <li><i class="icon-close"></i> icon-close</li>
-            <li><i class="icon-cancel-circle"></i> icon-cancel-circle</li>
-            <li><i class="icon-checkmark-circle"></i> icon-checkmark-circle</li>
-            <li><i class="icon-spam"></i> icon-spam</li>
-            <li><i class="icon-minus"></i> icon-minus</li>
-            <li><i class="icon-plus"></i> icon-plus</li>
-            <li><i class="icon-enter"></i> icon-enter</li>
-            <li><i class="icon-exit"></i> icon-exit</li>
-            <li><i class="icon-checkbox-checked"></i> icon-checkbox-checked</li>
-            <li><i class="icon-checkbox-unchecked"></i> icon-checkbox-unchecked</li>
-            <li><i class="icon-radio-checked"></i> icon-radio-checked</li>
-            <li><i class="icon-radio-unchecked"></i> icon-radio-unchecked</li>
-            <li><i class="icon-checkbox-partial"></i> icon-checkbox-partial</li>
-            <li><i class="icon-menu-2"></i> icon-menu-2</li>
-            <li><i class="icon-cog"></i> icon-cog</li>
-            <li><i class="icon-drawer"></i> icon-drawer</li>
-            <li><i class="icon-cabinet"></i> icon-cabinet</li>
-            <li><i class="icon-profile"></i> icon-profile</li>
-            <li><i class="icon-support"></i> icon-support</li>
-            <li><i class="icon-bell"></i> icon-bell</li>
-            <li><i class="icon-heart-broken"></i> icon-heart-broken</li>
-            <li><i class="icon-thumbs-up"></i> icon-thumbs-up</li>
-            <li><i class="icon-thumbs-up-2"></i> icon-thumbs-up-2</li>
-            <li><i class="icon-calendar"></i> icon-calendar</li>
-            <li><i class="icon-calendar-2"></i> icon-calendar-2</li>
-            <li><i class="icon-stopwatch"></i> icon-stopwatch</li>
-            <li><i class="icon-certificate"></i> icon-certificate</li>
-            <li><i class="icon-off"></i> icon-off</li>
-            <li><i class="icon-beaker"></i> icon-beaker</li>
-            <li><i class="icon-meter"></i> icon-meter</li>
-            <li><i class="icon-group"></i> icon-group</li>
-            <li><i class="icon-user"></i> icon-user</li>
-            <li><i class="icon-gift"></i> icon-gift</li>
-            <li><i class="icon-refresh"></i> icon-refresh</li>
-            <li><i class="icon-bullhorn"></i> icon-bullhorn</li>
-            <li><i class="icon-alarm"></i> icon-alarm</li>
-            <li><i class="icon-briefcase"></i> icon-briefcase</li>
-        </ul>
-
-        <p>Para utilizar qualquer um deles, basta colocar a classe desejada em seu elemento. Por exemplo:</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <i class="icon-home"></i>
-            </div>
-            <pre class="prettyprint">&lt;i class="icon-home"&gt;&lt;/i&gt;</pre>
-        </div>
-    </article>
-
-    <!-- Responsive -->
-    <article id="responsive">
-        <div class="syo-header">
-            <h2>Design Responsivo</h2>
-        </div>
-
-        <p>
-            Para facilitar o desenvolvimento responsivo, utilize estas classes, que exibem/ocultam conteúdo por tamanho de telas.<br />
-            Abaixo está uma tabela com as classes disponíveis e o seu efeito em uma tela diferente.
-        </p>
-
-        <table class="syo-data-table responsive-table">
-            <colgroup>
-                <col class="span4" />
-                <col class="span4" />
-                <col class="span4" />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Classe</th>
-                    <th>Tablets <small>(menor que 980px)</small></th>
-                    <th>Desktops <small>(maior ou igual a 980px)</small></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>.visible-tablet</code></td>
-                    <td class="visible">Visível</td>
-                    <td class="hidden">Oculto</td>
-                </tr>
-                <tr>
-                    <td><code>.visible-desktop</code></td>
-                    <td class="hidden">Oculto</td>
-                    <td class="visible">Visível</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Teste das classes responsivas</h3>
-        <p>
-            Redimensione o seu browser ou então carregue esta página noutros dispositivos para testar as classes abaixo.<br />
-            O retângulo com um <i>check</i> verde quer dizer que o efeito está ativo na sua resolução de tela atual.
-        </p>
-
-        <h4>Visível em...</h4>
-        <ul class="responsive-test">
-            <li>
-                Tablet
-                <span class="visible-tablet visible"><i class="ok"></i> Tablet</span>
-            </li>
-            <li>
-                Desktop
-                <span class="visible-desktop visible"><i class="ok"></i> Desktop</span>
-            </li>
-        </ul>
-    </article>
-
-    <!-- Utils -->
-    <article id="utils">
-        <div class="syo-header">
-            <h2>Classes Utilitárias</h2>
-        </div>
-
-        <p>Algumas classes que podem lhe ajudar em um desenvolvimento mais rápido.</p>
-
-        <h3>.syo-hidden</h3>
-        <p>Oculta um elemento da página.</p>
-        <pre class="prettyprint">&lt;div class="syo-hidden"&gt;&lt;/div&gt;</pre>
-
-        <h3>.clearfix</h3>
-        <p>Limpa o <code>float</code> em qualquer elemento.</p>
-        <pre class="prettyprint">&lt;div class="clearfix"&gt;&lt;/div&gt;</pre>
-    </article>
+	<!-- Utils -->
+	<article id="utils">
+	
+		<div class="syo-header">
+			<h2>Classes Utilitárias</h2>
+		</div>
+		<p>Algumas classes que podem lhe ajudar em um desenvolvimento mais rápido.</p>
+		
+		<h3>.syo-hidden</h3>
+		<p>Oculta um elemento da página.</p>
+		<div class="prettyprint"><div class="syo-hidden"></div></div>
+		
+		<h3>.clearfix</h3>
+		<p>Limpa o <code>float</code> em qualquer elemento.</p>
+		<div class="prettyprint"><div class="clearfix"></div></div>
+		
+	</article>
 </div>
