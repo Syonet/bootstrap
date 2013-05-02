@@ -4,6 +4,30 @@
 	var main, mainPos, sidebar, firstSection;
 
 	$( document ).ready(function() {
+	
+		// Faz o escape de todo o código HTML do prettyprint para não precisar escrever no código
+		// o escape das tags dos elementos html.
+		$( "div.prettyprint" ).each(function() {
+			
+			var $div = $( this );
+			var encodedHTML = $div
+				.html()
+				.replace( /&/g, "&amp;" )
+				.replace( /"/g, "&quot;" )
+				.replace( /'/g, "&#39;" )
+				.replace( /</g, "&lt;" )
+				.replace( />/g, "&gt;" );
+			
+			encodedHTML = trim( encodedHTML );
+			
+			var $pre = $( "<pre class='prettyprint'></pre>" )
+				.html( encodedHTML )
+				.insertAfter( $div ); // Deve respeitar a localização do elemento original
+			$div.remove();
+			$pre.show();
+			
+		});
+		
 		// Inicializa o Google Prettify
 		$("pre.prettyprint").addClass("linenums");
 		window.prettyPrint && window.prettyPrint();
@@ -66,5 +90,36 @@
 			}).syoPopover("open");
 		});
 	}
+	
+	function trim( html ) {
+		var identationIndex, lines;
+		
+		if ( html[ 0 ] === "\n" ) {
+			html = html.substring( 1 );
+		}
+		
+		lines = html.split( "\n" );
+		
+		$.each( lines, function( index, line ) {
+			var charIndex = 0;
+			
+			if ( identationIndex === undefined ) {
+				identationIndex = 0;
+				for ( ; charIndex < line.length; charIndex++ ) {
+					if ( line[ charIndex ] === "\t" ) {
+						identationIndex += 1;
+					} else {
+						break;
+					}
+				}
+			}
+			
+			lines[ index ] = line.substring( identationIndex );
+		});
+		
+		return lines.join( "\n" );
+	}
+	
+	window.trim = trim;
 
 })( jQuery );
