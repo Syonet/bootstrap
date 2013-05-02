@@ -1,251 +1,273 @@
 <aside class="span2" id="sidebar-wrapper">
-    <ul class="syo-nav syo-nav-list" id="sidebar">
-        <li class="syo-nav-header"><i class="icon-screen"></i> Componentes</li>
-        <li><a href="#buttonset">Buttonset</a></li>
-        <li><a href="#pagination">Paginação</a></li>
-        <li><a href="#blocks">Blocos</a></li>
-        <li><a href="#header">Header</a></li>
-        <li><a href="#navbar">Navbar</a></li>
-        <li><a href="#nav">Nav</a></li>
-        <li><a href="#progressbar">Progressbar</a></li>
-    </ul>
+	<ul class="syo-nav syo-nav-list" id="sidebar">
+		<li class="syo-nav-header"><i class="icon-screen"></i> Componentes</li>
+		<li><a href="#buttonset">Buttonset</a></li>
+		<li><a href="#pagination">Paginação</a></li>
+		<li><a href="#blocks">Blocos</a></li>
+		<li><a href="#header">Header</a></li>
+		<li><a href="#navbar">Navbar</a></li>
+		<li><a href="#nav">Nav</a></li>
+		<li><a href="#progressbar">Progressbar</a></li>
+	</ul>
 </aside>
 
 <div class="span10">
-    <!-- Buttonset -->
-    <article id="buttonset">
-        <div class="syo-header">
-            <h2>Buttonset</h2>
-        </div>
 
-        <p>Agrupe uma série de botões <code>.syo-button</code> dentro de um <code>.syo-buttonset</code>.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="syo-buttonset" data-widget="syoButton">
-                    <button type="button" class="syo-button">1</button>
-                    <button type="button" class="syo-button">2</button>
-                    <button type="button" class="syo-button">3</button>
-                    <button type="button" class="syo-button">4</button>
-                </div>
-            </div>
-<pre class="prettyprint">
-&lt;div class="syo-buttonset"&gt;
-    &lt;button type="button" class="syo-button"&gt;1&lt;/button&gt;
-    &lt;button type="button" class="syo-button"&gt;2&lt;/button&gt;
-    &lt;button type="button" class="syo-button"&gt;3&lt;/button&gt;
-    &lt;button type="button" class="syo-button"&gt;4&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Paginação -->
-    <article id="pagination">
-        <div class="syo-header">
-            <h2>Paginação</h2>
-        </div>
-
-        <p>Simples componente de paginação, com uma larga área de clique - o que facilita para interfaces <i>touch sensitive</i>.</p>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="pagination-component syo-pagination" data-widget="syoPagination" data-items="4"></div>
-            </div>
-<pre class="prettyprint">
-&lt;div class="syo-pagination"&gt;
-    &lt;ul&gt;
-        &lt;li class="syo-active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="syo-disabled"&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-
-        <p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="syo-pagination">
-                    <ul>
-                        <li class="syo-disabled"><a href="#">1</a></li>
-                    </ul>
-                </div>
-            </div>
-<pre class="prettyprint">
-&lt;div class="syo-pagination"&gt;
-    &lt;ul&gt;
-        &lt;li class="syo-disabled"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-        <p><strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas como um indicador visual de que o item <em>deve estar</em> desabilitado.</p>
-    </article>
-
-    <!-- Blocos -->
-    <article id="blocks">
-        <div class="syo-header">
-            <h2>Blocos</h2>
-        </div>
-
-        <p>Simples componente para separação visual de título e conteúdo.</p>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="row">
-                    <div class="syo-block span6">
-                        <div class="syo-block-title">
-                            <div class="syo-block-title-toolbar syo-pull-left">
-                                Toolbar
-                            </div>
-
-                            Título do bloco em cima
-                        </div>
-                        <div class="syo-block-content">
-                            Conteúdo
-                        </div>
-                    </div>
-                    <div class="syo-block span6">
-                        <div class="syo-block-content">
-                            Conteúdo
-                        </div>
-                        <div class="syo-block-title">
-                            Título do bloco embaixo
-
-                            <div class="syo-block-title-toolbar syo-pull-right">
-                                Toolbar
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<pre class="prettyprint">
-&lt;div class=&quot;syo-block span6&quot;&gt;
-    &lt;div class="syo-block-title"&gt;
-        T&iacute;tulo do bloco
-        &lt;div class="syo-block-title-toolbar syo-pull-left"&gt;
-            Toolbar
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="syo-block-content"&gt;
-        Conte&uacute;do
-    &lt;/div&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- syo-header -->
-    <article id="header">
-        <div class="syo-header">
-            <h2>Headers</h2>
-        </div>
-
-        <p>Header útil para utilizar como uma seção da página. Basta utilizar um elemento com a classe <code>.syo-header</code>.</p>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="syo-header">
-                    <h1>Lorem Ipsum</h1>
-                </div>
-            </div>
-
-<pre class="prettyprint">
-&lt;div id="syo-header"&gt;
-    &lt;h1&gt;...&lt;/h1&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Navbar -->
-    <article id="navbar">
-        <div class="syo-header">
-            <h2>Navbar</h2>
-        </div>
-
-        <p>Navbars são componentes para incluir uma navegação básica horizontal.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="syo-navbar">
-                    <div class="container">
-                        <a href="#" class="syo-navbar-title">Projeto</a>
-                        <ul class="syo-nav">
-                            <li class="syo-active"><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                        </ul>
-                        <div class="syo-pull-right syo-navbar-content">Conteúdo à direita</div>
-                    </div>
-                </div>
-            </div>
-<pre class="prettyprint">
-&lt;div class="syo-navbar"&gt;
-    &lt;div class="container"&gt;
-        &lt;a href="#" class="syo-navbar-title"&gt;Projeto&lt;/a&gt;
-        &lt;ul class="syo-nav"&gt;
-            &lt;li class="syo-active"&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;div class="syo-pull-right syo-navbar-content"&gt;Conte&uacute;do &agrave; direita&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Nav -->
-    <article id="nav">
-        <div class="syo-header">
-            <h2>Nav</h2>
-        </div>
-
-        <p>Componentes de navegação com o mesmo HTML base, apenas diferenciando as classes utilizadas. Todos estilos estão acessíveis atráves da classe <code>.syo-nav</code>.</p>
-
-        <h3>Nav list</h3>
-        <p>Navegação vertical, que permite um fácil agrupamento com headers opcionais. Melhor utilizados como sidebars.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner clearfix">
-                <div class="span3">
-                    <ul class="syo-nav syo-nav-list">
-                        <li class="syo-nav-header">Título</li>
-                        <li><a href="#">Link 1 </a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                    </ul>
-                </div>
-            </div>
-<pre class="prettyprint">
-&lt;ul class="syo-nav syo-nav-list"&gt;
-    &lt;li class="syo-nav-header"&gt;T&iacute;tulo&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
-        </div>
-    </article>
-
-    <!-- Progressbar -->
-    <article id="progressbar">
-        <div class="syo-header">
-            <h2>Progressbar</h2>
-        </div>
-
-        <p>Quando a utilização do <a href="jquery-ui.html#progressbar">jQuery UI</a> para renderizar uma progressbar lhe parece muita mão de obra, utilize-o apenas com CSS do Syonet Bootstrap!</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <div class="syo-progressbar">
-                    <div class="syo-progressbar-value" style="width:60%"></div>
-                </div>
-            </div>
-<pre class="prettyprint">
-&lt;div class="syo-progressbar"&gt;
-    &lt;div class="syo-progressbar-value" style="width:60%"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
-        </div>
-    </article>
+	<!-- Buttonset -->
+	<article id="buttonset">
+	
+		<div class="syo-header">
+			<h2>Buttonset</h2>
+		</div>
+		<p>Agrupe uma série de botões <code>.syo-button</code> dentro de um <code>.syo-buttonset</code>.</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="syo-buttonset" data-widget="syoButton">
+					<button type="button" class="syo-button">1</button>
+					<button type="button" class="syo-button">2</button>
+					<button type="button" class="syo-button">3</button>
+					<button type="button" class="syo-button">4</button>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="syo-buttonset">
+					<button type="button" class="syo-button">1</button>
+					<button type="button" class="syo-button">2</button>
+					<button type="button" class="syo-button">3</button>
+					<button type="button" class="syo-button">4</button>
+				</div>
+			</div>
+		</div>
+	</article>
+	
+	<!-- Paginação -->
+	<article id="pagination">
+	
+		<div class="syo-header">
+			<h2>Paginação</h2>
+		</div>
+		<p>
+			Simples componente de paginação, com uma larga área de clique - o que facilita para interfaces <i>touch
+			sensitive</i>.
+		</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="pagination-component syo-pagination" data-widget="syoPagination" data-items="4"></div>
+			</div>
+			<div class="prettyprint">
+				<div class="syo-pagination">
+					<ul>
+						<li class="syo-active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li class="syo-disabled"><a href="#">4</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="syo-pagination">
+					<ul>
+						<li class="syo-disabled"><a href="#">1</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="syo-pagination">
+					<ul>
+						<li class="syo-disabled"><a href="#">1</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<p>
+			<strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas
+			como um indicador visual de que o item <em>deve estar</em> desabilitado.
+		</p>
+	</article>
+	
+	<!-- Blocos -->
+	<article id="blocks">
+	
+		<div class="syo-header">
+			<h2>Blocos</h2>
+		</div>
+		<p>Simples componente para separação visual de título e conteúdo.</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="row">
+					<div class="syo-block span6">
+						<div class="syo-block-title">
+							<div class="syo-block-title-toolbar syo-pull-left">
+								Toolbar
+							</div>
+							
+							Título do bloco em cima
+						</div>
+						<div class="syo-block-content">
+							Conteúdo
+						</div>
+					</div>
+					<div class="syo-block span6">
+						<div class="syo-block-content">
+							Conteúdo
+						</div>
+						<div class="syo-block-title">
+							Título do bloco embaixo
+							
+							<div class="syo-block-title-toolbar syo-pull-right">
+								Toolbar
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="syo-block span6">
+					<div class="syo-block-title">
+						Título do bloco
+						<div class="syo-block-title-toolbar syo-pull-left">
+							Toolbar
+						</div>
+					</div>
+					<div class="syo-block-content">
+						Conteúdo
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	
+	<!-- syo-header -->
+	<article id="header">
+	
+		<div class="syo-header">
+			<h2>Headers</h2>
+		</div>
+		<p>
+			Header útil para utilizar como uma seção da página. Basta utilizar um elemento com a classe
+			<code>.syo-header</code>.
+		</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="syo-header">
+					<h1>Lorem Ipsum</h1>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div id="syo-header">
+					<h1>...</h1>
+				</div>
+			</div>
+		</div>
+	</article>
+	
+	<!-- Navbar -->
+	<article id="navbar">
+	
+		<div class="syo-header">
+			<h2>Navbar</h2>
+		</div>
+		<p>Navbars são componentes para incluir uma navegação básica horizontal.</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="syo-navbar">
+					<div class="container">
+						<a href="#" class="syo-navbar-title">Projeto</a>
+						<ul class="syo-nav">
+							<li class="syo-active"><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+						<div class="syo-pull-right syo-navbar-content">Conteúdo à direita</div>
+					</div>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="syo-navbar">
+					<div class="container">
+						<a href="#" class="syo-navbar-title">Projeto</a>
+						<ul class="syo-nav">
+							<li class="syo-active"><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+						<div class="syo-pull-right syo-navbar-content">Conteúdo à direita</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	
+	<!-- Nav -->
+	<article id="nav">
+	
+		<div class="syo-header">
+			<h2>Nav</h2>
+		</div>
+		<p>
+			Componentes de navegação com o mesmo HTML base, apenas diferenciando as classes utilizadas. Todos estilos
+			estão acessíveis atráves da classe <code>.syo-nav</code>.
+		</p>
+		
+		<h3>Nav list</h3>
+		<p>
+			Navegação vertical, que permite um fácil agrupamento com headers opcionais. Melhor utilizados como
+			sidebars.
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner clearfix">
+				<div class="span3">
+					<ul class="syo-nav syo-nav-list">
+						<li class="syo-nav-header">Título</li>
+						<li><a href="#">Link 1 </a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<ul class="syo-nav syo-nav-list">
+					<li class="syo-nav-header">Título</li>
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</div>
+		</div>
+	</article>
+	
+	<!-- Progressbar -->
+	<article id="progressbar">
+	
+		<div class="syo-header">
+			<h2>Progressbar</h2>
+		</div>
+		
+		<p>
+			Quando a utilização do <a href="jquery-ui.html#progressbar">jQuery UI</a> para renderizar uma progressbar
+			lhe parece muita mão de obra, utilize-o apenas com CSS do Syonet Bootstrap!
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="syo-progressbar">
+					<div class="syo-progressbar-value" style="width:60%"></div>
+				</div>
+			</div>
+			<div class="prettyprint">
+				<div class="syo-progressbar">
+					<div class="syo-progressbar-value" style="width:60%"></div>
+				</div>
+			</div>
+		</div>
+	</article>
+	
 </div>
