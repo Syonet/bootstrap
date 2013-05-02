@@ -62,7 +62,11 @@ module.exports = function( grunt ) {
 			},
 			docs: {
 				files: {
+<<<<<<< Upstream, based on code-style-CSS
 					"docs/compiled/main.css": "docs/main.less",
+=======
+					"docs/main.css": "docs/main.less"
+>>>>>>> 55f728e Vírgula sobrando
 				}
 			}
 		},
