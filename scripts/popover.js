@@ -198,7 +198,7 @@
 					"<div class='" + this.classes.titlebar + "'>" +
 						"<div class='" + this.classes.title + "'></div>" +
 						"<div class='" + this.classes.close + "'>" +
-							"<i class='icon-remove-sign'></i>" +
+							"<i class='icon-cancel-circle'></i>" +
 						"</div>" +
 					"</div>"
 				);
