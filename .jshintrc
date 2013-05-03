@@ -1,19 +1,19 @@
 {
-	"strict":   true,
-	"bitwise":  true,
-	"undef":    true,
-	"curly":    true,
-	"eqeqeq":   true,
-	"forin":    true,
-	"noempty":  true,
-	"nonew":    true,
-	"unused":   true,
-	"expr":     true,
-	"maxlen":   100,
+	"strict": true,
+	"bitwise": true,
+	"undef": true,
+	"curly": true,
+	"eqeqeq": true,
+	"forin": true,
+	"noempty": true,
+	"nonew": true,
+	"unused": true,
+	"expr": true,
+	"maxlen": 120,
 	"validthis": true,
 
-	"browser":  true,
-	"jquery":   true,
+	"browser": true,
+	"jquery": true,
 
 	"predef": [ "module", "test", "strictEqual", "ok", "start", "stop" ]
 }
