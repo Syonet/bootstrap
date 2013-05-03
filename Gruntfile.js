@@ -56,17 +56,13 @@ module.exports = function( grunt ) {
 						"styles/vendor/jquery-ui/*spinner.css",
 						"styles/vendor/jquery-ui/*tabs.css",
 						"styles/vendor/jquery-ui/*tooltip.css",
-						"styles/vendor/jquery-ui.less"
+						"styles/jquery.ui.less"
 					]
 				}
 			},
 			docs: {
 				files: {
-<<<<<<< Upstream, based on code-style-CSS
-					"docs/compiled/main.css": "docs/main.less",
-=======
-					"docs/main.css": "docs/main.less"
->>>>>>> 55f728e Vírgula sobrando
+					"docs/compiled/main.css": "docs/main.less"
 				}
 			}
 		},

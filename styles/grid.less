@@ -1,17 +1,14 @@
-// Grid
-// -------------------------
 .row {
   width: 100%;
   .clear-float();
 }
 
 [class*="span"] {
-  min-height: 1px;
   float: left;
-
+  min-height: 1px;
   &:first-child {
     margin-left: 0;
   }
 }
 
-#grid(@gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth, @gridRowWidth);
+#grid( @gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth, @gridRowWidth );

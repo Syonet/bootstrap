@@ -1,8 +1,10 @@
 @import "variables.less";
 @import "mixins.less";
 
-/* Component containers
-----------------------------------*/
+/* =================================================================================================================
+   Component containers
+   ================================================================================================================= */
+   
 .ui-widget {
   font-family: @base-font-family;
   font-size: @base-font-size;
@@ -32,25 +34,29 @@
   color: @jq-text-color;
 }
 
-/* Interaction states
-----------------------------------*/
+/* =================================================================================================================
+   Interaction states
+   ================================================================================================================= */
+   
+/*
+ * 1. outline deve servir apenas para foco na navegação com o teclado no FF
+ */
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid @jq-border;
   #gradient .vertical();
   font-weight: normal;
-  color: #555555;
-  .transition(~"background 0.15s linear, border 0.15s linear");
+  color: #555;
+  .transition( ~"background 0.15s linear, border 0.15s linear" );
   &:active {
-    // outline deve servir apenas para foco na navegação com o teclado no FF
     outline: none;
   }
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-  color: #555555;
+  color: #555;
   text-decoration: none;
 }
 .ui-state-hover,
@@ -59,7 +65,7 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #999999;
+  border: 1px solid #999;
   #gradient .vertical();
   font-weight: normal;
   color: @input-hover-text;
@@ -76,7 +82,7 @@
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
   border: 1px solid @jq-border;
-  background: #ffffff;
+  background: #FFF;
   font-weight: normal;
   color: @input-hover-text;
 }
@@ -87,8 +93,10 @@
   text-decoration: none;
 }
 
-/* Interaction Cues
-----------------------------------*/
+/* =================================================================================================================
+   Interaction cues
+   ================================================================================================================= */
+   
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
@@ -104,19 +112,19 @@
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  border: 1px solid #cd0a0a;
-  background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
-  color: #cd0a0a;
+  border: 1px solid #CD0A0A;
+  background: #FEF1EC url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+  color: #CD0A0A;
 }
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
-  color: #cd0a0a;
+  color: #CD0A0A;
 }
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
-  color: #cd0a0a;
+  color: #CD0A0A;
 }
 .ui-priority-primary,
 .ui-widget-content .ui-priority-primary,
@@ -126,22 +134,26 @@
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
-  .opacity(.7);
+  .opacity( .7 );
   font-weight: normal;
 }
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
-  .opacity(.35);
+  .opacity( .35 );
   background-image: none;
 }
+/*
+ * 1. For IE8 - See jqueryUI #6059
+ */
 .ui-state-disabled .ui-icon {
-  filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
+  filter:Alpha(Opacity=35); /* 1 */
 }
 
-/* Icons
-----------------------------------*/
-
+/* =================================================================================================================
+   Icons
+   ================================================================================================================= */
+   
 /* states and images */
 .ui-icon {
   width: 16px;
@@ -351,61 +363,63 @@
 .ui-icon-grip-diagonal-se { background-position: -80px -224px; }
 
 
-/* Misc visuals
-----------------------------------*/
-
+/* =================================================================================================================
+   Misc visuals
+   ================================================================================================================= */
+   
 /* Corner radius */
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-  .border-top-left-radius(@base-border-radius);
+  .border-top-left-radius( @base-border-radius );
 }
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-  .border-top-right-radius(@base-border-radius);
+  .border-top-right-radius( @base-border-radius );
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-  .border-bottom-left-radius(@base-border-radius);
+  .border-bottom-left-radius( @base-border-radius );
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-  .border-bottom-right-radius(@base-border-radius);
+  .border-bottom-right-radius( @base-border-radius );
 }
 
 /* Overlays */
 .ui-widget-overlay {
   background: @jq-overlay;
-  .opacity(.3);
+  .opacity( .3 );
 }
 .ui-widget-shadow {
   margin: -8px 0 0 -8px;
   padding: 8px;
   background: @jq-overlay;
-  .opacity(.3);
+  .opacity( .3 );
   border-radius: 8px;
 }
 
-/* Custom
-----------------------------------*/
-
-// Estilos compartilhados Button + Dialog titlebar close (jQuery UI < 1.10)
+/* =================================================================================================================
+   Custom
+   ================================================================================================================= */
+   
+/*
+ * Estilos compartilhados Button + Dialog titlebar close (jQuery UI < 1.10)
+ * 1. Alinha com os outros botões do bootstrap
+ */
 .ui-button, .ui-dialog .ui-dialog-titlebar-close {
   display: inline-block;
-  border-color: fade(@input-border, 35%);
-  border-bottom-color: lighten(@input-border, 10%);
-
-  // Alinha com os outros botões do bootstrap
-  vertical-align: middle;
+  vertical-align: middle; /* 1 */
+  border-color: fade( @input-border, 35% );
+  border-bottom-color: lighten( @input-border, 10% );
   .transition( @button-bg-transition );
-
   &.ui-state-active,
   &.ui-state-hover {
     background: @component-bg;
@@ -414,40 +428,37 @@
 }
 
 .ui-button {
-  // Nas versões mais antigas do Firefox, quando é utilizado um buttonset (elementos label.ui-button),
-  // o min-height aumentava MUITO o tamanho final do botão.
   height: @input-height;
 }
 
-// https://github.com/vtst/ow/issues/138
+/*
+ * 1. Sobrescreve a cor do link do scaffolding quando for a.ui-button
+ */
 a.ui-button, a.ui-dialog .ui-dialog-titlebar-close {
+  // https://github.com/vtst/ow/issues/138
   &:hover,
   &:active {
-    // Sobrescreve a cor do link do scaffolding quando for a.ui-button
     color: @input-hover-text;
   }
 }
 
-// Button
+/*
+ * 1. (Altura mínima do input - tamanho da linha) - 2px (da borda do botão), e divide por 2, pra deixar metade pra cima,
+ *    metade pra baixo.
+ */
 .ui-button {
-  // Explicação do cálculo:
-  // (Altura mínima do input - tamanho da linha) - 2px (da borda do botão),
-  // E divide por 2, pra deixar metade pra cima, metade pra baixo.
-  padding: (((@input-height - @base-line-height) - 2px) / 2) 12px;
-
+  padding: ( ( ( @input-height - @base-line-height ) - 2px ) / 2 ) 12px; /* 1 */
   .ui-button-text {
     line-height: @base-line-height;
   }
-
   &.ui-state-focus {
     outline: dotted thin #333;
   }
-
   &:active, &.ui-state-active {
     z-index: 3;
-    border-color: fade(@jq-border, 80%);
-    border-bottom-color: lighten(@jq-border, 5%);
-    .box-shadow(0 2px 4px fade(#000, 15%) inset);
+    border-color: fade( @jq-border, 80% );
+    border-bottom-color: lighten( @jq-border, 5% );
+    .box-shadow( 0 2px 4px fade( #000, 15% ) inset );
   }
 }
 
@@ -464,101 +475,97 @@ input.ui-button {
   padding: 0 0 0 1.4em;
 }
 
-// Dialog titlebar closethick (jQuery UI < 1.10)
+/*
+ * Dialog titlebar closethick (jQuery UI < 1.10)
+ * 1. No caso do closethick do Dialog, todos lados sempre vão ter bordas arredondadas
+ * 2. O icone normal tem uma tonalidade mais forte, que não fica legal
+ * 3. Outline neste closethick fica horrível
+ * 4. Sobrescreve a especificidade
+ */
 .ui-dialog .ui-dialog-titlebar-close {
   border: 1px solid @jq-border;
-
-  // No caso do closethick do Dialog, todos lados sempre vão ter bordas arredondadas.
-  .border-radius(@input-border-radius);
-
-  // O icone normal tem uma tonalidade mais forte, que não fica legal.
+  .border-radius( @input-border-radius ); /* 1 */
   .ui-icon {
-    background-image: url(@jq-icons2);
+    background-image: url(@jq-icons2); /* 2 */
   }
-
-  // Outline neste closethick fica horrível.
   &.ui-state-focus {
-    outline: 0;
+    outline: 0; /* 3 */
   }
-
-  // Sobrescreve a especificidade acima
-  &.ui-state-hover .ui-icon {
+  &.ui-state-hover .ui-icon { /* 4 */
     background-image: url(@jq-icons-hover);
   }
 }
 
-// Buttonset
+/*
+ * 1. Em algumas situações o uso de margin -.3em para controle do espaçamento do inline-block causa problemas na
+ *    exibição da borda, ou seja, essa técnica não é garantida e depende muito do tamanho da fonte do container. Usar float
+ *    é mais garantido.
+ * 2. Sobrescreve o estilo principal dos checkboxes/radio, que é relative
+ *    TODO: Sobrescreve pq? Não está claro.
+ * 3. Coloca o outline sobre os vizinhos
+ *    TODO: Pq o uso do z-index: 5? Pq não 1? Não está claro.
+ */
 .ui-buttonset {
   vertical-align: top;
   .clear-float();
-
-  // Em algumas situações o uso de margin -.3em para controle do espaçamento do inline-block
-  // causa problemas na exibição da borda, ou seja, essa técnica não é garantida e depende muito do
-  // tamanho da fonte do container. Usar float é mais garantido.
   .ui-button {
     margin: 0;
-    float: left;
+    float: left; /* 1 */
   }
-
   .ui-helper-hidden-accessible {
-    position: absolute !important; // Sobrescreve o estilo principal dos checkboxes/radio, que é relative
+    position: absolute !important; /* 2 */
   }
-
   .ui-button.ui-state-focus {
-    // Coloca o outline sobre os vizinhos
-    z-index: 5;
+    z-index: 5; /* 3 */
   }
 }
 
-// Spinner
+/*
+ * 1. Remove o botão "X" para limpar o conteúdo do input no IE 10 que aparece no spinner próximo aos controles
+ * 2. Deduz as bordas do .ui-spinner
+ */
 .ui-spinner {
   height: @input-height;
   vertical-align: top;
-  .border-radius(@input-border-radius);
-
+  .border-radius( @input-border-radius );
   .ui-button {
     height: 13px;
   }
-
-  // Remove o "clear" do IE 10 que aparece no spinner
   input::-ms-clear {
-      display: none !important;
+      display: none !important; /* 1 */
   }
-
   .ui-spinner-input {
-    height: @input-height - 2; // Deduz as bordas do .ui-spinner
+    height: @input-height - 2; /* 2 */
     margin: 0;
     border: 0;
   }
-
   a.ui-spinner-button {
     padding: 0;
     border-bottom: 1px solid @jq-border;
-
     &:last-child {
       border-bottom: 0;
     }
   }
 }
 
-// Progressbar
+/*
+ * 1. Reseta os estilos do jquery UI porque usamos "box-sizing: border-box" agora.
+ */
 .ui-progressbar .ui-progressbar-value {
   .progressbar();
-
-  // Reseta os estilos do jquery UI porque usamos "box-sizing: border-box" agora.
+  /* 1 */
   margin: 0;
   border-width: 0 1px 0 0;
 }
 
-// Accordion
+/*
+ * 1. jqueryUI tem sérios problemas com animações e "box-sizing: border-box". Isso corrige um destes problemas
+ * retornando a configuração padrão para que a animação do accordion não "pule" por causa do padding.
+ */
 .ui-accordion .ui-accordion-content {
-  // jqueryUI tem sérios problemas com animações e "box-sizing: border-box"
-  // Isso corrige um destes problemas retornando a configuração padrão para que a animação do
-  // accordion não "pule" por causa do padding.
-  .box-sizing( content-box );
+  .box-sizing( content-box ); /* 1 */
 }
 
-// Datepicker
 .ui-datepicker {
   .ui-datepicker-prev,
   .ui-datepicker-next {
@@ -572,34 +579,31 @@ input.ui-button {
   }
 }
 
-// Menu
+/*
+ * 1. Os icones ficavam desalinhados com o texto
+ */
 .ui-menu .ui-menu-item {
   a {
     padding: 5px 0.4em;
     border: none;
-    border-bottom: 1px solid darken(@component-bg, 5%);
+    border-bottom: 1px solid darken( @component-bg, 5% );
     line-height: inherit;
     cursor: pointer;
     .border-radius(0);
-
     &.ui-state-focus {
       border: none;
-      border-bottom: 1px solid darken(@component-bg, 5%);
+      border-bottom: 1px solid darken( @component-bg, 5% );
       background: @component-bg-hover;
     }
-
     &.ui-state-focus,
     &.ui-state-active {
       margin: 0;
     }
-
-    // Os icones ficavam desalinhados com o texto
     [class^="icon-"]:before,
     [class*=" icon-"]:before {
       vertical-align: baseline;
     }
   }
-
   &:last-child a {
     border-bottom: 0;
   }
