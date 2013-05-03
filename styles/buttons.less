@@ -56,8 +56,10 @@ input.syo-button {
  * 2. Usado para considerar o "z-index" de um elemento com "position: static"
  * 3. Aumentando o z-index faz com que a borda do item ativo/hover fique sobre a dos seus vizinhos
  * 4. Corrige border-radius no primeiro e no último botões do buttonset
+ * 5. Evita espaçamento vertical se o buttonset tiver "display: inline-block"
  */
 .syo-buttonset {
+  vertical-align: middle; /* 5 */
   .clear-float();
   > .syo-button {
     float: left;
