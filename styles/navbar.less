@@ -1,6 +1,12 @@
-// Navbar
-// -------------------------
-
+/* =================================================================================================================
+   Navbar
+   ================================================================================================================= */
+   
+/*
+ * 1. Sobrescreve a propriedade float
+ * 2. Navegação na navbar
+ * 3. Container para conteúdo diversificado
+ */
 .syo-navbar {
   width: 100%;
   min-height: @navbar-height;
@@ -8,76 +14,62 @@
   border: 1px solid @navbar-border-color;
   #gradient .vertical();
   font-size: @base-font-size - 1;
-  .box-shadow(0 0 5px 0px fade(@gray-light, 30%));
-  text-shadow: 0 1px 0 #fff;
-  
+  .box-shadow( 0 0 5px 0px fade( @gray-light, 30% ) );
+  text-shadow: 0 1px 0 #FFF;
   a {
     color: @gray;
   }
-
   > .syo-navbar-inner {
     > :first-child { padding-left: 0; }
     > :last-child { padding-right: 0; }
   }
-
   .syo-navbar-title {
     display: block;
     float: left;
-    .navbar-spacing(@base-font-size * 1.5);
-    #font .shorthand(@gray, 1em, @base-font-size * 1.5, @base-font-family, bold);
+    .navbar-spacing( @base-font-size * 1.5 );
+    #font .shorthand( @gray, 1em, @base-font-size * 1.5, @base-font-family, bold );
     text-decoration: none;
     vertical-align: middle;
-    .transition(~"color 0.1s linear, text-shadow 0.1s linear");
-
+    .transition( ~"color 0.1s linear, text-shadow 0.1s linear" );
     &:hover {
       color: @gray-darker;
-      text-shadow: 0 1px 3px #fff;
+      text-shadow: 0 1px 3px #FFF;
     }
-
     &.syo-pull-right {
-      // Sobrescreve a propriedade float
-      float: right;
+      float: right; /* 1 */
     }
   }
-
-  // Navegação na navbar
+  /* 2 */
   .syo-nav {
     display: inline-block;
     margin-bottom: 0;
-
     li {
       display: inline-block;
-
       > a {
         display: inline-block;
         .navbar-spacing();
-
         &:hover {
           color: @gray-darker;
-          .transition(~"color 0.1s linear");
+          .transition( ~"color 0.1s linear" );
         }
       }
-
       &.syo-active > a {
-        background: fade(#fff, 30%);
-
-        // Analisar uso destas 2 propriedades abaixo
-        //.border-radius(@base-border-radius);
-        .box-shadow(inset 0 0 3px 1px darken(@gray-lighter, 5%));
+        background: fade( #FFF, 30% );
+        .box-shadow( inset 0 0 3px 1px darken( @gray-lighter, 5% ) );
       }
     }
   }
-
-  // Container para conteúdo diversificado
+  /* 3 */
   .syo-navbar-content {
     display: inline-block;
     .navbar-spacing();
   }
 }
 
-// Navbar fixo
-// -------------------------
-
+/* =================================================================================================================
+   Navbar fixo
+   ================================================================================================================= */
+   
 .syo-navbar.syo-navbar-fixed-top,
 .syo-navbar.syo-navbar-fixed-bottom {
   position: fixed;
@@ -85,10 +77,10 @@
   z-index: @navbar-zindex;
 }
 
-.syo-navbar.syo-navbar-fixed-top    { top: 0; }
+.syo-navbar.syo-navbar-fixed-top { top: 0; }
 .syo-navbar.syo-navbar-fixed-bottom { bottom: 0; }
 
-// Classe utilitária pra adicionar um padding-top da mesma altura do navbar
+/* Classe utilitária pra adicionar um padding-top da mesma altura do navbar */
 body.syo-body-navbar {
   padding-top: @navbar-height;
 }

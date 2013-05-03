@@ -38,7 +38,10 @@ module.exports = function( grunt ) {
 		less: {
 			main: {
 				files: {
-					"dist/bootstrap.css": "styles/bootstrap.less",
+					"dist/bootstrap.css": [
+						"styles/vendor/normalize.css",
+						"styles/bootstrap.less"
+					],
 					"dist/jquery.ui.css": [
 						// Junta TODOS os arquivos do jQuery UI, na sua ordem certa.
 						// @TODO usar apenas o core + glob *.css. Será que vai excluir o core deste glob pra ficar na ordem certa?

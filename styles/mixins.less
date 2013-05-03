@@ -1,8 +1,6 @@
-// Mixins
-// -------------------------
-
+// ====================================================================================================================
 // Utils
-// -------------------------
+// ====================================================================================================================
 
 // Hack clearfix
 .clear-float() {
@@ -10,11 +8,9 @@
   &:after {
     display: table;
     content: "";
-
     // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
     line-height: 0;
   }
-
   &:after {
     clear: both;
   }
@@ -25,25 +21,23 @@
   .sans-serif() {
     font-family: @base-font-family;
   }
-
   .monospace() {
     font-family: @mono-font-family;
   }
-
   .shorthand (@color: @text-color, @lineHeight: @base-line-height, @size: @base-font-size, @family: @base-font-family, @weight: normal, @style: normal) {
-    line-height:	@lineHeight;
-    color:			@color;
-    font-size:		@size;
-    font-family:	@family;
-    font-style:		@style;
-    font-weight: 	@weight;
+    line-height: @lineHeight;
+    color: @color;
+    font-size: @size;
+    font-family: @family;
+    font-style: @style;
+    font-weight: @weight;
   }
 }
 
+// ====================================================================================================================
 // Helpers
-// -------------------------
+// ====================================================================================================================
 
-// background-size
 .background-size (@size) {
   -webkit-background-size: @size;
      -moz-background-size: @size;
@@ -51,169 +45,154 @@
           background-size: @size;
 }
 
-// border-radius
 .border-radius (@radius) {
   -webkit-border-radius: @radius;
           border-radius: @radius;
 }
 
-// border-radius top left
 .border-top-left-radius(@radius) {
   -webkit-border-top-left-radius: @radius;
           border-top-left-radius: @radius;
 }
 
-// border-radius top right
 .border-top-right-radius(@radius) {
   -webkit-border-top-right-radius: @radius;
           border-top-right-radius: @radius;
 }
 
-// border-radius bottom left
 .border-bottom-left-radius(@radius) {
   -webkit-border-bottom-left-radius: @radius;
           border-bottom-left-radius: @radius;
 }
 
-// border-radius bottom right
 .border-bottom-right-radius(@radius) {
   -webkit-border-bottom-right-radius: @radius;
           border-bottom-right-radius: @radius;
 }
 
-// border-radius left
-.border-radius-left(@radius) {
-  .border-top-left-radius(@radius);
-  .border-bottom-left-radius(@radius);
+.border-radius-left( @radius ) {
+  .border-top-left-radius( @radius );
+  .border-bottom-left-radius( @radius );
 }
 
-// border-radius right
-.border-radius-right(@radius) {
-  .border-top-right-radius(@radius);
-  .border-bottom-right-radius(@radius);
+.border-radius-right( @radius ) {
+  .border-top-right-radius( @radius );
+  .border-bottom-right-radius( @radius );
 }
 
-// border-radius top
-.border-radius-top(@radius) {
-  .border-top-left-radius(@radius);
-  .border-top-right-radius(@radius);
+.border-radius-top( @radius ) {
+  .border-top-left-radius( @radius );
+  .border-top-right-radius( @radius );
 }
 
-// border-radius bottom
-.border-radius-bottom(@radius) {
-  .border-bottom-left-radius(@radius);
-  .border-bottom-right-radius(@radius);
+.border-radius-bottom( @radius ) {
+  .border-bottom-left-radius( @radius );
+  .border-bottom-right-radius( @radius );
 }
 
-// box-sizing
-.box-sizing (@boxmodel) {
+.box-sizing( @boxmodel ) {
   -webkit-box-sizing: @boxmodel;
      -moz-box-sizing: @boxmodel;
       -ms-box-sizing: @boxmodel;
           box-sizing: @boxmodel;
 }
 
-// box-shadow
-.box-shadow (@shadow) {
+.box-shadow( @shadow ) {
   -webkit-box-shadow: @shadow;
           box-shadow: @shadow;
 }
 
-// opacity
-.opacity(@opacity: 1) {
+.opacity( @opacity: 1 ) {
   opacity: @opacity;
   @ieOpacity: @opacity * 100;
   filter: ~"Alpha(Opacity=@{ieOpacity})";
 }
 
-// transition
-.transition (@transition) {
+.transition( @transition ) {
   -webkit-transition: @transition;
      -moz-transition: @transition;
        -o-transition: @transition;
           transition: @transition;
 }
 
-// Gradient
 #gradient {
-  .vertical(@startColor: @component-bg-light, @endColor: @component-bg) {
-    background-color: mix(@startColor, @endColor, 60%);
-    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
-    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
-    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
-    background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+  .vertical( @startColor: @component-bg-light, @endColor: @component-bg ) {
+    background-color: mix( @startColor, @endColor, 60% );
+    background-image: -moz-linear-gradient( top, @startColor, @endColor ); // FF 3.6+
+    background-image: -webkit-gradient( linear, 0 0, 0 100%, from( @startColor ), to( @endColor ) ); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient( top, @startColor, @endColor ); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient( top, @startColor, @endColor ); // Opera 11.10
+    background-image: linear-gradient( to bottom, @startColor, @endColor ); // Standard, IE10
     background-repeat: repeat-x;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@startColor), argb(@endColor))); // IE9 and down
+    filter: e(
+      %(
+        "progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",
+        argb( @startColor ), argb( @endColor )
+      )
+    ); // IE9 and down
   }
 }
 
-// ::selection
-.selection (@background, @color) {
+.selection( @background, @color ) {
   &::-moz-selection,
   &::selection {
     color: @color;
     background: @background;
-
     // Força o text-shadow: none, afinal texto selecionado com shadow fica péssimo
     text-shadow: none;
   }
 }
 
+// ====================================================================================================================
 // Grid
-// -------------------------
-#grid (@columns, @colWidth, @colGutterWidth, @rowWidth) {
+// ====================================================================================================================
+
+#grid( @columns, @colWidth, @colGutterWidth, @rowWidth ) {
   // Columns
-  .spanX (@index) when (@index > 0) {
-    .span@{index} { .span(@index); }
-    .spanX(@index - 1);
+  .spanX( @index ) when ( @index > 0 ) {
+    .span@{index} { .span( @index ); }
+    .spanX( @index - 1 );
   }
-  .spanX (0) { }
-
-  .span (@columns) {
-    width: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1));
+  .spanX( 0 ) { }
+  .span( @columns ) {
+    width: ( @colWidth * @columns ) + ( @colGutterWidth * ( @columns - 1 ) );
   }
-
   // Offset
-  .offsetX (@index) when (@index > 0) {
+  .offsetX(@index) when (@index > 0) {
     .offset@{index} { .offset(@index); }
     .offset@{index}:first-child { .offsetFirstChild(@index); }
     .offsetX(@index - 1);
   }
-  .offsetX (0) { }
-
-  .offset (@columns) {
-    margin-left: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1)) + (@colGutterWidth * 2);
+  .offsetX(0) { }
+  .offset( @columns ) {
+    margin-left: ( @colWidth * @columns ) + ( @colGutterWidth * ( @columns - 1 ) ) + ( @colGutterWidth * 2 );
   }
-
   .offsetFirstChild (@columns) {
-    margin-left: (@colWidth * @columns) + (@colGutterWidth * (@columns - 1)) + (@colGutterWidth);
+    margin-left: ( @colWidth * @columns ) + ( @colGutterWidth * ( @columns - 1 ) ) + ( @colGutterWidth );
   }
-
   // -----
-
   [class*="span"] {
     margin-left: @colGutterWidth;
   }
-
   // -----
-
-  .spanX(@columns);
-  .offsetX(@columns);
+  .spanX( @columns );
+  .offsetX( @columns );
 }
 
+// ====================================================================================================================
 // Navbar
-// -------------------------
+// ====================================================================================================================
 
 // Alinha um elemento da navbar com padding e reseta margin
-.navbar-spacing (@lineHeight: @base-line-height) {
+.navbar-spacing( @lineHeight: @base-line-height ) {
   margin-top: 0;
   margin-bottom: 0;
-  padding: ((@navbar-height - @lineHeight) / 2) (@lineHeight / 1.5);
+  padding: ( ( @navbar-height - @lineHeight ) / 2 ) ( @lineHeight / 1.5 );
 }
 
+// ====================================================================================================================
 // Tables
-// -------------------------
+// ====================================================================================================================
 
 // Isto está aqui basicamente para reaproveitamento entre o syo-data-table e syo-datagrid,
 // sem utilização de seletores complexos inúteis entre um e outro
@@ -221,14 +200,10 @@
   width: 100%;
   margin-bottom: @base-line-height;
   border-collapse: separate;
-
   border: 1px solid @table-border-color;
   border-left: 0;
-
   background-color: @table-bg;
-
   table-layout: fixed;
-
   td, th {
     padding: 4px 8px;
     line-height: @base-line-height;
@@ -238,11 +213,9 @@
     text-align: left;
     vertical-align: top;
   }
-
   th {
     font-weight: bold;
   }
-
   // Previne borda dupla
   caption + thead tr:first-child th,
   caption + tbody tr:first-child th,
@@ -258,53 +231,125 @@
   }
 }
 
+// ====================================================================================================================
 // Progressbars
-// -------------------------
-// Animações
-// Webkit
-@-webkit-keyframes progress-bar-stripes {
-  from  { background-position: 40px 0; }
-  to    { background-position: 0 0; }
-}
-
-// Firefox
-@-moz-keyframes progress-bar-stripes {
-  from  { background-position: 40px 0; }
-  to    { background-position: 0 0; }
-}
-
-// IE9
-@-ms-keyframes progress-bar-stripes {
-  from  { background-position: 40px 0; }
-  to    { background-position: 0 0; }
-}
-
-// Opera
-@-o-keyframes progress-bar-stripes {
-  from  { background-position: 0 0; }
-  to    { background-position: 40px 0; }
-}
-
-// Spec
-@keyframes progress-bar-stripes {
-  from  { background-position: 40px 0; }
-  to    { background-position: 0 0; }
-}
+// ====================================================================================================================
 
 .progressbar() {
   // @TODO usar na classe .ui-progressbar-overlay
-  @stripeColor: fade(@gray-light, 15%);
-
-  background-color: #d0d0d0;
-
-  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @stripeColor), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @stripeColor), color-stop(.75, @stripeColor), color-stop(.75, transparent), to(transparent)), -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#eee));
-  background-image: -webkit-linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), -webkit-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: -moz-linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), -moz-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: -o-linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), -o-linear-gradient(top, #fafafa, #e9e9e9);
-  background-image: linear-gradient(45deg, @stripeColor 25%, transparent 25%, transparent 50%, @stripeColor 50%, @stripeColor 75%, transparent 75%, transparent), linear-gradient(to bottom, #fafafa, #e9e9e9);
-
-  .background-size(40px 40px);
-
+  @stripeColor: fade( @gray-light, 15% );
+  
+  // Webkit
+  @-webkit-keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+  
+  // Firefox
+  @-moz-keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+  
+  // IE9
+  @-ms-keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+  
+  // Opera
+  @-o-keyframes progress-bar-stripes {
+    from { background-position: 0 0; }
+    to { background-position: 40px 0; }
+  }
+  
+  // Spec
+  @keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+  
+  background-color: #D0D0D0;
+  background-image: -webkit-gradient(
+      linear,
+      0 100%,
+      100% 0, 
+      color-stop( .25, @stripeColor ),
+      color-stop( .25, transparent ),
+      color-stop( .5, transparent ),
+      color-stop( .5, @stripeColor ),
+      color-stop( .75, @stripeColor ),
+      color-stop( .75, transparent ),
+      to( transparent )
+    ),
+    -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from( #FFF ),
+      to( #EEE )
+    );
+  background-image: -webkit-linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+    ),
+    -webkit-linear-gradient(
+      top,
+      #FAFAFA,
+      #E9E9E9
+    );
+  background-image: -moz-linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+   ),
+    -moz-linear-gradient(
+      top,
+      #FAFAFA,
+      #E9E9E9
+    );
+  background-image: -o-linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+    ),
+    -o-linear-gradient(
+      top,
+      #FAFAFA,
+      #E9E9E9
+    );
+  background-image: linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      #FAFAFA,
+      #E9E9E9
+    );
+  .background-size( 40px 40px );
   -webkit-animation: progress-bar-stripes 1.5s linear infinite;
   -moz-animation: progress-bar-stripes 1.5s linear infinite;
   -ms-animation: progress-bar-stripes 1.5s linear infinite;
