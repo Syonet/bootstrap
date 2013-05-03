@@ -1,9 +1,9 @@
 /*jshint node:true*/
 module.exports = function( grunt ) {
 	"use strict";
-
+	
 	grunt.initConfig({
-		pkg: grunt.file.readJSON("package.json"),
+		pkg: grunt.file.readJSON( "package.json" ),
 		watch: {
 			main: {
 				files: [
@@ -126,8 +126,8 @@ module.exports = function( grunt ) {
 			}
 		}
 	});
-
-	// Carrega as tasks que dependemos...
+	
+	// NPM
 	grunt.loadNpmTasks("grunt-contrib-less");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-watch");
@@ -135,8 +135,8 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-connect");
 	grunt.loadNpmTasks("grunt-contrib-concat");
-
-	// ...inclusive as criadas por nós!
+	
+	// Local
 	grunt.loadTasks("build");
 	
 	// Processo principal de build
