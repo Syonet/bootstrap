@@ -21,10 +21,12 @@
  * 2. Alinha a toolbar à esquerda
  * 3. Alinha a toolbar à direita
  * 4. Alinha o botão corretamente dentro da toolbar
+ * 5. Faz com que a borda lateral preencha todo a altura do .syo-block-title
  */
 .syo-block-title-toolbar {
   margin-top: -@base-line-height / 2; /* 1 */
   padding: @base-line-height / 2;
+  min-height: @base-line-height * 2; /* 5 */
   &.syo-pull-left  { /* 2 */
     padding-left: 0;
     margin-right: @base-line-height / 2;
@@ -36,8 +38,8 @@
     border-left: 1px solid @block-border-color;
   }
   > .syo-button { /* 4 */
-    margin-top: -4px;
-    margin-bottom: -4px;
+    margin-top: -5px;
+    margin-bottom: -5px;
   }
 }
 
