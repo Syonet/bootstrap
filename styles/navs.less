@@ -1,41 +1,46 @@
-// Navs
-// -------------------------
-
-// Estilos globais de componentes Nav
+/* =================================================================================================================
+   Navs
+   ================================================================================================================= */
+   
+/*
+ * Estilos globais de componentes Nav
+ * 1. Melhora visualização da outline no conteúdo esquerdo da navbar
+ */
 ol.syo-nav,
 ul.syo-nav {
-  // Melhora visualização da outline no conteúdo esquerdo da navbar
-  margin-left: 1px;
+  margin-left: 1px; /* 1 */
   margin-bottom: @base-line-height;
   list-style: none;
-
   a {
     text-decoration: none;
   }
 }
 
-// Nav list
-// -------------------------
+/* =================================================================================================================
+   Nav list
+   ================================================================================================================= */
+   
+/*
+ * 1. Estilo do header
+ * 2. Corrige o border-radius do primeiro elemento
+ * 3. Corrige o border-radius do último elemento
+ */
 ul.syo-nav-list,
 ol.syo-nav-list {
   border: 1px solid @nav-border-color;
   .border-radius(@base-border-radius);
   .box-shadow(0 1px 4px fade(#000, 10%));
-
   > li {
     border-bottom: 1px solid @nav-border-color;
     background: @body-color;
-
     > a {
       display: block;
       padding: (@base-line-height / 3) (@base-line-height / 2);
-
       &:hover {
         background: @component-bg-hover;
       }
     }
-
-    // Estilo do header
+    /* 1 */
     &.syo-nav-header {
       padding: (@base-line-height / 2);
       color: @gray-dark;
@@ -44,18 +49,15 @@ ol.syo-nav-list {
       #gradient .vertical();
       text-shadow: 0 1px 0 #fff;
     }
-
-    // Corrige o border-radius do primeiro elemento
+    /* 2 */
     &:first-child {
       &, > a {
         .border-radius-top(@base-border-radius);
       }
     }
-
-    // Corrige o border-radius do último elemento
+    /* 3 */
     &:last-child {
       border-bottom: 0;
-
       &, > a {
         .border-radius-bottom(@base-border-radius);
       }

@@ -1,142 +1,138 @@
-// Tabelas
-// -------------------------
-
-// Qualquer tabela
-// -------------------------
+/* =================================================================================================================
+   Base
+   ================================================================================================================= */
+   
+/*
+ * 1. Tira o float: none para que seja possível definir larguras do grid em uma tabela qualquer
+ */
 table {
   max-width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-
-  // Tira o float: none para que seja possível definir larguras do grid em uma tabela qualquer
   td, th, col {
     &[class*="span"] {
-      float: none;
+      float: none; /* 1 */
     }
   }
-
   th small {
     font-weight: normal;
   }
 }
 
-// Tabelas do framework
-// -------------------------
-// Estilos comuns pra syo-datagrid e syo-data-table
+/* =================================================================================================================
+   Tabelas do framework
+   ================================================================================================================= */
+   
+/*
+ * Estilos comuns pra syo-datagrid e syo-data-table
+ * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
+ */
 .syo-data-table, .syo-datagrid table {
   .table-base-styles();
-
-  // Sobrescreve a especifidade de alinhamento de texto com estas classes
-  td, th {
-    &.text-center    { text-align: center; }
-    &.text-right     { text-align: right; }
-    &.text-justify   { text-align: justify; }
+  td, /* 1 */
+  th { /* 1 */
+    &.text-center { text-align: center; }
+    &.text-right { text-align: right; }
+    &.text-justify { text-align: justify; }
   }
 }
 
 .syo-data-table {
-  .border-radius(@base-border-radius);
-
-  // Arredonda canto superior esquerdo do primeiro tr
+  .border-radius( @base-border-radius );
+  /* Arredonda canto superior esquerdo do primeiro tr */
   thead:first-child tr:first-child > th:first-child,
   tbody:first-child tr:first-child > td:first-child,
   tbody:first-child tr:first-child > th:first-child {
-    .border-top-left-radius(@base-border-radius);
+    .border-top-left-radius( @base-border-radius );
   }
-
-  // Arredonda canto superior direito do primeiro tr
+  /* Arredonda canto superior direito do primeiro tr */
   thead:first-child tr:first-child > th:last-child,
   tbody:first-child tr:first-child > td:last-child,
   tbody:first-child tr:first-child > th:last-child {
-    .border-top-right-radius(@base-border-radius);
+    .border-top-right-radius( @base-border-radius );
   }
-
-  // Arredonda canto inferior esquerdo do último tr
+  /* Arredonda canto inferior esquerdo do último tr */
   thead:last-child tr:last-child > th:first-child,
   tbody:last-child tr:last-child > td:first-child,
   tbody:last-child tr:last-child > th:first-child,
   tfoot:last-child tr:last-child > td:first-child,
   tfoot:last-child tr:last-child > th:first-child {
-    .border-bottom-left-radius(@base-border-radius);
+    .border-bottom-left-radius( @base-border-radius );
   }
-
-  // Arredonda canto inferior direito do último tr
+  /* Arredonda canto inferior direito do último tr */
   thead:last-child tr:last-child > th:last-child,
   tbody:last-child tr:last-child > td:last-child,
   tbody:last-child tr:last-child > th:last-child,
   tfoot:last-child tr:last-child > td:last-child,
   tfoot:last-child tr:last-child > th:last-child {
-    .border-bottom-right-radius(@base-border-radius);
+    .border-bottom-right-radius( @base-border-radius );
   }
-
-  // Remove os cantos arredondados inferiores do ultimo tr do ultimo tbody de uma tabela com tfoot
+  /* Remove os cantos arredondados inferiores do ultimo tr do ultimo tbody de uma tabela com tfoot */
   tfoot + tbody:last-child tr:last-child td:first-child {
-    .border-bottom-left-radius(0);
+    .border-bottom-left-radius( 0 );
   }
   tfoot + tbody:last-child tr:last-child td:last-child {
-    .border-bottom-right-radius(0);
+    .border-bottom-right-radius( 0 );
   }
-
-  // Arredonda os cantos superiores da primeiro tr
+  /* Arredonda os cantos superiores da primeiro tr */
   caption + thead tr:first-child th:first-child,
   caption + tbody tr:first-child td:first-child,
   colgroup + thead tr:first-child th:first-child,
   colgroup + tbody tr:first-child td:first-child {
-    .border-top-left-radius(@base-border-radius);
+    .border-top-left-radius( @base-border-radius );
   }
-
   caption + thead tr:first-child th:last-child,
   caption + tbody tr:first-child td:last-child,
   colgroup + thead tr:first-child th:last-child,
   colgroup + tbody tr:first-child td:last-child {
-    .border-top-right-radius(@base-border-radius);
+    .border-top-right-radius( @base-border-radius );
   }
 }
 
+/*
+ * 1. Evita borda dupla na separação do body e do header
+ * 2. Pra simplificar os seletores finais (CSS puro), move-se estes seletores pra fora do
+ *    ".syo-data-table, .syo-datagrid"
+ * 3. Se colocar o background na <tr> buga as bordas arredondadas
+ * 4. O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo
+ */
 .syo-datagrid {
   table { margin-bottom: 0; }
-
   .syo-datagrid-header table {
-    .border-radius-top(@base-border-radius);
-
+    .border-radius-top( @base-border-radius );
     tr:last-child td:first-child,
     tr:last-child th:first-child {
-      .border-top-left-radius(@base-border-radius);
+      .border-top-left-radius( @base-border-radius );
     }
-
     tr:last-child td:last-child,
     tr:last-child th:last-child {
-      .border-top-right-radius(@base-border-radius);
+      .border-top-right-radius( @base-border-radius );
     }
   }
-
   .syo-datagrid-body {
-    margin-top: -1px; // Evita borda dupla na separação do body e do header
-
+    margin-top: -1px; /* 1 */
     table {
-      .border-radius-bottom(@base-border-radius);
-
+      .border-radius-bottom( @base-border-radius );
       tr:last-child td:first-child,
       tr:last-child th:first-child {
-        .border-bottom-left-radius(@base-border-radius);
+        .border-bottom-left-radius( @base-border-radius );
       }
-
       tr:last-child td:last-child,
       tr:last-child th:last-child {
-        .border-bottom-right-radius(@base-border-radius);
+        .border-bottom-right-radius( @base-border-radius );
       }
     }
   }
 }
 
-// Pra simplificar os seletores finais (CSS puro), move-se estes seletores pra fora do ".syo-data-table, .syo-datagrid"
+/* 2 */
 .syo-data-table > tbody > tr:hover,
 .syo-datagrid tr.syo-datagrid-state-hover {
   cursor: pointer;
   background-color: @table-stripe-color;
 }
 
-// Se colocar o background na <tr> buga as bordas arredondadas
+/* 3 */
 .syo-data-table > tbody > tr.syo-active,
 .syo-datagrid tr.syo-datagrid-state-clicked {
   td, th {
@@ -145,7 +141,7 @@ table {
   }
 }
 
-// O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo
+/* 4 */
 .syo-datagrid .syo-datagrid-header,
 .syo-data-table > thead,
 .syo-data-table > tfoot {
@@ -153,14 +149,19 @@ table {
     padding: 8px;
     color: @gray-dark;
     #gradient .vertical();
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 #FFF;
   }
 }
 
-// Tabela striped
-// -------------------------
+/* =================================================================================================================
+   Tabela striped
+   ================================================================================================================= */
+   
+/*
+ * 1. Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
+ */
 .syo-data-table-striped > tbody {
-  // Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
+  /* 1 */
   > tr:nth-child(even) > td,
   > tr:nth-child(even) > th {
     background-color: @table-stripe-color;

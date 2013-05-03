@@ -1,70 +1,57 @@
-// Paginação
-// -------------------------
-
+/* =================================================================================================================
+   Paginação
+   ================================================================================================================= */
+   
+/*
+ * 1. Permite a mudça do z-index
+ * 2. Garante que a borda vai ficar por cima do vizinho quando em destaque
+ * 3. Item ativo na paginação
+ * 4. Item desabilitado na paginação. Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo.
+ * 5. Nem itens desabilitados nem itens ativos terão cursor aqui
+ */
 .syo-pagination {
-
   > ul {
     list-style: none;
-
     li {
-      .box-shadow(0 1px 2px fade(@gray-light, 30%));
+      .box-shadow( 0 1px 2px fade( @gray-light, 30% ) );
       display: table-cell;
       .clear-float();
-
       a {
-        float: left;
         margin-right: -1px;
         padding: 4px 12px;
         border: 1px solid @pagination-border;
+        float: left;
         background-color: @pagination-item-background;
-
         &:hover, &:active, &:focus {
-          //Garante que a borda vai ficar por cima do vizinho quando em destaque
-          z-index: 1;
-
+          position: relative; /* 1 */
+          z-index: 1; /* 2 */
           text-decoration: none;
           background: @pagination-hover-background;
           border-color: @component-border-hover;
-
-          // Permite mudança do z-index
-          position: relative;
-
-        }
-
-        &:focus {
-          // Corrige o outline
-          outline-offset: -2px;
         }
       }
-
       &:first-child a {
-        .border-radius-left(@base-border-radius);
+        .border-radius-left( @base-border-radius );
       }
-
       &:last-child a {
-        .border-radius-right(@base-border-radius);
+        .border-radius-right( @base-border-radius );
       }
-
-      // Item ativo na paginação
+      /* 3 */
       &.syo-active > a {
-        color: darken(@pagination-disabled-text, 20%);
+        color: darken( @pagination-disabled-text, 20% );
         background: @pagination-hover-background;
-        .box-shadow(0 2px 4px fade(#000, 15%) inset);
+        .box-shadow( 0 2px 4px fade( #000, 15% ) inset );
       }
-
-      // Item desabilitado na paginação
-      // Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo
+      /* 4 */
       &.syo-disabled > a {
         border-color: @pagination-border;
         color: @pagination-disabled-text;
         background-color: @pagination-item-background;
-
         &:focus {
           outline: none;
         }
       }
-
-      // Nem itens desabilitados nem itens ativos terão cursor aqui
+      /* 5 */
       &.syo-disabled > a,
       &.syo-active > a {
         cursor: default !important;
@@ -73,17 +60,26 @@
   }
 }
 
-// Paginação inline - evita que o componente ocupe a linha toda.
+/*
+ * Paginação inline - evita que o componente ocupe a linha toda.
+ * 1. Alinha com um possível texto ao lado da paginação
+ */
 .syo-pagination-inline {
   > ul {
     display: inline-block;
-    vertical-align: top; // Alinha com um possível texto ao lado da paginação
-    margin-left: (@base-line-height / 2);
-    margin-right: (@base-line-height / 2);
+    margin-left: ( @base-line-height / 2 );
+    margin-right: ( @base-line-height / 2 );
+    vertical-align: top; /* 1 */
   }
 }
 
-// Quando utilizada como paginação de uma tabela, mudam vários estilos da tabela e do paginador.
+/*
+ * Quando utilizada como paginação de uma tabela, mudam vários estilos da tabela e do paginador.
+ * 1. Retira os paddings laterais
+ * 2. Sobrepõe a paginação sobre as bordas da célula
+ * 3. Corrige border-radius top do paginador na primeira tr da tabela
+ * 4. Corrige border-radius bottom do paginador na última tr da tabela
+ */
 .syo-data-table {
   th.syo-pagination,
   td.syo-pagination {
@@ -91,26 +87,21 @@
     padding-bottom: 0;
     line-height: @base-line-height + 8px;
     vertical-align: middle;
-
-    // Retira os paddings laterais
+    /* 1 */
     &:first-child { padding-left: 0; }
     &:last-child  { padding-right: 0; }
-
-    // Sobrepõe a paginação sobre as bordas da célula
+    /* 2 */
     > ul {
       margin-top: -1px;
       margin-bottom: -1px;
-
       &:first-child { margin-left: -1px; }
       &:last-child  { margin-right: -1px; }
-
       li a {
-        .border-radius(0);
+        .border-radius( 0 );
       }
     }
   }
-
-  // Corrige border-radius top do paginador na primeira tr da tabela
+  /* 3 */
   > tr:first-child,
   > thead:first-child > tr:first-child,
   > tbody:first-child > tr:first-child,
@@ -118,19 +109,17 @@
     > td.syo-pagination:first-child,
     > th.syo-pagination:first-child {
       > ul:first-child li:first-child a {
-        .border-top-left-radius(@base-border-radius);
+        .border-top-left-radius( @base-border-radius );
       }
     }
-
     > td.syo-pagination:last-child,
     > th.syo-pagination:last-child {
       > ul:last-child li:last-child a {
-        .border-top-right-radius(@base-border-radius);
+        .border-top-right-radius( @base-border-radius );
       }
     }
   }
-
-  // Corrige border-radius bottom do paginador na última tr da tabela
+  /* 4 */
   > tr:last-child,
   > thead:last-child > tr:last-child,
   > tbody:last-child > tr:last-child,
@@ -138,14 +127,13 @@
     > td.syo-pagination:first-child,
     > th.syo-pagination:first-child {
       > ul:first-child li:first-child a {
-        .border-bottom-left-radius(@base-border-radius);
+        .border-bottom-left-radius( @base-border-radius );
       }
     }
-
     > td.syo-pagination:last-child,
     > th.syo-pagination:last-child {
       > ul:last-child li:last-child a {
-        .border-bottom-right-radius(@base-border-radius);
+        .border-bottom-right-radius( @base-border-radius );
       }
     }
   }

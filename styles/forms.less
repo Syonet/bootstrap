@@ -1,5 +1,12 @@
-// Forms
-// -------------------------
+/* =================================================================================================================
+   Base
+   ================================================================================================================= */
+   
+/*
+ * 1. Tem que usar line-height: normal por causa de um bug do Firefox
+ *    TODO: Qual bug?
+ * 2. Declara antes de tudo para remover o outline azul do safari
+ */
 input:not([type]),
 input[type="text"],
 input[type="password"],
@@ -22,95 +29,93 @@ textarea {
   padding: 3px;
   border: 1px solid @input-border;
   background-color: @input-background;
-
-  // Tem que usar line-height: normal por causa de um bug do Firefox.
-  #font .shorthand(@input-text-color, normal);
-  .border-radius(@input-border-radius);
+  #font .shorthand( @input-text-color, normal ); /* 1 */
+  .border-radius( @input-border-radius );
   .transition( ~"box-shadow .15s linear, color .15s linear" );
-  text-shadow: 0 1px 0 #fff;
-
+  text-shadow: 0 1px 0 #FFF;
   &:hover {
     border-color: @input-hover-border;
     color: @input-hover-text;
     background-color: @input-hover-background;
-    .box-shadow(0 1px 2px rgb(210, 210, 210));
+    .box-shadow( 0 1px 2px rgb( 210, 210, 210 ) );
   }
-
   &:focus {
-    // Remove o outline azul do safaris
-    outline: none;
+    outline: none; /* 2 */
     border-color: @input-focus-border;
     background-color: @input-background;
-    .box-shadow(none);
+    .box-shadow( none );
   }
-
   &.input-block-level {
     display: block;
     width: 100%;
   }
-
   &[class*="span"] {
     float: none;
   }
-
   &[disabled],
   &.syo-disabled {
+    // TODO: Precisa de "!important" aqui?
     border-color: @input-disabled-border !important;
     background: @input-disabled-background !important;
     color: @input-disabled-text !important;
-    .box-shadow(~"none !important");
+    .box-shadow( ~"none !important" );
     cursor: default;
   }
 }
 
-// Reseta o height de select multiplo/textarea
+/* Reseta o height de select múltiplo/textarea */
 select[size],
 select[multiple] {
   height: auto;
 }
 
+/*
+ * 1. Padding necessário para alinhar verticalmente o texto do option selecionado
+ * 2. Safari controla o height baseado no line-height
+ *    TODO: Descobrir pq para o safari precisamos reduzir 6px do line-height
+ * 3. Evita que fique o text-shadow ao botar o mouse sobre um item no select
+ */
 select {
-  // Safari controla o height baseado no line-height
-  // TODO: Descobrir pq para o safari precisamos reduzir 6px do line-height
-  line-height: @input-height - 6px;
-  // Padding necessário para alinhar verticalmente o texto do option selecionado.
-  padding: ((@input-height - @base-line-height) / 2) 2px;
-
+  padding: ( ( @input-height - @base-line-height ) / 2 ) 2px; /* 1 */
+  line-height: @input-height - 6px; /* 2 */
   option {
-    // Evita que fique o text-shadow ao botar o mouse sobre um item no select
-    text-shadow: none;
+    text-shadow: none; /* 3 */
   }
 }
 
 input[type="checkbox"],
 input[type="radio"] {
   position: relative;
-  top: 0.2em;
+  top: .2em;
 }
 
-// Labels, fieldsets, legends
-// -------------------------
+/* =================================================================================================================
+   Labels, fieldsets, legends
+   ================================================================================================================= */
+   
 fieldset {
   margin: 2px 2px @base-line-height;
   padding: .5em;
   border: 1px solid @gray-light;
-  .border-radius(@border-radius-large);
+  .border-radius( @border-radius-large );
 }
 
 legend {
   padding: 0 10px;
   border: 1px solid @gray-light;
-  #font .shorthand(@text-color, @base-line-height, @base-font-size - 1, @base-font-family, bold);
+  #font .shorthand( @text-color, @base-line-height, @base-font-size - 1, @base-font-family, bold );
   background-color: @gray-lighter;
-  .border-radius(@base-border-radius);
+  .border-radius( @base-border-radius );
 }
 
+/*
+ * 1. Alinha o checkbox/radio com a primeira linha de texto do label pai
+ */
 label {
   display: inline-block;
-  #font .shorthand(@text-color, @input-height);
   vertical-align: middle;
+  #font .shorthand( @text-color, @input-height );
   text-align: right;
-
   > input,
   + input,
   > select,
@@ -123,12 +128,10 @@ label {
       margin-left: 3px;
     }
   }
-
-  // Alinha o checkbox/radio com a primeira linha de texto do label pai
   > input[type="checkbox"],
   > input[type="radio"] {
     position: relative;
-    top: 0.15em;
+    top: .15em; /* 1 */
   }
 }
 
@@ -138,67 +141,63 @@ input, textarea, select, button {
   }
 }
 
-// syo-field
-// -------------------------
+/* =================================================================================================================
+   syo-field
+   ================================================================================================================= */
+   
+/*
+ * 1. Muda de inline para inline-block para corrigir um bug no IE10 onde o textarea não fica alinhado com os outros
+ * inputs. O tamanho do field fica sendo controlado pelo input dentro dele.
+ */
 .syo-field {
   margin-bottom: 3px;
   #font .shorthand();
-
   &.syo-field-inline {
-    // Muda de inline para inline-block para corrigir um bug no IE10 onde o textarea não fica
-    // alinhado com os outros inputs. O tamanho do field fica sendo controlado pelo input dentro
-    // dele.
-    display: inline;
+    display: inline; /* 1 */
   }
-
   > .syo-field-controls {
     display: inline-block;
     vertical-align: top;
-
     &:not([class*="span"]) {
       margin-left: 3px;
     }
   }
-
   > input,
   > textarea,
   > select,
   > button {
     vertical-align: middle;
   }
-
   > input[type="radio"],
   > input[type="checkbox"] {
     position: relative;
-    top: 0.6em;
-    height: auto; // Reseta o height
+    top: .6em;
     vertical-align: top;
   }
-
-  // Bloco de ajuda de um syo-field
   .syo-field-help {
     display: block;
     color: @input-text-color;
   }
 }
 
-// Estados
-// -------------------------
-
-// Inputs
+/* =================================================================================================================
+   States
+   ================================================================================================================= */
+   
 input,
 select {
-  // Sucesso
   &.syo-success {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
       border-color: @input-success-color;
       color: @input-success-color;
     }
   }
-
-  // Erro
   &.syo-error {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
       border-color: @input-error-color;
       color: @input-error-color;
     }

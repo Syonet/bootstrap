@@ -1,8 +1,7 @@
-// Icones Elusive
-// --------------------
-
-// @font-face
-// --------------------
+/* =================================================================================================================
+   font-face
+   ================================================================================================================= */
+   
 @font-face {
   font-family: "SyoBootstrap";
   src: url('fonts/SyoBootstrap.eot');
@@ -14,15 +13,18 @@
   font-style: normal;
 }
 
-// Estilização
-// -----------------
-
-// Invés de simplesmente usar [class*="icon-"], é necessário usar tal seletor abaixo.
-// Fazemos isto para não dar conflito com os icones do jQuery UI (.ui-icon-x)
+/* =================================================================================================================
+   Uso
+   ================================================================================================================= */
+   
+/*
+ * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
+ * 2. Garante que o width acompanhará tamanho de fontes maiores
+ */
 [class^="icon-"]:before,
-[class*=" icon-"]:before {
-  display: inline-block;
+[class*=" icon-"]:before { /* 1 */
   min-width: 1.5em;
+  display: inline-block;
   line-height: 1;
   font-family: "SyoBootstrap";
   font-style: normal;
@@ -32,8 +34,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
-// Mapeamento de caracteres
-// --------------------
+/* =================================================================================================================
+   Mapeamento de caracteres
+   ================================================================================================================= */
+   
 .icon-file-pdf:before            { content: "\e0fc"; }
 .icon-file-openoffice:before     { content: "\e0fd"; }
 .icon-file-word:before           { content: "\e0fe"; }
