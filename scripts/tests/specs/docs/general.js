@@ -2,6 +2,7 @@
 	"use strict";
 	
 	module( "Trim" );
+	
 	test( "Deve remover a identação do HTML", function() {
 		var html = "\t\t\t<div>\n\t\t\t\t<b>\n\t\t\t\t</b>\n\t\t\t</div>";
 		var result = window.trim( html );

@@ -1,4 +1,4 @@
-(function() {
+(function( $ ) {
 	$(function() {
 		$( ".test" ).prepend(function() {
 			var title = this.title;
@@ -7,9 +7,9 @@
 		});
 		
 		// Instancia os plugins jQuery UI
-		$("[data-widget]").each(function() {
+		$( "[data-widget]" ).each(function() {
 			var data = $( this ).data();
 			$( this )[ data.widget ]( data );
 		});
 	});
-}());
+}( jQuery ));
