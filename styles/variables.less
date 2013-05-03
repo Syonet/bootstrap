@@ -1,175 +1,203 @@
-// Variáveis do Bootstrap
-// -------------------------
-
+// ====================================================================================================================
 // Cores
-// -------------------------
-@gray-darker:         #222;
-@gray-dark:           #444;
-@gray:                #666;
-@gray-light:          #AAA;
-@gray-lighter:        #EEE;
+// ====================================================================================================================
 
-@green:               #008000;
-@light-green:         #DFF0D8;
-@spring-green:        #81DBB2;
-@blue:                #336699;
+@gray-darker: #222;
+@gray-dark: #444;
+@gray: #666;
+@gray-light: #AAA;
+@gray-lighter: #EEE;
 
+@green: #008000;
+@light-green: #DFF0D8;
+@spring-green: #81DBB2;
+@blue: #336699;
+
+// ====================================================================================================================
 // Componentes
-// -------------------------
-@component-bg:           #e2e2e2;
-@component-bg-light:     #fff;
-@component-bg-hover:     #eee;
-@component-border-hover: darken(@gray-light, 10%);
+// ====================================================================================================================
 
-// Imagens/fontes
-// -------------------------
-@images-path:         "images";
-@image-logo:          "@{images-path}/logo.gif";
+@component-bg: #E2E2E2;
+@component-bg-light: #FFF;
+@component-bg-hover: #EEE;
+@component-border-hover: darken( @gray-light, 10% );
 
-@fonts-path:          "fonts";
+// ====================================================================================================================
+// Imagens/Fontes
+// ====================================================================================================================
 
+@images-path: "images";
+@image-logo: "@{images-path}/logo.gif";
+
+@fonts-path: "fonts";
+
+// ====================================================================================================================
 // Body
-// -------------------------
-@body-color:          #fff;
+// ====================================================================================================================
 
+@body-color: #FFF;
+
+// ====================================================================================================================
 // Links
-// -------------------------
-@link-color:          @blue;
-@link-color-hover:    darken(@blue, 10%);
+// ====================================================================================================================
 
-// Tamanhos Base
-// -------------------------
-@base-border-radius:	4px;
+@link-color: @blue;
+@link-color-hover: darken( @blue, 10% );
+
+// ====================================================================================================================
+// Tamanhos base
+// ====================================================================================================================
+
+@base-border-radius: 4px;
 @border-radius-large: 6px;
 @border-radius-small: 2px;
 
+// ====================================================================================================================
 // Tipografia
-// -------------------------
-@text-color:          #000;
-@base-font-size:      14px;
-@base-line-height:    20px;
+// ====================================================================================================================
 
-@base-font-family:    "Helvetica Neue", Helvetica, Arial, sans-serif;
-@mono-font-family:    Monaco, Menlo, Consolas, "Courier New", monospace;
+@text-color: #000;
+@base-font-size: 14px;
+@base-line-height: 20px;
 
+@base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mono-font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+// ====================================================================================================================
 // Forms
-// -------------------------
+// ====================================================================================================================
 
 // Inputs
-@input-height:                  @base-font-size * 2;
-@input-background:              #f5f5f5;
-@input-border:                  @gray-light;
-@input-text-color:              @gray;
-@input-border-radius:           @border-radius-small;
-@input-focus-border:            @green;
+@input-height: @base-font-size * 2;
+@input-background: #F5F5F5;
+@input-border: @gray-light;
+@input-text-color: @gray;
+@input-border-radius: @border-radius-small;
+@input-focus-border: @green;
 
 // Inputs - hover
-@input-hover-background:        #f8f8f8;
-@input-hover-border:            darken(@input-border, 10%);
-@input-hover-text:              darken(@gray-darker, 3%);
+@input-hover-background: #F8F8F8;
+@input-hover-border: darken( @input-border, 10% );
+@input-hover-text: darken( @gray-darker, 3% );
 
 // Inputs - disabled
-@input-disabled-background:     #fff;
-@input-disabled-border:         @gray-light;
-@input-disabled-text:           @gray-light;
+@input-disabled-background: #FFF;
+@input-disabled-border: @gray-light;
+@input-disabled-text: @gray-light;
 
 // Input - status - success
-@input-success-color:           #51a351;
-@input-success-highlight-color: #62c462;
-@input-success-hover-border:    darken(@input-success-color, 15%);
+@input-success-color: #51A351;
+@input-success-highlight-color: #62C462;
+@input-success-hover-border: darken( @input-success-color, 15% );
 
 // Input - status - error
-@input-error-color:             #bd362f;
-@input-error-highlight-color:   #ee5f5b;
-@input-error-hover-border:      darken(@input-error-color, 15%);
+@input-error-color: #BD362F;
+@input-error-highlight-color: #EE5F5B;
+@input-error-hover-border: darken( @input-error-color, 15% );
 
 // Buttons only
 @button-bg-transition: background .15s linear;
 
+// ====================================================================================================================
 // Tabelas
-// -------------------------
-@table-bg:                      #fff;
-@table-border-color:            #ccc;
-@table-stripe-color:            #f5f5f5;
+// ====================================================================================================================
 
+@table-bg: #FFF;
+@table-border-color: #CCC;
+@table-stripe-color: #F5F5F5;
+
+// ====================================================================================================================
 // Paginação
-// -------------------------
-@pagination-item-background:    #fff;
-@pagination-hover-background:   lighten(@gray-lighter, 2%);
-@pagination-disabled-text:      @gray-light;
-@pagination-border:             fade(@gray-light, 70%);
+// ====================================================================================================================
 
+@pagination-item-background: #FFF;
+@pagination-hover-background: lighten( @gray-lighter, 2% );
+@pagination-disabled-text: @gray-light;
+@pagination-border: fade( @gray-light, 70% );
+
+// ====================================================================================================================
 // Blocos
-// -------------------------
-@block-border-color:            darken(@gray-lighter, 5%);
-@block-title-text:              @gray-dark;
-@block-border-radius:           @base-border-radius;
+// ====================================================================================================================
 
+@block-border-color: darken( @gray-lighter, 5% );
+@block-title-text: @gray-dark;
+@block-border-radius: @base-border-radius;
+
+// ====================================================================================================================
 // Navbar
-// -------------------------
-@navbar-border-color:           #ccc;
-@navbar-zindex:                 1000;
-@navbar-height:                 40px;
+// ====================================================================================================================
 
+@navbar-border-color: #CCC;
+@navbar-zindex: 1000;
+@navbar-height: 40px;
+
+// ====================================================================================================================
 // Nav
-// -------------------------
-@nav-border-color:              darken(@gray-lighter, 5%);
+// ====================================================================================================================
 
+@nav-border-color: darken( @gray-lighter, 5% );
+
+// ====================================================================================================================
 // Popover
-// -------------------------
-@popover-border:                darken(@component-bg, 15%);
-@popover-arrow-color:           lighten(@component-bg, 5%);
-@popover-arrow-size:            (@base-line-height / 2);
-@popover-zindex:                1000;
+// ====================================================================================================================
 
+@popover-border: darken( @component-bg, 15% );
+@popover-arrow-color: lighten( @component-bg, 5% );
+@popover-arrow-size: ( @base-line-height / 2 );
+@popover-zindex: 1000;
+
+// ====================================================================================================================
 // Grid
-// -------------------------
+// ====================================================================================================================
 
 // Default
-@gridColumns:             12;
-@gridColumnWidth:         60px;
-@gridGutterWidth:         20px;
-@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+@gridColumns: 12;
+@gridColumnWidth: 60px;
+@gridGutterWidth: 20px;
+@gridRowWidth: ( @gridColumns * @gridColumnWidth ) + ( @gridGutterWidth * ( @gridColumns - 1 ) );
 
 // 1200px min
-@gridColumnWidth1200:     70px;
-@gridGutterWidth1200:     30px;
-@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+@gridColumnWidth1200: 70px;
+@gridGutterWidth1200: 30px;
+@gridRowWidth1200: ( @gridColumns * @gridColumnWidth1200 ) + ( @gridGutterWidth1200 * ( @gridColumns - 1 ) );
 
 // 768px-979px
-@gridColumnWidth768:      42px;
-@gridGutterWidth768:      20px;
-@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+@gridColumnWidth768: 42px;
+@gridGutterWidth768: 20px;
+@gridRowWidth768: ( @gridColumns * @gridColumnWidth768 ) + ( @gridGutterWidth768 * ( @gridColumns - 1 ) );
 
-// Fluido
-// -------------------------
+// ====================================================================================================================
+// Fluído
+// ====================================================================================================================
 
 // Default
-@fluidGridColumnWidth:          percentage(@gridColumnWidth / @gridRowWidth);
-@fluidGridGutterWidth:          percentage(@gridGutterWidth / @gridRowWidth);
+@fluidGridColumnWidth: percentage( @gridColumnWidth / @gridRowWidth );
+@fluidGridGutterWidth: percentage( @gridGutterWidth / @gridRowWidth );
 
 // 1200px min
-@fluidGridColumnWidth1200:      percentage(@gridColumnWidth1200 / @gridRowWidth1200);
-@fluidGridGutterWidth1200:      percentage(@gridGutterWidth1200 / @gridRowWidth1200);
+@fluidGridColumnWidth1200: percentage( @gridColumnWidth1200 / @gridRowWidth1200 );
+@fluidGridGutterWidth1200: percentage( @gridGutterWidth1200 / @gridRowWidth1200 );
 
 // 768px-979px
-@fluidGridColumnWidth768:       percentage(@gridColumnWidth768 / @gridRowWidth768);
-@fluidGridGutterWidth768:       percentage(@gridGutterWidth768 / @gridRowWidth768);
+@fluidGridColumnWidth768: percentage( @gridColumnWidth768 / @gridRowWidth768 );
+@fluidGridGutterWidth768: percentage( @gridGutterWidth768 / @gridRowWidth768 );
 
+// ====================================================================================================================
 // jQuery UI
-// -------------------------
-@jq-text-color:         @gray-darker;
+// ====================================================================================================================
 
-@jq-highlight-color:    @spring-green;
-@jq-highlight-border:   #456B5A;
+@jq-text-color: @gray-darker;
 
-@jq-border:             @gray-light;
-@jq-overlay:            fade(@gray-light, 40%);
+@jq-highlight-color: @spring-green;
+@jq-highlight-border: #456B5A;
+
+@jq-border: @gray-light;
+@jq-overlay: fade( @gray-light, 40% );
 
 // Paths de imagens do jQuery UI
-@jq-icons-highlight:    "@{images-path}/ui-icons_2e83ff_256x240.png";
-@jq-icons-active:       "@{images-path}/ui-icons_454545_256x240.png";
-@jq-icons-hover:        "@{images-path}/ui-icons_454545_256x240.png";
-@jq-icons-error:        "@{images-path}/ui-icons_cd0a0a_256x240.png";
-@jq-icons:              "@{images-path}/ui-icons_222222_256x240.png";
-@jq-icons2:             "@{images-path}/ui-icons_888888_256x240.png";
+@jq-icons-highlight: "@{images-path}/ui-icons_2e83ff_256x240.png";
+@jq-icons-active: "@{images-path}/ui-icons_454545_256x240.png";
+@jq-icons-hover: "@{images-path}/ui-icons_454545_256x240.png";
+@jq-icons-error: "@{images-path}/ui-icons_cd0a0a_256x240.png";
+@jq-icons: "@{images-path}/ui-icons_222222_256x240.png";
+@jq-icons2: "@{images-path}/ui-icons_888888_256x240.png";
