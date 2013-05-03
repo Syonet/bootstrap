@@ -121,7 +121,7 @@
 				}
 			}
 			
-			lines[ index ] = line.substring( identationIndex );
+			lines[ index ] = line.substring( identationIndex ).replace( /\t/g, "    " );
 		});
 		
 		return lines.join( "\n" );
