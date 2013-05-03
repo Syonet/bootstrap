@@ -1,11 +1,8 @@
-// Responsivo - 767 - 979px
-// -------------------------
-
-@media (max-width: 979px) {
-  #grid(@gridColumns, @fluidGridColumnWidth768, @fluidGridGutterWidth768, @gridRowWidth768);
+@media( max-width: 979px ) {
+  #grid( @gridColumns, @fluidGridColumnWidth768, @fluidGridGutterWidth768, @gridRowWidth768 );
 }
 
-@media (max-width: 979px) and (orientation: portrait) {
+@media( max-width: 979px ) and ( orientation: portrait ) {
   [class*="span"] {
     float: none;
     width: 100%;

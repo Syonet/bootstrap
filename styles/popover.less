@@ -1,38 +1,36 @@
-// Popover
-// -------------------------
-
+/* =================================================================================================================
+   Base
+   ================================================================================================================= */
+   
 .syo-popover {
   position: absolute;
   z-index: @popover-zindex;
   display: none;
   padding: 1px;
   border: 1px solid @popover-border;
-  background: #fff;
-  .border-radius(@border-radius-large);
-  .box-shadow(0 5px 10px fade(#000, 20%));
+  background: #FFF;
+  .border-radius( @border-radius-large );
+  .box-shadow( 0 5px 10px fade( #000, 20% ) );
 }
 
 .syo-popover-titlebar {
   display: block;
   width: 100%;
-  height: (@base-line-height + 10px);
-  padding: 5px (@base-line-height / 2);
+  height: ( @base-line-height + 10px );
+  padding: 5px ( @base-line-height / 2 );
   border-bottom: 1px solid @popover-border;
   background-color: @component-bg;
   vertical-align: middle;
-  .border-radius-top(@border-radius-large);
-
+  .border-radius-top( @border-radius-large );
   > .syo-popover-title {
     float: left;
     margin-right: 1em;
   }
-
   > .syo-popover-close {
     float: right;
     color: @gray;
     cursor: pointer;
-    .transition(color 0.15s linear);
-
+    .transition( color 0.15s linear );
     &:hover {
       color: @gray-darker;
     }
@@ -41,144 +39,141 @@
 
 .syo-popover-content {
   padding: 8px 12px;
-  background-color: #fff;
+  background-color: #FFF;
 }
 
-// Seta do popover
-// -------------------------
-
+/* =================================================================================================================
+   Seta do popover
+   ================================================================================================================= */
+   
 .syo-popover-arrow {
-  &, &:after {
+  &,
+  &:after {
     position: absolute;
     width: 0;
     height: 0;
     border: @popover-arrow-size solid transparent;
     content: "";
   }
-
   &:after {
-    border-width: (@popover-arrow-size - 1);
+    border-width: ( @popover-arrow-size - 1 );
   }
 }
 
-// Alinha horizontalmente as setas top/bottom
+/* Alinha horizontalmente as setas top/bottom */
 [class*="syo-popover-top"] .syo-popover-arrow,
 [class*="syo-popover-bottom"] .syo-popover-arrow {
   left: 50%;
   margin-left: -@popover-arrow-size;
-
   &:after {
-    margin-left: (-@popover-arrow-size + 1);
+    margin-left: ( -@popover-arrow-size + 1 );
   }
 }
 
-// Realinha horizontalmente se for top/bottom + start
+/* Realinha horizontalmente se for top/bottom + start */
 .syo-popover-top-start .syo-popover-arrow,
 .syo-popover-bottom-start .syo-popover-arrow {
   left: @popover-arrow-size * 3;
 }
 
-// Realinha horizontalmente se for top/bottom + end
+/* Realinha horizontalmente se for top/bottom + end */
 .syo-popover-top-end .syo-popover-arrow,
 .syo-popover-bottom-end .syo-popover-arrow {
   left: auto;
   right: @popover-arrow-size * 3;
 }
 
-// Alinha verticalmente as setas left/right
+/* Alinha verticalmente as setas left/right */
 [class*="syo-popover-left"] .syo-popover-arrow,
 [class*="syo-popover-right"] .syo-popover-arrow {
   top: 50%;
   margin-top: -@popover-arrow-size;
 
   &:after {
-    margin-top: (-@popover-arrow-size + 1);
+    margin-top: ( -@popover-arrow-size + 1 );
   }
 }
 
-// Realinha verticalmente se for left/right + start
+/* Realinha verticalmente se for left/right + start */
 .syo-popover-left-start .syo-popover-arrow,
 .syo-popover-right-start .syo-popover-arrow {
   top: @popover-arrow-size;
   margin-top: 0;
 }
 
-// Realinha verticalmente se for left/right + end
+/* Realinha verticalmente se for left/right + end */
 .syo-popover-left-end .syo-popover-arrow,
 .syo-popover-right-end .syo-popover-arrow {
   top: auto;
   bottom: @popover-arrow-size;
 }
 
-// Seta embaixo
+/* Seta embaixo */
 [class*="syo-popover-top"] .syo-popover-arrow {
-  border-top-color: fade(#000, 30%);
+  border-top-color: fade( #000, 30% );
   top: 100%;
-
   &:after {
     bottom: 1px;
     border-top-color: @popover-arrow-color;
   }
-
-  &, &:after {
+  &,
+  &:after {
     border-bottom-style: none;
   }
 }
 
-// Seta à esquerda
+/* Seta à esquerda */
 [class*="syo-popover-right"] .syo-popover-arrow {
-  border-right-color: fade(#000, 30%);
+  border-right-color: fade( #000, 30% );
   right: 100%;
-
   &:after {
     left: 1px;
     border-right-color: @popover-arrow-color;
   }
-
-  &, &:after {
+  &,
+  &:after {
     border-left-style: none;
   }
 }
 
-// Seta acima
+/* Seta acima */
 [class*="syo-popover-bottom"] .syo-popover-arrow {
-  border-bottom-color: fade(#000, 30%);
+  border-bottom-color: fade( #000, 30% );
   bottom: 100%;
-
   &:after {
     top: 1px;
     border-bottom-color: @popover-arrow-color;
   }
-
-  &, &:after {
+  &,
+  &:after {
     border-top-style: none;
   }
 }
 
-// Seta à direita
+/* Seta à direita */
 [class*="syo-popover-left"] .syo-popover-arrow {
-  border-left-color: fade(@popover-border, 40%);
+  border-left-color: fade( @popover-border, 40% );
   left: 100%;
-
-  &:after {
-    right: 1px;
-    border-left-color: @popover-arrow-color;
+   &:after {
+     right: 1px;
+     border-left-color: @popover-arrow-color;
+    }
+    &,
+    &:after {
+      border-right-style: none;
+    }
   }
 
-  &, &:after {
-    border-right-style: none;
-  }
-  }
-
-// Popover + Nav
-// -------------
+/* =================================================================================================================
+   Popover + nav
+   ================================================================================================================= */
+   
 .syo-popover-content.syo-nav.syo-nav-list {
   margin-bottom: 0;
   padding: 0;
   border: none;
-  .box-shadow(none);
-
+  .box-shadow( none );
   > li:first-child > a {
-    .border-radius-top(0);
+    .border-radius-top( 0 );
   }
 }
