@@ -7,8 +7,10 @@
    
 /*
  * 1. O conteúdo é manipulado por JS por isso não queremos que ele seja exibido enquanto a página é carregada!
+ * 2. Usa a tag "div" para que seja possível usar <pre class="prettyprint"> para quando quisermos incluir um HTML sem
+ *    que ele seja considerado HTML no load da página (como uma tag "script" ou "link").
  */
-.prettyprint {
+div.prettyprint { /* 2 */
   display: none; /* 1 */
 }
 

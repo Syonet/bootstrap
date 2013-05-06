@@ -60,6 +60,12 @@
 			
 		});
 		
+		// Tags "pre" são usadas com HTML entities escape mas devem respeitar a identação padrão da página
+		$( "pre.prettyprint" ).each(function() {
+			var $pre = $( this );
+			$pre.html( trim( $pre.html() ) );
+		});
+		
 		// Inicializa o Google Prettify
 		if ( window.prettyPrint ) {
 			$( "pre.prettyprint" ).addClass( "linenums" );

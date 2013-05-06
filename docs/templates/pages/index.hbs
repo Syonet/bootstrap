@@ -1,3 +1,43 @@
 <div class="syo-header">
+	<h2>Apresentação</h2>
+</div>
+<p>
+	Este framework tem como princípio a disponibilização de componentes e utilidades para uso no desenvolvimento da
+	Syonet. Qualquer componente reusável que pode ser reaproveitado em mais de um projeto deve ser documentado, testado
+	e desenvolvido aqui.
+</p>
+<div class="syo-header">
 	<h2>Começando</h2>
 </div>
+<p>
+	Para utilizar o framework basta incluir o arquivo <code>bootstrap.css</code> e <code>bootstrap.js</code> na página.
+</p>
+<p>
+	Junto com ele é necessário o <a href="//jquery.com">jQuery</a> e o <a href="//jqueryui.com/">jQueryUI</a>, que são
+	dependências obrigatórias.
+</p>
+<p>
+	O arquivo <code>jquery.ui.css</code> é criado pelo projeto:
+</p>
+	<!-- Faz o escape dos imports para evitar request desnecessário ao servidor -->
+	<pre class="prettyprint">
+		&lt;link rel="stylesheet" href="jquery.ui.css">
+		&lt;link rel="stylesheet" href="bootstrap.css">
+	</pre>
+	<pre class="prettyprint">
+		&lt;script src="jquery.js"></script>
+		&lt;script src="jquery.ui.js"></script>
+		&lt;script src="bootstrap.js"></script>
+	</pre>
+<p>
+	Opcionalmente você pode incluir o <a href="//modernizr.com">Modernizr</a> e o
+	<a href="//jquerymobile.com/">jQuery Mobile</a> que são utilizados para fornecer uma melhor experiência em
+	dispositivos móveis:
+</p>
+<pre class="prettyprint">
+	&lt;script src="jquery.js"></script>
+	&lt;script src="jquery.mobile.js"></script>
+	&lt;script src="jquery.ui.js"></script>
+	&lt;script src="modernizr.js"></script>
+	&lt;script src="bootstrap.js"></script>
+</pre>
