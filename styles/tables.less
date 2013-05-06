@@ -27,7 +27,7 @@ table {
  * Estilos comuns pra syo-datagrid e syo-data-table
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
  */
-.syo-data-table, .syo-datagrid table {
+table {
   .table-base-styles();
   td, /* 1 */
   th { /* 1 */
@@ -37,7 +37,7 @@ table {
   }
 }
 
-.syo-data-table {
+table {
   .border-radius( @base-border-radius );
   /* Arredonda canto superior esquerdo do primeiro tr */
   thead:first-child tr:first-child > th:first-child,
@@ -91,10 +91,6 @@ table {
 
 /*
  * 1. Evita borda dupla na separação do body e do header
- * 2. Pra simplificar os seletores finais (CSS puro), move-se estes seletores pra fora do
- *    ".syo-data-table, .syo-datagrid"
- * 3. Se colocar o background na <tr> buga as bordas arredondadas
- * 4. O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo
  */
 .syo-datagrid {
   table { margin-bottom: 0; }
@@ -125,26 +121,23 @@ table {
   }
 }
 
-/* 2 */
-.syo-data-table > tbody > tr:hover,
+
 .syo-datagrid tr.syo-datagrid-state-hover {
   cursor: pointer;
   background-color: @table-stripe-color;
 }
 
-/* 3 */
-.syo-data-table > tbody > tr.syo-active,
-.syo-datagrid tr.syo-datagrid-state-clicked {
+/* Se colocar o background na <tr> buga as bordas arredondadas */
+table > tbody > tr.syo-active, .syo-datagrid tr.syo-datagrid-state-clicked {
   td, th {
-    cursor: pointer;
     background-color: @spring-green !important;
   }
 }
 
-/* 4 */
+/* O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo */
 .syo-datagrid .syo-datagrid-header,
-.syo-data-table > thead,
-.syo-data-table > tfoot {
+table > thead,
+table > tfoot {
   td, th {
     padding: 8px;
     color: @gray-dark;
@@ -160,7 +153,7 @@ table {
 /*
  * 1. Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
  */
-.syo-data-table-striped > tbody {
+.syo-table-striped > tbody {
   /* 1 */
   > tr:nth-child(even) > td,
   > tr:nth-child(even) > th {
