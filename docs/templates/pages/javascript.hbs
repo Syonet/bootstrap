@@ -2,9 +2,9 @@
 	<ul class="syo-nav syo-nav-list" id="sidebar">
 		<li class="syo-nav-header"><i class="icon-code"></i> JavaScript</li>
 		<li><a href="#overview">Overview</a></li>
-		<li><a href="#button">syoButton</a></li>
-		<li><a href="#pagination">syoPagination</a></li>
-		<li><a href="#popover">syoPopover</a></li>
+		<li><a href="#pagination">Syonet Pagination</a></li>
+		<li><a href="#popover">Syonet Popover</a></li>
+		<li><a href="#datagrid">Syonet Data Grid</a></li>
 	</ul>
 </aside>
 
@@ -38,7 +38,7 @@
 	<article id="pagination">
 	
 		<div class="syo-header">
-			<h2>syoPagination</h2>
+			<h2>Syonet Pagination</h2>
 		</div>
 		<p>
 			Flexível componente de paginação com visual adequado para interfaces <em>touch sensitive</em>.
@@ -66,10 +66,11 @@
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
-				<col class="span2">
 				<col class="span1">
-				<col class="span2">
-				<col class="span7">
+				<col class="span1">
+				<col class="span1">
+				<col class="span4">
+				<col class="span3">
 			</colgroup>
 			<thead>
 				<tr>
@@ -77,6 +78,7 @@
 					<th>Tipo</th>
 					<th>Padrão</th>
 					<th>Descrição</th>
+					<th>Exemplo</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -85,12 +87,26 @@
 					<td>number</td>
 					<td><code>0</code></td>
 					<td>Define o indice da página ativa.</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoPagination({
+								active: 1
+							});
+						</div>
+					</td>
 				</tr>
 				<tr>
-					<td>size</td>
+					<td>items</td>
 					<td>number</td>
 					<td><code>1</code></td>
 					<td>Número de itens da paginação.</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoPagination({
+								items: 3
+							});
+						</div>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -101,7 +117,7 @@
 	<article id="popover">
 	
 		<div class="syo-header">
-			<h2>syoPopover</h2>
+			<h2>Syonet Popover</h2>
 		</div>
 		<p>
 			Adicione balões, como os do iPad, para exibir informações secundárias. Clique no botão para exibir o
@@ -168,10 +184,11 @@
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
-				<col class="span2">
-				<col class="span2">
 				<col class="span1">
-				<col class="span7">
+				<col class="span1">
+				<col class="span1">
+				<col class="span4">
+				<col class="span3">
 			</colgroup>
 			<thead>
 				<tr>
@@ -179,6 +196,7 @@
 					<th>Tipo</th>
 					<th>Padrão</th>
 					<th>Descrição</th>
+					<th>Exemplo</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -187,6 +205,13 @@
 					<td>string</td>
 					<td><code>""</code></td>
 					<td>Título do popover.</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoPopover({
+								title: "um title"
+							});
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td>content</td>
@@ -200,6 +225,13 @@
 						Define o conteúdo do popover. Se for um objeto jQuery ou elemento DOM, o mesmo será movido
 						para dentro do popover.
 					</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoPopover({
+								content: "um texto qualquer"
+							});
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td>position</td>
@@ -212,9 +244,268 @@
 						<code>bottom</code>, <code>left</code>, <code>top-start</code>, <code>right-start</code>,
 						<code>bottom-end</code>, <code>left-end</code>.
 					</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoPopover({
+								position: "bottom-end"
+							});
+						</div>
+					</td>
 				</tr>
 			</tbody>
 		</table>
+		
+	</article>
+	
+	<!-- syoDataGrid -->
+	<article id="datagrid">
+	
+		<div class="syo-header">
+			<h2>Syonet Data Grid</h2>
+		</div>
+		<p>
+			Uma tabela com header fixo utilizada para a manipulação de dados de acordo com o conteúdo de cada linha.
+		</p>
+		
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div data-widget="syoDataGrid">
+					<div>
+						<table>
+							<thead>
+								<tr>
+									<th>First Column</th>
+									<th>Second Column</th>
+									<th>Third Column</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div>
+						<div>
+							<table>
+								<tbody>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td>Foot one</td>
+										<td>Foot two</td>
+										<td>Foot three</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<strong>HTML:</strong>
+			<div class="prettyprint">
+				<div id="my-datagrid">
+					<div>
+						<table>
+							<thead>
+								<tr>
+									<th>First Column</th>
+									<th>Second Column</th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div>
+						<div>
+							<table>
+								<tbody>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+									<tr>
+										<td>Data one</td>
+										<td>Data two</td>
+										<td>Data three</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td>Foot one</td>
+										<td>Foot two</td>
+										<td>Foot three</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<strong>Javascript:</strong>
+			<div class="prettyprint">
+				$( "#my-datagrid" ).syoDataGrid();
+			</div>
+		</div>
+		
+		<h3>API</h3>
+		<p>
+			<b>ATENÇÃO!</b> Este método ainda não suporta as APIs padrões dos componentes do jQuery UI
+		</p>
+		
+		<h4>Opções</h4>
+		<table class="syo-data-table syo-data-table-striped">
+			<colgroup>
+				<col class="span1">
+				<col class="span1">
+				<col class="span1">
+				<col class="span4">
+				<col class="span3">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Opção</th>
+					<th>Tipo</th>
+					<th>Padrão</th>
+					<th>Descrição</th>
+					<th>Exemplo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>click</td>
+					<td>function</td>
+					<td><code>null</code></td>
+					<td>Evento executado quando a linha é clicada pelo usuário.</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoDataGrid({
+								click: function() {
+									console.log( this ); // grid tr
+								}
+							});
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h4>Métodos</h4>
+		<table class="syo-data-table syo-data-table-striped">
+			<colgroup>
+				<col class="span2">
+				<col class="span1">
+				<col class="span5">
+				<col class="span4">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Método</th>
+					<th>Retorno</th>
+					<th>Descrição</th>
+					<th>Exemplo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>refresh()</td>
+					<td>não definido</td>
+					<td>
+						Recarrega o visual e comportamento do componente. Útil para quando uma nova porção de HTML é 
+						introduzida na estrutura depois que o plugin já tenha sido chamado.
+					</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoDataGrid( "refresh" );
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>destroy()</td>
+					<td>não definido</td>
+					<td>
+						Remove completamente a funcionalidade do grid. Isto retornará o elemento ao seu estado original
+						antes da inicialização do plugin.
+					</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoDataGrid( "destroy" );
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h4>Manipulação</h4>
+		<h5>Height</h5>
+		<p>
+			Você pode manipular o height do corpo da estrutura para fechar com as suas necessidades.
+		</p>
+		<h5>Exemplos</h5>
+		<p>
+			Ignorar o max-height padrão.
+		</p>
+		<div class="prettyprint">
+			.syo-datagrid-body {
+				max-height: none;
+			}
+		</div>
+		<p>
+			Definir um height fixo para um grid específico na página
+		</p>
+		<div class="prettyprint">
+			#some-grid .syo-datagrid-body {
+				max-height: none;
+				height: 300px;
+			}
+		</div>
 		
 	</article>
 	

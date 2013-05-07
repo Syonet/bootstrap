@@ -44,7 +44,8 @@ module.exports = function( grunt ) {
 					],
 					"dist/jquery.ui.css": [
 						// Junta TODOS os arquivos do jQuery UI, na sua ordem certa.
-						// @TODO usar apenas o core + glob *.css. Será que vai excluir o core deste glob pra ficar na ordem certa?
+						// @TODO usar apenas o core + glob *.css. Será que vai excluir o core deste glob pra ficar na
+						// ordem certa?
 						"styles/vendor/jquery-ui/*core.css",
 						"styles/vendor/jquery-ui/*accordion.css",
 						"styles/vendor/jquery-ui/*autocomplete.css",
