@@ -12,7 +12,9 @@
 		}
 	});
 	
-	test( "activate", 4, function() {
+	test( "activate", function() {
+		expect( 4 );
+		
 		this.pagination.syoPagination( "option", "activate", function( e, ui ) {
 			ok( true, "callback deve ser chamado ao setar a opção active" );
 			
@@ -23,7 +25,9 @@
 		}).syoPagination( "option", "active", 1 );
 	});
 	
-	test( "beforeActivate", 4, function() {
+	test( "beforeActivate", function() {
+		expect( 4 );
+		
 		this.pagination.syoPagination( "option", "beforeActivate", function( e, ui ) {
 			ok( true, "callback deve ser chamado ao setar a opção active" );
 			

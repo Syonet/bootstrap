@@ -11,6 +11,8 @@
 	});
 	
 	test( "não deve executar o evento 'tap' no title sem que o aparelho suporte mobile", function() {
+		expect( 2 );
+		
 		$( "#popover" ).syoPopover( "open" );
 		ok( $( "#popover" ).is( ":visible" ), "Confirma que está inicializando com visibilidade" );
 		

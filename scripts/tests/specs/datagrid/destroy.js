@@ -8,7 +8,9 @@
 			$( "#grid-head-body" ).syoDataGrid();
 		}
 	});
-	test( "destroy - classes", 34, function() {
+	test( "destroy - classes", function() {
+		expect( 34 );
+		
 		var $dataGrid = $( "#grid-head-body" );
 		
 		$dataGrid.syoDataGrid();
@@ -23,7 +25,9 @@
 			});
 		strictEqual( $dataGrid.data( optionsPrefix ), undefined, "Options data should be undefined" );
 	});
-	test( "destroy - events:click", 5, function() {
+	test( "destroy - events:click", function() {
+		expect( 5 );
+		
 		var $dataGrid = $( "#grid-head-body" );
 		
 		$dataGrid.syoDataGrid();
@@ -36,7 +40,9 @@
 				strictEqual( $(this).attr( "class" ), undefined, "No TR should have any class" );
 			});
 	});
-	test( "destroy - events:mouseenter", 5, function() {
+	test( "destroy - events:mouseenter", function() {
+		expect( 5 );
+		
 		var $dataGrid = $( "#grid-head-body" );
 		
 		$dataGrid.syoDataGrid();
@@ -49,7 +55,9 @@
 				strictEqual( $( this ).attr( "class" ), undefined, "No TR should have any class" );
 			});
 	});
-	test( "destroy - events:mouseleave", 5, function() {
+	test( "destroy - events:mouseleave", function() {
+		expect( 5 );
+		
 		var $dataGrid = $( "#grid-head-body" );
 		
 		$dataGrid.syoDataGrid();

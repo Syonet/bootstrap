@@ -2,7 +2,8 @@
 	"use strict";
 	
 	module( "Features" );
-	test( "data-disabled attribute on TR", 2, function() {
+	test( "data-disabled attribute on TR", function() {
+		expect( 2 );
 		
 		var $tr = $( "#grid-head-body div:last tr:first" ).attr( "data-disabled", "true" );
 		$("#grid-head-body").syoDataGrid();
@@ -12,7 +13,8 @@
 		$tr.trigger("mouseenter");
 		ok( !$tr.hasClass( "syo-datagrid-state-hover" ), "The events in the new TR should not be bound" );
 	});
-	test( "Should allow one instantiation per element in the jQuery collection", 2, function() {
+	test( "Should allow one instantiation per element in the jQuery collection", function() {
+		expect( 2 );
 		
 		var $fixture = $( "#qunit-fixture" );
 		var HTML = $fixture.html();

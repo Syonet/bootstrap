@@ -11,18 +11,24 @@
 		}
 	});
 	
-	test( "open", 1, function() {
+	test( "open", function() {
+		expect( 1 );
+		
 		this.element.syoPopover( "open" );
 		ok( this.popover.is( ":visible" ), "deve exibir o popover" );
 	});
 	
-	test( "close", 1, function() {
+	test( "close", function() {
+		expect( 1 );
+		
 		this.element.syoPopover( "close" );
 		
 		ok( !this.popover.is( ":visible" ), "deve fechar o popover" );
 	});
 	
-	test( "isOpen", 2, function() {
+	test( "isOpen", function() {
+		expect( 2 );
+		
 		ok( !this.element.syoPopover( "isOpen" ), "deve retornar false quando o popover não está aberto" );
 		
 		this.element.syoPopover( "open" );

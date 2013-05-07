@@ -10,7 +10,9 @@
 		}
 	});
 	
-	test( "markup", 3, function() {
+	test( "markup", function() {
+		expect( 3 );
+		
 		ok( this.pagination.is( ".syo-pagination" ), "elemento é .syo-pagination" );
 		strictEqual( this.pagination.has( "> ul" ).length, 1, "elemento tem um <ul> filho" );
 		

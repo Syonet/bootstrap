@@ -12,7 +12,9 @@
 		}
 	});
 	
-	test( "disable", 3, function() {
+	test( "disable", function() {
+		expect( 3 );
+		
 		this.pagination.syoPagination( "disable", 1 );
 		ok( this.pagination.find( "li" ).eq( 1 ).is( ".syo-disabled" ), "deve desabilitar o indice passado por " +
 				"parâmetro" );
@@ -28,7 +30,9 @@
 				"passar parâmetro" );
 	});
 	
-	test( "enable", 3, function() {
+	test( "enable", function() {
+		expect( 3 );
+		
 		this.pagination.syoPagination( "disable" );
 		
 		this.pagination.syoPagination( "enable", 1 );
@@ -47,6 +51,8 @@
 	});
 	
 	test( "refresh", function() {
+		expect( 2 );
+		
 		var before = this.pagination.find( "li:eq(0)" );
 		
 		this.pagination

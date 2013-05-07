@@ -6,7 +6,9 @@
 			$( "#grid-head-body" ).syoDataGrid();
 		}
 	});
-	test( "Default classes - no event", 9, function() {
+	test( "Default classes - no event", function() {
+		expect( 9 );
+		
 		var $el = $( "#grid-head-body" ),
 			$trs = $el.children( "div:last" ).find( "tr" );
 		
@@ -20,6 +22,8 @@
 		ok( $el.find( "div:eq(1) > div:first" ).hasClass( "syo-datagrid-rowcont" ), "Rows container default class" );
 	});
 	test( "Default classes - event:mouseenter", function() {
+		expect( 5 );
+		
 		var $el = $( "#grid-head-body" ),
 			$trs = $el.children( "div:last" ).find( "tr" ),
 			$tr = $trs.slice( 0, 1 );
@@ -32,6 +36,8 @@
 		
 	});
 	test("Default classes - event:mouseleave", function() {
+		expect( 5 );
+		
 		var $el = $( "#grid-head-body" ),
 			$trs = $el.children( "div:last" ).find( "tr" ),
 			$tr = $trs.slice( 0, 1 );
@@ -43,6 +49,8 @@
 		});
 	});
 	test("Default classes - event:click", function() {
+		expect( 5 );
+		
 		var $el = $( "#grid-head-body" ),
 			$trs = $el.children( "div:last" ).find( "tr" ),
 			$tr = $trs.slice( 0, 1 );

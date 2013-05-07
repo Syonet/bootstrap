@@ -11,7 +11,9 @@
 		}
 	});
 	
-	test( "markup", 5, function() {
+	test( "markup", function() {
+		expect( 5 );
+		
 		ok( this.popover.is(".syo-popover"), "elemento é .syo-popover" );
 		strictEqual( this.popover.find(".syo-popover-titlebar").length, 1, "tem uma barra de título" );
 		strictEqual( this.popover.find(".syo-popover-titlebar > .syo-popover-title").length, 1, "tem elemento " +

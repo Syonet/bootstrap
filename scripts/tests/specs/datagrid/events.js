@@ -40,7 +40,9 @@
 		strictEqual( triggers[ 0 ].context, $tr[ 0 ], "The context should be a DOMElement" );
 		ok( triggers[ 0 ].args[ 0 ] instanceof $.Event, "Should pass the jQery Event Object as the first argument" );
 	});
-	test( "create", 3, function() {
+	test( "create", function() {
+		expect( 3 );
+		
 		var count = 0;
 		var triggers = [];
 		

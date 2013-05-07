@@ -3,6 +3,8 @@
 	
 	module( "Methods" );
 	test( "Method 'refresh'", function() {
+		expect( 2 );
+		
 		$( "#grid-head-body" ).syoDataGrid();
 		
 		$( "#grid-head-body div:last table tbody" ).append( "<tr id='test-refresh-tr'><td></td></tr>" );

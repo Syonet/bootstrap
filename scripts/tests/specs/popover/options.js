@@ -12,12 +12,9 @@
 		}
 	});
 	
-	/**
-	 * 1. Porque nós não incluímos o CSS, onde define que o popover virá com display: none, temos
-	 * que ocultar manualmente aqui.
-	 */
-	
 	test( "title", function() {
+		expect( 3 );
+		
 		this.element.syoPopover( "option", "title", "Teste" );
 		strictEqual( this.popover.find( ".syo-popover-title" ).text(), "Teste", "deve setar o título no popover" );
 		
@@ -30,7 +27,14 @@
 				"um elemento DOM" );
 	});
 	
+	/**
+	 * 1. Porque nós não incluímos o CSS, onde define que o popover virá com display: none, temos
+	 * que ocultar manualmente aqui.
+	 */
+	
 	test( "show", function() {
+		expect( 1 );
+		
 		var popover = this.popover.hide(); /* 1 */
 		this.element
 			.syoPopover( "option", "show", 300 )
@@ -41,6 +45,8 @@
 	});
 	
 	test( "hide", function() {
+		expect( 1 );
+		
 		var popover = this.popover.show(); /* 1 */
 		this.element
 			.syoPopover( "option", "hide", 300 )
