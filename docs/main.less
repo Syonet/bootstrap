@@ -71,13 +71,19 @@ article {
     content: "Exemplo";
     .border-radius( @base-border-radius 0 @base-border-radius 0 );
   }
+  > strong {
+    margin-left: 5px;
+  }
+  > pre {
+    margin-top: 5px;
+    .border-radius-bottom( @base-border-radius );
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   .syo-docs-example-inner {
     position: relative;
     padding: 0 @base-line-height @base-line-height;
-  }
-  pre.prettyprint {
-    margin: 0;
-    .border-radius-bottom( @base-border-radius );
   }
 }
 

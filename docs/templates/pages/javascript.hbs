@@ -17,7 +17,7 @@
 			<h2>Overview</h2>
 		</div>
 		<p>
-			Nesta seção são apresentados os componentes/utilitários JavaScript e jQuery utilizados dentro do Syonet
+			Nesta seção são apresentados os componentes<!--/utilitários JavaScript e--> jQuery utilizados dentro do Syonet
 			Bootstrap.
 		</p>
 		<p>
@@ -27,87 +27,10 @@
 			Além do mais, todos os componentes passam por uma bateria de testes de unidade
 			<a href="http://qunit.com">QUnit</a> para assegurar que eles funcionarão como devem.
 		</p>
-		<p>
+		<!--<p>
 			Já os <strong>utilitários</strong> do Syonet Bootstrap extendem o ambiente JavaScript, provendo funções e
 			plugins jQuery de uso comum, o que ajuda a reduzir o código.
-		</p>
-		
-	</article>
-
-	<!-- syoButton -->
-	<article id="button">
-	
-		<div class="syo-header">
-			<h2>syoButton</h2>
-		</div>
-		<p>
-			Basta chamar o método jQuery <code>.syoButton()</code> em um botão ou em um elemento que contenha vários
-			botões.
-		</p>
-		
-		<h3>Exemplo</h3>
-		<div class="syo-docs-example">
-			<div class="syo-docs-example-inner">
-				<p>
-					<button data-widget="syoButton">Meu botão</button>
-				</p>
-				<p>
-					<div class="my-buttonset" data-widget="syoButton">
-						<button><i class="icon-check"></i> Ação 1</button>
-						<button><i class="icon-check-empty"></i> Ação 2</button>
-						<button><i class="icon-check"></i> Ação 3</button>
-						<button><i class="icon-check-empty"></i> Ação 4</button>
-					</div>
-				</p>
-			</div>
-			<div class="prettyprint">
-				<button class="my-button">...</button>
-				
-				<div class="my-buttonset">
-					<button>...</button>
-					<button>...</button>
-				</div>
-			</div>
-		</div>
-		
-		<h3>API</h3>
-		<h4>Opções</h4>
-		<table class="syo-data-table syo-data-table-striped">
-			<colgroup>
-				<col class="span2">
-				<col class="span1">
-				<col class="span3">
-				<col class="span6">
-			</colgroup>
-			<thead>
-				<tr>
-					<th>Opção</th>
-					<th>Tipo</th>
-					<th>Padrão</th>
-					<th>Descrição</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>multi</td>
-					<td>boolean</td>
-					<td><code>true</code></td>
-					<td>Define se um buttonset poderá ter mais de um botão ativo por vez.</td>
-				</tr>
-				<tr>
-					<td>toggling</td>
-					<td>boolean</td>
-					<td><code>true</code></td>
-					<td>Define se os botões poderão alternar de estado ativo/inativo.</td>
-				</tr>
-				<tr>
-					<td>buttons</td>
-					<td>string</td>
-					<td><code>:button, :submit, :reset, a</code></td>
-					<td>Seletor jQuery que define quais elementos serão considerados botões.</td>
-				</tr>
-			</tbody>
-		</table>
+		</p>-->
 		
 	</article>
 	
@@ -121,17 +44,24 @@
 			Flexível componente de paginação com visual adequado para interfaces <em>touch sensitive</em>.
 			Acessível através do método jQuery <code>.syoPagination()</code>.
 		</p>
-
+		
 		<h3>Exemplos</h3>
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div data-widget="syoPagination" data-items="3"></div>
 			</div>
+			<strong>HTML:</strong>
 			<div class="prettyprint">
 				<div class="my-pagination"></div>
 			</div>
+			<strong>Javascript:</strong>
+			<div class="prettyprint">
+				$( "#my-pagination" ).syoPagination({
+					items: 3
+				});
+			</div>
 		</div>
-
+		
 		<h3>API</h3>
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
@@ -166,7 +96,7 @@
 		</table>
 		
 	</article>
-
+	
 	<!-- syoPopover -->
 	<article id="popover">
 	
@@ -174,8 +104,8 @@
 			<h2>syoPopover</h2>
 		</div>
 		<p>
-			Adicione balões, como os do iPad, para exibir informações secundárias. Clique no botão para exibir ou
-			esconder o popover.
+			Adicione balões, como os do iPad, para exibir informações secundárias. Clique no botão para exibir o
+			popover e no canto superior direito para esconder.<br>
 			Se você estiver em um dispositivo <em>touch sensitive</em>, também é possível tocar na barra do título para
 			esconder o popover.
 		</p>
@@ -186,82 +116,105 @@
 					Lorem ipsum dolor sit amet
 				</div>
 				<div class="container-vertical">
-					<button class="syo-button popover-trigger" data-position="top" type="button">Em cima</button>
-					<button class="syo-button popover-trigger" data-position="right" type="button">À direita</button>
-					<button class="syo-button popover-trigger" data-position="bottom" type="button">Embaixo</button>
-					<button class="syo-button popover-trigger" data-position="left" type="button">À esquerda</button>
+					<button class="syo-button popover-trigger" data-position="top">Em cima</button>
+					<button class="syo-button popover-trigger" data-position="right">À direita</button>
+					<button class="syo-button popover-trigger" data-position="bottom">Embaixo</button>
+					<button class="syo-button popover-trigger" data-position="left">À esquerda</button>
 				</div>
 				<div class="container-vertical">
-					<button class="syo-button popover-trigger" data-position="top-start" type="button">
+					<button class="syo-button popover-trigger" data-position="top-start">
 						Em cima, à esquerda
 					</button>
-					<button class="syo-button popover-trigger" data-position="right-start" type="button">
+					<button class="syo-button popover-trigger" data-position="right-start">
 						À direita, no topo
 					</button>
-					<button class="syo-button popover-trigger" data-position="bottom-end" type="button">
+					<button class="syo-button popover-trigger" data-position="bottom-end">
 						Embaixo, à direita
 					</button>
-					<button class="syo-button popover-trigger" data-position="left-end" type="button">
+					<button class="syo-button popover-trigger" data-position="left-end">
 						À esquerda, embaixo
 					</button>
 				</div>
 			</div>
+			<strong>HTML:</strong>
+			<div class="prettyprint">
+				<div class="container-vertical">
+					<button class="syo-button" id="popover-top">Em cima</button>
+					<button class="syo-button" id="popover-right">À direita</button>
+					<button class="syo-button" id="popover-bottom">Embaixo</button>
+					<button class="syo-button" id="popover-left">À esquerda</button>
+				</div>
+				<div class="container-vertical">
+					<button class="syo-button" id="popover-top-start">Em cima, à esquerda</button>
+					<button class="syo-button" id="popover-right-start">À direita, no topo</button>
+					<button class="syo-button" id="popover-bottom-end">Embaixo, à direita</button>
+					<button class="syo-button" id="popover-left-end">À esquerda, embaixo</button>
+				</div>
+			</div>
+			<strong>Javascript:</strong>
+			<div class="prettyprint">
+				$( "#popover-top" ).syoPopover({ position: "top" });
+				$( "#popover-right" ).syoPopover({ position: "right" });
+				$( "#popover-bottom" ).syoPopover({ position: "bottom" });
+				$( "#popover-left" ).syoPopover({ position: "left" });
+				$( "#popover-top-start" ).syoPopover({ position: "top-start" });
+				$( "#popover-right-start" ).syoPopover({ position: "right-start" });
+				$( "#popover-bottom-end" ).syoPopover({ position: "bottom-end" });
+				$( "#popover-left-end" ).syoPopover({ position: "left-end" });
+			</div>
 		</div>
 		
-		<section id="popover-api">
-			
-			<h3>API</h3>
-			<h4>Opções</h4>
-			<table class="syo-data-table syo-data-table-striped">
-				<colgroup>
-					<col class="span2">
-					<col class="span2">
-					<col class="span1">
-					<col class="span7">
-				</colgroup>
-				<thead>
-					<tr>
-						<th>Opção</th>
-						<th>Tipo</th>
-						<th>Padrão</th>
-						<th>Descrição</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>title</td>
-						<td>string</td>
-						<td><code>""</code></td>
-						<td>Título do popover.</td>
-					</tr>
-					<tr>
-						<td>content</td>
-						<td>
-							string<br>
-							objeto jQuery<br>
-							elemento DOM
-						</td>
-						<td><code>""</code></td>
-						<td>
-							Define o conteúdo do popover. Se for um objeto jQuery ou elemento DOM, o mesmo será movido
-							para dentro do popover.
-						</td>
-					</tr>
-					<tr>
-						<td>position</td>
-						<td>string</td>
-						<td><code>top</code></td>
-						<td>
-							Define qual o posicionamento do popover em relação ao elemento em que foi chamado
-							<code>.syoPopover()</code>.<br>
-							<strong>Valores possíveis:</strong> <code>top</code>, <code>right</code>,
-							<code>bottom</code>, <code>left</code>.
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-		</section>
+		<h3>API</h3>
+		<h4>Opções</h4>
+		<table class="syo-data-table syo-data-table-striped">
+			<colgroup>
+				<col class="span2">
+				<col class="span2">
+				<col class="span1">
+				<col class="span7">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Opção</th>
+					<th>Tipo</th>
+					<th>Padrão</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>title</td>
+					<td>string</td>
+					<td><code>""</code></td>
+					<td>Título do popover.</td>
+				</tr>
+				<tr>
+					<td>content</td>
+					<td>
+						string<br>
+						jQuery<br>
+						DOMElement
+					</td>
+					<td><code>""</code></td>
+					<td>
+						Define o conteúdo do popover. Se for um objeto jQuery ou elemento DOM, o mesmo será movido
+						para dentro do popover.
+					</td>
+				</tr>
+				<tr>
+					<td>position</td>
+					<td>string</td>
+					<td><code>top</code></td>
+					<td>
+						Define qual o posicionamento do popover em relação ao elemento em que foi chamado
+						<code>.syoPopover()</code>.<br>
+						<strong>Valores possíveis:</strong> <code>top</code>, <code>right</code>,
+						<code>bottom</code>, <code>left</code>, <code>top-start</code>, <code>right-start</code>,
+						<code>bottom-end</code>, <code>left-end</code>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		
 	</article>
 	
