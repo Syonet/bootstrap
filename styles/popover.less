@@ -21,7 +21,7 @@
   border-bottom: 1px solid @popover-border;
   background-color: @component-bg;
   vertical-align: middle;
-  .border-radius-top( @border-radius-large );
+  .border-radius-top( @base-border-radius );
   > .syo-popover-title {
     float: left;
     margin-right: 1em;
@@ -40,6 +40,7 @@
 .syo-popover-content {
   padding: 8px 12px;
   background-color: #FFF;
+  .border-radius-bottom( @border-radius-large );
 }
 
 /* =================================================================================================================
@@ -114,7 +115,7 @@
   top: 100%;
   &:after {
     bottom: 1px;
-    border-top-color: @popover-arrow-color;
+    border-top-color: #FFF;
   }
   &,
   &:after {
@@ -128,7 +129,7 @@
   right: 100%;
   &:after {
     left: 1px;
-    border-right-color: @popover-arrow-color;
+    border-right-color: #FFF;
   }
   &,
   &:after {
@@ -142,7 +143,7 @@
   bottom: 100%;
   &:after {
     top: 1px;
-    border-bottom-color: @popover-arrow-color;
+    border-bottom-color: #FFF;
   }
   &,
   &:after {
@@ -156,7 +157,7 @@
   left: 100%;
    &:after {
      right: 1px;
-     border-left-color: @popover-arrow-color;
+     border-left-color: #FFF;
     }
     &,
     &:after {
