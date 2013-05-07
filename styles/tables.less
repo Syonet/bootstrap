@@ -20,11 +20,11 @@ table {
 }
 
 /* =================================================================================================================
-   Tabelas do framework
+   Tabela normal
    ================================================================================================================= */
    
 /*
- * Estilos comuns pra syo-datagrid e syo-data-table
+ * Estilos comuns pra todas as tabelas
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
  */
 table {
@@ -89,50 +89,51 @@ table {
   }
 }
 
-/*
- * 1. Evita borda dupla na separação do body e do header
- */
-.syo-datagrid {
-  table { margin-bottom: 0; }
-  .syo-datagrid-header table {
-    .border-radius-top( @base-border-radius );
-    tr:last-child td:first-child,
-    tr:last-child th:first-child {
-      .border-top-left-radius( @base-border-radius );
-    }
-    tr:last-child td:last-child,
-    tr:last-child th:last-child {
-      .border-top-right-radius( @base-border-radius );
-    }
-  }
-  .syo-datagrid-body {
-    margin-top: -1px; /* 1 */
-    table {
-      .border-radius-bottom( @base-border-radius );
-      tr:last-child td:first-child,
-      tr:last-child th:first-child {
-        .border-bottom-left-radius( @base-border-radius );
-      }
-      tr:last-child td:last-child,
-      tr:last-child th:last-child {
-        .border-bottom-right-radius( @base-border-radius );
-      }
-    }
+table > tbody > tr.syo-active {
+  td, th {
+    background-color: @spring-green;
   }
 }
 
+/* =================================================================================================================
+   Data Grid
+   ================================================================================================================= */
+   
 
-.syo-datagrid tbody tr.syo-datagrid-state-hover {
+tr.syo-datagrid-state-clicked {
+  td, th {
+    background-color: @spring-green;
+  }
+}
+
+.syo-datagrid tr.syo-datagrid-state-hover { 
   td {
     cursor: pointer;
     background-color: @table-stripe-color;
   }
 }
 
-/* Se colocar o background na <tr> buga as bordas arredondadas */
-table > tbody > tr.syo-active, .syo-datagrid tr.syo-datagrid-state-clicked {
-  td, th {
-    background-color: @spring-green !important;
+/*
+ * 1. Sobrescreve a especificidade da tabela normal.
+ */
+.syo-datagrid {
+  .syo-datagrid-header {
+    table {
+      margin-bottom: 0;
+      border-bottom-width: 0;
+      .border-radius-bottom( 0 );
+      thead tr th:last-child {
+        .border-radius-bottom( 0 ); /* 1 */
+      }
+    }
+  }
+  .syo-datagrid-body {
+    table {
+      .border-radius-top( 0 );
+      tbody tr td:first-child {
+        .border-radius-top( 0 ); /* 1 */
+      }
+    }
   }
 }
 
