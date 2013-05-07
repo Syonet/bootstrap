@@ -105,10 +105,19 @@ module.exports = function( grunt ) {
 			]
 		},
 		jshint: {
-			options: {
-				jshintrc: ".jshintrc"
+			// https://github.com/gruntjs/grunt-contrib-jshint/pull/24#issuecomment-15029207
+			options: grunt.file.readJSON( ".jshintrc" ),
+			test: {
+				options: {
+					globals: {
+						expect: false
+					}
+				},
+				files: {
+					src: "scripts/tests/**/*.js"
+				}
 			},
-			main: "scripts/**/*.js",
+			main: "scripts/*.js",
 			docs: "docs/main.js"
 		},
 		concat: {
