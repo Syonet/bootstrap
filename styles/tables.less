@@ -122,9 +122,11 @@ table {
 }
 
 
-.syo-datagrid tr.syo-datagrid-state-hover {
-  cursor: pointer;
-  background-color: @table-stripe-color;
+.syo-datagrid tbody tr.syo-datagrid-state-hover {
+  td {
+    cursor: pointer;
+    background-color: @table-stripe-color;
+  }
 }
 
 /* Se colocar o background na <tr> buga as bordas arredondadas */
