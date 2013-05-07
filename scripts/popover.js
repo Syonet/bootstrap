@@ -1,6 +1,8 @@
 (function( $ ) {
 	"use strict";
 	
+	var Modernizr = window.Modernizr;
+	
 	$.widget( "ui.syoPopover", {
 		version: "@VERSION",
 		options: {
@@ -74,12 +76,14 @@
 				$.proxy( this.close, this )
 			);
 			
-			// Fecha no tap do title
-			$( this.popover ).on(
-				"tap." + this.widgetEventPrefix,
-				"." + this.classes.titlebar,
-				$.proxy( this.close, this )
-			);
+			if ( Modernizr && Modernizr.touch ) {
+				// Fecha no tap do title
+				$( this.popover ).on(
+					"tap." + this.widgetEventPrefix,
+					"." + this.classes.titlebar,
+					$.proxy( this.close, this )
+				);
+			}
 		},
 		
 		_getTitle: function() {
