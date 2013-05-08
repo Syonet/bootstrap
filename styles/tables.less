@@ -116,6 +116,7 @@ tr.syo-datagrid-state-clicked {
 /*
  * 1. Sobrescreve a especificidade da tabela normal.
  * 2. Feature documentada.
+ * 3. Evita borda dupla no topo do body mantendo a borda do thead quando tem scroll.
  */
 .syo-datagrid {
   td, th {
@@ -126,7 +127,6 @@ tr.syo-datagrid-state-clicked {
   }
   .syo-datagrid-header {
     table {
-      border-bottom-width: 0;
       .border-radius-bottom( 0 );
       thead tr th:first-child, thead tr th:last-child {
         .border-radius-bottom( 0 ); /* 1 */
@@ -137,24 +137,40 @@ tr.syo-datagrid-state-clicked {
     overflow: auto; /* 2 */
     max-height: 150px; /* 2 */
     table {
+      border-top-width: 0; /* 3 */
       .border-radius-top( 0 );
-      tbody tr td:first-child {
-        .border-radius-top( 0 ); /* 1 */
+      tbody tr:first-child {
+        td {
+          .border-radius-top( 0 ); /* 1 */
+        }
       }
     }
   }
 }
 
-/* O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo */
-.syo-datagrid .syo-datagrid-header,
+.syo-datagrid-header th,
+.syo-datagrid-helper,
 table > thead,
 table > tfoot {
-  td, th {
-    padding: 8px;
-    color: @gray-dark;
-    #gradient .vertical();
-    text-shadow: 0 1px 0 #FFF;
+  padding: 8px;
+  color: @gray-dark;
+  #gradient .vertical();
+  text-shadow: 0 1px 0 #FFF;
+}
+
+.syo-datagrid-body.syo-datagrid-with-helper {
+  table {
+    .border-radius-bottom( 0 );
+    border-bottom-width: 0;
+    tbody tr:last-child td {
+      .border-radius-bottom( 0 );
+    }
   }
+}
+
+.syo-datagrid-helper {
+  border: 1px solid @table-border-color;
+  .border-radius-bottom( @base-border-radius );
 }
 
 /* =================================================================================================================

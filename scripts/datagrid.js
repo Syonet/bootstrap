@@ -27,17 +27,20 @@
 	
 	function getComponents( $element ) {
 		return [
-			//Header
+			// Header
 			$element.children( "div:eq(0)" ),
 			
-			//Body 
+			// Body 
 			$element.children( "div:eq(1)" ),
 			
-			//Container TRs
+			// Container TRs
 			$element.find( "div:eq(1) div" ),
 			
-			//Tbody TRs
-			$element.find( "div:eq(1) tbody tr" )
+			// Tbody TRs
+			$element.find( "div:eq(1) tbody tr" ),
+			
+			// Footer helper
+			$element.find( "> div:eq(2)" )
 		];
 	}
 	
@@ -45,10 +48,11 @@
 		destroy: function() {
 			var $element = this;
 			var components = getComponents( $element );
-			var $header = components[0];
-			var $body = components[1];
-			var $trsContainer = components[2];
-			var $trs = components[3];
+			var $header = components[ 0 ];
+			var $body = components[ 1 ];
+			var $trsContainer = components[ 2 ];
+			var $trs = components[ 3 ];
+			var $helper = components[ 4 ];
 			
 			$element
 				.removeClass( classPrefix )
@@ -58,10 +62,14 @@
 				.removeClass( classPrefix + "-header" );
 			
 			$body
-				.removeClass( classPrefix + "-body" );
+				.removeClass( classPrefix + "-body" )
+				.removeClass( classPrefix + "-with-helper" );
 			
 			$trsContainer
 				.removeClass( classPrefix + "-rowcont" );
+			
+			$helper
+				.removeClass( classPrefix + "-helper" );
 			
 			$trs
 				.removeData( dataClicked )
@@ -85,6 +93,7 @@
 			var $body = components[ 1 ];
 			var $trsContainer = components[ 2 ];
 			var $trs = components[ 3 ];
+			var $helper = components[ 4 ];
 			
 			$element
 				.addClass( classPrefix );
@@ -97,6 +106,14 @@
 			
 			$trsContainer
 				.addClass( classPrefix + "-rowcont" );
+			
+			$helper
+				.addClass( classPrefix + "-helper" );
+			
+			if ( $helper.length ) {
+				$body
+					.addClass( classPrefix + "-with-helper" );
+			}
 			
 			$trs
 				.addClass( classPrefix + "-state-default" )

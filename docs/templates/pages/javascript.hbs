@@ -264,7 +264,9 @@
 			<h2>Syonet Data Grid</h2>
 		</div>
 		<p>
-			Uma tabela com header fixo utilizada para a manipulação de dados de acordo com o conteúdo de cada linha.
+			Uma tabela com header fixo utilizada para a manipulação de dados de acordo com o conteúdo de cada linha.<br>
+			Para prever o espaçamento ocasionado por causa do scroll devemos definir tamanhos fixos para todas as
+			colunas de todas as tabelas, exceto a última.
 		</p>
 		
 		<div class="syo-docs-example">
@@ -272,6 +274,11 @@
 				<div data-widget="syoDataGrid">
 					<div>
 						<table>
+							<colgroup>
+								<col style="width: 200px">
+								<col style="width: 200px">
+								<col>
+							</colgroup>
 							<thead>
 								<tr>
 									<th>First Column</th>
@@ -284,6 +291,11 @@
 					<div>
 						<div>
 							<table>
+								<colgroup>
+									<col style="width: 200px">
+									<col style="width: 200px">
+									<col>
+								</colgroup>
 								<tbody>
 									<tr>
 										<td>Data one</td>
@@ -316,15 +328,11 @@
 										<td>Data three</td>
 									</tr>
 								</tbody>
-								<tfoot>
-									<tr>
-										<td>Foot one</td>
-										<td>Foot two</td>
-										<td>Foot three</td>
-									</tr>
-								</tfoot>
 							</table>
 						</div>
+					</div>
+					<div>
+						Conteúdo opcional
 					</div>
 				</div>
 			</div>
@@ -333,11 +341,16 @@
 				<div id="my-datagrid">
 					<div>
 						<table>
+							<colgroup>
+								<col style="width: 200px">
+								<col style="width: 200px">
+								<col>
+							</colgroup>
 							<thead>
 								<tr>
 									<th>First Column</th>
 									<th>Second Column</th>
-									<th>&nbsp;</th>
+									<th>Third Column</th>
 								</tr>
 							</thead>
 						</table>
@@ -345,6 +358,11 @@
 					<div>
 						<div>
 							<table>
+								<colgroup>
+									<col style="width: 200px">
+									<col style="width: 200px">
+									<col>
+								</colgroup>
 								<tbody>
 									<tr>
 										<td>Data one</td>
@@ -377,15 +395,11 @@
 										<td>Data three</td>
 									</tr>
 								</tbody>
-								<tfoot>
-									<tr>
-										<td>Foot one</td>
-										<td>Foot two</td>
-										<td>Foot three</td>
-									</tr>
-								</tfoot>
 							</table>
 						</div>
+					</div>
+					<div>
+						Conteúdo opcional
 					</div>
 				</div>
 			</div>
