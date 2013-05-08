@@ -15,7 +15,18 @@
 		// Ajusta o posicionamento do menu lateral
 		initStandaloneAffix();
 		
+		// Inicializa os exemplos da página principal
+		initExemplos();
+		
 	});
+	
+	function initExemplos() {
+		$( "#exemplo1" )
+			.find( ".pagination" )
+			.syoPagination({
+				items: 3
+			});
+	}
 	
 	function initStandaloneAffix() {
 		$( window ).scroll(function() {
