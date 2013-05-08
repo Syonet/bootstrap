@@ -115,19 +115,27 @@ tr.syo-datagrid-state-clicked {
 
 /*
  * 1. Sobrescreve a especificidade da tabela normal.
+ * 2. Feature documentada.
  */
 .syo-datagrid {
+  td, th {
+    overflow: hidden;
+  }
+  table {
+    margin-bottom: 0;
+  }
   .syo-datagrid-header {
     table {
-      margin-bottom: 0;
       border-bottom-width: 0;
       .border-radius-bottom( 0 );
-      thead tr th:last-child {
+      thead tr th:first-child, thead tr th:last-child {
         .border-radius-bottom( 0 ); /* 1 */
       }
     }
   }
   .syo-datagrid-body {
+    overflow: auto; /* 2 */
+    max-height: 150px; /* 2 */
     table {
       .border-radius-top( 0 );
       tbody tr td:first-child {
