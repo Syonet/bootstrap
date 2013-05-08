@@ -21,11 +21,18 @@
 	});
 	
 	function initExemplos() {
-		$( "#exemplo1" )
+		var $exemplo1 = $( "#exemplo1" );
+		
+		$exemplo1
+			.find( ".datagrid" )
+			.syoDataGrid()
+		.end()
 			.find( ".pagination" )
 			.syoPagination({
 				items: 3
 			});
+		
+		
 	}
 	
 	function initStandaloneAffix() {
