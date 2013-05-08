@@ -14,6 +14,8 @@ module.exports = function( grunt ) {
 					"clean:main",
 					"less:main",
 					"jshint:main",
+					"jshint:test",
+					"concat",
 					"process"
 				]
 			},
@@ -27,6 +29,7 @@ module.exports = function( grunt ) {
 					"clean:docs",
 					"less:docs",
 					"jshint:docs",
+					"concat",
 					"hogan"
 				]
 			}

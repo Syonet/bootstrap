@@ -1,8 +1,8 @@
 (function() {
 	"use strict";
 	
-	module( "Methods" );
-	test( "Method 'refresh'", function() {
+	module( "Métodos" );
+	test( "Método 'refresh'", function() {
 		expect( 2 );
 		
 		$( "#grid-head-body" ).syoDataGrid();

@@ -391,7 +391,7 @@
 			É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
 			devida no elemento que você deseja aplicar tal estado:
 		</p>
-		<table class="syo-data-table">
+		<table>
 			<colgroup>
 				<col class="span3">
 				<col class="span9">
@@ -438,7 +438,7 @@
 			<code>&lt;button&gt;</code> para uma melhor renderização.
 		</p>
 		
-		<table class="syo-data-table">
+		<table>
 			<colgroup>
 				<col class="span2">
 				<col class="span2">
@@ -490,49 +490,24 @@
 			<h2>Tabelas</h2>
 		</div>
 		<p>
-			Tabelas para dados tabulares! Basta adicionar a classe <code>.syo-data-table</code>, ou utilizar o nosso
-			plugin <b>syoDataGrid</b>. Compatível com ambos.<br>
-			É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <b>.syo-active</b>
-			(para <code>.syo-data-table</code>). O mesmo estilo será aplicado para uma linha clicada pelo
-			<b>syoDataGrid</b>.<br><br>
-			<b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas :)
+			Tabelas devem ser utilizadas apenas para a exibição de dados tabulares. Existe um estilo padrão definido
+			para todas as tabelas e alguns estilos que adaptam o uso da tabela para situações específicas.<br>
+			É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <code>.syo-active</code>.
+		</p>
+		<p>
+			<b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas dentro de um <code>colgroup</code>
+			=)
 		</p>
 		
+		<div class="syo-header">
+			<h4> Base </h4>
+		</div>
+		<p>
+			Estilo base de todas as tabelas.
+		</p>
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
-				<table class="syo-data-table">
-					<colgroup>
-						<col class="span3">
-						<col class="span3">
-						<col class="span6">
-					</colgroup>
-					<thead>
-					<tr>
-						<th>Coluna 1</th>
-						<th>Coluna 2</th>
-						<th>Coluna 3</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>Texto 1</td>
-						<td>Texto 2</td>
-						<td rowspan="2">Texto 3</td>
-					</tr>
-					<tr>
-						<td>Texto 1</td>
-						<td>Texto 2</td>
-					</tr>
-					<tr class="syo-active">
-						<td>Texto 1</td>
-						<td>Texto 2</td>
-						<td>Texto 3</td>
-					</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="prettyprint">
-				<table class="syo-data-table">
+				<table>
 					<colgroup>
 						<col class="span3">
 						<col class="span3">
@@ -549,7 +524,47 @@
 						<tr>
 							<td>Texto 1</td>
 							<td>Texto 2</td>
-							<td rowspan="2">Texto 3</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr class="syo-active">
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>Footer 1</td>
+							<td>Footer 2</td>
+							<td>Footer 3</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<div class="prettyprint">
+				<table>
+					<colgroup>
+						<col class="span3">
+						<col class="span3">
+						<col class="span6">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Coluna 1</th>
+							<th>Coluna 2</th>
+							<th>Coluna 3</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
 						</tr>
 						<tr>
 							<td>Texto 1</td>
@@ -561,44 +576,115 @@
 							<td>Texto 3</td>
 						</tr>
 					</tbody>
+					<tfoot>
+						<tr>
+							<td>Footer 1</td>
+							<td>Footer 2</td>
+							<td>Footer 3</td>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>
 		
+		<div class="syo-header">
+			<h4> Striped </h4>
+		</div>
 		<p>
-			Para que sua tabela tenha linhas de cores alternadas, adicione a classe
-			<code>.syo-data-table-striped</code>.
+			Este estilo fornece um destaque adicional para cada linha de modo a criar um contraste e facilitar a
+			visualização dos dados. Basta adicionar a classe <code>.syo-table-striped</code> no elemento principal da
+			tabela.
 		</p>
+		
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
-				<table class="syo-data-table syo-data-table-striped">
+				<table class="syo-table-striped">
+					<colgroup>
+						<col class="span3">
+						<col class="span3">
+						<col class="span6">
+					</colgroup>
 					<thead>
-					<tr>
-						<th>Coluna 1</th>
-						<th>Coluna 2</th>
-						<th>Coluna 3</th>
-					</tr>
+						<tr>
+							<th>Coluna 1</th>
+							<th>Coluna 2</th>
+							<th>Coluna 3</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td>Texto 1</td>
-						<td>Texto 2</td>
-						<td>Texto 3</td>
-					</tr>
-					<tr>
-						<td colspan="2">Texto 1</td>
-						<td>Texto 2</td>
-					</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
 					</tbody>
+					<tfoot>
+						<tr>
+							<td>Footer 1</td>
+							<td>Footer 2</td>
+							<td>Footer 3</td>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 			<div class="prettyprint">
-				<table class="syo-data-table syo-data-table-striped">
+				<table class="syo-table-striped">
+					<colgroup>
+						<col class="span3">
+						<col class="span3">
+						<col class="span6">
+					</colgroup>
 					<thead>
 						<tr>
-							<td></td>
+							<th>Coluna 1</th>
+							<th>Coluna 2</th>
+							<th>Coluna 3</th>
 						</tr>
 					</thead>
+					<tbody>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>Footer 1</td>
+							<td>Footer 2</td>
+							<td>Footer 3</td>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>
@@ -976,7 +1062,7 @@
 			Abaixo está uma tabela com as classes disponíveis e o seu efeito em uma tela diferente.
 		</p>
 		
-		<table class="syo-data-table responsive-table">
+		<table class="responsive-table">
 			<colgroup>
 				<col class="span4">
 				<col class="span4">
