@@ -8,6 +8,13 @@
 		<link rel="stylesheet" href="../../dist/bootstrap.css">
 		<link rel="stylesheet" href="../../dist/jquery.ui.css">
 		<link rel="stylesheet" href="tests.css">
+		
+		<style>
+		#grid-overflow .syo-datagrid-body {
+			height: 300px;
+			max-height: none;
+		}
+		</style>
 	</head>
 	<body>
 		<div data-widget="dialog" title="ui dialog">
@@ -325,12 +332,96 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test test-fixed" title="Data Grid - Teste das bordas arredondadas do datagrid nos cantos do body/header/footer">
+						<div data-widget="syoDataGrid">
+							<div>
+								<table>
+									<thead>
+										<tr>
+											<th>thead left</th>
+											<th>thead center</th>
+											<th>thead right</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div>
+								<div>
+									<table>
+										<tbody>
+											<tr>
+												<td>body left</td>
+												<td>body center</td>
+												<td>body right</td>
+											</tr>
+											<tr>
+												<td>body left</td>
+												<td>body center</td>
+												<td>body right</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td>body left</td>
+												<td>body center</td>
+												<td>body right</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="test test-fixed" title="Data Grid - Não deve ter nenhum background de destaque aparecendo no bottom e deve criar barra de rolagem abaixo do thead">
+						<div class="test-highlight1" style="height: 337px;">
+							<div data-widget="syoDataGrid" id="grid-overflow">
+								<div>
+									<table>
+										<thead>
+											<tr><th>thead</th></tr>
+										</thead>
+									</table>
+								</div>
+								<div>
+									<div>
+										<table>
+											<tbody>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+												<tr><td>body</td></tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<script src="../../external/jquery.js"></script>
 		<script src="../../external/jquery.ui.js"></script>
-		<script src="../../scripts/pagination.js"></script>
-		<script src="../../scripts/button.js"></script>
+		<script src="../../dist/bootstrap.js"></script>
 		<script src="tests.js"></script>
 	</body>
 </html>

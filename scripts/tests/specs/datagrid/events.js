@@ -16,8 +16,10 @@
 		$fixture.append( fixtureContent );
 	}
 	
-	module( "Events" );
-	test( "click", 3, function() {
+	module( "Eventos" );
+	test( "click", function() {
+		expect( 3 );
+		
 		var $tr;
 		var count = 0;
 		var triggers = [];

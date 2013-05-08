@@ -20,14 +20,14 @@ table {
 }
 
 /* =================================================================================================================
-   Tabelas do framework
+   Tabela normal
    ================================================================================================================= */
    
 /*
- * Estilos comuns pra syo-datagrid e syo-data-table
+ * Estilos comuns pra todas as tabelas
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
  */
-.syo-data-table, .syo-datagrid table {
+table {
   .table-base-styles();
   td, /* 1 */
   th { /* 1 */
@@ -37,7 +37,7 @@ table {
   }
 }
 
-.syo-data-table {
+table {
   .border-radius( @base-border-radius );
   /* Arredonda canto superior esquerdo do primeiro tr */
   thead:first-child tr:first-child > th:first-child,
@@ -89,62 +89,66 @@ table {
   }
 }
 
+table > tbody > tr.syo-active {
+  td, th {
+    background-color: @spring-green;
+  }
+}
+
+/* =================================================================================================================
+   Data Grid
+   ================================================================================================================= */
+   
+
+tr.syo-datagrid-state-clicked {
+  td, th {
+    background-color: @spring-green;
+  }
+}
+
+.syo-datagrid tr.syo-datagrid-state-hover { 
+  td {
+    cursor: pointer;
+    background-color: @table-stripe-color;
+  }
+}
+
 /*
- * 1. Evita borda dupla na separação do body e do header
- * 2. Pra simplificar os seletores finais (CSS puro), move-se estes seletores pra fora do
- *    ".syo-data-table, .syo-datagrid"
- * 3. Se colocar o background na <tr> buga as bordas arredondadas
- * 4. O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo
+ * 1. Sobrescreve a especificidade da tabela normal.
+ * 2. Feature documentada.
  */
 .syo-datagrid {
-  table { margin-bottom: 0; }
-  .syo-datagrid-header table {
-    .border-radius-top( @base-border-radius );
-    tr:last-child td:first-child,
-    tr:last-child th:first-child {
-      .border-top-left-radius( @base-border-radius );
-    }
-    tr:last-child td:last-child,
-    tr:last-child th:last-child {
-      .border-top-right-radius( @base-border-radius );
+  td, th {
+    overflow: hidden;
+  }
+  table {
+    margin-bottom: 0;
+  }
+  .syo-datagrid-header {
+    table {
+      border-bottom-width: 0;
+      .border-radius-bottom( 0 );
+      thead tr th:first-child, thead tr th:last-child {
+        .border-radius-bottom( 0 ); /* 1 */
+      }
     }
   }
   .syo-datagrid-body {
-    margin-top: -1px; /* 1 */
+    overflow: auto; /* 2 */
+    max-height: 150px; /* 2 */
     table {
-      .border-radius-bottom( @base-border-radius );
-      tr:last-child td:first-child,
-      tr:last-child th:first-child {
-        .border-bottom-left-radius( @base-border-radius );
-      }
-      tr:last-child td:last-child,
-      tr:last-child th:last-child {
-        .border-bottom-right-radius( @base-border-radius );
+      .border-radius-top( 0 );
+      tbody tr td:first-child {
+        .border-radius-top( 0 ); /* 1 */
       }
     }
   }
 }
 
-/* 2 */
-.syo-data-table > tbody > tr:hover,
-.syo-datagrid tr.syo-datagrid-state-hover {
-  cursor: pointer;
-  background-color: @table-stripe-color;
-}
-
-/* 3 */
-.syo-data-table > tbody > tr.syo-active,
-.syo-datagrid tr.syo-datagrid-state-clicked {
-  td, th {
-    cursor: pointer;
-    background-color: @spring-green !important;
-  }
-}
-
-/* 4 */
+/* O syo-datagrid-header é um div, então não dá pra usar o ">" com ele ou o seletor ficaria muito complexo */
 .syo-datagrid .syo-datagrid-header,
-.syo-data-table > thead,
-.syo-data-table > tfoot {
+table > thead,
+table > tfoot {
   td, th {
     padding: 8px;
     color: @gray-dark;
@@ -160,7 +164,7 @@ table {
 /*
  * 1. Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
  */
-.syo-data-table-striped > tbody {
+.syo-table-striped > tbody {
   /* 1 */
   > tr:nth-child(even) > td,
   > tr:nth-child(even) > th {
