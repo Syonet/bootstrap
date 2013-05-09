@@ -114,9 +114,16 @@ tr.syo-datagrid-state-clicked {
 }
 
 /*
+ * 1. Features documentada (.syo-datagrid-body).
+ */
+.syo-datagrid-body {
+  overflow: auto; /* 1 */
+  max-height: 150px; /* 1 */
+}
+
+/*
  * 1. Sobrescreve a especificidade da tabela normal.
- * 2. Feature documentada.
- * 3. Evita borda dupla no topo do body mantendo a borda do thead quando tem scroll.
+ * 2. Evita borda dupla no topo do body mantendo a borda do thead quando tem scroll.
  */
 .syo-datagrid {
   td, th {
@@ -134,10 +141,8 @@ tr.syo-datagrid-state-clicked {
     }
   }
   .syo-datagrid-body {
-    overflow: auto; /* 2 */
-    max-height: 150px; /* 2 */
     table {
-      border-top-width: 0; /* 3 */
+      border-top-width: 0; /* 2 */
       .border-radius-top( 0 );
       tbody tr:first-child {
         td {
