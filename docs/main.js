@@ -15,25 +15,7 @@
 		// Ajusta o posicionamento do menu lateral
 		initStandaloneAffix();
 		
-		// Inicializa os exemplos da página principal
-		initExemplos();
-		
 	});
-	
-	function initExemplos() {
-		var $exemplo1 = $( "#exemplo1" );
-		
-		$exemplo1
-			.find( ".datagrid" )
-			.syoDataGrid()
-		.end()
-			.find( ".pagination" )
-			.syoPagination({
-				items: 3
-			});
-		
-		
-	}
 	
 	function initStandaloneAffix() {
 		$( window ).scroll(function() {
