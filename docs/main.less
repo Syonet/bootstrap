@@ -91,10 +91,14 @@ article {
  * 1. Evita aparecer o scroll com componentes draggable
  */
 .example-iframe {
-  width: 100%;
+  width: 960px;
   border: 1px dashed @gray-light;
-  overflow-y: hidden; /* 1 */
   overflow-x: hidden; /* 1 */
+  overflow-y: auto;
+}
+&.example-iframe-split {
+  .example-iframe;
+  width: 650px;
 }
 
 /* =================================================================================================================

@@ -3,10 +3,25 @@
 }
 
 @media( max-width: 979px ) and ( orientation: portrait ) {
-  [class*="span"] {
-    float: none;
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: @base-line-height;
+  /*
+   * 1. Acerta um problema com a especificidade do offsetX:first-child onde a margem não estava sendo resetada
+   */
+  .row { /* 1 */
+    [class*="span"] {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: @base-line-height / 2;
+    }
+  }
+  
+  /*
+   * 1. Acerta especificidade da regra do span
+   */
+  .row { /* 1 */
+      label[class*="span"] {
+      margin-bottom: 0; /* 1 */
+      text-align: left;
+    }
   }
 }

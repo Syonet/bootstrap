@@ -311,26 +311,40 @@
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<fieldset>
-					<legend>Formulário</legend>
+					<legend>Grid</legend>
 					<div class="row">
-						<div class="syo-field span3">
-							<label for="input1" class="span6">Label à direita (default):</label>
-							<div class="syo-field-controls span6">
-								<input type="text" id="input1" class="input-block-level"
-										placeholder="Digite alguma coisa...">
+						<div class="syo-field span5">
+							<label for="input1" class="span6">Label alinhado à direita (default):</label>
+							<div class="span6">
+								<input type="text" id="input1" class="input-block-level">
 								<span class="syo-field-help">Texto de ajuda para o campo acima</span>
 							</div>
 						</div>
 					</div>
-					<div class="syo-field row">
-						<div class="span3">
-							<select id="input6" class="input-block-level">
+					<div class="row">
+						<label for="selectinput" class="span5 text-left">Label block:</label>
+					</div>
+					<div class="row">
+						<div class="syo-field span5">
+							<select id="selectinput" class="input-block-level">
 								<option value="1">Opção 1</option>
 								<option value="2">Opção 2</option>
 								<option value="3">Opção 3</option>
 							</select>
 						</div>
 					</div>
+					<div class="row">
+						<!--
+							ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
+							".special-input-block-level" no elemento pai
+						-->
+						<div class="syo-field span5 special-input-block-level">
+							<input type="text" data-widget="spinner">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Inline</legend>
 					<div class="syo-field syo-field-inline">
 						<label>
 							<input type="checkbox">
@@ -347,30 +361,58 @@
 							Radio
 						</label>
 					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Padrão</legend>
 					<div class="syo-field">
 						<input type="submit" value="Botão" class="syo-button">
 						<input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
 					</div>
 				</fieldset>
+				<fieldset>
+					<legend>Diversos tamanhos</legend>
+					<button class="syo-button syo-button-large">.syo-button-large</button>
+					<button class="syo-button syo-button-xlarge">.syo-button-xlarge</button>
+				</fieldset>
 			</div>
+			<strong>HTML:</strong>
 			<div class="prettyprint">
 				<form method="POST" action="#">
 					<fieldset>
-						<legend>Formulário</legend>
-						<div class="syo-field">
-							<label for="input-id">Label à direita (default):</label>
-							<div class="syo-field-controls">
-								<input type="text" id="input-id" placeholder="Digite alguma coisa...">
-								<span class="syo-field-help">Texto de ajuda para o campo acima</span>
+						<legend>Grid</legend>
+						<div class="row">
+							<div class="syo-field span5">
+								<label for="input1" class="span6">Label alinhado à direita (default):</label>
+								<div class="span6">
+									<input type="text" id="input1" class="input-block-level">
+									<span class="syo-field-help">Texto de ajuda para o campo acima</span>
+								</div>
 							</div>
 						</div>
-						
-						<div class="syo-field">
-							<select>
-								<option value="1">...</option>
-							</select>
+						<div class="row">
+							<label for="selectinput" class="span5 text-left">Label block:</label>
 						</div>
-						
+						<div class="row">
+							<div class="syo-field span5">
+								<select id="selectinput" class="input-block-level">
+									<option value="1">Opção 1</option>
+									<option value="2">Opção 2</option>
+									<option value="3">Opção 3</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<!--
+								ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
+								".special-input-block-level" no elemento pai
+							-->
+							<div class="syo-field span5 special-input-block-level">
+								<input type="text" class="spinner">
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Inline</legend>
 						<div class="syo-field syo-field-inline">
 							<label>
 								<input type="checkbox">
@@ -378,11 +420,33 @@
 							</label>
 						</div>
 						<div class="syo-field syo-field-inline">
-							<input type="radio" id="radiobox">
-							<label for="radiobox">Radio</label>
+							<input type="radio" id="input8">
+							<label for="input8">Radio</label>
+						</div>
+						<div class="syo-field syo-field-inline">
+							<label>
+								<input type="radio">
+								Radio
+							</label>
 						</div>
 					</fieldset>
+					<fieldset>
+						<legend>Padrão</legend>
+						<div class="syo-field">
+							<input type="submit" value="Botão" class="syo-button">
+							<input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Diversos tamanhos</legend>
+						<button class="syo-button syo-button-large">.syo-button-large</button>
+						<button class="syo-button syo-button-xlarge">.syo-button-xlarge</button>
+					</fieldset>
 				</form>
+			</div>
+			<strong>Javascript:</strong>
+			<div class="prettyprint">
+				$( ".spinner" ).spinner();
 			</div>
 		</div>
 		
@@ -455,7 +519,7 @@
 				<tr>
 					<td><button type="button" class="syo-button">Botão</button></td>
 					<td><code>syo-button</code></td>
-					<td>Botão padrão, cinza. Útil para ações sem muita importância.</td>
+					<td>Botão padrão para ações sem relevância.</td>
 				</tr>
 				<tr>
 					<td><button type="button" class="syo-button syo-success">Sucesso</button></td>
