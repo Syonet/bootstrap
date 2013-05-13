@@ -32,8 +32,15 @@
   background-color: rgba( 255, 0, 0, .4 );
 }
 
-/* Remove as margens do elemento para melhor inspeção de outros estilos como sombra ou borda */
-.test-trimmed {
+/*
+ * Remove as margens do elemento para melhor inspeção de outros estilos como sombra ou borda
+ * 1. Sobrescreve a especificidade resultante do margin-bottom de um campo dentro de um syo-field "display: inline" 
+ */
+.test-trimmed,
+.syo-field.syo-field-inline input, /* 1 */
+.syo-field.syo-field-inline button, /* 1 */
+.syo-field.syo-field-inline select, /* 1 */
+.syo-field.syo-field-inline textarea { /* 1 */
   margin: 0;
 }
 
