@@ -141,16 +141,16 @@ module.exports = function( grunt ) {
 	});
 	
 	// NPM
-	grunt.loadNpmTasks("grunt-contrib-less");
-	grunt.loadNpmTasks("grunt-contrib-clean");
-	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks("grunt-contrib-qunit");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
-	grunt.loadNpmTasks("grunt-contrib-connect");
-	grunt.loadNpmTasks("grunt-contrib-concat");
+	grunt.loadNpmTasks( "grunt-contrib-less" );
+	grunt.loadNpmTasks( "grunt-contrib-clean" );
+	grunt.loadNpmTasks( "grunt-contrib-watch" );
+	grunt.loadNpmTasks( "grunt-contrib-qunit" );
+	grunt.loadNpmTasks( "grunt-contrib-jshint" );
+	grunt.loadNpmTasks( "grunt-contrib-connect" );
+	grunt.loadNpmTasks( "grunt-contrib-concat" );
 	
 	// Local
-	grunt.loadTasks("build");
+	grunt.loadTasks( "build" );
 	
 	// Processo principal de build
 	grunt.registerTask( "default", [

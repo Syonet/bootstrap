@@ -43,14 +43,11 @@ textarea {
     outline: none; /* 2 */
     border-color: @input-focus-border;
     background-color: @input-background;
-    .box-shadow( none );
+    .box-shadow( 0 1px 2px rgb( 210, 210, 210 ) );
   }
   &.input-block-level {
     display: block;
     width: 100%;
-  }
-  &[class*="span"] {
-    float: none;
   }
   &[disabled],
   &.syo-disabled {
@@ -95,7 +92,7 @@ input[type="radio"] {
    ================================================================================================================= */
    
 fieldset {
-  margin: 2px 2px @base-line-height;
+  margin: 2px 2px @base-line-height / 2;
   padding: .5em;
   border: 1px solid @gray-light;
   .border-radius( @border-radius-large );
@@ -149,18 +146,15 @@ input, textarea, select, button {
 /*
  * 1. Muda de inline para inline-block para corrigir um bug no IE10 onde o textarea não fica alinhado com os outros
  * inputs. O tamanho do field fica sendo controlado pelo input dentro dele.
+ * 2. Compensa a remoção do inline-block (1)
  */
 .syo-field {
-  margin-bottom: 3px;
+  margin-bottom: @base-line-height / 2;
   #font .shorthand();
   &.syo-field-inline {
     display: inline; /* 1 */
-  }
-  > .syo-field-controls {
-    display: inline-block;
-    vertical-align: top;
-    &:not([class*="span"]) {
-      margin-left: 3px;
+    input, select, textarea, button {
+      margin-bottom: @base-line-height / 2; /* 2 */
     }
   }
   > input,
