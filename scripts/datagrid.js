@@ -1,205 +1,168 @@
 (function( $ ) {
 	"use strict";
-	
-	var classPrefix = "syo-datagrid";
-	var eventsSufix = "syoDataGrid";
-	var optionsPrefix = "syoDataGridOptions";
-	var dataClicked = "syoDataGridClicked";
-	
-	function option( $element, key ) {
-		return $element.data( optionsPrefix )[ key ];
-	}
-	
-	function getStateClass( state ) {
-		var ret = state;
-		var arr = state.split(" ");
-		var i = 0;
-		
-		if ( arr.length ) {
-			for ( ; i<arr.length; i++ ) {
-				arr[ i ] = classPrefix + "-state-" + arr[ i ];
-			}
-		ret = arr.join(" ");
-		}
-		
-		return ret;
-	}
-	
+
+	var classes = {};
+	classes.widget = "syo-datagrid";
+	classes.header = classes.widget + "-header";
+	classes.rowContainer = classes.widget + "-rowcont";
+	classes.body = classes.widget + "-body";
+	classes.helper = classes.widget + "-helper";
+	classes.bodyWithHelper = classes.widget + "-with-helper";
+
+	var selectors = {
+		// Header
+		header: "> div:eq(0)",
+
+		// Body
+		body: "> div:eq(1)",
+
+		// Rows Container
+		rowContainer: "> div:eq(1) > div",
+
+		// Rows
+		rows: "> div:eq(1) tbody > tr",
+
+		// Footer helper
+		helper: "> div:gt(1)"
+	};
+
 	function getComponents( $element ) {
-		return [
-			// Header
-			$element.children( "div:eq(0)" ),
-			
-			// Body 
-			$element.children( "div:eq(1)" ),
-			
-			// Container TRs
-			$element.find( "div:eq(1) div" ),
-			
-			// Tbody TRs
-			$element.find( "div:eq(1) tbody tr" ),
-			
-			// Footer helper
-			$element.find( "> div:eq(2)" )
-		];
-	}
-	
-	var methods = {
-		destroy: function() {
-			var $element = this;
-			var components = getComponents( $element );
-			var $header = components[ 0 ];
-			var $body = components[ 1 ];
-			var $trsContainer = components[ 2 ];
-			var $trs = components[ 3 ];
-			var $helper = components[ 4 ];
-			
-			$element
-				.removeClass( classPrefix )
-				.removeData( optionsPrefix );
-			
-			$header
-				.removeClass( classPrefix + "-header" );
-			
-			$body
-				.removeClass( classPrefix + "-body" )
-				.removeClass( classPrefix + "-with-helper" );
-			
-			$trsContainer
-				.removeClass( classPrefix + "-rowcont" );
-			
-			$helper
-				.removeClass( classPrefix + "-helper" );
-			
-			$trs
-				.removeData( dataClicked )
-				.removeClass( getStateClass( "hover clicked default" ) )
-				.unbind( "." + eventsSufix );
-			
-			$element
-				.find( "[class]" )
-				.each(function() {
-					var $element = $( this );
-					
-					if ( $element.attr( "class" ) === "" ) {
-						$element.removeAttr( "class" );
-					}
-				});
-		},
-		refresh: function() {
-			var $element = this;
-			var components = getComponents( $element );
-			var $header = components[ 0 ];
-			var $body = components[ 1 ];
-			var $trsContainer = components[ 2 ];
-			var $trs = components[ 3 ];
-			var $helper = components[ 4 ];
-			
-			$element
-				.addClass( classPrefix );
-			
-			$header
-				.addClass( classPrefix + "-header" );
-			
-			$body
-				.addClass( classPrefix + "-body" );
-			
-			$trsContainer
-				.addClass( classPrefix + "-rowcont" );
-			
-			$helper
-				.addClass( classPrefix + "-helper" );
-			
-			if ( $helper.length ) {
-				$body
-					.addClass( classPrefix + "-with-helper" );
-			}
-			
-			$trs
-				.addClass( classPrefix + "-state-default" )
-				.unbind( "." + eventsSufix )
-				.each(function( index, trElement ) {
-					var $trElement = $( trElement );
-					
-					if ( !$trElement.data( "disabled" ) ) {
-						$trElement
-							
-							//Bind TR click event
-							.bind( "click." + eventsSufix, function( event ) {
-								var fn = option( $element, "click" );
-								var stateDefault = getStateClass( "default" );
-								
-								$trs
-									.removeClass( getStateClass( "hover clicked" ) )
-										.not( stateDefault )
-											.addClass( stateDefault )
-											.removeData( dataClicked );
-								
-								$trElement
-									.removeClass( stateDefault )
-									.addClass( getStateClass( "clicked" ) )
-									.data( dataClicked, true );
-								
-								if ( $.isFunction(fn) ) {
-									fn.call( this, event );
-								}
-							})
-							
-							//Bind TR mouseenter event
-							.bind( "mouseenter." + eventsSufix, function() {
-								if ( !$trElement.data( dataClicked ) ) {
-									$trElement
-										.removeClass( getStateClass( "clicked default hover" ) )
-										.addClass( getStateClass( "hover" ) );
-								}
-							})
-							
-							//Bind TR mouseleave event
-							.bind( "mouseleave." + eventsSufix, function() {
-								var stateClicked = getStateClass( "clicked" );
-								
-								$trElement
-									.removeClass( getStateClass( "default hover" ) );
-								
-								if ( $trElement.data( dataClicked ) ) {
-									$trElement
-										.addClass( stateClicked );
-								}
-								
-								if ( !$trElement.hasClass( stateClicked ) ) {
-									$trElement
-										.addClass( getStateClass( "default" ) );
-								}
-							});
-					}
-				});
-		}
-	};
-	
-	$.fn.syoDataGrid = function( args ) {
-		var $selector = this;
-		
-		if ( typeof args === "string" ) {
-			if ( args in methods ) {
-				methods[ args ].call( $selector );
-			}
-		return;
-		}
-		
-		$selector.each(function( index, DOMElement ) {
-			var $element = $( DOMElement );
-			
-			args = args || {};
-			$element.data( optionsPrefix, args );
-			
-			if ( $.isFunction( args.create ) ) {
-				args.create.call( DOMElement );
-			}
-			
-			methods.refresh.call( $element );
+		var components = {};
+
+		$.each( selectors, function( key, selector ) {
+			components[ key ] = $element.find( selector );
 		});
-		
-	return $selector;
-	};
-	
+
+		return components;
+	}
+
+	// Determina se uma linha do grid está desabilitada ou não
+	function isRowDisabled( $row ) {
+		return !!$row.data( "disabled" );
+	}
+
+	function getStateClass( state ) {
+		var i, len;
+		var ret = [];
+		state = state.split( " " );
+
+		for ( i = 0, len = state.length; i < len; i++ ) {
+			ret.push( classes.widget + "-state-" + state[ i ] );
+		}
+
+		return ret.join( " " );
+	}
+
+	$.widget( "syo.syoDataGrid", {
+		version: "@VERSION",
+		options: {
+			// Callbacks
+			activate: null,
+			beforeActivate: null
+		},
+
+		// Criação/adaptação da estrutura do syoDataGrid
+		_create: function() {
+			this.refresh();
+			this._setupEvents();
+		},
+
+		_setupEvents: function() {
+			var events = {};
+			events[ "mouseenter " + selectors.rows ] = this._hover;
+			events[ "mouseleave " + selectors.rows ] = this._hover;
+			events[ "click " + selectors.rows ] = this._activate;
+
+			this._on( this.element, events );
+		},
+
+		_activate: function( e ) {
+			var eventData, $oldActiveRow;
+			var $row = $( e.currentTarget );
+			var clickedClass = getStateClass( "clicked" );
+
+			if ( isRowDisabled( $row ) ) {
+				return;
+			}
+
+			e.stopPropagation();
+			e.preventDefault();
+
+			$oldActiveRow = this.components.rows.filter( "." + clickedClass );
+
+			eventData = {
+				oldItem: $oldActiveRow,
+				newItem: $row
+			};
+
+			// Possibilita cancelar a ativação da linha
+			if ( this._trigger( "beforeActivate", null, eventData ) === false ) {
+				return;
+			}
+
+			// Remove classe do elemento ativo anteriormente,
+			// adiciona classe no novo elemento ativo
+			$oldActiveRow.removeClass( clickedClass );
+			$row.addClass( clickedClass );
+
+			this._trigger( "activate", null, eventData );
+		},
+
+		_hover: function( e ) {
+			var $row = $( e.currentTarget );
+			var hoverClass = getStateClass( "hover" );
+
+			// Se a linha tiver com estado "clicked" (ativa),
+			// então esta tem prioridade sobre as demais.
+			if ( isRowDisabled( $row ) || $row.hasClass( getStateClass( "clicked" ) ) ) {
+				return;
+			}
+
+			if ( e.type === "mouseenter" ) {
+				$row
+					// Adiciona a classe do estado hover na linha atual
+					.addClass( hoverClass )
+
+					// Deve ser feita também a remoção da mesma classe nas outras linhas
+					.siblings().removeClass( hoverClass );
+			} else {
+				$row.removeClass( hoverClass );
+			}
+		},
+
+		// Atualiza o grid, readicionando as classes necessárias em cada componente do mesmo
+		refresh: function() {
+			this.components = getComponents( this.element );
+			this.element.addClass( classes.widget );
+
+			// Adiciona dinamicamente as classes nos componentes do DataGrid
+			$.each( this.components, function( key, $component ) {
+				if ( classes[ key ] ) {
+					$component.addClass( classes[ key ] );
+				}
+			});
+
+			// Se tem algum footer, adiciona uma classe mais
+			this.components.body.toggleClass(
+				classes.bodyWithHelper,
+				this.components.helper.length
+			);
+		},
+
+		// O destroy faz, basicamente, remoção de classes.
+		_destroy: function() {
+			this.element.removeClass( classes.widget );
+
+			$.each( this.components, function( key, $component ) {
+				$component.removeClass( classes[ key ] );
+			});
+
+			// Remove as classes de estado do rows
+			this.components.rows.removeClass( getStateClass( "hover clicked" ) );
+
+			// Se tem algum footer, remove a classe extra
+			this.components.body.removeClass( classes.bodyWithHelper );
+		}
+	});
+
 })( jQuery );
