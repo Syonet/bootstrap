@@ -97,10 +97,15 @@
 		
 		// Elementos que abrem o popover
 		$( ".popover-trigger" ).click(function() {
-			$( ".popover-component" ).syoPopover( "option", {
-				element: this,
-				position: $( this ).data("position")
-			}).syoPopover( "open" );
+			var activeElement = $( ".popover-component" ).syoPopover( "option", "element" );
+			if ( activeElement === this && $( ".popover-component" ).syoPopover( "isOpen" ) ) {
+				$( ".popover-component" ).syoPopover( "close" );
+			} else {
+				$( ".popover-component" ).syoPopover( "option", {
+					element: this,
+					position: $( this ).data("position")
+				}).syoPopover( "open" );
+			}
 		});
 	}
 	

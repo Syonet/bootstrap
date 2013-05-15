@@ -214,21 +214,21 @@
 					</td>
 				</tr>
 				<tr>
-					<td>content</td>
+					<td>element</td>
 					<td>
 						string<br>
 						jQuery<br>
 						DOMElement
 					</td>
-					<td><code>""</code></td>
+					<td><code>null</code></td>
 					<td>
-						Define o conteúdo do popover. Se for um objeto jQuery ou elemento DOM, o mesmo será movido
-						para dentro do popover.
+						Define com que outro elemento o popover irá se alinhar.
+						Quando o valor desta opção for uma string, a mesma será considerada um seletor jQuery.
 					</td>
 					<td>
 						<div class="prettyprint">
 							$( ... ).syoPopover({
-								content: "um texto qualquer"
+								element: "button.meuBotao"
 							});
 						</div>
 					</td>
