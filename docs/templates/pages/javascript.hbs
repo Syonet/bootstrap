@@ -374,26 +374,6 @@
 										<td>Data two</td>
 										<td>Data three</td>
 									</tr>
-									<tr>
-										<td>Data one</td>
-										<td>Data two</td>
-										<td>Data three</td>
-									</tr>
-									<tr>
-										<td>Data one</td>
-										<td>Data two</td>
-										<td>Data three</td>
-									</tr>
-									<tr>
-										<td>Data one</td>
-										<td>Data two</td>
-										<td>Data three</td>
-									</tr>
-									<tr>
-										<td>Data one</td>
-										<td>Data two</td>
-										<td>Data three</td>
-									</tr>
 								</tbody>
 							</table>
 						</div>
@@ -410,18 +390,14 @@
 		</div>
 		
 		<h3>API</h3>
-		<p>
-			<b>ATENÇÃO!</b> Este método ainda não suporta as APIs padrões dos componentes do jQuery UI
-		</p>
-		
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
 				<col class="span1">
 				<col class="span1">
 				<col class="span1">
-				<col class="span4">
 				<col class="span3">
+				<col class="span4">
 			</colgroup>
 			<thead>
 				<tr>
@@ -434,15 +410,32 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>click</td>
+					<td>beforeActivate</td>
 					<td>function</td>
 					<td><code>null</code></td>
-					<td>Evento executado quando a linha é clicada pelo usuário.</td>
+					<td>Evento executado quando a linha é clicada pelo usuário, mas antes de qualquer coisa acontecer.</td>
 					<td>
 						<div class="prettyprint">
 							$( ... ).syoDataGrid({
-								click: function() {
-									console.log( this ); // grid tr
+								beforeActivate: function( e, data ) {
+									console.log( data.oldItem ); // linha atualmente ativa
+									console.log( data.newItem ); // linha que será ativada
+								}
+							});
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>activate</td>
+					<td>function</td>
+					<td><code>null</code></td>
+					<td>Evento executado após a linha ser clicada pelo usuário.</td>
+					<td>
+						<div class="prettyprint">
+							$( ... ).syoDataGrid({
+								activate: function( e, data ) {
+									console.log( data.oldItem ); // linha anteriormente ativa
+									console.log( data.newItem ); // linha atualmente ativa
 								}
 							});
 						</div>
@@ -470,7 +463,7 @@
 			<tbody>
 				<tr>
 					<td>refresh()</td>
-					<td>não definido</td>
+					<td>Elemento jQuery</td>
 					<td>
 						Recarrega o visual e comportamento do componente. Útil para quando uma nova porção de HTML é 
 						introduzida na estrutura depois que o plugin já tenha sido chamado.
@@ -483,7 +476,7 @@
 				</tr>
 				<tr>
 					<td>destroy()</td>
-					<td>não definido</td>
+					<td>Elemento jQuery</td>
 					<td>
 						Remove completamente a funcionalidade do grid. Isto retornará o elemento ao seu estado original
 						antes da inicialização do plugin.
