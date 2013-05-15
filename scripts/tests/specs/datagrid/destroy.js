@@ -1,6 +1,10 @@
 (function() {
 	"use strict";
 
+	function hasWidgetClass( $tr ) {
+		return ( $tr.attr( "class" ) || "" ).indexOf( "syo-datagrid" ) === -1;
+	}
+
 	module( "Destroy", {
 		setup: function() {
 			$( "#grid-head-body" ).syoDataGrid();
@@ -22,7 +26,7 @@
 		// Faz loop pelos componentes do DataGrid, procurando por alguma classe do widget
 		$.each( data.components, function( key, $component ) {
 			$component.each(function() {
-				assertions = assertions && ( $( this ).attr( "class" ) || "" ).indexOf( "syo-datagrid" ) == -1;
+				assertions = assertions && hasWidgetClass( $( this ) );
 			});
 		});
 
@@ -41,7 +45,7 @@
 		$dataGrid
 			.find( "div:last tr" )
 			.each(function() {
-				assertions = assertions && ( $( this ).attr( "class" ) || "" ).indexOf( "syo-datagrid" ) == -1;
+				assertions = assertions && hasWidgetClass( $( this ) );
 			});
 
 		ok( assertions, "No TRs should have widget classes" );
@@ -57,7 +61,7 @@
 		$dataGrid.syoDataGrid( "destroy" );
 
 		$dataGrid.find( "div:last tr" ).each(function() {
-				assertions = assertions && ( $( this ).attr( "class" ) || "" ).indexOf( "syo-datagrid" ) == -1;
+				assertions = assertions && hasWidgetClass( $( this ) );
 			});
 
 		ok( assertions, "No TRs should have widget classes" );
@@ -73,7 +77,7 @@
 		$dataGrid.syoDataGrid( "destroy" );
 
 		$dataGrid.find( "div:last tr" ).each(function() {
-			assertions = assertions && ( $( this ).attr( "class" ) || "" ).indexOf( "syo-datagrid" ) == -1;
+			assertions = assertions && hasWidgetClass( $( this ) );
 		});
 
 		ok( assertions, "No TRs should have widget classes" );

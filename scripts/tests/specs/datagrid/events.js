@@ -52,7 +52,15 @@
 		});
 
 		strictEqual( triggers.length, 2, "The create event has been triggered" );
-		strictEqual( triggers[ 0 ], $( "#grid-1" )[ 0 ], "The context of the first element should be correct DOMElement" );
-		strictEqual( triggers[ 1 ], $( "#grid-2" )[ 0 ], "The context of the second element should be correct DOMElement" );
+		strictEqual(
+			triggers[ 0 ],
+			$( "#grid-1" )[ 0 ],
+			"The context of the first element should be correct DOMElement"
+		);
+		strictEqual(
+			triggers[ 1 ],
+			$( "#grid-2" )[ 0 ],
+			"The context of the second element should be correct DOMElement"
+		);
 	});
 }());
