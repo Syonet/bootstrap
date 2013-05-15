@@ -10,17 +10,14 @@
 		expect( 4 );
 
 		var $el = $( "#grid-head-body" );
-		/*var $trs = $el.children( "div:last" ).find( "tr" );
-
-		$trs.each(function() {
-			ok( $( this ).hasClass( "syo-datagrid-state-default" ), "All TRs should have default state" );
-		});*/
 
 		ok( $el.hasClass( "syo-datagrid" ), "Classe padrão do container principal" );
 		ok( $el.children( "div:eq(0)" ).hasClass( "syo-datagrid-header" ), "Classe padrão do header" );
 		ok( $el.children( "div:eq(1)" ).hasClass( "syo-datagrid-body" ), "Classe padrão do body" );
-		ok( $el.find( "div:eq(1) > div:first" ).hasClass( "syo-datagrid-rowcont" ),
-				"Classe padrão do container das linhas" );
+		ok(
+			$el.find( "div:eq(1) > div:first" ).hasClass( "syo-datagrid-rowcont" ),
+			"Classe padrão do container das linhas"
+		);
 	});
 	test( "Classes padrão - evento: mouseenter", function() {
 		expect( 2 );

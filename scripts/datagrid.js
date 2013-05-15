@@ -11,10 +11,10 @@
 
 	var selectors = {
 		// Header
-		header: "div:eq(0)",
+		header: "> div:eq(0)",
 
 		// Body
-		body: "div:eq(1)",
+		body: "> div:eq(1)",
 
 		// Rows Container
 		rowContainer: "> div:eq(1) > div",
@@ -23,7 +23,7 @@
 		rows: "> div:eq(1) tbody > tr",
 
 		// Footer helper
-		helper: "div:gt(1)"
+		helper: "> div:gt(1)"
 	};
 
 	function getComponents( $element ) {
@@ -87,7 +87,7 @@
 			e.stopPropagation();
 			e.preventDefault();
 
-			$oldActiveRow = this.components.rows.filter( clickedClass );
+			$oldActiveRow = this.components.rows.filter( "." + clickedClass );
 
 			eventData = {
 				oldItem: $oldActiveRow,
@@ -111,7 +111,7 @@
 			var $row = $( e.currentTarget );
 			var hoverClass = getStateClass( "hover" );
 
-			if ( isRowDisabled( $row ) ) {
+			if ( isRowDisabled( $row ) || $row.hasClass( getStateClass( "clicked" ) ) ) {
 				return;
 			}
 
