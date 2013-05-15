@@ -36,6 +36,7 @@
 		return components;
 	}
 
+	// Determina se uma linha do grid está desabilitada ou não
 	function isRowDisabled( $row ) {
 		return !!$row.data( "disabled" );
 	}
@@ -111,17 +112,25 @@
 			var $row = $( e.currentTarget );
 			var hoverClass = getStateClass( "hover" );
 
+			// Se a linha tiver com estado "clicked" (ativa),
+			// então esta tem prioridade sobre as demais.
 			if ( isRowDisabled( $row ) || $row.hasClass( getStateClass( "clicked" ) ) ) {
 				return;
 			}
 
 			if ( e.type === "mouseenter" ) {
-				$row.addClass( hoverClass ).siblings().removeClass( hoverClass );
+				$row
+					// Adiciona a classe do estado hover na linha atual
+					.addClass( hoverClass )
+
+					// Deve ser feita também a remoção da mesma classe nas outras linhas
+					.siblings().removeClass( hoverClass );
 			} else {
 				$row.removeClass( hoverClass );
 			}
 		},
 
+		// Atualiza o grid, readicionando as classes necessárias em cada componente do mesmo
 		refresh: function() {
 			this.components = getComponents( this.element );
 			this.element.addClass( classes.widget );
@@ -140,6 +149,7 @@
 			);
 		},
 
+		// O destroy faz, basicamente, remoção de classes.
 		_destroy: function() {
 			this.element.removeClass( classes.widget );
 
