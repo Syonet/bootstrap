@@ -52,7 +52,7 @@
 		return ret.join( " " );
 	}
 
-	$.widget( "ui.syoDataGrid", {
+	$.widget( "syo.syoDataGrid", {
 		version: "@VERSION",
 		options: {
 			// Callbacks
@@ -146,6 +146,9 @@
 			$.each( this.components, function( key, $component ) {
 				$component.removeClass( classes[ key ] );
 			});
+
+			// Remove as classes de estado do rows
+			this.components.rows.removeClass( getStateClass( "hover clicked" ) );
 
 			// Se tem algum footer, remove a classe extra
 			this.components.body.removeClass( classes.bodyWithHelper );
