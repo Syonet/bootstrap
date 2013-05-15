@@ -60,15 +60,16 @@
 
 	});
 	test( "Classes padrões - evento: click", function() {
-		expect( 2 );
+		expect( 3 );
 
 		var $el = $( "#grid-head-body" );
 		var $trs = $el.children( "div:last" ).find( "tr" );
 		var $tr = $trs.slice( 0, 1 );
 		var testeSiblings = true;
 
-		$tr.trigger( "click" );
+		$tr.trigger( "mouseenter" ).trigger( "click" );
 		ok( $tr.hasClass( "syo-datagrid-state-clicked" ), "Classe do estado clicked" );
+		ok( !$tr.hasClass( "syo-datagrid-state-hover" ), "Sem classe do estado hover" );
 		$tr.siblings().each(function() {
 			testeSiblings = testeSiblings && !$( this ).hasClass( "syo-datagrid-state-clicked" );
 		});

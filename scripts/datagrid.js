@@ -80,7 +80,7 @@
 			var eventData, $oldActiveRow;
 			var $row = $( e.currentTarget );
 			var clickedClass = getStateClass( "clicked" );
-
+			
 			if ( isRowDisabled( $row ) ) {
 				return;
 			}
@@ -103,7 +103,7 @@
 			// Remove classe do elemento ativo anteriormente,
 			// adiciona classe no novo elemento ativo
 			$oldActiveRow.removeClass( clickedClass );
-			$row.addClass( clickedClass );
+			$row.addClass( clickedClass ).removeClass( getStateClass( "hover" ) );
 
 			this._trigger( "activate", null, eventData );
 		},
