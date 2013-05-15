@@ -54,21 +54,7 @@
 
 		// Criação/adaptação da estrutura do syoDataGrid
 		_create: function() {
-			this.components = getComponents( this.element );
-			this.element.addClass( classes.widget );
-
-			// Adiciona dinamicamente as classes nos componentes do DataGrid
-			$.each( this.components, function( key, $component ) {
-				if ( classes[ key ] ) {
-					$component.addClass( classes[ key ] );
-				}
-			});
-
-			// Se tem algum footer, adiciona uma classe mais
-			if ( this.components.helper.length ) {
-				this.components.body.addClass( classes.bodyWithHelper );
-			}
-
+			this.refresh();
 			this._setupEvents();
 		},
 
@@ -81,23 +67,79 @@
 		},
 
 		_activate: function( e ) {
+			var eventData, $oldActiveRow;
 			var $row = $( e.currentTarget );
+			var clickedClass = getStateClass( "clicked" );
 
 			if ( isRowDisabled( $row ) ) {
 				return;
 			}
 
+			e.stopPropagation();
+			e.preventDefault();
 
+			$oldActiveRow = this.components.rows.filter( clickedClass );
+
+			eventData = {
+				oldItem: $oldActiveRow,
+				newItem: $row
+			};
+
+			// Possibilita cancelar a ativação da linha
+			if ( this._trigger( "beforeActivate", null, eventData ) === false ) {
+				return;
+			}
+
+			// Remove classe do elemento ativo anteriormente,
+			// adiciona classe no novo elemento ativo
+			$oldActiveRow.removeClass( clickedClass );
+			$row.addClass( clickedClass );
+
+			this._trigger( "activate", null, eventData );
 		},
 
 		_hover: function( e ) {
 			var $row = $( e.currentTarget );
+			var hoverClass = getStateClass( "hover" );
 
 			if ( isRowDisabled( $row ) ) {
 				return;
 			}
 
+			if ( e.type === "mouseenter" ) {
+				$row.addClass( hoverClass );
+			} else {
+				$row.removeClass( hoverClass );
+			}
+		},
 
+		refresh: function() {
+			this.components = getComponents( this.element );
+			this.element.addClass( classes.widget );
+
+			// Adiciona dinamicamente as classes nos componentes do DataGrid
+			$.each( this.components, function( key, $component ) {
+				if ( classes[ key ] ) {
+					$component.addClass( classes[ key ] );
+				}
+			});
+
+			// Se tem algum footer, adiciona uma classe mais
+			this.components.body.toggleClass(
+				classes.bodyWithHelper,
+				this.components.helper.length
+			);
+		},
+
+		_destroy: function() {
+			this.element.removeClass( classes.widget );
+
+			this.components.each(function( key, $component ) {
+				$component.removeClass( classes[ key ] );
+			});
+
+			// Se tem algum footer, remove a classe extra
+			this.components.body.removeClass( classes.bodyWithHelper );
 		}
 	});
 
