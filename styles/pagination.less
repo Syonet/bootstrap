@@ -1,7 +1,7 @@
 /* =================================================================================================================
    Paginação
    ================================================================================================================= */
-   
+
 /*
  * 1. Permite a mudça do z-index
  * 2. Garante que a borda vai ficar por cima do vizinho quando em destaque
@@ -75,21 +75,16 @@
 
 /*
  * Quando utilizada como paginação de uma tabela, mudam vários estilos da tabela e do paginador.
- * 1. Retira os paddings laterais
+ * 1. Retira todos os paddings
  * 2. Sobrepõe a paginação sobre as bordas da célula
- * 3. Corrige border-radius top do paginador na primeira tr da tabela
- * 4. Corrige border-radius bottom do paginador na última tr da tabela
+ * 3. Corrige border-radius bottom do paginador na última tr da tabela
+ * 4. Seta o line-height correto para o link do paginador
  */
-.syo-data-table {
-  th.syo-pagination,
-  td.syo-pagination {
-    padding-top: 0;
-    padding-bottom: 0;
+.syo-datagrid {
+  > .syo-datagrid-helper.syo-pagination {
+    padding: 0; /* 1 */
     line-height: @base-line-height + 8px;
     vertical-align: middle;
-    /* 1 */
-    &:first-child { padding-left: 0; }
-    &:last-child  { padding-right: 0; }
     /* 2 */
     > ul {
       margin-top: -1px;
@@ -97,43 +92,13 @@
       &:first-child { margin-left: -1px; }
       &:last-child  { margin-right: -1px; }
       li a {
+        line-height: @base-line-height; /* 4 */
         .border-radius( 0 );
       }
     }
-  }
-  /* 3 */
-  > tr:first-child,
-  > thead:first-child > tr:first-child,
-  > tbody:first-child > tr:first-child,
-  > tfoot:first-child > tr:first-child {
-    > td.syo-pagination:first-child,
-    > th.syo-pagination:first-child {
-      > ul:first-child li:first-child a {
-        .border-top-left-radius( @base-border-radius );
-      }
-    }
-    > td.syo-pagination:last-child,
-    > th.syo-pagination:last-child {
-      > ul:last-child li:last-child a {
-        .border-top-right-radius( @base-border-radius );
-      }
-    }
-  }
-  /* 4 */
-  > tr:last-child,
-  > thead:last-child > tr:last-child,
-  > tbody:last-child > tr:last-child,
-  > tfoot:last-child > tr:last-child {
-    > td.syo-pagination:first-child,
-    > th.syo-pagination:first-child {
-      > ul:first-child li:first-child a {
-        .border-bottom-left-radius( @base-border-radius );
-      }
-    }
-    > td.syo-pagination:last-child,
-    > th.syo-pagination:last-child {
-      > ul:last-child li:last-child a {
-        .border-bottom-right-radius( @base-border-radius );
+    &:last-child {
+      ul:first-child li:first-child a {
+        .border-bottom-left-radius( @base-border-radius ); /* 3 */
       }
     }
   }
