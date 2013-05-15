@@ -1,7 +1,7 @@
 /* =================================================================================================================
    Base
    ================================================================================================================= */
-   
+
 /*
  * 1. Tira o float: none para que seja possível definir larguras do grid em uma tabela qualquer
  */
@@ -22,7 +22,7 @@ table {
 /* =================================================================================================================
    Tabela normal
    ================================================================================================================= */
-   
+
 /*
  * Estilos comuns pra todas as tabelas
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
@@ -98,7 +98,7 @@ table > tbody > tr.syo-active {
 /* =================================================================================================================
    Data Grid
    ================================================================================================================= */
-   
+
 
 tr.syo-datagrid-state-clicked {
   td, th {
@@ -106,7 +106,7 @@ tr.syo-datagrid-state-clicked {
   }
 }
 
-.syo-datagrid tr.syo-datagrid-state-hover { 
+.syo-datagrid tr.syo-datagrid-state-hover {
   td {
     cursor: pointer;
     background-color: @table-stripe-color;
@@ -124,6 +124,7 @@ tr.syo-datagrid-state-clicked {
 /*
  * 1. Sobrescreve a especificidade da tabela normal.
  * 2. Evita borda dupla no topo do body mantendo a borda do thead quando tem scroll.
+ * 3. Permite que a borda seja exibida corretamente no caso de utilizar header na tabela do body
  */
 .syo-datagrid {
   td, th {
@@ -144,6 +145,11 @@ tr.syo-datagrid-state-clicked {
     table {
       border-top-width: 0; /* 2 */
       .border-radius-top( 0 );
+      thead tr:first-child {
+        th, td {
+          border-top: 1px solid @table-border-color; /* 3 */
+        }
+      }
       tbody tr:first-child {
         td {
           .border-radius-top( 0 ); /* 1 */
@@ -181,7 +187,7 @@ table > tfoot {
 /* =================================================================================================================
    Tabela striped
    ================================================================================================================= */
-   
+
 /*
  * 1. Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
  */
