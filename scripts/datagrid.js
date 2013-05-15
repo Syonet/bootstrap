@@ -107,7 +107,7 @@
 			}
 
 			if ( e.type === "mouseenter" ) {
-				$row.addClass( hoverClass );
+				$row.addClass( hoverClass ).siblings().removeClass( hoverClass );
 			} else {
 				$row.removeClass( hoverClass );
 			}
