@@ -9,23 +9,31 @@
 	classes.helper = classes.widget + "-helper";
 	classes.bodyWithHelper = classes.widget + "-with-helper";
 
+	var selectors = {
+		// Header
+		header: "div:eq(0)",
+
+		// Body
+		body: "div:eq(1)",
+
+		// Rows Container
+		rowContainer: "> div:eq(1) > div",
+
+		// Rows
+		rows: "> div:eq(1) tbody > tr",
+
+		// Footer helper
+		helper: "div:gt(1)"
+	};
+
 	function getComponents( $element ) {
-		return {
-			// Header
-			header: $element.children( "div:eq(0)" ),
+		var components = {};
 
-			// Body
-			body: $element.children( "div:eq(1)" ),
+		$.each( selectors, function( key, selector ) {
+			components[ key ] = $element.find( selector );
+		});
 
-			// Rows Container
-			rowContainer: $element.find( "> div:eq(1) > div" ),
-
-			// Rows
-			rows: $element.find( "> div:eq(1) tbody > tr" ),
-
-			// Footer helper
-			helper: $element.children( "div:gt(1)" )
-		};
+		return components;
 	}
 
 	function isRowDisabled( $row ) {
@@ -59,11 +67,12 @@
 		},
 
 		_setupEvents: function() {
-			this._on( this.components.rows, {
-				mouseenter: this._hover,
-				mouseleave: this._hover,
-				click: this._activate
-			});
+			var events = {};
+			events[ "mouseenter " + selectors.rows ] = this._hover;
+			events[ "mouseleave " + selectors.rows ] = this._hover;
+			events[ "click " + selectors.rows ] = this._activate;
+
+			this._on( this.element, events );
 		},
 
 		_activate: function( e ) {
@@ -134,7 +143,7 @@
 		_destroy: function() {
 			this.element.removeClass( classes.widget );
 
-			this.components.each(function( key, $component ) {
+			$.each( this.components, function( key, $component ) {
 				$component.removeClass( classes[ key ] );
 			});
 
