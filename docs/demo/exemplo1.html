@@ -260,8 +260,8 @@
 						$dialogStatus.dialog( "open" );
 					});
 					$( ".datagrid" ).syoDataGrid({
-						click: function() {
-							var data = getData( $( this ).data( "id" ) );
+						activate: function( event, eventData ) {
+							var data = getData( $( eventData.newItem ).data( "id" ) );
 							
 							$( "#exemplo1-id" ).val( data.id );
 							$( "#exemplo1-nome" ).val( data.name );

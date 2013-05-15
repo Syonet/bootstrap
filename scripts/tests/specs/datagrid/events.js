@@ -35,18 +35,21 @@
 
 		$tr = $( "#grid-head-body div:last tr:eq(0)" );
 
-		$tr.trigger("click");
+		$tr.trigger( "click" );
 		strictEqual( triggers.length, 1, "Function should be triggered on tr click" );
-
+		
+		triggers = [];
+		$tr.trigger( "click" );
+		
 		eventArgs = triggers[ 0 ].args;
-		ok( eventArgs[ 0 ] instanceof $.Event, "Should pass the jQuery Event Object as the first argument" );
+		ok( eventArgs[ 0 ] instanceof $.Event, "Should pass the jQuery Event Object as the first argument" );		
 		ok(
-			eventArgs[ 1 ].oldItem instanceof $,
-			"Should pass the old active jQuery Element in the second argument"
+			eventArgs[ 1 ].oldItem.nodeType,
+			"Should pass the old active DOM Element in the second argument"
 		);
 		ok(
-			eventArgs[ 1 ].newItem instanceof $,
-			"Should pass the old active jQuery Element in the second argument"
+			eventArgs[ 1 ].newItem.nodeType,
+			"Should pass the new active DOM Element in the second argument"
 		);
 	});
 
@@ -67,18 +70,21 @@
 
 		$tr = $( "#grid-head-body div:last tr:eq(0)" );
 
-		$tr.trigger("click");
+		$tr.trigger( "click" );
 		strictEqual( triggers.length, 1, "Function should be triggered on tr click" );
+		
+		triggers = [];
+		$tr.trigger( "click" );
 
 		eventArgs = triggers[ 0 ].args;
 		ok( eventArgs[ 0 ] instanceof $.Event, "Should pass the jQuery Event Object as the first argument" );
 		ok(
-			eventArgs[ 1 ].oldItem instanceof $,
-			"Should pass the old active jQuery Element in the second argument"
+			eventArgs[ 1 ].oldItem.nodeType,
+			"Should pass the old active DOM Element in the second argument"
 		);
 		ok(
-			eventArgs[ 1 ].newItem instanceof $,
-			"Should pass the old active jQuery Element in the second argument"
+			eventArgs[ 1 ].newItem.nodeType,
+			"Should pass the new active DOM Element in the second argument"
 		);
 	});
 

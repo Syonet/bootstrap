@@ -91,8 +91,8 @@
 			$oldActiveRow = this.components.rows.filter( "." + clickedClass );
 
 			eventData = {
-				oldItem: $oldActiveRow,
-				newItem: $row
+				oldItem: $oldActiveRow[ 0 ] || null,
+				newItem: $row[ 0 ]
 			};
 
 			// Possibilita cancelar a ativação da linha
