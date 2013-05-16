@@ -1,21 +1,6 @@
 (function() {
 	"use strict";
 
-	function multiplyTestContainerBy( times ) {
-		var fixtureContent = "";
-		var i = 0;
-		var $fixture = $( "#qunit-fixture" );
-		var HTML = $fixture.html();
-
-		$fixture.empty();
-
-		while ( ++i <= times ) {
-			fixtureContent += HTML.replace( "id=\"grid-head-body\"", "id=\"grid-" + i + "\"" );
-		}
-
-		$fixture.append( fixtureContent );
-	}
-
 	module( "Eventos" );
 
 	test( "beforeActivate", function() {
@@ -36,20 +21,20 @@
 		$tr = $( "#grid-head-body div:last tr:eq(0)" );
 
 		$tr.trigger( "click" );
-		strictEqual( triggers.length, 1, "Function should be triggered on tr click" );
+		strictEqual( triggers.length, 1, "Callback deve ser executado ao clicar na linha" );
 		
 		triggers = [];
 		$tr.trigger( "click" );
 		
 		eventArgs = triggers[ 0 ].args;
-		ok( eventArgs[ 0 ] instanceof $.Event, "Should pass the jQuery Event Object as the first argument" );		
+		ok( eventArgs[ 0 ] instanceof $.Event, "Deve passar o objeto jQuery Event como primeiro argumento" );		
 		ok(
 			eventArgs[ 1 ].oldItem.nodeType,
-			"Should pass the old active DOM Element in the second argument"
+			"Deve passar o elemento DOM ativo anteriormente no segundo argumento"
 		);
 		ok(
 			eventArgs[ 1 ].newItem.nodeType,
-			"Should pass the new active DOM Element in the second argument"
+			"Deve passar o novo elemento DOM ativo no segundo argumento"
 		);
 	});
 
@@ -71,46 +56,21 @@
 		$tr = $( "#grid-head-body div:last tr:eq(0)" );
 
 		$tr.trigger( "click" );
-		strictEqual( triggers.length, 1, "Function should be triggered on tr click" );
+		strictEqual( triggers.length, 1, "Callback deve ser executado ao clicar na linha" );
 		
 		triggers = [];
 		$tr.trigger( "click" );
 
 		eventArgs = triggers[ 0 ].args;
-		ok( eventArgs[ 0 ] instanceof $.Event, "Should pass the jQuery Event Object as the first argument" );
+		ok( eventArgs[ 0 ] instanceof $.Event, "Deve passar o objeto jQuery Event como primeiro argumento" );
 		ok(
 			eventArgs[ 1 ].oldItem.nodeType,
-			"Should pass the old active DOM Element in the second argument"
+			"Deve passar o elemento DOM ativo anteriormente no segundo argumento"
 		);
 		ok(
 			eventArgs[ 1 ].newItem.nodeType,
-			"Should pass the new active DOM Element in the second argument"
+			"Deve passar o novo elemento DOM ativo no segundo argumento"
 		);
 	});
-
-	test( "create", function() {
-		expect( 3 );
-
-		var triggers = [];
-
-		multiplyTestContainerBy( 2 );
-
-		$( "#grid-1, #grid-2" ).syoDataGrid({
-			create: function() {
-				triggers.push( this );
-			}
-		});
-
-		strictEqual( triggers.length, 2, "The create event has been triggered" );
-		strictEqual(
-			triggers[ 0 ],
-			$( "#grid-1" )[ 0 ],
-			"The context of the first element should be correct DOMElement"
-		);
-		strictEqual(
-			triggers[ 1 ],
-			$( "#grid-2" )[ 0 ],
-			"The context of the second element should be correct DOMElement"
-		);
-	});
+	
 }());

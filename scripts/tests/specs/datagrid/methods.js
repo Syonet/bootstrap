@@ -2,7 +2,7 @@
 	"use strict";
 
 	module( "Métodos" );
-	test( "Método 'refresh'", function() {
+	test( "refresh", function() {
 		expect( 1 );
 
 		$( "#grid-head-body" ).syoDataGrid();
@@ -11,8 +11,10 @@
 		$( "#grid-head-body" ).syoDataGrid( "refresh" );
 
 		$( "#test-refresh-tr" ).trigger( "mouseenter" );
-		ok( $( "#test-refresh-tr" ).hasClass( "syo-datagrid-state-hover" ),
-				"The events in the new TR should be bound" );
+		ok(
+			$( "#test-refresh-tr" ).hasClass( "syo-datagrid-state-hover" ),
+			"Os eventos na nova TR devem ser adicionados"
+		);
 	});
 
 }());

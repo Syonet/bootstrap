@@ -10,7 +10,7 @@
 			$( "#grid-head-body" ).syoDataGrid();
 		}
 	});
-	test( "destroy - classes", function() {
+	test( "classes", function() {
 		expect( 2 );
 
 		var data;
@@ -21,7 +21,7 @@
 		data = $.extend( {}, $dataGrid.data( "syoSyoDataGrid" ) );
 		$dataGrid.syoDataGrid("destroy");
 
-		ok( !$dataGrid.hasClass( "syo-datagrid" ), "The main container should not have the widget class" );
+		ok( !$dataGrid.hasClass( "syo-datagrid" ), "O elemento principal não pode ter classes do syoDataGrid" );
 
 		// Faz loop pelos componentes do DataGrid, procurando por alguma classe do widget
 		$.each( data.components, function( key, $component ) {
@@ -30,9 +30,9 @@
 			});
 		});
 
-		ok( assertions, "No elements should have widget classes" );
+		ok( assertions, "Nenhum elemento deve ter classes do syoDataGrid" );
 	});
-	test( "destroy - events: click", function() {
+	test( "evento click", function() {
 		expect( 1 );
 
 		var assertions = true;
@@ -48,9 +48,9 @@
 				assertions = assertions && hasWidgetClass( $( this ) );
 			});
 
-		ok( assertions, "No TRs should have widget classes" );
+		ok( assertions, "Nenhum elemento deve ter classes do syoDataGrid" );
 	});
-	test( "destroy - events: mouseenter", function() {
+	test( "evento mouseenter", function() {
 		expect( 1 );
 
 		var assertions = true;
@@ -64,9 +64,9 @@
 				assertions = assertions && hasWidgetClass( $( this ) );
 			});
 
-		ok( assertions, "No TRs should have widget classes" );
+		ok( assertions, "Nenhum elemento deve ter classes do syoDataGrid" );
 	});
-	test( "destroy - events: mouseleave", function() {
+	test( "evento mouseleave", function() {
 		expect( 1 );
 
 		var assertions = true;
@@ -80,6 +80,6 @@
 			assertions = assertions && hasWidgetClass( $( this ) );
 		});
 
-		ok( assertions, "No TRs should have widget classes" );
+		ok( assertions, "Nenhum elemento deve ter classes do syoDataGrid" );
 	});
 }());
