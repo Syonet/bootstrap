@@ -479,11 +479,54 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="syo-field span12">
-					<div class="test" title="O spinner deve possuir o tamanho do span (toda a área destacada)">
+				<div class="span6">
+					<div class="syo-field">
+						<div class="test" title="O spinner deve possuir o tamanho do span (toda a área destacada)">
+							<div class="row">
+								<div class="syo-field span12 test-highlight1 special-input-block-level">
+									<input type="text" data-widget="spinner">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="span6">
+					<div class="test" title="Todos os headers devem ter a mesma altura">
 						<div class="row">
-							<div class="syo-field span12 test-highlight1 special-input-block-level">
-								<input type="text" data-widget="spinner">
+							<div class="syo-block span4">
+								<div class="syo-block-title">Block</div>
+								<div class="syo-block-content">Lorem ipsum</div>
+							</div>
+							
+							<div class="span4">
+								<ul class="syo-nav syo-nav-list">
+									<li class="syo-nav-header">Nav List</li>
+									<li><a href="#">Lorem ipsum</a></li>
+								</ul>
+							</div>
+							
+							<div class="span4" data-widget="syoDataGrid">
+								<div>
+									<table>
+										<thead>
+											<tr>
+												<th>DataGrid</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div>
+									<div>
+										<table>
+											<tbody>
+												<tr>
+													<td>Lorem ipsum</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
