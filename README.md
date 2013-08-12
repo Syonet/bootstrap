@@ -1,4 +1,4 @@
-# Syonet Bootstrap [![Build Status](https://travis-ci.org/Syonet/bootstrap.png?branch=master)](https://travis-ci.org/Syonet/bootstrap)
+# Syonet Bootstrap [![Build Status](https://travis-ci.org/Syonet/bootstrap.png?branch=master)](https://travis-ci.org/Syonet/bootstrap) [![Dependency Status](https://gemnasium.com/Syonet/bootstrap.png)](https://gemnasium.com/Syonet/bootstrap)
 O conjunto de ferramentas front-end da Syonet
 
 ## Build
@@ -20,23 +20,23 @@ $ grunt connect
 ```
 
 ### Grunt watch
-Detecta mudanças nos arquivos do projeto e faz o build de forma automática.  
+Detecta mudanças nos arquivos do projeto e faz o build de forma automática.
 
-**default:**  
+**default:**
 Este processo realiza as tarefas de build padrões quando qualquer arquivo relevante for modificado.
 
 ```shell
 $ grunt watch
 ```
 
-**main:**  
+**main:**
 Este processo realiza as tarefas de build sem a documentação quando os arquivos relevantes forem modificados.
 
 ```shell
 $ grunt watch:main
 ```
 
-**docs:**  
+**docs:**
 Este processo realiza as tarefas de build da documentação quando os arquivos relevantes forem modificados.
 
 ```shell
