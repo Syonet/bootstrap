@@ -339,3 +339,25 @@
   -o-animation: progress-bar-stripes 1.5s linear infinite;
   animation: progress-bar-stripes 1.5s linear infinite;
 }
+
+// ====================================================================================================================
+// Utilidades Responsivas
+// ====================================================================================================================
+
+.responsive-visible() {
+  display: block !important;
+
+  tr& { display: table-row !important; }
+
+  th&,
+  td& { display: table-cell !important; }
+}
+
+.responsive-invisible() {
+  display: none !important;
+
+  tr& { display: none !important; }
+
+  th&,
+  td& { display: none !important; }
+}
