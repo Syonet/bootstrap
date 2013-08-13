@@ -137,36 +137,29 @@
 // Grid
 // ====================================================================================================================
 
-#grid( @columns, @colWidth, @colGutterWidth, @rowWidth ) {
+#grid( @column-name, @columns-count: @grid-columns ) {
   // Columns
   .spanX( @index ) when ( @index > 0 ) {
-    .span@{index} { .span( @index ); }
+    .col-@{column-name}-@{index} { .span( @index ); }
     .spanX( @index - 1 );
   }
   .spanX( 0 ) { }
   .span( @columns ) {
-    width: ( @colWidth * @columns ) + ( @colGutterWidth * ( @columns - 1 ) );
+    width: percentage( @columns / @columns-count );
   }
+
   // Offset
   .offsetX(@index) when (@index > 0) {
-    .offset@{index} { .offset(@index); }
-    .offset@{index}:first-child { .offsetFirstChild(@index); }
+    .offset-@{column-name}-@{index} { .offset(@index); }
     .offsetX(@index - 1);
   }
   .offsetX(0) { }
   .offset( @columns ) {
-    margin-left: ( @colWidth * @columns ) + ( @colGutterWidth * ( @columns - 1 ) ) + ( @colGutterWidth * 2 );
-  }
-  .offsetFirstChild (@columns) {
-    margin-left: ( @colWidth * @columns ) + ( @colGutterWidth * ( @columns - 1 ) ) + ( @colGutterWidth );
+    margin-left: percentage( @columns / @columns-count );
   }
   // -----
-  [class*="span"] {
-    margin-left: @colGutterWidth;
-  }
-  // -----
-  .spanX( @columns );
-  .offsetX( @columns );
+  .spanX( @columns-count );
+  .offsetX( @columns-count );
 }
 
 // ====================================================================================================================
@@ -228,42 +221,42 @@
 .progressbar() {
   // @TODO usar na classe .ui-progressbar-overlay
   @stripeColor: fade( @gray-light, 15% );
-  
+
   // Webkit
   @-webkit-keyframes progress-bar-stripes {
     from { background-position: 40px 0; }
     to { background-position: 0 0; }
   }
-  
+
   // Firefox
   @-moz-keyframes progress-bar-stripes {
     from { background-position: 40px 0; }
     to { background-position: 0 0; }
   }
-  
+
   // IE9
   @-ms-keyframes progress-bar-stripes {
     from { background-position: 40px 0; }
     to { background-position: 0 0; }
   }
-  
+
   // Opera
   @-o-keyframes progress-bar-stripes {
     from { background-position: 0 0; }
     to { background-position: 40px 0; }
   }
-  
+
   // Spec
   @keyframes progress-bar-stripes {
     from { background-position: 40px 0; }
     to { background-position: 0 0; }
   }
-  
+
   background-color: #D0D0D0;
   background-image: -webkit-gradient(
       linear,
       0 100%,
-      100% 0, 
+      100% 0,
       color-stop( .25, @stripeColor ),
       color-stop( .25, transparent ),
       color-stop( .5, transparent ),
