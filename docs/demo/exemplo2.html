@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Exemplo</title>
 		<meta name="viewport" content="width=device-width">
-		
+
 		<link rel="stylesheet" href="../../dist/bootstrap.css">
 		<link rel="stylesheet" href="../../dist/jquery.ui.css">
 		<style>
@@ -34,24 +34,24 @@
 		</div>
 		<div class="container division-block">
 			<div id="tabs">
-				<ul class="span12">
+				<ul>
 					<li><a href="#tabs-1">Principal</a></li>
 					<li><a href="#tabs-2">Escrever Nova</a></li>
 				</ul>
 				<div id="tabs-1" class="clearfix">
 					<div class="row">
-						<div class="syo-header span12">
+						<div class="syo-header col">
 							<h1>E-mail <small>e sua história</small></h1>
 						</div>
 					</div>
 					<div class="row">
-						<p class="lead span12">
+						<p class="lead col">
 							Electronic mail, most commonly referred to as email or e-mail since approximately 1993,
 							is a method of exchanging digital messages from an author to one or more recipients.
 						</p>
 					</div>
 					<div class="row">
-						<p class="span6">
+						<p class="col col-large-6">
 							Modern email operates across the Internet or other computer networks. Some early email
 							systems required that the author and the recipient both be online at the same time, in
 							common with instant messaging. Today's email systems are based on a store-and-forward
@@ -60,7 +60,7 @@
 							briefly, typically to an email server, for as long as it takes to send or receive
 							messages.
 						</p>
-						<p class="span6">
+						<p class="col col-large-6">
 							Historically, the term electronic mail was used generically for any electronic document
 							transmission. For example, several writers in the early 1970s used the term to describe
 							fax document transmission. As a result, it is difficult to find the first citation for
@@ -68,14 +68,14 @@
 						</p>
 					</div>
 					<div class="row">
-						<p class="span6">
+						<p class="col col-large-6">
 							An Internet email message consists of three components, the message envelope, the
 							message header, and the message body. The message header contains control information,
 							including, minimally, an originator's email address and one or more recipient addresses.
 							Usually descriptive information is also added, such as a subject header field and a
 							message submission date/time stamp.
 						</p>
-						<p class="span6">
+						<p class="col col-large-6">
 							Originally a text-only (7-bit ASCII and others) communications medium, email was
 							extended to carry multi-media content attachments, a process standardized in RFC 2045
 							through 2049. Collectively, these RFCs have come to be called Multipurpose Internet
@@ -83,7 +83,7 @@
 						</p>
 					</div>
 					<div class="row">
-						<p class="span6">
+						<p class="col col-large-6">
 							Electronic mail predates the inception of the Internet and was in fact a crucial tool
 							in creating it, but the history of modern, global Internet email services reaches back
 							to the early ARPANET. Standards for encoding email messages were proposed as early as
@@ -91,7 +91,7 @@
 							core of the current services. An email sent in the early 1970s looks quite similar to a
 							basic text message sent on the Internet today.
 						</p>
-						<p class="span6">
+						<p class="col col-large-6">
 							Network-based email was initially exchanged on the ARPANET in extensions to the File
 							Transfer Protocol (FTP), but is now carried by the Simple Mail Transfer Protocol (SMTP),
 							first published as Internet standard 10 (RFC 821) in 1982. In the process of
@@ -100,12 +100,12 @@
 						</p>
 					</div>
 					<div class="row">
-						<div class="syo-header span12">
+						<div class="syo-header col">
 							<h1>Resumo <small>de mensagens do domínio</small></h1>
 						</div>
 					</div>
 					<div class="row">
-						<table class="span12">
+						<table class="col">
 							<thead>
 								<tr>
 									<th>From</th>
@@ -176,31 +176,31 @@
 					<fieldset>
 						<legend>Cabeçalho</legend>
 						<div class="row">
-							<div class="syo-field span4">
-								<label for="mail-from" class="span6">Remetente:</label>
-								<div class="span6">
+							<div class="syo-field col col-large-4">
+								<label for="mail-from" class="col col-large-6">Remetente:</label>
+								<div class="col col-large-6">
 									<input type="text" placeholder="Nome Exemplo <nome@example.com>" id="mail-from"
 										class="input-block-level">
 								</div>
 							</div>
-							<div class="syo-field span4">
-								<label for="mail-to" class="span6">Destinatário:</label>
-								<div class="span6">
+							<div class="syo-field col col-large-4">
+								<label for="mail-to" class="col col-large-6">Destinatário:</label>
+								<div class="col col-large-6">
 									<input type="text" placeholder="Nome Exemplo <nome@example.com>" id="mail-to"
 										class="input-block-level">
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="syo-field span4">
-								<label for="mail-subject" class="span6">Assunto:</label>
-								<div class="span6">
+							<div class="syo-field col col-large-4">
+								<label for="mail-subject" class="col col-large-6">Assunto:</label>
+								<div class="col col-large-6">
 									<input type="text" id="mail-subject" class="input-block-level">
 								</div>
 							</div>
-							<div class="syo-field span4">
-								<label for="mail-type" class="span6">Tipo:</label>
-								<div class="span6">
+							<div class="syo-field col col-large-4">
+								<label for="mail-type" class="col col-large-6">Tipo:</label>
+								<div class="col col-large-6">
 									<select id="mail-type" class="input-block-level">
 										<option value="">Selecione...</option>
 										<option value="">Elogio</option>
@@ -211,9 +211,9 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="syo-field span4">
-								<label for="mail-type" class="span6">Importância:</label>
-								<div class="syo-field span6 special-input-block-level">
+							<div class="syo-field col col-large-4">
+								<label for="mail-type" class="col col-large-6">Importância:</label>
+								<div class="syo-field col col-large-6 special-input-block-level">
 									<input type="text" id="spinner">
 								</div>
 							</div>
@@ -222,34 +222,34 @@
 					<fieldset>
 						<legend>Corpo</legend>
 						<div class="row">
-							<label for="mail-body" class="span12 text-left">Corpo da Mensagem:</label>
+							<label for="mail-body" class="col text-left">Corpo da Mensagem:</label>
 						</div>
 						<div class="row">
-							<div class="syo-field span12">
+							<div class="syo-field col">
 								<textarea rows="10" id="mail-body" class="input-block-level"></textarea>
 							</div>
 						</div>
 						<div class="row">
-							<button class="syo-button syo-button-xlarge span2 offset10">Enviar</button>
+							<button class="syo-button syo-button-xlarge col col-large-2 offset-large-10">Enviar</button>
 						</div>
 					</fieldset>
 					<fieldset id="variables">
 						<legend>Variáveis</legend>
 						<div class="row division-block">
-							<button class="syo-button span1">Roda</button>
-							<button class="syo-button span1">Porta</button>
-							<button class="syo-button span1">Motor</button>
+							<button class="syo-button col col-large-1">Roda</button>
+							<button class="syo-button col col-large-1">Porta</button>
+							<button class="syo-button col col-large-1">Motor</button>
 						</div>
 						<div class="row">
-							<button class="syo-button span1">Carro</button>
-							<button class="syo-button span1">Casa</button>
-							<button class="syo-button span2">Apartamento</button>
+							<button class="syo-button col col-large-1">Carro</button>
+							<button class="syo-button col col-large-1">Casa</button>
+							<button class="syo-button col col-large-1">Apartamento</button>
 						</div>
 					</fieldset>
 				</div>
 			</div>
 		</div>
-		
+
 		<script src="../../external/jquery.js"></script>
 		<script src="../../external/jquery.ui.js"></script>
 		<script src="../../dist/bootstrap.js"></script>
@@ -260,7 +260,7 @@
 				$( "#variables button" ).click(function() {
 					var $textarea = $( "#mail-body" );
 					var textareaContent = $textarea.val();
-					
+
 					$textarea
 						.val( textareaContent + "%" + $( this ).text().trim() + "%" )
 						.focus();
