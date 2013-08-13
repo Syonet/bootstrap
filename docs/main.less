@@ -4,7 +4,7 @@
 /* =================================================================================================================
    Geral
    ================================================================================================================= */
-   
+
 /*
  * 1. O conteúdo é manipulado por JS por isso não queremos que ele seja exibido enquanto a página é carregada!
  * 2. Usa a tag "div" para que seja possível usar <pre class="prettyprint"> para quando quisermos incluir um HTML sem
@@ -33,6 +33,7 @@ div.prettyprint { /* 2 */
 
 #sidebar {
   position: absolute;
+  left: 0;
   width: 100%;
 }
 
@@ -50,7 +51,7 @@ article {
 /* =================================================================================================================
    Exemplos
    ================================================================================================================= */
-   
+
 .syo-docs-example {
   margin: @base-line-height 0;
   padding: ( @base-line-height * 2 ) 0 0;
@@ -104,18 +105,19 @@ article {
 /* =================================================================================================================
    Seção Grid
    ================================================================================================================= */
-   
+
 .grid-example {
   .row {
     margin-bottom: @base-line-height;
   }
-  [class*="span"] {
-    padding: 5px;
+  .col {
+    padding-top: @base-line-height / 4;
+    padding-bottom: @base-line-height / 4;
+    border: 1px solid darken( @gray-lighter, 10% );
     font-size: .9;
     background: @gray-lighter;
-    .border-radius( @base-border-radius );
     &:hover {
-      background: lighten( @gray-light, 3% );
+      background: darken( @gray-lighter, 5% );
     }
   }
 }
@@ -123,7 +125,7 @@ article {
 /* =================================================================================================================
    Seção Ícones
    ================================================================================================================= */
-   
+
 .icons {
   .clear-float();
   margin: 0 0 @base-line-height;
@@ -138,7 +140,7 @@ article {
 /* =================================================================================================================
    Seção "Design responsivo"
    ================================================================================================================= */
-   
+
 .responsive-test, .responsive-table {
   .visible, .hidden {
     text-align: center;
@@ -184,30 +186,30 @@ ul.responsive-test {
 /* =================================================================================================================
    Responsividade
    ================================================================================================================= */
-   
+
 @media ( max-width: 979px ) and ( orientation: portrait ) {
 
-  /* 
+  /*
    * Num tablet em posição retrato, a navegação "lateral" não precisa necessariamente ser lateral.
    */
   #sidebar {
     position: static;
   }
-  
+
   /* Aumenta o tamanho da apresentação de cada icone num celular, pra não ficar tão horrível */
   .icons li {
     width: 32.3%;
   }
-  
+
   /* Oculta o check de "efeito ativo" da seção "design responsivo" */
   .responsive-test, .responsive-table {
     .visible:before {
       content: "";
     }
   }
-  
+
   .footer section {
     text-align: center;
   }
-  
+
 }

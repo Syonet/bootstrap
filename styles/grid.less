@@ -1,14 +1,28 @@
 .row {
-  width: 100%;
   .clear-float();
-}
 
-[class*="span"] {
-  float: left;
-  min-height: 1px;
-  &:first-child {
-    margin-left: 0;
+  .row {
+    margin-left: -( @grid-gutter-width / 2 );
+    margin-right: -( @grid-gutter-width / 2 );
   }
 }
 
-#grid( @gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth, @gridRowWidth );
+/*
+ * 1. Evita que elementos vazios colapsem
+ */
+.col {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px; /* 1 */
+  padding-left: ( @grid-gutter-width / 2 );
+  padding-right: ( @grid-gutter-width / 2 );
+}
+
+@media only screen {
+  #grid( small );
+}
+
+@media screen and ( min-width: @screen-medium ) {
+  #grid( large );
+}

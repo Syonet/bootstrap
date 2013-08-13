@@ -1,4 +1,4 @@
-<aside class="span2" id="sidebar-wrapper">
+<aside class="col col-small-12 col-large-2" id="sidebar-wrapper">
 	<ul class="syo-nav syo-nav-list" id="sidebar">
 		<li class="syo-nav-header"><i class="icon-code"></i> JavaScript</li>
 		<li><a href="#overview">Overview</a></li>
@@ -8,11 +8,11 @@
 	</ul>
 </aside>
 
-<div class="span10">
+<div class="col col-small-12 col-large-10">
 
 	<!-- Overview -->
 	<article id="overview">
-	
+
 		<div class="syo-header">
 			<h2>Overview</h2>
 		</div>
@@ -31,12 +31,12 @@
 			Já os <strong>utilitários</strong> do Syonet Bootstrap extendem o ambiente JavaScript, provendo funções e
 			plugins jQuery de uso comum, o que ajuda a reduzir o código.
 		</p>-->
-		
+
 	</article>
-	
+
 	<!-- syoPagination -->
 	<article id="pagination">
-	
+
 		<div class="syo-header">
 			<h2>Syonet Pagination</h2>
 		</div>
@@ -44,7 +44,7 @@
 			Flexível componente de paginação com visual adequado para interfaces <em>touch sensitive</em>.
 			Acessível através do método jQuery <code>.syoPagination()</code>.
 		</p>
-		
+
 		<h3>Exemplos</h3>
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
@@ -61,16 +61,16 @@
 				});
 			</div>
 		</div>
-		
+
 		<h3>API</h3>
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
-				<col class="span1">
-				<col class="span1">
-				<col class="span1">
-				<col class="span4">
-				<col class="span3">
+				<col class="col-large-1">
+				<col class="col-large-1">
+				<col class="col-large-1">
+				<col class="col-large-4">
+				<col class="col-large-3">
 			</colgroup>
 			<thead>
 				<tr>
@@ -110,12 +110,12 @@
 				</tr>
 			</tbody>
 		</table>
-		
+
 	</article>
-	
+
 	<!-- syoPopover -->
 	<article id="popover">
-	
+
 		<div class="syo-header">
 			<h2>Syonet Popover</h2>
 		</div>
@@ -125,7 +125,7 @@
 			Se você estiver em um dispositivo <em>touch sensitive</em>, também é possível tocar na barra do título para
 			esconder o popover.
 		</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="popover-component" data-widget="syoPopover" data-title="Título">
@@ -179,16 +179,16 @@
 				$( "#popover-left-end" ).syoPopover({ position: "left-end" });
 			</div>
 		</div>
-		
+
 		<h3>API</h3>
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
-				<col class="span1">
-				<col class="span1">
-				<col class="span1">
-				<col class="span4">
-				<col class="span3">
+				<col class="col-large-1">
+				<col class="col-large-1">
+				<col class="col-large-1">
+				<col class="col-large-4">
+				<col class="col-large-3">
 			</colgroup>
 			<thead>
 				<tr>
@@ -254,12 +254,12 @@
 				</tr>
 			</tbody>
 		</table>
-		
+
 	</article>
-	
+
 	<!-- syoDataGrid -->
 	<article id="datagrid">
-	
+
 		<div class="syo-header">
 			<h2>Syonet Data Grid</h2>
 		</div>
@@ -268,7 +268,7 @@
 			Para prever o espaçamento ocasionado por causa do scroll devemos definir tamanhos fixos para todas as
 			colunas de todas as tabelas, exceto a última.
 		</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div data-widget="syoDataGrid">
@@ -388,16 +388,16 @@
 				$( "#my-datagrid" ).syoDataGrid();
 			</div>
 		</div>
-		
+
 		<h3>API</h3>
 		<h4>Opções</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
-				<col class="span1">
-				<col class="span1">
-				<col class="span1">
-				<col class="span3">
-				<col class="span4">
+				<col class="col-large-1">
+				<col class="col-large-1">
+				<col class="col-large-1">
+				<col class="col-large-3">
+				<col class="col-large-4">
 			</colgroup>
 			<thead>
 				<tr>
@@ -418,8 +418,11 @@
 						<div class="prettyprint">
 							$( ... ).syoDataGrid({
 								beforeActivate: function( e, data ) {
-									console.log( data.oldItem ); // linha atualmente ativa
-									console.log( data.newItem ); // linha que será ativada
+									// linha atualmente ativa
+									console.log( data.oldItem );
+
+									// linha que será ativada
+									console.log( data.newItem );
 								}
 							});
 						</div>
@@ -434,8 +437,11 @@
 						<div class="prettyprint">
 							$( ... ).syoDataGrid({
 								activate: function( e, data ) {
-									console.log( data.oldItem ); // linha anteriormente ativa
-									console.log( data.newItem ); // linha atualmente ativa
+									// linha anteriormente ativa
+									console.log( data.oldItem );
+
+									// linha atualmente ativa
+									console.log( data.newItem );
 								}
 							});
 						</div>
@@ -443,14 +449,14 @@
 				</tr>
 			</tbody>
 		</table>
-		
+
 		<h4>Métodos</h4>
 		<table class="syo-data-table syo-data-table-striped">
 			<colgroup>
-				<col class="span2">
-				<col class="span1">
-				<col class="span5">
-				<col class="span4">
+				<col class="col-large-2">
+				<col class="col-large-1">
+				<col class="col-large-5">
+				<col class="col-large-4">
 			</colgroup>
 			<thead>
 				<tr>
@@ -465,7 +471,7 @@
 					<td>refresh()</td>
 					<td>Elemento jQuery</td>
 					<td>
-						Recarrega o visual e comportamento do componente. Útil para quando uma nova porção de HTML é 
+						Recarrega o visual e comportamento do componente. Útil para quando uma nova porção de HTML é
 						introduzida na estrutura depois que o plugin já tenha sido chamado.
 					</td>
 					<td>
@@ -489,7 +495,7 @@
 				</tr>
 			</tbody>
 		</table>
-		
+
 		<h4>Manipulação</h4>
 		<h5>Height</h5>
 		<p>
@@ -513,7 +519,7 @@
 				height: 300px;
 			}
 		</div>
-		
+
 	</article>
-	
+
 </div>

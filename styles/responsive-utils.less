@@ -1,19 +1,22 @@
-//* Desktops médios e acima */
-@media( min-width: 980px ) {
-  .visible-tablet {
-    display: none !important;
-  }
-  .visible-desktop {
-    display: inherit !important;
-  }
+.visible-small   { .responsive-visible(); }
+.visible-medium  { .responsive-invisible(); }
+.visible-large   { .responsive-invisible(); }
+
+.hidden-small    { .responsive-invisible(); }
+.hidden-medium   { .responsive-visible(); }
+.hidden-large    { .responsive-visible(); }
+
+@media ( min-width: @screen-medium ) {
+  .visible-small { .responsive-invisible(); }
+  .hidden-small  { .responsive-visible(); }
 }
 
-/* Tablets, pequenos desktops e alguns celulares */
-@media (max-width: 979px) {
-  .visible-desktop {
-    display: none !important;
-  }
-  .visible-tablet {
-    display: inherit !important;
-  }
+@media ( min-width: @screen-medium ) and ( max-width: @screen-medium-max ) {
+  .visible-medium { .responsive-visible(); }
+  .hidden-medium  { .responsive-invisible(); }
+}
+
+@media ( min-width: @screen-large ) {
+  .visible-large { .responsive-visible(); }
+  .hidden-large  { .responsive-invisible(); }
 }
