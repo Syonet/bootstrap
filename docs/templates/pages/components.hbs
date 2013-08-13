@@ -1,4 +1,4 @@
-<aside class="span2" id="sidebar-wrapper">
+<aside class="col col-small-12 col-large-2" id="sidebar-wrapper">
 	<ul class="syo-nav syo-nav-list" id="sidebar">
 		<li class="syo-nav-header"><i class="icon-screen"></i> Componentes</li>
 		<li><a href="#buttonset">Buttonset</a></li>
@@ -11,16 +11,16 @@
 	</ul>
 </aside>
 
-<div class="span10">
+<div class="col col-small-12 col-large-10">
 
 	<!-- Buttonset -->
 	<article id="buttonset">
-	
+
 		<div class="syo-header">
 			<h2>Buttonset</h2>
 		</div>
 		<p>Agrupe uma série de botões <code>.syo-button</code> dentro de um <code>.syo-buttonset</code>.</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="syo-buttonset">
@@ -40,10 +40,10 @@
 			</div>
 		</div>
 	</article>
-	
+
 	<!-- Paginação -->
 	<article id="pagination">
-	
+
 		<div class="syo-header">
 			<h2>Paginação</h2>
 		</div>
@@ -51,7 +51,7 @@
 			Simples componente de paginação, com uma larga área de clique - o que facilita para interfaces <i>touch
 			sensitive</i>.
 		</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="syo-pagination">
@@ -74,7 +74,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
@@ -97,39 +97,43 @@
 			como um indicador visual de que o item <em>deve estar</em> desabilitado.
 		</p>
 	</article>
-	
+
 	<!-- Blocos -->
 	<article id="blocks">
-	
+
 		<div class="syo-header">
 			<h2>Blocos</h2>
 		</div>
 		<p>Simples componente para separação visual de título e conteúdo.</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="row">
-					<div class="syo-block span6">
-						<div class="syo-block-title">
-							<div class="syo-block-title-toolbar syo-pull-left">
-								Toolbar
+					<div class="col col-small-12 col-large-6">
+						<div class="syo-block">
+							<div class="syo-block-title">
+								<div class="syo-block-title-toolbar syo-pull-left">
+									Toolbar
+								</div>
+
+								Título do bloco em cima
 							</div>
-							
-							Título do bloco em cima
-						</div>
-						<div class="syo-block-content">
-							Conteúdo
+							<div class="syo-block-content">
+								Conteúdo
+							</div>
 						</div>
 					</div>
-					<div class="syo-block span6">
-						<div class="syo-block-content">
-							Conteúdo
-						</div>
-						<div class="syo-block-title">
-							Título do bloco embaixo
-							
-							<div class="syo-block-title-toolbar syo-pull-right">
-								Toolbar
+					<div class="col col-small-12 col-large-6">
+						<div class="syo-block">
+							<div class="syo-block-content">
+								Conteúdo
+							</div>
+							<div class="syo-block-title">
+								Título do bloco embaixo
+
+								<div class="syo-block-title-toolbar syo-pull-right">
+									Toolbar
+								</div>
 							</div>
 						</div>
 					</div>
@@ -150,10 +154,10 @@
 			</div>
 		</div>
 	</article>
-	
+
 	<!-- syo-header -->
 	<article id="header">
-	
+
 		<div class="syo-header">
 			<h2>Headers</h2>
 		</div>
@@ -161,7 +165,7 @@
 			Header útil para utilizar como uma seção da página. Basta utilizar um elemento com a classe
 			<code>.syo-header</code>.
 		</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="syo-header">
@@ -175,15 +179,15 @@
 			</div>
 		</div>
 	</article>
-	
+
 	<!-- Navbar -->
 	<article id="navbar">
-	
+
 		<div class="syo-header">
 			<h2>Navbar</h2>
 		</div>
 		<p>Navbars são componentes para incluir uma navegação básica horizontal.</p>
-		
+
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="syo-navbar">
@@ -213,10 +217,10 @@
 			</div>
 		</div>
 	</article>
-	
+
 	<!-- Nav -->
 	<article id="nav">
-	
+
 		<div class="syo-header">
 			<h2>Nav</h2>
 		</div>
@@ -224,7 +228,7 @@
 			Componentes de navegação com o mesmo HTML base, apenas diferenciando as classes utilizadas. Todos estilos
 			estão acessíveis atráves da classe <code>.syo-nav</code>.
 		</p>
-		
+
 		<h3>Nav list</h3>
 		<p>
 			Navegação vertical, que permite um fácil agrupamento com headers opcionais. Melhor utilizados como
@@ -251,14 +255,14 @@
 			</div>
 		</div>
 	</article>
-	
+
 	<!-- Progressbar -->
 	<article id="progressbar">
-	
+
 		<div class="syo-header">
 			<h2>Progressbar</h2>
 		</div>
-		
+
 		<p>
 			Quando a utilização do <a href="jquery-ui.html#progressbar">jQuery UI</a> para renderizar uma progressbar
 			lhe parece muita mão de obra, utilize-o apenas com CSS do Syonet Bootstrap!
@@ -276,5 +280,5 @@
 			</div>
 		</div>
 	</article>
-	
+
 </div>
