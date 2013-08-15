@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Syonet Bootstrap | Documentação</title>
 		<meta name="viewport" content="width=device-width">
-		
+
 		<link rel="stylesheet" href="docs/vendor/prettify/prettify.css">
 		<link rel="stylesheet" href="dist/bootstrap.css">
 		<link rel="stylesheet" href="dist/jquery.ui.css">
@@ -50,7 +50,7 @@
 				<a href="index.html" class="syo-navbar-title syo-pull-right">Syonet Bootstrap</a>
 			</div>
 		</div>
-		
+
 		<header class="header">
 			<div class="container">
 				<h1>Syonet Bootstrap</h1>
@@ -63,20 +63,20 @@
 				</div>
 			</div>
 		</header>
-		
+
 		<div class="container container-vertical" role="main">
 			<div class="row" style="position: relative">{{>body}}</div>
 		</div>
-		
+
 		<footer class="footer">
 			<div class="container">
 				<div class="row">
-					<section class="span6 text-right">
+					<section class="col col-large-6 text-right">
 						<a href="{{ pkg.homepage }}">
 							<img src="docs/compiled/images/logo.png" alt="">
 						</a>
 					</section>
-					<section class="span6 text-left">
+					<section class="col col-large-6 text-left">
 						<p>Criado por <strong>{{ pkg.author.name }}</strong></p>
 						<ul class="inline">
 							<li><a href="{{ pkg.homepage }}">Site</a></li>
@@ -87,7 +87,7 @@
 				</div>
 			</div>
 		</footer>
-		
+
 		<script src="docs/vendor/prettify/prettify.js"></script>
 		<script src="external/modernizr.js"></script>
 		<script src="external/jquery.js"></script>
@@ -95,6 +95,6 @@
 		<script src="external/jquery.mobile.js"></script>
 		<script src="dist/bootstrap.js"></script>
 		<script src="docs/main.js"></script>
-		
+
 	</body>
 </html>

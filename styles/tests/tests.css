@@ -1,7 +1,7 @@
 /* =================================================================================================================
    Geral
    ================================================================================================================= */
-   
+
 .test-container {
   max-width: 1000px;
   margin: auto;
@@ -14,6 +14,10 @@
   overflow: auto;
 }
 
+.test .row {
+  margin: 0;
+}
+
 .test .title {
   border-bottom: thin silver solid;
 }
@@ -21,7 +25,7 @@
 /* =================================================================================================================
    Utilidades
    ================================================================================================================= */
-   
+
 /* Destaque do background para inspeção visual */
 .test-highlight1 {
   background-color: rgba( 255, 0, 0, .2 );
@@ -34,7 +38,7 @@
 
 /*
  * Remove as margens do elemento para melhor inspeção de outros estilos como sombra ou borda
- * 1. Sobrescreve a especificidade resultante do margin-bottom de um campo dentro de um syo-field "display: inline" 
+ * 1. Sobrescreve a especificidade resultante do margin-bottom de um campo dentro de um syo-field "display: inline"
  */
 .test-trimmed,
 .syo-field.syo-field-inline input, /* 1 */
