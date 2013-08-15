@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="../../dist/bootstrap.css">
 		<link rel="stylesheet" href="../../dist/jquery.ui.css">
 		<link rel="stylesheet" href="tests.css">
-		
+
 		<style>
 		#grid-overflow .syo-datagrid-body {
 			height: 300px;
@@ -21,12 +21,16 @@
 			Dialog deve se posicionar no centro da tela e possuir um estilo consistente com os demais
 		</div>
 		<div class="container">
-			<div class="syo-header">
-				<h1> Geral </h1>
+			<div class="row">
+				<div class="col">
+					<div class="syo-header">
+						<h1> Geral </h1>
+					</div>
+				</div>
 			</div>
-			<div clas="row">
-				<div class="span12">
-					<div class="test" title="A navbar deve quebrar graciosamente em resoluções menores. O ícone dos 
+			<div class="row">
+				<div class="col">
+					<div class="test" title="A navbar deve quebrar graciosamente em resoluções menores. O ícone dos
 											títulos devem ficar alinhados com o texto">
 						<div class="syo-navbar">
 							<div class="container">
@@ -50,7 +54,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test test-fixed" title="Deve garantir uma margem aceitável entre os headers">
 						<div class="test-highlight1">
 							<div class="test-highlight2">
@@ -94,8 +98,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="syo-progressbar, o conteúdo deve preencher todo o container da 
+				<div class="col">
+					<div class="test test-fixed" title="syo-progressbar, o conteúdo deve preencher todo o container da
 														progressbar">
 						<div class="test-highlight1">
 							<div class="syo-progressbar">
@@ -106,8 +110,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="ui-progressbar, o conteúdo deve preencher todo o container da 
+				<div class="col">
+					<div class="test test-fixed" title="ui-progressbar, o conteúdo deve preencher todo o container da
 														progressbar">
 						<div class="test-highlight1">
 							<div data-widget="progressbar" data-value="60"></div>
@@ -116,8 +120,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="Todos os controles de formulário devem estar alinhados 
+				<div class="col">
+					<div class="test test-fixed" title="Todos os controles de formulário devem estar alinhados
 														horizontalmente (pixel perfect)">
 						<div class="test-highlight1">
 							<div class="syo-field syo-field-inline test-trimmed">
@@ -153,7 +157,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test test-fixed" title="O tamanho dos inputs deve ser um pouco maior quando utilizando atributos especiais">
 						<div>
 							<textarea rows="3">textarea[rows="3"]</textarea>
@@ -164,8 +168,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="Os botões da paginação deve ficar bem alinhados com o texto 
+				<div class="col">
+					<div class="test test-fixed" title="Os botões da paginação deve ficar bem alinhados com o texto
 														interno e o background">
 						<div class="test-highlight1">
 							<div data-widget="syoPagination" data-items="13"></div>
@@ -174,8 +178,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test" title="Deve haver uma animação no ':hover' de todos os tipos de botões e eles 
+				<div class="col">
+					<div class="test" title="Deve haver uma animação no ':hover' de todos os tipos de botões e eles
 											devem ser iguais em todos os sentidos">
 						<div>
 							<button class="syo-button">Regular</button>
@@ -185,10 +189,10 @@
 							<div data-widget="buttonset" style="display: inline-block">
 								<input type="checkbox" id="chk-button1">
 								<label for="chk-button1">ui buttonset</label>
-								
+
 								<input type="checkbox" id="chk-button2">
 								<label for="chk-button2">ui buttonset</label>
-								
+
 								<input type="checkbox" id="chk-button3">
 								<label for="chk-button3">ui buttonset</label>
 							</div>
@@ -197,8 +201,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="Botões desabilitados devem possuir um estilo para 
+				<div class="col">
+					<div class="test test-fixed" title="Botões desabilitados devem possuir um estilo para
 														diferenciação">
 						<div class="syo-field syo-field-inline test-trimmed">
 							<button class="syo-button syo-success" disabled>Success</button>
@@ -234,7 +238,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test" title="A animação do accordion deve ocorrer de forma suave e sem falhas">
 						<div data-widget="accordion">
 							<h3>Section 1</h3>
@@ -251,7 +255,7 @@
 							<div>
 								<p>
 									Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-									purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis 
+									purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis
 									In suscipit faucibus urna.
 								</p>
 							</div>
@@ -288,22 +292,22 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
-					<div class="test test-fixed" title="Os botões the paginação do datepicker não devem 'pular' de 
+				<div class="col">
+					<div class="test test-fixed" title="Os botões the paginação do datepicker não devem 'pular' de
 														posição no hover">
 						<div data-widget="datepicker"></div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test test-lone" title="Não deve renderizar uma sombra fora do item de paginação">
 						<div data-widget="syoPagination" data-items="3"></div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span6">
+				<div class="col col-large-6">
 					<div class="test" title="Toolbar do Block deve ter a altura da barra de título, mesmo quando sem conteúdo">
 						<div class="syo-block">
 							<div class="syo-block-title">
@@ -316,7 +320,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="span6">
+				<div class="col col-large-6">
 					<div class="test" title="Botão na toolbar do Block deve estar centralizado verticalmente">
 						<div class="syo-block">
 							<div class="syo-block-title">
@@ -333,7 +337,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test test-fixed test-lone" title="Data Grid - Teste das bordas arredondadas do datagrid com o elemento helper">
 						<div data-widget="syoDataGrid">
 							<div>
@@ -381,7 +385,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test test-fixed test-lone" title="Data Grid - Teste das bordas arredondadas do datagrid sem o elemento helper">
 						<div data-widget="syoDataGrid">
 							<div>
@@ -428,7 +432,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test test-fixed" title="Data Grid - Não deve ter nenhum background de destaque aparecendo no bottom e deve criar barra de rolagem abaixo do thead">
 						<div class="test-highlight1" style="height: 337px;">
 							<div data-widget="syoDataGrid" id="grid-overflow">
@@ -469,44 +473,48 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="col">
 					<div class="test" title="offset como first-child no grid não deve possuir margem quando o layout responsivo for ativado">
 						<div class="row">
-							<div class="span3 offset3 test-highlight1">&lt;&lt; Deve ficar próximo à borda em dispositivos mobile e não deve criar scroll</div>
-							<div class="span6 test-highlight1">&nbsp;</div>
+							<div class="col col-large-3 offset-large-3">
+								<div class="test-highlight1">&lt;&lt; Deve ficar próximo à borda em dispositivos mobile e não deve criar scroll</div>
+							</div>
+							<div class="col col-large-6">
+								<div class="test-highlight1">&nbsp;</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span6">
+				<div class="col col-large-6">
 					<div class="syo-field">
 						<div class="test" title="O spinner deve possuir o tamanho do span (toda a área destacada)">
-							<div class="row">
-								<div class="syo-field span12 test-highlight1 special-input-block-level">
-									<input type="text" data-widget="spinner">
-								</div>
+							<div class="syo-field test-highlight1 special-input-block-level">
+								<input type="text" data-widget="spinner">
 							</div>
 						</div>
 					</div>
 				</div>
-				
-				<div class="span6">
+
+				<div class="col col-large-6">
 					<div class="test" title="Todos os headers devem ter a mesma altura">
 						<div class="row">
-							<div class="syo-block span4">
-								<div class="syo-block-title">Block</div>
-								<div class="syo-block-content">Lorem ipsum</div>
+							<div class="col col-large-4">
+								<div class="syo-block">
+									<div class="syo-block-title">Block</div>
+									<div class="syo-block-content">Lorem ipsum</div>
+								</div>
 							</div>
-							
-							<div class="span4">
+
+							<div class="col col-large-4">
 								<ul class="syo-nav syo-nav-list">
 									<li class="syo-nav-header">Nav List</li>
 									<li><a href="#">Lorem ipsum</a></li>
 								</ul>
 							</div>
-							
-							<div class="span4" data-widget="syoDataGrid">
+
+							<div class="col col-large-4" data-widget="syoDataGrid">
 								<div>
 									<table>
 										<thead>
@@ -533,7 +541,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<script src="../../external/jquery.js"></script>
 		<script src="../../external/jquery.ui.js"></script>
 		<script src="../../dist/bootstrap.js"></script>
