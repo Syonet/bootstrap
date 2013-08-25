@@ -198,3 +198,53 @@ table > tfoot {
     background-color: @table-stripe-color;
   }
 }
+
+/* =================================================================================================================
+   Tabela responsiva
+   ================================================================================================================= */
+@media screen and ( max-width: @screen-small-max ) {
+  /*
+   * 1. Destaca o fim do thead com a borda
+   * 2. Evita uma borda dupla quando (1)
+   */
+  .syo-table-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    > thead {
+      display: block;
+      float: left;
+      margin-right: -1px; /* 2 */
+      padding: 0;
+
+      > tr {
+        display: block;
+
+        > th {
+          display: block;
+          border-right: 1px solid @table-border-color; /* 1 */
+          text-align: right;
+        }
+      }
+    }
+
+    > tbody {
+      position: relative;
+      display: block;
+      width: auto;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      > tr {
+        display: inline-block;
+        vertical-align: top;
+
+        > td {
+          display: block;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
