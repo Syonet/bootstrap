@@ -116,18 +116,18 @@
 }
 
 #gradient {
-  .vertical( @startColor: @component-bg-light, @endColor: @component-bg ) {
-    background-color: mix( @startColor, @endColor, 60% );
-    background-image: -moz-linear-gradient( top, @startColor, @endColor ); // FF 3.6+
-    background-image: -webkit-gradient( linear, 0 0, 0 100%, from( @startColor ), to( @endColor ) ); // Safari 4+, Chrome 2+
-    background-image: -webkit-linear-gradient( top, @startColor, @endColor ); // Safari 5.1+, Chrome 10+
-    background-image: -o-linear-gradient( top, @startColor, @endColor ); // Opera 11.10
-    background-image: linear-gradient( to bottom, @startColor, @endColor ); // Standard, IE10
+  .vertical( @start-color: @component-bg-light, @end-color: @component-bg ) {
+    background-color: mix( @start-color, @end-color, 60% );
+    background-image: -moz-linear-gradient( top, @start-color, @end-color ); // FF 3.6+
+    background-image: -webkit-gradient( linear, 0 0, 0 100%, from( @start-color ), to( @end-color ) ); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient( top, @start-color, @end-color ); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient( top, @start-color, @end-color ); // Opera 11.10
+    background-image: linear-gradient( to bottom, @start-color, @end-color ); // Standard, IE10
     background-repeat: repeat-x;
     filter: e(
       %(
         "progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",
-        argb( @startColor ), argb( @endColor )
+        argb( @start-color ), argb( @end-color )
       )
     ); // IE9 and down
   }
