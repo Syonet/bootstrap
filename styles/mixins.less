@@ -24,8 +24,8 @@
   .monospace() {
     font-family: @mono-font-family;
   }
-  .shorthand (@color: @text-color, @lineHeight: @base-line-height, @size: @base-font-size, @family: @base-font-family, @weight: normal, @style: normal) {
-    line-height: @lineHeight;
+  .shorthand (@color: @text-color, @line-height: @base-line-height, @size: @base-font-size, @family: @base-font-family, @weight: normal, @style: normal) {
+    line-height: @line-height;
     color: @color;
     font-size: @size;
     font-family: @family;
@@ -134,6 +134,41 @@
 }
 
 // ====================================================================================================================
+// Buttons
+// ====================================================================================================================
+.button-style( @bg: @button-default-bg, @text: @text-color, @border: @input-border ) {
+  border-color: @border;
+  color: @text;
+  #gradient .vertical( lighten( @bg, 5% ), @bg );
+
+  &:hover {
+    .transition( @button-bg-transition );
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.syo-active {
+    border-color: darken( @border, 10% );
+    color: @text;
+    background: darken( @bg, 5% );
+  }
+
+  &[disabled],
+  &.syo-disabled,
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.syo-active {
+      border-color: @border;
+      background: @bg;
+    }
+  }
+}
+
+// ====================================================================================================================
 // Grid
 // ====================================================================================================================
 
@@ -167,10 +202,10 @@
 // ====================================================================================================================
 
 // Alinha um elemento da navbar com padding e reseta margin
-.navbar-spacing( @lineHeight: @base-line-height ) {
+.navbar-spacing( @line-height: @computed-line-height ) {
   margin-top: 0;
   margin-bottom: 0;
-  padding: ( ( @navbar-height - @lineHeight ) / 2 ) ( @lineHeight / 1.5 );
+  padding: ( ( @navbar-height - @line-height ) / 2 ) ( @line-height / 1.5 );
 }
 
 // ====================================================================================================================
@@ -181,7 +216,7 @@
 // sem utilização de seletores complexos inúteis entre um e outro
 .table-base-styles() {
   width: 100%;
-  margin-bottom: @base-line-height;
+  margin-bottom: @computed-line-height;
   border-collapse: separate;
   border: 1px solid @table-border-color;
   border-left: 0;

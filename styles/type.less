@@ -3,10 +3,9 @@
    ================================================================================================================= */
 
 p {
-  margin: 0 0 ( @base-line-height / 2 );
+  margin: 0 0 ( @computed-line-height / 2 );
   &.lead {
-    margin-bottom: @base-line-height;
-    line-height: @base-line-height * 1.5;
+    margin-bottom: @computed-line-height;
     font-size: @base-font-size * 1.5;
     font-weight: 200;
   }
@@ -28,8 +27,7 @@ strong, b { font-weight: bold; }
  * 1. Corrige o espaçamento de caracteres para headings
  */
 h1, h2, h3, h4, h5, h6 {
-  margin: ( @base-line-height / 2 ) 0;
-  line-height: @base-line-height;
+  margin: ( @computed-line-height / 2 ) 0;
   font-family: @base-font-family;
   font-weight: bold;
   color: @text-color;
@@ -40,10 +38,6 @@ h1, h2, h3, h4, h5, h6 {
     color: @gray-light;
   }
 }
-
-h1,
-h2,
-h3 { line-height: @base-line-height * 2; }
 
 h1 { font-size: @base-font-size * 2.75; }
 h2 { font-size: @base-font-size * 2.25; }
@@ -63,7 +57,7 @@ h4 small { font-size: @base-font-size; }
 
 .syo-header {
   display: block;
-  margin-bottom: @base-line-height;
+  margin-bottom: @computed-line-height;
   border-bottom: 1px solid @gray;
 }
 
@@ -73,12 +67,12 @@ h4 small { font-size: @base-font-size; }
 
 dl {
   margin-top: 0;
-  margin-bottom: @base-line-height;
+  margin-bottom: @computed-line-height;
 }
 
-dt, dd { line-height: @base-line-height; }
+dt, dd { line-height: @computed-line-height; }
 dt { font-weight: bold; }
-dd { margin-left: @base-line-height / 2; }
+dd { margin-left: 0; }
 
 dl.dl-inline {
   dt {
@@ -89,7 +83,7 @@ dl.dl-inline {
     width: @dl-term-width;
     text-overflow: ellipsis;
   }
-  
+
   dd {
     display: block;
     margin-left: @dl-term-width + 10px;

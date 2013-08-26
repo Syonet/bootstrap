@@ -431,11 +431,6 @@
 						<input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
 					</div>
 				</fieldset>
-				<fieldset>
-					<legend>Diversos tamanhos</legend>
-					<button class="syo-button syo-button-large">.syo-button-large</button>
-					<button class="syo-button syo-button-xlarge">.syo-button-xlarge</button>
-				</fieldset>
 			</div>
 			<strong>HTML:</strong>
 			<div class="prettyprint">
@@ -498,11 +493,6 @@
 							<input type="submit" value="Botão" class="syo-button">
 							<input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
 						</div>
-					</fieldset>
-					<fieldset>
-						<legend>Diversos tamanhos</legend>
-						<button class="syo-button syo-button-large">.syo-button-large</button>
-						<button class="syo-button syo-button-xlarge">.syo-button-xlarge</button>
 					</fieldset>
 				</form>
 			</div>
@@ -595,6 +585,45 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<h3>Várias Tags</h3>
+		<p>
+			É possível criar botões utilizando várias tags: <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>
+			e <code>&lt;a&gt;</code>. Todas elas utilizando a classe <code>.syo-button</code>:
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<button type="button" class="syo-button">button</button>
+				<a href="#" class="syo-button">link</a>
+				<input type="submit" class="syo-button" value="submit">
+				<input type="button" class="syo-button" value="input">
+				<input type="reset" class="syo-button" value="reset">
+			</div>
+
+			<strong>HTML:</strong>
+			<div class="prettyprint">
+				<button type="button" class="syo-button">button</button>
+				<a href="#" class="syo-button">link</a>
+				<input type="submit" class="syo-button" value="submit">
+				<input type="button" class="syo-button" value="input">
+				<input type="reset" class="syo-button" value="reset">
+			</div>
+		</div>
+
+		<h3>Tamanho Grande</h3>
+		<p>
+			Precisando utilizar um botão mais chamativo? Utilize a classe <code>.syo-button-large</code>.
+		</p>
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<button type="button" class="syo-button syo-button-large">.syo-button-large</button>
+			</div>
+
+			<strong>HTML:</strong>
+			<div class="prettyprint">
+				<button type="button" class="syo-button syo-button-large">.syo-button-large</button>
+			</div>
+		</div>
 
 		<h3>Estado Desabilitado</h3>
 		<p>

@@ -4,7 +4,7 @@
 /* =================================================================================================================
    Component containers
    ================================================================================================================= */
-   
+
 .ui-widget {
   font-family: @base-font-family;
   font-size: @base-font-size;
@@ -37,7 +37,7 @@
 /* =================================================================================================================
    Interaction states
    ================================================================================================================= */
-   
+
 /*
  * 1. outline deve servir apenas para foco na navegação com o teclado no FF
  */
@@ -96,7 +96,7 @@
 /* =================================================================================================================
    Interaction cues
    ================================================================================================================= */
-   
+
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
@@ -153,7 +153,7 @@
 /* =================================================================================================================
    Icons
    ================================================================================================================= */
-   
+
 /* states and images */
 .ui-icon {
   width: 16px;
@@ -366,7 +366,7 @@
 /* =================================================================================================================
    Misc visuals
    ================================================================================================================= */
-   
+
 /* Corner radius */
 .ui-corner-all,
 .ui-corner-top,
@@ -409,7 +409,7 @@
 /* =================================================================================================================
    Custom
    ================================================================================================================= */
-   
+
 /*
  * Estilos compartilhados Button + Dialog titlebar close (jQuery UI < 1.10)
  * 1. Alinha com os outros botões do bootstrap
@@ -417,9 +417,8 @@
 .ui-button, .ui-dialog .ui-dialog-titlebar-close {
   display: inline-block;
   vertical-align: middle; /* 1 */
-  border-color: fade( @input-border, 35% );
-  border-bottom-color: lighten( @input-border, 10% );
-  .transition( @button-bg-transition );
+  .button-style();
+
   &.ui-state-active,
   &.ui-state-hover {
     background: @component-bg;
@@ -447,14 +446,18 @@ a.ui-button, a.ui-dialog .ui-dialog-titlebar-close {
  *    metade pra baixo.
  */
 .ui-button {
-  padding: ( ( ( @input-height - @base-line-height ) - 2px ) / 2 ) 12px; /* 1 */
+  padding: ( ( ( @input-height - @computed-line-height ) - 2px ) / 2 ) 10px; /* 1 */
+
   .ui-button-text {
     line-height: @base-line-height;
   }
+
   &.ui-state-focus {
     outline: dotted thin #333;
   }
-  &:active, &.ui-state-active {
+
+  &:active,
+  &.ui-state-active {
     z-index: 3;
     border-color: fade( @jq-border, 80% );
     border-bottom-color: lighten( @jq-border, 5% );

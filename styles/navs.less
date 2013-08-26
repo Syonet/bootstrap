@@ -1,7 +1,7 @@
 /* =================================================================================================================
    Navs
    ================================================================================================================= */
-   
+
 /*
  * Estilos globais de componentes Nav
  * 1. Melhora visualização da outline no conteúdo esquerdo da navbar
@@ -9,7 +9,7 @@
 ol.syo-nav,
 ul.syo-nav {
   margin-left: 1px; /* 1 */
-  margin-bottom: @base-line-height;
+  margin-bottom: @computed-line-height;
   list-style: none;
   a {
     text-decoration: none;
@@ -19,7 +19,7 @@ ul.syo-nav {
 /* =================================================================================================================
    Nav list
    ================================================================================================================= */
-   
+
 /*
  * 1. Estilo do header
  * 2. Corrige o border-radius do primeiro elemento
@@ -35,7 +35,7 @@ ol.syo-nav-list {
     background: @body-color;
     > a {
       display: block;
-      padding: (@base-line-height / 3) (@base-line-height / 2);
+      padding: (@computed-line-height / 3) (@computed-line-height / 2);
       &:hover {
         background: @component-bg-hover;
       }

@@ -53,8 +53,8 @@ article {
    ================================================================================================================= */
 
 .syo-docs-example {
-  margin: @base-line-height 0;
-  padding: ( @base-line-height * 2 ) 0 0;
+  margin: @computed-line-height 0;
+  padding: ( @computed-line-height * 1.5 ) 0 0;
   border: 1px solid @gray-light;
   background: #FDFDFD;
   .border-radius( @base-border-radius );
@@ -62,10 +62,10 @@ article {
   &:before {
     @line-height: 15px;
     position: relative;
-    // @base-line-height (padding-top do container) + line-height do seletor atual - 1px da borda
-    top: -( @base-line-height + @line-height - 1px );
+    // @computed-line-height * 1.5 (padding-top do container) - 1px da borda
+    top: -( ( @computed-line-height * 1.5 ) - 1px );
     left: -1px;
-    padding: 10px;
+    padding: 5px 10px;
     border: 1px solid @gray-light;
     #font .shorthand( @gray-dark, @line-height, 11px, @base-font-family, bold );
     background: @gray-lighter;
@@ -84,7 +84,7 @@ article {
   }
   .syo-docs-example-inner {
     position: relative;
-    padding: 0 @base-line-height @base-line-height;
+    padding: 0 @computed-line-height @computed-line-height;
   }
 }
 
@@ -108,11 +108,11 @@ article {
 
 .grid-example {
   .row {
-    margin-bottom: @base-line-height;
+    margin-bottom: @computed-line-height;
   }
   .col {
-    padding-top: @base-line-height / 4;
-    padding-bottom: @base-line-height / 4;
+    padding-top: @computed-line-height / 4;
+    padding-bottom: @computed-line-height / 4;
     border: 1px solid darken( @gray-lighter, 10% );
     font-size: .9;
     background: @gray-lighter;
@@ -128,7 +128,7 @@ article {
 
 .icons {
   .clear-float();
-  margin: 0 0 @base-line-height;
+  margin: 0 0 @computed-line-height;
   list-style: none;
   li {
     float: left;
@@ -162,7 +162,7 @@ article {
 ul.responsive-test {
   list-style: none;
   li {
-    @padding: ( @base-line-height / 2 ) 0;
+    @padding: ( @computed-line-height / 2 ) 0;
     position: relative;
     display: inline-block;
     width: 24%;

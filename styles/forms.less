@@ -74,7 +74,7 @@ select[multiple] {
  * 3. Evita que fique o text-shadow ao botar o mouse sobre um item no select
  */
 select {
-  padding: ( ( @input-height - @base-line-height ) / 2 ) 2px; /* 1 */
+  padding: ( ( @input-height - @computed-line-height ) / 2 ) 2px; /* 1 */
   line-height: @input-height - 6px; /* 2 */
   option {
     text-shadow: none; /* 3 */
@@ -92,7 +92,7 @@ input[type="radio"] {
    ================================================================================================================= */
 
 fieldset {
-  margin: 2px 2px @base-line-height / 2;
+  margin: 2px 2px @computed-line-height / 2;
   padding: .5em;
   border: 1px solid @gray-light;
   .border-radius( @border-radius-large );
@@ -101,7 +101,7 @@ fieldset {
 legend {
   padding: 0 10px;
   border: 1px solid @gray-light;
-  #font .shorthand( @text-color, @base-line-height, @base-font-size - 1, @base-font-family, bold );
+  //#font .shorthand( @text-color, @base-line-height, @base-font-size - 1, @base-font-family, bold );
   background-color: @gray-lighter;
   .border-radius( @base-border-radius );
 }
@@ -149,12 +149,12 @@ input, textarea, select, button {
  * 2. Compensa a remoção do inline-block (1)
  */
 .syo-field {
-  margin-bottom: @base-line-height / 2;
+  margin-bottom: @computed-line-height / 2;
   #font .shorthand();
   &.syo-field-inline {
     display: inline; /* 1 */
     input, select, textarea, button {
-      margin-bottom: @base-line-height / 2; /* 2 */
+      margin-bottom: @computed-line-height / 2; /* 2 */
     }
   }
   > input,
@@ -185,7 +185,7 @@ select {
     &,
     &:hover,
     &:focus {
-      border-color: @input-success-color;
+      border-color: @input-success-border;
       color: @input-success-color;
     }
   }
@@ -193,7 +193,7 @@ select {
     &,
     &:hover,
     &:focus {
-      border-color: @input-error-color;
+      border-color: @input-error-border;
       color: @input-error-color;
     }
   }

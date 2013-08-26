@@ -1,47 +1,46 @@
 /* =================================================================================================================
    Base
    ================================================================================================================= */
-   
+
 /*
- * 1. FF4 Precisa do height definido
- * 2. Elementos anchor não possuem o alinhamento centralizado por default
- * 3. Desabilita efeitos de links
+ * 1. Links não devem ter underline algum
+ * 2. Links não tem alinhamento centralizado por padrão
  */
 .syo-button {
-  height: @input-height; /* 1 */
-  padding: ( ( ( @input-height - @base-line-height ) - 2px ) / 2 ) 12px;
-  border: 1px solid fade( @input-border, 35% );
   display: inline-block;
   vertical-align: middle;
-  border-bottom-color: lighten( @input-border, 10% );
+  padding: ( ( ( @input-height - @computed-line-height ) - 2px ) / 2 ) 10px;
+  border-width: 1px;
+  border-style: solid;
+  line-height: @base-line-height;
   text-align: center; /* 2 */
-  #font .shorthand( @input-text-color );
-  #gradient .vertical();
+  cursor: pointer;
+  .box-shadow( ~"inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)" );
   .border-radius( @base-border-radius );
-  .box-shadow( 0 1px 0 fade( #FFF, 20% ) inset);
-  &:hover {
-    border-color: @input-hover-border;
-    background: @component-bg;
-    .transition( @button-bg-transition );
+  .button-style();
+
+  a&,
+  a&:hover {
+    text-decoration: none; /* 1 */
   }
-  &:focus {
-    outline: dotted thin #333;
-  }
-  &.syo-active,
-  &:active {
-    background: @gray-lighter;
-    border-color: fade( @input-border, 70% );
-    .box-shadow( 0 2px 4px fade( #000, 15% ) inset );
+
+  &:active,
+  &.syo-active {
     outline: 0;
+    .box-shadow( 0 2px 4px fade( #000, 15% ) inset );
   }
-  &:hover, &:active {
-    color: @input-hover-text;
-    text-decoration: none; /* 3 */
+
+  &[disabled],
+  &.syo-disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    .opacity( .8 );
+    .box-shadow( none );
   }
 }
 
 /*
- * 1. Corrige altura de quando é um elemento input
+ * 1. Corrige altura de quando é um elemento input no Firefox
  */
 input.syo-button {
   height: @input-height; /* 1 */
@@ -50,7 +49,7 @@ input.syo-button {
 /* =================================================================================================================
    Buttonset
    ================================================================================================================= */
-   
+
 /*
  * 1. Evita borda dupla
  * 2. Usado para considerar o "z-index" de um elemento com "position: static"
@@ -61,20 +60,25 @@ input.syo-button {
 .syo-buttonset {
   vertical-align: middle; /* 5 */
   .clear-float();
+
   > .syo-button {
     float: left;
     .border-radius( 0 );
+
     + .syo-button {
       margin-left: -1px; /* 1 */
     }
+
     &:hover,
     &:focus {
       position: relative; /* 2 */
       z-index: 1; /* 3 */
     }
+
     &:first-child {
       .border-radius-left( @base-border-radius ); /* 4 */
     }
+
     &:last-child  {
       .border-radius-right( @base-border-radius ); /* 4 */
     }
@@ -84,14 +88,14 @@ input.syo-button {
 /* =================================================================================================================
    Tamanhos
    ================================================================================================================= */
-   
-.syo-button.syo-button-large {
+.syo-button-large {
   padding: @padding-large;
   font-size: @font-size-large;
   .border-radius( @border-radius-large );
   height: auto;
 }
-.syo-button.syo-button-xlarge {
+
+.syo-button-xlarge {
   padding: @padding-xlarge;
   font-size: @font-size-xlarge;
   .border-radius( @border-radius-xlarge );
@@ -101,38 +105,5 @@ input.syo-button {
 /* =================================================================================================================
    States
    ================================================================================================================= */
-   
-.syo-button.syo-success {
-  #gradient .vertical( @input-success-highlight-color, @input-success-color );
-  border-color: @input-success-color;
-  &:hover {
-    background: @input-success-color;
-    border-color: @input-success-hover-border;
-  }
-}
-
-.syo-button.syo-error {
-  #gradient .vertical( @input-error-highlight-color, @input-error-color );
-  border-color: @input-error-color;
-  &:hover {
-    background: @input-error-color;
-    border-color: @input-error-hover-border;
-  }
-}
-
-/* Por padrão a cor do texto é branco para todos os botões com cor de fundo */
-.syo-button.syo-success,
-.syo-button.syo-error {
-  color: #FFF;
-}
-
-.syo-button[disabled],
-.syo-button.syo-disabled {
-  // TODO: É realmente necessário o uso de "!important" aqui? Será que não podemos aumentar a especificidade no lugar?
-  border-color: @input-disabled-border !important;
-  background: @input-disabled-background !important;
-  color: @input-disabled-text !important;
-  cursor: default;
-  .box-shadow( none );
-  .opacity( 0.8 );
-}
+.syo-button.syo-success { .button-style( @input-success-color, #FFF, @input-success-border ); }
+.syo-button.syo-error   { .button-style( @input-error-color,   #FFF, @input-error-border ); }

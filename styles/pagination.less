@@ -12,17 +12,22 @@
 .syo-pagination {
   > ul {
     list-style: none;
+
     li {
       .box-shadow( 0 1px 2px fade( @gray-light, 30% ) );
       display: table-cell;
       .clear-float();
+
       a {
         margin-right: -1px;
         padding: 4px 12px;
         border: 1px solid @pagination-border;
         float: left;
         background-color: @pagination-item-background;
-        &:hover, &:active, &:focus {
+
+        &:hover,
+        &:active,
+        &:focus {
           position: relative; /* 1 */
           z-index: 1; /* 2 */
           text-decoration: none;
@@ -30,18 +35,17 @@
           border-color: @component-border-hover;
         }
       }
-      &:first-child a {
-        .border-radius-left( @base-border-radius );
-      }
-      &:last-child a {
-        .border-radius-right( @base-border-radius );
-      }
+
+      &:first-child a { .border-radius-left( @base-border-radius ); }
+      &:last-child a { .border-radius-right( @base-border-radius ); }
+
       /* 3 */
       &.syo-active > a {
         color: darken( @pagination-disabled-text, 20% );
         background: @pagination-hover-background;
         .box-shadow( 0 2px 4px fade( #000, 15% ) inset );
       }
+
       /* 4 */
       &.syo-disabled > a {
         border-color: @pagination-border;
@@ -51,6 +55,7 @@
           outline: none;
         }
       }
+
       /* 5 */
       &.syo-disabled > a,
       &.syo-active > a {
@@ -67,8 +72,8 @@
 .syo-pagination-inline {
   > ul {
     display: inline-block;
-    margin-left: ( @base-line-height / 2 );
-    margin-right: ( @base-line-height / 2 );
+    margin-left: ( @computed-line-height / 2 );
+    margin-right: ( @computed-line-height / 2 );
     vertical-align: top; /* 1 */
   }
 }
