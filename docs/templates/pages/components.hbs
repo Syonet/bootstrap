@@ -2,6 +2,7 @@
 	<ul class="syo-nav syo-nav-list" id="sidebar">
 		<li class="syo-nav-header"><i class="icon-screen"></i> Componentes</li>
 		<li><a href="#buttonset">Buttonset</a></li>
+		<li><a href="#input-row">Input Row</a></li>
 		<li><a href="#pagination">Paginação</a></li>
 		<li><a href="#blocks">Blocos</a></li>
 		<li><a href="#header">Header</a></li>
@@ -34,6 +35,40 @@
 					<button type="button" class="syo-button">Ação 1</button>
 					<button type="button" class="syo-button">Ação 2</button>
 					<button type="button" class="syo-button">Ação 3</button>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<article id="input-row">
+		<div class="syo-header syo-header-ruler">
+			<h2>Input Row</h2>
+		</div>
+		<p>
+			Coloque um campo <code>input</code> de texto + botões dentro de um mesmo elemento de
+			forma que sempre ocupem toda uma linha.
+		</p>
+
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="row">
+					<div class="syo-input-row col col-large-6">
+						<input type="text" placeholder="Nome">
+						<div class="syo-input-row-addon">
+							<button class="syo-button">
+								<i class="icon-checkmark"></i>
+							</button>
+						</div>
+					</div>
+					<div class="syo-input-row col col-large-6">
+						<input type="text" placeholder="Digite sua pesquisa...">
+						<div class="syo-input-row-addon">
+							<button class="syo-button">
+								<i class="icon-search"></i>
+								Pesquisar
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

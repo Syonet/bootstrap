@@ -45,25 +45,17 @@
 @link-color-hover: darken( @blue, 10% );
 
 // ====================================================================================================================
-// Tipografia
-// ====================================================================================================================
-
-@text-color: #000;
-@base-font-size: 14px;
-@computed-line-height: 20px;
-@base-line-height: unit( @computed-line-height / @base-font-size );
-
-@base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-@mono-font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-
-@dl-term-width: 160px;
-
-// ====================================================================================================================
 // Tamanhos base
 // ====================================================================================================================
 
-@padding-large: 11px 19px;
-@padding-xlarge: 16px 26px;
+@component-height: 28px;
+@component-large-factor: 1.25;
+
+@padding-base-vertical: ( @component-height - @computed-line-height ) / 2;
+@padding-base-horizontal: 10px;
+
+@padding-large-vertical: @padding-base-vertical * @component-large-factor;
+@padding-large-horizontal: @padding-base-horizontal * @component-large-factor;
 
 @border-radius-small: 2px;
 @base-border-radius: 4px;
@@ -71,11 +63,27 @@
 @border-radius-xlarge: 8px;
 
 // ====================================================================================================================
+// Tipografia
+// ====================================================================================================================
+
+@font-size-base: 14px;
+@font-size-large: @font-size-base * @component-large-factor;
+
+@text-color: #000;
+@computed-line-height: 20px;
+@base-line-height: unit( @computed-line-height / @font-size-base );
+
+@base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mono-font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@dl-term-width: 160px;
+
+// ====================================================================================================================
 // Forms
 // ====================================================================================================================
 
 // Inputs
-@input-height: @base-font-size * 2;
+@input-height: @component-height;
 @input-background: #FBFBFB;
 @input-border: @gray-light;
 @input-text-color: @gray;

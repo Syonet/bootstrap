@@ -13,10 +13,10 @@
   min-height: @navbar-height; /* 4 */
   display: block;
   border: 1px solid @navbar-border-color;
-  #gradient .vertical();
-  font-size: @base-font-size - 1;
-  .box-shadow( 0 0 5px 0px fade( @gray-light, 30% ) );
+  font-size: @font-size-base - 1;
   text-shadow: 0 1px 0 #FFF;
+  #gradient .vertical();
+  .box-shadow( 0 0 5px 0px fade( @gray-light, 30% ) );
 
   a {
     color: @gray;
@@ -30,12 +30,12 @@
   .syo-navbar-title {
     display: block;
     float: left;
-    .navbar-spacing( @computed-line-height * 1.5 );
     color: @gray;
-    font-size: @base-font-size * 1.5;
+    font-size: @font-size-base * 1.5;
     font-weight: bold;
     text-decoration: none;
     vertical-align: middle;
+    .navbar-spacing( @computed-line-height * 1.5 );
     .transition( ~"color 0.1s linear, text-shadow 0.1s linear" );
 
     &:hover {
@@ -77,6 +77,10 @@
   .syo-navbar-content {
     display: inline-block;
     .navbar-spacing();
+  }
+
+  .syo-navbar-buttons {
+    .navbar-spacing( @input-height );
   }
 }
 

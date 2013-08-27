@@ -89,17 +89,10 @@ input.syo-button {
    Tamanhos
    ================================================================================================================= */
 .syo-button-large {
-  height: auto;
-  padding: @padding-large;
-  font-size: 125%;
+  height: @input-height * @component-large-factor;
+  padding: @padding-large-vertical @padding-large-horizontal;
+  font-size: @font-size-large;
   .border-radius( @border-radius-large );
-}
-
-.syo-button-xlarge {
-  height: auto;
-  padding: @padding-xlarge;
-  font-size: 150%;
-  .border-radius( @border-radius-xlarge );
 }
 
 /* =================================================================================================================
