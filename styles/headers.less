@@ -1,0 +1,25 @@
+/* =================================================================================================================
+   Headers
+   ================================================================================================================= */
+.syo-header {
+  display: block;
+  margin-bottom: @computed-line-height;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    margin: 0;
+  }
+}
+
+.syo-header.syo-header-ruler {
+  border-bottom: 1px solid @gray;
+}
+
+.syo-header.syo-header-bar {
+  padding: @computed-line-height / 2;
+  background: @component-bg;
+}
