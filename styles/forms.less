@@ -151,28 +151,29 @@ input, textarea, select, button {
 .syo-field {
   margin-bottom: @computed-line-height / 2;
   #font .shorthand();
+
   &.syo-field-inline {
     display: inline; /* 1 */
     input, select, textarea, button {
       margin-bottom: @computed-line-height / 2; /* 2 */
     }
   }
+
   > input,
   > textarea,
   > select,
   > button {
     vertical-align: middle;
   }
+
   > input[type="radio"],
   > input[type="checkbox"] {
     position: relative;
     top: .6em;
     vertical-align: top;
   }
-  .syo-field-help {
-    display: block;
-    color: @input-text-color;
-  }
+
+
 }
 
 /* =================================================================================================================
@@ -189,6 +190,7 @@ select {
       color: @input-success-color;
     }
   }
+
   &.syo-error {
     &,
     &:hover,
@@ -196,6 +198,38 @@ select {
       border-color: @input-error-border;
       color: @input-error-color;
     }
+  }
+}
+
+/*
+ * Suporte a validações HTML5
+ * 1. Remove o box-shadow do browser quando o campo está inválido
+ */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none; /* 1 */
+
+  &:focus {
+    border-color: @input-error-border;
+    color: @input-error-color;
+  }
+}
+
+/* =================================================================================================================
+   Help Block
+   ================================================================================================================= */
+
+.syo-field-help {
+  display: block;
+  color: @input-text-color;
+
+  &.syo-error {
+    color: @input-error-color;
+  }
+
+  &.syo-success {
+    color: @input-success-color;
   }
 }
 
