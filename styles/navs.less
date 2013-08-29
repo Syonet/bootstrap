@@ -30,9 +30,11 @@ ol.syo-nav-list {
   border: 1px solid @nav-border-color;
   .border-radius(@base-border-radius);
   .box-shadow(0 1px 4px fade(#000, 10%));
+
   > li {
     border-bottom: 1px solid @nav-border-color;
     background: @body-color;
+
     > a {
       display: block;
       padding: (@computed-line-height / 3) (@computed-line-height / 2);
@@ -40,6 +42,7 @@ ol.syo-nav-list {
         background: @component-bg-hover;
       }
     }
+
     /* 1 */
     &.syo-nav-header {
       padding: 8px 10px;
@@ -49,12 +52,14 @@ ol.syo-nav-list {
       #gradient .vertical();
       text-shadow: 0 1px 0 #fff;
     }
+
     /* 2 */
     &:first-child {
       &, > a {
         .border-radius-top(@base-border-radius);
       }
     }
+
     /* 3 */
     &:last-child {
       border-bottom: 0;

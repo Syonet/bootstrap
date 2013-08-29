@@ -1,0 +1,92 @@
+/* =================================================================================================================
+   Check Lists
+   ================================================================================================================= */
+
+/*
+ * 1. Sobrescreve estilos do label default
+ * 2. Utiliza icones da fonte para
+ *  2.1. Checkbox desmarcado (.icon-check-empty)
+ *  2.2. Checkbox marcado (.icon-check)
+ *  2.3. Radio desmarcado (.icon-check)
+ *  2.4. Radio marcado (.icon-check)
+ */
+.syo-check-list {
+  margin-left: 0;
+  margin-bottom: @computed-line-height;
+  border: 1px solid @checklist-border-color;
+  .border-radius(@base-border-radius);
+  .box-shadow(0 1px 4px fade(#000, 10%));
+  list-style: none;
+
+  > li {
+    border-bottom: 1px solid @checklist-border-color;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="checkbox"] {
+      + label:before {
+        content: "\f096"; /* 2.1 */
+      }
+
+      &:checked + label:before {
+        content: "\f046"; /* 2.2 */
+      }
+    }
+
+    input[type="radio"] {
+      + label:before {
+        content: "\f10c"; /* 2.3 */
+      }
+
+      &:checked + label:before {
+        content: "\f111"; /* 2.4 */
+      }
+    }
+
+    label {
+      display: block;
+      margin-left: 0; /* 1 */
+      padding: (@computed-line-height / 3) (@computed-line-height / 2);
+      text-align: left; /* 1 */
+      cursor: pointer;
+
+      &:before {
+        display: inline-block;
+        min-width: 1em;
+        margin-right: 5px;
+        font-family: SyoBootstrap;
+      }
+
+      &:hover {
+        background-color: @component-bg-hover;
+      }
+    }
+
+    /* 2 */
+    &:first-child {
+      &, > a {
+        .border-radius-top(@base-border-radius);
+      }
+    }
+
+    /* 3 */
+    &:last-child {
+      border-bottom: 0;
+      &, > a {
+        .border-radius-bottom(@base-border-radius);
+      }
+    }
+  }
+
+  .syo-check-list-header {
+    padding: 8px 10px;
+    color: @gray-dark;
+    font-weight: bold;
+    font-size: floor(@font-size-base * 0.9);
+    #gradient .vertical();
+    text-shadow: 0 1px 0 #fff;
+  }
+}
