@@ -21,14 +21,46 @@ table {
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
  */
 .syo-table {
-  .table-base-styles();
+  width: 100%;
+  margin-bottom: @computed-line-height;
+  border-collapse: separate;
+  border: 1px solid @table-border-color;
+  border-left: 0;
+  background-color: @table-bg;
+  table-layout: fixed;
   .border-radius( @base-border-radius );
 
   td, /* 1 */
   th { /* 1 */
+    padding: 4px 8px;
+    line-height: @base-line-height;
+    border-top: 1px solid @table-border-color;
+    border-left: 1px solid @table-border-color;
+    color: @gray-dark;
+    text-align: left;
+    vertical-align: top;
+
     &.text-center { text-align: center; }
     &.text-right { text-align: right; }
     &.text-justify { text-align: justify; }
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  // Previne borda dupla
+  caption + thead tr:first-child th,
+  caption + tbody tr:first-child th,
+  caption + tbody tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + tbody tr:first-child th,
+  colgroup + tbody tr:first-child td,
+  thead:first-child tr:first-child th,
+  tbody:first-child tr:first-child th,
+  tbody:first-child tr:first-child td,
+  tfoot:first-child tr:first-child td {
+    border-top: 0;
   }
 
   /* Arredonda canto superior esquerdo do primeiro tr */
@@ -119,31 +151,42 @@ tr.syo-datagrid-state-clicked {
  * 3. Permite que a borda seja exibida corretamente no caso de utilizar header na tabela do body
  */
 .syo-datagrid {
-  td, th {
+  td,
+  th {
     overflow: hidden;
   }
+
   table {
+    .syo-table;
     margin-bottom: 0;
   }
+
   .syo-datagrid-header {
     table {
       .border-radius-bottom( 0 );
-      thead tr th:first-child, thead tr th:last-child {
+
+      thead:last-child > tr:last-child > th:first-child,
+      thead:last-child > tr:last-child > th:last-child {
         .border-radius-bottom( 0 ); /* 1 */
       }
     }
   }
+
   .syo-datagrid-body {
     table {
       border-top-width: 0; /* 2 */
       .border-radius-top( 0 );
+
       thead tr:first-child {
-        th, td {
+        th,
+        td {
           border-top: 1px solid @table-border-color; /* 3 */
         }
       }
-      tbody tr:first-child {
-        td {
+
+      colgroup + tbody,
+      tbody:first-child {
+        > tr:first-child > td {
           .border-radius-top( 0 ); /* 1 */
         }
       }
@@ -157,15 +200,16 @@ tr.syo-datagrid-state-clicked {
 .syo-table > tfoot {
   padding: 8px;
   color: @gray-dark;
-  #gradient .vertical();
   text-shadow: 0 1px 0 #FFF;
+  #gradient .vertical();
 }
 
 .syo-datagrid-body.syo-datagrid-with-helper {
   table {
     .border-radius-bottom( 0 );
     border-bottom-width: 0;
-    tbody tr:last-child td {
+
+    tbody:last-child > tr:last-child > td {
       .border-radius-bottom( 0 );
     }
   }
@@ -183,59 +227,73 @@ tr.syo-datagrid-state-clicked {
 /*
  * 1. Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
  */
-.syo-table-striped > tbody {
-  /* 1 */
-  > tr:nth-child(even) > td,
-  > tr:nth-child(even) > th {
-    background-color: @table-stripe-color;
+.syo-table-striped {
+  // Utiliza-se seletores "nested" pra poder reutilizar no .syo-table-responsive
+  > tbody {
+    /* 1 */
+    > tr:nth-child(even) > td,
+    > tr:nth-child(even) > th {
+      background-color: @table-stripe-color;
+    }
   }
 }
 
 /* =================================================================================================================
    Tabela responsiva
    ================================================================================================================= */
-@media screen and ( max-width: @screen-small-max ) {
+@media screen and ( max-width: @screen-tiny-max ) {
   /*
-   * 1. Destaca o fim do thead com a borda
-   * 2. Evita uma borda dupla quando (1)
+   * 1. Faz tabelas não se parecerem com tabelas mais
+   * 2. Oculta os headers/footers, mas mantendo a acessibilidade
+   * 3. Evita borda dupla
    */
   .syo-table-responsive {
-    position: relative;
-    display: block;
-    width: 100%;
+    border: none;
+    .syo-table-striped;
 
-    > thead {
-      display: block;
-      float: left;
-      margin-right: -1px; /* 2 */
-      padding: 0;
+    &,
+    thead,
+    tbody,
+    tr,
+    td,
+    th {
+      display: block; /* 1 */
+    }
 
-      > tr {
-        display: block;
+    thead,
+    tfoot { /* 2 */
+      position: absolute;
+      top: -9999em;
+      left: -9999em;
+    }
 
-        > th {
-          display: block;
-          border-right: 1px solid @table-border-color; /* 1 */
-          text-align: right;
-        }
+    tr {
+      border: 1px solid @table-border-color;
+
+      + tr {
+        border-top: none; /* 3 */
       }
     }
 
-    > tbody {
+    th,
+    td {
       position: relative;
-      display: block;
-      width: auto;
-      overflow-x: auto;
-      white-space: nowrap;
+      padding-left: 45%;
+      border: none;
+      border-bottom: 1px solid @table-border-color;
+      white-space: normal;
+      text-align: left;
 
-      > tr {
-        display: inline-block;
-        vertical-align: top;
-
-        > td {
-          display: block;
-          text-align: left;
-        }
+      &:before {
+        position: absolute;
+        top: 4px;
+        left: 8px;
+        white-space: nowrap;
+        width: 40%;
+        padding-right: 10px;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-title);
       }
     }
   }

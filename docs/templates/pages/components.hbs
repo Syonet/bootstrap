@@ -1,4 +1,4 @@
-<aside class="col col-small-12 col-large-2" id="sidebar-wrapper">
+<aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
 	<ul class="syo-nav syo-nav-list" id="sidebar">
 		<li class="syo-nav-header"><i class="icon-flag"></i> Componentes</li>
 		<li><a href="#buttonset">Buttonset</a></li>
@@ -13,7 +13,7 @@
 	</ul>
 </aside>
 
-<div class="col col-small-12 col-large-10">
+<div class="col col-small-9 col-large-10">
 
 	<!-- Buttonset -->
 	<article id="buttonset">
@@ -46,6 +46,11 @@
 		<div class="syo-header syo-header-ruler">
 			<h2>Check List</h2>
 		</div>
+
+		<p>
+			Uma ótima substituição para a clássica lista de checkboxes ou radios, que são um
+			verdadeiro pesadelo para interfaces <i>touch screen</i>!
+		</p>
 
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
@@ -113,6 +118,12 @@
 				</ul>
 			</div>
 		</div>
+
+		<p>
+			Para implementar o Check List, lembre-se de sempre atribuir um <code>id</code> aos
+			checkboxes/radios, bem como um <code>&lt;label&gt;</code> que referencia tal valor no
+			atributo <code>for</code>, assim como está no código do exemplo anterior.
+		</p>
 	</article>
 
 	<!-- Input Row -->
@@ -128,7 +139,7 @@
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="row">
-					<div class="syo-input-row col col-large-6">
+					<div class="syo-input-row col col-medium-6">
 						<input type="text" placeholder="Nome">
 						<div class="syo-input-row-addon">
 							<button class="syo-button">
@@ -136,7 +147,7 @@
 							</button>
 						</div>
 					</div>
-					<div class="syo-input-row col col-large-6">
+					<div class="syo-input-row col col-medium-6">
 						<input type="text" placeholder="Digite sua pesquisa...">
 						<div class="syo-input-row-addon">
 							<button class="syo-button">
@@ -151,7 +162,7 @@
 			<strong>HTML:</strong>
 			<div class="prettyprint">
 				<div class="row">
-					<div class="syo-input-row col col-large-6">
+					<div class="syo-input-row col col-medium-6">
 						<input type="text" placeholder="Nome">
 						<div class="syo-input-row-addon">
 							<button class="syo-button">
@@ -159,7 +170,7 @@
 							</button>
 						</div>
 					</div>
-					<div class="syo-input-row col col-large-6">
+					<div class="syo-input-row col col-medium-6">
 						<input type="text" placeholder="Digite sua pesquisa...">
 						<div class="syo-input-row-addon">
 							<button class="syo-button">
@@ -241,7 +252,7 @@
 		<div class="syo-docs-example">
 			<div class="syo-docs-example-inner">
 				<div class="row">
-					<div class="col col-small-12 col-large-6">
+					<div class="col col-medium-6">
 						<div class="syo-block">
 							<div class="syo-block-title">
 								<div class="syo-block-title-toolbar syo-pull-left">
@@ -255,7 +266,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col col-small-12 col-large-6">
+					<div class="col col-medium-6">
 						<div class="syo-block">
 							<div class="syo-block-content">
 								Conteúdo
@@ -272,15 +283,34 @@
 				</div>
 			</div>
 			<div class="prettyprint">
-				<div class="syo-block span6">
-					<div class="syo-block-title">
-						Título do bloco
-						<div class="syo-block-title-toolbar syo-pull-left">
-							Toolbar
+				<div class="row">
+					<div class="col col-medium-6">
+						<div class="syo-block">
+							<div class="syo-block-title">
+								<div class="syo-block-title-toolbar syo-pull-left">
+									Toolbar
+								</div>
+
+								Título do bloco em cima
+							</div>
+							<div class="syo-block-content">
+								Conteúdo
+							</div>
 						</div>
 					</div>
-					<div class="syo-block-content">
-						Conteúdo
+					<div class="col col-medium-6">
+						<div class="syo-block">
+							<div class="syo-block-content">
+								Conteúdo
+							</div>
+							<div class="syo-block-title">
+								Título do bloco embaixo
+
+								<div class="syo-block-title-toolbar syo-pull-right">
+									Toolbar
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

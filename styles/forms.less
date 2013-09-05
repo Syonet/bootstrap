@@ -33,22 +33,26 @@ textarea {
   .border-radius( @input-border-radius );
   .transition( ~"box-shadow .15s linear, color .15s linear" );
   text-shadow: 0 1px 0 #FFF;
+
   &:hover {
     border-color: @input-hover-border;
     color: @input-hover-text;
     background-color: @input-hover-background;
     .box-shadow( 0 1px 2px rgb( 210, 210, 210 ) );
   }
+
   &:focus {
     outline: none; /* 2 */
     border-color: @input-focus-border;
     background-color: @input-background;
     .box-shadow( 0 1px 2px rgb( 210, 210, 210 ) );
   }
+
   &.input-block-level {
     display: block;
     width: 100%;
   }
+
   &[disabled],
   &.syo-disabled {
     // TODO: Precisa de "!important" aqui?
@@ -76,6 +80,7 @@ select[multiple] {
 select {
   padding: ( ( @input-height - @computed-line-height ) / 2 ) 2px; /* 1 */
   line-height: @input-height - 6px; /* 2 */
+
   option {
     text-shadow: none; /* 3 */
   }
@@ -99,9 +104,10 @@ fieldset {
 }
 
 legend {
-  padding: 0 10px;
+  padding: 0 8px;
   border: 1px solid @gray-light;
-  //#font .shorthand( @text-color, @base-line-height, @font-size-base - 1, @base-font-family, bold );
+  font-size: 80%;
+  font-weight: bold;
   background-color: @gray-lighter;
   .border-radius( @base-border-radius );
 }
@@ -113,7 +119,7 @@ label {
   display: inline-block;
   vertical-align: middle;
   #font .shorthand( @text-color, @input-height );
-  text-align: right;
+
   > input,
   + input,
   > select,
@@ -126,6 +132,7 @@ label {
       margin-left: 3px;
     }
   }
+
   > input[type="checkbox"],
   > input[type="radio"] {
     position: relative;
@@ -154,6 +161,7 @@ input, textarea, select, button {
 
   &.syo-field-inline {
     display: inline; /* 1 */
+
     input, select, textarea, button {
       margin-bottom: @computed-line-height / 2; /* 2 */
     }
@@ -172,8 +180,6 @@ input, textarea, select, button {
     top: .6em;
     vertical-align: top;
   }
-
-
 }
 
 /* =================================================================================================================
@@ -230,18 +236,5 @@ textarea:invalid {
 
   &.syo-success {
     color: @input-success-color;
-  }
-}
-
-/* =================================================================================================================
-   Layout Responsivo
-   ================================================================================================================= */
-
-/*
- * 1. Labels devem ficar alinhados à esquerda em resoluções pequenas.
- */
-@media screen and ( max-width: @screen-small-max ) {
-  label {
-    text-align: left; /* 1 */
   }
 }

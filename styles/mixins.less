@@ -163,6 +163,7 @@
     &:active,
     &.syo-active {
       border-color: @border;
+      color: @border;
       background: @bg;
     }
   }
@@ -179,16 +180,18 @@
     .spanX( @index - 1 );
   }
   .spanX( 0 ) { }
+
   .span( @columns ) {
     width: percentage( @columns / @columns-count );
   }
 
   // Offset
-  .offsetX(@index) when (@index > 0) {
+  .offsetX( @index ) when (@index > 0) {
     .offset-@{column-name}-@{index} { .offset(@index); }
     .offsetX(@index - 1);
   }
   .offsetX(0) { }
+
   .offset( @columns ) {
     margin-left: percentage( @columns / @columns-count );
   }
@@ -206,47 +209,6 @@
   margin-top: 0;
   margin-bottom: 0;
   padding: ( ( @navbar-height - @line-height ) / 2 ) ( @line-height / 1.5 );
-}
-
-// ====================================================================================================================
-// Tables
-// ====================================================================================================================
-
-// Isto está aqui basicamente para reaproveitamento entre o syo-data-table e syo-datagrid,
-// sem utilização de seletores complexos inúteis entre um e outro
-.table-base-styles() {
-  width: 100%;
-  margin-bottom: @computed-line-height;
-  border-collapse: separate;
-  border: 1px solid @table-border-color;
-  border-left: 0;
-  background-color: @table-bg;
-  table-layout: fixed;
-  td, th {
-    padding: 4px 8px;
-    line-height: @base-line-height;
-    border-top: 1px solid @table-border-color;
-    border-left: 1px solid @table-border-color;
-    color: @gray-dark;
-    text-align: left;
-    vertical-align: top;
-  }
-  th {
-    font-weight: bold;
-  }
-  // Previne borda dupla
-  caption + thead tr:first-child th,
-  caption + tbody tr:first-child th,
-  caption + tbody tr:first-child td,
-  colgroup + thead tr:first-child th,
-  colgroup + tbody tr:first-child th,
-  colgroup + tbody tr:first-child td,
-  thead:first-child tr:first-child th,
-  tbody:first-child tr:first-child th,
-  tbody:first-child tr:first-child td,
-  tfoot:first-child tr:first-child td {
-    border-top: 0;
-  }
 }
 
 // ====================================================================================================================
