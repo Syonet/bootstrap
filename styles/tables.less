@@ -2,18 +2,11 @@
    Base
    ================================================================================================================= */
 
-/*
- * 1. Tira o float: none para que seja possível definir larguras do grid em uma tabela qualquer
- */
 table {
   max-width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  td, th, col {
-    &[class*="span"] {
-      float: none; /* 1 */
-    }
-  }
+
   th small {
     font-weight: normal;
   }
@@ -27,18 +20,17 @@ table {
  * Estilos comuns pra todas as tabelas
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
  */
-table {
+.syo-table {
   .table-base-styles();
+  .border-radius( @base-border-radius );
+
   td, /* 1 */
   th { /* 1 */
     &.text-center { text-align: center; }
     &.text-right { text-align: right; }
     &.text-justify { text-align: justify; }
   }
-}
 
-table {
-  .border-radius( @base-border-radius );
   /* Arredonda canto superior esquerdo do primeiro tr */
   thead:first-child tr:first-child > th:first-child,
   tbody:first-child tr:first-child > td:first-child,
@@ -89,7 +81,7 @@ table {
   }
 }
 
-table > tbody > tr.syo-active {
+.syo-table > tbody > tr.syo-active {
   td, th {
     background-color: @spring-green;
   }
@@ -161,8 +153,8 @@ tr.syo-datagrid-state-clicked {
 
 .syo-datagrid-header th,
 .syo-datagrid-helper,
-table > thead,
-table > tfoot {
+.syo-table > thead,
+.syo-table > tfoot {
   padding: 8px;
   color: @gray-dark;
   #gradient .vertical();
