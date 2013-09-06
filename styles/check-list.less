@@ -9,14 +9,15 @@
  *  2.2. Checkbox marcado (.icon-check)
  *  2.3. Radio desmarcado (.icon-check)
  *  2.4. Radio marcado (.icon-check)
+ * 3. Sobrescreve o label em itens não-headers
  */
 .syo-check-list {
   margin-left: 0;
   margin-bottom: @computed-line-height;
   border: 1px solid @checklist-border-color;
-  .border-radius(@base-border-radius);
-  .box-shadow(0 1px 4px fade(#000, 10%));
   list-style: none;
+  .box-shadow(0 1px 4px fade(#000, 10%));
+  .border-radius( @base-border-radius );
 
   > li {
     border-bottom: 1px solid @checklist-border-color;
@@ -49,7 +50,7 @@
     label {
       display: block;
       margin-left: 0; /* 1 */
-      padding: (@computed-line-height / 3) (@computed-line-height / 2);
+      padding: ( @computed-line-height / 3 ) ( @computed-line-height / 2 );
       text-align: left; /* 1 */
       cursor: pointer;
 
@@ -67,16 +68,18 @@
 
     /* 2 */
     &:first-child {
-      &, > a {
-        .border-radius-top(@base-border-radius);
+      &,
+      > a {
+        .border-radius-top( @base-border-radius );
       }
     }
 
-    /* 3 */
     &:last-child {
       border-bottom: 0;
-      &, > a {
-        .border-radius-bottom(@base-border-radius);
+
+      &,
+      > a {
+        .border-radius-bottom( @base-border-radius );
       }
     }
   }
@@ -85,8 +88,18 @@
     padding: 8px 10px;
     color: @gray-dark;
     font-weight: bold;
-    font-size: floor(@font-size-base * 0.9);
+    font-size: floor( @font-size-base * .9 );
     #gradient .vertical();
     text-shadow: 0 1px 0 #fff;
+
+    /* 3 */
+    label {
+      padding: 0;
+      line-height: @base-line-height;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
   }
 }
