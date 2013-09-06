@@ -1,22 +1,67 @@
-.visible-small   { .responsive-visible(); }
+/* =================================================================================================================
+   Utilidades Responsivas Restritas
+   ================================================================================================================= */
+
+/* Tiny apenas */
+.visible-tiny    { .responsive-visible(); }
+.visible-small   { .responsive-invisible(); }
 .visible-medium  { .responsive-invisible(); }
 .visible-large   { .responsive-invisible(); }
 
-.hidden-small    { .responsive-invisible(); }
+.hidden-tiny     { .responsive-invisible(); }
+.hidden-small    { .responsive-visible(); }
 .hidden-medium   { .responsive-visible(); }
 .hidden-large    { .responsive-visible(); }
 
-@media ( min-width: @screen-medium ) {
-  .visible-small { .responsive-invisible(); }
-  .hidden-small  { .responsive-visible(); }
+@media ( min-width: @screen-small ) {
+  .visible-tiny { .responsive-invisible(); }
+  .hidden-tiny  { .responsive-visible(); }
 }
 
+/* Small apenas */
+@media ( min-width: @screen-small ) and ( max-width: @screen-small-max ) {
+  .visible-small { .responsive-visible(); }
+  .hidden-small  { .responsive-invisible(); }
+}
+
+/* Medium apenas */
 @media ( min-width: @screen-medium ) and ( max-width: @screen-medium-max ) {
   .visible-medium { .responsive-visible(); }
   .hidden-medium  { .responsive-invisible(); }
 }
 
+/* Large apenas */
 @media ( min-width: @screen-large ) {
   .visible-large { .responsive-visible(); }
   .hidden-large  { .responsive-invisible(); }
+}
+
+/* =================================================================================================================
+   Utilidades Responsivas Complexas
+   ================================================================================================================= */
+
+/* Small e abaixo */
+@media ( max-width: @screen-small-max ) {
+  .visible-small-below  { .responsive-visible(); }
+  .hidden-small-below   { .responsive-invisible(); }
+  .visible-medium-above { .responsive-invisible(); }
+}
+
+/* Small e acima */
+@media ( min-width: @screen-small ) {
+  .visible-small-above { .responsive-visible(); }
+  .hidden-small-above  { .responsive-invisible(); }
+}
+
+/* Medium e abaixo */
+@media ( max-width: @screen-medium-max ) {
+  .visible-medium-below { .responsive-visible(); }
+  .hidden-medium-below  { .responsive-invisible(); }
+}
+
+/* Medium e acima */
+@media ( min-width: @screen-medium ) {
+  .visible-medium-above { .responsive-visible(); }
+  .hidden-medium-above  { .responsive-invisible(); }
+  .visible-small-below  { .responsive-invisible(); }
 }
