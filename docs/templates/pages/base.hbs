@@ -1,4 +1,4 @@
-<aside class="col col-small-12 col-large-2" id="sidebar-wrapper">
+<aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
 	<ul class="syo-nav syo-nav-list" id="sidebar">
 		<li class="syo-nav-header"><i class="icon-css3"></i> CSS Base</li>
 		<li><a href="#grid">Grid</a></li>
@@ -13,7 +13,7 @@
 	</ul>
 </aside>
 
-<div class="col col-small-12 col-large-10">
+<div class="col col-small-9 col-large-10">
 
 	<!-- Grid -->
 	<article id="grid">
@@ -23,114 +23,177 @@
 		</div>
 		<p>
 			Grid responsivo, <em>mobile-first</em>, de 12 colunas.
-			Funciona bem com dispositivos de resoluções pequenas até grandes monitores.
-		</p>
-		<p>
-			Redimensione seu browser (ou visualize esta página em um dispositivo de resolução menor),
-			e observe que algumas das linhas tem larguras diferentes entre as resoluções.
+			Funciona bem com dispositivos de resoluções muito pequenas até grandes monitores.<br>
+			Confira na tabela a seguir as opções do grid:
 		</p>
 
-		<div class="syo-docs-example">
-			<div class="syo-docs-example-inner grid-example">
-				<div class="row">
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-4">4</div>
-				</div>
-				<div class="row">
-					<div class="col col-large-4 col-small-12">
-						<span class="hidden-small">4</span>
-						<span class="visible-small">12</span>
-					</div>
-					<div class="col col-large-4 col-small-6">
-						<span class="hidden-small">4</span>
-						<span class="visible-small">6</span>
-					</div>
-					<div class="col col-large-4 col-small-6">
-						<span class="hidden-small">4</span>
-						<span class="visible-small">6</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col col-large-7 col-small-12">
-						<span class="hidden-small">7</span>
-						<span class="visible-small">12</span>
-					</div>
-					<div class="col col-large-3 col-small-7">
-						<span class="hidden-small">3</span>
-						<span class="visible-small">7</span>
-					</div>
-					<div class="col col-large-2 col-small-5">
-						<span class="hidden-small">2</span>
-						<span class="visible-small">5</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col col-small-12">12</div>
-				</div>
-			</div>
-			<div class="prettyprint">
-				<div class="row">
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-4">4</div>
-				</div>
-				<div class="row">
-					<div class="col col-large-4 col-small-12">
-						<span class="hidden-small">4</span>
-						<span class="visible-small">12</span>
-					</div>
-					<div class="col col-large-4 col-small-6">
-						<span class="hidden-small">4</span>
-						<span class="visible-small">6</span>
-					</div>
-					<div class="col col-large-4 col-small-6">
-						<span class="hidden-small">4</span>
-						<span class="visible-small">6</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col col-large-6 col-small-12">6</div>
-					<div class="col col-large-3 col-small-6">
-						<span class="hidden-small">3</span>
-						<span class="visible-small">6</span>
-					</div>
-					<div class="col col-large-3 col-small-6">
-						<span class="hidden-small">3</span>
-						<span class="visible-small">6</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		<table class="syo-table syo-table-responsive">
+			<thead>
+				<tr>
+					<th></th>
+					<th>
+						Devices Minúsculos<br>
+						<small>Smartphones (< 768px)</small>
+					</th>
+					<th>
+						Devices Pequenos<br>
+						<small>Tablets (≥ 768px)</small>
+					</th>
+					<th>
+						Devices Médios<br>
+						<small>Desktops (≥ 980px)</small>
+					</th>
+					<th>
+						Devices Grandes<br>
+						<small>Desktops (≥ 1200px)</small>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th data-title="Opção"># de colunas</th>
+					<td data-title="Todas resoluções" colspan="4">12</td>
+				</tr>
+				<tr>
+					<th data-title="Opção">Prefixo das classes</th>
+					<td data-title="Devices Minúsculos"><code>.col-tiny-</code></td>
+					<td data-title="Devices Pequenos"><code>.col-small-</code></td>
+					<td data-title="Devices Médios"><code>.col-medium-</code></td>
+					<td data-title="Devices Grandes"><code>.col-large-</code></td>
+				</tr>
+				<tr>
+					<th data-title="Opção">Grids aninhados</th>
+					<td data-title="Todas resoluções" colspan="4">Sim</td>
+				</tr>
+				<tr>
+					<th data-title="Opção">Offsets</th>
+					<td data-title="Todas resoluções" colspan="4">Sim</td>
+				</tr>
+			</tbody>
+		</table>
 
-		<p>Para dar um distanciamento extra entre 2 elementos, basta usar uma classe <code>.offset-*</code>:</p>
-		<div class="syo-docs-example">
-			<div class="syo-docs-example-inner grid-example">
-				<div class="row">
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2 offset-small-2">2 offset 2</div>
-					<div class="col col-small-2 offset-small-2">2 offset 2</div>
-					<div class="col col-small-2">2</div>
-				</div>
-				<div class="row">
-					<div class="col col-small-2 offset-small-4">2 offset 4</div>
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2">4</div>
-				</div>
-			</div>
-			<div class="prettyprint">
-				<div class="row">
-					<div class="col col-small-2">2</div>
-					<div class="col col-small-2 offset-tiny-2">2 offset 2</div>
-					...
-				</div>
-			</div>
-		</div>
+		<section>
+			<h3>Exemplo do Grid</h3>
+			<p>
+				Redimensione seu browser (ou visualize esta página em um dispositivo de resolução menor),
+				e observe que algumas das linhas tem larguras diferentes entre as resoluções.
+			</p>
 
+			<div class="syo-docs-example">
+				<div class="syo-docs-example-inner grid-example">
+					<div class="row">
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-4">4</div>
+					</div>
+					<div class="row">
+						<div class="col col-medium-4 col-small-12">
+							<span class="visible-medium-above">4</span>
+							<span class="visible-small-below">12</span>
+						</div>
+						<div class="col col-medium-4 col-small-6">
+							<span class="visible-medium-above">4</span>
+							<span class="visible-small">6</span>
+							<span class="visible-tiny">12</span>
+						</div>
+						<div class="col col-medium-4 col-small-6">
+							<span class="visible-medium-above">4</span>
+							<span class="visible-small">6</span>
+							<span class="visible-tiny">12</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-medium-7 col-tiny-12">
+							<span class="visible-medium-above">7</span>
+							<span class="visible-small-below">12</span>
+						</div>
+						<div class="col col-medium-3 col-tiny-7">
+							<span class="visible-medium-above">3</span>
+							<span class="visible-small-below">7</span>
+						</div>
+						<div class="col col-medium-2 col-tiny-5">
+							<span class="visible-medium-above">2</span>
+							<span class="visible-small-below">5</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-tiny-12">12</div>
+					</div>
+				</div>
+				<div class="prettyprint">
+					<div class="row">
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-4">4</div>
+					</div>
+					<div class="row">
+						<div class="col col-medium-4 col-small-12">
+							<span class="visible-medium-above">4</span>
+							<span class="visible-small-below">12</span>
+						</div>
+						<div class="col col-medium-4 col-small-6">
+							<span class="visible-medium-above">4</span>
+							<span class="visible-small">6</span>
+							<span class="visible-tiny">12</span>
+						</div>
+						<div class="col col-medium-4 col-small-6">
+							<span class="visible-medium-above">4</span>
+							<span class="visible-small">6</span>
+							<span class="visible-tiny">12</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-medium-7 col-tiny-12">
+							<span class="visible-medium-above">7</span>
+							<span class="visible-small-below">12</span>
+						</div>
+						<div class="col col-medium-3 col-tiny-7">
+							<span class="visible-medium-above">3</span>
+							<span class="visible-small-below">7</span>
+						</div>
+						<div class="col col-medium-2 col-tiny-5">
+							<span class="visible-medium-above">2</span>
+							<span class="visible-small-below">5</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-tiny-12">12</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Offsets</h3>
+
+			<p>Para dar um distanciamento extra entre 2 elementos, basta usar uma classe <code>.offset-*</code>:</p>
+			<div class="syo-docs-example">
+				<div class="syo-docs-example-inner grid-example">
+					<div class="row">
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2 offset-tiny-2">2 offset 2</div>
+						<div class="col col-tiny-2 offset-tiny-2">2 offset 2</div>
+						<div class="col col-tiny-2">2</div>
+					</div>
+					<div class="row">
+						<div class="col col-tiny-2 offset-tiny-4">2 offset 4</div>
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2">4</div>
+					</div>
+				</div>
+				<div class="prettyprint">
+					<div class="row">
+						<div class="col col-tiny-2">2</div>
+						<div class="col col-tiny-2 offset-tiny-2">2 offset 2</div>
+						...
+					</div>
+				</div>
+			</div>
+		</section>
 	</article>
 
 	<!-- Tipografia -->
@@ -375,24 +438,32 @@
 				<fieldset>
 					<legend>Grid</legend>
 					<div class="row">
-						<div class="syo-field col col-large-6">
-							<label for="input1" class="col col-large-6">Label alinhado à direita (default):</label>
-							<div class="col col-large-6">
+						<div class="syo-field col col-medium-8 col-large-6">
+							<label for="input1" class="col col-medium-4">Label:</label>
+							<div class="col col-medium-8">
 								<input type="text" id="input1" class="input-block-level">
 								<span class="syo-field-help">Texto de ajuda para o campo acima</span>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<label for="selectinput" class="col text-left">Label block:</label>
+						<div class="syo-field col col-medium-8 col-large-6">
+							<label for="input2" class="col col-medium-4">Outro Label:</label>
+							<div class="col col-medium-8">
+								<input type="text" id="input2" class="input-block-level" placeholder="Digite aqui">
+							</div>
+						</div>
 					</div>
 					<div class="row">
-						<div class="syo-field col col-large-6">
-							<select id="selectinput" class="input-block-level">
-								<option value="1">Opção 1</option>
-								<option value="2">Opção 2</option>
-								<option value="3">Opção 3</option>
-							</select>
+						<div class="syo-field col col-medium-8 col-large-6">
+							<label for="selectinput" class="col">Label block</label>
+							<div class="col">
+								<select id="selectinput" class="input-block-level">
+									<option value="1">Opção 1</option>
+									<option value="2">Opção 2</option>
+									<option value="3">Opção 3</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -400,8 +471,10 @@
 							ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
 							".special-input-block-level" no elemento pai
 						-->
-						<div class="syo-field col col-large-6 special-input-block-level">
-							<input type="text" data-widget="spinner">
+						<div class="syo-field col col-medium-8 col-large-6">
+							<div class="col special-input-block-level">
+								<input type="text" data-widget="spinner" placeholder="Spinner jQuery UI">
+							</div>
 						</div>
 					</div>
 				</fieldset>
@@ -438,24 +511,32 @@
 					<fieldset>
 						<legend>Grid</legend>
 						<div class="row">
-							<div class="syo-field col col-large-6">
-								<label for="input1" class="col col-large-6">Label alinhado à direita (default):</label>
-								<div class="col col-large-6">
+							<div class="syo-field col col-medium-6">
+								<label for="input1" class="col col-medium-4">Label:</label>
+								<div class="col col-medium-8">
 									<input type="text" id="input1" class="input-block-level">
 									<span class="syo-field-help">Texto de ajuda para o campo acima</span>
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<label for="selectinput" class="col text-left">Label block:</label>
+							<div class="syo-field col col-medium-6">
+								<label for="input2" class="col col-medium-4">Outro Label:</label>
+								<div class="col col-medium-8">
+									<input type="text" id="input2" class="input-block-level" placeholder="Digite aqui">
+								</div>
+							</div>
 						</div>
 						<div class="row">
-							<div class="syo-field col col-large-6">
-								<select id="selectinput" class="input-block-level">
-									<option value="1">Opção 1</option>
-									<option value="2">Opção 2</option>
-									<option value="3">Opção 3</option>
-								</select>
+							<div class="syo-field col col-medium-6">
+								<label for="selectinput" class="col">Label block</label>
+								<div class="col">
+									<select id="selectinput" class="input-block-level">
+										<option value="1">Opção 1</option>
+										<option value="2">Opção 2</option>
+										<option value="3">Opção 3</option>
+									</select>
+								</div>
 							</div>
 						</div>
 						<div class="row">
@@ -463,8 +544,10 @@
 								ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
 								".special-input-block-level" no elemento pai
 							-->
-							<div class="syo-field col col-large-6 special-input-block-level">
-								<input type="text" data-widget="spinner">
+							<div class="syo-field col col-medium-6">
+								<div class="col special-input-block-level">
+									<input type="text" data-widget="spinner">
+								</div>
 							</div>
 						</div>
 					</fieldset>
@@ -554,11 +637,11 @@
 			<code>&lt;button&gt;</code> para uma melhor renderização.
 		</p>
 
-		<table class="syo-table">
+		<table class="syo-table syo-table-responsive">
 			<colgroup>
-				<col class="col-large-2">
-				<col class="col-large-2">
-				<col class="col-large-8">
+				<col class="col-medium-2">
+				<col class="col-medium-2">
+				<col class="col-medium-8">
 			</colgroup>
 			<thead>
 				<tr>
@@ -569,19 +652,19 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><button type="button" class="syo-button">Botão</button></td>
-					<td><code>syo-button</code></td>
-					<td>Botão padrão para ações sem relevância.</td>
+					<td data-title="Botão"><button type="button" class="syo-button">Botão</button></td>
+					<td data-title="Classe"><code>syo-button</code></td>
+					<td data-title="Descrição">Botão padrão para ações sem relevância.</td>
 				</tr>
 				<tr>
-					<td><button type="button" class="syo-button syo-success">Sucesso</button></td>
-					<td><code>syo-button syo-success</code></td>
-					<td>Indica uma ação positiva ou de sucesso.</td>
+					<td data-title="Botão"><button type="button" class="syo-button syo-success">Sucesso</button></td>
+					<td data-title="Classe"><code>syo-button syo-success</code></td>
+					<td data-title="Descrição">Indica uma ação positiva ou de sucesso.</td>
 				</tr>
 				<tr>
-					<td><button type="button" class="syo-button syo-error">Erro</button></td>
-					<td><code>syo-button syo-error</code></td>
-					<td>Indica uma ação negativa ou de erro.</td>
+					<td data-title="Botão"><button type="button" class="syo-button syo-error">Erro</button></td>
+					<td data-title="Classe"><code>syo-button syo-error</code></td>
+					<td data-title="Descrição">Indica uma ação negativa ou de erro.</td>
 				</tr>
 			</tbody>
 		</table>
@@ -665,9 +748,9 @@
 			<div class="syo-docs-example-inner">
 				<table class="syo-table">
 					<colgroup>
-						<col class="col-large-3">
-						<col class="col-large-3">
-						<col class="col-large-6">
+						<col class="col-medium-3">
+						<col class="col-medium-3">
+						<col class="col-medium-6">
 					</colgroup>
 					<thead>
 						<tr>
@@ -702,12 +785,14 @@
 					</tfoot>
 				</table>
 			</div>
+
+			<strong>HTML:</strong>
 			<div class="prettyprint">
 				<table class="syo-table">
 					<colgroup>
-						<col class="col-large-3">
-						<col class="col-large-3">
-						<col class="col-large-6">
+						<col class="col-medium-3">
+						<col class="col-medium-3">
+						<col class="col-medium-6">
 					</colgroup>
 					<thead>
 						<tr>
@@ -743,108 +828,193 @@
 			</div>
 		</div>
 
-		<div class="syo-header syo-header-ruler">
-			<h4> Striped </h4>
-		</div>
-		<p>
-			Este estilo fornece um destaque adicional para cada linha de modo a criar um contraste e facilitar a
-			visualização dos dados. Basta adicionar a classe <code>.syo-table-striped</code> no elemento principal da
-			tabela.
-		</p>
-
-		<div class="syo-docs-example">
-			<div class="syo-docs-example-inner">
-				<table class="syo-table syo-table-striped">
-					<colgroup>
-						<col class="col-large-3">
-						<col class="col-large-3">
-						<col class="col-large-6">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>Coluna 1</th>
-							<th>Coluna 2</th>
-							<th>Coluna 3</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-							<td>Footer 1</td>
-							<td>Footer 2</td>
-							<td>Footer 3</td>
-						</tr>
-					</tfoot>
-				</table>
+		<section>
+			<div class="syo-header syo-header-ruler">
+				<h4> Striped </h4>
 			</div>
-			<div class="prettyprint">
-				<table class="syo-table syo-table-striped">
-					<colgroup>
-						<col class="col-large-3">
-						<col class="col-large-3">
-						<col class="col-large-6">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>Coluna 1</th>
-							<th>Coluna 2</th>
-							<th>Coluna 3</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-						<tr>
-							<td>Texto 1</td>
-							<td>Texto 2</td>
-							<td>Texto 3</td>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-							<td>Footer 1</td>
-							<td>Footer 2</td>
-							<td>Footer 3</td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
-		</div>
+			<p>
+				Este estilo fornece um destaque adicional para cada linha de modo a criar um contraste e facilitar a
+				visualização dos dados. Basta adicionar a classe <code>.syo-table-striped</code> no elemento principal da
+				tabela.
+			</p>
 
+			<div class="syo-docs-example">
+				<div class="syo-docs-example-inner">
+					<table class="syo-table syo-table-striped">
+						<colgroup>
+							<col class="col-medium-3">
+							<col class="col-medium-3">
+							<col class="col-medium-6">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>Coluna 1</th>
+								<th>Coluna 2</th>
+								<th>Coluna 3</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td>Footer 1</td>
+								<td>Footer 2</td>
+								<td>Footer 3</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<strong>HTML:</strong>
+				<div class="prettyprint">
+					<table class="syo-table syo-table-striped">
+						<colgroup>
+							<col class="col-medium-3">
+							<col class="col-medium-3">
+							<col class="col-medium-6">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>Coluna 1</th>
+								<th>Coluna 2</th>
+								<th>Coluna 3</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+							<tr>
+								<td>Texto 1</td>
+								<td>Texto 2</td>
+								<td>Texto 3</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td>Footer 1</td>
+								<td>Footer 2</td>
+								<td>Footer 3</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="syo-header syo-header-ruler">
+				<h4> Tabelas Responsivas </h4>
+			</div>
+
+			<p>
+				Uma das melhores funcionalidades das tabelas do Syonet Bootstrap é a possibilidade
+				de se utilizar tabelas responsivas.<br>
+				Para fazer uma tabela responsiva, siga as seguintes etapas:
+			</p>
+			<ol>
+				<li>Adicione a classe <code>.syo-table-responsive</code> na tabela</li>
+				<li>
+					Em cada <code>td</code> do <strong>conteúdo da tabela</strong>, adicione um
+					atributo <code>data-title</code> que conterá o valor daquela célula.
+				</li>
+				<li>Redimensione o navegador ou então acesse a página em um dispositivo menor.</li>
+			</ol>
+
+			<p>Veja no exemplo a seguir como fica:</p>
+			<div class="syo-docs-example">
+				<div class="syo-docs-example-inner">
+					<table class="syo-table syo-table-responsive">
+						<thead>
+							<tr>
+								<th>Coluna 1</th>
+								<th>Coluna 2</th>
+								<th>Coluna 3</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-title="Coluna 1">Texto 1</td>
+								<td data-title="Coluna 2">Texto 2</td>
+								<td data-title="Coluna 3">Texto 3</td>
+							</tr>
+							<tr>
+								<td data-title="Coluna 1">Texto 1</td>
+								<td data-title="Coluna 2">Texto 2</td>
+								<td data-title="Coluna 3">Texto 3</td>
+							</tr>
+							<tr>
+								<td data-title="Coluna 1">Texto 1</td>
+								<td data-title="Coluna 2">Texto 2</td>
+								<td data-title="Coluna 3">Texto 3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<strong>HTML:</strong>
+				<div class="prettyprint">
+					<table class="syo-table syo-table-responsive">
+						<thead>
+							<tr>
+								<th>Coluna 1</th>
+								<th>Coluna 2</th>
+								<th>Coluna 3</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-title="Coluna 1">Texto 1</td>
+								<td data-title="Coluna 2">Texto 2</td>
+								<td data-title="Coluna 3">Texto 3</td>
+							</tr>
+							<tr>
+								<td data-title="Coluna 1">Texto 1</td>
+								<td data-title="Coluna 2">Texto 2</td>
+								<td data-title="Coluna 3">Texto 3</td>
+							</tr>
+							<tr>
+								<td data-title="Coluna 1">Texto 1</td>
+								<td data-title="Coluna 2">Texto 2</td>
+								<td data-title="Coluna 3">Texto 3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 	</article>
 
 	<!-- Ícones -->
@@ -905,30 +1075,45 @@
 			<h4>Edição de Texto <small>Ferramentas</small></h4>
 		</div>
 		<ul class="icons">
-			<li><i class="icon-reorder"></i> icon-reorder</li>
-			<li><i class="icon-list-ul"></i> icon-list-ul</li>
-			<li><i class="icon-list-ol"></i> icon-list-ol</li>
-			<li><i class="icon-strikethrough"></i> icon-strikethrough</li>
-			<li><i class="icon-underline"></i> icon-underline</li>
+			<li><i class="icon-cut"></i> icon-cut</li>
+			<li><i class="icon-copy"></i> icon-copy</li>
+			<li><i class="icon-paste"></i> icon-paste</li>
 			<li><i class="icon-font"></i> icon-font</li>
+
+			<li><i class="icon-strikethrough"></i> icon-strikethrough</li>
 			<li><i class="icon-bold"></i> icon-bold</li>
 			<li><i class="icon-italic"></i> icon-italic</li>
-			<li><i class="icon-text-height"></i> icon-text-height</li>
-			<li><i class="icon-text-width"></i> icon-text-width</li>
+			<li><i class="icon-underline"></i> icon-underline</li>
+
+			<li><i class="icon-list-ul"></i> icon-list-ul</li>
+			<li><i class="icon-list-ol"></i> icon-list-ol</li>
+			<li><i class="icon-list"></i> icon-list</li>
+			<li><i class="icon-list-alt"></i> icon-list-alt</li>
+
 			<li><i class="icon-align-left"></i> icon-align-left</li>
 			<li><i class="icon-align-center"></i> icon-align-center</li>
 			<li><i class="icon-align-right"></i> icon-align-right</li>
 			<li><i class="icon-align-justify"></i> icon-align-justify</li>
-			<li><i class="icon-list"></i> icon-list</li>
+
 			<li><i class="icon-indent-left"></i> icon-indent-left</li>
 			<li><i class="icon-indent-right"></i> icon-indent-right</li>
-			<li><i class="icon-cut"></i> icon-cut</li>
-			<li><i class="icon-copy"></i> icon-copy</li>
-			<li><i class="icon-paste"></i> icon-paste</li>
+			<li><i class="icon-text-height"></i> icon-text-height</li>
+			<li><i class="icon-text-width"></i> icon-text-width</li>
+
 			<li><i class="icon-paper-clip"></i> icon-paper-clip</li>
 			<li><i class="icon-link"></i> icon-link</li>
 			<li><i class="icon-unlink"></i> icon-unlink</li>
 			<li><i class="icon-undo"></i> icon-undo</li>
+
+			<li><i class="icon-reorder"></i> icon-reorder</li>
+			<li><i class="icon-th"></i> icon-th</li>
+			<li><i class="icon-th-large"></i> icon-th-large</li>
+			<li><i class="icon-th-list"></i> icon-th-list</li>
+
+			<li><i class="icon-superscript"></i> icon-superscript</li>
+			<li><i class="icon-subscript"></i> icon-subscript</li>
+			<li><i class="icon-quote-left"></i> icon-quote-left</li>
+			<li><i class="icon-quote-right"></i> icon-quote-right</li>
 		</ul>
 
 		<div class="syo-header syo-header-ruler">
@@ -979,32 +1164,48 @@
 			<li><i class="icon-weibo"></i> icon-weibo</li>
 			<li><i class="icon-renren"></i> icon-renren</li>
 			<li><i class="icon-maxcdn"></i> icon-maxcdn</li>
+
+			<li><i class="icon-pinterest"></i> icon-pinterest</li>
+			<li><i class="icon-pinterest-sign"></i> icon-pinterest-sign</li>
+			<li><i class="icon-google-plus-sign"></i> icon-google-plus-sign</li>
+			<li><i class="icon-google-plus"></i> icon-google-plus</li>
+
+			<li><i class="icon-html5"></i> icon-html5</li>
+			<li><i class="icon-css3"></i> icon-css3</li>
 		</ul>
 
 		<div class="syo-header syo-header-ruler">
 			<h4>Controles de Mídia <small>Áudio e Vídeo</small></h4>
 		</div>
 		<ul class="icons">
-			<li><i class="icon-step-backward"></i> icon-step-backward</li>
-			<li><i class="icon-fast-backward"></i> icon-fast-backward</li>
-			<li><i class="icon-backward"></i> icon-backward</li>
 			<li><i class="icon-play"></i> icon-play</li>
 			<li><i class="icon-pause"></i> icon-pause</li>
 			<li><i class="icon-stop"></i> icon-stop</li>
-			<li><i class="icon-forward"></i> icon-forward</li>
+			<li><i class="icon-eject"></i> icon-eject</li>
+
+			<li><i class="icon-fast-backward"></i> icon-fast-backward</li>
+			<li><i class="icon-step-backward"></i> icon-step-backward</li>
+			<li><i class="icon-backward"></i> icon-backward</li>
+			<li><i class="icon-random"></i> icon-random</li>
+
 			<li><i class="icon-fast-forward"></i> icon-fast-forward</li>
 			<li><i class="icon-step-forward"></i> icon-step-forward</li>
-			<li><i class="icon-eject"></i> icon-eject</li>
-			<li><i class="icon-random"></i> icon-random</li>
+			<li><i class="icon-forward"></i> icon-forward</li>
 			<li><i class="icon-headphones"></i> icon-headphones</li>
+
 			<li><i class="icon-volume-off"></i> icon-volume-off</li>
 			<li><i class="icon-volume-down"></i> icon-volume-down</li>
 			<li><i class="icon-volume-up"></i> icon-volume-up</li>
 			<li><i class="icon-adjust"></i> icon-adjust</li>
-			<li><i class="icon-fullscreen"></i> icon-fullscreen</li>
+
 			<li><i class="icon-resize-full"></i> icon-resize-full</li>
 			<li><i class="icon-resize-small"></i> icon-resize-small</li>
+			<li><i class="icon-resize-vertical"></i> icon-resize-vertical</li>
+			<li><i class="icon-resize-horizontal"></i> icon-resize-horizontal</li>
+
+			<li><i class="icon-fullscreen"></i> icon-fullscreen</li>
 			<li><i class="icon-play-circle"></i> icon-play-circle</li>
+			<li><i class="icon-play-sign"></i> icon-play-sign</li>
 			<li><i class="icon-repeat"></i> icon-repeat</li>
 		</ul>
 
@@ -1013,20 +1214,27 @@
 		</div>
 		<ul class="icons">
 			<li><i class="icon-search"></i> icon-search</li>
-			<li><i class="icon-envelope"></i> icon-envelope</li>
-			<li><i class="icon-upload-alt"></i> icon-upload-alt</li>
 			<li><i class="icon-home"></i> icon-home</li>
+			<li><i class="icon-envelope"></i> icon-envelope</li>
 			<li><i class="icon-signal"></i> icon-signal</li>
+
+			<li><i class="icon-upload-alt"></i> icon-upload-alt</li>
+			<li><i class="icon-upload"></i> icon-upload</li>
 			<li><i class="icon-download-alt"></i> icon-download-alt</li>
 			<li><i class="icon-download"></i> icon-download</li>
-			<li><i class="icon-upload"></i> icon-upload</li>
-			<li><i class="icon-inbox"></i> icon-inbox</li>
-			<li><i class="icon-bullhorn"></i> icon-bullhorn</li>
-			<li><i class="icon-certificate"></i> icon-certificate</li>
-			<li><i class="icon-filter"></i> icon-filter</li>
+
 			<li><i class="icon-cloud-download"></i> icon-cloud-download</li>
 			<li><i class="icon-cloud-upload"></i> icon-cloud-upload</li>
+			<li><i class="icon-inbox"></i> icon-inbox</li>
+			<li><i class="icon-bullhorn"></i> icon-bullhorn</li>
+
+			<li><i class="icon-certificate"></i> icon-certificate</li>
+			<li><i class="icon-filter"></i> icon-filter</li>
 			<li><i class="icon-rss"></i> icon-rss</li>
+			<li><i class="icon-rss-sign"></i> icon-rss-sign</li>
+
+			<li><i class="icon-dashboard"></i> icon-dashboard</li>
+			<li><i class="icon-sitemap"></i> icon-sitemap</li>
 		</ul>
 
 		<div class="syo-header syo-header-ruler">
@@ -1040,9 +1248,6 @@
 			<li><i class="icon-star-empty"></i> icon-star-empty</li>
 			<li><i class="icon-user"></i> icon-user</li>
 			<li><i class="icon-film"></i> icon-film</li>
-			<li><i class="icon-th-large"></i> icon-th-large</li>
-			<li><i class="icon-th"></i> icon-th</li>
-			<li><i class="icon-th-list"></i> icon-th-list</li>
 			<li><i class="icon-ok"></i> icon-ok</li>
 			<li><i class="icon-remove"></i> icon-remove</li>
 			<li><i class="icon-zoom-in"></i> icon-zoom-in</li>
@@ -1054,7 +1259,6 @@
 			<li><i class="icon-time"></i> icon-time</li>
 			<li><i class="icon-road"></i> icon-road</li>
 			<li><i class="icon-refresh"></i> icon-refresh</li>
-			<li><i class="icon-list-alt"></i> icon-list-alt</li>
 			<li><i class="icon-lock"></i> icon-lock</li>
 			<li><i class="icon-flag"></i> icon-flag</li>
 			<li><i class="icon-qrcode"></i> icon-qrcode</li>
@@ -1103,8 +1307,6 @@
 			<li><i class="icon-shopping-cart"></i> icon-shopping-cart</li>
 			<li><i class="icon-folder-close"></i> icon-folder-close</li>
 			<li><i class="icon-folder-open"></i> icon-folder-open</li>
-			<li><i class="icon-resize-vertical"></i> icon-resize-vertical</li>
-			<li><i class="icon-resize-horizontal"></i> icon-resize-horizontal</li>
 			<li><i class="icon-bar-chart"></i> icon-bar-chart</li>
 			<li><i class="icon-camera-retro"></i> icon-camera-retro</li>
 			<li><i class="icon-key"></i> icon-key</li>
@@ -1140,10 +1342,6 @@
 			<li><i class="icon-table"></i> icon-table</li>
 			<li><i class="icon-magic"></i> icon-magic</li>
 			<li><i class="icon-truck"></i> icon-truck</li>
-			<li><i class="icon-pinterest"></i> icon-pinterest</li>
-			<li><i class="icon-pinterest-sign"></i> icon-pinterest-sign</li>
-			<li><i class="icon-google-plus-sign"></i> icon-google-plus-sign</li>
-			<li><i class="icon-google-plus"></i> icon-google-plus</li>
 			<li><i class="icon-money"></i> icon-money</li>
 			<li><i class="icon-columns"></i> icon-columns</li>
 			<li><i class="icon-sort"></i> icon-sort</li>
@@ -1151,11 +1349,9 @@
 			<li><i class="icon-sort-up"></i> icon-sort-up</li>
 			<li><i class="icon-envelope-alt"></i> icon-envelope-alt</li>
 			<li><i class="icon-legal"></i> icon-legal</li>
-			<li><i class="icon-dashboard"></i> icon-dashboard</li>
 			<li><i class="icon-comment-alt"></i> icon-comment-alt</li>
 			<li><i class="icon-comments-alt"></i> icon-comments-alt</li>
 			<li><i class="icon-bolt"></i> icon-bolt</li>
-			<li><i class="icon-sitemap"></i> icon-sitemap</li>
 			<li><i class="icon-umbrella"></i> icon-umbrella</li>
 			<li><i class="icon-lightbulb"></i> icon-lightbulb</li>
 			<li><i class="icon-exchange"></i> icon-exchange</li>
@@ -1179,8 +1375,6 @@
 			<li><i class="icon-tablet"></i> icon-tablet</li>
 			<li><i class="icon-mobile"></i> icon-mobile</li>
 			<li><i class="icon-circle-blank"></i> icon-circle-blank</li>
-			<li><i class="icon-quote-left"></i> icon-quote-left</li>
-			<li><i class="icon-quote-right"></i> icon-quote-right</li>
 			<li><i class="icon-spinner"></i> icon-spinner</li>
 			<li><i class="icon-circle"></i> icon-circle</li>
 			<li><i class="icon-reply"></i> icon-reply</li>
@@ -1205,8 +1399,6 @@
 			<li><i class="icon-question"></i> icon-question</li>
 			<li><i class="icon-info"></i> icon-info</li>
 			<li><i class="icon-exclamation"></i> icon-exclamation</li>
-			<li><i class="icon-superscript"></i> icon-superscript</li>
-			<li><i class="icon-subscript"></i> icon-subscript</li>
 			<li><i class="icon-eraser"></i> icon-eraser</li>
 			<li><i class="icon-puzzle"></i> icon-puzzle</li>
 			<li><i class="icon-microphone"></i> icon-microphone</li>
@@ -1215,15 +1407,11 @@
 			<li><i class="icon-calendar-empty"></i> icon-calendar-empty</li>
 			<li><i class="icon-fire-extinguisher"></i> icon-fire-extinguisher</li>
 			<li><i class="icon-rocket"></i> icon-rocket</li>
-			<li><i class="icon-html5"></i> icon-html5</li>
-			<li><i class="icon-css3"></i> icon-css3</li>
 			<li><i class="icon-anchor"></i> icon-anchor</li>
 			<li><i class="icon-unlock-alt"></i> icon-unlock-alt</li>
 			<li><i class="icon-bullseye"></i> icon-bullseye</li>
 			<li><i class="icon-ellipsis-horizontal"></i> icon-ellipsis-horizontal</li>
 			<li><i class="icon-ellipsis-vertical"></i> icon-ellipsis-vertical</li>
-			<li><i class="icon-rss-sign"></i> icon-rss-sign</li>
-			<li><i class="icon-play-sign"></i> icon-play-sign</li>
 			<li><i class="icon-ticket"></i> icon-ticket</li>
 			<li><i class="icon-minus-sign-alt"></i> icon-minus-sign-alt</li>
 			<li><i class="icon-check-minus"></i> icon-check-minus</li>
@@ -1283,55 +1471,76 @@
 		</div>
 		<p>
 			Para facilitar o desenvolvimento responsivo, utilize estas classes, que exibem/ocultam
-			conteúdo por tamanho de telas.<br>
+			conteúdo por tamanho de tela.<br>
 			Abaixo está uma tabela com as classes disponíveis e o seu efeito em uma tela diferente.
 		</p>
 
-		<table class="syo-table responsive-table">
+		<table class="syo-table syo-table-responsive responsive-table">
 			<thead>
 				<tr>
 					<th>Classe</th>
-					<th>Pequeno <small>(até 767px)</small></th>
-					<th>Médio <small>(de 768px a 979px)</small></th>
-					<th>Grande <small>(maior ou igual a 980px)</small></th>
+					<th>Minúsculo <small>< 768px</small></th>
+					<th>Pequeno <small>≥ 768px</small></th>
+					<th>Médio <small>≥ 980px</small></th>
+					<th>Grandes <small>≥ 1200px</small></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><code>.visible-small</code></td>
-					<td class="visible">Visível</td>
-					<td class="hidden">Oculto</td>
-					<td class="hidden">Oculto</td>
+					<td data-title="Classe"><code>.visible-tiny</code></td>
+					<td data-title="Minúsculo - < 768px" class="visible">Visível</td>
+					<td data-title="Pequeno - ≥ 768px" class="hidden">Oculto</td>
+					<td data-title="Médio - ≥ 980px" class="hidden">Oculto</td>
+					<td data-title="Grande - ≥ 1200px" class="hidden">Oculto</td>
 				</tr>
 				<tr>
-					<td><code>.hidden-small</code></td>
-					<td class="hidden">Oculto</td>
-					<td class="visible">Visível</td>
-					<td class="visible">Visível</td>
+					<td data-title="Classe"><code>.hidden-tiny</code></td>
+					<td data-title="Minúsculo - < 768px" class="hidden">Oculto</td>
+					<td data-title="Pequeno - ≥ 768px" class="visible">Visível</td>
+					<td data-title="Médio - ≥ 980px" class="visible">Visível</td>
+					<td data-title="Grande - ≥ 1200px" class="visible">Visível</td>
 				</tr>
 				<tr>
-					<td><code>.visible-small</code></td>
-					<td class="hidden">Oculto</td>
-					<td class="visible">Visível</td>
-					<td class="hidden">Oculto</td>
+					<td data-title="Classe"><code>.visible-small</code></td>
+					<td data-title="Minúsculo - < 768px" class="hidden">Oculto</td>
+					<td data-title="Pequeno - ≥ 768px" class="visible">Visível</td>
+					<td data-title="Médio - ≥ 980px" class="hidden">Oculto</td>
+					<td data-title="Grande - ≥ 1200px" class="hidden">Oculto</td>
 				</tr>
 				<tr>
-					<td><code>.hidden-small</code></td>
-					<td class="visible">Visível</td>
-					<td class="hidden">Oculto</td>
-					<td class="visible">Visível</td>
+					<td data-title="Classe"><code>.hidden-small</code></td>
+					<td data-title="Minúsculo - < 768px" class="visible">Visível</td>
+					<td data-title="Pequeno - ≥ 768px" class="hidden">Oculto</td>
+					<td data-title="Médio - ≥ 980px" class="visible">Visível</td>
+					<td data-title="Grande - ≥ 1200px" class="visible">Visível</td>
 				</tr>
 				<tr>
-					<td><code>.visible-large</code></td>
-					<td class="hidden">Oculto</td>
-					<td class="hidden">Oculto</td>
-					<td class="visible">Visível</td>
+					<td data-title="Classe"><code>.visible-medium</code></td>
+					<td data-title="Minúsculo - < 768px" class="hidden">Oculto</td>
+					<td data-title="Pequeno - ≥ 768px" class="hidden">Oculto</td>
+					<td data-title="Médio - ≥ 980px" class="visible">Visível</td>
+					<td data-title="Grande - ≥ 1200px" class="hidden">Oculto</td>
 				</tr>
 				<tr>
-					<td><code>.hidden-large</code></td>
-					<td class="visible">Visível</td>
-					<td class="visible">Visível</td>
-					<td class="hidden">Oculto</td>
+					<td data-title="Classe"><code>.hidden-medium</code></td>
+					<td data-title="Minúsculo - < 768px" class="visible">Visível</td>
+					<td data-title="Pequeno - ≥ 768px" class="visible">Visível</td>
+					<td data-title="Médio - ≥ 980px" class="hidden">Oculto</td>
+					<td data-title="Grande - ≥ 1200px" class="visible">Visível</td>
+				</tr>
+				<tr>
+					<td data-title="Classe"><code>.visible-large</code></td>
+					<td data-title="Minúsculo - < 768px" class="hidden">Oculto</td>
+					<td data-title="Pequeno - ≥ 768px" class="hidden">Oculto</td>
+					<td data-title="Médio - ≥ 980px" class="hidden">Oculto</td>
+					<td data-title="Grande - ≥ 1200px" class="visible">Visível</td>
+				</tr>
+				<tr>
+					<td data-title="Classe"><code>.hidden-large</code></td>
+					<td data-title="Minúsculo - < 768px" class="visible">Visível</td>
+					<td data-title="Pequeno - ≥ 768px" class="visible">Visível</td>
+					<td data-title="Médio - ≥ 980px" class="visible">Visível</td>
+					<td data-title="Grande - ≥ 1200px" class="hidden">Oculto</td>
 				</tr>
 			</tbody>
 		</table>

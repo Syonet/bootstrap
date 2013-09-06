@@ -1,3 +1,7 @@
+/* =================================================================================================================
+   Grid
+   ================================================================================================================= */
+
 .row {
   .clear-float();
 
@@ -20,9 +24,33 @@
 }
 
 @media only screen {
+  #grid( tiny );
+
+  .syo-field label[class*="col-tiny-"] {
+    text-align: right;
+  }
+}
+
+@media screen and ( min-width: @screen-small ) {
   #grid( small );
+
+  .syo-field label[class*="col-small-"] {
+    text-align: right;
+  }
 }
 
 @media screen and ( min-width: @screen-medium ) {
+  #grid( medium );
+
+  .syo-field label[class*="col-medium-"] {
+    text-align: right;
+  }
+}
+
+@media screen and ( min-width: @screen-large ) {
   #grid( large );
+
+  .syo-field label[class*="col-large-"] {
+    text-align: right;
+  }
 }
