@@ -50,6 +50,7 @@
 // ====================================================================================================================
 
 @component-height: 28px;
+@component-small-factor: 0.9;
 @component-large-factor: 1.25;
 
 @padding-base-vertical: ( @component-height - @computed-line-height ) / 2;
@@ -68,7 +69,8 @@
 // ====================================================================================================================
 
 @font-size-base: 14px;
-@font-size-large: @font-size-base * @component-large-factor;
+@font-size-small: ceil( @font-size-base * @component-small-factor );
+@font-size-large: floor( @font-size-base * @component-large-factor );
 
 @text-color: #000;
 @computed-line-height: 20px;
