@@ -80,7 +80,7 @@
 			var eventData, $oldActiveRow;
 			var $row = $( e.currentTarget );
 			var clickedClass = getStateClass( "clicked" );
-			
+
 			if ( isRowDisabled( $row ) ) {
 				return;
 			}
@@ -145,7 +145,7 @@
 			// Se tem algum footer, adiciona uma classe mais
 			this.components.body.toggleClass(
 				classes.bodyWithHelper,
-				this.components.helper.length
+				this.components.helper.length > 0
 			);
 		},
 
