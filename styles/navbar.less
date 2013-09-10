@@ -19,7 +19,7 @@
   #gradient .brand();
 
   a {
-    color: @gray;
+    color: lighten( @gray, 10% );
   }
 
   > .syo-navbar-inner {
@@ -61,8 +61,7 @@
         .navbar-spacing();
 
         &:hover {
-          color: @gray-darker;
-          .transition( ~"color 0.1s linear" );
+          color: #000;
         }
       }
 
