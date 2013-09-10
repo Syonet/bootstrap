@@ -116,7 +116,7 @@
 }
 
 #gradient {
-  .vertical( @start-color: @component-bg-light, @end-color: @component-bg ) {
+  .vertical( @start-color, @end-color ) {
     background-color: mix( @start-color, @end-color, 60% );
     background-image: -moz-linear-gradient( top, @start-color, @end-color ); // FF 3.6+
     background-image: -webkit-gradient( linear, 0 0, 0 100%, from( @start-color ), to( @end-color ) ); // Safari 4+, Chrome 2+
@@ -130,6 +130,10 @@
         argb( @start-color ), argb( @end-color )
       )
     ); // IE9 and down
+  }
+
+  .brand( @brand-color: @brand-default ) {
+    .vertical( lighten( @brand-color, 5% ), @brand-color );
   }
 }
 

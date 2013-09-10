@@ -17,10 +17,13 @@
 // Componentes
 // ====================================================================================================================
 
-@component-bg: @gray-lighter;
-@component-bg-light: lighten( @component-bg, 5% );
-@component-bg-hover: @gray-lighter;
-@component-border-hover: darken( @gray-light, 10% );
+@brand-default: #EEE;
+@brand-default-hover: #EEE;
+@brand-default-light: lighten( @brand-default, 5% );
+@brand-default-border: #C8C8C8;
+
+@brand-error: #D9534F;
+@brand-success: #5CB85C;
 
 // ====================================================================================================================
 // Imagens/Fontes
@@ -99,17 +102,15 @@
 @input-disabled-text: @gray-light;
 
 // Input - status - success
-@input-success-color: #5CB85C;
+@input-success-color: @brand-success;
 @input-success-border: darken( @input-success-color, 15% );
 
 // Input - status - error
-@input-error-color: #D9534F;
+@input-error-color: @brand-error;
 @input-error-border: darken( @input-error-color, 15% );
 
 // Background de Buttons
 @button-default-bg: @gray-lighter;
-@button-success-bg: @input-success-color;
-@button-error-bg: @input-error-color;
 @button-bg-transition: background .15s linear;
 
 // ====================================================================================================================
@@ -124,10 +125,11 @@
 // Paginação
 // ====================================================================================================================
 
-@pagination-item-background: #FFF;
-@pagination-hover-background: lighten( @gray-lighter, 2% );
+@pagination-item-bg: #FFF;
+@pagination-hover-bg: lighten( @gray-lighter, 2% );
 @pagination-disabled-text: @gray-light;
 @pagination-border: fade( @gray-light, 70% );
+@pagination-border-hover: @gray-light;
 
 // ====================================================================================================================
 // Blocos
@@ -161,9 +163,16 @@
 // Popover
 // ====================================================================================================================
 
-@popover-border: darken( @component-bg, 15% );
 @popover-arrow-size: ( @computed-line-height / 2 );
 @popover-zindex: 1000;
+
+// ====================================================================================================================
+// Badges
+// ====================================================================================================================
+
+@badge-default: darken( @brand-default, 25% );
+@badge-success: @brand-success;
+@badge-error: @brand-error;
 
 // ====================================================================================================================
 // Grid
@@ -194,6 +203,7 @@
 @jq-highlight-border: #456B5A;
 
 @jq-border: @gray-light;
+@jq-border-hover: @gray;
 @jq-overlay: fade( @gray-light, 40% );
 
 // Paths de imagens do jQuery UI

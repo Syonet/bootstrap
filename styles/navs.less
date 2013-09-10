@@ -6,11 +6,11 @@
  * Estilos globais de componentes Nav
  * 1. Melhora visualização da outline no conteúdo esquerdo da navbar
  */
-ol.syo-nav,
-ul.syo-nav {
+.syo-nav {
   margin-left: 1px; /* 1 */
   margin-bottom: @computed-line-height;
   list-style: none;
+
   a {
     text-decoration: none;
   }
@@ -25,11 +25,10 @@ ul.syo-nav {
  * 2. Corrige o border-radius do primeiro elemento
  * 3. Corrige o border-radius do último elemento
  */
-ul.syo-nav-list,
-ol.syo-nav-list {
+.syo-nav-list {
   border: 1px solid @nav-border-color;
-  .border-radius(@base-border-radius);
-  .box-shadow(0 1px 4px fade(#000, 10%));
+  .border-radius( @base-border-radius );
+  .box-shadow( 0 1px 4px fade( #000, 10% ) );
 
   > li {
     border-bottom: 1px solid @nav-border-color;
@@ -37,9 +36,10 @@ ol.syo-nav-list {
 
     > a {
       display: block;
-      padding: (@computed-line-height / 3) (@computed-line-height / 2);
+      padding: ( @computed-line-height / 3 ) ( @computed-line-height / 2 );
+
       &:hover {
-        background: @component-bg-hover;
+        background: @brand-default-hover;
       }
     }
 
@@ -48,23 +48,24 @@ ol.syo-nav-list {
       padding: 8px 10px;
       color: @gray-dark;
       font-weight: bold;
-      font-size: floor(@font-size-base * 0.9);
-      #gradient .vertical();
+      font-size: floor( @font-size-base * .9 );
       text-shadow: 0 1px 0 #fff;
+      #gradient .brand();
     }
 
     /* 2 */
     &:first-child {
       &, > a {
-        .border-radius-top(@base-border-radius);
+        .border-radius-top( @base-border-radius );
       }
     }
 
     /* 3 */
     &:last-child {
       border-bottom: 0;
+
       &, > a {
-        .border-radius-bottom(@base-border-radius);
+        .border-radius-bottom( @base-border-radius );
       }
     }
   }

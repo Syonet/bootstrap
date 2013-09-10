@@ -29,9 +29,9 @@
 
 .ui-widget-header {
   border: 1px solid @jq-border;
-  #gradient .vertical();
   color: @jq-text-color;
   font-weight: bold;
+  #gradient .brand();
 }
 
 .ui-widget-header a {
@@ -49,9 +49,9 @@
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid @jq-border;
-  #gradient .vertical();
   font-weight: normal;
   color: #555;
+  #gradient .brand();
   .transition( ~"background 0.15s linear, border 0.15s linear" );
 
   &:active {
@@ -73,10 +73,10 @@
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
   border: 1px solid #999;
-  #gradient .vertical();
   font-weight: normal;
   color: @input-hover-text;
-  border-color: @component-border-hover;
+  border-color: @jq-border-hover;
+  #gradient .brand();
 }
 
 .ui-state-hover a,
@@ -91,9 +91,9 @@
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
   border: 1px solid @jq-border;
-  background: #FFF;
   font-weight: normal;
   color: @input-hover-text;
+  background: #FFF;
 }
 
 .ui-state-active a,
@@ -111,8 +111,8 @@
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
   border: 1px solid @jq-highlight-border;
-  background: @jq-highlight-color;
   color: #363636;
+  background: @jq-highlight-color;
 }
 
 .ui-state-highlight a,
@@ -125,8 +125,8 @@
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
   border: 1px solid #CD0A0A;
-  background: #FEF1EC url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
   color: #CD0A0A;
+  background: #FEF1EC url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
 }
 
 .ui-state-error a,
@@ -165,7 +165,7 @@
  * 1. For IE8 - See jqueryUI #6059
  */
 .ui-state-disabled .ui-icon {
-  filter:Alpha(Opacity=35); /* 1 */
+  filter: Alpha(Opacity=35); /* 1 */
 }
 
 /* =================================================================================================================
@@ -181,33 +181,33 @@
 
 .ui-icon,
 .ui-widget-content .ui-icon {
-  background-image: url(@jq-icons);
+  background-image: url( @jq-icons );
 }
 
 .ui-widget-header .ui-icon {
-  background-image: url(@jq-icons);
+  background-image: url( @jq-icons );
 }
 
 .ui-state-default .ui-icon {
-  background-image: url(@jq-icons2);
+  background-image: url( @jq-icons2 );
 }
 
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {
-  background-image: url(@jq-icons-active);
+  background-image: url( @jq-icons-active );
 }
 
 .ui-state-active .ui-icon {
-  background-image: url(@jq-icons-active);
+  background-image: url( @jq-icons-active );
 }
 
 .ui-state-highlight .ui-icon {
-  background-image: url(@jq-icons-highlight);
+  background-image: url( @jq-icons-highlight );
 }
 
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url(@jq-icons-error);
+  background-image: url( @jq-icons-error );
 }
 
 /* positioning */
@@ -451,7 +451,7 @@
 
   &.ui-state-active,
   &.ui-state-hover {
-    background: @component-bg;
+    background: @brand-default;
     border-color: @input-hover-border;
   }
 }
@@ -520,7 +520,7 @@ input.ui-button {
   .border-radius( @input-border-radius ); /* 1 */
 
   .ui-icon {
-    background-image: url(@jq-icons2); /* 2 */
+    background-image: url( @jq-icons2 ); /* 2 */
   }
 
   &.ui-state-focus {
@@ -528,7 +528,7 @@ input.ui-button {
   }
 
   &.ui-state-hover .ui-icon { /* 4 */
-    background-image: url(@jq-icons-hover);
+    background-image: url( @jq-icons-hover );
   }
 }
 
@@ -640,15 +640,15 @@ input.ui-button {
   a {
     padding: 5px 0.4em;
     border: none;
-    border-bottom: 1px solid darken( @component-bg, 5% );
+    border-bottom: 1px solid darken( @brand-default, 5% );
     line-height: inherit;
     cursor: pointer;
     .border-radius( 0 );
 
     &.ui-state-focus {
       border: none;
-      border-bottom: 1px solid darken( @component-bg, 5% );
-      background: @component-bg-hover;
+      border-bottom: 1px solid darken( @brand-default, 5% );
+      background: @brand-default-hover;
     }
 
     &.ui-state-focus,
@@ -685,6 +685,12 @@ input.ui-button {
   .box-sizing( content-box );
 }
 
-.ui-tooltip {
+/*
+ * Seletor necessário para sobrescrever especificidade do core style do jQuery UI
+ */
+body .ui-tooltip {
+  border-width: 1px;
   font-size: floor( @font-size-base * .9 );
+  .border-radius( 4px );
+  .box-shadow( 0 0 5px 3px fade( #000, 15% ) );
 }

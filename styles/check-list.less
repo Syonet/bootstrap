@@ -14,13 +14,13 @@
 .syo-check-list {
   margin-left: 0;
   margin-bottom: @computed-line-height;
-  border: 1px solid @checklist-border-color;
+  border: 1px solid @brand-default-border;
   list-style: none;
   .box-shadow(0 1px 4px fade(#000, 10%));
   .border-radius( @base-border-radius );
 
   > li {
-    border-bottom: 1px solid @checklist-border-color;
+    border-bottom: 1px solid @brand-default-border;
 
     input[type="checkbox"],
     input[type="radio"] {
@@ -64,7 +64,7 @@
       }
 
       &:hover {
-        background-color: @component-bg-hover;
+        background-color: @brand-default-hover;
       }
     }
 
@@ -91,8 +91,8 @@
     color: @gray-dark;
     font-weight: bold;
     font-size: floor( @font-size-base * .9 );
-    #gradient .vertical();
     text-shadow: 0 1px 0 #fff;
+    #gradient .brand();
 
     /* 3 */
     label {
