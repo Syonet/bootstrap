@@ -8,8 +8,12 @@
   .box-shadow( 0 1px 4px fade( #000, 10% ) );
 }
 
-.syo-block-title {
-  padding: 8px 10px;
+.syo-block-header {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: @component-height + 8px; // 4px de padding top + bottom
+  padding: 4px 0;
   color: @block-title-text;
   font-weight: bold;
   text-shadow: 0 1px 0 #FFF;
@@ -17,34 +21,20 @@
   #gradient .brand();
 }
 
-/*
- * 1. Retira o padding-top do elemento pai
- * 2. Alinha a toolbar à esquerda
- * 3. Alinha a toolbar à direita
- * 4. Alinha o botão corretamente dentro da toolbar
- * 5. Faz com que a borda lateral preencha toda a altura do .syo-block-title
- */
-.syo-block-title-toolbar {
-  margin-top: -@computed-line-height / 2; /* 1 */
-  padding: 8px 10px;
-  min-height: @computed-line-height + 16px; /* 5 */
+.syo-block-title,
+.syo-block-toolbar {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
 
-  &.syo-pull-left  { /* 2 */
-    padding-left: 0;
-    margin-right: @computed-line-height / 2;
-    border-right: 1px solid @block-border-color;
-  }
+.syo-block-title {
+  width: 100%;
+}
 
-  &.syo-pull-right { /* 3 */
-    padding-right: 0;
-    margin-left: @computed-line-height / 2;
-    border-left: 1px solid @block-border-color;
-  }
-
-  > .syo-button { /* 4 */
-    margin-top: -5px;
-    margin-bottom: -5px;
-  }
+.syo-block-toolbar {
+  width: 1%;
+  white-space: nowrap;
 }
 
 .syo-block-content {
@@ -56,13 +46,13 @@
  * 1. Adiciona uma borda separadora entre conteúdo + título ou conteúdo + conteúdo
  */
 .syo-block-content + .syo-block-content,
-.syo-block-title + .syo-block-content,
-.syo-block-content + .syo-block-title {
+.syo-block-header + .syo-block-content,
+.syo-block-content + .syo-block-header {
   border-top: 1px solid @block-border-color; /* 1 */
 }
 
 /* Seta o border-radius corretamente */
-.syo-block-title:first-child { .border-radius-top( @block-border-radius ); }
+.syo-block-header:first-child { .border-radius-top( @block-border-radius ); }
 
 /* Seta o border-radius corretamente */
-.syo-block-title:last-child { .border-radius-bottom( @block-border-radius ); }
+.syo-block-header:last-child { .border-radius-bottom( @block-border-radius ); }
