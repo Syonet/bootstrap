@@ -70,10 +70,8 @@ dl.dl-inline {
   dt {
     float: left;
     clear: left;
-    white-space: nowrap;
-    overflow: hidden;
     width: @dl-term-width;
-    text-overflow: ellipsis;
+    .text-overflow();
   }
 
   dd {
