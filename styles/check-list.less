@@ -63,27 +63,28 @@
         font-weight: normal;
       }
 
-      &:hover {
-        background-color: @brand-default-hover;
-      }
-    }
+  &:hover {
+    background-color: @brand-default-hover;
+  }
+}
 
-    /* 2 */
-    &:first-child {
-      &,
-      > a {
-        .border-radius-top( @base-border-radius );
-      }
-    }
+&:first-child {
+  &,
+  > label,
+  > a {
+    .border-radius-top( @base-border-radius );
+  }
+}
 
-    &:last-child {
-      border-bottom: 0;
+&:last-child {
+  border-bottom: 0;
 
-      &,
-      > a {
-        .border-radius-bottom( @base-border-radius );
-      }
-    }
+  &,
+  > label,
+  > a {
+    .border-radius-bottom( @base-border-radius );
+  }
+}
   }
 
   .syo-check-list-header {
