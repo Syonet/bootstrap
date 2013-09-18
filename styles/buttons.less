@@ -9,7 +9,7 @@
 .syo-button {
   display: inline-block;
   vertical-align: middle;
-  padding: ( ( ( @input-height - @computed-line-height ) - 2px ) / 2 ) 10px;
+  padding: ( @padding-base-vertical - 1px ) @padding-base-horizontal;
   border-width: 1px;
   border-style: solid;
   line-height: @base-line-height;
@@ -44,6 +44,10 @@
  */
 input.syo-button {
   height: @input-height; /* 1 */
+
+  &.syo-button-large {
+    height: @input-height * @component-large-factor;
+  }
 }
 
 /* =================================================================================================================
@@ -89,7 +93,6 @@ input.syo-button {
    Tamanhos
    ================================================================================================================= */
 .syo-button-large {
-  height: @input-height * @component-large-factor;
   padding: @padding-large-vertical @padding-large-horizontal;
   font-size: @font-size-large;
   .border-radius( @border-radius-large );
