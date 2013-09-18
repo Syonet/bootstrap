@@ -32,7 +32,7 @@ table {
 
   td, /* 1 */
   th { /* 1 */
-    padding: 4px 8px;
+    padding: @padding-base-vertical @padding-base-horizontal;
     line-height: @base-line-height;
     border-top: 1px solid @table-border-color;
     border-left: 1px solid @table-border-color;
@@ -63,53 +63,40 @@ table {
     border-top: 0;
   }
 
-  /* Arredonda canto superior esquerdo do primeiro tr */
-  thead:first-child tr:first-child > th:first-child,
-  tbody:first-child tr:first-child > td:first-child,
-  tbody:first-child tr:first-child > th:first-child {
-    .border-top-left-radius( @base-border-radius );
+  /* Arredonda canto superior esquerdo/direito do primeiro tr */
+  thead:first-of-type,
+  tbody:first-of-type {
+    &, tr:first-child {
+      .border-radius-top( @base-border-radius );
+    }
+
+    tr:first-child td,
+    tr:first-child th {
+      &:first-child { .border-top-left-radius( @base-border-radius ) };
+      &:last-child { .border-top-right-radius( @base-border-radius ) };
+    }
   }
-  /* Arredonda canto superior direito do primeiro tr */
-  thead:first-child tr:first-child > th:last-child,
-  tbody:first-child tr:first-child > td:last-child,
-  tbody:first-child tr:first-child > th:last-child {
-    .border-top-right-radius( @base-border-radius );
+
+  /* Desfaz arredondamento do canto superior esquerdo/direito de table com thead + tbody */
+  thead:first-of-type ~ tbody:first-of-type {
+    &,
+    tr:first-child td,
+    tr:first-child th {
+      .border-radius-top( 0 );
+    }
   }
-  /* Arredonda canto inferior esquerdo do último tr */
-  thead:last-child tr:last-child > th:first-child,
-  tbody:last-child tr:last-child > td:first-child,
-  tbody:last-child tr:last-child > th:first-child,
-  tfoot:last-child tr:last-child > td:first-child,
-  tfoot:last-child tr:last-child > th:first-child {
-    .border-bottom-left-radius( @base-border-radius );
-  }
-  /* Arredonda canto inferior direito do último tr */
-  thead:last-child tr:last-child > th:last-child,
-  tbody:last-child tr:last-child > td:last-child,
-  tbody:last-child tr:last-child > th:last-child,
-  tfoot:last-child tr:last-child > td:last-child,
-  tfoot:last-child tr:last-child > th:last-child {
-    .border-bottom-right-radius( @base-border-radius );
-  }
-  /* Remove os cantos arredondados inferiores do ultimo tr do ultimo tbody de uma tabela com tfoot */
-  tfoot + tbody:last-child tr:last-child td:first-child {
-    .border-bottom-left-radius( 0 );
-  }
-  tfoot + tbody:last-child tr:last-child td:last-child {
-    .border-bottom-right-radius( 0 );
-  }
-  /* Arredonda os cantos superiores da primeiro tr */
-  caption + thead tr:first-child th:first-child,
-  caption + tbody tr:first-child td:first-child,
-  colgroup + thead tr:first-child th:first-child,
-  colgroup + tbody tr:first-child td:first-child {
-    .border-top-left-radius( @base-border-radius );
-  }
-  caption + thead tr:first-child th:last-child,
-  caption + tbody tr:first-child td:last-child,
-  colgroup + thead tr:first-child th:last-child,
-  colgroup + tbody tr:first-child td:last-child {
-    .border-top-right-radius( @base-border-radius );
+
+  tbody:last-child,
+  tfoot:last-of-type {
+    &, tr:last-child {
+      .border-radius-bottom( @base-border-radius );
+    }
+
+    tr:last-child td,
+    tr:last-child th {
+      &:first-child { .border-bottom-left-radius( @base-border-radius ); }
+      &:last-child { .border-bottom-right-radius( @base-border-radius ); }
+    }
   }
 }
 
@@ -184,21 +171,21 @@ tr.syo-datagrid-state-clicked {
         }
       }
 
-      colgroup + tbody,
-      tbody:first-child {
-        > tr:first-child > td {
-          .border-radius-top( 0 ); /* 1 */
-        }
+      tbody:first-of-type > tr:first-child > td {
+        .border-radius-top( 0 ); /* 1 */
       }
     }
   }
 }
 
+/* =================================================================================================================
+   Headers/Footers
+   ================================================================================================================= */
 .syo-datagrid-header th,
 .syo-datagrid-helper,
 .syo-table > thead,
+.syo-table > tbody > tr > th,
 .syo-table > tfoot {
-  padding: 8px;
   color: @gray-dark;
   text-shadow: 0 1px 0 #FFF;
   #gradient .brand();
@@ -216,6 +203,7 @@ tr.syo-datagrid-state-clicked {
 }
 
 .syo-datagrid-helper {
+  padding: @padding-base-vertical @padding-base-horizontal;
   border: 1px solid @table-border-color;
   .border-radius-bottom( @base-border-radius );
 }
@@ -231,8 +219,8 @@ tr.syo-datagrid-state-clicked {
   // Utiliza-se seletores "nested" pra poder reutilizar no .syo-table-responsive
   > tbody {
     /* 1 */
-    > tr:nth-child(even) > td,
-    > tr:nth-child(even) > th {
+    > tr:nth-child( even ) > td,
+    > tr:nth-child( even ) > th {
       background-color: @table-stripe-color;
     }
   }

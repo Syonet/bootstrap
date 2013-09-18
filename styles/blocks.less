@@ -5,15 +5,15 @@
   margin-bottom: @computed-line-height; /* 1 */
   border: 1px solid @block-border-color;
   .border-radius( @block-border-radius );
-  .box-shadow( 0 1px 4px fade( #000, 10% ) );
 }
 
-.syo-block-header {
+.syo-block-header,
+.syo-block-footer {
   position: relative;
   display: table;
   width: 100%;
-  height: @component-height + 8px; // 4px de padding top + bottom
-  padding: 4px 0;
+  height: @computed-line-height + ( @padding-base-vertical * 2 );
+  //padding: @padding-base-vertical 0;
   color: @block-title-text;
   font-weight: bold;
   text-shadow: 0 1px 0 #FFF;
@@ -25,7 +25,7 @@
 .syo-block-toolbar {
   display: table-cell;
   vertical-align: middle;
-  padding: 0 10px;
+  padding: 0 @padding-base-horizontal;
 }
 
 .syo-block-title {
@@ -35,11 +35,19 @@
 .syo-block-toolbar {
   width: 1%;
   white-space: nowrap;
+
+  > a {
+    color: lighten( @gray, 10% );
+
+    &:hover {
+      color: @gray-darker;
+      text-shadow: 0 1px 3px #FFF;
+    }
+  }
 }
 
 .syo-block-content {
-  margin: -1px 0 0;
-  padding: ( @computed-line-height / 2 );
+  padding: 10px;
 }
 
 /*
@@ -47,12 +55,62 @@
  */
 .syo-block-content + .syo-block-content,
 .syo-block-header + .syo-block-content,
-.syo-block-content + .syo-block-header {
+.syo-block-content + .syo-block-footer {
   border-top: 1px solid @block-border-color; /* 1 */
 }
 
 /* Seta o border-radius corretamente */
-.syo-block-header:first-child { .border-radius-top( @block-border-radius ); }
+.syo-block-header { .border-radius-top( @block-border-radius ); }
 
 /* Seta o border-radius corretamente */
-.syo-block-header:last-child { .border-radius-bottom( @block-border-radius ); }
+.syo-block-footer { .border-radius-bottom( @block-border-radius ); }
+
+/* =================================================================================================================
+   Block + outros componentes
+   ================================================================================================================= */
+
+/*
+ * Table/Datagrid
+ * 1. Remove bordas externas
+ * 2. Remove cantos arredondados
+ */
+.syo-block {
+  > .syo-table,
+  > .syo-datagrid {
+    margin-bottom: 0;
+  }
+
+  /* 1 */
+  .syo-table,
+  .syo-datagrid table {
+    border-right: 0;
+
+    td:first-child,
+    th:first-child {
+      border-left: 0;
+    }
+  }
+
+  > .syo-table:last-child {
+    border-bottom: 0; /* 1 */
+  }
+
+  .syo-table thead,
+  .syo-table tbody th,
+  .syo-table tfoot {
+    background-image: none;
+  }
+
+  /* 2 */
+  .syo-block-header + .syo-table,
+  .syo-block-content + .syo-table {
+    &,
+    thead:first-of-type,
+    tbody:first-of-type,
+    thead:first-of-type tr:first-child th,
+    tbody:first-of-type tr:first-child td,
+    tbody:first-of-type tr:first-child th {
+      .border-radius-top( 0 );
+    }
+  }
+}

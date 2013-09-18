@@ -313,7 +313,7 @@
 							<div class="syo-block-content">
 								Conteúdo
 							</div>
-							<div class="syo-block-header">
+							<div class="syo-block-footer">
 								<div class="syo-block-title">
 									Título do bloco embaixo
 								</div>
@@ -347,7 +347,7 @@
 							<div class="syo-block-content">
 								Conteúdo
 							</div>
-							<div class="syo-block-header">
+							<div class="syo-block-footer">
 								<div class="syo-block-title">
 									Título do bloco embaixo
 								</div>
@@ -357,6 +357,59 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+
+		<p>
+			Se for necessário incluir uma tabela dentro do bloco, existe um tratamento especial da mesma
+			para que o conteúdo do bloco não fique tão "pesado", como você pode ver no exemplo abaixo:
+		</p>
+
+		<div class="syo-docs-example">
+			<div class="syo-docs-example-inner">
+				<div class="syo-block">
+					<div class="syo-block-header">
+						<div class="syo-block-title">Bloco com uma tabela</div>
+					</div>
+					<table class="syo-table">
+						<colgroup>
+							<col class="col-medium-3">
+							<col class="col-medium-3">
+							<col class="col-medium-6">
+						</colgroup>
+						<thead>
+						<tr>
+							<th>Coluna 1</th>
+							<th>Coluna 2</th>
+							<th>Coluna 3</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr>
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						<tr class="syo-active">
+							<td>Texto 1</td>
+							<td>Texto 2</td>
+							<td>Texto 3</td>
+						</tr>
+						</tbody>
+						<tfoot>
+						<tr>
+							<td>Footer 1</td>
+							<td>Footer 2</td>
+							<td>Footer 3</td>
+						</tr>
+						</tfoot>
+					</table>
 				</div>
 			</div>
 		</div>

@@ -10,6 +10,7 @@
  *  2.3. Radio desmarcado (.icon-check)
  *  2.4. Radio marcado (.icon-check)
  * 3. Sobrescreve o label em itens não-headers
+ * 4. Sobrescreve line-height default dos labels
  */
 .syo-check-list {
   margin-left: 0;
@@ -50,7 +51,8 @@
     label {
       display: block;
       margin-left: 0; /* 1 */
-      padding: ( @computed-line-height / 3 ) ( @computed-line-height / 2 );
+      padding: @padding-base-vertical @padding-base-horizontal;
+      line-height: @base-line-height; /* 4 */
       text-align: left; /* 1 */
       cursor: pointer;
 
@@ -63,32 +65,32 @@
         font-weight: normal;
       }
 
-  &:hover {
-    background-color: @brand-default-hover;
-  }
-}
+      &:hover {
+        background-color: @brand-default-hover;
+      }
+    }
 
-&:first-child {
-  &,
-  > label,
-  > a {
-    .border-radius-top( @base-border-radius );
-  }
-}
+    &:first-child {
+      &,
+      > label,
+      > a {
+        .border-radius-top( @base-border-radius );
+      }
+    }
 
-&:last-child {
-  border-bottom: 0;
+    &:last-child {
+      border-bottom: 0;
 
-  &,
-  > label,
-  > a {
-    .border-radius-bottom( @base-border-radius );
-  }
-}
+      &,
+      > label,
+      > a {
+        .border-radius-bottom( @base-border-radius );
+      }
+    }
   }
 
   .syo-check-list-header {
-    padding: 8px 10px;
+    padding: @padding-base-vertical @padding-base-horizontal;
     color: @gray-dark;
     font-weight: bold;
     font-size: @font-size-small;
