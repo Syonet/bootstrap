@@ -76,7 +76,8 @@
  */
 .syo-block {
   > .syo-table,
-  > .syo-datagrid {
+  > .syo-datagrid,
+  > :not(.syo-block-content) > .syo-table {
     margin-bottom: 0;
   }
 
@@ -91,7 +92,8 @@
     }
   }
 
-  > .syo-table:last-child {
+  > .syo-table:last-child,
+  > :last-child:not(.syo-block-content) > .syo-table {
     border-bottom: 0; /* 1 */
   }
 
@@ -103,7 +105,9 @@
 
   /* 2 */
   .syo-block-header + .syo-table,
-  .syo-block-content + .syo-table {
+  .syo-block-content + .syo-table,
+  .syo-block-header + :not(.syo-block-content) .syo-table,
+  .syo-block-content + :not(.syo-block-content) .syo-table {
     &,
     thead:first-of-type,
     tbody:first-of-type,
