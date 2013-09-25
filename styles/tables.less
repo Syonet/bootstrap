@@ -66,7 +66,8 @@ table {
   /* Arredonda canto superior esquerdo/direito do primeiro tr */
   thead:first-of-type,
   tbody:first-of-type {
-    &, tr:first-child {
+    &,
+    tr:first-child {
       .border-radius-top( @base-border-radius );
     }
 
@@ -112,7 +113,8 @@ table {
 
 
 tr.syo-datagrid-state-clicked {
-  td, th {
+  td,
+  th {
     background-color: @spring-green;
   }
 }
