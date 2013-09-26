@@ -703,3 +703,11 @@ body .ui-tooltip {
 .ui-dialog {
   .box-shadow( 0 0 5px 3px rgba( 0, 0, 0, .15 ) );
 }
+
+/*
+ * Como o height de um slider horizontal é de 0.8em, subtraimos tal valor da altura de componente
+ * para que o slider fique verticalmente alinhado.
+ */
+.ui-slider-horizontal {
+  margin: ( ( @component-height - ( @font-size-base * 0.8 ) ) / 2 ) 0;
+}
