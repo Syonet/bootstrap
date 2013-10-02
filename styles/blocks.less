@@ -118,3 +118,30 @@
     }
   }
 }
+
+/*
+ * Nav List
+ * 1. Desfaz border-radius se seguir um elemento header/content
+ * 1. Desfaz border-radius se não for o último elemento do block
+ */
+.syo-block {
+  > .syo-nav-list {
+    margin: -1px;
+    .box-shadow( none );
+  }
+
+  .syo-block-header + .syo-nav-list,
+  .syo-block-content + .syo-nav-list {
+    &,
+    > li a {
+      .border-radius-top( 0 ); /* 1 */
+    }
+  }
+
+  > .syo-nav-list:not( :last-child ) {
+    &,
+    > li a {
+      .border-radius-bottom( 0 ); /* 2 */
+    }
+  }
+}

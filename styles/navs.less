@@ -24,6 +24,7 @@
  * 1. Estilo do header
  * 2. Corrige o border-radius do primeiro elemento
  * 3. Corrige o border-radius do último elemento
+ * 4. Desfaz margin de linhas com .row
  */
 .syo-nav-list {
   border: 1px solid @nav-border-color;
@@ -33,6 +34,11 @@
   > li {
     border-bottom: 1px solid @nav-border-color;
     background: @body-color;
+
+    &.row {
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     > a {
       display: block;
@@ -55,18 +61,19 @@
 
     /* 2 */
     &:first-child {
-      &, > a {
-        .border-radius-top( @base-border-radius );
-      }
+      .border-radius-top( @base-border-radius );
+
+      > a:first-child { .border-top-left-radius( @base-border-radius ); }
+      > a:last-child { .border-top-right-radius( @base-border-radius ); }
     }
 
     /* 3 */
     &:last-child {
       border-bottom: 0;
+      .border-radius-bottom( @base-border-radius );
 
-      &, > a {
-        .border-radius-bottom( @base-border-radius );
-      }
+      > a:first-child { .border-bottom-left-radius( @base-border-radius ); }
+      > a:last-child { .border-bottom-right-radius( @base-border-radius ); }
     }
   }
 }
