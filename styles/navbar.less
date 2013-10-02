@@ -93,10 +93,18 @@
   position: fixed;
   left: 0;
   z-index: @navbar-zindex;
+  border-left-width: 0;
+  border-right-width: 0;
 }
 
-.syo-navbar.syo-navbar-fixed-top { top: 0; }
-.syo-navbar.syo-navbar-fixed-bottom { bottom: 0; }
+.syo-navbar.syo-navbar-fixed-top {
+  top: 0;
+  border-top-width: 0;
+}
+.syo-navbar.syo-navbar-fixed-bottom {
+  bottom: 0;
+  border-bottom-width: 0;
+}
 
 /* Classe utilitária pra adicionar um padding-top da mesma altura do navbar */
 body.syo-body-navbar {
