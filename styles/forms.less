@@ -30,7 +30,8 @@ textarea {
   border: 1px solid @input-border;
   background-color: @input-background;
   text-shadow: 0 1px 0 #FFF;
-  #font .shorthand( @input-text-color, normal ); /* 1 */
+  line-height: normal; /* 1 */
+  color: @input-text-color;
   .border-radius( @input-border-radius );
   .transition( ~"box-shadow .15s linear, color .15s linear" );
 
@@ -160,7 +161,6 @@ button {
  */
 .syo-field {
   margin-bottom: @computed-line-height / 2;
-  #font .shorthand();
 
   &.syo-field-inline {
     display: inline; /* 1 */

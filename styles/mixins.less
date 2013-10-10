@@ -16,24 +16,6 @@
   }
 }
 
-// Rápido switch de propriedades de fonte
-#font {
-  .sans-serif() {
-    font-family: @base-font-family;
-  }
-  .monospace() {
-    font-family: @mono-font-family;
-  }
-  .shorthand (@color: @text-color, @line-height: @base-line-height, @size: @font-size-base, @family: @base-font-family, @weight: normal, @style: normal) {
-    line-height: @line-height;
-    color: @color;
-    font-size: @size;
-    font-family: @family;
-    font-style: @style;
-    font-weight: @weight;
-  }
-}
-
 // Faz overflow de texto (Lorem ips...)
 .text-overflow( @type: ellipsis ) {
   overflow: hidden;

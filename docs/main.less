@@ -49,29 +49,38 @@ article {
   background: #FDFDFD;
   .border-radius( @base-border-radius );
   .box-shadow( 0 1px 4px fade( #000, 10% ) );
+
   &:before {
     @line-height: 15px;
+
     position: relative;
     // @computed-line-height * 1.5 (padding-top do container) - 1px da borda
     top: -( ( @computed-line-height * 1.5 ) - 1px );
     left: -1px;
     padding: 5px 10px;
     border: 1px solid @gray-light;
-    #font .shorthand( @gray-dark, @line-height, 11px, @base-font-family, bold );
+    line-height: @line-height;
+    color: @gray-dark;
+    font-size: 11px;
+    font-weight: bold;
     background: @gray-lighter;
     content: "Exemplo";
     .border-radius( @base-border-radius 0 @base-border-radius 0 );
   }
+
   > strong {
     margin-left: 5px;
   }
+
   > pre {
     margin-top: 5px;
     .border-radius-bottom( @base-border-radius );
+
     &:last-child {
       margin-bottom: 0;
     }
   }
+
   .syo-docs-example-inner {
     position: relative;
     padding: 0 @computed-line-height @computed-line-height;

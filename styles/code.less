@@ -1,13 +1,29 @@
+/* =================================================================================================================
+   Código
+   ================================================================================================================= */
+
 code,
 pre {
-  padding: 1px 3px;
+  border: 1px solid @code-border;
+  color: @gray-dark;
+  font-size: @font-size-small;
+  font-family: @mono-font-family;
+  background-color: @code-background;
   vertical-align: middle;
-  #font .shorthand ( @gray-dark, @base-line-height, @font-size-base - 2, @mono-font-family );
   .border-radius( @border-radius-small );
 }
 
+/*
+ * 1. Garante que não quebre em 2 linhas
+ */
 code {
-  border: 1px solid #E1E1E1;
+  padding: 1px 3px;
   color: #D14;
-  background-color: #F7F7F7;
+  white-space: nowrap; /* 1 */
+}
+
+pre {
+  display: block;
+  margin-bottom: @computed-line-height;
+  padding: ( ( @computed-line-height - 1 ) / 2 );
 }
