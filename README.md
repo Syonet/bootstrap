@@ -1,5 +1,9 @@
-# Syonet Bootstrap [![Build Status](https://travis-ci.org/Syonet/bootstrap.png?branch=master)](https://travis-ci.org/Syonet/bootstrap) [![Dependency Status](https://gemnasium.com/Syonet/bootstrap.png)](https://gemnasium.com/Syonet/bootstrap)
+# Syonet Bootstrap
 O conjunto de ferramentas front-end da Syonet
+
+[![Build Status](https://travis-ci.org/Syonet/bootstrap.png?branch=master)](https://travis-ci.org/Syonet/bootstrap)
+[![Dependency Status](https://gemnasium.com/Syonet/bootstrap.png)](https://gemnasium.com/Syonet/bootstrap)
+[![Stories in Ready](https://badge.waffle.io/syonet/bootstrap.png?label=[status] aguardando)](http://waffle.io/syonet/bootstrap)
 
 ## Build
 Para fazer build do código do Syonet Bootstrap, é necessário que você siga as seguintes etapas:
