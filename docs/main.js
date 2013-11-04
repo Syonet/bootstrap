@@ -12,6 +12,8 @@
 		// Executa processos adicionais aos componentes Javascript
 		enhanceJSComponents();
 
+		// Monta a documentação dos icones, separado em categorias
+		buildIcons();
 	});
 
 	function initPrettify() {
@@ -85,6 +87,33 @@
 					position: $( this ).data("position")
 				}).syoPopover( "open" );
 			}
+		});
+	}
+
+	function buildIcons() {
+		var $container = $( "#icons-container" );
+
+		if ( !$container.length ) {
+			return;
+		}
+
+		$.get( "/docs/icons.json", function( data ) {
+			window.console.log(data);
+			$.each( data, function( cat, catObj ) {
+				var $header = $( "<div class='syo-header syo-header-ruler'></div>" );
+				var $list = $( "<ul class='icons' />" );
+
+				$header.append( cat );
+				$header.append( "<small>" + catObj.description + "</small>" );
+				$header.appendTo( $container );
+
+				$.each( catObj.icons, function( i, icon ) {
+					var $icon = $( "<i />" ).addClass( "icon-" + icon );
+					$( "<li />" ).append( $icon ).append( " icon-" + icon ).appendTo( $list );
+				});
+
+				$list.appendTo( $container );
+			});
 		});
 	}
 

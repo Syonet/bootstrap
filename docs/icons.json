@@ -1,0 +1,42 @@
+{
+	"Setas": {
+		"description": "Indicação e Manipulação"
+		"icons": [
+			"arrow-left", "arrow-right", "arrow-up", "arrow-down",
+			"caret-left", "caret-right", "caret-up", "caret-down",
+			"chevron-circle-left", "chevron-circle-right", "chevron-circle-up", "chevron-circle-down",
+			"chevron-left", "chevron-right", "chevron-up", "chevron-down",
+			"long-arrow-left", "long-arrow-right", "long-arrow-up", "long-arrow-down",
+			"angle-double-left", "angle-double-right", "angle-double-up", "angle-double-down",
+			"angle-left", "angle-right", "angle-up", "angle-down",
+			"hand-left", "hand-right", "hand-up", "hand-down",
+			"circle-arrow-left", "circle-arrow-right", "circle-arrow-up", "circle-arrow-down"
+		]
+	},
+	"Edição de Texto": {
+		"description": "Ferramentas"
+		"icons": [
+			"cut", "copy", "paste", "font",
+			"strikethrough", "bold", "italic", "underline",
+			"list-ul", "list-ol", "list", "list-alt"
+		]
+	},
+	"Logos": {
+		"description": "Empresas e serviços"
+		"icons": [
+			"twitter", "twitter-sign", "facebook", "facebook-sign"
+		]
+	},
+	"Controles de Mídia": {
+		"description": "Áudio e Vídeo"
+		"icons": []
+	},
+	"Comunicação": {
+		"description": "Ferramentas, serviços ou conceitos",
+		"icons": []
+	},
+	"Outros": {
+		"description": "Sem categoria específica",
+		"icons": []
+	}
+}

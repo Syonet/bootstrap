@@ -1,7 +1,7 @@
 /*jshint node:true*/
 module.exports = function( grunt ) {
 	"use strict";
-	
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON( "package.json" ),
 		watch: {
@@ -86,19 +86,20 @@ module.exports = function( grunt ) {
 			all: {
 				src: [
 					"images/*",
-					
-					// Copia apenas as fontes utilizadas em produção
-					"fonts/SyoBootstrap.eot",
-					"fonts/SyoBootstrap.svg",
-					"fonts/SyoBootstrap.ttf",
-					"fonts/SyoBootstrap.woff",
-					
+
 					// Processa novamente os arquivos JS/CSS para a inclusão do banner
 					"dist/*.css",
 					"dist/*.js"
-					
 				],
 				strip: /^dist/,
+				dest: "dist"
+			},
+			fonts: {
+				src: [
+					// Copia apenas as fontes utilizadas em produção
+					"styles/vendor/fontawesome/fonts/fontawesome-webfont.*"
+				],
+				strip: "styles/vendor/fontawesome/",
 				dest: "dist"
 			}
 		},
@@ -139,7 +140,7 @@ module.exports = function( grunt ) {
 			}
 		}
 	});
-	
+
 	// NPM
 	grunt.loadNpmTasks( "grunt-contrib-less" );
 	grunt.loadNpmTasks( "grunt-contrib-clean" );
@@ -148,10 +149,10 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
 	grunt.loadNpmTasks( "grunt-contrib-concat" );
-	
+
 	// Local
 	grunt.loadTasks( "build" );
-	
+
 	// Processo principal de build
 	grunt.registerTask( "default", [
 		"clean", // Limpa todo o diretório dist

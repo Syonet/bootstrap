@@ -5,10 +5,10 @@
 /*
  * 1. Sobrescreve estilos do label default
  * 2. Utiliza icones da fonte para
- *  2.1. Checkbox desmarcado (.icon-check-empty)
- *  2.2. Checkbox marcado (.icon-check)
- *  2.3. Radio desmarcado (.icon-check)
- *  2.4. Radio marcado (.icon-check)
+ *  2.1. Checkbox desmarcado
+ *  2.2. Checkbox marcado
+ *  2.3. Radio desmarcado
+ *  2.4. Radio marcado
  * 3. Sobrescreve o label em itens não-headers
  * 4. Sobrescreve line-height default dos labels
  */
@@ -30,21 +30,21 @@
 
     input[type="checkbox"] {
       + label:before {
-        content: "\f096"; /* 2.1 */
+        content: @fa-var-square-o; /* 2.1 */
       }
 
       &:checked + label:before {
-        content: "\f046"; /* 2.2 */
+        content: @fa-var-check-square-o; /* 2.2 */
       }
     }
 
     input[type="radio"] {
       + label:before {
-        content: "\f10c"; /* 2.3 */
+        content: @fa-var-circle-o; /* 2.3 */
       }
 
       &:checked + label:before {
-        content: "\f111"; /* 2.4 */
+        content: @fa-var-dot-circle-o; /* 2.4 */
       }
     }
 
@@ -60,7 +60,7 @@
         display: inline-block;
         min-width: 1em;
         margin-right: 5px;
-        font-family: SyoBootstrap;
+        font-family: "FontAwesome";
         font-size: @font-size-base;
         font-weight: normal;
       }
