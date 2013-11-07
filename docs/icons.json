@@ -1,42 +1,100 @@
 {
 	"Setas": {
-		"description": "Indicação e Manipulação"
+		"description": "Indicação e Manipulação",
 		"icons": [
 			"arrow-left", "arrow-right", "arrow-up", "arrow-down",
-			"caret-left", "caret-right", "caret-up", "caret-down",
-			"chevron-circle-left", "chevron-circle-right", "chevron-circle-up", "chevron-circle-down",
-			"chevron-left", "chevron-right", "chevron-up", "chevron-down",
-			"long-arrow-left", "long-arrow-right", "long-arrow-up", "long-arrow-down",
-			"angle-double-left", "angle-double-right", "angle-double-up", "angle-double-down",
-			"angle-left", "angle-right", "angle-up", "angle-down",
-			"hand-left", "hand-right", "hand-up", "hand-down",
-			"circle-arrow-left", "circle-arrow-right", "circle-arrow-up", "circle-arrow-down"
+			"arrow-down-left", "arrow-down-right", "arrow-up-left", "arrow-up-right",
+			"chevron-right", "chevron-left", "chevron-up", "chevron-down"
 		]
 	},
-	"Edição de Texto": {
-		"description": "Ferramentas"
+	"Texto e Arquivos": {
+		"description": "Ferramentas de edição de texto e outros",
 		"icons": [
-			"cut", "copy", "paste", "font",
-			"strikethrough", "bold", "italic", "underline",
-			"list-ul", "list-ol", "list", "list-alt"
+			"file", "file2", "file3", "file4",
+			"files", "folder", "folder-open", "spell-check",
+			"align-left", "align-center", "align-right", "align-justify",
+			"copy", "paste", "indent", "outdent",
+			"undo", "redo", "attachment", "tab",
+			"list-ul", "list", "list-ol", "libreoffice",
+			"file-css", "file-xml", "file-powerpoint", "file-zip",
+			"file-excel", "file-word", "file-openoffice", "file-pdf"
 		]
 	},
 	"Logos": {
-		"description": "Empresas e serviços"
+		"description": "Empresas e serviços",
 		"icons": [
-			"twitter", "twitter-sign", "facebook", "facebook-sign"
+			"facebook", "facebook-square", "twitter", "twitter-square",
+			"rss", "rss-square", "google-plus", "google-plus-square",
+			"youtube", "linkedin", "github", "html5", "css3",
+			"android", "windows", "tux", "apple",
+			"chrome", "firefox", "IE", "opera", "safari"
 		]
 	},
 	"Controles de Mídia": {
-		"description": "Áudio e Vídeo"
-		"icons": []
+		"description": "Áudio e Vídeo",
+		"icons": [
+			"play", "pause", "stop", "eject",
+			"backward", "forward", "fast-backward", "fast-forward",
+			"step-backward", "step-forward", "repeat", "shuffle",
+			"volume-high", "volume-medium", "volume-low", "volume-off",
+			"volume-mute", "volume-increase", "volume-decrease", "equalizer",
+			"expand", "expand2", "retract", "retract2",
+			"refresh", "loop"
+		]
 	},
 	"Comunicação": {
 		"description": "Ferramentas, serviços ou conceitos",
-		"icons": []
+		"icons": [
+			"sort-alpha-desc", "sort-alpha-asc", "sort-amount-desc", "sort-amount-asc",
+			"bullhorn", "zoom-out", "zoom-in", "search",
+			"lock", "lock2", "unlocked", "profile",
+			"sign-in", "sign-out", "thumbs-up", "thumbs-down",
+			"download", "upload", "cloud-download", "cloud-upload",
+			"external", "share", "comment", "comments"
+		]
 	},
 	"Outros": {
 		"description": "Sem categoria específica",
-		"icons": []
+		"icons": [
+			"home", "location", "pushpin", "pencil",
+			"image", "images", "office", "books",
+			"tag", "tags", "barcode", "qrcode",
+			"stack", "ticket", "shopping-cart", "medkit",
+			"film", "music", "camera", "busy",
+			"quote-left", "quote-right", "cabinet", "calendar",
+			"tv", "tablet", "mobile", "laptop",
+			"screen", "keyboard", "print", "menu",
+			"clock", "alarm", "meter", "zzz",
+			"database", "trophy", "briefcase", "accessibility",
+			"grid", "stats", "bars", "pie",
+			"cog", "cogs", "wrench", "settings",
+			"checkbox-checked", "checkbox-unchecked", "checkbox-partial",
+			"radio-checked", "radio-unchecked", "target", "lightning",
+			"check", "check-o", "cloud", "filter",
+			"truck", "airplane", "car", "tree",
+			"fire", "leaf", "save", "lab",
+			"close", "remove", "cancel-circle", "spam",
+			"star-o", "star-half-o", "star",
+			"circle-loader-100", "circle-loader-87", "circle-loader-75", "circle-loader-62",
+			"cirlce-loader-50", "circle-loader-37", "circle-loader-25", "circle-loader-12",
+			"circle-loader-0", "email", "group", "user",
+			"phone", "earth", "flag", "support",
+			"exclamation-triangle", "exclamation-circle", "question", "blocked",
+			"info", "info2", "power-cord", "power-off",
+			"key", "edit", "forward2", "reply",
+			"add-circle", "delete-circle", "check-circle",
+			"history", "issue", "issue-complete", "issue-reopen",
+			"plus", "minus", "crop", "credit",
+			"compass", "map", "map-o", "binoculars",
+			"heart", "heart-o", "heart-broken", "scissors",
+			"embed", "code", "console", "gift",
+			"bookmark", "bookmarks", "road", "certificate",
+			"paint-format", "droplet", "calculate",
+			"asterisk", "drawer", "drawer2", "drawer3",
+			"box-add", "box-remove", "wheel", "bell",
+			"eye", "eye-blocked", "male", "female",
+			"money", "coin", "glass", "coffee",
+			"hammer", "address-book"
+		]
 	}
 }

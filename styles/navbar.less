@@ -13,7 +13,7 @@
   min-height: @navbar-height; /* 4 */
   display: block;
   border: 1px solid @navbar-border-color;
-  font-size: @font-size-small;
+  font-size: @font-size-base;
   text-shadow: 0 1px 0 #FFF;
   .box-shadow( 0 0 5px 0px fade( @gray-light, 30% ) );
   #gradient .brand();
@@ -58,7 +58,7 @@
 
       > a {
         display: inline-block;
-        .navbar-spacing( @font-size-small * @base-line-height );
+        .navbar-spacing();
 
         &:hover {
           color: #000;

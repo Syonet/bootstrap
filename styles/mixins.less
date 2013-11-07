@@ -104,6 +104,14 @@
           transition: @transition;
 }
 
+.animation( @animation ) {
+  -webkit-animation: @animation;
+     -moz-animation: @animation;
+      -ms-animation: @animation;
+       -o-animation: @animation;
+          animation: @animation;
+}
+
 #gradient {
   .vertical( @start-color, @end-color ) {
     background-color: mix( @start-color, @end-color, 60% );
@@ -341,11 +349,7 @@
     );
   .background-size( 40px 40px );
   .transition( width .2s ease );
-  -webkit-animation: progress-bar-stripes 1.5s linear infinite;
-     -moz-animation: progress-bar-stripes 1.5s linear infinite;
-      -ms-animation: progress-bar-stripes 1.5s linear infinite;
-       -o-animation: progress-bar-stripes 1.5s linear infinite;
-          animation: progress-bar-stripes 1.5s linear infinite;
+  .animation( progress-bar-stripes 1.5s linear infinite );
 }
 
 // ====================================================================================================================

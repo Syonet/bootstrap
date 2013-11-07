@@ -91,20 +91,22 @@
 	}
 
 	function buildIcons() {
+		var xhr;
 		var $container = $( "#icons-container" );
 
 		if ( !$container.length ) {
 			return;
 		}
 
-		$.get( "/docs/icons.json", function( data ) {
-			window.console.log(data);
+		xhr = $.get( "/docs/icons.json" );
+
+		xhr.done(function( data ) {
 			$.each( data, function( cat, catObj ) {
-				var $header = $( "<div class='syo-header syo-header-ruler'></div>" );
+				var $header = $( "<div class='syo-header syo-header-ruler'><h3></h3></div>" );
 				var $list = $( "<ul class='icons' />" );
 
-				$header.append( cat );
-				$header.append( "<small>" + catObj.description + "</small>" );
+				$header.find( "h3" ).append( cat );
+				$header.find( "h3" ).append( " <small>" + catObj.description + "</small>" );
 				$header.appendTo( $container );
 
 				$.each( catObj.icons, function( i, icon ) {
@@ -114,6 +116,10 @@
 
 				$list.appendTo( $container );
 			});
+		});
+
+		xhr.fail(function() {
+			window.console.log("asdsad");
 		});
 	}
 

@@ -87,19 +87,14 @@ module.exports = function( grunt ) {
 				src: [
 					"images/*",
 
+					// Copia apenas as fontes utilizadas em produção
+					"fonts/*.{ttf,eot,woff,svg}",
+
 					// Processa novamente os arquivos JS/CSS para a inclusão do banner
 					"dist/*.css",
-					"dist/*.js"
+					"dist/*.js",
 				],
 				strip: /^dist/,
-				dest: "dist"
-			},
-			fonts: {
-				src: [
-					// Copia apenas as fontes utilizadas em produção
-					"styles/vendor/fontawesome/fonts/fontawesome-webfont.*"
-				],
-				strip: "styles/vendor/fontawesome/",
 				dest: "dist"
 			}
 		},
