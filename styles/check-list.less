@@ -29,22 +29,22 @@
     }
 
     input[type="checkbox"] {
-      + label:before {
-        content: "\e648"; /* 2.1 */
+      + label {
+        .icon-checkbox-unchecked; /* 2.1 */
       }
 
-      &:checked + label:before {
-        content: "\e649"; /* 2.2 */
+      &:checked + label {
+        .icon-checkbox-checked; /* 2.2 */
       }
     }
 
     input[type="radio"] {
-      + label:before {
-        content: "\e64b"; /* 2.3 */
+      + label {
+        .icon-radio-unchecked; /* 2.3 */
       }
 
-      &:checked + label:before {
-        content: "\e64c"; /* 2.4 */
+      &:checked + label {
+        .icon-radio-checked; /* 2.4 */
       }
     }
 

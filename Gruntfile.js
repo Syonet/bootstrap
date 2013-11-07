@@ -3,6 +3,8 @@ module.exports = function( grunt ) {
 	"use strict";
 
 	grunt.initConfig({
+		// Geral
+		// -----------------------------------------------------------------------------------------
 		pkg: grunt.file.readJSON( "package.json" ),
 		watch: {
 			main: {
@@ -11,12 +13,11 @@ module.exports = function( grunt ) {
 					"scripts/**/*.js"
 				],
 				tasks: [
-					"clean:main",
 					"less:main",
 					"jshint:main",
 					"jshint:test",
 					"concat",
-					"process"
+					"process:main"
 				]
 			},
 			docs: {
@@ -32,12 +33,42 @@ module.exports = function( grunt ) {
 					"concat",
 					"hogan"
 				]
+			},
+			icons: {
+				files: [ "fonts/*.json" ],
+				tasks: [
+					"icons",
+					"process:fonts"
+				]
 			}
 		},
 		clean: {
 			main: "dist/",
 			docs: "*.html"
 		},
+		process: {
+			main: {
+				src: [
+					"images/*",
+
+					// Processa novamente os arquivos JS/CSS para a inclusão do banner
+					"dist/*.css",
+					"dist/*.js"
+				],
+				strip: /^dist/,
+				dest: "dist"
+			},
+			fonts: {
+				src: [
+					// Copia apenas arquivos utilizadas em produção
+					"fonts/*.{ttf,eot,woff,svg}"
+				],
+				dest: "dist"
+			}
+		},
+
+		// CSS/LESS
+		// -----------------------------------------------------------------------------------------
 		less: {
 			main: {
 				files: {
@@ -73,31 +104,19 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
-		hogan: {
-			docs: {
-				layout: "docs/templates/layout.hbs",
-				src: [
-					"docs/templates/pages/*.hbs"
-				],
-				dest: "."
+		icons: {
+			main: {
+				options: {
+					aliases: "fonts/aliases.json"
+				},
+				files: {
+					"styles/icons-map.less": [ "fonts/SyoBootstrap.json" ]
+				}
 			}
 		},
-		process: {
-			all: {
-				src: [
-					"images/*",
 
-					// Copia apenas as fontes utilizadas em produção
-					"fonts/*.{ttf,eot,woff,svg}",
-
-					// Processa novamente os arquivos JS/CSS para a inclusão do banner
-					"dist/*.css",
-					"dist/*.js",
-				],
-				strip: /^dist/,
-				dest: "dist"
-			}
-		},
+		// JS
+		// -----------------------------------------------------------------------------------------
 		qunit: {
 			files: [
 				"scripts/tests/index.html"
@@ -125,6 +144,19 @@ module.exports = function( grunt ) {
 				dest: "dist/bootstrap.js"
 			}
 		},
+
+		// Docs
+		// -----------------------------------------------------------------------------------------
+		hogan: {
+			docs: {
+				layout: "docs/templates/layout.hbs",
+				src: [
+					"docs/templates/pages/*.hbs"
+				],
+				dest: "."
+			}
+		},
+
 		connect: {
 			main: {
 				options: {
@@ -151,6 +183,7 @@ module.exports = function( grunt ) {
 	// Processo principal de build
 	grunt.registerTask( "default", [
 		"clean", // Limpa todo o diretório dist
+		"icons", // Gera o mapeamento de icones
 		"less", // Compila os arquivos LESS
 		"jshint", // Faz o linting em todos os arquivos JS relevantes
 		"concat", // Concatena os arquivos javascript em um só
