@@ -5,5 +5,5 @@
 	"meter": [ "dashboard" ],
 	"remove": [ "times", "delete", "close" ],
 	"copy": [ "files" ],
-	"menu": [ "reorder" ]
+	"reorder": [ "menu" ]
 }

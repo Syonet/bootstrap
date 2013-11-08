@@ -17,7 +17,8 @@
 			"undo", "redo", "attachment", "tab",
 			"list-ul", "list", "list-ol", "libreoffice",
 			"file-css", "file-xml", "file-powerpoint", "file-zip",
-			"file-excel", "file-word", "file-openoffice", "file-pdf"
+			"file-excel", "file-word", "file-openoffice", "file-pdf",
+			"th", "th-large", "th-list"
 		]
 	},
 	"Logos": {
@@ -59,7 +60,7 @@
 		"description": "Sem categoria específica",
 		"icons": [
 			"home", "location", "pushpin", "pencil",
-			"image", "office", "books", "wheel",
+			"picture", "office", "books", "wheel",
 			"tag", "tags", "barcode", "qrcode",
 			"stack", "ticket", "shopping-cart", "medkit",
 			"film", "music", "camera", "busy",
@@ -69,7 +70,7 @@
 			"clock", "alarm", "zzz", "cloud",
 			"meter", "dashboard", "male", "female",
 			"database", "trophy", "briefcase", "accessibility",
-			"grid", "stats", "bars", "pie",
+			"filter", "stats", "bars", "pie",
 			"cog", "cogs", "wrench", "settings",
 			"checkbox-checked", "checkbox-unchecked", "checkbox-partial", "hammer",
 			"radio-checked", "radio-unchecked", "target", "lightning",
@@ -93,10 +94,9 @@
 			"heart", "heart-o", "heart-broken", "scissors",
 			"embed", "code", "console", "gift",
 			"bookmark", "bookmarks", "road", "certificate",
-			"paint-format", "droplet", "calculate", "filter",
-			"asterisk", "drawer", "drawer2", "drawer3",
-			"box-add", "box-remove", "money", "coin",
-			"eye", "eye-blocked"
+			"paint-format", "droplet", "calculate", "asterisk",
+			"eye", "eye-blocked", "box-add", "box-remove",
+			"money", "coin", "drawer"
 		]
 	}
 }

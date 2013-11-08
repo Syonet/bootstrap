@@ -120,9 +120,12 @@
 
 		$( "#icon-search" ).keyup(function() {
 			var val = this.value.replace( /\s/, "-" );
+			var regex = new RegExp( "^icon-.*?" + val + ".*$", "i" );
 			var $li = $container.find( "li" ).hide();
 
-			$li.filter( ":contains('icon-" + val.replace( "'", "\\'" ) + "')" ).show();
+			$li.filter(function() {
+				return regex.test( $.trim( this.textContent ) );
+			}).show();
 		});
 	}
 
