@@ -85,29 +85,25 @@
  * 3. Corrige border-radius bottom do paginador na última tr da tabela
  * 4. Seta o line-height correto para o link do paginador
  */
-.syo-datagrid {
-  > .syo-datagrid-helper.syo-pagination {
-    padding: 0; /* 1 */
-    line-height: @base-line-height + 8px;
-    vertical-align: middle;
+.syo-datagrid > .syo-datagrid-helper .syo-pagination {
+  margin: -( @padding-base-vertical + 1 ) -( @padding-base-horizontal + 1 );
+  padding: 0; /* 1 */
+  line-height: @base-line-height + 8px;
+  vertical-align: middle;
 
-    /* 2 */
-    > ul {
-      margin-top: -1px;
-      margin-bottom: -1px;
-      &:first-child { margin-left: -1px; }
-      &:last-child  { margin-right: -1px; }
+  /* 2 */
+  > ul {
+    margin: 0;
 
-      li a {
-        line-height: @base-line-height; /* 4 */
-        .border-radius( 0 );
-      }
+    li a {
+      line-height: @base-line-height; /* 4 */
+      .border-radius( 0 );
     }
+  }
 
-    &:last-child {
-      ul:first-child li:first-child a {
-        .border-bottom-left-radius( @base-border-radius ); /* 3 */
-      }
+  &:last-child {
+    ul:first-child li:first-child a {
+      .border-bottom-left-radius( @base-border-radius ); /* 3 */
     }
   }
 }

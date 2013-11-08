@@ -1,0 +1,102 @@
+{
+	"Setas": {
+		"description": "Indicação e Manipulação",
+		"icons": [
+			"arrow-left", "arrow-right", "arrow-up", "arrow-down",
+			"arrow-down-left", "arrow-down-right", "arrow-up-left", "arrow-up-right",
+			"chevron-right", "chevron-left", "chevron-up", "chevron-down"
+		]
+	},
+	"Texto e Arquivos": {
+		"description": "Ferramentas de edição de texto e outros",
+		"icons": [
+			"file", "file-o", "files", "file4",
+			"files", "folder-close", "folder-open", "spell-check",
+			"align-left", "align-center", "align-right", "align-justify",
+			"copy", "paste", "indent-left", "indent-right",
+			"undo", "redo", "attachment", "tab",
+			"list-ul", "list", "list-ol", "libreoffice",
+			"file-css", "file-xml", "file-powerpoint", "file-zip",
+			"file-excel", "file-word", "file-openoffice", "file-pdf",
+			"th", "th-large", "th-list"
+		]
+	},
+	"Logos": {
+		"description": "Empresas e serviços",
+		"icons": [
+			"facebook", "facebook-square", "twitter", "twitter-square",
+			"rss", "rss-square", "google-plus", "google-plus-square",
+			"youtube", "linkedin", "github", "html5", "css3",
+			"android", "windows", "tux", "apple",
+			"chrome", "firefox", "IE", "opera", "safari"
+		]
+	},
+	"Controles de Mídia": {
+		"description": "Áudio e Vídeo",
+		"icons": [
+			"play", "pause", "stop", "eject",
+			"backward", "forward", "fast-backward", "fast-forward",
+			"step-backward", "step-forward", "repeat", "shuffle",
+			"volume-high", "volume-medium", "volume-low", "volume-off",
+			"volume-mute", "volume-increase", "volume-decrease", "equalizer",
+			"expand", "expand2", "retract", "retract2",
+			"refresh", "loop"
+		]
+	},
+	"Comunicação": {
+		"description": "Ferramentas, serviços ou conceitos",
+		"icons": [
+			"sort-alpha-desc", "sort-alpha-asc", "sort-amount-desc", "sort-amount-asc",
+			"sort", "sort-up", "sort-down", "bullhorn",
+			"zoom-out", "zoom-in", "search", "external",
+			"lock", "lock2", "unlocked", "share",
+			"sign-in", "sign-out", "thumbs-up", "thumbs-down",
+			"download", "upload", "cloud-download", "cloud-upload",
+			"comment", "comments", "ellipsis-vertical", "ellipsis-horizontal",
+			"menu"
+		]
+	},
+	"Outros": {
+		"description": "Sem categoria específica",
+		"icons": [
+			"home", "location", "pushpin", "pencil",
+			"picture", "office", "books", "wheel",
+			"tag", "tags", "barcode", "qrcode",
+			"stack", "ticket", "shopping-cart", "medkit",
+			"film", "music", "camera", "busy",
+			"quote-left", "quote-right", "cabinet", "calendar",
+			"tv", "tablet", "mobile", "laptop",
+			"screen", "keyboard", "print", "reorder",
+			"clock", "alarm", "zzz", "cloud",
+			"meter", "dashboard", "male", "female",
+			"database", "trophy", "briefcase", "accessibility",
+			"filter", "stats", "bars", "pie",
+			"cog", "cogs", "wrench", "settings",
+			"checkbox-checked", "checkbox-unchecked", "checkbox-partial", "hammer",
+			"radio-checked", "radio-unchecked", "target", "lightning",
+			"check", "ok", "check-o", "ok-o",
+			"truck", "airplane", "car", "tree",
+			"fire", "leaf", "save", "lab",
+			"remove", "remove-circle", "close", "times",
+			"trash", "spam", "glass", "coffee",
+			"star-o", "star-half-o", "star", "address-book",
+			"circle-loader-100", "circle-loader-87", "circle-loader-75", "circle-loader-62",
+			"cirlce-loader-50", "circle-loader-37", "circle-loader-25", "circle-loader-12",
+			"circle-loader-0", "email", "group", "user",
+			"phone", "earth", "flag", "support",
+			"exclamation-triangle", "exclamation-circle", "question", "blocked",
+			"info", "info2", "power-cord", "power-off",
+			"key", "edit", "email-forward", "reply",
+			"add-circle", "delete-circle", "check-circle", "bell",
+			"history", "issue", "issue-complete", "issue-reopen",
+			"plus", "minus", "crop", "credit",
+			"compass", "map", "map-o", "binoculars",
+			"heart", "heart-o", "heart-broken", "scissors",
+			"embed", "code", "console", "gift",
+			"bookmark", "bookmarks", "road", "certificate",
+			"paint-format", "droplet", "calculate", "asterisk",
+			"eye", "eye-blocked", "box-add", "box-remove",
+			"money", "coin", "drawer"
+		]
+	}
+}

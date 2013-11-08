@@ -1,0 +1,48 @@
+/* =================================================================================================================
+   font-face
+   ================================================================================================================= */
+
+@font-face {
+  font-family: "SyoBootstrap";
+  src: url( "@{fonts-path}/SyoBootstrap.eot" );
+  src: url( "@{fonts-path}/SyoBootstrap.eot?#iefix" ) format( "embedded-opentype" ),
+       url( "@{fonts-path}/SyoBootstrap.woff" ) format( "woff" ),
+       url( "@{fonts-path}/SyoBootstrap.ttf" ) format( "truetype" ),
+       url( "@{fonts-path}/SyoBootstrap.svg#SyoBootstrap" ) format( "svg" );
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =================================================================================================================
+   Uso
+   ================================================================================================================= */
+
+/*
+ * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
+ * 2. Garante que o width acompanhará tamanho de fontes maiores
+ * 3. Melhor renderização da fonte
+ */
+[class^="icon-"]:before,
+[class*=" icon-"]:before { /* 1 */
+  min-width: @icon-size;
+  display: inline-block;
+  line-height: 1;
+  font-family: "SyoBootstrap";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  vertical-align: middle;
+
+  /* 3 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  &.icon-large { font-size: 150%; }
+  &.icon-2x    { font-size: 200%; }
+  &.icon-3x    { font-size: 300%; }
+  &.icon-4x    { font-size: 400%; }
+}

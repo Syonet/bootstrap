@@ -12,6 +12,8 @@
 		// Executa processos adicionais aos componentes Javascript
 		enhanceJSComponents();
 
+		// Monta a documentação dos icones, separado em categorias
+		buildIcons();
 	});
 
 	function initPrettify() {
@@ -85,6 +87,45 @@
 					position: $( this ).data("position")
 				}).syoPopover( "open" );
 			}
+		});
+	}
+
+	function buildIcons() {
+		var xhr;
+		var $container = $( "#icons-container" );
+
+		if ( !$container.length ) {
+			return;
+		}
+
+		xhr = $.get( "/docs/icons.json" );
+
+		xhr.done(function( data ) {
+			$.each( data, function( cat, catObj ) {
+				var $header = $( "<div class='syo-header syo-header-ruler'><h3></h3></div>" );
+				var $list = $( "<ul class='icons' />" );
+
+				$header.find( "h3" ).append( cat );
+				$header.find( "h3" ).append( " <small>" + catObj.description + "</small>" );
+				$header.appendTo( $container );
+
+				$.each( catObj.icons, function( i, icon ) {
+					var $icon = $( "<i />" ).addClass( "icon-" + icon );
+					$( "<li />" ).append( $icon ).append( " icon-" + icon ).appendTo( $list );
+				});
+
+				$list.appendTo( $container );
+			});
+		});
+
+		$( "#icon-search" ).keyup(function() {
+			var val = this.value.replace( /\s/, "-" );
+			var regex = new RegExp( "^icon-.*?" + val + ".*$", "i" );
+			var $li = $container.find( "li" ).hide();
+
+			$li.filter(function() {
+				return regex.test( $.trim( this.textContent ) );
+			}).show();
 		});
 	}
 

@@ -2,6 +2,23 @@
 module.exports = function( grunt ) {
 	"use strict";
 
+	var _ = grunt.util._;
+
+	function pad( direction, str, length, char ) {
+		direction = /^left|right$/.test( direction ) ? direction : "left";
+		char = char ? char.charAt( 0 ) : " ";
+
+		while ( str.length < length ) {
+			if ( direction === "left" ) {
+				str = char + str;
+			} else {
+				str += char;
+			}
+		}
+
+		return str;
+	}
+
 	// Original "copy" by the jQuery UI Team
 	// https://github.com/jquery/jquery-ui/blob/1.10.0/build/tasks/build.js#L87
 	grunt.registerMultiTask(
@@ -56,4 +73,57 @@ module.exports = function( grunt ) {
 				grunt.log.writeln( "Renamed " + renameCount + " files." );
 			}
 		});
+
+
+	grunt.registerMultiTask(
+		"icons",
+		"Dinamicamente cria as classes de icones baseado em um manifesto do IcoMoon.io",
+		function() {
+			var aliases = {};
+			var options = this.options({
+				aliases: ""
+			});
+
+			if ( grunt.file.exists( options.aliases ) ) {
+				aliases = grunt.file.readJSON( options.aliases );
+			}
+
+			this.files.forEach(function( file ) {
+				var contents = "";
+
+				file.src.map(function( filepath ) {
+					return grunt.file.readJSON( filepath );
+				}).forEach(function( cfg ) {
+					var icons = [];
+
+					_.pluck( cfg.iconSets, "selection" ).forEach(function( selection ) {
+						selection.forEach(function( icon ) {
+							if ( icon.order > 0 ) {
+								icons.push( icon );
+							}
+						});
+					});
+
+					icons.forEach(function( icon ) {
+						var code = Number( icon.code ).toString( 16 );
+						code = pad( "left", code, 4, "0" );
+
+						// Seta os aliases antes, é mais fácil
+						if ( aliases[ icon.name ] && aliases[ icon.name ].length ) {
+							_.forEach( aliases[ icon.name ], function( alias ) {
+								contents += ".icon-" + alias + ",\n";
+							});
+						}
+
+						contents += pad( "right", ".icon-" + icon.name, 40 );
+						contents += "{ &:before { content: \"\\" + code + "\"; } }";
+						contents += "\n";
+					});
+				});
+
+				grunt.file.write( file.dest, contents.trim() );
+				grunt.log.writeln( "File " + grunt.log.wordlist( [ file.dest ] ) + " created" );
+			});
+		}
+	);
 };
