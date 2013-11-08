@@ -118,8 +118,11 @@
 			});
 		});
 
-		xhr.fail(function() {
-			window.console.log("asdsad");
+		$( "#icon-search" ).keyup(function() {
+			var val = this.value.replace( /\s/, "-" );
+			var $li = $container.find( "li" ).hide();
+
+			$li.filter( ":contains('icon-" + val.replace( "'", "\\'" ) + "')" ).show();
 		});
 	}
 

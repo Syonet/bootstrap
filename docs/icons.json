@@ -11,7 +11,7 @@
 		"description": "Ferramentas de edição de texto e outros",
 		"icons": [
 			"file", "file-o", "files", "file4",
-			"files", "folder", "folder-open", "spell-check",
+			"files", "folder-close", "folder-open", "spell-check",
 			"align-left", "align-center", "align-right", "align-justify",
 			"copy", "paste", "indent-left", "indent-right",
 			"undo", "redo", "attachment", "tab",
