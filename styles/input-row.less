@@ -4,10 +4,7 @@
  */
 .syo-input-row {
   display: table;
-  margin-left: -3px;
-  margin-right: -3px;
   border-collapse: separate; /* 1 */
-  border-spacing: 3px 0; /* 2 */
 
   > input,
   > select,
@@ -23,6 +20,10 @@
 
 .syo-input-row-addon {
   width: 1%;
+  padding: 0 3px;
   white-space: nowrap;
   vertical-align: middle;
+
+  &:first-child { padding-left: 0; }
+  &:last-child  { padding-right: 0; }
 }
