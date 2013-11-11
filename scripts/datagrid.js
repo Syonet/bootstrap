@@ -1,95 +1,75 @@
-(function( $ ) {
+(function( $, window ) {
 	"use strict";
 
-	var classes = {};
-	classes.widget = "syo-datagrid";
-	classes.header = classes.widget + "-header";
-	classes.rowContainer = classes.widget + "-rowcont";
-	classes.body = classes.widget + "-body";
-	classes.helper = classes.widget + "-helper";
-	classes.bodyWithHelper = classes.widget + "-with-helper";
+	var instances = [];
+	var $template = $(
+		"<div class='syo-datagrid'>" +
+			"<table class='syo-datagrid-header'><colgroup></colgroup></table>" +
+			"<div class='syo-datagrid-body'><table><colgroup></colgroup></table></div>" +
+			"<table class='syo-datagrid-helper'><colgroup></colgroup></table>" +
+		"</div>"
+	);
 
-	var selectors = {
-		// Header
-		header: "> div:eq(0)",
-
-		// Body
-		body: "> div:eq(1)",
-
-		// Rows Container
-		rowContainer: "> div:eq(1) > div",
-
-		// Rows
-		rows: "> div:eq(1) tbody > tr",
-
-		// Footer helper
-		helper: "> div:gt(1)"
-	};
-
-	function getComponents( $element ) {
-		var components = {};
-
-		$.each( selectors, function( key, selector ) {
-			components[ key ] = $element.find( selector );
+	$( window ).on( "resize", function() {
+		instances.forEach(function( instance ) {
+			instance._resize.call( instance );
 		});
-
-		return components;
-	}
-
-	// Determina se uma linha do grid está desabilitada ou não
-	function isRowDisabled( $row ) {
-		return !!$row.data( "disabled" );
-	}
-
-	function getStateClass( state ) {
-		var i, len;
-		var ret = [];
-		state = state.split( " " );
-
-		for ( i = 0, len = state.length; i < len; i++ ) {
-			ret.push( classes.widget + "-state-" + state[ i ] );
-		}
-
-		return ret.join( " " );
-	}
+	});
 
 	$.widget( "syo.syoDataGrid", {
 		version: "@VERSION",
+		originalPosition: null,
 		options: {
 			// Callbacks
 			activate: null,
 			beforeActivate: null
 		},
 
-		// Criação/adaptação da estrutura do syoDataGrid
+		// Criação/adaptação da estrutura do grid
 		_create: function() {
+			var parent;
+
+			if ( !this.element.is( "table" ) ) {
+				throw new Error( "Não se pode utilizar o syoDatagrid em um elemento que não seja uma tabela" );
+			}
+
+			this.grid = $template.clone();
+			this.grid.insertAfter( this.element );
+
+			parent = this.element.parent();
+			this.originalPosition = {
+				parent: parent,
+				index: parent.children().index( this.element ) - 1
+			};
+
+			this.element.appendTo( $( "body" ) );
+
 			this.refresh();
 			this._setupEvents();
+			instances.push( this );
 		},
 
+		// Retorna o widget
+		widget: function() {
+			return this.grid;
+		},
+
+		// Instancia os eventos do grid
 		_setupEvents: function() {
 			var events = {};
-			events[ "mouseenter " + selectors.rows ] = this._hover;
-			events[ "mouseleave " + selectors.rows ] = this._hover;
-			events[ "click " + selectors.rows ] = this._activate;
+			events[ "click .syo-datagrid-body tbody tr" ] = this._activate;
 
-			this._on( this.element, events );
+			this._on( this.grid, events );
 		},
 
 		_activate: function( e ) {
 			var eventData, $oldActiveRow;
 			var $row = $( e.currentTarget );
-			var clickedClass = getStateClass( "clicked" );
-
-			if ( isRowDisabled( $row ) ) {
-				return;
-			}
 
 			e.stopPropagation();
 			e.preventDefault();
 
-			$oldActiveRow = this.components.rows.filter( "." + clickedClass );
-
+			$oldActiveRow = this.grid.find( ".syo-datagrid-body tbody tr.syo-active" );
 			eventData = {
 				oldItem: $oldActiveRow[ 0 ] || null,
 				newItem: $row[ 0 ]
@@ -102,67 +82,69 @@
 
 			// Remove classe do elemento ativo anteriormente,
 			// adiciona classe no novo elemento ativo
-			$oldActiveRow.removeClass( clickedClass );
-			$row.addClass( clickedClass ).removeClass( getStateClass( "hover" ) );
+			$oldActiveRow.removeClass( "syo-active" );
+			$row.addClass( "syo-active" );
 
 			this._trigger( "activate", null, eventData );
 		},
 
-		_hover: function( e ) {
-			var $row = $( e.currentTarget );
-			var hoverClass = getStateClass( "hover" );
+		_resize: function() {
+			var i, len;
+			var $gridCols = this.grid.find( "colgroup col" );
+			var $cols = this.element.children( "colgroup" ).find( "col" );
 
-			// Se a linha tiver com estado "clicked" (ativa),
-			// então esta tem prioridade sobre as demais.
-			if ( isRowDisabled( $row ) || $row.hasClass( getStateClass( "clicked" ) ) ) {
-				return;
+			// Exibe apenas pra poder verificar dimensões de cada coluna
+			this.element.show();
+			for ( i = 0, len = $cols.length - 1; i < len; i++ ) {
+				$gridCols.filter( ":nth-child(" + ( i + 1 ) + ")" )
+						.outerWidth( $cols.eq( i ).width() );
 			}
 
-			if ( e.type === "mouseenter" ) {
-				$row
-					// Adiciona a classe do estado hover na linha atual
-					.addClass( hoverClass )
-
-					// Deve ser feita também a remoção da mesma classe nas outras linhas
-					.siblings().removeClass( hoverClass );
-			} else {
-				$row.removeClass( hoverClass );
-			}
+			this.element.hide();
 		},
 
-		// Atualiza o grid, readicionando as classes necessárias em cada componente do mesmo
 		refresh: function() {
-			this.components = getComponents( this.element );
-			this.element.addClass( classes.widget );
+			var i, len;
+			var $colgroups = this.grid.find( "colgroup" ).empty();
+			var $cols = this.element.children( "colgroup" ).find( "col" );
 
-			// Adiciona dinamicamente as classes nos componentes do DataGrid
-			$.each( this.components, function( key, $component ) {
-				if ( classes[ key ] ) {
-					$component.addClass( classes[ key ] );
-				}
-			});
+			this.grid.find( ".syo-datagrid-header" )
+				.children( ":not(colgroup)" ).remove().end()
+				.append( this.element.children( "thead" ).clone() );
 
-			// Se tem algum footer, adiciona uma classe mais
-			this.components.body.toggleClass(
-				classes.bodyWithHelper,
-				this.components.helper.length > 0
-			);
+			this.grid.find( ".syo-datagrid-body table" )
+				.children( ":not(colgroup)" ).remove().end()
+				.append( this.element.children( "tbody" ).clone() );
+
+			if ( this.element.children( "tfoot" ).length ) {
+				this.grid.find( ".syo-datagrid-body" ).addClass( "syo-datagrid-with-helper" );
+				this.grid.find( ".syo-datagrid-helper" )
+					.children( ":not(colgroup)" ).remove().end()
+					.append( this.element.children( "tfoot" ).clone() );
+			} else {
+				this.grid.find( ".syo-datagrid-helper" ).hide();
+				this.grid.find( ".syo-datagrid-body" ).removeClass( "syo-datagrid-with-helper" );
+			}
+
+			for ( i = 0, len = $cols.length - 1; i < len; i++ ) {
+				$colgroups.append( "<col>" );
+			}
+
+			this.element.hide();
+			this._resize();
 		},
 
-		// O destroy faz, basicamente, remoção de classes.
 		_destroy: function() {
-			this.element.removeClass( classes.widget );
+			this.grid.remove();
 
-			$.each( this.components, function( key, $component ) {
-				$component.removeClass( classes[ key ] );
-			});
+			this.element.insertAfter(
+				this.originalPosition.parent.children()
+					.eq( this.originalPosition.index )
+			);
+			this.element.show();
 
-			// Remove as classes de estado do rows
-			this.components.rows.removeClass( getStateClass( "hover clicked" ) );
-
-			// Se tem algum footer, remove a classe extra
-			this.components.body.removeClass( classes.bodyWithHelper );
+			instances.splice( instances.indexOf( this ), 1 );
 		}
 	});
 
-})( jQuery );
+})( jQuery, window );

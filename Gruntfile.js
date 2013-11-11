@@ -162,7 +162,8 @@ module.exports = function( grunt ) {
 				options: {
 					hostname: "*",
 					keepalive: true,
-					port: 8001
+					port: 8001,
+					debug: true
 				}
 			}
 		}

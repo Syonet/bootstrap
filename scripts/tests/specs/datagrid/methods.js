@@ -5,14 +5,15 @@
 	test( "refresh", function() {
 		expect( 1 );
 
-		$( "#grid-head-body" ).syoDataGrid();
+		var $table = $( "#grid-head-body" ).syoDataGrid();
+		var $widget = $( "#grid-head-body" ).syoDataGrid( "widget" );
 
-		$( "#grid-head-body div:last table tbody" ).append( "<tr id='test-refresh-tr'><td></td></tr>" );
-		$( "#grid-head-body" ).syoDataGrid( "refresh" );
+		$table.find( "tbody" ).append( "<tr class='test-refresh-tr'><td></td></tr>" );
+		$table.syoDataGrid( "refresh" );
 
-		$( "#test-refresh-tr" ).trigger( "mouseenter" );
+		$widget.find( ".test-refresh-tr" ).trigger( "click" );
 		ok(
-			$( "#test-refresh-tr" ).hasClass( "syo-datagrid-state-hover" ),
+			$widget.find( ".test-refresh-tr" ).hasClass( "syo-active" ),
 			"Os eventos na nova TR devem ser adicionados"
 		);
 	});

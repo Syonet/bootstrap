@@ -151,19 +151,23 @@ tr.syo-datagrid-state-clicked {
   }
 
   .syo-datagrid-header {
-    table {
-      .border-radius-bottom( 0 );
+    .border-radius-bottom( 0 );
 
-      thead:last-child > tr:last-child > th:first-child,
-      thead:last-child > tr:last-child > th:last-child {
-        .border-radius-bottom( 0 ); /* 1 */
-      }
+    thead:last-child > tr:last-child > th:first-child,
+    thead:last-child > tr:last-child > th:last-child {
+      .border-radius-bottom( 0 ); /* 1 */
     }
   }
 
   .syo-datagrid-body {
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: @table-border-color;
+    .border-radius-bottom( @base-border-radius );
+
     table {
-      border-top-width: 0; /* 2 */
+      margin: -1px;
+      border-width: 0; /* 2 */
       .border-radius-top( 0 );
 
       thead tr:first-child {

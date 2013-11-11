@@ -164,7 +164,7 @@ button {
  * 2. Compensa a remoção do inline-block (1)
  */
 .syo-field {
-  margin-bottom: @computed-line-height / 2;
+  margin-bottom: @computed-line-height / 4;
 
   &.syo-field-inline {
     display: inline; /* 1 */
@@ -181,6 +181,7 @@ button {
   textarea,
   select,
   button {
+    margin-bottom: @computed-line-height / 4;
     vertical-align: middle;
   }
 
@@ -188,6 +189,7 @@ button {
   > input[type="checkbox"] {
     position: relative;
     top: .6em;
+    margin-bottom: 0;
     vertical-align: top;
   }
 }
