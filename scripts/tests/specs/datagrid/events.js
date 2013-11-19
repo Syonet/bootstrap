@@ -4,7 +4,10 @@
 	module( "Eventos", {
 		setup: function() {
 			this.table = $( "#grid-head-body" ).syoDataGrid();
-			this.widget = $( "#grid-head-body" ).syoDataGrid( "widget" );
+			this.widget = this.table.syoDataGrid( "widget" );
+		},
+		teardown: function() {
+			this.table.syoDataGrid( "destroy" );
 		}
 	});
 

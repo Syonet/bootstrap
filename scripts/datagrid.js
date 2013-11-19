@@ -27,8 +27,6 @@
 
 		// Criação/adaptação da estrutura do grid
 		_create: function() {
-			var parent;
-
 			if ( !this.element.is( "table" ) ) {
 				throw new Error( "Não se pode utilizar o syoDatagrid em um elemento que não seja uma tabela" );
 			}
@@ -36,10 +34,9 @@
 			this.grid = $template.clone();
 			this.grid.insertAfter( this.element );
 
-			parent = this.element.parent();
 			this.originalPosition = {
-				parent: parent,
-				index: parent.children().index( this.element ) - 1
+				parent: this.element.parent(),
+				index: this.element.index()
 			};
 
 			this.element.appendTo( $( "body" ) );
@@ -135,13 +132,15 @@
 		},
 
 		_destroy: function() {
-			this.grid.remove();
+			var $sibling = this.originalPosition.parent.children().prev();
+			if ( $sibling.length ) {
+				this.element.insertAfter( $sibling );
+			} else {
+				this.element.appendTo( this.originalPosition.parent() );
+			}
 
-			this.element.insertAfter(
-				this.originalPosition.parent.children()
-					.eq( this.originalPosition.index )
-			);
 			this.element.show();
+			this.grid.remove();
 
 			instances.splice( instances.indexOf( this ), 1 );
 		}

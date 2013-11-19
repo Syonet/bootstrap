@@ -329,135 +329,105 @@
 			<div class="row">
 				<div class="col">
 					<div class="test test-fixed test-lone" title="Data Grid - Teste das bordas arredondadas do datagrid com o elemento helper">
-						<div data-widget="syoDataGrid">
-							<div>
-								<table>
-									<colgroup>
-										<col style="width: 150px">
-										<col style="width: 150px">
-										<col>
-									</colgroup>
-									<thead>
-										<tr>
-											<th>thead left</th>
-											<th>thead center</th>
-											<th>thead right</th>
-										</tr>
-									</thead>
-								</table>
-							</div>
-							<div>
-								<div>
-									<table>
-										<colgroup>
-											<col style="width: 150px">
-											<col style="width: 150px">
-											<col>
-										</colgroup>
-										<tbody>
-											<tr>
-												<td class="test-highlight2">body left</td>
-												<td class="test-highlight2">body center</td>
-												<td class="test-highlight2">body right</td>
-											</tr>
-											<tr>
-												<td class="test-highlight2">body left</td>
-												<td class="test-highlight2">body center</td>
-												<td class="test-highlight2">body right</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div>Helper aqui</div>
-						</div>
+						<table data-widget="syoDataGrid">
+							<colgroup>
+								<col style="width: 150px">
+								<col style="width: 150px">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>thead left</th>
+									<th>thead center</th>
+									<th>thead right</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="3">Helper aqui</td>
+								</tr>
+							</tfoot>
+						</table>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
 					<div class="test test-fixed test-lone" title="Data Grid - Teste das bordas arredondadas do datagrid sem o elemento helper">
-						<div data-widget="syoDataGrid">
-							<div>
-								<table>
-									<colgroup>
-										<col style="width: 150px">
-										<col style="width: 150px">
-										<col>
-									</colgroup>
-									<thead>
-										<tr>
-											<th>thead left</th>
-											<th>thead center</th>
-											<th>thead right</th>
-										</tr>
-									</thead>
-								</table>
-							</div>
-							<div>
-								<div>
-									<table>
-										<colgroup>
-											<col style="width: 150px">
-											<col style="width: 150px">
-											<col>
-										</colgroup>
-										<tbody>
-											<tr>
-												<td class="test-highlight2">body left</td>
-												<td class="test-highlight2">body center</td>
-												<td class="test-highlight2">body right</td>
-											</tr>
-											<tr>
-												<td class="test-highlight2">body left</td>
-												<td class="test-highlight2">body center</td>
-												<td class="test-highlight2">body right</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+						<table data-widget="syoDataGrid">
+							<colgroup>
+								<col style="width: 150px">
+								<col style="width: 150px">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>thead left</th>
+									<th>thead center</th>
+									<th>thead right</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
 					<div class="test test-fixed" title="Data Grid - Não deve ter nenhum background de destaque aparecendo no bottom e deve criar barra de rolagem abaixo do thead">
-						<div class="test-highlight1" style="height: 330px;">
-							<div data-widget="syoDataGrid" id="grid-overflow">
-								<div>
-									<table>
-										<thead>
-											<tr><th>thead</th></tr>
-										</thead>
-									</table>
-								</div>
-								<div>
-									<div>
-										<table>
-											<tbody>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-												<tr><td>body</td></tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
+						<div class="test-highlight1" style="height: 180px;">
+							<table data-widget="syoDataGrid">
+								<thead>
+									<tr>
+										<th>header</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+									<tr><td>body</td></tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

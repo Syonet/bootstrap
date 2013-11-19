@@ -160,13 +160,12 @@ tr.syo-datagrid-state-clicked {
   }
 
   .syo-datagrid-body {
-    border-width: 0 1px 1px;
+    border-width: 0 1px 1px 0;
     border-style: solid;
     border-color: @table-border-color;
     .border-radius-bottom( @base-border-radius );
 
     table {
-      margin: -1px;
       border-width: 0; /* 2 */
       .border-radius-top( 0 );
 
@@ -175,6 +174,10 @@ tr.syo-datagrid-state-clicked {
         td {
           border-top: 1px solid @table-border-color; /* 3 */
         }
+      }
+
+      tbody tr:hover {
+        background-color: @table-stripe-color;
       }
 
       tbody:first-of-type > tr:first-child > td {
@@ -198,19 +201,23 @@ tr.syo-datagrid-state-clicked {
 }
 
 .syo-datagrid-body.syo-datagrid-with-helper {
-  table {
-    .border-radius-bottom( 0 );
-    border-bottom-width: 0;
+  border-bottom-width: 0;
 
-    tbody:last-child > tr:last-child > td {
-      .border-radius-bottom( 0 );
-    }
+  &,
+  table,
+  table tbody:last-child,
+  table tbody:last-child > tr:last-child,
+  table tbody:last-child > tr:last-child > td {
+    .border-radius-bottom( 0 );
   }
 }
 
-.syo-datagrid-helper {
-  padding: @padding-base-vertical @padding-base-horizontal;
-  border: 1px solid @table-border-color;
+/*
+ * 1. Sobrescreve especifidade
+ */
+.syo-datagrid .syo-datagrid-helper { /* 1 */
+  border-top-width: 0;
+  .border-radius-top( 0 );
   .border-radius-bottom( @base-border-radius );
 }
 

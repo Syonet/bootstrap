@@ -1,0 +1,44 @@
+/* =================================================================================================================
+   Overlay
+   ================================================================================================================= */
+
+.syo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -@overlay-zindex;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba( 0, 0, 0, .5 );
+  .transition( .2s linear opacity );
+  .opacity( 0 );
+
+  &.syo-active {
+    z-index: @overlay-zindex;
+    .opacity( 1 );
+  }
+}
+
+.syo-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  text-shadow: 0 0 5px rgba( 255, 255, 255, .5 );
+  .transform( ~"translateY( -50% )" );
+
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+
+  .syo-progressbar {
+    .box-shadow( 0 0 5px 3px rgba( 255, 255, 255, .3 ) );
+  }
+}

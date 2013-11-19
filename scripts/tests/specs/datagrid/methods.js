@@ -16,6 +16,8 @@
 			$widget.find( ".test-refresh-tr" ).hasClass( "syo-active" ),
 			"Os eventos na nova TR devem ser adicionados"
 		);
+
+		$table.syoDataGrid( "destroy" );
 	});
 
 }());
