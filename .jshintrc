@@ -4,6 +4,7 @@
 	"undef": true,
 	"curly": true,
 	"eqeqeq": true,
+	"eqnull": true,
 	"forin": true,
 	"noempty": true,
 	"nonew": true,
