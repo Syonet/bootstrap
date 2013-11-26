@@ -10,7 +10,6 @@
 
 @green: #008000;
 @light-green: #DFF0D8;
-@spring-green: #81DBB2;
 @blue: #336699;
 
 // ====================================================================================================================
@@ -25,6 +24,7 @@
 @brand-error: #D9534F;
 @brand-success: #5CB85C;
 @brand-warning: #EFD24F;
+@brand-active: #459A70;
 
 // ====================================================================================================================
 // Imagens/Fontes
@@ -75,7 +75,7 @@
 @font-size-small: ceil( @font-size-base * @component-small-factor );
 @font-size-large: floor( @font-size-base * @component-large-factor );
 
-@text-color: #000;
+@text-color: #222;
 @computed-line-height: 20px;
 @base-line-height: unit( @computed-line-height / @font-size-base );
 
@@ -128,6 +128,21 @@
 @table-bg: #FFF;
 @table-border-color: #CCC;
 @table-stripe-color: #F5F5F5;
+@table-color: @gray-dark;
+
+// Estados
+@table-active-bg: lighten( @brand-active, 45% );
+@table-active-color: @brand-active;
+
+@table-error-bg: lighten( @brand-error, 35% );
+@table-error-color: @brand-error;
+
+@table-success-bg: lighten( @brand-success, 40% );
+@table-success-color: @brand-success;
+
+// ====================================================================================================================
+// DataGrid
+// ====================================================================================================================
 
 @datagrid-max-height: 150px;
 
@@ -216,7 +231,7 @@
 
 @jq-text-color: @gray-darker;
 
-@jq-highlight-color: @spring-green;
+@jq-highlight-color: @brand-active;
 @jq-highlight-border: #456B5A;
 
 @jq-border: @gray-light;

@@ -36,7 +36,7 @@ table {
     line-height: @base-line-height;
     border-top: 1px solid @table-border-color;
     border-left: 1px solid @table-border-color;
-    color: @gray-dark;
+    color: @table-color;
     text-align: left;
     vertical-align: top;
 
@@ -110,7 +110,24 @@ table {
   tr.syo-active th,
   th.syo-active,
   td.syo-active {
-    background-color: @spring-green;
+    color: @table-active-color;
+    background-color: @table-active-bg;
+  }
+
+  tr.syo-success td,
+  tr.syo-success th,
+  th.syo-success,
+  td.syo-success {
+    color: @table-success-color;
+    background-color: @table-success-bg;
+  }
+
+  tr.syo-error td,
+  tr.syo-error th,
+  th.syo-error,
+  td.syo-error {
+    color: @table-error-color;
+    background-color: @table-error-bg;
   }
 }
 
