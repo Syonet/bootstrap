@@ -88,12 +88,12 @@
 .syo-datagrid > .syo-datagrid-helper .syo-pagination {
   margin: -( @padding-base-vertical + 1 ) -( @padding-base-horizontal + 1 );
   padding: 0; /* 1 */
-  line-height: @base-line-height + 8px;
+  line-height: @component-height;
   vertical-align: middle;
 
   /* 2 */
   > ul {
-    margin: 0;
+    margin: 0 ( @computed-line-height / 2 ) 0 0;
 
     li a {
       line-height: @base-line-height; /* 4 */

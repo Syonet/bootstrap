@@ -4,21 +4,27 @@
 	var instances = [];
 	var $template = $(
 		"<div class='syo-datagrid'>" +
-			"<table class='syo-datagrid-header'><colgroup></colgroup></table>" +
-			"<div class='syo-datagrid-body'><table><colgroup></colgroup></table></div>" +
-			"<table class='syo-datagrid-helper'><colgroup></colgroup></table>" +
+			"<table class='syo-table syo-table-hover syo-datagrid-header'></table>" +
+			"<div class='syo-datagrid-body-wrapper'>" +
+				"<div class='syo-datagrid-overflow'><div></div></div>" +
+				"<div class='syo-datagrid-body'>" +
+					"<table class='syo-table syo-table-hover'></table>" +
+				"</div>" +
+			"</div>" +
+			"<table class='syo-table syo-table-hover syo-datagrid-helper'></table>" +
 		"</div>"
 	);
 
 	$( window ).on( "resize", function() {
 		instances.forEach(function( instance ) {
-			instance._resize.call( instance );
+			instance.refresh( false );
 		});
 	});
 
 	$.widget( "syo.syoDataGrid", {
 		version: "@VERSION",
 		originalPosition: null,
+		components: null,
 		options: {
 			// Callbacks
 			activate: null,
@@ -33,6 +39,13 @@
 
 			this.grid = $template.clone();
 			this.grid.insertAfter( this.element );
+			this.components = {
+				header:      this.grid.find( ".syo-datagrid-header" ),
+				bodyWrapper: this.grid.find( ".syo-datagrid-body" ),
+				body:        this.grid.find( ".syo-datagrid-body table" ),
+				overflow:    this.grid.find( ".syo-datagrid-overflow" ),
+				helper:      this.grid.find( ".syo-datagrid-helper" )
+			};
 
 			this.originalPosition = {
 				parent: this.element.parent(),
@@ -53,10 +66,30 @@
 
 		// Instancia os eventos do grid
 		_setupEvents: function() {
-			var events = {};
-			events[ "click .syo-datagrid-body tbody tr" ] = this._activate;
+			this._on( this.grid, {
+				"click .syo-datagrid-body tbody tr": this._activate,
+				"mousewheel .syo-datagrid-body": this._scroll,
+				"wheel .syo-datagrid-body": this._scroll
+			});
 
-			this._on( this.grid, events );
+			this._on( this.components.overflow, {
+				scroll: this._scroll
+			});
+		},
+
+		_scroll: function( e ) {
+			var overflow = this.components.overflow[ 0 ];
+			if ( e.type === "wheel" || e.type === "mousewheel" ) {
+				e.preventDefault();
+
+				// Multiplicar por 40 não é exatamente a melhor coisa a se fazer, mas como está até
+				// na MDN, então vamos usar como "safe" por hora.
+				// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/wheel
+				// => "Listening to this event across browser"
+				overflow.scrollTop -= ( e.originalEvent.wheelDeltaY || e.originalEvent.deltaY * -40 );
+			}
+
+			this.components.bodyWrapper.scrollTop( overflow.scrollTop );
 		},
 
 		_activate: function( e ) {
@@ -85,50 +118,77 @@
 			this._trigger( "activate", null, eventData );
 		},
 
-		_resize: function() {
-			var i, len;
-			var $gridCols = this.grid.find( "colgroup col" );
-			var $cols = this.element.children( "colgroup" ).find( "col" );
+		_handleOverflow: function( overflowWidth ) {
+			var $cells = $( ".syo-datagrid-grip" );
 
-			// Exibe apenas pra poder verificar dimensões de cada coluna
-			this.element.show();
-			for ( i = 0, len = $cols.length - 1; i < len; i++ ) {
-				$gridCols.filter( ":nth-child(" + ( i + 1 ) + ")" )
-						.outerWidth( $cols.eq( i ).width() );
+			if ( overflowWidth > 1 ) {
+				if ( !$cells.length ) {
+					this.components.header.find( "thead" ).each(function() {
+						var $tr = $( "tr", this );
+						var $cell = $( document.createElement( "th" ) )
+										.attr( "rowspan", $tr.length )
+										.appendTo( $tr.first() );
+
+						$cells = $cells.add( $cell );
+					});
+
+					this.components.body.find( "tbody" ).each(function() {
+						var $tr = $( "tr", this );
+						var $cell = $( document.createElement( "td" ) )
+										.attr( "rowspan", $tr.length )
+										.appendTo( $tr.first() );
+
+						$cells = $cells.add( $cell );
+					});
+
+					$cells.addClass( "syo-datagrid-grip" );
+				}
+
+				$cells.removeClass( "syo-hidden" ).innerWidth( overflowWidth );
+			} else {
+				$cells.addClass( "syo-hidden" ).width( 0 );
 			}
-
-			this.element.hide();
 		},
 
-		refresh: function() {
-			var i, len;
-			var $colgroups = this.grid.find( "colgroup" ).empty();
-			var $cols = this.element.children( "colgroup" ).find( "col" );
+		refresh: function( replace ) {
+			var bodyHeight, overflow, overflowWidth;
+			var $colgroup = this.element.find( "colgroup" );
+			var $thead = this.element.find( "thead" );
+			var $tbody = this.element.find( "tbody" );
+			var $tfoot = this.element.find( "tfoot" );
 
-			this.grid.find( ".syo-datagrid-header" )
-				.children( ":not(colgroup)" ).remove().end()
-				.append( this.element.children( "thead" ).clone() );
+			if ( replace == null || replace ) {
+				this.components.header.empty();
+				this.components.header
+					.append( $colgroup.clone() )
+					.append( $thead.clone() );
 
-			this.grid.find( ".syo-datagrid-body table" )
-				.children( ":not(colgroup)" ).remove().end()
-				.append( this.element.children( "tbody" ).clone() );
+				this.components.body.empty();
+				this.components.body
+					.append( $colgroup.clone() )
+					.append( $tbody.clone() );
 
-			if ( this.element.children( "tfoot" ).length ) {
-				this.grid.find( ".syo-datagrid-body" ).addClass( "syo-datagrid-with-helper" );
-				this.grid.find( ".syo-datagrid-helper" )
-					.children( ":not(colgroup)" ).remove().end()
-					.append( this.element.children( "tfoot" ).clone() );
-			} else {
-				this.grid.find( ".syo-datagrid-helper" ).hide();
-				this.grid.find( ".syo-datagrid-body" ).removeClass( "syo-datagrid-with-helper" );
+				this.components.bodyWrapper.toggleClass( "syo-datagrid-with-helper", !!$tfoot.length );
+				this.components.helper.empty();
+				this.components.helper
+					.append( $colgroup.clone() )
+					.append( $tfoot.clone() );
+
+				this.element.addClass( "syo-hidden" );
 			}
 
-			for ( i = 0, len = $cols.length - 1; i < len; i++ ) {
-				$colgroups.append( "<col>" );
-			}
+			bodyHeight = this.components.body.css( "height" );
+			overflow = this.components.overflow;
+			overflow.find( "div" ).css({
+				height: bodyHeight,
+				width: "100%"
+			});
 
-			this.element.hide();
-			this._resize();
+			overflowWidth = overflow[ 0 ].offsetWidth - overflow[ 0 ].clientWidth + 1;
+			overflow.width( overflowWidth );
+
+			// Pode ser que o min-width tenha ganho do cálculo via JS
+			this._handleOverflow( overflowWidth > 1 ? overflow.width() : 0 );
 		},
 
 		_destroy: function() {
@@ -139,7 +199,7 @@
 				this.element.appendTo( this.originalPosition.parent() );
 			}
 
-			this.element.show();
+			this.element.removeClass( "syo-hidden" );
 			this.grid.remove();
 
 			instances.splice( instances.indexOf( this ), 1 );

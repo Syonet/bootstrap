@@ -101,124 +101,28 @@ table {
   }
 }
 
-.syo-table > tbody > tr.syo-active {
-  td, th {
-    background-color: @spring-green;
-  }
-}
-
 /* =================================================================================================================
-   Data Grid
+   Estados
    ================================================================================================================= */
 
-
-tr.syo-datagrid-state-clicked {
-  td,
-  th {
+.syo-table > tbody {
+  tr.syo-active td,
+  tr.syo-active th,
+  th.syo-active,
+  td.syo-active {
     background-color: @spring-green;
-  }
-}
-
-.syo-datagrid tr.syo-datagrid-state-hover {
-  td {
-    cursor: pointer;
-    background-color: @table-stripe-color;
-  }
-}
-
-/*
- * 1. Features documentada (.syo-datagrid-body).
- */
-.syo-datagrid-body {
-  overflow: auto; /* 1 */
-  max-height: 150px; /* 1 */
-}
-
-/*
- * 1. Sobrescreve a especificidade da tabela normal.
- * 2. Evita borda dupla no topo do body mantendo a borda do thead quando tem scroll.
- * 3. Permite que a borda seja exibida corretamente no caso de utilizar header na tabela do body
- */
-.syo-datagrid {
-  td,
-  th {
-    overflow: hidden;
-  }
-
-  table {
-    .syo-table;
-    margin-bottom: 0;
-  }
-
-  .syo-datagrid-header {
-    .border-radius-bottom( 0 );
-
-    thead:last-child > tr:last-child > th:first-child,
-    thead:last-child > tr:last-child > th:last-child {
-      .border-radius-bottom( 0 ); /* 1 */
-    }
-  }
-
-  .syo-datagrid-body {
-    border-width: 0 1px 1px 0;
-    border-style: solid;
-    border-color: @table-border-color;
-    .border-radius-bottom( @base-border-radius );
-
-    table {
-      border-width: 0; /* 2 */
-      .border-radius-top( 0 );
-
-      thead tr:first-child {
-        th,
-        td {
-          border-top: 1px solid @table-border-color; /* 3 */
-        }
-      }
-
-      tbody tr:hover {
-        background-color: @table-stripe-color;
-      }
-
-      tbody:first-of-type > tr:first-child > td {
-        .border-radius-top( 0 ); /* 1 */
-      }
-    }
   }
 }
 
 /* =================================================================================================================
    Headers/Footers
    ================================================================================================================= */
-.syo-datagrid-header th,
-.syo-datagrid-helper,
 .syo-table > thead,
 .syo-table > tbody > tr > th,
 .syo-table > tfoot {
   color: @gray-dark;
   text-shadow: 0 1px 0 #FFF;
   #gradient .brand();
-}
-
-.syo-datagrid-body.syo-datagrid-with-helper {
-  border-bottom-width: 0;
-
-  &,
-  table,
-  table tbody:last-child,
-  table tbody:last-child > tr:last-child,
-  table tbody:last-child > tr:last-child > td {
-    .border-radius-bottom( 0 );
-  }
-}
-
-/*
- * 1. Sobrescreve especifidade
- */
-.syo-datagrid .syo-datagrid-helper { /* 1 */
-  border-top-width: 0;
-  .border-radius-top( 0 );
-  .border-radius-bottom( @base-border-radius );
 }
 
 /* =================================================================================================================

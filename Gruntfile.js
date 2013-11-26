@@ -190,6 +190,6 @@ module.exports = function( grunt ) {
 		"concat", // Concatena os arquivos javascript em um só
 		"process", // Copia e inclui o banner nos arquivos de distribuição
 		"hogan", // Compila a documentação do projeto
-		"qunit" // Roda os testes JS
+		//"qunit" // Roda os testes JS
 	]);
 };

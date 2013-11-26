@@ -1,0 +1,74 @@
+/* =================================================================================================================
+   Datagrid
+   ================================================================================================================= */
+
+.syo-datagrid table {
+  margin-bottom: 0;
+
+  .syo-datagrid-grip {
+    padding: @padding-base-vertical 0;
+  }
+}
+
+.syo-datagrid-header {
+  .border-radius-bottom( 0 );
+}
+
+.syo-datagrid-body-wrapper {
+  position: relative;
+  max-height: @datagrid-max-height;
+}
+
+.syo-datagrid-body {
+  overflow-y: hidden;
+  max-height: inherit;
+
+  > table {
+    border-width: 0 1px 0 0;
+    .border-radius-top( 0 );
+
+    > tbody:first-of-type > tr:first-child {
+      > td:first-child,
+      > td:last-child {
+        .border-radius-top( 0 );
+      }
+    }
+  }
+
+  &:not( .syo-datagrid-with-helper ) {
+    border-bottom: 1px solid @table-border-color;
+    .border-radius-bottom( @base-border-radius );
+
+    > table tr:last-child {
+      > td:first-child { .border-bottom-left-radius( @base-border-radius ); }
+      > td:last-child  { .border-bottom-right-radius( @base-border-radius ); }
+    }
+  }
+
+  &.syo-datagrid-with-helper > table {
+    .border-radius-bottom( 0 );
+  }
+}
+
+.syo-datagrid-helper {
+  .border-radius-top( 0 );
+}
+
+.syo-datagrid-overflow {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  min-width: 10px;
+  max-height: inherit;
+}
+
+/*
+ * 1. Não há outra forma de sobrescrever especificidade de !important...
+ */
+.syo-datagrid-grip.syo-hidden {
+  display: table-cell !important; /* 1 */
+  border-width: 0;
+}
