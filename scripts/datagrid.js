@@ -10,8 +10,8 @@
 				"<div class='syo-datagrid-body'>" +
 					"<table class='syo-table syo-table-hover'></table>" +
 				"</div>" +
+				"<table class='syo-table syo-table-hover syo-datagrid-helper'></table>" +
 			"</div>" +
-			"<table class='syo-table syo-table-hover syo-datagrid-helper'></table>" +
 		"</div>"
 	);
 
@@ -40,11 +40,12 @@
 			this.grid = $template.clone();
 			this.grid.insertAfter( this.element );
 			this.components = {
-				header:      this.grid.find( ".syo-datagrid-header" ),
-				bodyWrapper: this.grid.find( ".syo-datagrid-body" ),
-				body:        this.grid.find( ".syo-datagrid-body table" ),
-				overflow:    this.grid.find( ".syo-datagrid-overflow" ),
-				helper:      this.grid.find( ".syo-datagrid-helper" )
+				header:        this.grid.find( ".syo-datagrid-header" ),
+				bodyWrapper:   this.grid.find( ".syo-datagrid-body-wrapper" ),
+				bodyContainer: this.grid.find( ".syo-datagrid-body" ),
+				body:          this.grid.find( ".syo-datagrid-body table" ),
+				overflow:      this.grid.find( ".syo-datagrid-overflow" ),
+				helper:        this.grid.find( ".syo-datagrid-helper" )
 			};
 
 			this.originalPosition = {
@@ -89,7 +90,7 @@
 				overflow.scrollTop -= ( e.originalEvent.wheelDeltaY || e.originalEvent.deltaY * -40 );
 			}
 
-			this.components.bodyWrapper.scrollTop( overflow.scrollTop );
+			this.components.bodyContainer.scrollTop( overflow.scrollTop );
 		},
 
 		_activate: function( e ) {
@@ -151,7 +152,7 @@
 		},
 
 		refresh: function( replace ) {
-			var bodyHeight, overflow, overflowWidth;
+			var headerHeight, helperHeight, bodyHeight, overflow, overflowWidth;
 			var $colgroup = this.element.find( "colgroup" );
 			var $thead = this.element.find( "thead" );
 			var $tbody = this.element.find( "tbody" );
@@ -168,13 +169,23 @@
 					.append( $colgroup.clone() )
 					.append( $tbody.clone() );
 
-				this.components.bodyWrapper.toggleClass( "syo-datagrid-with-helper", !!$tfoot.length );
+				this.components.bodyContainer.toggleClass( "syo-datagrid-with-helper", !!$tfoot.length );
 				this.components.helper.empty();
 				this.components.helper
 					.append( $colgroup.clone() )
-					.append( $tfoot.clone() );
+					.append( $tfoot.clone() )
+					.toggleClass( "syo-hidden", !$tfoot.length );
 
 				this.element.addClass( "syo-hidden" );
+			}
+
+			// Se estamos dentro de um flex-row temos que fazer o body ficar 100% da altura
+			if ( this.grid.parent().is( ".flex-row" ) ) {
+				headerHeight = this.components.header.height();
+				helperHeight = this.components.helper.height();
+
+				this.components.bodyWrapper.css( "height", "calc(100% - " + ( helperHeight + headerHeight ) + "px)" );
+				this.components.body.css( "height", "calc(100% - " + helperHeight + "px)" );
 			}
 
 			bodyHeight = this.components.body.css( "height" );
