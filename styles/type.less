@@ -78,13 +78,19 @@ dl.dl-inline {
   dt {
     float: left;
     clear: left;
-    width: @dl-term-width;
     .text-overflow();
+
+    &:not( .col ) {
+      width: @dl-term-width;
+    }
   }
 
   dd {
     display: block;
-    margin-left: @dl-term-width + 10px;
+
+    &:not( .col ) {
+      margin-left: @dl-term-width + 10px;
+    }
   }
 }
 
