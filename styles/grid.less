@@ -23,8 +23,27 @@
   padding-right: ( @grid-gutter-width / 2 );
 }
 
+/* =================================================================================================================
+   Grid Flexbox
+   ================================================================================================================= */
+
+/*
+ * 1. Atualmente só tem efeito se dentro de um elemento posicionado
+ */
+.flex-row {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  height: 100%; /* 1 */
+
+  > .col {
+    float: none;
+  }
+}
+
 @media only screen {
   #grid( tiny );
+  .flex-row { #grid-flex( tiny ); }
 
   .syo-field label[class*="col-tiny-"] {
     text-align: right;
@@ -33,6 +52,7 @@
 
 @media screen and ( min-width: @screen-small ) {
   #grid( small );
+  .flex-row { #grid-flex( small ); }
 
   .syo-field label[class*="col-small-"] {
     text-align: right;
@@ -41,6 +61,7 @@
 
 @media screen and ( min-width: @screen-medium ) {
   #grid( medium );
+  .flex-row { #grid-flex( medium ); }
 
   .syo-field label[class*="col-medium-"] {
     text-align: right;
@@ -49,6 +70,7 @@
 
 @media screen and ( min-width: @screen-large ) {
   #grid( large );
+  .flex-row { #grid-flex( large ); }
 
   .syo-field label[class*="col-large-"] {
     text-align: right;

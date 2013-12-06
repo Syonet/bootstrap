@@ -224,6 +224,22 @@
   .offsetX( @columns-count );
 }
 
+#grid-flex( @column-name, @columns-count: @grid-columns ) {
+  // Columns
+  .spanX( @index ) when ( @index > 0 ) {
+    .col-@{column-name}-@{index} { .span( @index ); }
+    .spanX( @index - 1 );
+  }
+  .spanX( 0 ) { }
+
+  .span( @columns ) {
+    flex: 1 1 percentage( @columns / @columns-count );
+  }
+
+  // -----
+  .spanX( @columns-count );
+}
+
 // ====================================================================================================================
 // Navbar
 // ====================================================================================================================
