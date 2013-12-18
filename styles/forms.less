@@ -93,7 +93,7 @@ optgroup {
 input[type="checkbox"],
 input[type="radio"] {
   position: relative;
-  top: .2em;
+  top: .3em;
 }
 
 /* =================================================================================================================
@@ -125,32 +125,10 @@ label {
   vertical-align: middle;
   color: @text-color;
 
-  > input,
-  + input,
-  > select,
-  + select,
-  > textarea,
-  + textarea,
-  > button,
-  + button {
-    &:not(.input-block-level) {
-      margin-left: 3px;
-    }
-  }
-
   > input[type="checkbox"],
   > input[type="radio"] {
     position: relative;
-    top: .1em; /* 1 */
-  }
-}
-
-input,
-textarea,
-select,
-button {
-  + label {
-    margin-left: 3px;
+    top: -.1em; /* 1 */
   }
 }
 
@@ -158,23 +136,12 @@ button {
    Forms - syo-field
    ================================================================================================================= */
 
-/*
- * 1. Muda de inline para inline-block para corrigir um bug no IE10 onde o textarea não fica alinhado com os outros
- * inputs. O tamanho do field fica sendo controlado pelo input dentro dele.
- * 2. Compensa a remoção do inline-block (1)
- */
 .syo-field {
+  display: block;
   margin-bottom: @computed-line-height / 2;
 
   &.syo-field-inline {
-    display: inline; /* 1 */
-
-    input,
-    select,
-    textarea,
-    button {
-      margin-bottom: @computed-line-height / 2; /* 2 */
-    }
+    display: inline-block;
   }
 
   input,

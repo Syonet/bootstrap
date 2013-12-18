@@ -45,8 +45,11 @@
   #grid( tiny );
   .flex-row { #grid-flex( tiny ); }
 
-  .syo-field label[class*="col-tiny-"] {
-    text-align: right;
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-tiny-"]:not(.col-tiny-@{grid-columns}) {
+      text-align: right;
+    }
   }
 }
 
@@ -54,8 +57,11 @@
   #grid( small );
   .flex-row { #grid-flex( small ); }
 
-  .syo-field label[class*="col-small-"] {
-    text-align: right;
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-small-"]:not(.col-small-@{grid-columns}) {
+      text-align: right;
+    }
   }
 }
 
@@ -63,8 +69,11 @@
   #grid( medium );
   .flex-row { #grid-flex( medium ); }
 
-  .syo-field label[class*="col-medium-"] {
-    text-align: right;
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-medium-"]:not(.col-medium-@{grid-columns}) {
+      text-align: right;
+    }
   }
 }
 
@@ -72,7 +81,10 @@
   #grid( large );
   .flex-row { #grid-flex( large ); }
 
-  .syo-field label[class*="col-large-"] {
-    text-align: right;
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-large-"]:not(.col-large-@{grid-columns}) {
+      text-align: right;
+    }
   }
 }
