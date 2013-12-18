@@ -210,11 +210,11 @@
   }
 
   // Offset
-  .offsetX( @index ) when (@index > 0) {
+  .offsetX( @index ) when ( @index >= 0 ) {
     .offset-@{column-name}-@{index} { .offset(@index); }
-    .offsetX(@index - 1);
+    .offsetX( @index - 1 );
   }
-  .offsetX(0) { }
+  .offsetX( -1 ) { }
 
   .offset( @columns ) {
     margin-left: percentage( @columns / @columns-count );
