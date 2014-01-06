@@ -88,3 +88,15 @@
     }
   }
 }
+
+@media screen and ( min-width: @screen-xlarge ) {
+  #grid( xlarge );
+  .flex-row { #grid-flex( xlarge ); }
+
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-xlarge-"]:not(.col-xlarge-@{grid-columns}) {
+      text-align: right;
+    }
+  }
+}
