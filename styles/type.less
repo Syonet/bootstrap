@@ -39,7 +39,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: ( @computed-line-height / 2 ) 0;
   font-family: @base-font-family;
   font-weight: bold;
-  color: @text-color;
   text-rendering: optimizelegibility; /* 1 */
 
   small {
@@ -70,7 +69,7 @@ dl {
   margin-bottom: @computed-line-height;
 }
 
-dt, dd { line-height: @computed-line-height; }
+dt, dd { line-height: @component-height; }
 dt { font-weight: bold; }
 dd { margin-left: 0; }
 
@@ -78,6 +77,11 @@ dl.dl-inline {
   .row &.row {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  dt,
+  dd {
+    min-height: @component-height;
   }
 
   dt {
