@@ -2,23 +2,19 @@
    Datagrid
    ================================================================================================================= */
 
-/*
- * 1. O scroll grip não pode ter padding horizontal, mas vertical pode
- */
 .syo-datagrid {
   position: relative;
 
   table {
     margin-bottom: 0;
-
-    .syo-datagrid-grip {
-      padding: @padding-base-vertical 0; /* 1 */
-    }
   }
 }
 
+/*
+ * 1. Arredonda os cantos superiores do datagrid
+ */
 .syo-datagrid-header {
-  .border-radius-bottom( 0 );
+  .border-radius-bottom( 0 ); /* 1 */
 }
 
 .syo-datagrid-body-wrapper {
@@ -26,6 +22,10 @@
   max-height: @datagrid-max-height;
 }
 
+/*
+ * 1. (des)arredonda os cantos inferiores do datagrid
+ * 2. Seta cursor em linhas que não estejam desabilitadas, pra informar que há uma ação disponível
+ */
 .syo-datagrid-body {
   overflow-y: hidden;
   max-height: inherit;
@@ -34,8 +34,8 @@
     border-width: 0 1px 0 0;
     .border-radius-top( 0 );
 
-    > tbody tr:not(.syo-disabled) {
-      cursor: pointer;
+    > tbody tr:not( .syo-disabled ) {
+      cursor: pointer; /* 2 */
     }
 
     > tbody:first-of-type > tr:first-child {
@@ -48,7 +48,7 @@
 
   &:not( .syo-datagrid-with-helper ) {
     border-bottom: 1px solid @table-border-color;
-    .border-radius-bottom( @base-border-radius );
+    .border-radius-bottom( @base-border-radius ); /* 1 */
 
     > table tr:last-child {
       > td:first-child { .border-bottom-left-radius( @base-border-radius ); }
@@ -57,7 +57,7 @@
   }
 
   &.syo-datagrid-with-helper > table {
-    .border-radius-bottom( 0 );
+    .border-radius-bottom( 0 ); /* 1 */
   }
 }
 
@@ -81,7 +81,28 @@
 }
 
 /*
- * 1. Não há outra forma de sobrescrever especificidade de !important...
+ * 1. A td "placeholder" da linha do grip deve ficar vazia.
+ */
+.syo-datagrid-grip-row {
+  td {
+    padding: 0; /* 1 */
+  }
+
+  + tr > td,
+  + tr > th {
+    border-top-width: 0;
+  }
+}
+
+/*
+ * 1. O scroll grip não pode ter padding horizontal, mas vertical pode
+ */
+.syo-datagrid table .syo-datagrid-grip {
+  padding: @padding-base-vertical 0; /* 1 */
+}
+
+/*
+ * 1. Não há outra forma de sobrescrever especificidade do !important do syo-hidden...
  */
 .syo-datagrid-grip.syo-hidden {
   display: table-cell !important; /* 1 */
