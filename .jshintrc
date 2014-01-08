@@ -5,7 +5,7 @@
 	"curly": true,
 	"eqeqeq": true,
 	"eqnull": true,
-	"forin": true,
+	"forin": false,
 	"noempty": true,
 	"nonew": true,
 	"unused": true,
@@ -15,6 +15,5 @@
 
 	"browser": true,
 	"jquery": true,
-
-	"predef": [ "module", "test", "strictEqual", "ok", "start", "stop" ]
+	"node": true
 }

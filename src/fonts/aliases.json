@@ -1,0 +1,9 @@
+{
+	"check":        [ "ok" ],
+	"check-o":      [ "ok-o" ],
+	"check-circle": [ "ok-circle" ],
+	"meter":        [ "dashboard" ],
+	"remove":       [ "times", "delete", "close" ],
+	"copy":         [ "files" ],
+	"reorder":      [ "menu" ]
+}
