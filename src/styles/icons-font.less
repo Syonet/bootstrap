@@ -46,3 +46,48 @@
   &.icon-3x    { font-size: 300%; }
   &.icon-4x    { font-size: 400%; }
 }
+
+/* =================================================================================================================
+   Icones giratórios
+   ================================================================================================================= */
+
+.icon-spin {
+  // Webkit
+  @-webkit-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // Firefox
+  @-moz-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // IE9
+  @-ms-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // Opera
+  @-o-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // Spec
+  @keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  .animation( anim-rotate 1s infinite steps( 8 ) );
+
+  &:before {
+    vertical-align: baseline;
+  }
+}

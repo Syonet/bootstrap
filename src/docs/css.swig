@@ -1279,8 +1279,18 @@
                 <div class="prettyprint"><i class="icon-home"></i></div>
             </div>
 
-            <i class="icon-spinner"></i>
+            <h3>Icone Giratório</h3>
+            <p>
+                É possivel também obter icones giratórios. Basta adicionar a classe <code>.icon-spin</code>.<br>
+                Note que o melhor resultado pode ser obtido com o icone <code>.icon-spinner</code>.
+            </p>
 
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <i class="icon-spinner icon-spin"></i>
+                </div>
+                <div class="prettyprint"><i class="icon-spinner icon-spin"></i></div>
+            </div>
         </article>
 
         <!-- Responsive -->

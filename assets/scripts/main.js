@@ -98,7 +98,7 @@
 			return;
 		}
 
-		xhr = $.get( "docs/icons.json" );
+		xhr = $.get( "assets/json/icons.json" );
 
 		xhr.done(function( data ) {
 			$.each( data, function( cat, catObj ) {
