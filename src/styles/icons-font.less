@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "SyoBootstrap";
-  src: url( "@{fonts-path}/SyoBootstrap.eot" );
-  src: url( "@{fonts-path}/SyoBootstrap.eot?#iefix" ) format( "embedded-opentype" ),
-       url( "@{fonts-path}/SyoBootstrap.woff" ) format( "woff" ),
-       url( "@{fonts-path}/SyoBootstrap.ttf" ) format( "truetype" ),
-       url( "@{fonts-path}/SyoBootstrap.svg#SyoBootstrap" ) format( "svg" );
+  src: url( "@{iconic-font-path}/SyoBootstrap.eot" );
+  src: url( "@{iconic-font-path}/SyoBootstrap.eot?#iefix" ) format( "embedded-opentype" ),
+       url( "@{iconic-font-path}/SyoBootstrap.woff" ) format( "woff" ),
+       url( "@{iconic-font-path}/SyoBootstrap.ttf" ) format( "truetype" ),
+       url( "@{iconic-font-path}/SyoBootstrap.svg#SyoBootstrap" ) format( "svg" );
   font-weight: normal;
   font-style: normal;
 }
@@ -21,6 +21,7 @@
  * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
  * 2. Garante que o width acompanhará tamanho de fontes maiores
  * 3. Melhor renderização da fonte
+ * 4. Alinha exatamente no meio, independente do crisp size da fonte
  */
 [class^="icon-"]:before,
 [class*=" icon-"]:before { /* 1 */
@@ -32,7 +33,7 @@
   font-weight: normal;
   text-decoration: inherit;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: ( @font-size-base - @iconic-font-crisp-size ) / 2; /* 4 */
 
   /* 3 */
   -webkit-font-smoothing: antialiased;
