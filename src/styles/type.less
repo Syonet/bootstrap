@@ -89,7 +89,7 @@ dl.dl-inline {
     clear: left;
     .text-overflow();
 
-    &:not( .col ) {
+    &:not( .col ):not( [ class*="col-" ] ) {
       width: @dl-term-width;
     }
   }
@@ -97,7 +97,7 @@ dl.dl-inline {
   dd {
     display: block;
 
-    &:not( .col ) {
+    &:not( .col ):not( [ class*="offset-" ] ) {
       margin-left: @dl-term-width + 10px;
     }
   }
