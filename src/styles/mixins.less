@@ -245,10 +245,9 @@
 // ====================================================================================================================
 
 // Alinha um elemento da navbar com padding e reseta margin
-.navbar-spacing( @line-height: @computed-line-height ) {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: round( ( @navbar-height - @line-height ) / 2 ) round( @line-height / 1.5 );
+.navbar-spacing( @height: @computed-line-height, @prop: padding ) {
+  @{prop}-top: round( ( @navbar-height - @height ) / 2 );
+  @{prop}-bottom: round( ( @navbar-height - @height ) / 2 );
 }
 
 // ====================================================================================================================
