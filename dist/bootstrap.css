@@ -1,3 +1,12 @@
+/*!
+ * Syonet Bootstrap v0.1.0 - 2014-02-27
+ * O conjunto de ferramentas front-end da Syonet
+ * http://syonet.github.com/bootstrap/
+ *
+ * Created by Syonet CRM <syonet@syonet.com>
+ * http://www.syonet.com
+ */
+
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -4179,6 +4188,9 @@ body.syo-body-navbar {
 }
 .syo-badge.syo-warning {
   background-color: #efd24f;
+}
+.syo-badge.syo-info {
+  background-color: #1771b2;
 }
 /* =================================================================================================================
    Overlay

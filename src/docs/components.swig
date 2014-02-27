@@ -43,6 +43,9 @@
 
 					<!-- Badge de aviso -->
 					<span class="syo-badge syo-warning">Cuidado!</span>
+
+					<!-- Badge de informação -->
+					<span class="syo-badge syo-info">Informação</span>
 				</div>
 				<div class="prettyprint">
 					<!-- Badge padrão -->
@@ -56,6 +59,9 @@
 
 					<!-- Badge de aviso -->
 					<span class="syo-badge syo-warning">Cuidado!</span>
+
+					<!-- Badge de informação -->
+					<span class="syo-badge syo-info">Informação</span>
 				</div>
 			</div>
 		</article>
