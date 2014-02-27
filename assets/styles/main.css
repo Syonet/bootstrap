@@ -1,0 +1,219 @@
+/* =================================================================================================================
+   Geral
+   ================================================================================================================= */
+/*
+ * 1. O conteúdo é manipulado por JS por isso não queremos que ele seja exibido enquanto a página é carregada!
+ * 2. Usa a tag "div" para que seja possível usar <pre class="prettyprint"> para quando quisermos incluir um HTML sem
+ *    que ele seja considerado HTML no load da página (como uma tag "script" ou "link").
+ */
+div.prettyprint {
+  /* 2 */
+  display: none;
+  /* 1 */
+}
+.home {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 45px - 105px);
+}
+.home .home-content {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.home + .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.header {
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  -webkit-box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.home,
+.header {
+  background: url("../images/noise.png") #eeeeee;
+  text-align: center;
+}
+.home h1,
+.header h1 {
+  font-size: 56px;
+}
+.footer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-top: 1px solid #d0d0d0;
+  background-color: #f6f6f6;
+  -webkit-box-shadow: inset 0 5px 5px -3px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 5px 5px -3px rgba(0, 0, 0, 0.25);
+}
+/* =================================================================================================================
+   Exemplos
+   ================================================================================================================= */
+.syo-docs-example {
+  margin: 20px 0;
+  padding: 30px 0 0;
+  border: 1px solid #aaaaaa;
+  background: #FDFDFD;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.syo-docs-example:before {
+  position: relative;
+  top: -29px;
+  left: -1px;
+  padding: 5px 10px;
+  border: 1px solid #aaaaaa;
+  line-height: 15px;
+  color: #444444;
+  font-size: 11px;
+  font-weight: bold;
+  background: #eeeeee;
+  content: "Exemplo";
+  -webkit-border-radius: 4px 0 4px 0;
+  border-radius: 4px 0 4px 0;
+}
+.syo-docs-example > strong {
+  margin-left: 5px;
+}
+.syo-docs-example > pre {
+  margin-top: 5px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.syo-docs-example > pre:last-child {
+  margin-bottom: 0;
+}
+.syo-docs-example .syo-docs-example-inner {
+  position: relative;
+  padding: 0 20px 20px;
+}
+/*
+ * 1. Evita aparecer o scroll com componentes draggable
+ */
+.example-iframe {
+  width: 960px;
+  border: 1px dashed #aaaaaa;
+  overflow-x: hidden;
+  /* 1 */
+  overflow-y: auto;
+}
+.example-iframe-split {
+  width: 960px;
+  border: 1px dashed #aaaaaa;
+  overflow-x: hidden;
+  /* 1 */
+  overflow-y: auto;
+  width: 650px;
+}
+/* =================================================================================================================
+   Seção Grid
+   ================================================================================================================= */
+.grid-example .row {
+  margin-bottom: 20px;
+}
+.grid-example .col {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #d5d5d5;
+  font-size: .9;
+  background: #eeeeee;
+}
+.grid-example .col:hover {
+  background: #e1e1e1;
+}
+/* =================================================================================================================
+   Seção Ícones
+   ================================================================================================================= */
+.icons {
+  margin: 0 0 20px;
+  list-style: none;
+}
+.icons:before,
+.icons:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.icons:after {
+  clear: both;
+}
+.icons li {
+  float: left;
+  width: 24%;
+  margin: 0 1% 5px 0;
+}
+/* =================================================================================================================
+   Seção "Design responsivo"
+   ================================================================================================================= */
+.responsive-test .visible,
+.responsive-table .visible,
+.responsive-test .hidden,
+.responsive-table .hidden {
+  text-align: center;
+}
+.responsive-test .hidden,
+.responsive-table .hidden {
+  color: #aaaaaa;
+}
+.responsive-test .visible,
+.responsive-table .visible {
+  background: #dff0d8;
+  color: #008000;
+}
+.responsive-test .visible:before,
+.responsive-table .visible:before {
+  position: absolute;
+  content: "✔";
+  margin-left: -14px;
+}
+ul.responsive-test {
+  list-style: none;
+}
+ul.responsive-test li {
+  position: relative;
+  display: inline-block;
+  width: 24%;
+  margin-right: 1%;
+  padding: 10px 0;
+  border: 1px solid #aaaaaa;
+  color: #aaaaaa;
+  text-align: center;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+ul.responsive-test li > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* =================================================================================================================
+   Responsividade
+   ================================================================================================================= */
+@media (max-width: 979px) {
+  /* Aumenta o tamanho da apresentação de cada icone num celular, pra não ficar tão horrível */
+  .icons li {
+    width: 49%;
+  }
+  /* Oculta o check de "efeito ativo" da seção "design responsivo" */
+  .responsive-test .visible:before,
+  .responsive-table .visible:before {
+    content: "";
+  }
+  .footer section {
+    text-align: center;
+  }
+}
