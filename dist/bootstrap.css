@@ -1496,6 +1496,51 @@ fieldset[disabled] .syo-button.syo-error.syo-active {
   color: #b52b27;
   background: #d9534f;
 }
+.syo-button.syo-info {
+  border-color: #0e466e;
+  color: #ffffff;
+  background-color: #197ac0;
+  background-image: -moz-linear-gradient(top, #1a7fc9, #1771b2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1a7fc9), to(#1771b2));
+  background-image: -webkit-linear-gradient(top, #1a7fc9, #1771b2);
+  background-image: -o-linear-gradient(top, #1a7fc9, #1771b2);
+  background-image: linear-gradient(to bottom, #1a7fc9, #1771b2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1a7fc9', endColorstr='#ff1771b2', GradientType=0);
+}
+.syo-button.syo-info:hover {
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.syo-button.syo-info:hover,
+.syo-button.syo-info:focus,
+.syo-button.syo-info:active,
+.syo-button.syo-info.syo-active {
+  border-color: #082941;
+  color: #ffffff;
+  background: #14639b;
+}
+.syo-button.syo-info[disabled],
+.syo-button.syo-info.syo-disabled,
+fieldset[disabled] .syo-button.syo-info,
+.syo-button.syo-info[disabled]:hover,
+.syo-button.syo-info.syo-disabled:hover,
+fieldset[disabled] .syo-button.syo-info:hover,
+.syo-button.syo-info[disabled]:focus,
+.syo-button.syo-info.syo-disabled:focus,
+fieldset[disabled] .syo-button.syo-info:focus,
+.syo-button.syo-info[disabled]:active,
+.syo-button.syo-info.syo-disabled:active,
+fieldset[disabled] .syo-button.syo-info:active,
+.syo-button.syo-info[disabled].syo-active,
+.syo-button.syo-info.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-info.syo-active {
+  border-color: #0e466e;
+  color: #0e466e;
+  background: #1771b2;
+}
 /* =================================================================================================================
    Buttons - Estilo link
    ================================================================================================================= */
