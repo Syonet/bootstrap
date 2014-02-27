@@ -38,7 +38,6 @@
 				.insertAfter( $div ); // Deve respeitar a localização do elemento original
 			$div.remove();
 			$pre.show();
-
 		});
 
 		// Tags "pre" são usadas com HTML entities escape mas devem respeitar a identação padrão da página
@@ -130,34 +129,33 @@
 	}
 
 	function trim( html ) {
-		var identationIndex, lines;
+		var regex;
 
-		if ( html[ 0 ] === "\n" ) {
-			html = html.substring( 1 );
-		}
+		// Usa o maior numero como indentação inicial, para na iteração descobrir com
+		// facilidade qual linha tem a menor indentação.
+		var indentation = Number.MAX_VALUE;
 
-		lines = html.split( "\n" );
+		// Replace de tabs por 4 espaços + split em cada linha
+		var lines = html.replace( /\t/g, "    " ).split( "\n" );
 
-		$.each( lines, function( index, line ) {
-			var charIndex = 0;
+		lines.forEach(function( line ) {
+			var match;
 
-			if ( identationIndex === undefined ) {
-				identationIndex = 0;
-				for ( ; charIndex < line.length; charIndex++ ) {
-					if ( line[ charIndex ] === "\t" ) {
-						identationIndex += 1;
-					} else {
-						break;
-					}
-				}
+			// Ignora linhas em branco
+			if ( !line || /^\s+$/.test( line ) ) {
+				return;
 			}
 
-			lines[ index ] = line.substring( identationIndex ).replace( /\t/g, "    " );
+			match = line.match( /^\s+/ );
+			indentation = Math.min( match ? match[ 0 ].length : 0, indentation );
 		});
 
-		return lines.join( "\n" );
-	}
+		regex = new RegExp( "^\\s{" + indentation + "}" );
+		html = lines.map(function( line ) {
+			return line.replace( regex, "" );
+		}).join( "\n" ).trim();
 
-	window.trim = trim;
+		return html;
+	}
 
 }( jQuery ));
