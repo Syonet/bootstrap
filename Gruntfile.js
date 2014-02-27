@@ -16,7 +16,7 @@ module.exports = function( grunt ) {
 			},
 			css: {
 				files: [ "src/styles/**/*.{less,css}" ],
-				tasks: [ "less:main" ]
+				tasks: [ "less:main", "process:main" ]
 			},
 			icons: {
 				files: [ "src/fonts/*.json" ],
