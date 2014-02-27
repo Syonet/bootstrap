@@ -10,10 +10,10 @@ node_js:
 
 env:
   global:
-  - GH_REF: github.com/syonet/bootstrap.git
+  - GH_REF: github.com/Syonet/bootstrap.git
 
   # GH_TOKEN
-  - secure: gOqSQOldl3YoVNp3JLL1PKwbTGHTuhMBrcuAzUYpJXLUx95IlTGiBJ2SNOyAhZwHBQe/Qf1PVshBsAZ0G2ZyBXKk2sx3fmiunCG86R+23ngUOLIel1hRz0FRygCyMUmO8LAvFSQbgyd+YyIBCdWenPvtFgy6Ab2GpakP9iqXSV4=
+  - secure: KoiNHYq3lE0iz0T0Snt39uzasWMQDoN9YWm5KVHWB86RV4Okwg420Kre8xohREzxXc7nsOQP5TWnMJlGWmxjibx9FGnDsMPhHh8m7lIvi69liW69RPrQ3t/phhD1rjohWQ4/y8S/tKQtfIZwkJU8Tl0YAl5T0pNmo8XPoVR6FWg=
 
 after_success:
-  - git push https://${GH_TOKEN}:x-oauth-basic@github.com/Syonet/bootstrap.git gh-pages
+  - git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@${GH_REF}" master:gh-pages > /dev/null 2>&1
