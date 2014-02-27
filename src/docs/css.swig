@@ -1,7 +1,7 @@
-{% extends "layouts/main.swig" %}
+{% extends "layouts/docs.swig" %}
 {% set active = "css" %}
 
-{% block body %}
+{% block content %}
     <aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
         <ul class="syo-nav syo-nav-list" id="sidebar">
             <li class="syo-nav-header"><i class="icon-css3"></i> CSS Base</li>
@@ -762,330 +762,34 @@
 
         <!-- Tabelas -->
         <article id="tables">
-
-        <div class="syo-header syo-header-ruler">
-            <h2>Tabelas</h2>
-        </div>
-        <p>
-            Tabelas devem ser utilizadas apenas para a exibição de dados tabulares. Existe um estilo padrão definido
-            para todas as tabelas quando utilizando a classe <code>.syo-table</code>, bem como alguns estilos que
-            adaptam o uso da tabela para situações específicas.<br>
-            É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <code>.syo-active</code>.
-        </p>
-        <p>
-            <b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas dentro de um <code>colgroup</code>
-            =)
-        </p>
-
-        <div class="syo-header syo-header-ruler">
-            <h4>Base</h4>
-        </div>
-        <p>
-            Estilo base de todas as tabelas.
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <table class="syo-table">
-                    <colgroup>
-                        <col class="col-medium-3">
-                        <col class="col-medium-3">
-                        <col class="col-medium-6">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>Coluna 1</th>
-                            <th>Coluna 2</th>
-                            <th>Coluna 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                        <tr class="syo-active">
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Footer 1</td>
-                            <td>Footer 2</td>
-                            <td>Footer 3</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-
-            <strong>HTML:</strong>
-            <div class="prettyprint">
-                <table class="syo-table">
-                    <colgroup>
-                        <col class="col-medium-3">
-                        <col class="col-medium-3">
-                        <col class="col-medium-6">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>Coluna 1</th>
-                            <th>Coluna 2</th>
-                            <th>Coluna 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                        </tr>
-                        <tr class="syo-active">
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Footer 1</td>
-                            <td>Footer 2</td>
-                            <td>Footer 3</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-
-        <section>
             <div class="syo-header syo-header-ruler">
-                <h4> Striped </h4>
+                <h2>Tabelas</h2>
             </div>
             <p>
-                Este estilo fornece um destaque adicional para cada linha de modo a criar um contraste e facilitar a
-                visualização dos dados. Basta adicionar a classe <code>.syo-table-striped</code> no elemento principal da
-                tabela.
+                Tabelas devem ser utilizadas apenas para a exibição de dados tabulares. Existe um estilo padrão definido
+                para todas as tabelas quando utilizando a classe <code>.syo-table</code>, bem como alguns estilos que
+                adaptam o uso da tabela para situações específicas.<br>
+                É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <code>.syo-active</code>.
+            </p>
+            <p>
+                <b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas dentro de um <code>colgroup</code>
+                =)
             </p>
 
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <table class="syo-table syo-table-striped">
-                        <colgroup>
-                            <col class="col-medium-3">
-                            <col class="col-medium-3">
-                            <col class="col-medium-6">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Footer 1</td>
-                                <td>Footer 2</td>
-                                <td>Footer 3</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <table class="syo-table syo-table-striped">
-                        <colgroup>
-                            <col class="col-medium-3">
-                            <col class="col-medium-3">
-                            <col class="col-medium-6">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Footer 1</td>
-                                <td>Footer 2</td>
-                                <td>Footer 3</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section>
             <div class="syo-header syo-header-ruler">
-                <h4> Hover </h4>
+                <h4>Base</h4>
             </div>
             <p>
-                Estilo que destaca a linha que está sob o mouse. Utilize a classe <code>.syo-table-hover</code> para obter este estilo.<br>
-                <strong>Nota:</strong> tabelas que também utilizam o estilo "Striped" exibido acima não receberão um destaque acentuado.
+                Estilo base de todas as tabelas.
             </p>
-
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <table class="syo-table syo-table-hover">
-                        <colgroup>
-                            <col class="col-medium-3">
-                            <col class="col-medium-3">
-                            <col class="col-medium-6">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Footer 1</td>
-                                <td>Footer 2</td>
-                                <td>Footer 3</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <table class="syo-table syo-table-hover">
-                        <colgroup>
-                            <col class="col-medium-3">
-                            <col class="col-medium-3">
-                            <col class="col-medium-6">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Footer 1</td>
-                                <td>Footer 2</td>
-                                <td>Footer 3</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="syo-header syo-header-ruler">
-                <h4> Estados </h4>
-            </div>
-
-            <p>
-                É possível utilizar todos os estados padrão do Syonet Bootstrap em cada célula ou linha de uma tabela.
-                Eles são os seguintes:
-            </p>
-            <ul>
-                <li><code>.syo-success</code></li>
-                <li><code>.syo-error</code></li>
-                <li><code>.syo-active</code></li>
-            </ul>
-
             <div class="syo-docs-example">
                 <div class="syo-docs-example-inner">
                     <table class="syo-table">
+                        <colgroup>
+                            <col class="col-medium-3">
+                            <col class="col-medium-3">
+                            <col class="col-medium-6">
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>Coluna 1</th>
@@ -1095,37 +799,39 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td class="syo-error">Erro nesta célula!</td>
-                                <td>3</td>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
                             </tr>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td class="syo-success">1</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr class="syo-success">
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
                             </tr>
                             <tr class="syo-active">
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Footer 1</td>
+                                <td>Footer 2</td>
+                                <td>Footer 3</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
 
                 <strong>HTML:</strong>
                 <div class="prettyprint">
                     <table class="syo-table">
+                        <colgroup>
+                            <col class="col-medium-3">
+                            <col class="col-medium-3">
+                            <col class="col-medium-6">
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>Coluna 1</th>
@@ -1135,122 +841,414 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td class="syo-error">Erro nesta célula!</td>
-                                <td>3</td>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
                             </tr>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td class="syo-success">1</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr class="syo-success">
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
                             </tr>
                             <tr class="syo-active">
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Footer 1</td>
+                                <td>Footer 2</td>
+                                <td>Footer 3</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
-        </section>
 
-        <section>
-            <div class="syo-header syo-header-ruler">
-                <h4> Tabelas Responsivas </h4>
-            </div>
+            <section>
+                <div class="syo-header syo-header-ruler">
+                    <h4> Striped </h4>
+                </div>
+                <p>
+                    Este estilo fornece um destaque adicional para cada linha de modo a criar um contraste e facilitar a
+                    visualização dos dados. Basta adicionar a classe <code>.syo-table-striped</code> no elemento principal da
+                    tabela.
+                </p>
 
-            <p>
-                Uma das melhores funcionalidades das tabelas do Syonet Bootstrap é a possibilidade
-                de se utilizar tabelas responsivas.<br>
-                Para fazer uma tabela responsiva, siga as seguintes etapas:
-            </p>
-            <ol>
-                <li>Adicione a classe <code>.syo-table-responsive</code> na tabela</li>
-                <li>
-                    Em cada <code>td</code> do <strong>conteúdo da tabela</strong>, adicione um
-                    atributo <code>data-title</code> que conterá o valor daquela célula.
-                </li>
-                <li>Redimensione o navegador ou então acesse a página em um dispositivo menor.</li>
-            </ol>
+                <div class="syo-docs-example">
+                    <div class="syo-docs-example-inner">
+                        <table class="syo-table syo-table-striped">
+                            <colgroup>
+                                <col class="col-medium-3">
+                                <col class="col-medium-3">
+                                <col class="col-medium-6">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Coluna 1</th>
+                                    <th>Coluna 2</th>
+                                    <th>Coluna 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Footer 1</td>
+                                    <td>Footer 2</td>
+                                    <td>Footer 3</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
 
-            <p>Veja no exemplo a seguir como fica:</p>
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <table class="syo-table syo-table-responsive">
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-title="Coluna 1">Texto 1</td>
-                                <td data-title="Coluna 2">Texto 2</td>
-                                <td data-title="Coluna 3">Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Coluna 1">Texto 1</td>
-                                <td data-title="Coluna 2">Texto 2</td>
-                                <td data-title="Coluna 3">Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Coluna 1">Texto 1</td>
-                                <td data-title="Coluna 2">Texto 2</td>
-                                <td data-title="Coluna 3">Texto 3</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <strong>HTML:</strong>
+                    <div class="prettyprint">
+                        <table class="syo-table syo-table-striped">
+                            <colgroup>
+                                <col class="col-medium-3">
+                                <col class="col-medium-3">
+                                <col class="col-medium-6">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Coluna 1</th>
+                                    <th>Coluna 2</th>
+                                    <th>Coluna 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Footer 1</td>
+                                    <td>Footer 2</td>
+                                    <td>Footer 3</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="syo-header syo-header-ruler">
+                    <h4> Hover </h4>
+                </div>
+                <p>
+                    Estilo que destaca a linha que está sob o mouse. Utilize a classe <code>.syo-table-hover</code> para obter este estilo.<br>
+                    <strong>Nota:</strong> tabelas que também utilizam o estilo "Striped" exibido acima não receberão um destaque acentuado.
+                </p>
+
+                <div class="syo-docs-example">
+                    <div class="syo-docs-example-inner">
+                        <table class="syo-table syo-table-hover">
+                            <colgroup>
+                                <col class="col-medium-3">
+                                <col class="col-medium-3">
+                                <col class="col-medium-6">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Coluna 1</th>
+                                    <th>Coluna 2</th>
+                                    <th>Coluna 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Footer 1</td>
+                                    <td>Footer 2</td>
+                                    <td>Footer 3</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <strong>HTML:</strong>
+                    <div class="prettyprint">
+                        <table class="syo-table syo-table-hover">
+                            <colgroup>
+                                <col class="col-medium-3">
+                                <col class="col-medium-3">
+                                <col class="col-medium-6">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Coluna 1</th>
+                                    <th>Coluna 2</th>
+                                    <th>Coluna 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>Texto 2</td>
+                                    <td>Texto 3</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Footer 1</td>
+                                    <td>Footer 2</td>
+                                    <td>Footer 3</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="syo-header syo-header-ruler">
+                    <h4> Estados </h4>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <table class="syo-table syo-table-responsive">
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-title="Coluna 1">Texto 1</td>
-                                <td data-title="Coluna 2">Texto 2</td>
-                                <td data-title="Coluna 3">Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Coluna 1">Texto 1</td>
-                                <td data-title="Coluna 2">Texto 2</td>
-                                <td data-title="Coluna 3">Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Coluna 1">Texto 1</td>
-                                <td data-title="Coluna 2">Texto 2</td>
-                                <td data-title="Coluna 3">Texto 3</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <p>
+                    É possível utilizar todos os estados padrão do Syonet Bootstrap em cada célula ou linha de uma tabela.
+                    Eles são os seguintes:
+                </p>
+                <ul>
+                    <li><code>.syo-success</code></li>
+                    <li><code>.syo-error</code></li>
+                    <li><code>.syo-active</code></li>
+                </ul>
+
+                <div class="syo-docs-example">
+                    <div class="syo-docs-example-inner">
+                        <table class="syo-table">
+                            <thead>
+                                <tr>
+                                    <th>Coluna 1</th>
+                                    <th>Coluna 2</th>
+                                    <th>Coluna 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="syo-error">Erro nesta célula!</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td class="syo-success">1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr class="syo-success">
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr class="syo-active">
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <strong>HTML:</strong>
+                    <div class="prettyprint">
+                        <table class="syo-table">
+                            <thead>
+                                <tr>
+                                    <th>Coluna 1</th>
+                                    <th>Coluna 2</th>
+                                    <th>Coluna 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="syo-error">Erro nesta célula!</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td class="syo-success">1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr class="syo-success">
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr class="syo-active">
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <section>
+                <div class="syo-header syo-header-ruler">
+                    <h4> Tabelas Responsivas </h4>
+                </div>
+
+                <p>
+                    Uma das melhores funcionalidades das tabelas do Syonet Bootstrap é a possibilidade
+                    de se utilizar tabelas responsivas.<br>
+                    Para fazer uma tabela responsiva, siga as seguintes etapas:
+                </p>
+                <ol>
+                    <li>Adicione a classe <code>.syo-table-responsive</code> na tabela</li>
+                    <li>
+                     Em cada <code>td</code> do <strong>conteúdo da tabela</strong>, adicione um
+                     atributo <code>data-title</code> que conterá o valor daquela célula.
+                    </li>
+                    <li>Redimensione o navegador ou então acesse a página em um dispositivo menor.</li>
+                </ol>
+
+                <p>Veja no exemplo a seguir como fica:</p>
+                <div class="syo-docs-example">
+                    <div class="syo-docs-example-inner">
+                        <table class="syo-table syo-table-responsive">
+                             <thead>
+                                 <tr>
+                                     <th>Coluna 1</th>
+                                     <th>Coluna 2</th>
+                                     <th>Coluna 3</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td data-title="Coluna 1">Texto 1</td>
+                                     <td data-title="Coluna 2">Texto 2</td>
+                                     <td data-title="Coluna 3">Texto 3</td>
+                                 </tr>
+                                 <tr>
+                                     <td data-title="Coluna 1">Texto 1</td>
+                                     <td data-title="Coluna 2">Texto 2</td>
+                                     <td data-title="Coluna 3">Texto 3</td>
+                                 </tr>
+                                 <tr>
+                                     <td data-title="Coluna 1">Texto 1</td>
+                                     <td data-title="Coluna 2">Texto 2</td>
+                                     <td data-title="Coluna 3">Texto 3</td>
+                                 </tr>
+                             </tbody>
+                        </table>
+                 </div>
+
+                    <strong>HTML:</strong>
+                    <div class="prettyprint">
+                         <table class="syo-table syo-table-responsive">
+                             <thead>
+                                 <tr>
+                                     <th>Coluna 1</th>
+                                     <th>Coluna 2</th>
+                                     <th>Coluna 3</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td data-title="Coluna 1">Texto 1</td>
+                                     <td data-title="Coluna 2">Texto 2</td>
+                                     <td data-title="Coluna 3">Texto 3</td>
+                                 </tr>
+                                 <tr>
+                                     <td data-title="Coluna 1">Texto 1</td>
+                                       <td data-title="Coluna 2">Texto 2</td>
+                                     <td data-title="Coluna 3">Texto 3</td>
+                                 </tr>
+                                 <tr>
+                                     <td data-title="Coluna 1">Texto 1</td>
+                                     <td data-title="Coluna 2">Texto 2</td>
+                                     <td data-title="Coluna 3">Texto 3</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                    </div>
+                </div>
+            </section>
         </article>
 
         <!-- Ícones -->
         <article id="icons">
-
             <div class="syo-header syo-header-ruler">
                 <h2>Ícones</h2>
             </div>
@@ -1295,7 +1293,6 @@
 
         <!-- Responsive -->
         <article id="responsive">
-
             <div class="syo-header syo-header-ruler">
                 <h2>Design Responsivo</h2>
             </div>
@@ -1402,7 +1399,6 @@
 
         <!-- Utils -->
         <article id="utils">
-
             <div class="syo-header syo-header-ruler">
                 <h2>Classes Utilitárias</h2>
             </div>
@@ -1426,7 +1422,6 @@
                 <div class="text-overflow">Texto muito longo para este container</div>
                 <!-- Na exibição: "Texto muito longo para es..." -->
             </div>
-
         </article>
     </div>
 {% endblock %}

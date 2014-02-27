@@ -1,277 +1,253 @@
-{% extends "layouts/main.swig" %}
+{% extends "layouts/docs.swig" %}
 {% set active = "jquery-ui" %}
 
-{% block body %}
-	<aside class="col col-small-12 col-large-2" id="sidebar-wrapper">
-		<ul class="syo-nav syo-nav-list" id="sidebar">
-			<li class="syo-nav-header"><i class="icon-puzzle"></i> jQuery UI</li>
-			<li><a href="#accordion">Accordion</a></li>
-			<li><a href="#autocomplete">Autocomplete</a></li>
-			<li><a href="#button">Button/Buttonset</a></li>
-			<li><a href="#datepicker">Datepicker</a></li>
-			<li><a href="#dialog">Dialog</a></li>
-			<li><a href="#menu">Menu</a></li>
-			<li><a href="#progressbar">Progressbar</a></li>
-			<li><a href="#slider">Slider</a></li>
-			<li><a href="#spinner">Spinner</a></li>
-			<li><a href="#tabs">Tabs</a></li>
-			<li><a href="#tooltip">Tooltip</a></li>
-		</ul>
-	</aside>
+{% block content %}
+    <aside class="col col-small-12 col-large-2" id="sidebar-wrapper">
+        <ul class="syo-nav syo-nav-list" id="sidebar">
+            <li class="syo-nav-header"><i class="icon-code"></i> jQuery UI</li>
+            <li><a href="#accordion">Accordion</a></li>
+            <li><a href="#autocomplete">Autocomplete</a></li>
+            <li><a href="#button">Button/Buttonset</a></li>
+            <li><a href="#datepicker">Datepicker</a></li>
+            <li><a href="#dialog">Dialog</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#progressbar">Progressbar</a></li>
+            <li><a href="#slider">Slider</a></li>
+            <li><a href="#spinner">Spinner</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#tooltip">Tooltip</a></li>
+        </ul>
+    </aside>
 
-	<div class="col col-small-12 col-large-10">
+    <div class="col col-small-12 col-large-10">
 
-		<!-- Overview -->
-		<article id="overview">
+        <!-- Overview -->
+        <article id="overview">
+            <div class="syo-header syo-header-ruler">
+                <h2>Overview</h2>
+            </div>
+            <p>
+                A Syonet mantém uma folha de estilos testada e compatível com a última versão do jQueryUI. Nesta seção são
+                apresentados os componentes utilizados e mantidos no sistema de acordo com os estilos padrões do projeto.
+            </p>
+            <p>
+                Para exemplos de uso e documentação dos componentes acesse a
+                <a href="http://jqueryui.com/demos/">página de demonstrações do jQueryUI</a> ou a
+                <a href="http://api.jqueryui.com/">documentação oficial da API</a>.
+            </p>
+        </article>
 
-			<div class="syo-header syo-header-ruler">
-				<h2>Overview</h2>
-			</div>
-			<p>
-				A Syonet mantém uma folha de estilos testada e compatível com a última versão do jQueryUI. Nesta seção são
-				apresentados os componentes utilizados e mantidos no sistema de acordo com os estilos padrões do projeto.
-			</p>
-			<p>
-				Para exemplos de uso e documentação dos componentes acesse a
-				<a href="http://jqueryui.com/demos/">página de demonstrações do jQueryUI</a> ou a
-				<a href="http://api.jqueryui.com/">documentação oficial da API</a>.
-			</p>
+        <!-- Accordion -->
+        <article id="accordion">
+            <div class="syo-header syo-header-ruler">
+                <h2>Accordion</h2>
+            </div>
 
-		</article>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div data-widget="accordion">
+                        <h3><a href="#">Accordion 1</a></h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
+                            volutpat.
+                        </div>
+                        <h3><a href="#">Accordion 2</a></h3>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
+                            volutpat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-		<!-- Accordion -->
-		<article id="accordion">
+        <!-- Autocomplete -->
+        <article id="autocomplete">
+            <div class="syo-header syo-header-ruler">
+                <h2>Autocomplete</h2>
+            </div>
 
-			<div class="syo-header syo-header-ruler">
-				<h2>Accordion</h2>
-			</div>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p>Digite o nome de uma linguagem de programação:</p>
+                    <input type="text" class="input-autocomplete" data-widget="autocomplete">
+                </div>
+            </div>
+        </article>
 
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<div data-widget="accordion">
-						<h3><a href="#">Accordion 1</a></h3>
-						<div>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
-							volutpat.
-						</div>
-						<h3><a href="#">Accordion 2</a></h3>
-						<div>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
-							volutpat.
-						</div>
-					</div>
-				</div>
-			</div>
+        <!-- Button/Buttonset -->
+        <article id="button">
+            <div class="syo-header syo-header-ruler">
+                <h2>Button/Buttonset</h2>
+            </div>
 
-		</article>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p>
+                        <button data-widget="button">
+                            <span class="icon-html5">Botão</span>
+                        </button>
+                    </p>
 
-		<!-- Autocomplete -->
-		<article id="autocomplete">
+                    <div data-widget="buttonset">
+                        <input type="checkbox" id="chk-button1">
+                        <label for="chk-button1">
+                            <span class="icon-redo">1</span>
+                        </label>
 
-			<div class="syo-header syo-header-ruler">
-				<h2>Autocomplete</h2>
-			</div>
+                        <input type="checkbox" id="chk-button2">
+                        <label for="chk-button2">
+                            <span class="icon-connection">2</span>
+                        </label>
 
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<p>Digite o nome de uma linguagem de programação:</p>
-					<input type="text" class="input-autocomplete" data-widget="autocomplete">
-				</div>
-			</div>
+                        <input type="checkbox" id="chk-button3">
+                        <label for="chk-button3">
+                            <span class="icon-bubble-2">3</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-		</article>
+        <!-- Datepicker -->
+        <article id="datepicker">
+            <div class="syo-header syo-header-ruler">
+                <h2>Datepicker</h2>
+            </div>
 
-		<!-- Button/Buttonset -->
-		<article id="button">
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div data-widget="datepicker"></div>
+                </div>
+            </div>
+        </article>
 
-			<div class="syo-header syo-header-ruler">
-				<h2>Button/Buttonset</h2>
-			</div>
+        <!-- Dialog -->
+        <article id="dialog">
+            <div class="syo-header syo-header-ruler">
+                <h2>Dialog</h2>
+            </div>
 
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<p>
-						<button data-widget="button">
-							<span class="icon-html5">Botão</span>
-						</button>
-					</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button class="open-dialog" data-widget="button">Abrir Dialog</button>
+                    <div class="dialog" data-auto-open="false" data-widget="dialog" data-title="Lorem ipsum">
+                        Lorem ipsum
+                        dolor sit amet
+                    </div>
+                </div>
+            </div>
+        </article>
 
-					<div data-widget="buttonset">
-						<input type="checkbox" id="chk-button1">
-						<label for="chk-button1">
-							<span class="icon-redo">1</span>
-						</label>
+        <article id="menu">
+            <div class="syo-header syo-header-ruler">
+                Menu
+            </div>
 
-						<input type="checkbox" id="chk-button2">
-						<label for="chk-button2">
-							<span class="icon-connection">2</span>
-						</label>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <ul data-widget="menu">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li>
+                            <a href="#">Item 3</a>
+                            <ul>
+                                <li><a href="#">Item 3.1</a></li>
+                                <li><a href="#">Item 3.2</a></li>
+                                <li><a href="#">Item 3.3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Item 4</a></li>
+                        <li><a href="#">Item 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
 
-						<input type="checkbox" id="chk-button3">
-						<label for="chk-button3">
-							<span class="icon-bubble-2">3</span>
-						</label>
-					</div>
-				</div>
-			</div>
+        <!-- Progressbar -->
+        <article id="progressbar">
+            <div class="syo-header syo-header-ruler">
+                <h2>Progressbar</h2>
+            </div>
 
-		</article>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div data-widget="progressbar" data-value="65"></div>
+                </div>
+            </div>
+        </article>
 
-		<!-- Datepicker -->
-		<article id="datepicker">
+        <!-- Slider -->
+        <article id="slider">
+            <div class="syo-header syo-header-ruler">
+                <h2>Slider</h2>
+            </div>
 
-			<div class="syo-header syo-header-ruler">
-				<h2>Datepicker</h2>
-			</div>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div data-widget="slider" data-range="min" data-value="50"></div>
+                </div>
+            </div>
+        </article>
 
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<div data-widget="datepicker"></div>
-				</div>
-			</div>
+        <!-- Spinner -->
+        <article id="spinner">
+            <div class="syo-header syo-header-ruler">
+                <h2>Spinner</h2>
+            </div>
 
-		</article>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <input type="text" data-widget="spinner">
+                </div>
+            </div>
+        </article>
 
-		<!-- Dialog -->
-		<article id="dialog">
+        <!-- Tabs -->
+        <article id="tabs">
+            <div class="syo-header syo-header-ruler">
+                <h2>Tabs</h2>
+            </div>
 
-			<div class="syo-header syo-header-ruler">
-				<h2>Dialog</h2>
-			</div>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div data-widget="tabs">
+                        <ul>
+                            <li><a href="#tab-1">Tab 1</a></li>
+                            <li><a href="#tab-2">Tab 2</a></li>
+                        </ul>
 
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<button class="open-dialog" data-widget="button">Abrir Dialog</button>
-					<div class="dialog" data-auto-open="false" data-widget="dialog" data-title="Lorem ipsum">
-						Lorem ipsum
-						dolor sit amet
-					</div>
-				</div>
-			</div>
+                        <div id="tab-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
+                            volutpat. Cras commodo aliquam fringilla. Etiam a tortor nisi. Etiam eu elit velit, quis congue
+                            quam. Praesent eu nisl odio. In sollicitudin eleifend risus, a posuere felis iaculis elementum.
+                            Pellentesque id ipsum magna. Integer nec nibh nec mi convallis lobortis sed sit amet mauris.
+                        </div>
 
-		</article>
+                        <div id="tab-2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
+                            volutpat. Cras commodo aliquam fringilla. Etiam a tortor nisi. Etiam eu elit velit, quis congue
+                            quam. Praesent eu nisl odio. In sollicitudin eleifend risus, a posuere felis iaculis elementum.
+                            Pellentesque id ipsum magna. Integer nec nibh nec mi convallis lobortis sed sit amet mauris.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-		<article id="menu">
+        <!-- Tooltip -->
+        <article id="tooltip">
+            <div class="syo-header syo-header-ruler">
+                <h2>Tooltip</h2>
+            </div>
 
-			<div class="syo-header syo-header-ruler">
-				Menu
-			</div>
-
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<ul data-widget="menu">
-						<li><a href="#">Item 1</a></li>
-						<li><a href="#">Item 2</a></li>
-						<li>
-							<a href="#">Item 3</a>
-							<ul>
-								<li><a href="#">Item 3.1</a></li>
-								<li><a href="#">Item 3.2</a></li>
-								<li><a href="#">Item 3.3</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Item 4</a></li>
-						<li><a href="#">Item 5</a></li>
-					</ul>
-				</div>
-			</div>
-
-		</article>
-
-		<!-- Progressbar -->
-		<article id="progressbar">
-
-			<div class="syo-header syo-header-ruler">
-				<h2>Progressbar</h2>
-			</div>
-
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<div data-widget="progressbar" data-value="65"></div>
-				</div>
-			</div>
-
-		</article>
-
-		<!-- Slider -->
-		<article id="slider">
-
-			<div class="syo-header syo-header-ruler">
-				<h2>Slider</h2>
-			</div>
-
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<div data-widget="slider" data-range="min" data-value="50"></div>
-				</div>
-			</div>
-
-		</article>
-
-		<!-- Spinner -->
-		<article id="spinner">
-
-			<div class="syo-header syo-header-ruler">
-				<h2>Spinner</h2>
-			</div>
-
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<input type="text" data-widget="spinner">
-				</div>
-			</div>
-
-		</article>
-
-		<!-- Tabs -->
-		<article id="tabs">
-
-			<div class="syo-header syo-header-ruler">
-				<h2>Tabs</h2>
-			</div>
-
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<div data-widget="tabs">
-						<ul>
-							<li><a href="#tab-1">Tab 1</a></li>
-							<li><a href="#tab-2">Tab 2</a></li>
-						</ul>
-
-						<div id="tab-1">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
-							volutpat. Cras commodo aliquam fringilla. Etiam a tortor nisi. Etiam eu elit velit, quis congue
-							quam. Praesent eu nisl odio. In sollicitudin eleifend risus, a posuere felis iaculis elementum.
-							Pellentesque id ipsum magna. Integer nec nibh nec mi convallis lobortis sed sit amet mauris.
-						</div>
-
-						<div id="tab-2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem at augue vulputate
-							volutpat. Cras commodo aliquam fringilla. Etiam a tortor nisi. Etiam eu elit velit, quis congue
-							quam. Praesent eu nisl odio. In sollicitudin eleifend risus, a posuere felis iaculis elementum.
-							Pellentesque id ipsum magna. Integer nec nibh nec mi convallis lobortis sed sit amet mauris.
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</article>
-
-		<!-- Tooltip -->
-		<article id="tooltip">
-
-			<div class="syo-header syo-header-ruler">
-				<h2>Tooltip</h2>
-			</div>
-
-			<div class="syo-docs-example">
-				<div class="syo-docs-example-inner">
-					<span class="tooltip" data-widget="tooltip" title="Lorem ipsum dolor sit amet">
-						Passe o mouse aqui!
-					</span>
-				</div>
-			</div>
-
-		</article>
-	</div>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <span class="tooltip" data-widget="tooltip" title="Lorem ipsum dolor sit amet">
+                        Passe o mouse aqui!
+                    </span>
+                </div>
+            </div>
+        </article>
+    </div>
 {% endblock %}
