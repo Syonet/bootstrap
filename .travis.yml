@@ -1,5 +1,19 @@
+branches:
+  only:
+    - master
+
 before_install: npm install -g grunt-cli
 install: npm install
 language: node_js
 node_js:
   - "0.10"
+
+env:
+  global:
+  - GH_REF: github.com/syonet/bootstrap.git
+
+  # GH_TOKEN
+  - secure: gOqSQOldl3YoVNp3JLL1PKwbTGHTuhMBrcuAzUYpJXLUx95IlTGiBJ2SNOyAhZwHBQe/Qf1PVshBsAZ0G2ZyBXKk2sx3fmiunCG86R+23ngUOLIel1hRz0FRygCyMUmO8LAvFSQbgyd+YyIBCdWenPvtFgy6Ab2GpakP9iqXSV4=
+
+after_success:
+  - git push https://${GH_TOKEN}:x-oauth-basic@github.com/Syonet/bootstrap.git gh-pages
