@@ -1,0 +1,234 @@
+@import "../../src/styles/variables.less";
+@import "../../src/styles/mixins.less";
+
+/* =================================================================================================================
+   Geral
+   ================================================================================================================= */
+
+/*
+ * 1. O conteúdo é manipulado por JS por isso não queremos que ele seja exibido enquanto a página é carregada!
+ * 2. Usa a tag "div" para que seja possível usar <pre class="prettyprint"> para quando quisermos incluir um HTML sem
+ *    que ele seja considerado HTML no load da página (como uma tag "script" ou "link").
+ */
+div.prettyprint { /* 2 */
+  display: none; /* 1 */
+}
+
+.home {
+  position: absolute;
+  width: 100%;
+  height: calc( ~"100% - @{navbar-height} - 105px" );
+
+  .home-content {
+    position: relative;
+    top: 50%;
+    .transform( translateY( -50% ) );
+  }
+
+  + .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.header {
+  border-bottom: 1px solid @gray-lighter;
+  padding-top: @computed-line-height * 2;
+  padding-bottom: @computed-line-height * 2;
+  .box-shadow( -2px 2px 5px 0 fade( #000, 25% ) );
+}
+
+.home,
+.header {
+  background: url("../images/noise.png") @gray-lighter;
+  text-align: center;
+
+  h1 {
+    font-size: @font-size-base * 4;
+  }
+}
+
+.footer {
+  padding-top: @computed-line-height * 1.2;
+  padding-bottom: @computed-line-height * 1.2;
+  border-top: 1px solid lighten(@gray-light, 15%);
+  background-color: lighten(@gray-lighter, 3%);
+  .box-shadow( inset 0 5px 5px -3px fade( #000, 25% ) );
+}
+
+/* =================================================================================================================
+   Exemplos
+   ================================================================================================================= */
+
+.syo-docs-example {
+  margin: @computed-line-height 0;
+  padding: ( @computed-line-height * 1.5 ) 0 0;
+  border: 1px solid @gray-light;
+  background: #FDFDFD;
+  .border-radius( @base-border-radius );
+  .box-shadow( 0 1px 4px fade( #000, 10% ) );
+
+  &:before {
+    @line-height: 15px;
+
+    position: relative;
+    // @computed-line-height * 1.5 (padding-top do container) - 1px da borda
+    top: -( ( @computed-line-height * 1.5 ) - 1px );
+    left: -1px;
+    padding: 5px 10px;
+    border: 1px solid @gray-light;
+    line-height: @line-height;
+    color: @gray-dark;
+    font-size: 11px;
+    font-weight: bold;
+    background: @gray-lighter;
+    content: "Exemplo";
+    .border-radius( @base-border-radius 0 @base-border-radius 0 );
+  }
+
+  > strong {
+    margin-left: 5px;
+  }
+
+  > pre {
+    margin-top: 5px;
+    .border-radius-bottom( @base-border-radius );
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .syo-docs-example-inner {
+    position: relative;
+    padding: 0 @computed-line-height @computed-line-height;
+  }
+}
+
+/*
+ * 1. Evita aparecer o scroll com componentes draggable
+ */
+.example-iframe {
+  width: 960px;
+  border: 1px dashed @gray-light;
+  overflow-x: hidden; /* 1 */
+  overflow-y: auto;
+}
+&.example-iframe-split {
+  .example-iframe;
+  width: 650px;
+}
+
+/* =================================================================================================================
+   Seção Grid
+   ================================================================================================================= */
+
+.grid-example {
+  .row {
+    margin-bottom: @computed-line-height;
+  }
+
+  .col {
+    padding-top: @computed-line-height / 4;
+    padding-bottom: @computed-line-height / 4;
+    border: 1px solid darken( @gray-lighter, 10% );
+    font-size: .9;
+    background: @gray-lighter;
+
+    &:hover {
+      background: darken( @gray-lighter, 5% );
+    }
+  }
+}
+
+/* =================================================================================================================
+   Seção Ícones
+   ================================================================================================================= */
+
+.icons {
+  .clear-float();
+  margin: 0 0 @computed-line-height;
+  list-style: none;
+
+  li {
+    float: left;
+    width: 24%;
+    margin: 0 1% 5px 0;
+  }
+}
+
+/* =================================================================================================================
+   Seção "Design responsivo"
+   ================================================================================================================= */
+
+.responsive-test,
+.responsive-table {
+  .visible, .hidden {
+    text-align: center;
+  }
+
+  .hidden {
+    color: @gray-light;
+  }
+
+  .visible {
+    background: @light-green;
+    color: @green;
+
+    &:before {
+      position: absolute;
+      content: "✔";
+      margin-left: -@font-size-base;
+    }
+  }
+}
+
+ul.responsive-test {
+  list-style: none;
+
+  li {
+    @padding: ( @computed-line-height / 2 ) 0;
+    position: relative;
+    display: inline-block;
+    width: 24%;
+    margin-right: 1%;
+    padding: @padding;
+    border: 1px solid @gray-light;
+    color: @gray-light;
+    text-align: center;
+    .border-radius( @base-border-radius );
+
+    > span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: @padding;
+      .border-radius( @base-border-radius);
+    }
+  }
+}
+
+/* =================================================================================================================
+   Responsividade
+   ================================================================================================================= */
+
+@media ( max-width: @screen-small-max ) {
+  /* Aumenta o tamanho da apresentação de cada icone num celular, pra não ficar tão horrível */
+  .icons li {
+    width: 49%;
+  }
+
+  /* Oculta o check de "efeito ativo" da seção "design responsivo" */
+  .responsive-test,
+  .responsive-table {
+    .visible:before {
+      content: "";
+    }
+  }
+
+  .footer section {
+    text-align: center;
+  }
+}

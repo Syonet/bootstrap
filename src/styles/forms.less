@@ -1,0 +1,227 @@
+/* =================================================================================================================
+   Forms
+   ================================================================================================================= */
+
+/*
+ * 1. Tem que usar line-height: normal por causa de um bug do Firefox
+ *    TODO: Qual bug?
+ * 2. Declara antes de tudo para remover o outline azul do safari
+ */
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="range"],
+input[type="color"],
+select,
+textarea {
+  min-height: @input-height;
+  height: @input-height;
+  padding: @padding-base-vertical ( @padding-base-horizontal / 2 );
+  border: 1px solid @input-border;
+  background-color: @input-background;
+  text-shadow: 0 1px 0 #FFF;
+  line-height: normal; /* 1 */
+  color: @input-text-color;
+  .border-radius( @input-border-radius );
+  .transition( ~"box-shadow .15s linear, color .15s linear" );
+
+  &:hover {
+    border-color: @input-hover-border;
+    color: @input-hover-text;
+    background-color: @input-hover-background;
+    .box-shadow( 0 1px 2px rgb( 210, 210, 210 ) );
+  }
+
+  &:focus {
+    outline: none; /* 2 */
+    border-color: @input-focus-border;
+    background-color: @input-background;
+    .box-shadow( 0 1px 2px rgb( 210, 210, 210 ) );
+  }
+
+  &.input-block-level {
+    display: block;
+    width: 100%;
+  }
+
+  &[disabled],
+  &.syo-disabled {
+    border-color: @input-disabled-border !important;
+    background: @input-disabled-background !important;
+    color: @input-disabled-text !important;
+    cursor: not-allowed;
+    .box-shadow( ~"none !important" );
+  }
+}
+
+/* Reseta o height de select múltiplo/textarea */
+textarea[rows],
+select[size],
+select[multiple] {
+  height: auto;
+}
+
+/*
+ * 1. Padding necessário para alinhar verticalmente o texto do option selecionado
+ * 2. Safari controla o height baseado no line-height
+ *    TODO: Descobrir pq para o safari precisamos reduzir 6px do line-height
+ * 3. Evita que fique o text-shadow ao botar o mouse sobre um item no select
+ */
+select {
+  //padding: @padding-base-vertical 2px; /* 1 */
+  line-height: @input-height - 6px; /* 2 */
+
+  option {
+    text-shadow: none; /* 3 */
+  }
+}
+
+optgroup {
+  font-style: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: relative;
+  top: .3em;
+}
+
+/* =================================================================================================================
+   Forms - Labels, fieldsets, legends
+   ================================================================================================================= */
+
+fieldset {
+  margin: 2px 2px @computed-line-height / 2;
+  padding: .5em;
+  border: 1px solid @gray-light;
+  .border-radius( @border-radius-large );
+}
+
+legend {
+  padding: 0 8px;
+  border: 1px solid @gray-light;
+  font-size: 80%;
+  font-weight: bold;
+  background-color: @gray-lighter;
+  .border-radius( @base-border-radius );
+}
+
+/*
+ * 1. Alinha o checkbox/radio com a primeira linha de texto do label pai
+ */
+label {
+  display: inline-block;
+  line-height: @input-height;
+  vertical-align: middle;
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    position: relative;
+    top: -.1em; /* 1 */
+  }
+}
+
+/* =================================================================================================================
+   Forms - syo-field
+   ================================================================================================================= */
+
+.syo-field {
+  display: block;
+  margin-bottom: @computed-line-height / 2;
+
+  &.syo-field-inline {
+    display: inline-block;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    vertical-align: middle;
+  }
+
+  > input[type="radio"],
+  > input[type="checkbox"] {
+    position: relative;
+    top: .6em;
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+}
+
+/* =================================================================================================================
+   Forms - Estados
+   ================================================================================================================= */
+
+input,
+select {
+  &.syo-success {
+    &,
+    &:hover,
+    &:focus {
+      border-color: @input-success-border;
+      color: @input-success-color;
+    }
+  }
+
+  &.syo-error {
+    &,
+    &:hover,
+    &:focus {
+      border-color: @input-error-border;
+      color: @input-error-color;
+    }
+  }
+}
+
+/*
+ * Suporte a validações HTML5
+ * 1. Remove o box-shadow do browser quando o campo está inválido
+ */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none; /* 1 */
+
+  &:focus {
+    border-color: @input-error-border;
+    color: @input-error-color;
+  }
+}
+
+/* =================================================================================================================
+   Forms - Help Block
+   ================================================================================================================= */
+
+.syo-field-help {
+  display: block;
+  color: @input-text-color;
+
+  &.syo-error {
+    color: @input-error-color;
+  }
+
+  &.syo-success {
+    color: @input-success-color;
+  }
+}
+
+/* =================================================================================================================
+   Forms - Field Text
+   ================================================================================================================= */
+
+.syo-field .syo-field-text {
+  display: inline-block;
+  line-height: @input-height;
+  vertical-align: middle;
+}

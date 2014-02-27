@@ -1,0 +1,396 @@
+// ====================================================================================================================
+// Utils
+// ====================================================================================================================
+
+// Hack clearfix
+.clear-float() {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Faz overflow de texto (Lorem ips...)
+.text-overflow( @type: ellipsis ) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: @type;
+}
+
+// ====================================================================================================================
+// Helpers
+// ====================================================================================================================
+
+.background-size (@size) {
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
+}
+
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.border-top-left-radius(@radius) {
+  -webkit-border-top-left-radius: @radius;
+          border-top-left-radius: @radius;
+}
+
+.border-top-right-radius(@radius) {
+  -webkit-border-top-right-radius: @radius;
+          border-top-right-radius: @radius;
+}
+
+.border-bottom-left-radius(@radius) {
+  -webkit-border-bottom-left-radius: @radius;
+          border-bottom-left-radius: @radius;
+}
+
+.border-bottom-right-radius(@radius) {
+  -webkit-border-bottom-right-radius: @radius;
+          border-bottom-right-radius: @radius;
+}
+
+.border-radius-left( @radius ) {
+  .border-top-left-radius( @radius );
+  .border-bottom-left-radius( @radius );
+}
+
+.border-radius-right( @radius ) {
+  .border-top-right-radius( @radius );
+  .border-bottom-right-radius( @radius );
+}
+
+.border-radius-top( @radius ) {
+  .border-top-left-radius( @radius );
+  .border-top-right-radius( @radius );
+}
+
+.border-radius-bottom( @radius ) {
+  .border-bottom-left-radius( @radius );
+  .border-bottom-right-radius( @radius );
+}
+
+.box-sizing( @boxmodel ) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+      -ms-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+.box-shadow( @shadow ) {
+  -webkit-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+.opacity( @opacity: 1 ) {
+  opacity: @opacity;
+  @ieOpacity: @opacity * 100;
+  filter: ~"Alpha(Opacity=@{ieOpacity})";
+}
+
+.transform( @transform ) {
+  -webkit-transform: @transform;
+     -moz-transform: @transform;
+          transform: @transform;
+}
+
+.transition( @transition ) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+.animation( @animation ) {
+  -webkit-animation: @animation;
+     -moz-animation: @animation;
+      -ms-animation: @animation;
+       -o-animation: @animation;
+          animation: @animation;
+}
+
+#gradient {
+  .vertical( @start-color, @end-color ) {
+    background-color: mix( @start-color, @end-color, 60% );
+    background-image: -moz-linear-gradient( top, @start-color, @end-color ); // FF 3.6+
+    background-image: -webkit-gradient( linear, 0 0, 0 100%, from( @start-color ), to( @end-color ) ); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient( top, @start-color, @end-color ); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient( top, @start-color, @end-color ); // Opera 11.10
+    background-image: linear-gradient( to bottom, @start-color, @end-color ); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(
+      %(
+        "progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",
+        argb( @start-color ), argb( @end-color )
+      )
+    ); // IE9 and down
+  }
+
+  .brand( @brand-color: @brand-default ) {
+    .vertical( lighten( @brand-color, 3% ), @brand-color );
+  }
+}
+
+#link() {
+  color: @link-color;
+  text-decoration: none;
+  .border-radius( 0 );
+  .box-shadow( none );
+
+  &:active,
+  &:hover {
+    color: @link-color-hover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+}
+
+// ====================================================================================================================
+// Buttons
+// ====================================================================================================================
+.button-style( @bg: @button-default-bg, @text: @text-color, @border: @input-border ) {
+  border-color: @border;
+  color: @text;
+  #gradient .vertical( lighten( @bg, 5% ), @bg );
+
+  &:hover {
+    .transition( @button-bg-transition );
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.syo-active {
+    border-color: darken( @border, 10% );
+    color: @text;
+    background: darken( @bg, 5% );
+  }
+
+  &[disabled],
+  &.syo-disabled,
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.syo-active {
+      border-color: @border;
+      color: @border;
+      background: @bg;
+    }
+  }
+}
+
+// ====================================================================================================================
+// Grid
+// ====================================================================================================================
+
+#grid( @column-name, @columns-count: @grid-columns ) {
+  // Columns
+  .spanX( @index ) when ( @index > 0 ) {
+    .col-@{column-name}-@{index} { .span( @index ); }
+    .spanX( @index - 1 );
+  }
+  .spanX( 0 ) { }
+
+  .span( @columns ) {
+    width: percentage( @columns / @columns-count );
+  }
+
+  // Offset
+  .offsetX( @index ) when ( @index >= 0 ) {
+    .offset-@{column-name}-@{index} { .offset(@index); }
+    .offsetX( @index - 1 );
+  }
+  .offsetX( -1 ) { }
+
+  .offset( @columns ) {
+    margin-left: percentage( @columns / @columns-count );
+  }
+  // -----
+  .spanX( @columns-count );
+  .offsetX( @columns-count );
+}
+
+#grid-flex( @column-name, @columns-count: @grid-columns ) {
+  // Columns
+  .spanX( @index ) when ( @index > 0 ) {
+    .col-@{column-name}-@{index} { .span( @index ); }
+    .spanX( @index - 1 );
+  }
+  .spanX( 0 ) { }
+
+  .span( @columns ) {
+    flex: 1 1 percentage( @columns / @columns-count );
+  }
+
+  // -----
+  .spanX( @columns-count );
+}
+
+// ====================================================================================================================
+// Navbar
+// ====================================================================================================================
+
+// Alinha um elemento da navbar com padding e reseta margin
+.navbar-spacing( @height: @computed-line-height, @prop: padding ) {
+  @{prop}-top: round( ( @navbar-height - @height ) / 2 );
+  @{prop}-bottom: round( ( @navbar-height - @height ) / 2 );
+}
+
+// ====================================================================================================================
+// Progressbars
+// ====================================================================================================================
+
+.progressbar() {
+  // @TODO usar na classe .ui-progressbar-overlay
+  @stripeColor: fade( @gray-light, 15% );
+
+  // Webkit
+  @-webkit-keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+
+  // Firefox
+  @-moz-keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+
+  // IE9
+  @-ms-keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+
+  // Opera
+  @-o-keyframes progress-bar-stripes {
+    from { background-position: 0 0; }
+    to { background-position: 40px 0; }
+  }
+
+  // Spec
+  @keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+  }
+
+  background-color: #D0D0D0;
+  background-image: -webkit-gradient(
+      linear,
+      0 100%,
+      100% 0,
+      color-stop( .25, @stripeColor ),
+      color-stop( .25, transparent ),
+      color-stop( .5, transparent ),
+      color-stop( .5, @stripeColor ),
+      color-stop( .75, @stripeColor ),
+      color-stop( .75, transparent ),
+      to( transparent )
+    ),
+    -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from( #FFF ),
+      to( #EEE )
+    );
+  background-image: -webkit-linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+    ),
+    -webkit-linear-gradient(
+      top,
+      #FAFAFA,
+      #E9E9E9
+    );
+  background-image: -moz-linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+   ),
+    -moz-linear-gradient(
+      top,
+      #FAFAFA,
+      #E9E9E9
+    );
+  background-image: -o-linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+    ),
+    -o-linear-gradient(
+      top,
+      #FAFAFA,
+      #E9E9E9
+    );
+  background-image: linear-gradient(
+      45deg,
+      @stripeColor 25%,
+      transparent 25%,
+      transparent 50%,
+      @stripeColor 50%,
+      @stripeColor 75%,
+      transparent 75%,
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      #FAFAFA,
+      #E9E9E9
+    );
+  .background-size( 40px 40px );
+  .transition( width .2s ease );
+  .animation( progress-bar-stripes 1.5s linear infinite );
+}
+
+// ====================================================================================================================
+// Utilidades Responsivas
+// ====================================================================================================================
+
+.responsive-visible() {
+  display: block !important;
+
+  tr& { display: table-row !important; }
+
+  th&,
+  td& { display: table-cell !important; }
+}
+
+.responsive-invisible() {
+  display: none !important;
+
+  tr& { display: none !important; }
+
+  th&,
+  td& { display: none !important; }
+}

@@ -1,0 +1,148 @@
+/* =================================================================================================================
+   Navbar
+   ================================================================================================================= */
+
+/*
+ * 1. Calcula box-sizing com a borda vertical
+ * 2. Container para conteúdo diversificado
+ */
+.syo-navbar {
+  width: 100%;
+  min-height: @navbar-height; /* 1 */
+  display: block;
+  border: 1px solid @navbar-border-color;
+  font-size: @font-size-base;
+  text-shadow: 0 1px 0 #FFF;
+  .box-shadow( 0 0 5px 0px fade( @gray-light, 30% ) );
+  #gradient .brand();
+
+  a {
+    color: lighten( @gray, 10% );
+  }
+
+  > .syo-navbar-inner {
+    > :first-child { padding-left: 0; }
+    > :last-child { padding-right: 0; }
+  }
+
+  /* 2 */
+  .syo-navbar-content {
+    display: inline-block;
+    padding: 0 @navbar-padding-horizontal;
+    .navbar-spacing();
+  }
+}
+
+/* =================================================================================================================
+   Navbar Title
+   ================================================================================================================= */
+
+/*
+ * 1. Usa padding-left maior por causa do logo
+ * 2. Garante text-decoration ausente em estado normal e estado hover
+ */
+.syo-navbar-title {
+  display: block;
+  float: left;
+  padding: 0 @navbar-padding-horizontal 0 ( @computed-line-height * 1.5 ); /* 1 */
+  color: @gray;
+  font-size: @font-size-base * 1.5;
+  font-weight: bold;
+  vertical-align: middle;
+  background: url( "images/logo.svg" ) no-repeat left center;
+  background-size: ( @computed-line-height * 1.5 ) - 5px;
+
+  .navbar-spacing( @computed-line-height * 1.5 );
+  .transition( ~"color 0.1s linear, text-shadow 0.1s linear" );
+
+  &:hover {
+    color: @gray-darker;
+    text-shadow: 0 1px 3px #FFF;
+  }
+
+  &, &:hover { text-decoration: none; /* 2 */ }
+}
+
+/* =================================================================================================================
+   Navbar Nav
+   ================================================================================================================= */
+
+.syo-navbar .syo-nav {
+  float: left;
+  margin-bottom: 0;
+
+  li {
+    display: inline-block;
+
+    > a {
+      display: inline-block;
+      padding: 0 @navbar-padding-horizontal;
+      .navbar-spacing();
+
+      &:hover { color: #000; }
+    }
+
+    &.syo-active > a {
+      color: #000;
+      background: fade( #FFF, 30% );
+      .box-shadow( inset 0 0 3px 1px darken( @brand-default, 15% ) );
+    }
+  }
+
+  .syo-pull-right {
+    float: right;
+  }
+}
+
+/* =================================================================================================================
+   Botões na Navbar
+   ================================================================================================================= */
+
+/*
+ * 1. Corrige alinhamento dos botões na navbar (eles tem altura maior que uma linha de texto).
+ *    Não se pode usar padding.
+ */
+.syo-navbar-button {
+  .navbar-spacing( @input-height, margin ); /* 1 */
+
+  &.syo-button-large { .navbar-spacing( @input-height * @component-large-factor, margin ); } /* 1 */
+}
+
+/*
+ * 1. Herda do .syo-navbar-button
+ * 2. Botão visível apenas para resoluções muito pequenas
+ */
+.syo-button.syo-navbar-menu :extend( .syo-navbar-button ) { /* 1 */
+  float: left;
+
+  @media ( min-width: @screen-small ) { /* 2 */
+    display: none !important;
+  }
+}
+
+/* =================================================================================================================
+   Navbar fixo
+   ================================================================================================================= */
+
+.syo-navbar.syo-navbar-fixed-top,
+.syo-navbar.syo-navbar-fixed-bottom {
+  position: fixed;
+  left: 0;
+  z-index: @navbar-zindex;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+.syo-navbar.syo-navbar-fixed-top {
+  top: 0;
+  border-top-width: 0;
+}
+.syo-navbar.syo-navbar-fixed-bottom {
+  bottom: 0;
+  border-bottom-width: 0;
+}
+
+/* Classe utilitária pra adicionar um padding-top da mesma altura do navbar */
+body.syo-body-navbar {
+  padding-top: @navbar-height;
+}

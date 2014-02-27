@@ -1,0 +1,94 @@
+/* =================================================================================================================
+   Fonte Icônica - @font-face
+   ================================================================================================================= */
+
+@font-face {
+  font-family: "SyoBootstrap";
+  src: url( "@{iconic-font-path}/SyoBootstrap.eot" );
+  src: url( "@{iconic-font-path}/SyoBootstrap.eot?#iefix" ) format( "embedded-opentype" ),
+       url( "@{iconic-font-path}/SyoBootstrap.woff" ) format( "woff" ),
+       url( "@{iconic-font-path}/SyoBootstrap.ttf" ) format( "truetype" ),
+       url( "@{iconic-font-path}/SyoBootstrap.svg#SyoBootstrap" ) format( "svg" );
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =================================================================================================================
+   Fonte Icônica - Uso
+   ================================================================================================================= */
+
+/*
+ * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
+ * 2. Garante que o width acompanhará tamanho de fontes maiores
+ * 3. Melhor renderização da fonte
+ * 4. Alinha exatamente no meio, independente do crisp size da fonte
+ */
+[class^="icon-"]:before,
+[class*=" icon-"]:before { /* 1 */
+  min-width: @icon-size;
+  display: inline-block;
+  line-height: 1;
+  font-family: "SyoBootstrap";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  vertical-align: ( @font-size-base - @iconic-font-crisp-size ) / 2; /* 4 */
+
+  /* 3 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  &.icon-large { font-size: 150%; }
+  &.icon-2x    { font-size: 200%; }
+  &.icon-3x    { font-size: 300%; }
+  &.icon-4x    { font-size: 400%; }
+}
+
+/* =================================================================================================================
+   Icones giratórios
+   ================================================================================================================= */
+
+.icon-spin {
+  // Webkit
+  @-webkit-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // Firefox
+  @-moz-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // IE9
+  @-ms-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // Opera
+  @-o-keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  // Spec
+  @keyframes anim-rotate {
+    0%    { .transform( rotate(0) ); }
+    100%  { .transform( rotate(360deg) ); }
+  }
+
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  .animation( anim-rotate 1s infinite steps( 8 ) );
+
+  &:before {
+    vertical-align: baseline;
+  }
+}

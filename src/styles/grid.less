@@ -1,0 +1,102 @@
+/* =================================================================================================================
+   Grid
+   ================================================================================================================= */
+
+.row {
+  .clear-float();
+
+  .row {
+    margin-left: -( @grid-gutter-width / 2 );
+    margin-right: -( @grid-gutter-width / 2 );
+  }
+}
+
+/*
+ * 1. Evita que elementos vazios colapsem
+ */
+.col {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px; /* 1 */
+  padding-left: ( @grid-gutter-width / 2 );
+  padding-right: ( @grid-gutter-width / 2 );
+}
+
+/* =================================================================================================================
+   Grid Flexbox
+   ================================================================================================================= */
+
+/*
+ * 1. Atualmente só tem efeito se dentro de um elemento posicionado
+ */
+.flex-row {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  height: 100%; /* 1 */
+
+  > .col {
+    float: none;
+  }
+}
+
+@media only screen {
+  #grid( tiny );
+  .flex-row { #grid-flex( tiny ); }
+
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-tiny-"]:not(.col-tiny-@{grid-columns}) {
+      text-align: right;
+    }
+  }
+}
+
+@media screen and ( min-width: @screen-small ) {
+  #grid( small );
+  .flex-row { #grid-flex( small ); }
+
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-small-"]:not(.col-small-@{grid-columns}) {
+      text-align: right;
+    }
+  }
+}
+
+@media screen and ( min-width: @screen-medium ) {
+  #grid( medium );
+  .flex-row { #grid-flex( medium ); }
+
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-medium-"]:not(.col-medium-@{grid-columns}) {
+      text-align: right;
+    }
+  }
+}
+
+@media screen and ( min-width: @screen-large ) {
+  #grid( large );
+  .flex-row { #grid-flex( large ); }
+
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-large-"]:not(.col-large-@{grid-columns}) {
+      text-align: right;
+    }
+  }
+}
+
+@media screen and ( min-width: @screen-xlarge ) {
+  #grid( xlarge );
+  .flex-row { #grid-flex( xlarge ); }
+
+  .syo-field label,
+  .syo-field .syo-field-text {
+    &[class*="col-xlarge-"]:not(.col-xlarge-@{grid-columns}) {
+      text-align: right;
+    }
+  }
+}

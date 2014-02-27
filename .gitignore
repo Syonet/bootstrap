@@ -1,5 +1,4 @@
 .idea/
 node_modules/
-dist/
 /*.html
-/docs/compiled/main.css
+assets/styles/main.css

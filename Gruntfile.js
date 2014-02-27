@@ -1,68 +1,53 @@
-/*jshint node:true*/
 module.exports = function( grunt ) {
 	"use strict";
+
+	// Inicialização de variáveis
+	var env = process.env.NODE_ENV || "development";
+	var liveReload = env === "production" ? false : 35729;
 
 	grunt.initConfig({
 		// Geral
 		// -----------------------------------------------------------------------------------------
 		pkg: grunt.file.readJSON( "package.json" ),
 		watch: {
-			main: {
-				files: [
-					"styles/*.less",
-					"scripts/**/*.js"
-				],
-				tasks: [
-					"less:main",
-					"jshint:main",
-					"jshint:test",
-					"concat",
-					"process:main"
-				]
+			options: {
+				spawn: false,
+				livereload: liveReload
 			},
-			docs: {
-				files: [
-					"docs/**/*.less",
-					"docs/**/*.hbs",
-					"docs/**/*.js"
-				],
-				tasks: [
-					"clean:docs",
-					"less:docs",
-					"jshint:docs",
-					"concat",
-					"hogan"
-				]
+			css: {
+				files: [ "src/styles/**/*.{less,css}" ],
+				tasks: [ "less:main", "process:main" ]
 			},
 			icons: {
-				files: [ "fonts/*.json" ],
-				tasks: [
-					"icons",
-					"process:fonts"
-				]
+				files: [ "src/fonts/*.json" ],
+				tasks: [ "icons", "process:fonts" ]
+			},
+			docsHTML: {
+				files: [ "src/docs/**/*.swig" ],
+				tasks: [ "swig" ]
+			},
+			docsCSS: {
+				files: [ "<%= watch.css.files %>", "assets/styles/*.less" ],
+				tasks: [ "less:docs" ]
 			}
-		},
-		clean: {
-			main: "dist/",
-			docs: "*.html"
 		},
 		process: {
 			main: {
 				src: [
-					"images/*",
+					"src/images/*",
 
 					// Processa novamente os arquivos JS/CSS para a inclusão do banner
-					"dist/*.css",
-					"dist/*.js"
+					"dist/*.css"
 				],
-				strip: /^dist/,
+				strip: /^dist|^src/,
 				dest: "dist"
 			},
 			fonts: {
 				src: [
 					// Copia apenas arquivos utilizadas em produção
-					"fonts/*.{ttf,eot,woff,svg}"
+					"src/fonts/*.{ttf,eot,woff,svg}"
 				],
+				strip: /^src/,
 				dest: "dist"
 			}
 		},
@@ -73,97 +58,84 @@ module.exports = function( grunt ) {
 			main: {
 				files: {
 					"dist/bootstrap.css": [
-						"styles/vendor/normalize.css",
-						"styles/bootstrap.less"
+						"src/styles/vendor/normalize.css",
+						"src/styles/bootstrap.less"
 					],
 					"dist/jquery.ui.css": [
 						// Junta TODOS os arquivos do jQuery UI, na sua ordem certa.
 						// @TODO usar apenas o core + glob *.css. Será que vai excluir o core deste glob pra ficar na
 						// ordem certa?
-						"styles/vendor/jquery-ui/*core.css",
-						"styles/vendor/jquery-ui/*accordion.css",
-						"styles/vendor/jquery-ui/*autocomplete.css",
-						"styles/vendor/jquery-ui/*button.css",
-						"styles/vendor/jquery-ui/*datepicker.css",
-						"styles/vendor/jquery-ui/*dialog.css",
-						"styles/vendor/jquery-ui/*menu.css",
-						"styles/vendor/jquery-ui/*progressbar.css",
-						"styles/vendor/jquery-ui/*resizable.css",
-						"styles/vendor/jquery-ui/*selectable.css",
-						"styles/vendor/jquery-ui/*slider.css",
-						"styles/vendor/jquery-ui/*spinner.css",
-						"styles/vendor/jquery-ui/*tabs.css",
-						"styles/vendor/jquery-ui/*tooltip.css",
-						"styles/jquery.ui.less"
+						"src/styles/vendor/jquery-ui/*core.css",
+						"src/styles/vendor/jquery-ui/*accordion.css",
+						"src/styles/vendor/jquery-ui/*autocomplete.css",
+						"src/styles/vendor/jquery-ui/*button.css",
+						"src/styles/vendor/jquery-ui/*datepicker.css",
+						"src/styles/vendor/jquery-ui/*dialog.css",
+						"src/styles/vendor/jquery-ui/*menu.css",
+						"src/styles/vendor/jquery-ui/*progressbar.css",
+						"src/styles/vendor/jquery-ui/*resizable.css",
+						"src/styles/vendor/jquery-ui/*selectable.css",
+						"src/styles/vendor/jquery-ui/*slider.css",
+						"src/styles/vendor/jquery-ui/*spinner.css",
+						"src/styles/vendor/jquery-ui/*tabs.css",
+						"src/styles/vendor/jquery-ui/*tooltip.css",
+						"src/styles/jquery.ui.less"
 					]
 				}
 			},
 			docs: {
 				files: {
-					"docs/compiled/main.css": "docs/main.less"
+					"assets/styles/main.css": "assets/styles/main.less"
 				}
 			}
 		},
 		icons: {
 			main: {
 				options: {
-					aliases: "fonts/aliases.json"
+					aliases: "src/fonts/aliases.json"
 				},
 				files: {
-					"styles/icons-map.less": [ "fonts/SyoBootstrap.json" ]
+					"src/styles/icons-map.less": [ "src/fonts/SyoBootstrap.json" ]
 				}
 			}
 		},
 
 		// JS
 		// -----------------------------------------------------------------------------------------
-		qunit: {
-			files: [
-				"scripts/tests/index.html"
-			]
-		},
 		jshint: {
-			// https://github.com/gruntjs/grunt-contrib-jshint/pull/24#issuecomment-15029207
-			options: grunt.file.readJSON( ".jshintrc" ),
-			test: {
-				options: {
-					globals: {
-						expect: false
-					}
-				},
-				files: {
-					src: "scripts/tests/**/*.js"
-				}
+			options: {
+				jshintrc: ".jshintrc"
 			},
-			main: "scripts/*.js",
-			docs: "docs/main.js"
-		},
-		concat: {
-			main: {
-				src: "scripts/*.js",
-				dest: "dist/bootstrap.js"
-			}
+			internal: [
+				"Gruntfile.js",
+				"build/*.js",
+				"assets/scripts/*.js"
+			]
 		},
 
 		// Docs
 		// -----------------------------------------------------------------------------------------
-		hogan: {
+		swig: {
 			docs: {
-				layout: "docs/templates/layout.hbs",
-				src: [
-					"docs/templates/pages/*.hbs"
-				],
-				dest: "."
+				options: {
+					data: {
+						pkg: "<%= pkg %>"
+					}
+				},
+				cwd: "src/docs/",
+				src: [ "*.swig" ],
+				dest: "./",
+				ext: ".html",
+				expand: true
 			}
 		},
 
 		connect: {
 			main: {
 				options: {
-					hostname: "*",
-					keepalive: true,
 					port: 8001,
-					debug: true
+					livereload: liveReload,
+					keepalive: true
 				}
 			}
 		}
@@ -173,23 +145,19 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-less" );
 	grunt.loadNpmTasks( "grunt-contrib-clean" );
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
-	grunt.loadNpmTasks( "grunt-contrib-qunit" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
-	grunt.loadNpmTasks( "grunt-contrib-concat" );
+	grunt.loadNpmTasks( "grunt-swig2" );
 
 	// Local
 	grunt.loadTasks( "build" );
 
 	// Processo principal de build
 	grunt.registerTask( "default", [
-		"clean", // Limpa todo o diretório dist
 		"icons", // Gera o mapeamento de icones
 		"less", // Compila os arquivos LESS
 		"jshint", // Faz o linting em todos os arquivos JS relevantes
-		"concat", // Concatena os arquivos javascript em um só
 		"process", // Copia e inclui o banner nos arquivos de distribuição
-		"hogan", // Compila a documentação do projeto
-		//"qunit" // Roda os testes JS
+		"swig" // Compila a documentação do projeto
 	]);
 };

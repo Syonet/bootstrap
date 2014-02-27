@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../../dist/bootstrap.css">
+		<link rel="stylesheet" href="../../dist/jquery.ui.css">
+		<link rel="stylesheet" href="tests.css">
+
+		<style>
+		#grid-overflow .syo-datagrid-body {
+			height: 300px;
+			max-height: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div data-widget="dialog" title="ui dialog">
+			Dialog deve se posicionar no centro da tela e possuir um estilo consistente com os demais
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="syo-header">
+						<h1> Geral </h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test" title="A navbar deve quebrar graciosamente em resoluções menores. O ícone dos
+											títulos devem ficar alinhados com o texto">
+						<div class="syo-navbar">
+							<div class="container">
+								<a href="#" class="syo-navbar-title">
+									<i class="icon-task"></i>Conteúdo Esquerda
+								</a>
+								<ul class="syo-nav">
+									<li class="syo-active"><a href="#"><i class="icon-droplet"></i>Item 1</a></li>
+									<li><a href="#"><i class="icon-filter"></i>Item 2</a></li>
+									<li><a href="#"><i class="icon-eye"></i>Item 3</a></li>
+									<li><a href="#"><i class="icon-contract"></i>Item 4</a></li>
+									<li><a href="#"><i class="icon-airplane"></i>Item 5</a></li>
+									<li><a href="#"><i class="icon-task"></i>Item 6</a></li>
+								</ul>
+								<a href="#" class="syo-pull-right syo-navbar-title">
+									<i class="icon-bug"></i>Conteúdo Direita
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Deve garantir uma margem aceitável entre os headers">
+						<div class="test-highlight1">
+							<div class="test-highlight2">
+								<h1>
+									<i class="icon-film"></i>
+									Heading
+								</h1>
+							</div>
+							<div class="test-highlight2">
+								<h2>
+									<i class="icon-certificate"></i>
+									Heading
+								</h2>
+							</div>
+							<div class="test-highlight2">
+								<h3>
+									<i class="icon-group"></i>
+									Heading
+								</h3>
+							</div>
+							<div class="test-highlight2">
+								<h4>
+									<i class="icon-calendar"></i>
+									Heading
+								</h4>
+							</div>
+							<div class="test-highlight2">
+								<h5>
+									<i class="icon-heart-broken"></i>
+									Heading
+								</h5>
+							</div>
+							<div class="test-highlight2">
+								<h6>
+									<i class="icon-link"></i>
+									Heading
+								</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="syo-progressbar, o conteúdo deve preencher todo o container da
+														progressbar">
+						<div class="test-highlight1">
+							<div class="syo-progressbar">
+								<div class="syo-progressbar-value" style="width:60%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="ui-progressbar, o conteúdo deve preencher todo o container da
+														progressbar">
+						<div class="test-highlight1">
+							<div data-widget="progressbar" data-value="60"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Todos os controles de formulário devem estar alinhados
+														horizontalmente (pixel perfect)">
+						<div class="test-highlight1">
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button">
+									<i class="icon-apple"></i>
+									Button tag
+								</button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="button" value="Input button" class="syo-button">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="text" placeholder="Text">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="radio">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="checkbox">
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<select><option>Select<option></select>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<textarea>Textarea</textarea>
+							</div>
+							<input type="text" data-widget="spinner">
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="search" placeholder="Search">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="O tamanho dos inputs deve ser um pouco maior quando utilizando atributos especiais">
+						<div>
+							<textarea rows="3">textarea[rows="3"]</textarea>
+							<select multiple="multiple"><option>select[multiple="multiple"]</option></select>
+							<select size="4"><option>select[size="4"]</option></select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Os botões da paginação deve ficar bem alinhados com o texto
+														interno e o background">
+						<div class="test-highlight1">
+							<div class="syo-pagination">
+								<ul>
+									<li><a href>1</a></li>
+									<li><a href>2</a></li>
+									<li><a href>3</a></li>
+									<li><a href>4</a></li>
+									<li><a href>5</a></li>
+									<li><a href>6</a></li>
+									<li><a href>7</a></li>
+									<li><a href>8</a></li>
+									<li><a href>9</a></li>
+									<li><a href>10</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test" title="Deve haver uma animação no ':hover' de todos os tipos de botões e eles
+											devem ser iguais em todos os sentidos">
+						<div>
+							<button class="syo-button">Regular</button>
+							<button class="syo-button syo-success">Success</button>
+							<button class="syo-button syo-error">Error</button>
+							<button data-widget="button">ui button</button>
+							<div data-widget="buttonset" style="display: inline-block">
+								<input type="checkbox" id="chk-button1">
+								<label for="chk-button1">ui buttonset</label>
+
+								<input type="checkbox" id="chk-button2">
+								<label for="chk-button2">ui buttonset</label>
+
+								<input type="checkbox" id="chk-button3">
+								<label for="chk-button3">ui buttonset</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Botões desabilitados devem possuir um estilo para
+														diferenciação">
+						<div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button syo-success" disabled>Success</button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button syo-error" disabled>Error</button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<button class="syo-button" disabled>
+									<i class="icon-apple"></i>
+									Button tag
+								</button>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="button" value="Input button" class="syo-button" disabled>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="text" placeholder="Text" disabled>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="radio" disabled>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<input type="checkbox" disabled>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<select disabled><option>Select<option></select>
+							</div>
+							<div class="syo-field syo-field-inline test-trimmed">
+								<textarea disabled>Textarea</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test" title="A animação do accordion deve ocorrer de forma suave e sem falhas">
+						<div data-widget="accordion">
+							<h3>Section 1</h3>
+							<div>
+								<p>
+									Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+									ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+									amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo
+									ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque
+									vulputate.
+								</p>
+							</div>
+							<h3>Section 2</h3>
+							<div>
+								<p>
+									Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+									purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis
+									In suscipit faucibus urna.
+								</p>
+							</div>
+							<h3>Section 3</h3>
+							<div>
+								<p>
+									Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+									Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+									ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+									lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+								</p>
+								<ul>
+									<li>List item one</li>
+									<li>List item two</li>
+									<li>List item three</li>
+								</ul>
+							</div>
+							<h3>Section 4</h3>
+							<div>
+								<p>
+									Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+									et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+									faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+									mauris vel est.
+								</p>
+								<p>
+									Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat
+									lectus. Class aptent taciti sociosqu ad litora torquent per conubia
+									nostra, per inceptos himenaeos.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed" title="Os botões the paginação do datepicker não devem 'pular' de
+														posição no hover">
+						<div data-widget="datepicker"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-lone" title="Não deve renderizar uma sombra fora do item de paginação">
+						<div class="syo-pagination">
+							<ul>
+								<li><a href>1</a></li>
+								<li><a href>2</a></li>
+								<li><a href>3</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-medium-12">
+					<div class="test" title="Header do Block deve estar centralizado verticalmente">
+						<div class="syo-block">
+							<div class="syo-block-header">
+								<div class="syo-block-toolbar">
+									<button class="syo-button">Button</button>
+								</div>
+								<div class="syo-block-title">Title</div>
+								<div class="syo-block-toolbar">
+									<button class="syo-button">Button</button>
+								</div>
+							</div>
+							<div class="syo-block-content">
+								Lorem ipsum dolor sit amet
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed test-lone" title="Data Grid - Teste das bordas arredondadas do datagrid com o elemento helper">
+						<table data-widget="syoDataGrid">
+							<colgroup>
+								<col style="width: 150px">
+								<col style="width: 150px">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>thead left</th>
+									<th>thead center</th>
+									<th>thead right</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="3">Helper aqui</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test test-fixed test-lone" title="Data Grid - Teste das bordas arredondadas do datagrid sem o elemento helper">
+						<table data-widget="syoDataGrid">
+							<colgroup>
+								<col style="width: 150px">
+								<col style="width: 150px">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>thead left</th>
+									<th>thead center</th>
+									<th>thead right</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+								<tr>
+									<td class="test-highlight2">body left</td>
+									<td class="test-highlight2">body center</td>
+									<td class="test-highlight2">body right</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="test" title="offset como first-child no grid não deve possuir margem quando o layout responsivo for ativado">
+						<div class="row">
+							<div class="col col-medium-3 offset-large-3">
+								<div class="test-highlight1">&lt;&lt; Deve ficar próximo à borda em dispositivos mobile e não deve criar scroll</div>
+							</div>
+							<div class="col col-medium-6">
+								<div class="test-highlight1">&nbsp;</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-medium-6">
+					<div class="syo-field">
+						<div class="test" title="O spinner deve possuir o tamanho do span (toda a área destacada)">
+							<div class="syo-field test-highlight1 special-input-block-level">
+								<input type="text" data-widget="spinner">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col-medium-6">
+					<div class="test" title="O slider deve ficar verticalmente alinhado com os outros componentes">
+						<div class="syo-field">
+							<div class="row test-highlight1">
+								<label class="col col-tiny-3">Label:</label>
+								<div class="col col-tiny-6">
+									<div data-widget="slider" data-range="min" data-value="20"></div>
+								</div>
+								<div class="col col-tiny-3">
+									<input type="text" class="input-block-level" placeholder="Digite...">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../assets/vendor/jquery.js"></script>
+		<script src="../../assets/vendor/jquery.ui.js"></script>
+		<script src="tests.js"></script>
+	</body>
+</html>

@@ -1,32 +1,31 @@
 {
-  "name": "syo-bootstrap",
-  "version": "0.1.0",
-  "title": "Syonet Bootstrap",
-  "description": "O conjunto de ferramentas front-end da Syonet",
-  "author": {
-    "name": "Syonet CRM",
-    "email": "syonet@syonet.com"
-  },
-  "homepage": "http://www.syonet.com",
-  "blog": "http://www.syonet.com/blog",
-  "github": "http://github.com/syonet",
-  "projectUrl": "http://syonet.github.com/bootstrap/",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/syonet/bootstrap"
-  },
-  "devDependencies": {
-    "grunt": "0.4.x",
-    "grunt-contrib-less": "0.8.x",
-    "grunt-contrib-clean": "0.5.x",
-    "grunt-contrib-watch": "0.5.x",
-    "grunt-contrib-qunit": "0.3.x",
-    "grunt-contrib-jshint": "0.7.x",
-    "grunt-contrib-connect": "0.5.x",
-    "grunt-contrib-concat": "0.3.x",
-    "hogan.js": "2.0.x"
-  },
-  "scripts": {
-    "test": "grunt"
-  }
+	"name": "syo-bootstrap",
+	"version": "0.1.0",
+	"title": "Syonet Bootstrap",
+	"description": "O conjunto de ferramentas front-end da Syonet",
+	"author": {
+		"name": "Syonet CRM",
+		"email": "syonet@syonet.com"
+	},
+	"homepage": "http://www.syonet.com",
+	"blog": "http://www.syonet.com/blog",
+	"github": "http://github.com/syonet",
+	"projectUrl": "http://syonet.github.com/bootstrap/",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/syonet/bootstrap"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-less": "~0.9.0",
+		"grunt-contrib-clean": "~0.5.0",
+		"grunt-contrib-watch": "~0.5.3",
+		"grunt-contrib-jshint": "~0.8.0",
+		"grunt-contrib-connect": "~0.6.0",
+		"grunt-swig2": "~0.0.2",
+		"grunt-jscs-checker": "~0.3.0"
+	},
+	"scripts": {
+		"test": "grunt"
+	}
 }
