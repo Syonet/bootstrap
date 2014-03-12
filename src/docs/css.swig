@@ -660,7 +660,7 @@
 
         </article>
 
-         <!-- Formulário Tabela -->
+        <!-- Formulário Tabela -->
         <article id="form-table">
             <div class="syo-header syo-header-ruler">
                 <h2>Formulários Tabela</h2>
