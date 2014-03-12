@@ -687,7 +687,7 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th colspan="4">Formulário Tabela Básico</th>
+                                <th colspan="4">FORMULÁRIO TABELA BÁSICO</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -745,6 +745,100 @@
                                 <td>Valor 5</td>
                                 <th>Campo 6</th>
                                 <td>Valor 6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="syo-header syo-header-ruler">
+                <h4>Pequeno</h4>
+            </div>
+            <p>
+                Permite diminuir as margens e tamanho de fonte para viabilizar a exibição de uma quantidade maior de informação.<br>
+                Para isto basta adicionar o class <code>syo-small</code>.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <table class="syo-form-table syo-small">
+                        <colgroup>
+                            <col class="col-medium-1">
+                            <col class="col-medium-3">
+                            <col class="col-medium-1">
+                            <col class="col-medium-3">
+                            <col class="col-medium-1">
+                            <col class="col-medium-3">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="6">FORMULÁRIO TABELA PEQUENO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Campo 1</th>
+                                <td>Valor 1</td>
+                                <th>Campo 2</th>
+                                <td>Valor 2</td>
+                                <th>Campo 3</th>
+                                <td>Valor 3</td>
+                            </tr>
+                            <tr>
+                                <th>Campo 4</th>
+                                <td>Valor 4</td>
+                                <th>Campo 5</th>
+                                <td>Valor 5</td>
+                                <th>Campo 6</th>
+                                <td>Valor 6</td>
+                            </tr>
+                            <tr>
+                                <th>Campo 7</th>
+                                <td>Valor 7</td>
+                                <th>Campo 8</th>
+                                <td colspan="3">Aqui pode ser exibida uma informação muito maior por exemplo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <strong>HTML:</strong>
+                <div class="prettyprint">
+                    <table class="syo-form-table syo-small">
+                        <colgroup>
+                            <col class="col-medium-1">
+                            <col class="col-medium-3">
+                            <col class="col-medium-1">
+                            <col class="col-medium-3">
+                            <col class="col-medium-1">
+                            <col class="col-medium-3">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="6">FORMULÁRIO TABELA PEQUENO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Campo 1</th>
+                                <td>Valor 1</td>
+                                <th>Campo 2</th>
+                                <td>Valor 2</td>
+                                <th>Campo 3</th>
+                                <td>Valor 3</td>
+                            </tr>
+                            <tr>
+                                <th>Campo 4</th>
+                                <td>Valor 4</td>
+                                <th>Campo 5</th>
+                                <td colspan="3">Aqui pode ser exibida uma informação muito maior por exemplo</td>
+                            </tr>
+                            <tr>
+                                <th>Campo 6</th>
+                                <td>Valor 6</td>
+                                <th>Campo 7</th>
+                                <td>Valor 7</td>
+                                <th>Campo 8</th>
+                                <td>Valor 8</td>
                             </tr>
                         </tbody>
                     </table>

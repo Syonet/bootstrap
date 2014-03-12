@@ -3,17 +3,20 @@
    ================================================================================================================= */
 
 .syo-form-table {
-	&:extend( .syo-table all );
-	font-size: 12px;
-	margin-bottom: 8px;
+  &:extend( .syo-table all );
 
-	> thead {
-		background-image: linear-gradient(to bottom, #E6E6E6, #D2D2D2);
+  > thead {
+    background-image: linear-gradient(to bottom, #E6E6E6, #D2D2D2);
 
-		> tr > th {
-			text-align: center;
-		}
-	}
+    > tr > th {
+      text-align: center;
+    }
+  }
+
+  &.syo-small {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
 }
 
 /* =================================================================================================================

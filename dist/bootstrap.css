@@ -3111,15 +3111,15 @@ ol.unstyled {
 /* =================================================================================================================
    Form-Table - Componente de formulário dentro de uma tabela
    ================================================================================================================= */
-.syo-form-table {
-  font-size: 12px;
-  margin-bottom: 8px;
-}
 .syo-form-table > thead {
   background-image: linear-gradient(to bottom, #e6e6e6, #d2d2d2);
 }
 .syo-form-table > thead > tr > th {
   text-align: center;
+}
+.syo-form-table.syo-small {
+  font-size: 12px;
+  margin-bottom: 8px;
 }
 /* =================================================================================================================
    Tabela - Headers/Footers
