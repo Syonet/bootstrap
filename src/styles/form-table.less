@@ -1,0 +1,28 @@
+/* =================================================================================================================
+   Form-Table - Componente de formulário dentro de uma tabela
+   ================================================================================================================= */
+
+.syo-form-table {
+	.syo-table;
+
+	font-size: 12px;
+	margin-bottom: 8px;
+
+	> thead {
+		background-image: linear-gradient(to bottom, rgb(230, 230, 230), rgb(210, 210, 210));
+
+		> tr > th {
+			text-align: center;
+		}
+	}
+}
+
+/* =================================================================================================================
+   Tabela - Headers/Footers
+   ================================================================================================================= */
+.syo-form-table > tbody > tr > th,
+.syo-form-table > tfoot {
+  color: @gray-dark;
+  text-shadow: 0 1px 0 #FFF;
+  #gradient .brand();
+}
