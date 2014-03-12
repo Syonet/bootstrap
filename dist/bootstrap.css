@@ -3111,6 +3111,9 @@ ol.unstyled {
 /* =================================================================================================================
    Form-Table - Componente de formulário dentro de uma tabela
    ================================================================================================================= */
+.syo-form-table {
+  empty-cells: show;
+}
 .syo-form-table > thead {
   background-image: linear-gradient(to bottom, #e6e6e6, #d2d2d2);
 }
@@ -3128,10 +3131,14 @@ ol.unstyled {
   padding-bottom: 1px;
   vertical-align: middle;
 }
-.syo-form-table > tbody > tr > td input,
+.syo-form-table > tbody > tr > td input[type="text"],
 .syo-form-table > tbody > tr > td select {
   min-height: 28px;
   height: 28px;
+}
+.syo-form-table > tbody > tr > td label {
+  margin-right: 10px;
+  margin-left: 2px;
 }
 .syo-form-table > tbody > tr > td i[class*="icon-"],
 .syo-form-table > tbody > tr > td span[class*="icon-"] {
@@ -3148,10 +3155,14 @@ ol.unstyled {
   font-size: 12px;
   margin-bottom: 8px;
 }
-.syo-form-table.syo-small input,
+.syo-form-table.syo-small input[type="text"],
 .syo-form-table.syo-small select {
   min-height: 25px;
   height: 25px;
+}
+.syo-form-table.syo-small select {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 /* =================================================================================================================
    Form-Table - Headers/Footers
