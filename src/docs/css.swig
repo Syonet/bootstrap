@@ -695,7 +695,9 @@
                                 <th>Campo 1</th>
                                 <td>Valor 1</td>
                                 <th>Campo 2</th>
-                                <td>Valor 2</td>
+                                <td>
+                                    <input><i class="icon-redo"></i><i class="icon-folder-open"></i>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Campo 3</th>
@@ -724,7 +726,7 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th colspan="4">Formulário Tabela Básico</th>
+                                <th colspan="4">FORMULÁRIO TABELA BÁSICO</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -732,7 +734,9 @@
                                 <th>Campo 1</th>
                                 <td>Valor 1</td>
                                 <th>Campo 2</th>
-                                <td>Valor 2</td>
+                                <td>
+                                    <input><i class="icon-redo"></i><i class="icon-folder-open"></i>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Campo 3</th>
@@ -785,7 +789,9 @@
                             </tr>
                             <tr>
                                 <th>Campo 4</th>
-                                <td>Valor 4</td>
+                                <td>
+                                    <input><i class="icon-redo"></i><i class="icon-folder-open"></i>
+                                </td>
                                 <th>Campo 5</th>
                                 <td>Valor 5</td>
                                 <th>Campo 6</th>
@@ -828,17 +834,19 @@
                             </tr>
                             <tr>
                                 <th>Campo 4</th>
-                                <td>Valor 4</td>
+                                <td>
+                                    <input><i class="icon-redo"></i><i class="icon-folder-open"></i>
+                                </td>
                                 <th>Campo 5</th>
-                                <td colspan="3">Aqui pode ser exibida uma informação muito maior por exemplo</td>
-                            </tr>
-                            <tr>
+                                <td>Valor 5</td>
                                 <th>Campo 6</th>
                                 <td>Valor 6</td>
+                            </tr>
+                            <tr>
                                 <th>Campo 7</th>
                                 <td>Valor 7</td>
                                 <th>Campo 8</th>
-                                <td>Valor 8</td>
+                                <td colspan="3">Aqui pode ser exibida uma informação muito maior por exemplo</td>
                             </tr>
                         </tbody>
                     </table>
