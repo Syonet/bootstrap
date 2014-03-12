@@ -3117,6 +3117,12 @@ ol.unstyled {
 .syo-form-table > thead > tr > th {
   text-align: center;
 }
+.syo-form-table > thead > tr > th .syo-button {
+  margin-top: -3px;
+  margin-bottom: -3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
 .syo-form-table > tbody > tr > td {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -3148,7 +3154,7 @@ ol.unstyled {
   height: 25px;
 }
 /* =================================================================================================================
-   Tabela - Headers/Footers
+   Form-Table - Headers/Footers
    ================================================================================================================= */
 .syo-form-table > tbody > tr > th,
 .syo-form-table > tfoot {

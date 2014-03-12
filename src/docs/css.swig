@@ -687,7 +687,10 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th colspan="4">FORMULÁRIO TABELA BÁSICO</th>
+                                <th colspan="4">
+                                    FORMULÁRIO TABELA BÁSICO
+                                    <button class="syo-button syo-success syo-pull-right">Salvar</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -726,7 +729,10 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th colspan="4">FORMULÁRIO TABELA BÁSICO</th>
+                                <th colspan="4">
+                                    FORMULÁRIO TABELA BÁSICO
+                                    <button class="syo-button syo-success syo-pull-right">Salvar</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -775,7 +781,10 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th colspan="6">FORMULÁRIO TABELA PEQUENO</th>
+                                <th colspan="6">
+                                    FORMULÁRIO TABELA PEQUENO
+                                    <button class="syo-button syo-success syo-pull-right">Salvar</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -820,7 +829,10 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th colspan="6">FORMULÁRIO TABELA PEQUENO</th>
+                                <th colspan="6">
+                                    FORMULÁRIO TABELA PEQUENO
+                                    <button class="syo-button syo-success syo-pull-right">Salvar</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
