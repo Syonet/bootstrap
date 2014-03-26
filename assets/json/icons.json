@@ -80,9 +80,7 @@
 			"remove", "remove-circle", "close", "times",
 			"trash", "spam", "glass", "coffee",
 			"star-o", "star-half-o", "star", "address-book",
-			"circle-loader-100", "circle-loader-87", "circle-loader-75", "circle-loader-62",
-			"cirlce-loader-50", "circle-loader-37", "circle-loader-25", "circle-loader-12",
-			"circle-loader-0", "email", "group", "user",
+			"drawer", "email", "group", "user",
 			"phone", "earth", "flag", "support",
 			"exclamation-triangle", "exclamation-circle", "question", "blocked",
 			"info", "info2", "power-cord", "power-off",
@@ -96,7 +94,7 @@
 			"bookmark", "bookmarks", "road", "certificate",
 			"paint-format", "droplet", "calculate", "asterisk",
 			"eye", "eye-blocked", "box-add", "box-remove",
-			"money", "coin", "drawer"
+			"money", "coin"
 		]
 	}
 }
