@@ -1,0 +1,79 @@
+/* =================================================================================================================
+   Form-Table - Componente de formulário dentro de uma tabela
+   ================================================================================================================= */
+.syo-form-table {
+  &:extend( .syo-table all );
+
+  empty-cells: show;
+
+  // Formata o cabeçalho
+  > thead {
+    background-image: linear-gradient(to bottom, #E6E6E6, #D2D2D2);
+
+    > tr > th {
+      text-align: center;
+
+      // Permite botões dentro do cabeçalho
+      .syo-button {
+        margin-top: -3px;
+        margin-bottom: -3px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+      }
+    }
+  }
+
+  // Formata as células e seu conteúdo
+  > tbody > tr > td {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    vertical-align: middle;
+
+    input[type="text"], select {
+      min-height: 28px;
+      height: 28px;
+    }
+
+    label {
+      margin-right: 10px;
+      margin-left: 2px;
+    }
+
+    i[class*="icon-"], span[class*="icon-"] {
+      font-size: 18px;
+        cursor: pointer;  
+        margin-top: 6px;    
+        margin-left: 4px;
+
+        &:hover {
+          opacity: .8;
+        }
+    }
+  }
+
+  // Define um estilo reduzido para o componente
+  &.syo-small {
+    font-size: 12px;
+    margin-bottom: 8px;
+
+    input[type="text"], select {
+      min-height: 25px;
+      height: 25px;
+    }
+
+    select {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+  }
+}
+
+/* =================================================================================================================
+   Form-Table - Headers/Footers
+   ================================================================================================================= */
+.syo-form-table > tbody > tr > th,
+.syo-form-table > tfoot {
+  color: @gray-dark;
+  text-shadow: 0 1px 0 #FFF;
+  #gradient .brand();
+}

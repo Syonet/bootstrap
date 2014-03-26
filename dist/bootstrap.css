@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.1.0 - 2014-02-27
+ * Syonet Bootstrap v0.1.0 - 2014-03-12
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -1873,7 +1873,8 @@ table th small {
  * Estilos comuns pra todas as tabelas
  * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
  */
-.syo-table {
+.syo-table,
+.syo-form-table {
   width: 100%;
   margin-bottom: 20px;
   border-collapse: separate;
@@ -1887,7 +1888,9 @@ table th small {
   /* Desfaz arredondamento do canto superior esquerdo/direito de table com thead + tbody */
 }
 .syo-table td,
-.syo-table th {
+.syo-table th,
+.syo-form-table td,
+.syo-form-table th {
   /* 1 */
   padding: 5px 10px;
   line-height: 1.42857143;
@@ -1898,18 +1901,25 @@ table th small {
   vertical-align: top;
 }
 .syo-table td.text-center,
-.syo-table th.text-center {
+.syo-table th.text-center,
+.syo-form-table td.text-center,
+.syo-form-table th.text-center {
   text-align: center;
 }
 .syo-table td.text-right,
-.syo-table th.text-right {
+.syo-table th.text-right,
+.syo-form-table td.text-right,
+.syo-form-table th.text-right {
   text-align: right;
 }
 .syo-table td.text-justify,
-.syo-table th.text-justify {
+.syo-table th.text-justify,
+.syo-form-table td.text-justify,
+.syo-form-table th.text-justify {
   text-align: justify;
 }
-.syo-table th {
+.syo-table th,
+.syo-form-table th {
   font-weight: bold;
 }
 .syo-table caption + thead tr:first-child th,
@@ -1921,13 +1931,27 @@ table th small {
 .syo-table thead:first-child tr:first-child th,
 .syo-table tbody:first-child tr:first-child th,
 .syo-table tbody:first-child tr:first-child td,
-.syo-table tfoot:first-child tr:first-child td {
+.syo-table tfoot:first-child tr:first-child td,
+.syo-form-table caption + thead tr:first-child th,
+.syo-form-table caption + tbody tr:first-child th,
+.syo-form-table caption + tbody tr:first-child td,
+.syo-form-table colgroup + thead tr:first-child th,
+.syo-form-table colgroup + tbody tr:first-child th,
+.syo-form-table colgroup + tbody tr:first-child td,
+.syo-form-table thead:first-child tr:first-child th,
+.syo-form-table tbody:first-child tr:first-child th,
+.syo-form-table tbody:first-child tr:first-child td,
+.syo-form-table tfoot:first-child tr:first-child td {
   border-top: 0;
 }
 .syo-table thead:first-of-type,
 .syo-table tbody:first-of-type,
 .syo-table thead:first-of-type tr:first-child,
-.syo-table tbody:first-of-type tr:first-child {
+.syo-table tbody:first-of-type tr:first-child,
+.syo-form-table thead:first-of-type,
+.syo-form-table tbody:first-of-type,
+.syo-form-table thead:first-of-type tr:first-child,
+.syo-form-table tbody:first-of-type tr:first-child {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -1936,20 +1960,31 @@ table th small {
 .syo-table thead:first-of-type tr:first-child td:first-child,
 .syo-table tbody:first-of-type tr:first-child td:first-child,
 .syo-table thead:first-of-type tr:first-child th:first-child,
-.syo-table tbody:first-of-type tr:first-child th:first-child {
+.syo-table tbody:first-of-type tr:first-child th:first-child,
+.syo-form-table thead:first-of-type tr:first-child td:first-child,
+.syo-form-table tbody:first-of-type tr:first-child td:first-child,
+.syo-form-table thead:first-of-type tr:first-child th:first-child,
+.syo-form-table tbody:first-of-type tr:first-child th:first-child {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
 .syo-table thead:first-of-type tr:first-child td:last-child,
 .syo-table tbody:first-of-type tr:first-child td:last-child,
 .syo-table thead:first-of-type tr:first-child th:last-child,
-.syo-table tbody:first-of-type tr:first-child th:last-child {
+.syo-table tbody:first-of-type tr:first-child th:last-child,
+.syo-form-table thead:first-of-type tr:first-child td:last-child,
+.syo-form-table tbody:first-of-type tr:first-child td:last-child,
+.syo-form-table thead:first-of-type tr:first-child th:last-child,
+.syo-form-table tbody:first-of-type tr:first-child th:last-child {
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
 }
 .syo-table thead:first-of-type ~ tbody:first-of-type,
 .syo-table thead:first-of-type ~ tbody:first-of-type tr:first-child td,
-.syo-table thead:first-of-type ~ tbody:first-of-type tr:first-child th {
+.syo-table thead:first-of-type ~ tbody:first-of-type tr:first-child th,
+.syo-form-table thead:first-of-type ~ tbody:first-of-type,
+.syo-form-table thead:first-of-type ~ tbody:first-of-type tr:first-child td,
+.syo-form-table thead:first-of-type ~ tbody:first-of-type tr:first-child th {
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
   -webkit-border-top-right-radius: 0;
@@ -1958,7 +1993,11 @@ table th small {
 .syo-table tbody:last-child,
 .syo-table tfoot:last-of-type,
 .syo-table tbody:last-child tr:last-child,
-.syo-table tfoot:last-of-type tr:last-child {
+.syo-table tfoot:last-of-type tr:last-child,
+.syo-form-table tbody:last-child,
+.syo-form-table tfoot:last-of-type,
+.syo-form-table tbody:last-child tr:last-child,
+.syo-form-table tfoot:last-of-type tr:last-child {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
@@ -1967,14 +2006,22 @@ table th small {
 .syo-table tbody:last-child tr:last-child td:first-child,
 .syo-table tfoot:last-of-type tr:last-child td:first-child,
 .syo-table tbody:last-child tr:last-child th:first-child,
-.syo-table tfoot:last-of-type tr:last-child th:first-child {
+.syo-table tfoot:last-of-type tr:last-child th:first-child,
+.syo-form-table tbody:last-child tr:last-child td:first-child,
+.syo-form-table tfoot:last-of-type tr:last-child td:first-child,
+.syo-form-table tbody:last-child tr:last-child th:first-child,
+.syo-form-table tfoot:last-of-type tr:last-child th:first-child {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 .syo-table tbody:last-child tr:last-child td:last-child,
 .syo-table tfoot:last-of-type tr:last-child td:last-child,
 .syo-table tbody:last-child tr:last-child th:last-child,
-.syo-table tfoot:last-of-type tr:last-child th:last-child {
+.syo-table tfoot:last-of-type tr:last-child th:last-child,
+.syo-form-table tbody:last-child tr:last-child td:last-child,
+.syo-form-table tfoot:last-of-type tr:last-child td:last-child,
+.syo-form-table tbody:last-child tr:last-child th:last-child,
+.syo-form-table tfoot:last-of-type tr:last-child th:last-child {
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -1984,20 +2031,32 @@ table th small {
 .syo-table > tbody tr.syo-active td,
 .syo-table > tbody tr.syo-active th,
 .syo-table > tbody th.syo-active,
-.syo-table > tbody td.syo-active {
+.syo-table > tbody td.syo-active,
+.syo-form-table > tbody tr.syo-active td,
+.syo-form-table > tbody tr.syo-active th,
+.syo-form-table > tbody th.syo-active,
+.syo-form-table > tbody td.syo-active {
   background-color: #d7ede2;
 }
 .syo-table > tbody tr.syo-success td,
 .syo-table > tbody tr.syo-success th,
 .syo-table > tbody th.syo-success,
-.syo-table > tbody td.syo-success {
+.syo-table > tbody td.syo-success,
+.syo-form-table > tbody tr.syo-success td,
+.syo-form-table > tbody tr.syo-success th,
+.syo-form-table > tbody th.syo-success,
+.syo-form-table > tbody td.syo-success {
   color: #5cb85c;
   background-color: #eaf6ea;
 }
 .syo-table > tbody tr.syo-error td,
 .syo-table > tbody tr.syo-error th,
 .syo-table > tbody th.syo-error,
-.syo-table > tbody td.syo-error {
+.syo-table > tbody td.syo-error,
+.syo-form-table > tbody tr.syo-error td,
+.syo-form-table > tbody tr.syo-error th,
+.syo-form-table > tbody th.syo-error,
+.syo-form-table > tbody td.syo-error {
   color: #d9534f;
   background-color: #f9e2e2;
 }
@@ -2006,7 +2065,10 @@ table th small {
    ================================================================================================================= */
 .syo-table > thead,
 .syo-table > tbody > tr > th,
-.syo-table > tfoot {
+.syo-table > tfoot,
+.syo-form-table > thead,
+.syo-form-table > tbody > tr > th,
+.syo-form-table > tfoot {
   color: #444444;
   text-shadow: 0 1px 0 #FFF;
   background-color: #f3f3f3;
@@ -3047,6 +3109,78 @@ ol.unstyled {
   content: "\e646";
 }
 /* =================================================================================================================
+   Form-Table - Componente de formulário dentro de uma tabela
+   ================================================================================================================= */
+.syo-form-table {
+  empty-cells: show;
+}
+.syo-form-table > thead {
+  background-image: linear-gradient(to bottom, #e6e6e6, #d2d2d2);
+}
+.syo-form-table > thead > tr > th {
+  text-align: center;
+}
+.syo-form-table > thead > tr > th .syo-button {
+  margin-top: -3px;
+  margin-bottom: -3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.syo-form-table > tbody > tr > td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  vertical-align: middle;
+}
+.syo-form-table > tbody > tr > td input[type="text"],
+.syo-form-table > tbody > tr > td select {
+  min-height: 28px;
+  height: 28px;
+}
+.syo-form-table > tbody > tr > td label {
+  margin-right: 10px;
+  margin-left: 2px;
+}
+.syo-form-table > tbody > tr > td i[class*="icon-"],
+.syo-form-table > tbody > tr > td span[class*="icon-"] {
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 6px;
+  margin-left: 4px;
+}
+.syo-form-table > tbody > tr > td i[class*="icon-"]:hover,
+.syo-form-table > tbody > tr > td span[class*="icon-"]:hover {
+  opacity: .8;
+}
+.syo-form-table.syo-small {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.syo-form-table.syo-small input[type="text"],
+.syo-form-table.syo-small select {
+  min-height: 25px;
+  height: 25px;
+}
+.syo-form-table.syo-small select {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+/* =================================================================================================================
+   Form-Table - Headers/Footers
+   ================================================================================================================= */
+.syo-form-table > tbody > tr > th,
+.syo-form-table > tfoot {
+  color: #444444;
+  text-shadow: 0 1px 0 #FFF;
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6f6f6', endColorstr='#ffeeeeee', GradientType=0);
+}
+/* =================================================================================================================
    Headers
    ================================================================================================================= */
 .syo-header {
@@ -3675,27 +3809,37 @@ body.syo-body-navbar {
 }
 .syo-block > .syo-table,
 .syo-block > .syo-datagrid,
-.syo-block > :not(.syo-block-content) > .syo-table {
+.syo-block > :not(.syo-block-content) > .syo-table,
+.syo-block > .syo-form-table,
+.syo-block > :not(.syo-block-content) > .syo-form-table {
   margin-bottom: 0;
 }
 .syo-block .syo-table,
-.syo-block .syo-datagrid table {
+.syo-block .syo-datagrid table,
+.syo-block .syo-form-table {
   border-right: 0;
 }
 .syo-block .syo-table td:first-child,
 .syo-block .syo-datagrid table td:first-child,
 .syo-block .syo-table th:first-child,
-.syo-block .syo-datagrid table th:first-child {
+.syo-block .syo-datagrid table th:first-child,
+.syo-block .syo-form-table td:first-child,
+.syo-block .syo-form-table th:first-child {
   border-left: 0;
 }
 .syo-block > .syo-table:last-child,
-.syo-block > :last-child:not(.syo-block-content) > .syo-table {
+.syo-block > :last-child:not(.syo-block-content) > .syo-table,
+.syo-block > .syo-form-table:last-child,
+.syo-block > :last-child:not(.syo-block-content) > .syo-form-table {
   border-bottom: 0;
   /* 1 */
 }
 .syo-block .syo-table thead,
 .syo-block .syo-table tbody th,
-.syo-block .syo-table tfoot {
+.syo-block .syo-table tfoot,
+.syo-block .syo-form-table thead,
+.syo-block .syo-form-table tbody th,
+.syo-block .syo-form-table tfoot {
   background-image: none;
 }
 .syo-block .syo-block-header + .syo-table,
@@ -3721,7 +3865,31 @@ body.syo-body-navbar {
 .syo-block .syo-block-header + .syo-table tbody:first-of-type tr:first-child th,
 .syo-block .syo-block-content + .syo-table tbody:first-of-type tr:first-child th,
 .syo-block .syo-block-header + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child th,
-.syo-block .syo-block-content + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child th {
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-header + .syo-form-table,
+.syo-block .syo-block-content + .syo-form-table,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-form-table,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-form-table,
+.syo-block .syo-block-header + .syo-form-table thead:first-of-type,
+.syo-block .syo-block-content + .syo-form-table thead:first-of-type,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-form-table thead:first-of-type,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-form-table thead:first-of-type,
+.syo-block .syo-block-header + .syo-form-table tbody:first-of-type,
+.syo-block .syo-block-content + .syo-form-table tbody:first-of-type,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-form-table tbody:first-of-type,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-form-table tbody:first-of-type,
+.syo-block .syo-block-header + .syo-form-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-content + .syo-form-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-form-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-form-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-header + .syo-form-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-content + .syo-form-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-form-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-form-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-header + .syo-form-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-content + .syo-form-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-form-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-form-table tbody:first-of-type tr:first-child th {
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
   -webkit-border-top-right-radius: 0;
