@@ -10,7 +10,7 @@ Para fazer build do código do Syonet Bootstrap, é necessário que você siga a
 1. Instale o [Node.JS](http://nodejs.org/) v0.8+
 1. Pela linha de comando, navegue até o local onde você clonou o repositório. Depois, rode os seguintes comandos:
  * `$ npm install -g grunt-cli` _(ignore se você já rodou este antes)_
- * `$ npm install -d` _(ignore se você já rodou este antes)_
+ * `$ npm install` _(ignore se você já rodou este antes)_
  * `$ grunt`
 1. Para confirmar que tudo deu certo, confira se foi criado um diretório `dist` na raíz do repositório e se o output do último comando retornou `Done, without errors.`.
 
