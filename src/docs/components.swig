@@ -65,230 +65,6 @@
             </div>
         </article>
 
-        <!-- Buttonset -->
-        <article id="buttonset">
-            <div class="syo-header syo-header-ruler">
-                <h2>Buttonset</h2>
-            </div>
-            <p>Agrupe uma série de botões <code>.syo-button</code> dentro de um <code>.syo-buttonset</code>.</p>
-
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <div class="syo-buttonset">
-                        <button type="button" class="syo-button">Ação 1</button>
-                        <button type="button" class="syo-button">Ação 2</button>
-                        <button type="button" class="syo-button">Ação 3</button>
-                    </div>
-                </div>
-                <div class="prettyprint">
-                    <div class="syo-buttonset">
-                        <button type="button" class="syo-button">Ação 1</button>
-                        <button type="button" class="syo-button">Ação 2</button>
-                        <button type="button" class="syo-button">Ação 3</button>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Check List -->
-        <article id="checklist">
-            <div class="syo-header syo-header-ruler">
-                <h2>Check List</h2>
-            </div>
-
-            <p>
-                Uma ótima substituição para a clássica lista de checkboxes ou radios, que são um
-                verdadeiro pesadelo para interfaces <i>touch screen</i>!
-            </p>
-
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <p><strong>Checkbox</strong></p>
-                    <ul class="syo-check-list">
-                        <li class="syo-check-list-header">Header Opcional</li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option1">
-                            <label for="checklist-option1">Opção 1</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option2">
-                            <label for="checklist-option2">Opção 2</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option3">
-                            <label for="checklist-option3">Opção 3</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option4">
-                            <label for="checklist-option4">Opção 4</label>
-                        </li>
-                    </ul>
-
-                    <p><strong>Radio</strong></p>
-                    <ul class="syo-check-list">
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option1">
-                            <label for="radiolist-option1">Radio 1</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option2">
-                            <label for="radiolist-option2">Radio 2</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option3">
-                            <label for="radiolist-option3">Radio 3</label>
-                        </li>
-                    </ul>
-                </div>
-
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <ul class="syo-check-list">
-                        <li class="syo-check-list-header">Header Opcional</li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option1">
-                            <label for="checklist-option1">Opção 1</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option2">
-                            <label for="checklist-option2">Opção 2</label>
-                        </li>
-                    </ul>
-
-                    <ul class="syo-check-list">
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option1">
-                            <label for="radiolist-option1">Radio 1</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option2">
-                            <label for="radiolist-option2">Radio 2</label>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <p>
-                Para implementar o Check List, lembre-se de sempre atribuir um <code>id</code> aos
-                checkboxes/radios, bem como um <code>&lt;label&gt;</code> que referencia tal valor no
-                atributo <code>for</code>, assim como está no código do exemplo anterior.
-            </p>
-        </article>
-
-        <!-- Input Row -->
-        <article id="input-row">
-            <div class="syo-header syo-header-ruler">
-                <h2>Input Row</h2>
-            </div>
-            <p>
-                Coloque um campo <code>input</code> de texto + botões dentro de um mesmo elemento de
-                forma que sempre ocupem toda uma linha.
-            </p>
-
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <div class="row">
-                        <div class="syo-input-row col col-medium-6">
-                            <input type="text" placeholder="Nome">
-                            <div class="syo-input-row-addon">
-                                <button class="syo-button">
-                                    <i class="icon-ok"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="syo-input-row col col-medium-6">
-                            <input type="text" placeholder="Digite sua pesquisa...">
-                            <div class="syo-input-row-addon">
-                                <button class="syo-button">
-                                    <i class="icon-search"></i>
-                                    Pesquisar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <div class="row">
-                        <div class="syo-input-row col col-medium-6">
-                            <input type="text" placeholder="Nome">
-                            <div class="syo-input-row-addon">
-                                <button class="syo-button">
-                                    <i class="icon-ok"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="syo-input-row col col-medium-6">
-                            <input type="text" placeholder="Digite sua pesquisa...">
-                            <div class="syo-input-row-addon">
-                                <button class="syo-button">
-                                    <i class="icon-search"></i>
-                                    Pesquisar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Paginação -->
-        <article id="pagination">
-            <div class="syo-header syo-header-ruler">
-                <h2>Paginação</h2>
-            </div>
-            <p>
-                Simples componente de paginação, com uma larga área de clique - o que facilita para interfaces <i>touch
-                sensitive</i>.
-            </p>
-
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <div class="syo-pagination">
-                        <ul>
-                            <li class="syo-active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="syo-disabled"><a href="#">4</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="prettyprint">
-                    <div class="syo-pagination">
-                        <ul>
-                            <li class="syo-active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="syo-disabled"><a href="#">4</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
-            <div class="syo-docs-example">
-                <div class="syo-docs-example-inner">
-                    <div class="syo-pagination">
-                        <ul>
-                            <li class="syo-disabled"><a href="#">1</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="prettyprint">
-                    <div class="syo-pagination">
-                        <ul>
-                            <li class="syo-disabled"><a href="#">1</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <p>
-                <strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas
-                como um indicador visual de que o item <em>deve estar</em> desabilitado.
-            </p>
-        </article>
-
         <!-- Blocos -->
         <article id="blocks">
             <div class="syo-header syo-header-ruler">
@@ -421,6 +197,116 @@
             </div>
         </article>
 
+        <!-- Buttonset -->
+        <article id="buttonset">
+            <div class="syo-header syo-header-ruler">
+                <h2>Buttonset</h2>
+            </div>
+            <p>Agrupe uma série de botões <code>.syo-button</code> dentro de um <code>.syo-buttonset</code>.</p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div class="syo-buttonset">
+                        <button type="button" class="syo-button">Ação 1</button>
+                        <button type="button" class="syo-button">Ação 2</button>
+                        <button type="button" class="syo-button">Ação 3</button>
+                    </div>
+                </div>
+                <div class="prettyprint">
+                    <div class="syo-buttonset">
+                        <button type="button" class="syo-button">Ação 1</button>
+                        <button type="button" class="syo-button">Ação 2</button>
+                        <button type="button" class="syo-button">Ação 3</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Check List -->
+        <article id="checklist">
+            <div class="syo-header syo-header-ruler">
+                <h2>Check List</h2>
+            </div>
+
+            <p>
+                Uma ótima substituição para a clássica lista de checkboxes ou radios, que são um
+                verdadeiro pesadelo para interfaces <i>touch screen</i>!
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p><strong>Checkbox</strong></p>
+                    <ul class="syo-check-list">
+                        <li class="syo-check-list-header">Header Opcional</li>
+                        <li>
+                            <input type="checkbox" name="checklist" id="checklist-option1">
+                            <label for="checklist-option1">Opção 1</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checklist" id="checklist-option2">
+                            <label for="checklist-option2">Opção 2</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checklist" id="checklist-option3">
+                            <label for="checklist-option3">Opção 3</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checklist" id="checklist-option4">
+                            <label for="checklist-option4">Opção 4</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Radio</strong></p>
+                    <ul class="syo-check-list">
+                        <li>
+                            <input type="radio" name="radiolist" id="radiolist-option1">
+                            <label for="radiolist-option1">Radio 1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="radiolist" id="radiolist-option2">
+                            <label for="radiolist-option2">Radio 2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="radiolist" id="radiolist-option3">
+                            <label for="radiolist-option3">Radio 3</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <strong>HTML:</strong>
+                <div class="prettyprint">
+                    <ul class="syo-check-list">
+                        <li class="syo-check-list-header">Header Opcional</li>
+                        <li>
+                            <input type="checkbox" name="checklist" id="checklist-option1">
+                            <label for="checklist-option1">Opção 1</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checklist" id="checklist-option2">
+                            <label for="checklist-option2">Opção 2</label>
+                        </li>
+                    </ul>
+
+                    <ul class="syo-check-list">
+                        <li>
+                            <input type="radio" name="radiolist" id="radiolist-option1">
+                            <label for="radiolist-option1">Radio 1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="radiolist" id="radiolist-option2">
+                            <label for="radiolist-option2">Radio 2</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Para implementar o Check List, lembre-se de sempre atribuir um <code>id</code> aos
+                checkboxes/radios, bem como um <code>&lt;label&gt;</code> que referencia tal valor no
+                atributo <code>for</code>, assim como está no código do exemplo anterior.
+            </p>
+        </article>
+
         <!-- syo-header -->
         <article id="header">
             <div class="syo-header syo-header-ruler">
@@ -449,6 +335,64 @@
 
                     <div class="syo-header syo-header-bar">
                         <h3>...</h3>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Input Row -->
+        <article id="input-row">
+            <div class="syo-header syo-header-ruler">
+                <h2>Input Row</h2>
+            </div>
+            <p>
+                Coloque um campo <code>input</code> de texto + botões dentro de um mesmo elemento de
+                forma que sempre ocupem toda uma linha.
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div class="row">
+                        <div class="syo-input-row col col-medium-6">
+                            <input type="text" placeholder="Nome">
+                            <div class="syo-input-row-addon">
+                                <button class="syo-button">
+                                    <i class="icon-ok"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="syo-input-row col col-medium-6">
+                            <input type="text" placeholder="Digite sua pesquisa...">
+                            <div class="syo-input-row-addon">
+                                <button class="syo-button">
+                                    <i class="icon-search"></i>
+                                    Pesquisar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <strong>HTML:</strong>
+                <div class="prettyprint">
+                    <div class="row">
+                        <div class="syo-input-row col col-medium-6">
+                            <input type="text" placeholder="Nome">
+                            <div class="syo-input-row-addon">
+                                <button class="syo-button">
+                                    <i class="icon-ok"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="syo-input-row col col-medium-6">
+                            <input type="text" placeholder="Digite sua pesquisa...">
+                            <div class="syo-input-row-addon">
+                                <button class="syo-button">
+                                    <i class="icon-search"></i>
+                                    Pesquisar
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -526,6 +470,62 @@
                     </ul>
                 </div>
             </div>
+        </article>
+
+        <!-- Paginação -->
+        <article id="pagination">
+            <div class="syo-header syo-header-ruler">
+                <h2>Paginação</h2>
+            </div>
+            <p>
+                Simples componente de paginação, com uma larga área de clique - o que facilita para interfaces <i>touch
+                    sensitive</i>.
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div class="syo-pagination">
+                        <ul>
+                            <li class="syo-active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="syo-disabled"><a href="#">4</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prettyprint">
+                    <div class="syo-pagination">
+                        <ul>
+                            <li class="syo-active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="syo-disabled"><a href="#">4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div class="syo-pagination">
+                        <ul>
+                            <li class="syo-disabled"><a href="#">1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prettyprint">
+                    <div class="syo-pagination">
+                        <ul>
+                            <li class="syo-disabled"><a href="#">1</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas
+                como um indicador visual de que o item <em>deve estar</em> desabilitado.
+            </p>
         </article>
 
         <!-- Progressbar -->
