@@ -29,6 +29,9 @@ module.exports = function( grunt ) {
 			docsCSS: {
 				files: [ "<%= watch.css.files %>", "assets/styles/*.less" ],
 				tasks: [ "less:docs" ]
+			},
+			docsJS: {
+				files: [ "assets/scripts/*.js" ]
 			}
 		},
 		process: {
