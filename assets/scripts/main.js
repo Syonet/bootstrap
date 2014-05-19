@@ -23,7 +23,7 @@
 			filter: "="
 		};
 
-		definition.link = function( scope, element ) {
+		definition.link = function( scope ) {
 			$http.get( "assets/json/icons.json" ).then(function( response ) {
 				scope.groups = response.data;
 			});

@@ -9,7 +9,7 @@
 !function( $, ng ) {
 	"use strict";
 
-	ng.module( "syonet" ).directive( "syoMaskOverride", [ "$parse", function( $parse ) {
+	ng.module( "syonet" ).directive( "syoMaskOverride", function() {
 		var definition = {};
 
 		definition.restrict = "A";
@@ -37,6 +37,6 @@
 		};
 
 		return definition;
-	}]);
+	});
 
 }( jQuery, angular );

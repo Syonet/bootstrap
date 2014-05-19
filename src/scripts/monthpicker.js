@@ -9,6 +9,7 @@
 	"use strict";
 
 	ng.module( "syonet" ).directive( "syoMonthpicker", function() {
+		/* jshint boss: true */
 		var definition = {};
 
 		definition.replace = true;

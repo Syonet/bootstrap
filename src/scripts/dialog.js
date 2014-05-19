@@ -33,7 +33,7 @@
 				var options = that.option();
 
 				// Garante que max-width e max-height fiquem consistentes
-				var widget = $element.dialog( "widget" ).css({
+				$element.dialog( "widget" ).css({
 					"max-width": options.maxWidth
 				});
 
@@ -122,7 +122,7 @@
 		definition.template = "<div><div ng-transclude></div></div>";
 		definition.scope = Dialog.options;
 
-		definition.link = function( $scope, $element, $attrs ) {
+		definition.link = function( $scope, $element ) {
 			var options = getOptions( $scope );
 			$element.dialog( options );
 

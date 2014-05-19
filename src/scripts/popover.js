@@ -24,7 +24,8 @@
 			definition.scope = {};
 
 			definition.link = function( scope, element, attr ) {
-				var $popover, template, popoverScope, controller, model;
+				/* jshint shadow: true, unused: false */
+				var $popover, popoverScope, controller, model;
 				var loadedContent = false;
 				var currentEvent = {
 					in: "click",

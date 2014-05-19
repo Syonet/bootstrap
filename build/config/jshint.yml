@@ -5,3 +5,4 @@ internal:
   - "Gruntfile.js"
   - "build/*.js"
   - "assets/scripts/*.js"
+  - "src/scripts/*.js"

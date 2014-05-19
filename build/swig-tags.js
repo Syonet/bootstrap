@@ -1,3 +1,5 @@
+"use strict";
+
 exports.highlight = (function() {
 	var hljs = require( "highlight.js" );
 	hljs.tabReplace = "    ";
@@ -18,7 +20,7 @@ exports.highlight = (function() {
 		return true;
 	}
 
-	function compile( compiler, args, content, parents, options, blockName ) {
+	function compile( compiler, args, content ) {
 		var indentationRegex;
 		var indentation = Number.MAX_VALUE;
 		var output = "";
