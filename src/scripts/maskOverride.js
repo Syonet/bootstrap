@@ -2,7 +2,7 @@
  * syoMaskOverride
  * ---------------
  * Diretiva para ser utilizada em conjunto com a diretiva ui-mask, cujo valor setado no ng-model
- * È bugado, removendo caracteres que n„o s„o da m·scara (ex. 9-99 vira 999 no ui-mask puro).
+ * √© bugado, removendo caracteres que n√£o s√£o da m√°scara (ex. 9-99 vira 999 no ui-mask puro).
  *
  * @docs-link
  */

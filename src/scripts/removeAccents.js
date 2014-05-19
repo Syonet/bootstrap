@@ -1,7 +1,7 @@
 /**
  * removeAccents
  * -------------
- * Filtro que remove acentuação da string de entrada.
+ * Filtro que remove acentuaÃ§Ã£o da string de entrada.
  *
  * @docs-link
  */

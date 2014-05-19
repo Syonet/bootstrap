@@ -1,8 +1,8 @@
 /**
  * range
  * -----
- * Filtro que retorna um array do tamanho especificado, útil para utilizar com ng-repeat de forma
- * arbitrária.
+ * Filtro que retorna um array do tamanho especificado, Ãºtil para utilizar com ng-repeat de forma
+ * arbitrÃ¡ria.
  *
  * @docs-link
  */

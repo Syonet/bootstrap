@@ -1,7 +1,7 @@
 /**
  * syoMonthpicker
  * --------------
- * Diretiva para criar um seletor de ano/mÍs.
+ * Diretiva para criar um seletor de ano/m√™s.
  *
  * @docs-link
  */
@@ -38,11 +38,11 @@
 		definition.controller = [
 			"$scope",
 			function( $scope ) {
-				// Faz o parse do valor j· validando-o (n„o pode ser mÍs < 0 nem mÍs > 12).
+				// Faz o parse do valor j√° validando-o (n√£o pode ser m√™s < 0 nem m√™s > 12).
 				var monthRegex = /^(0[1-9]|1[0-2])\/(\d{4})$/;
 
-				// Faz o parse de um valor que È uma operaÁ„o matem·tica (+10y, -3m)
-				// y = year (ano); m = month (mÍs).
+				// Faz o parse de um valor que √© uma opera√ß√£o matem√°tica (+10y, -3m)
+				// y = year (ano); m = month (m√™s).
 				var opRegex = /(\+|\-)(\d+)(y|m)/;
 
 				// Guarda a data de hoje apenas para fins de utilidade no controller
@@ -50,7 +50,7 @@
 				var months = [
 					"janeiro",
 					"fevereiro",
-					"marÁo",
+					"mar√ßo",
 					"abril",
 					"maio",
 					"junho",
@@ -72,7 +72,7 @@
 							return new Date( match[ 2 ], ( +match[ 1 ] - 1 ), 1 );
 						}
 
-						// Testa por operaÁıes na string passada
+						// Testa por opera√ß√µes na string passada
 						while ( match = val.match( opRegex ) ) {
 							year = outVal.getFullYear();
 							month = outVal.getMonth();
@@ -103,7 +103,7 @@
 				}
 
 				function getMinDate() {
-					// Caso a data minima n„o seja v·lida, utiliza hoje - 100 anos
+					// Caso a data minima n√£o seja v√°lida, utiliza hoje - 100 anos
 					return parse(
 						$scope.minDate,
 						new Date( today.getFullYear() - 100, today.getMonth(), today.getDate() )
@@ -111,7 +111,7 @@
 				}
 
 				function getMaxDate() {
-					// Caso a data m·xima n„o seja v·lida, utiliza hoje + 10 anos
+					// Caso a data m√°xima n√£o seja v√°lida, utiliza hoje + 10 anos
 					return parse(
 						$scope.maxDate,
 						new Date( today.getFullYear() + 10, today.getMonth(), today.getDate() )
@@ -161,14 +161,14 @@
 		];
 
 		definition.link = function( $scope ) {
-			// Observa a mudanÁa de datas nos selects
+			// Observa a mudan√ßa de datas nos selects
 			$scope.$watch( "month + '/' + year", function( newVal, oldVal ) {
 				if ( oldVal !== newVal ) {
 					$scope.ngModel = newVal;
 				}
 			});
 
-			// Observa a mudanÁa da data no model externo
+			// Observa a mudan√ßa da data no model externo
 			$scope.$watch( "ngModel", function( val ) {
 				var parts = [];
 				if ( val ) {

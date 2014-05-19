@@ -88,7 +88,7 @@
 						items = items || {};
 						showMsg = !items.length;
 
-						// Se .length n�o estiver definido, significa que � um objeto
+						// Se .length não estiver definido, significa que é um objeto
 						if ( items.length == null ) {
 							for ( k in items ) {
 								showMsg = false;
@@ -118,7 +118,7 @@
 					return out;
 				};
 
-				// Determina se todos os checkboxes est�o marcados ou n�o
+				// Determina se todos os checkboxes estão marcados ou não
 				$scope.isAllChecked = function() {
 					var checked = true;
 
@@ -175,8 +175,8 @@
 /**
  * syoClick
  * --------
- * Diretiva para links que faz eval de uma express�o no escopo atual e depois acessa o atributo href
- * do elemento. Se a express�o retornar uma promise, ent�o syoClick ir� aguardar a promise ser
+ * Diretiva para links que faz eval de uma expressão no escopo atual e depois acessa o atributo href
+ * do elemento. Se a expressão retornar uma promise, então syoClick irá aguardar a promise ser
  * resolvida.
  *
  * @docs-link
@@ -186,9 +186,9 @@
 
 	ng.module( "syonet" ).directive( "syoClick", [ "$timeout", function( $timeout ) {
 		return function( $scope, $element, $attr ) {
-			// Bloqueia ou n�o a execu��o do clique.
-			// Se o processamento de uma promise � necess�rio, a reexecu��o do clique
-			// depender� do t�rmino do evento anterior.
+			// Bloqueia ou não a execução do clique.
+			// Se o processamento de uma promise é necessário, a reexecução do clique
+			// dependerá do término do evento anterior.
 			var lock = false;
 
 			function gotoHref() {
@@ -230,7 +230,7 @@
 /**
  * contains
  * --------
- * Filtro que retorna um boolean sugerindo a exist�ncia de um elemento passado por argumento em um
+ * Filtro que retorna um boolean sugerindo a existência de um elemento passado por argumento em um
  * array de entrada.
  *
  * @docs-link
@@ -305,7 +305,7 @@
 					});
 
 					// Adiciona os componentes da tabela original ao datagrid
-					// Devido a algum bug do Chrome (?), se os colgroups n�o estiverem antes, o sizing n�o tem efeito
+					// Devido a algum bug do Chrome (?), se os colgroups não estiverem antes, o sizing não tem efeito
 					components.header.append( $thead ).prepend( $colgroup.clone() );
 					components.body.append( $tbody ).prepend( $colgroup.clone() );
 					components.helper.append( $tfoot ).prepend( $colgroup.clone() );
@@ -336,7 +336,7 @@
 						var listener = $scope.$watch(function() {
 							return $element.is( ":visible" );
 						}, function( visible ) {
-							// Aguarda at� que o elemento esteja v�sivel pra fazer alguma coisa
+							// Aguarda até que o elemento esteja vísivel pra fazer alguma coisa
 							if ( !visible ) {
 								return;
 							}
@@ -353,7 +353,7 @@
 					components.overflow.on( "scroll", scrollHandler );
 					components.body.on( "click", "tbody tr", activate );
 					$( $window ).on( "resize", function() {
-						// Aplica mudan�as pendentes
+						// Aplica mudanças pendentes
 						!$scope.$root.$$phase && $scope.$apply();
 
 						// Recalcula a altura do datagrid e do grip
@@ -370,7 +370,7 @@
 						});
 					});
 
-					// Observa se existem helpers ou n�o
+					// Observa se existem helpers ou não
 					$scope.$watch(function() {
 						return components.helper.find( "tfoot" ).length > 0;
 					}, function( hasHelper ) {
@@ -384,7 +384,7 @@
 						var headerHeight, helperHeight;
 
 						if ( $element.parent().is( ".flex-row" ) ) {
-							// Se estamos dentro de um flex-row as coisas s�o diferentes
+							// Se estamos dentro de um flex-row as coisas são diferentes
 							headerHeight = components.header.height();
 							helperHeight = components.helper.height();
 
@@ -398,11 +398,11 @@
 								"calc(100% - " + Math.max( helperHeight, 0 ) + "px)"
 							);
 						} else {
-							// Faz o overflow herdar do max-height do tbody, se dispon�vel
+							// Faz o overflow herdar do max-height do tbody, se disponível
 							maxHeight = $.style( $tbody[ 0 ], "max-height" ) || null;
 							components.bodyWrapper.css( "max-height", maxHeight );
 
-							// Remove o helper de dentro do body wrapper quando n�o estamos dentro de um flex-row
+							// Remove o helper de dentro do body wrapper quando não estamos dentro de um flex-row
 							components.helper.appendTo( $element );
 						}
 					}
@@ -419,10 +419,10 @@
 						components.overflow.width( width );
 
 						if ( width > 1 ) {
-							// Pode ser que o min-width tenha ganho do c�lculo via JS
+							// Pode ser que o min-width tenha ganho do cálculo via JS
 							width = components.overflow.width();
 
-							// Remove as c�lulas antigas
+							// Remove as células antigas
 							$cells.remove();
 
 							components.header.find( "thead" ).each(function() {
@@ -448,15 +448,15 @@
 						}
 					}
 
-					// Respons�vel por controlar o posicionamento do scroll do grid
+					// Responsável por controlar o posicionamento do scroll do grid
 					function scrollHandler( e ) {
 						var overflow = components.overflow[ 0 ];
 
 						if ( e.type === "wheel" || e.type === "mousewheel" ) {
 							e.preventDefault();
 
-							// Multiplicar por 40 n�o � exatamente a melhor coisa a se fazer, mas como est� at�
-							// na MDN, ent�o vamos usar como "safe" por hora.
+							// Multiplicar por 40 não é exatamente a melhor coisa a se fazer, mas como está até
+							// na MDN, então vamos usar como "safe" por hora.
 							// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/wheel
 							// => "Listening to this event across browser"
 							overflow.scrollTop -= ( e.originalEvent.wheelDeltaY || e.originalEvent.deltaY * -40 );
@@ -533,7 +533,7 @@
 					ngModel.$setViewValue( date );
 					$scope.$apply();
 
-					// ...e ainda chama a fun��o onSelect antiga!
+					// ...e ainda chama a função onSelect antiga!
 					if ( typeof oldFn === "function" ) {
 						oldFn.call( this, date, inst );
 					}
@@ -543,13 +543,13 @@
 			// Instancia o datepicker
 			$element.datepicker( options );
 
-			// Quando h� um bot�o para exibir o datepicker...
+			// Quando há um botão para exibir o datepicker...
 			$button = $element.next( ".ui-datepicker-trigger" );
 			if ( $button.length ) {
 				$button.before( " " );
 				$button.addClass( "syo-button" );
 
-				// Coloca o bot�o dentro do seu container, caso o input esteja em um input row
+				// Coloca o botão dentro do seu container, caso o input esteja em um input row
 				if ( $element.parent().is( ".syo-input-row" ) ) {
 					$button.wrap( "<div class='syo-input-row-addon'></div>" );
 				}
@@ -688,12 +688,12 @@
 			var options = getOptions( $scope );
 			$element.dialog( options );
 
-			// Se o escopo atual n�o tem um provider ainda, cria um e j� passa o elemento
+			// Se o escopo atual não tem um provider ainda, cria um e já passa o elemento
 			$scope.$provider = ( $scope.$provider || new Dialog()._setPromise( $q.when( $element ) ) );
 			$scope.$parent[ $scope.ngModel ] = $scope.$provider;
 
-			// Fornece uma maneira mais f�cil de fechar o dialog a partir do HTML
-			// Tem que exportar pro $parent ou n�o fica acess�vel do conte�do do dialog
+			// Fornece uma maneira mais fácil de fechar o dialog a partir do HTML
+			// Tem que exportar pro $parent ou não fica acessível do conteúdo do dialog
 			$scope.$parent.$close = $scope.$provider.close;
 		};
 
@@ -716,7 +716,7 @@
 					var scope = ( options.scope || $rootScope ).$new();
 
 					if ( !options.template && !options.templateUrl ) {
-						throw new Error( "Deve ser passada a op��o 'template' ou a op��o 'templateUrl'!" );
+						throw new Error( "Deve ser passada a opção 'template' ou a opção 'templateUrl'!" );
 					}
 
 					options = extend( {}, Dialog.defaults, options );
@@ -726,7 +726,7 @@
 					promise = $templatePromise( options.template, options.templateUrl ).then(function( template ) {
 						$element = ng.element( "<syo-dialog></syo-dialog>" );
 
-						// Seta todos os atributos poss�veis na diretiva.
+						// Seta todos os atributos possíveis na diretiva.
 						ng.forEach( Dialog.options, function( binding, prop ) {
 							$element.attr(
 								prop.replace( /([A-Z])/g, "-$1" ).toLowerCase(),
@@ -759,7 +759,7 @@
 /**
  * syoFieldError
  * -------------
- * Diretiva para rapidamente criar um erro de campo de formul�rio padr�o da Syonet.
+ * Diretiva para rapidamente criar um erro de campo de formulário padrão da Syonet.
  *
  * @docs-link
  */
@@ -802,7 +802,7 @@
 				}
 			});
 
-			// Ao fazer blur, seta para false a propriedade, se ela for set�vel
+			// Ao fazer blur, seta para false a propriedade, se ela for setável
 			element.on( "blur", function() {
 				try {
 					scope.$apply( model.assign( scope, false ) );
@@ -815,7 +815,7 @@
 /**
  * syoInitData
  * -----------
- * Diretiva para facilmente setar vari�veis no escopo atual. �til para dados inicializados com a p�gina.
+ * Diretiva para facilmente setar variáveis no escopo atual. Útil para dados inicializados com a página.
  *
  * @docs-link
  */
@@ -831,12 +831,12 @@
 				var key = $attr.key;
 				var value = $attr.value;
 
-				// N�o h� chave, n�o seta nada.
+				// Não há chave, não seta nada.
 				if ( !key ) {
 					return;
 				}
 
-				// Tenta interpretar como JSON. Se n�o houver sucesso, pelo menos seta como string.
+				// Tenta interpretar como JSON. Se não houver sucesso, pelo menos seta como string.
 				try {
 					value = value ? JSON.parse( value ) : null;
 				} catch ( e ) {}
@@ -898,7 +898,7 @@
  * syoMaskOverride
  * ---------------
  * Diretiva para ser utilizada em conjunto com a diretiva ui-mask, cujo valor setado no ng-model
- * � bugado, removendo caracteres que n�o s�o da m�scara (ex. 9-99 vira 999 no ui-mask puro).
+ * é bugado, removendo caracteres que não são da máscara (ex. 9-99 vira 999 no ui-mask puro).
  *
  * @docs-link
  */
@@ -939,7 +939,7 @@
 /**
  * syoMonthpicker
  * --------------
- * Diretiva para criar um seletor de ano/m�s.
+ * Diretiva para criar um seletor de ano/mês.
  *
  * @docs-link
  */
@@ -976,11 +976,11 @@
 		definition.controller = [
 			"$scope",
 			function( $scope ) {
-				// Faz o parse do valor j� validando-o (n�o pode ser m�s < 0 nem m�s > 12).
+				// Faz o parse do valor já validando-o (não pode ser mês < 0 nem mês > 12).
 				var monthRegex = /^(0[1-9]|1[0-2])\/(\d{4})$/;
 
-				// Faz o parse de um valor que � uma opera��o matem�tica (+10y, -3m)
-				// y = year (ano); m = month (m�s).
+				// Faz o parse de um valor que é uma operação matemática (+10y, -3m)
+				// y = year (ano); m = month (mês).
 				var opRegex = /(\+|\-)(\d+)(y|m)/;
 
 				// Guarda a data de hoje apenas para fins de utilidade no controller
@@ -988,7 +988,7 @@
 				var months = [
 					"janeiro",
 					"fevereiro",
-					"mar�o",
+					"março",
 					"abril",
 					"maio",
 					"junho",
@@ -1010,7 +1010,7 @@
 							return new Date( match[ 2 ], ( +match[ 1 ] - 1 ), 1 );
 						}
 
-						// Testa por opera��es na string passada
+						// Testa por operações na string passada
 						while ( match = val.match( opRegex ) ) {
 							year = outVal.getFullYear();
 							month = outVal.getMonth();
@@ -1041,7 +1041,7 @@
 				}
 
 				function getMinDate() {
-					// Caso a data minima n�o seja v�lida, utiliza hoje - 100 anos
+					// Caso a data minima não seja válida, utiliza hoje - 100 anos
 					return parse(
 						$scope.minDate,
 						new Date( today.getFullYear() - 100, today.getMonth(), today.getDate() )
@@ -1049,7 +1049,7 @@
 				}
 
 				function getMaxDate() {
-					// Caso a data m�xima n�o seja v�lida, utiliza hoje + 10 anos
+					// Caso a data máxima não seja válida, utiliza hoje + 10 anos
 					return parse(
 						$scope.maxDate,
 						new Date( today.getFullYear() + 10, today.getMonth(), today.getDate() )
@@ -1099,14 +1099,14 @@
 		];
 
 		definition.link = function( $scope ) {
-			// Observa a mudan�a de datas nos selects
+			// Observa a mudança de datas nos selects
 			$scope.$watch( "month + '/' + year", function( newVal, oldVal ) {
 				if ( oldVal !== newVal ) {
 					$scope.ngModel = newVal;
 				}
 			});
 
-			// Observa a mudan�a da data no model externo
+			// Observa a mudança da data no model externo
 			$scope.$watch( "ngModel", function( val ) {
 				var parts = [];
 				if ( val ) {
@@ -1144,7 +1144,7 @@
 /**
  * syoOverlay
  * ----------
- * Diretiva para criar um overlay do Syonet Bootstrap rapidamente, podendo exibi-lo/ocult�-lo usando
+ * Diretiva para criar um overlay do Syonet Bootstrap rapidamente, podendo exibi-lo/ocultá-lo usando
  * data binding do Angular.js.
  *
  * @docs-link
@@ -1204,7 +1204,7 @@
 /**
  * syoPopover
  * ----------
- * Diretiva para criar um popover que abrir� ao interagir com o elemento (clique, mouseover, etc).
+ * Diretiva para criar um popover que abrirá ao interagir com o elemento (clique, mouseover, etc).
  *
  * @docs-link
  */
@@ -1238,7 +1238,7 @@
 					var mustBind = true;
 					config = scope.$parent.$eval( config );
 
-					// Se position n�o foi pasado, seta como top (padr�o)
+					// Se position não foi pasado, seta como top (padrão)
 					config.position = config.position || "top";
 
 					if ( !$popover ) {
@@ -1249,14 +1249,14 @@
 						$popover.attr( "element", "element" );
 
 						if ( !config.template && !config.templateUrl  ) {
-							throw new Error( "Deve ser passada a op��o 'template' ou a op��o 'templateUrl'!" );
+							throw new Error( "Deve ser passada a opção 'template' ou a opção 'templateUrl'!" );
 						}
 
 						// Usa o escopo passado ou cria um novo a partir do raiz
 						popoverScope = ( config.scope || $rootScope ).$new();
 						popoverScope.element = element;
 
-						// Compila o popover agora e deixa pra setar o conte�do apenas quando for abrir
+						// Compila o popover agora e deixa pra setar o conteúdo apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
 					} else {
@@ -1297,9 +1297,9 @@
 
 				// Scope Watches
 				// ---------------------------------------------------------------------------------
-				// Aguarda o elemento ficar vis�vel/inv�sivel
+				// Aguarda o elemento ficar visível/invísivel
 				scope.$watch(function() {
-					// Retorna true apenas pra n�o cair no if do listener
+					// Retorna true apenas pra não cair no if do listener
 					return $popover ? element.is( ":visible" ) : true;
 				}, function( visible ) {
 					if ( !visible ) {
@@ -1320,9 +1320,9 @@
 					controller.destroy();
 				});
 
-				// Fun��es utilit�rias
+				// Funções utilitárias
 				// ---------------------------------------------------------------------------------
-				// Abre o popover. Se o conte�do do mesmo ainda n�o foi atribuido, faz isso agora
+				// Abre o popover. Se o conteúdo do mesmo ainda não foi atribuido, faz isso agora
 				function open() {
 					if ( !loadedContent ) {
 						loadedContent = true;
@@ -1331,7 +1331,7 @@
 							$content = $compile( $content.html( template ) )( popoverScope );
 							$content.appendTo( $popover );
 
-							// Reposiciona e aguarda at� o pr�ximo digest pra reposicionar o elemento (de novo).
+							// Reposiciona e aguarda até o próximo digest pra reposicionar o elemento (de novo).
 							reposition();
 							$timeout(function() {
 								reposition();
@@ -1341,8 +1341,8 @@
 
 					// Devemos bindar o controller a alguma propriedade do escopo pai?
 					if ( model ) {
-						// Se o escopo pai j� tem um controller de syoPopover que n�o � o do popover atual,
-						// ent�o devemos for�ar o close de tal popover e setar o nosso.
+						// Se o escopo pai já tem um controller de syoPopover que não é o do popover atual,
+						// então devemos forçar o close de tal popover e setar o nosso.
 						if (
 								popoverScope.$parent[ model ] instanceof controller.constructor &&
 								popoverScope.$parent[ model ] !== controller
@@ -1366,7 +1366,7 @@
 				}
 			};
 
-			// Retorna a qual evento o elemento de origem dever� responder pra fechar o popover.
+			// Retorna a qual evento o elemento de origem deverá responder pra fechar o popover.
 			function getOutEvent( eventIn ) {
 				if ( eventIn === "mouseenter" ) {
 					return "mouseleave";
@@ -1433,7 +1433,7 @@
 				this.position = function() {
 					var position = {};
 
-					// Se n�o h� posi��o, utiliza top, que � o padr�o
+					// Se não há posição, utiliza top, que é o padrão
 					var positionValue = ( $scope.position || "top" ).split( "-" );
 
 					if ( !open ) {
@@ -1480,10 +1480,10 @@
 					position.of = $scope.element;
 					position.within = $scope.element;
 
-					// @FIXME collision = flip n�o funciona no Firefox Android :'(
+					// @FIXME collision = flip não funciona no Firefox Android :'(
 					position.collision = "none";
 
-					// Para setar a posi��o, deve-se aguardar at� que o digest do elemento termine
+					// Para setar a posição, deve-se aguardar até que o digest do elemento termine
 					$timeout(function() {
 						var maxWidth, pos;
 
@@ -1491,7 +1491,7 @@
 						pos = $element.position();
 
 						// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
-						// apenas quando estamos usando left/right. Caso sim, ent�o o elemento ser�
+						// apenas quando estamos usando left/right. Caso sim, então o elemento será
 						// alterado para ter um max-width que o permita ficar 100% na tela.
 						if ( positionValue[ 0 ] === "left" ) {
 							if ( pos.left < 0 ) {
@@ -1623,7 +1623,7 @@
 						var k;
 						var showMsg = !items.length;
 
-						// Se .length n�o estiver definido, significa que � um objeto
+						// Se .length não estiver definido, significa que é um objeto
 						if ( items.length == null ) {
 							for ( k in items ) {
 								showMsg = false;
@@ -1667,8 +1667,8 @@
 /**
  * range
  * -----
- * Filtro que retorna um array do tamanho especificado, �til para utilizar com ng-repeat de forma
- * arbitr�ria.
+ * Filtro que retorna um array do tamanho especificado, útil para utilizar com ng-repeat de forma
+ * arbitrária.
  *
  * @docs-link
  */
@@ -1693,7 +1693,7 @@
 /**
  * removeAccents
  * -------------
- * Filtro que remove acentua��o da string de entrada.
+ * Filtro que remove acentuação da string de entrada.
  *
  * @docs-link
  */
@@ -1749,7 +1749,7 @@
 /**
  * round
  * -----
- * Arredonda um numero para um determinado n�mero de casas decimais.
+ * Arredonda um numero para um determinado número de casas decimais.
  *
  * @docs-link
  */
@@ -1846,7 +1846,7 @@
 				var init, bound;
 
 				function resizeTabs() {
-					// Refor�a heightStyle = 'fill' pra garantir que sempre ocupar� 100% da altura mesmo
+					// Reforça heightStyle = 'fill' pra garantir que sempre ocupará 100% da altura mesmo
 					$element.tabs( "option", "heightStyle", "fill" );
 				}
 
@@ -1883,7 +1883,7 @@
 					}
 				});
 
-				// Ao destruir o escopo, remove tamb�m o evento
+				// Ao destruir o escopo, remove também o evento
 				$scope.$on( "$destroy", function() {
 					if ( bound ) {
 						$( $window ).off( "resize", resizeTabs );
@@ -2041,7 +2041,7 @@
 				// Remove qualquer query string
 				script = script.replace( /\?.*$/, "" );
 
-				// Se podemos usar cache, ent�o usa, p�!
+				// Se podemos usar cache, então usa, pô!
 				if ( cache && useCache ) {
 					script += "?cache=" + cache;
 				}

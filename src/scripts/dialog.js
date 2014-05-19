@@ -126,12 +126,12 @@
 			var options = getOptions( $scope );
 			$element.dialog( options );
 
-			// Se o escopo atual n„o tem um provider ainda, cria um e j· passa o elemento
+			// Se o escopo atual n√£o tem um provider ainda, cria um e j√° passa o elemento
 			$scope.$provider = ( $scope.$provider || new Dialog()._setPromise( $q.when( $element ) ) );
 			$scope.$parent[ $scope.ngModel ] = $scope.$provider;
 
-			// Fornece uma maneira mais f·cil de fechar o dialog a partir do HTML
-			// Tem que exportar pro $parent ou n„o fica acessÌvel do conte˙do do dialog
+			// Fornece uma maneira mais f√°cil de fechar o dialog a partir do HTML
+			// Tem que exportar pro $parent ou n√£o fica acess√≠vel do conte√∫do do dialog
 			$scope.$parent.$close = $scope.$provider.close;
 		};
 
@@ -154,7 +154,7 @@
 					var scope = ( options.scope || $rootScope ).$new();
 
 					if ( !options.template && !options.templateUrl ) {
-						throw new Error( "Deve ser passada a opÁ„o 'template' ou a opÁ„o 'templateUrl'!" );
+						throw new Error( "Deve ser passada a op√ß√£o 'template' ou a op√ß√£o 'templateUrl'!" );
 					}
 
 					options = extend( {}, Dialog.defaults, options );
@@ -164,7 +164,7 @@
 					promise = $templatePromise( options.template, options.templateUrl ).then(function( template ) {
 						$element = ng.element( "<syo-dialog></syo-dialog>" );
 
-						// Seta todos os atributos possÌveis na diretiva.
+						// Seta todos os atributos poss√≠veis na diretiva.
 						ng.forEach( Dialog.options, function( binding, prop ) {
 							$element.attr(
 								prop.replace( /([A-Z])/g, "-$1" ).toLowerCase(),

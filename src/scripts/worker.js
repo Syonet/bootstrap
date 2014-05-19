@@ -26,7 +26,7 @@
 				// Remove qualquer query string
 				script = script.replace( /\?.*$/, "" );
 
-				// Se podemos usar cache, ent„o usa, pÙ!
+				// Se podemos usar cache, ent√£o usa, p√¥!
 				if ( cache && useCache ) {
 					script += "?cache=" + cache;
 				}

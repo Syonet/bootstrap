@@ -1,7 +1,7 @@
 /**
  * syoInitData
  * -----------
- * Diretiva para facilmente setar vari·veis no escopo atual. ⁄til para dados inicializados com a p·gina.
+ * Diretiva para facilmente setar vari√°veis no escopo atual. √ötil para dados inicializados com a p√°gina.
  *
  * @docs-link
  */
@@ -17,12 +17,12 @@
 				var key = $attr.key;
 				var value = $attr.value;
 
-				// N„o h· chave, n„o seta nada.
+				// N√£o h√° chave, n√£o seta nada.
 				if ( !key ) {
 					return;
 				}
 
-				// Tenta interpretar como JSON. Se n„o houver sucesso, pelo menos seta como string.
+				// Tenta interpretar como JSON. Se n√£o houver sucesso, pelo menos seta como string.
 				try {
 					value = value ? JSON.parse( value ) : null;
 				} catch ( e ) {}

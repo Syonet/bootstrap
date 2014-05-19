@@ -1,7 +1,7 @@
 /**
  * syoOverlay
  * ----------
- * Diretiva para criar um overlay do Syonet Bootstrap rapidamente, podendo exibi-lo/ocult·-lo usando
+ * Diretiva para criar um overlay do Syonet Bootstrap rapidamente, podendo exibi-lo/ocult√°-lo usando
  * data binding do Angular.js.
  *
  * @docs-link

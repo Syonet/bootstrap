@@ -30,7 +30,7 @@
 					ngModel.$setViewValue( date );
 					$scope.$apply();
 
-					// ...e ainda chama a funÁ„o onSelect antiga!
+					// ...e ainda chama a fun√ß√£o onSelect antiga!
 					if ( typeof oldFn === "function" ) {
 						oldFn.call( this, date, inst );
 					}
@@ -40,13 +40,13 @@
 			// Instancia o datepicker
 			$element.datepicker( options );
 
-			// Quando h· um bot„o para exibir o datepicker...
+			// Quando h√° um bot√£o para exibir o datepicker...
 			$button = $element.next( ".ui-datepicker-trigger" );
 			if ( $button.length ) {
 				$button.before( " " );
 				$button.addClass( "syo-button" );
 
-				// Coloca o bot„o dentro do seu container, caso o input esteja em um input row
+				// Coloca o bot√£o dentro do seu container, caso o input esteja em um input row
 				if ( $element.parent().is( ".syo-input-row" ) ) {
 					$button.wrap( "<div class='syo-input-row-addon'></div>" );
 				}

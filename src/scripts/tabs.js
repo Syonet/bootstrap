@@ -15,7 +15,7 @@
 				var init, bound;
 
 				function resizeTabs() {
-					// ReforÁa heightStyle = 'fill' pra garantir que sempre ocupar· 100% da altura mesmo
+					// Refor√ßa heightStyle = 'fill' pra garantir que sempre ocupar√° 100% da altura mesmo
 					$element.tabs( "option", "heightStyle", "fill" );
 				}
 
@@ -52,7 +52,7 @@
 					}
 				});
 
-				// Ao destruir o escopo, remove tambÈm o evento
+				// Ao destruir o escopo, remove tamb√©m o evento
 				$scope.$on( "$destroy", function() {
 					if ( bound ) {
 						$( $window ).off( "resize", resizeTabs );

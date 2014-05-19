@@ -54,7 +54,7 @@
 					});
 
 					// Adiciona os componentes da tabela original ao datagrid
-					// Devido a algum bug do Chrome (?), se os colgroups não estiverem antes, o sizing não tem efeito
+					// Devido a algum bug do Chrome (?), se os colgroups nÃ£o estiverem antes, o sizing nÃ£o tem efeito
 					components.header.append( $thead ).prepend( $colgroup.clone() );
 					components.body.append( $tbody ).prepend( $colgroup.clone() );
 					components.helper.append( $tfoot ).prepend( $colgroup.clone() );
@@ -85,7 +85,7 @@
 						var listener = $scope.$watch(function() {
 							return $element.is( ":visible" );
 						}, function( visible ) {
-							// Aguarda até que o elemento esteja vísivel pra fazer alguma coisa
+							// Aguarda atÃ© que o elemento esteja vÃ­sivel pra fazer alguma coisa
 							if ( !visible ) {
 								return;
 							}
@@ -102,7 +102,7 @@
 					components.overflow.on( "scroll", scrollHandler );
 					components.body.on( "click", "tbody tr", activate );
 					$( $window ).on( "resize", function() {
-						// Aplica mudanças pendentes
+						// Aplica mudanÃ§as pendentes
 						!$scope.$root.$$phase && $scope.$apply();
 
 						// Recalcula a altura do datagrid e do grip
@@ -119,7 +119,7 @@
 						});
 					});
 
-					// Observa se existem helpers ou não
+					// Observa se existem helpers ou nÃ£o
 					$scope.$watch(function() {
 						return components.helper.find( "tfoot" ).length > 0;
 					}, function( hasHelper ) {
@@ -133,7 +133,7 @@
 						var headerHeight, helperHeight;
 
 						if ( $element.parent().is( ".flex-row" ) ) {
-							// Se estamos dentro de um flex-row as coisas são diferentes
+							// Se estamos dentro de um flex-row as coisas sÃ£o diferentes
 							headerHeight = components.header.height();
 							helperHeight = components.helper.height();
 
@@ -147,11 +147,11 @@
 								"calc(100% - " + Math.max( helperHeight, 0 ) + "px)"
 							);
 						} else {
-							// Faz o overflow herdar do max-height do tbody, se disponível
+							// Faz o overflow herdar do max-height do tbody, se disponÃ­vel
 							maxHeight = $.style( $tbody[ 0 ], "max-height" ) || null;
 							components.bodyWrapper.css( "max-height", maxHeight );
 
-							// Remove o helper de dentro do body wrapper quando não estamos dentro de um flex-row
+							// Remove o helper de dentro do body wrapper quando nÃ£o estamos dentro de um flex-row
 							components.helper.appendTo( $element );
 						}
 					}
@@ -168,10 +168,10 @@
 						components.overflow.width( width );
 
 						if ( width > 1 ) {
-							// Pode ser que o min-width tenha ganho do cálculo via JS
+							// Pode ser que o min-width tenha ganho do cÃ¡lculo via JS
 							width = components.overflow.width();
 
-							// Remove as células antigas
+							// Remove as cÃ©lulas antigas
 							$cells.remove();
 
 							components.header.find( "thead" ).each(function() {
@@ -197,15 +197,15 @@
 						}
 					}
 
-					// Responsável por controlar o posicionamento do scroll do grid
+					// ResponsÃ¡vel por controlar o posicionamento do scroll do grid
 					function scrollHandler( e ) {
 						var overflow = components.overflow[ 0 ];
 
 						if ( e.type === "wheel" || e.type === "mousewheel" ) {
 							e.preventDefault();
 
-							// Multiplicar por 40 não é exatamente a melhor coisa a se fazer, mas como está até
-							// na MDN, então vamos usar como "safe" por hora.
+							// Multiplicar por 40 nÃ£o Ã© exatamente a melhor coisa a se fazer, mas como estÃ¡ atÃ©
+							// na MDN, entÃ£o vamos usar como "safe" por hora.
 							// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/wheel
 							// => "Listening to this event across browser"
 							overflow.scrollTop -= ( e.originalEvent.wheelDeltaY || e.originalEvent.deltaY * -40 );

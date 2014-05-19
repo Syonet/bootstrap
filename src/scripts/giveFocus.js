@@ -20,7 +20,7 @@
 				}
 			});
 
-			// Ao fazer blur, seta para false a propriedade, se ela for set·vel
+			// Ao fazer blur, seta para false a propriedade, se ela for set√°vel
 			element.on( "blur", function() {
 				try {
 					scope.$apply( model.assign( scope, false ) );

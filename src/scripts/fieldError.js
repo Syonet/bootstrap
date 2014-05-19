@@ -1,7 +1,7 @@
 /**
  * syoFieldError
  * -------------
- * Diretiva para rapidamente criar um erro de campo de formul·rio padr„o da Syonet.
+ * Diretiva para rapidamente criar um erro de campo de formul√°rio padr√£o da Syonet.
  *
  * @docs-link
  */

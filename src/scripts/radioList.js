@@ -54,7 +54,7 @@
 						var k;
 						var showMsg = !items.length;
 
-						// Se .length n„o estiver definido, significa que È um objeto
+						// Se .length n√£o estiver definido, significa que √© um objeto
 						if ( items.length == null ) {
 							for ( k in items ) {
 								showMsg = false;

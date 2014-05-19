@@ -1,8 +1,8 @@
 /**
  * syoClick
  * --------
- * Diretiva para links que faz eval de uma express„o no escopo atual e depois acessa o atributo href
- * do elemento. Se a express„o retornar uma promise, ent„o syoClick ir· aguardar a promise ser
+ * Diretiva para links que faz eval de uma express√£o no escopo atual e depois acessa o atributo href
+ * do elemento. Se a express√£o retornar uma promise, ent√£o syoClick ir√° aguardar a promise ser
  * resolvida.
  *
  * @docs-link
@@ -12,9 +12,9 @@
 
 	ng.module( "syonet" ).directive( "syoClick", [ "$timeout", function( $timeout ) {
 		return function( $scope, $element, $attr ) {
-			// Bloqueia ou n„o a execuÁ„o do clique.
-			// Se o processamento de uma promise È necess·rio, a reexecuÁ„o do clique
-			// depender· do tÈrmino do evento anterior.
+			// Bloqueia ou n√£o a execu√ß√£o do clique.
+			// Se o processamento de uma promise √© necess√°rio, a reexecu√ß√£o do clique
+			// depender√° do t√©rmino do evento anterior.
 			var lock = false;
 
 			function gotoHref() {

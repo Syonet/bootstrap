@@ -84,7 +84,7 @@
 						items = items || {};
 						showMsg = !items.length;
 
-						// Se .length n„o estiver definido, significa que È um objeto
+						// Se .length n√£o estiver definido, significa que √© um objeto
 						if ( items.length == null ) {
 							for ( k in items ) {
 								showMsg = false;
@@ -114,7 +114,7 @@
 					return out;
 				};
 
-				// Determina se todos os checkboxes est„o marcados ou n„o
+				// Determina se todos os checkboxes est√£o marcados ou n√£o
 				$scope.isAllChecked = function() {
 					var checked = true;
 

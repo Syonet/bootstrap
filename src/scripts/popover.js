@@ -1,7 +1,7 @@
 /**
  * syoPopover
  * ----------
- * Diretiva para criar um popover que abrir· ao interagir com o elemento (clique, mouseover, etc).
+ * Diretiva para criar um popover que abrir√° ao interagir com o elemento (clique, mouseover, etc).
  *
  * @docs-link
  */
@@ -35,7 +35,7 @@
 					var mustBind = true;
 					config = scope.$parent.$eval( config );
 
-					// Se position n„o foi pasado, seta como top (padr„o)
+					// Se position n√£o foi pasado, seta como top (padr√£o)
 					config.position = config.position || "top";
 
 					if ( !$popover ) {
@@ -46,14 +46,14 @@
 						$popover.attr( "element", "element" );
 
 						if ( !config.template && !config.templateUrl  ) {
-							throw new Error( "Deve ser passada a opÁ„o 'template' ou a opÁ„o 'templateUrl'!" );
+							throw new Error( "Deve ser passada a op√ß√£o 'template' ou a op√ß√£o 'templateUrl'!" );
 						}
 
 						// Usa o escopo passado ou cria um novo a partir do raiz
 						popoverScope = ( config.scope || $rootScope ).$new();
 						popoverScope.element = element;
 
-						// Compila o popover agora e deixa pra setar o conte˙do apenas quando for abrir
+						// Compila o popover agora e deixa pra setar o conte√∫do apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
 					} else {
@@ -94,9 +94,9 @@
 
 				// Scope Watches
 				// ---------------------------------------------------------------------------------
-				// Aguarda o elemento ficar visÌvel/invÌsivel
+				// Aguarda o elemento ficar vis√≠vel/inv√≠sivel
 				scope.$watch(function() {
-					// Retorna true apenas pra n„o cair no if do listener
+					// Retorna true apenas pra n√£o cair no if do listener
 					return $popover ? element.is( ":visible" ) : true;
 				}, function( visible ) {
 					if ( !visible ) {
@@ -117,9 +117,9 @@
 					controller.destroy();
 				});
 
-				// FunÁıes utilit·rias
+				// Fun√ß√µes utilit√°rias
 				// ---------------------------------------------------------------------------------
-				// Abre o popover. Se o conte˙do do mesmo ainda n„o foi atribuido, faz isso agora
+				// Abre o popover. Se o conte√∫do do mesmo ainda n√£o foi atribuido, faz isso agora
 				function open() {
 					if ( !loadedContent ) {
 						loadedContent = true;
@@ -128,7 +128,7 @@
 							$content = $compile( $content.html( template ) )( popoverScope );
 							$content.appendTo( $popover );
 
-							// Reposiciona e aguarda atÈ o prÛximo digest pra reposicionar o elemento (de novo).
+							// Reposiciona e aguarda at√© o pr√≥ximo digest pra reposicionar o elemento (de novo).
 							reposition();
 							$timeout(function() {
 								reposition();
@@ -138,8 +138,8 @@
 
 					// Devemos bindar o controller a alguma propriedade do escopo pai?
 					if ( model ) {
-						// Se o escopo pai j· tem um controller de syoPopover que n„o È o do popover atual,
-						// ent„o devemos forÁar o close de tal popover e setar o nosso.
+						// Se o escopo pai j√° tem um controller de syoPopover que n√£o √© o do popover atual,
+						// ent√£o devemos for√ßar o close de tal popover e setar o nosso.
 						if (
 								popoverScope.$parent[ model ] instanceof controller.constructor &&
 								popoverScope.$parent[ model ] !== controller
@@ -163,7 +163,7 @@
 				}
 			};
 
-			// Retorna a qual evento o elemento de origem dever· responder pra fechar o popover.
+			// Retorna a qual evento o elemento de origem dever√° responder pra fechar o popover.
 			function getOutEvent( eventIn ) {
 				if ( eventIn === "mouseenter" ) {
 					return "mouseleave";
@@ -230,7 +230,7 @@
 				this.position = function() {
 					var position = {};
 
-					// Se n„o h· posiÁ„o, utiliza top, que È o padr„o
+					// Se n√£o h√° posi√ß√£o, utiliza top, que √© o padr√£o
 					var positionValue = ( $scope.position || "top" ).split( "-" );
 
 					if ( !open ) {
@@ -277,10 +277,10 @@
 					position.of = $scope.element;
 					position.within = $scope.element;
 
-					// @FIXME collision = flip n„o funciona no Firefox Android :'(
+					// @FIXME collision = flip n√£o funciona no Firefox Android :'(
 					position.collision = "none";
 
-					// Para setar a posiÁ„o, deve-se aguardar atÈ que o digest do elemento termine
+					// Para setar a posi√ß√£o, deve-se aguardar at√© que o digest do elemento termine
 					$timeout(function() {
 						var maxWidth, pos;
 
@@ -288,7 +288,7 @@
 						pos = $element.position();
 
 						// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
-						// apenas quando estamos usando left/right. Caso sim, ent„o o elemento ser·
+						// apenas quando estamos usando left/right. Caso sim, ent√£o o elemento ser√°
 						// alterado para ter um max-width que o permita ficar 100% na tela.
 						if ( positionValue[ 0 ] === "left" ) {
 							if ( pos.left < 0 ) {

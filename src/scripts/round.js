@@ -1,7 +1,7 @@
 /**
  * round
  * -----
- * Arredonda um numero para um determinado número de casas decimais.
+ * Arredonda um numero para um determinado nÃºmero de casas decimais.
  *
  * @docs-link
  */
