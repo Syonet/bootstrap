@@ -1,0 +1,14 @@
+main:
+  files:
+    "dist/bootstrap.css":
+      - "src/styles/vendor/normalize.css"
+      - "src/styles/bootstrap.less"
+
+    "dist/jquery.ui.css":
+      - "src/styles/vendor/jquery-ui/*.core.css"
+      - "src/styles/vendor/jquery-ui/*.css"
+      - "src/styles/jquery.ui.less"
+
+docs:
+  files:
+    "assets/styles/main.css": "assets/styles/main.less"

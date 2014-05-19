@@ -10,15 +10,15 @@
 	"Texto e Arquivos": {
 		"description": "Ferramentas de edição de texto e outros",
 		"icons": [
-			"file", "file-o", "files", "file4",
-			"files", "folder-close", "folder-open", "spell-check",
+			"file", "file-o", "files", "spell-check",
+			"folder-close", "folder-open", "copy", "paste",
 			"align-left", "align-center", "align-right", "align-justify",
-			"copy", "paste", "indent-left", "indent-right",
+			"indent-left", "indent-right",
 			"undo", "redo", "attachment", "tab",
-			"list-ul", "list", "list-ol", "libreoffice",
-			"file-css", "file-xml", "file-powerpoint", "file-zip",
-			"file-excel", "file-word", "file-openoffice", "file-pdf",
-			"th", "th-large", "th-list"
+			"list-ul", "list", "list-ol", "th",
+			"th-large", "th-list", "libreoffice", "file-css",
+			"file-xml", "file-powerpoint", "file-zip", "file-excel",
+			"file-word", "file-openoffice", "file-pdf"
 		]
 	},
 	"Logos": {

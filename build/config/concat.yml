@@ -1,0 +1,5 @@
+main:
+  src:
+    - "src/scripts/syoAngular.js"
+    - "src/scripts/*.js"
+  dest: "dist/syoAngular.js"

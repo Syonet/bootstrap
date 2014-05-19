@@ -1,5 +1,5 @@
 {% extends "layouts/docs.swig" %}
-{% set active = "jquery-ui" %}
+{% set active = "components" %}
 
 {% block content %}
     <aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
@@ -14,6 +14,7 @@
             <li><a href="#nav">Nav</a></li>
             <li><a href="#navbar">Navbar</a></li>
             <li><a href="#pagination">Paginação</a></li>
+            <li><a href="#popover">Popover</a></li>
             <li><a href="#progressbar">Progressbar</a></li>
         </ul>
     </aside>
@@ -46,7 +47,7 @@
                     <!-- Badge de informação -->
                     <span class="syo-badge syo-info">Informação</span>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <!-- Badge padrão -->
                     <span class="syo-badge">Badge</span>
 
@@ -62,7 +63,7 @@
                     <!-- Badge de informação -->
                     <span class="syo-badge syo-info">Informação</span>
                 </div>
-            </div>
+            {% endhighlight %}
         </article>
 
         <!-- Blocos -->
@@ -107,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="row">
                         <div class="col col-medium-6">
                             <div class="syo-block">
@@ -140,7 +141,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
 
             <p>
@@ -212,13 +213,13 @@
                         <button type="button" class="syo-button">Ação 3</button>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="syo-buttonset">
                         <button type="button" class="syo-button">Ação 1</button>
                         <button type="button" class="syo-button">Ação 2</button>
                         <button type="button" class="syo-button">Ação 3</button>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
         </article>
 
@@ -273,8 +274,7 @@
                     </ul>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <ul class="syo-check-list">
                         <li class="syo-check-list-header">Header Opcional</li>
                         <li>
@@ -297,7 +297,7 @@
                             <label for="radiolist-option2">Radio 2</label>
                         </li>
                     </ul>
-                </div>
+                {% endhighlight %}
             </div>
 
             <p>
@@ -328,7 +328,7 @@
                         <h3>Lorem Ipsum</h3>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="syo-header syo-header-ruler">
                         <h3>...</h3>
                     </div>
@@ -336,7 +336,7 @@
                     <div class="syo-header syo-header-bar">
                         <h3>...</h3>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
         </article>
 
@@ -373,8 +373,7 @@
                     </div>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="row">
                         <div class="syo-input-row col col-medium-6">
                             <input type="text" placeholder="Nome">
@@ -394,7 +393,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
         </article>
 
@@ -419,7 +418,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="syo-navbar">
                         <div class="container">
                             <a href="#" class="syo-navbar-title">Projeto</a>
@@ -431,7 +430,7 @@
                             <div class="syo-pull-right syo-navbar-content">Conteúdo à direita</div>
                         </div>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
         </article>
 
@@ -461,14 +460,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <ul class="syo-nav syo-nav-list">
                         <li class="syo-nav-header">Título</li>
                         <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
-                </div>
+                {% endhighlight %}
             </div>
         </article>
 
@@ -493,7 +492,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="syo-pagination">
                         <ul>
                             <li class="syo-active"><a href="#">1</a></li>
@@ -502,7 +501,7 @@
                             <li class="syo-disabled"><a href="#">4</a></li>
                         </ul>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
 
             <p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
@@ -514,18 +513,142 @@
                         </ul>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="syo-pagination">
                         <ul>
                             <li class="syo-disabled"><a href="#">1</a></li>
                         </ul>
                     </div>
-                </div>
+                {% endhighlight %}
             </div>
             <p>
                 <strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas
                 como um indicador visual de que o item <em>deve estar</em> desabilitado.
             </p>
+        </article>
+
+        <!-- Popover -->
+        <article id="popover">
+            <div class="syo-header syo-header-ruler">
+                <h2>Popover</h2>
+            </div>
+
+            <p>
+                Um popover é um balão que serve para exibir qualquer HTML. Ele é utilizado como uma
+                diretiva do Angular.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button class="syo-button" syo-popover="{
+                        title: 'Título do Popover',
+                        template: 'Olá mundo!'
+                    }">
+                        Clique aqui
+                    </button>
+                </div>
+                {% highlight xml %}
+                    <button class="syo-button" syo-popover="{
+                        title: 'Título do Popover',
+                        template: 'Olá mundo!'
+                    }">
+                        Clique aqui
+                    </button>
+                {% endhighlight %}
+            </div>
+
+            <section>
+                <h3>Atributos</h3>
+                <table class="syo-table">
+                    <colgroup>
+                        <col class="col-small-3 col-large-2">
+                        <col class="col-small-2 col-large-1">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>syoPopover</td>
+                            <td><code>Object</code></td>
+                            <td>
+                                <p>Aceita as seguintes propriedades:</p>
+                                <ul>
+                                    <li>
+                                        <code>event</code> Tipo: String
+                                        <p>
+                                            Define qual evento irá exibir o popover.
+                                            Os valores suportados são:
+                                        </p>
+                                        <ul>
+                                            <li>click</li>
+                                            <li>mouseenter</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <code>model</code> Tipo: String
+                                        <p>
+                                            Determina que propriedade do escopo atual irá receber a instância
+                                            do controller do popover.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <code>onClose</code> Tipo: Function
+                                        <p>Executa uma função após o popover ter sido fechado.</p>
+                                    </li>
+                                    <li>
+                                        <code>position</code> Tipo: String
+                                        <p>
+                                            Define o posicionamento do popover em relação ao elemento em que
+                                            foi chamado. O valor possível pode ser um dos seguintes:
+                                        </p>
+                                        <ul>
+                                            <li><code>top</code> - posiciona no topo, centralizado.</li>
+                                            <li><code>top-start</code> - posiciona no topo, à esquerda.</li>
+                                            <li><code>top-end</code> - posiciona no topo, à direita.</li>
+                                            <li><code>left</code> - posiciona à esquerda, centralizado.</li>
+                                            <li><code>left-start</code> - posiciona à esquerda, na parte superior.</li>
+                                            <li><code>left-end</code> - posiciona à esquerda, na parte inferior.</li>
+                                            <li><code>right</code> - posiciona à direita, centralizado.</li>
+                                            <li><code>right-start</code> - posiciona à direita, na parte superior.</li>
+                                            <li><code>right-end</code> - posiciona à direita, na parte inferior.</li>
+                                            <li><code>bottom</code> - posiciona embaixo, centralizado.</li>
+                                            <li><code>bottom-start</code> - posiciona embaixo, à esquerda.</li>
+                                            <li><code>bottom-end</code> - posiciona embaixo, à direita.</li>
+                                        </ul>
+                                        <p>Caso nenhum valor seja passado, o padrão <code>top</code> será usado.</p>
+                                    </li>
+                                    <li>
+                                        <code>scope</code> Tipo: Scope
+                                        <p>
+                                            Determina qual o escopo do popover, e cria um escopo filho a partir
+                                            deste. Caso nenhum escopo seja passado, usa o <code>$rootScope.</code>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <code>title</code> Tipo: String
+                                        <p>Define o título do popover.</p>
+                                    </li>
+                                    <li>
+                                        <code>template</code> Tipo: String
+                                        <p>
+                                            Define o conteúdo do popover como HTML. Se utilizado, sobrescreve o valor
+                                            de <code>templateUrl</code>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <code>templateUrl</code> Tipo: String
+                                        <p>Define a URL de um HTML que contem o conteúdo do popover.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </article>
 
         <!-- Progressbar -->
@@ -535,8 +658,8 @@
             </div>
 
             <p>
-                Quando a utilização do <a href="jquery-ui.html#progressbar">jQuery UI</a> para renderizar uma progressbar
-                lhe parece muita mão de obra, utilize-o apenas com CSS do Syonet Bootstrap!
+                Renderize uma progressbar utilizando apenas CSS. Lembre-se de definir uma largura
+                para o <code>.syo-progressbar-value</code>.
             </p>
             <div class="syo-docs-example">
                 <div class="syo-docs-example-inner">
@@ -544,11 +667,29 @@
                         <div class="syo-progressbar-value" style="width:60%"></div>
                     </div>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <div class="syo-progressbar">
                         <div class="syo-progressbar-value" style="width:60%"></div>
                     </div>
+                {% endhighlight %}
+            </div>
+
+            <p>
+                Para criar uma progressbar em aplicações Angular.js que controlam o preenchimento da mesma,
+                utilize a diretiva <code>syo-progressbar</code>.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner" ng-init="size = 25">
+                    <div class="syo-field syo-field-inline">
+                        <label>Tamanho:</label>
+                        <input type="number" ng-model="size" min="0" max="100">
+                    </div>
+
+                    <div syo-progressbar="{% raw %}{{ size }}{% endraw %}"></div>
                 </div>
+                {% highlight xml %}
+                    <div syo-progressbar="50"></div>
+                {% endhighlight %}
             </div>
         </article>
     </div>

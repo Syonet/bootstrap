@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="bootstrap.docs">
     <head>
         
         <meta charset="utf-8">
@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width">
 
         
-        <link rel="stylesheet" href="assets/vendor/prettify/prettify.css">
+        <link rel="stylesheet" href="assets/vendor/highlight.css">
         <link rel="stylesheet" href="dist/bootstrap.css">
         <link rel="stylesheet" href="dist/jquery.ui.css">
         <link rel="stylesheet" href="assets/styles/main.css">
@@ -37,20 +37,12 @@
                     </li>
                     <li 
     
+        class="syo-active"
+    
 >
                         <a href="components.html">
                             <i class="icon-flag"></i>
                             Componentes
-                        </a>
-                    </li>
-                    <li 
-    
-        class="active"
-    
->
-                        <a href="jquery-ui.html">
-                            <i class="icon-code"></i>
-                            jQuery UI
                         </a>
                     </li>
                 </ul>
@@ -89,6 +81,7 @@
             <li><a href="#nav">Nav</a></li>
             <li><a href="#navbar">Navbar</a></li>
             <li><a href="#pagination">Paginação</a></li>
+            <li><a href="#popover">Popover</a></li>
             <li><a href="#progressbar">Progressbar</a></li>
         </ul>
     </aside>
@@ -121,23 +114,21 @@
                     <!-- Badge de informação -->
                     <span class="syo-badge syo-info">Informação</span>
                 </div>
-                <div class="prettyprint">
-                    <!-- Badge padrão -->
-                    <span class="syo-badge">Badge</span>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-comment">&lt;!-- Badge padrão --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-badge"</span>&gt;</span>Badge<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 
-                    <!-- Badge de sucesso -->
-                    <span class="syo-badge syo-success">Sucesso!</span>
+    <span class="hljs-comment">&lt;!-- Badge de sucesso --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-badge syo-success"</span>&gt;</span>Sucesso!<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 
-                    <!-- Badge de erro -->
-                    <span class="syo-badge syo-error">Erro!</span>
+    <span class="hljs-comment">&lt;!-- Badge de erro --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-badge syo-error"</span>&gt;</span>Erro!<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 
-                    <!-- Badge de aviso -->
-                    <span class="syo-badge syo-warning">Cuidado!</span>
+    <span class="hljs-comment">&lt;!-- Badge de aviso --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-badge syo-warning"</span>&gt;</span>Cuidado!<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 
-                    <!-- Badge de informação -->
-                    <span class="syo-badge syo-info">Informação</span>
-                </div>
-            </div>
+    <span class="hljs-comment">&lt;!-- Badge de informação --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-badge syo-info"</span>&gt;</span>Informação<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
         </article>
 
         <!-- Blocos -->
@@ -182,40 +173,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="row">
-                        <div class="col col-medium-6">
-                            <div class="syo-block">
-                                <div class="syo-block-header">
-                                    <div class="syo-block-toolbar">
-                                        Toolbar
-                                    </div>
-                                    <div class="syo-block-title">
-                                        Título do bloco em cima
-                                    </div>
-                                </div>
-                                <div class="syo-block-content">
-                                    Conteúdo
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-medium-6">
-                            <div class="syo-block">
-                                <div class="syo-block-content">
-                                    Conteúdo
-                                </div>
-                                <div class="syo-block-footer">
-                                    <div class="syo-block-title">
-                                        Título do bloco embaixo
-                                    </div>
-                                    <div class="syo-block-toolbar">
-                                        Toolbar
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-header"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-toolbar"</span>&gt;</span>
+                    Toolbar
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-title"</span>&gt;</span>
+                    Título do bloco em cima
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-content"</span>&gt;</span>
+                Conteúdo
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-content"</span>&gt;</span>
+                Conteúdo
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-footer"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-title"</span>&gt;</span>
+                    Título do bloco embaixo
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-block-toolbar"</span>&gt;</span>
+                    Toolbar
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
 
             <p>
@@ -287,13 +276,11 @@
                         <button type="button" class="syo-button">Ação 3</button>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="syo-buttonset">
-                        <button type="button" class="syo-button">Ação 1</button>
-                        <button type="button" class="syo-button">Ação 2</button>
-                        <button type="button" class="syo-button">Ação 3</button>
-                    </div>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-buttonset"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>Ação 1<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>Ação 2<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>Ação 3<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
         </article>
 
@@ -348,31 +335,28 @@
                     </ul>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <ul class="syo-check-list">
-                        <li class="syo-check-list-header">Header Opcional</li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option1">
-                            <label for="checklist-option1">Opção 1</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="checklist" id="checklist-option2">
-                            <label for="checklist-option2">Opção 2</label>
-                        </li>
-                    </ul>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-check-list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-check-list-header"</span>&gt;</span>Header Opcional<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"checklist"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"checklist-option1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"checklist-option1"</span>&gt;</span>Opção 1<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"checklist"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"checklist-option2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"checklist-option2"</span>&gt;</span>Opção 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
 
-                    <ul class="syo-check-list">
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option1">
-                            <label for="radiolist-option1">Radio 1</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="radiolist" id="radiolist-option2">
-                            <label for="radiolist-option2">Radio 2</label>
-                        </li>
-                    </ul>
-                </div>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-check-list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radiolist"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"radiolist-option1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radiolist-option1"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radiolist"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"radiolist-option2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radiolist-option2"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
             </div>
 
             <p>
@@ -403,15 +387,13 @@
                         <h3>Lorem Ipsum</h3>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="syo-header syo-header-ruler">
-                        <h3>...</h3>
-                    </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-header syo-header-ruler"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
-                    <div class="syo-header syo-header-bar">
-                        <h3>...</h3>
-                    </div>
-                </div>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-header syo-header-bar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
         </article>
 
@@ -448,28 +430,25 @@
                     </div>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <div class="row">
-                        <div class="syo-input-row col col-medium-6">
-                            <input type="text" placeholder="Nome">
-                            <div class="syo-input-row-addon">
-                                <button class="syo-button">
-                                    <i class="icon-ok"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="syo-input-row col col-medium-6">
-                            <input type="text" placeholder="Digite sua pesquisa...">
-                            <div class="syo-input-row-addon">
-                                <button class="syo-button">
-                                    <i class="icon-search"></i>
-                                    Pesquisar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-input-row col col-medium-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Nome"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-input-row-addon"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-ok"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-input-row col col-medium-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Digite sua pesquisa..."</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-input-row-addon"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-search"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                Pesquisar
+            <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
         </article>
 
@@ -494,19 +473,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="syo-navbar">
-                        <div class="container">
-                            <a href="#" class="syo-navbar-title">Projeto</a>
-                            <ul class="syo-nav">
-                                <li class="syo-active"><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                            </ul>
-                            <div class="syo-pull-right syo-navbar-content">Conteúdo à direita</div>
-                        </div>
-                    </div>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-navbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-navbar-title"</span>&gt;</span>Projeto<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-nav"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-pull-right syo-navbar-content"</span>&gt;</span>Conteúdo à direita<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
         </article>
 
@@ -536,14 +513,12 @@
                         </ul>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <ul class="syo-nav syo-nav-list">
-                        <li class="syo-nav-header">Título</li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                    </ul>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-nav syo-nav-list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-nav-header"</span>&gt;</span>Título<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
             </div>
         </article>
 
@@ -568,16 +543,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="syo-pagination">
-                        <ul>
-                            <li class="syo-active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="syo-disabled"><a href="#">4</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-pagination"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-disabled"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
 
             <p>Para marcar um item como desabilitado, adicione a classe <code>.syo-disabled</code>:</p>
@@ -589,18 +562,138 @@
                         </ul>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="syo-pagination">
-                        <ul>
-                            <li class="syo-disabled"><a href="#">1</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-pagination"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-disabled"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
             <p>
                 <strong>Importante:</strong> Tal classe não desabilita realmente o item da paginação. Ela serve apenas
                 como um indicador visual de que o item <em>deve estar</em> desabilitado.
             </p>
+        </article>
+
+        <!-- Popover -->
+        <article id="popover">
+            <div class="syo-header syo-header-ruler">
+                <h2>Popover</h2>
+            </div>
+
+            <p>
+                Um popover é um balão que serve para exibir qualquer HTML. Ele é utilizado como uma
+                diretiva do Angular.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button class="syo-button" syo-popover="{
+                        title: 'Título do Popover',
+                        template: 'Olá mundo!'
+                    }">
+                        Clique aqui
+                    </button>
+                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span> <span class="hljs-attribute">syo-popover</span>=<span class="hljs-value">"{
+    title: 'Título do Popover',
+    template: 'Olá mundo!'
+}"</span>&gt;</span>
+    Clique aqui
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></pre>
+            </div>
+
+            <section>
+                <h3>Atributos</h3>
+                <table class="syo-table">
+                    <colgroup>
+                        <col class="col-small-3 col-large-2">
+                        <col class="col-small-2 col-large-1">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>syoPopover</td>
+                            <td><code>Object</code></td>
+                            <td>
+                                <p>Aceita as seguintes propriedades:</p>
+                                <ul>
+                                    <li>
+                                        <code>event</code> Tipo: String
+                                        <p>
+                                            Define qual evento irá exibir o popover.
+                                            Os valores suportados são:
+                                        </p>
+                                        <ul>
+                                            <li>click</li>
+                                            <li>mouseenter</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <code>model</code> Tipo: String
+                                        <p>
+                                            Determina que propriedade do escopo atual irá receber a instância
+                                            do controller do popover.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <code>onClose</code> Tipo: Function
+                                        <p>Executa uma função após o popover ter sido fechado.</p>
+                                    </li>
+                                    <li>
+                                        <code>position</code> Tipo: String
+                                        <p>
+                                            Define o posicionamento do popover em relação ao elemento em que
+                                            foi chamado. O valor possível pode ser um dos seguintes:
+                                        </p>
+                                        <ul>
+                                            <li><code>top</code> - posiciona no topo, centralizado.</li>
+                                            <li><code>top-start</code> - posiciona no topo, à esquerda.</li>
+                                            <li><code>top-end</code> - posiciona no topo, à direita.</li>
+                                            <li><code>left</code> - posiciona à esquerda, centralizado.</li>
+                                            <li><code>left-start</code> - posiciona à esquerda, na parte superior.</li>
+                                            <li><code>left-end</code> - posiciona à esquerda, na parte inferior.</li>
+                                            <li><code>right</code> - posiciona à direita, centralizado.</li>
+                                            <li><code>right-start</code> - posiciona à direita, na parte superior.</li>
+                                            <li><code>right-end</code> - posiciona à direita, na parte inferior.</li>
+                                            <li><code>bottom</code> - posiciona embaixo, centralizado.</li>
+                                            <li><code>bottom-start</code> - posiciona embaixo, à esquerda.</li>
+                                            <li><code>bottom-end</code> - posiciona embaixo, à direita.</li>
+                                        </ul>
+                                        <p>Caso nenhum valor seja passado, o padrão <code>top</code> será usado.</p>
+                                    </li>
+                                    <li>
+                                        <code>scope</code> Tipo: Scope
+                                        <p>
+                                            Determina qual o escopo do popover, e cria um escopo filho a partir
+                                            deste. Caso nenhum escopo seja passado, usa o <code>$rootScope.</code>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <code>title</code> Tipo: String
+                                        <p>Define o título do popover.</p>
+                                    </li>
+                                    <li>
+                                        <code>template</code> Tipo: String
+                                        <p>
+                                            Define o conteúdo do popover como HTML. Se utilizado, sobrescreve o valor
+                                            de <code>templateUrl</code>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <code>templateUrl</code> Tipo: String
+                                        <p>Define a URL de um HTML que contem o conteúdo do popover.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </article>
 
         <!-- Progressbar -->
@@ -610,8 +703,8 @@
             </div>
 
             <p>
-                Quando a utilização do <a href="jquery-ui.html#progressbar">jQuery UI</a> para renderizar uma progressbar
-                lhe parece muita mão de obra, utilize-o apenas com CSS do Syonet Bootstrap!
+                Renderize uma progressbar utilizando apenas CSS. Lembre-se de definir uma largura
+                para o <code>.syo-progressbar-value</code>.
             </p>
             <div class="syo-docs-example">
                 <div class="syo-docs-example-inner">
@@ -619,11 +712,25 @@
                         <div class="syo-progressbar-value" style="width:60%"></div>
                     </div>
                 </div>
-                <div class="prettyprint">
-                    <div class="syo-progressbar">
-                        <div class="syo-progressbar-value" style="width:60%"></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-progressbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-progressbar-value"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:60%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+            </div>
+
+            <p>
+                Para criar uma progressbar em aplicações Angular.js que controlam o preenchimento da mesma,
+                utilize a diretiva <code>syo-progressbar</code>.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner" ng-init="size = 25">
+                    <div class="syo-field syo-field-inline">
+                        <label>Tamanho:</label>
+                        <input type="number" ng-model="size" min="0" max="100">
                     </div>
+
+                    <div syo-progressbar="{{ size }}"></div>
                 </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">syo-progressbar</span>=<span class="hljs-value">"50"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
             </div>
         </article>
     </div>
@@ -654,11 +761,10 @@
         </footer>
 
         
-        <script src="assets/vendor/prettify/prettify.js"></script>
-        <script src="assets/vendor/modernizr.js"></script>
         <script src="assets/vendor/jquery.js"></script>
         <script src="assets/vendor/jquery.ui.js"></script>
-        <script src="assets/vendor/jquery.mobile.js"></script>
+        <script src="assets/vendor/angular.js"></script>
+        <script src="dist/syoAngular.js"></script>
         <script src="assets/scripts/main.js"></script>
     </body>
 </html>

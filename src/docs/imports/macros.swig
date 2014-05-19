@@ -1,5 +1,5 @@
 {% macro activeClass( which ) %}
     {% if which === active %}
-        class="active"
+        class="syo-active"
     {% endif %}
 {% endmacro %}

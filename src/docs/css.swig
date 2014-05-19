@@ -124,7 +124,7 @@
                             <div class="col col-tiny-12">12</div>
                         </div>
                     </div>
-                    <div class="prettyprint">
+                    {% highlight xml %}
                         <div class="row">
                             <div class="col col-tiny-2">2</div>
                             <div class="col col-tiny-2">2</div>
@@ -165,7 +165,7 @@
                         <div class="row">
                             <div class="col col-tiny-12">12</div>
                         </div>
-                    </div>
+                    {% endhighlight %}
                 </div>
             </section>
 
@@ -187,13 +187,13 @@
                             <div class="col col-tiny-2">4</div>
                         </div>
                     </div>
-                    <div class="prettyprint">
+                    {% highlight xml %}
                         <div class="row">
                             <div class="col col-tiny-2">2</div>
                             <div class="col col-tiny-2 offset-tiny-2">2 offset 2</div>
                             ...
                         </div>
-                    </div>
+                    {% endhighlight %}
                 </div>
             </section>
         </article>
@@ -216,7 +216,7 @@
                     <h5>h5. Heading 5</h5>
                     <h6>h6. Heading 6</h6>
                 </div>
-                <div class="prettyprint"><h1>...</h1></div>
+                {% highlight xml %}<h1>...</h1>{% endhighlight %}
             </div>
 
             <h3>Parágrafos</h3>
@@ -242,14 +242,14 @@
                         blandit vitae lectus.
                     </p>
                 </div>
-                <div class="prettyprint"><p>...</p></div>
+                {% highlight xml %}<p>...</p>{% endhighlight %}
             </div>
             <p>Para dar um destaque extra a um parágrafo, adicione a ele a classe <code>.lead</code>.</p>
             <div class="syo-docs-example">
                 <div class="syo-docs-example-inner">
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <div class="prettyprint"><p class="lead">...</p></div>
+                {% highlight xml %}<p class="lead">...</p>{% endhighlight %}
             </div>
 
             <h3>Links</h3>
@@ -257,7 +257,7 @@
                 <div class="syo-docs-example-inner">
                     <p><a href="#">Lorem ipsum dolor sit amet</a></p>
                 </div>
-                <div class="prettyprint"><a href="#">...</a></div>
+                {% highlight xml %}<a href="#">...</a>{% endhighlight %}
             </div>
 
             <h3>Ênfase</h3>
@@ -268,11 +268,11 @@
                     <p><code>strong</code>, <code>b</code>: <strong>Texto com muita importância, em negrito.</strong></p>
                     <p><code>small</code>: <small>Texto sem importância, letras pequenas!</small></p>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <em>...</em> ou <i>...</i>
                     <strong>...</strong> ou <b>...</b>
                     <small>...</small>
-                </div>
+                {% endhighlight %}
             </div>
 
             <h3>Descrições</h3>
@@ -290,7 +290,7 @@
                         <dd>Amarelo</dd>
                     </dl>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <dl>
                         <dt>Marca</dt>
                         <dd>Lamborghini</dd>
@@ -301,7 +301,7 @@
                         <dt>Cor</dt>
                         <dd>Amarelo</dd>
                     </dl>
-                </div>
+                {% endhighlight %}
             </div>
 
             <p>
@@ -321,12 +321,12 @@
                         <dd>justo, laoreet sit amet varius in</dd>
                     </dl>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <dl class="dl-inline">
                         <dt>...</dt>
                         <dd>...</dd>
                     </dl>
-                </div>
+                {% endhighlight %}
             </div>
 
         </article>
@@ -354,11 +354,11 @@
                         </li>
                     </ul>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <ul>
                         <li>...</li>
                     </ul>
-                </div>
+                {% endhighlight %}
             </div>
 
             <h3>Ordenadas</h3>
@@ -376,11 +376,11 @@
                         </li>
                     </ol>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <ol>
                         <li>...</li>
                     </ol>
-                </div>
+                {% endhighlight %}
             </div>
 
             <h3>Não estilizadas</h3>
@@ -402,11 +402,11 @@
                         </li>
                     </ul>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <ul class="unstyled">
                         <li>...</li>
                     </ul>
-                </div>
+                {% endhighlight %}
             </div>
 
             <h3>Inline</h3>
@@ -419,11 +419,11 @@
                         <li>Item 3</li>
                     </ul>
                 </div>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <ul class="inline">
                         <li>...</li>
                     </ul>
-                </div>
+                {% endhighlight %}
             </div>
 
         </article>
@@ -431,101 +431,12 @@
         <!-- Forms -->
         <article id="forms">
 
-        <div class="syo-header syo-header-ruler">
-            <h2>Formulários</h2>
-        </div>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <fieldset>
-                    <legend>Grid</legend>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label for="input1" class="col col-medium-4">Label:</label>
-                            <div class="col col-medium-8">
-                                <input type="text" id="input1" class="input-block-level">
-                                <span class="syo-field-help">Texto de ajuda para o campo acima</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label for="input2" class="col col-medium-4">Outro Label:</label>
-                            <div class="col col-medium-8">
-                                <input type="text" id="input2" class="input-block-level" placeholder="Digite aqui">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label class="col col-medium-4">Label sem campo:</label>
-                            <div class="col col-medium-8">
-                                <span class="syo-field-text">Texto alinhado com o label</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label class="col col-medium-4">Marque para confirmar:</label>
-                            <div class="col col-medium-8">
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="syo-field row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label for="selectinput" class="col">Label block</label>
-                            <div class="col">
-                                <select id="selectinput" class="input-block-level">
-                                    <option value="1">Opção 1</option>
-                                    <option value="2">Opção 2</option>
-                                    <option value="3">Opção 3</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!--
-                            ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
-                            ".special-input-block-level" no elemento pai
-                        -->
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <div class="col special-input-block-level">
-                                <input type="text" data-widget="spinner" placeholder="Spinner jQuery UI">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Inline</legend>
-                    <div class="syo-field syo-field-inline">
-                        <label>
-                            <input type="checkbox">
-                            Checkbox
-                        </label>
-                    </div>
-                    <div class="syo-field syo-field-inline">
-                        <input type="radio" id="input8">
-                        <label for="input8">Radio</label>
-                    </div>
-                    <div class="syo-field syo-field-inline">
-                        <label>
-                            <input type="radio">
-                            Radio
-                        </label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Padrão</legend>
-                    <div class="syo-field">
-                        <input type="submit" value="Botão" class="syo-button">
-                        <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
-                    </div>
-                </fieldset>
+            <div class="syo-header syo-header-ruler">
+                <h2>Formulários</h2>
             </div>
-            <strong>HTML:</strong>
-            <div class="prettyprint">
-                <form method="POST" action="#">
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
                     <fieldset>
                         <legend>Grid</legend>
                         <div class="row">
@@ -611,51 +522,135 @@
                             <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
                         </div>
                     </fieldset>
-                </form>
+                </div>
+                {% highlight xml %}
+                    <form method="POST" action="#">
+                        <fieldset>
+                            <legend>Grid</legend>
+                            <div class="row">
+                                <div class="syo-field col col-medium-8 col-large-6">
+                                    <label for="input1" class="col col-medium-4">Label:</label>
+                                    <div class="col col-medium-8">
+                                        <input type="text" id="input1" class="input-block-level">
+                                        <span class="syo-field-help">Texto de ajuda para o campo acima</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="syo-field col col-medium-8 col-large-6">
+                                    <label for="input2" class="col col-medium-4">Outro Label:</label>
+                                    <div class="col col-medium-8">
+                                        <input type="text" id="input2" class="input-block-level" placeholder="Digite aqui">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="syo-field col col-medium-8 col-large-6">
+                                    <label class="col col-medium-4">Label sem campo:</label>
+                                    <div class="col col-medium-8">
+                                        <span class="syo-field-text">Texto alinhado com o label</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="syo-field col col-medium-8 col-large-6">
+                                    <label class="col col-medium-4">Marque para confirmar:</label>
+                                    <div class="col col-medium-8">
+                                        <input type="checkbox">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="syo-field row">
+                                <div class="syo-field col col-medium-8 col-large-6">
+                                    <label for="selectinput" class="col">Label block</label>
+                                    <div class="col">
+                                        <select id="selectinput" class="input-block-level">
+                                            <option value="1">Opção 1</option>
+                                            <option value="2">Opção 2</option>
+                                            <option value="3">Opção 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!--
+                                    ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
+                                    ".special-input-block-level" no elemento pai
+                                -->
+                                <div class="syo-field col col-medium-8 col-large-6">
+                                    <div class="col special-input-block-level">
+                                        <input type="text" data-widget="spinner" placeholder="Spinner jQuery UI">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Inline</legend>
+                            <div class="syo-field syo-field-inline">
+                                <label>
+                                    <input type="checkbox">
+                                    Checkbox
+                                </label>
+                            </div>
+                            <div class="syo-field syo-field-inline">
+                                <input type="radio" id="input8">
+                                <label for="input8">Radio</label>
+                            </div>
+                            <div class="syo-field syo-field-inline">
+                                <label>
+                                    <input type="radio">
+                                    Radio
+                                </label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Padrão</legend>
+                            <div class="syo-field">
+                                <input type="submit" value="Botão" class="syo-button">
+                                <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
+                            </div>
+                        </fieldset>
+                    </form>
+                {% endhighlight %}
             </div>
-            <strong>Javascript:</strong>
-            <div class="prettyprint">
-                $( ".spinner" ).spinner();
-            </div>
-        </div>
 
-        <h3>Estados de sucesso/erro</h3>
-        <p>
-            É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
-            devida no elemento que você deseja aplicar tal estado:
-        </p>
-        <table class="syo-table">
-            <colgroup>
-                <col class="col-small-5 col-large-3">
-                <col class="col-small-7 col-large-9">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th class="text-right">Classe</th>
-                    <th>Exemplo visual</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-right"><code>.syo-success</code></td>
-                    <td>
-                        <input type="text" class="syo-success" value="Campo text preenchido com sucesso">
-                        <select class="syo-success">
-                            <option selected="selected">Estou selecionado!</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-right"><code>.syo-error</code></td>
-                    <td>
-                        <input type="text" class="syo-error" value="Erro ao preencher este campo!">
-                        <select class="syo-error">
-                            <option>Selecione-me</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <h3>Estados de sucesso/erro</h3>
+            <p>
+                É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
+                devida no elemento que você deseja aplicar tal estado:
+            </p>
+            <table class="syo-table">
+                <colgroup>
+                    <col class="col-small-5 col-large-3">
+                    <col class="col-small-7 col-large-9">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="text-right">Classe</th>
+                        <th>Exemplo visual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-right"><code>.syo-success</code></td>
+                        <td>
+                            <input type="text" class="syo-success" value="Campo text preenchido com sucesso">
+                            <select class="syo-success">
+                                <option selected="selected">Estou selecionado!</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"><code>.syo-error</code></td>
+                        <td>
+                            <input type="text" class="syo-error" value="Erro ao preencher este campo!">
+                            <select class="syo-error">
+                                <option>Selecione-me</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </article>
 
@@ -727,14 +722,13 @@
                     <input type="reset" class="syo-button" value="reset">
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <button type="button" class="syo-button">button</button>
                     <a href="#" class="syo-button">link</a>
                     <input type="submit" class="syo-button" value="submit">
                     <input type="button" class="syo-button" value="input">
                     <input type="reset" class="syo-button" value="reset">
-                </div>
+                {% endhighlight %}
             </div>
 
             <h3>Tamanho Grande</h3>
@@ -746,10 +740,9 @@
                     <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
-                </div>
+                {% endhighlight %}
             </div>
 
             <h3>Estado Desabilitado</h3>
@@ -829,8 +822,7 @@
                     </table>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
+                {% highlight xml %}
                     <table class="syo-table">
                         <colgroup>
                             <col class="col-medium-3">
@@ -868,7 +860,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                </div>
+                {% endhighlight %}
             </div>
 
             <section>
@@ -928,52 +920,11 @@
                         </table>
                     </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
+                    {% highlight xml %}
                         <table class="syo-table syo-table-striped">
-                            <colgroup>
-                                <col class="col-medium-3">
-                                <col class="col-medium-3">
-                                <col class="col-medium-6">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>Coluna 1</th>
-                                    <th>Coluna 2</th>
-                                    <th>Coluna 3</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>Footer 1</td>
-                                    <td>Footer 2</td>
-                                    <td>Footer 3</td>
-                                </tr>
-                            </tfoot>
+                            ...
                         </table>
-                    </div>
+                    {% endhighlight %}
                 </div>
             </section>
 
@@ -1028,8 +979,7 @@
                         </table>
                     </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
+                    {% highlight xml %}
                         <table class="syo-table syo-table-hover">
                             <colgroup>
                                 <col class="col-medium-3">
@@ -1068,7 +1018,7 @@
                                 </tr>
                             </tfoot>
                         </table>
-                    </div>
+                    {% endhighlight %}
                 </div>
             </section>
 
@@ -1127,8 +1077,7 @@
                         </table>
                     </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
+                    {% highlight xml %}
                         <table class="syo-table">
                             <thead>
                                 <tr>
@@ -1165,7 +1114,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    {% endhighlight %}
                 </div>
             </section>
 
@@ -1217,10 +1166,9 @@
                                  </tr>
                              </tbody>
                         </table>
-                 </div>
+                    </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
+                    {% highlight xml %}
                          <table class="syo-table syo-table-responsive">
                              <thead>
                                  <tr>
@@ -1247,7 +1195,7 @@
                                  </tr>
                              </tbody>
                          </table>
-                    </div>
+                    {% endhighlight %}
                 </div>
             </section>
         </article>
@@ -1266,11 +1214,11 @@
             <div class="syo-field">
                 <label for="icon-search">
                     Pesquisar ícone:
-                    <input type="text" id="icon-search" placeholder="Digite o nome do ícone...">
+                    <input type="text" ng-model="iconSearch" placeholder="Digite o nome do ícone...">
                 </label>
             </div>
 
-            <div id="icons-container"></div>
+            <div icons-container filter="iconSearch"></div>
 
             <p>
                 Para utilizar qualquer um deles, basta colocar a classe desejada em seu elemento. Por exemplo:
@@ -1279,7 +1227,7 @@
                 <div class="syo-docs-example-inner">
                     <i class="icon-home"></i>
                 </div>
-                <div class="prettyprint"><i class="icon-home"></i></div>
+                {% highlight xml %}<i class="icon-home"></i>{% endhighlight %}
             </div>
 
             <h3>Icone Giratório</h3>
@@ -1292,7 +1240,7 @@
                 <div class="syo-docs-example-inner">
                     <i class="icon-spinner icon-spin"></i>
                 </div>
-                <div class="prettyprint"><i class="icon-spinner icon-spin"></i></div>
+                {% highlight xml %}<i class="icon-spinner icon-spin"></i>{% endhighlight %}
             </div>
         </article>
 
@@ -1411,11 +1359,11 @@
 
             <h3>.syo-hidden</h3>
             <p>Oculta um elemento da página.</p>
-            <div class="prettyprint"><div class="syo-hidden"></div></div>
+            <div class="highlight"><div class="syo-hidden"></div></div>
 
             <h3>.clearfix</h3>
             <p>Limpa o <code>float</code> em qualquer elemento.</p>
-            <div class="prettyprint"><div class="clearfix"></div></div>
+            <div class="highlight"><div class="clearfix"></div></div>
 
             <h3>.text-overflow</h3>
             <p>
@@ -1423,7 +1371,7 @@
                 <span class='syo-badge syo-warning'>Importante</span> Elementos que não são <code>display: block</code>
                 precisarão ter uma largura definida.
             </p>
-            <div class="prettyprint">
+            <div class="highlight">
                 <div class="text-overflow">Texto muito longo para este container</div>
                 <!-- Na exibição: "Texto muito longo para es..." -->
             </div>

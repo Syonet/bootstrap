@@ -1,0 +1,7 @@
+default:
+  - "icons"   # Gera o mapeamento de icones
+  - "less"    # Compila os arquivos LESS
+  - "jshint"  # Faz o linting de todos arquivos JS relevantes
+  - "concat"  # Concatena alguns arquivos
+  - "process" # Copia e inclui o banner nos arquivos de distribuição
+  - "swig"    # Compila a documentação do projeto

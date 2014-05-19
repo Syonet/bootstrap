@@ -1,0 +1,5 @@
+main:
+  options:
+    aliases: "src/fonts/aliases.json"
+  files:
+    "src/styles/icons-map.less": "src/fonts/SyoBootstrap.json"

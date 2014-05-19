@@ -1,0 +1,5 @@
+main:
+  options:
+    port: 8001
+    livereload: "<%= liveReload %>"
+    keepalive: true

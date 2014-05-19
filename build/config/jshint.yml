@@ -1,0 +1,7 @@
+options:
+  jshintrc: ".jshintrc"
+
+internal:
+  - "Gruntfile.js"
+  - "build/*.js"
+  - "assets/scripts/*.js"

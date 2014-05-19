@@ -1,6 +1,6 @@
 {% import "../imports/macros.swig" as macros %}
 <!DOCTYPE html>
-<html>
+<html ng-app="bootstrap.docs">
     <head>
         {# Metas #}
         <meta charset="utf-8">
@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width">
 
         {# Styles #}
-        <link rel="stylesheet" href="assets/vendor/prettify/prettify.css">
+        <link rel="stylesheet" href="assets/vendor/highlight.css">
         <link rel="stylesheet" href="dist/bootstrap.css">
         <link rel="stylesheet" href="dist/jquery.ui.css">
         <link rel="stylesheet" href="assets/styles/main.css">
@@ -35,12 +35,6 @@
                         <a href="components.html">
                             <i class="icon-flag"></i>
                             Componentes
-                        </a>
-                    </li>
-                    <li {{ macros.activeClass( 'jquery-ui' ) }}>
-                        <a href="jquery-ui.html">
-                            <i class="icon-code"></i>
-                            jQuery UI
                         </a>
                     </li>
                 </ul>
@@ -72,11 +66,10 @@
         </footer>
 
         {# Scripts #}
-        <script src="assets/vendor/prettify/prettify.js"></script>
-        <script src="assets/vendor/modernizr.js"></script>
         <script src="assets/vendor/jquery.js"></script>
         <script src="assets/vendor/jquery.ui.js"></script>
-        <script src="assets/vendor/jquery.mobile.js"></script>
+        <script src="assets/vendor/angular.js"></script>
+        <script src="dist/syoAngular.js"></script>
         <script src="assets/scripts/main.js"></script>
     </body>
 </html>

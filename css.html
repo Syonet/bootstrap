@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="bootstrap.docs">
     <head>
         
         <meta charset="utf-8">
@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width">
 
         
-        <link rel="stylesheet" href="assets/vendor/prettify/prettify.css">
+        <link rel="stylesheet" href="assets/vendor/highlight.css">
         <link rel="stylesheet" href="dist/bootstrap.css">
         <link rel="stylesheet" href="dist/jquery.ui.css">
         <link rel="stylesheet" href="assets/styles/main.css">
@@ -29,7 +29,7 @@
                     </li>
                     <li 
     
-        class="active"
+        class="syo-active"
     
 >
                         <a href="css.html">
@@ -43,14 +43,6 @@
                         <a href="components.html">
                             <i class="icon-flag"></i>
                             Componentes
-                        </a>
-                    </li>
-                    <li 
-    
->
-                        <a href="jquery-ui.html">
-                            <i class="icon-code"></i>
-                            jQuery UI
                         </a>
                     </li>
                 </ul>
@@ -199,48 +191,46 @@
                             <div class="col col-tiny-12">12</div>
                         </div>
                     </div>
-                    <div class="prettyprint">
-                        <div class="row">
-                            <div class="col col-tiny-2">2</div>
-                            <div class="col col-tiny-2">2</div>
-                            <div class="col col-tiny-2">2</div>
-                            <div class="col col-tiny-2">2</div>
-                            <div class="col col-tiny-4">4</div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-medium-4 col-small-12">
-                                <span class="visible-medium-above">4</span>
-                                <span class="visible-small-below">12</span>
-                            </div>
-                            <div class="col col-medium-4 col-small-6">
-                                <span class="visible-medium-above">4</span>
-                                <span class="visible-small">6</span>
-                                <span class="visible-tiny">12</span>
-                            </div>
-                            <div class="col col-medium-4 col-small-6">
-                                <span class="visible-medium-above">4</span>
-                                <span class="visible-small">6</span>
-                                <span class="visible-tiny">12</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-medium-7 col-tiny-12">
-                                <span class="visible-medium-above">7</span>
-                                <span class="visible-small-below">12</span>
-                            </div>
-                            <div class="col col-medium-3 col-tiny-7">
-                                <span class="visible-medium-above">3</span>
-                                <span class="visible-small-below">7</span>
-                            </div>
-                            <div class="col col-medium-2 col-tiny-5">
-                                <span class="visible-medium-above">2</span>
-                                <span class="visible-small-below">5</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-tiny-12">12</div>
-                        </div>
-                    </div>
+                    <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-4"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4 col-small-12"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-medium-above"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-small-below"</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4 col-small-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-medium-above"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-small"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-tiny"</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4 col-small-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-medium-above"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-small"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-tiny"</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-7 col-tiny-12"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-medium-above"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-small-below"</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-3 col-tiny-7"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-medium-above"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-small-below"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-2 col-tiny-5"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-medium-above"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visible-small-below"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-12"</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
                 </div>
             </section>
 
@@ -262,13 +252,11 @@
                             <div class="col col-tiny-2">4</div>
                         </div>
                     </div>
-                    <div class="prettyprint">
-                        <div class="row">
-                            <div class="col col-tiny-2">2</div>
-                            <div class="col col-tiny-2 offset-tiny-2">2 offset 2</div>
-                            ...
-                        </div>
-                    </div>
+                    <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-tiny-2 offset-tiny-2"</span>&gt;</span>2 offset 2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
                 </div>
             </section>
         </article>
@@ -291,7 +279,7 @@
                     <h5>h5. Heading 5</h5>
                     <h6>h6. Heading 6</h6>
                 </div>
-                <div class="prettyprint"><h1>...</h1></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span></pre>
             </div>
 
             <h3>Parágrafos</h3>
@@ -317,14 +305,14 @@
                         blandit vitae lectus.
                     </p>
                 </div>
-                <div class="prettyprint"><p>...</p></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
             </div>
             <p>Para dar um destaque extra a um parágrafo, adicione a ele a classe <code>.lead</code>.</p>
             <div class="syo-docs-example">
                 <div class="syo-docs-example-inner">
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <div class="prettyprint"><p class="lead">...</p></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"lead"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
             </div>
 
             <h3>Links</h3>
@@ -332,7 +320,7 @@
                 <div class="syo-docs-example-inner">
                     <p><a href="#">Lorem ipsum dolor sit amet</a></p>
                 </div>
-                <div class="prettyprint"><a href="#">...</a></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
             </div>
 
             <h3>Ênfase</h3>
@@ -343,11 +331,9 @@
                     <p><code>strong</code>, <code>b</code>: <strong>Texto com muita importância, em negrito.</strong></p>
                     <p><code>small</code>: <small>Texto sem importância, letras pequenas!</small></p>
                 </div>
-                <div class="prettyprint">
-                    <em>...</em> ou <i>...</i>
-                    <strong>...</strong> ou <b>...</b>
-                    <small>...</small>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> ou <span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> ou <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span></pre>
             </div>
 
             <h3>Descrições</h3>
@@ -365,18 +351,16 @@
                         <dd>Amarelo</dd>
                     </dl>
                 </div>
-                <div class="prettyprint">
-                    <dl>
-                        <dt>Marca</dt>
-                        <dd>Lamborghini</dd>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Marca<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Lamborghini<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
 
-                        <dt>Carro</dt>
-                        <dd>Gallardo</dd>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Carro<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Gallardo<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
 
-                        <dt>Cor</dt>
-                        <dd>Amarelo</dd>
-                    </dl>
-                </div>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Cor<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Amarelo<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span></pre>
             </div>
 
             <p>
@@ -396,12 +380,10 @@
                         <dd>justo, laoreet sit amet varius in</dd>
                     </dl>
                 </div>
-                <div class="prettyprint">
-                    <dl class="dl-inline">
-                        <dt>...</dt>
-                        <dd>...</dd>
-                    </dl>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dl-inline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span></pre>
             </div>
 
         </article>
@@ -429,11 +411,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="prettyprint">
-                    <ul>
-                        <li>...</li>
-                    </ul>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
             </div>
 
             <h3>Ordenadas</h3>
@@ -451,11 +431,9 @@
                         </li>
                     </ol>
                 </div>
-                <div class="prettyprint">
-                    <ol>
-                        <li>...</li>
-                    </ol>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span></pre>
             </div>
 
             <h3>Não estilizadas</h3>
@@ -477,11 +455,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="prettyprint">
-                    <ul class="unstyled">
-                        <li>...</li>
-                    </ul>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"unstyled"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
             </div>
 
             <h3>Inline</h3>
@@ -494,11 +470,9 @@
                         <li>Item 3</li>
                     </ul>
                 </div>
-                <div class="prettyprint">
-                    <ul class="inline">
-                        <li>...</li>
-                    </ul>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
             </div>
 
         </article>
@@ -506,101 +480,12 @@
         <!-- Forms -->
         <article id="forms">
 
-        <div class="syo-header syo-header-ruler">
-            <h2>Formulários</h2>
-        </div>
-
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <fieldset>
-                    <legend>Grid</legend>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label for="input1" class="col col-medium-4">Label:</label>
-                            <div class="col col-medium-8">
-                                <input type="text" id="input1" class="input-block-level">
-                                <span class="syo-field-help">Texto de ajuda para o campo acima</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label for="input2" class="col col-medium-4">Outro Label:</label>
-                            <div class="col col-medium-8">
-                                <input type="text" id="input2" class="input-block-level" placeholder="Digite aqui">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label class="col col-medium-4">Label sem campo:</label>
-                            <div class="col col-medium-8">
-                                <span class="syo-field-text">Texto alinhado com o label</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label class="col col-medium-4">Marque para confirmar:</label>
-                            <div class="col col-medium-8">
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="syo-field row">
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <label for="selectinput" class="col">Label block</label>
-                            <div class="col">
-                                <select id="selectinput" class="input-block-level">
-                                    <option value="1">Opção 1</option>
-                                    <option value="2">Opção 2</option>
-                                    <option value="3">Opção 3</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!--
-                            ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
-                            ".special-input-block-level" no elemento pai
-                        -->
-                        <div class="syo-field col col-medium-8 col-large-6">
-                            <div class="col special-input-block-level">
-                                <input type="text" data-widget="spinner" placeholder="Spinner jQuery UI">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Inline</legend>
-                    <div class="syo-field syo-field-inline">
-                        <label>
-                            <input type="checkbox">
-                            Checkbox
-                        </label>
-                    </div>
-                    <div class="syo-field syo-field-inline">
-                        <input type="radio" id="input8">
-                        <label for="input8">Radio</label>
-                    </div>
-                    <div class="syo-field syo-field-inline">
-                        <label>
-                            <input type="radio">
-                            Radio
-                        </label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Padrão</legend>
-                    <div class="syo-field">
-                        <input type="submit" value="Botão" class="syo-button">
-                        <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
-                    </div>
-                </fieldset>
+            <div class="syo-header syo-header-ruler">
+                <h2>Formulários</h2>
             </div>
-            <strong>HTML:</strong>
-            <div class="prettyprint">
-                <form method="POST" action="#">
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
                     <fieldset>
                         <legend>Grid</legend>
                         <div class="row">
@@ -686,51 +571,133 @@
                             <input type="reset" value="Botão desabilitado" class="syo-button" disabled="disabled">
                         </div>
                     </fieldset>
-                </form>
+                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span>Grid<span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field col col-medium-8 col-large-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"input1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4"</span>&gt;</span>Label:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-8"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"input1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-block-level"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field-help"</span>&gt;</span>Texto de ajuda para o campo acima<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field col col-medium-8 col-large-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"input2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4"</span>&gt;</span>Outro Label:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-8"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"input2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-block-level"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Digite aqui"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field col col-medium-8 col-large-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4"</span>&gt;</span>Label sem campo:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-8"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field-text"</span>&gt;</span>Texto alinhado com o label<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field col col-medium-8 col-large-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-4"</span>&gt;</span>Marque para confirmar:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col col-medium-8"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field col col-medium-8 col-large-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"selectinput"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col"</span>&gt;</span>Label block<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"selectinput"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-block-level"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"1"</span>&gt;</span>Opção 1<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2"</span>&gt;</span>Opção 2<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"3"</span>&gt;</span>Opção 3<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+            <span class="hljs-comment">&lt;!--
+                ATENÇÃO! Para block-level em um spinner precisamos de uma classe especial
+                ".special-input-block-level" no elemento pai
+            --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field col col-medium-8 col-large-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col special-input-block-level"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-widget</span>=<span class="hljs-value">"spinner"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Spinner jQuery UI"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span>Inline<span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field syo-field-inline"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+                Checkbox
+            <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field syo-field-inline"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"input8"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"input8"</span>&gt;</span>Radio<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field syo-field-inline"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span>&gt;</span>
+                Radio
+            <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span>Padrão<span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-field"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Botão"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"reset"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Botão desabilitado"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span> <span class="hljs-attribute">disabled</span>=<span class="hljs-value">"disabled"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
             </div>
-            <strong>Javascript:</strong>
-            <div class="prettyprint">
-                $( ".spinner" ).spinner();
-            </div>
-        </div>
 
-        <h3>Estados de sucesso/erro</h3>
-        <p>
-            É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
-            devida no elemento que você deseja aplicar tal estado:
-        </p>
-        <table class="syo-table">
-            <colgroup>
-                <col class="col-small-5 col-large-3">
-                <col class="col-small-7 col-large-9">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th class="text-right">Classe</th>
-                    <th>Exemplo visual</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-right"><code>.syo-success</code></td>
-                    <td>
-                        <input type="text" class="syo-success" value="Campo text preenchido com sucesso">
-                        <select class="syo-success">
-                            <option selected="selected">Estou selecionado!</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-right"><code>.syo-error</code></td>
-                    <td>
-                        <input type="text" class="syo-error" value="Erro ao preencher este campo!">
-                        <select class="syo-error">
-                            <option>Selecione-me</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <h3>Estados de sucesso/erro</h3>
+            <p>
+                É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
+                devida no elemento que você deseja aplicar tal estado:
+            </p>
+            <table class="syo-table">
+                <colgroup>
+                    <col class="col-small-5 col-large-3">
+                    <col class="col-small-7 col-large-9">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="text-right">Classe</th>
+                        <th>Exemplo visual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-right"><code>.syo-success</code></td>
+                        <td>
+                            <input type="text" class="syo-success" value="Campo text preenchido com sucesso">
+                            <select class="syo-success">
+                                <option selected="selected">Estou selecionado!</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"><code>.syo-error</code></td>
+                        <td>
+                            <input type="text" class="syo-error" value="Erro ao preencher este campo!">
+                            <select class="syo-error">
+                                <option>Selecione-me</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </article>
 
@@ -802,14 +769,11 @@
                     <input type="reset" class="syo-button" value="reset">
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <button type="button" class="syo-button">button</button>
-                    <a href="#" class="syo-button">link</a>
-                    <input type="submit" class="syo-button" value="submit">
-                    <input type="button" class="syo-button" value="input">
-                    <input type="reset" class="syo-button" value="reset">
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span>&gt;</span>link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"submit"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"input"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"reset"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"reset"</span>&gt;</span></pre>
             </div>
 
             <h3>Tamanho Grande</h3>
@@ -821,10 +785,7 @@
                     <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-button syo-button-large"</span>&gt;</span>.syo-button-large<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></pre>
             </div>
 
             <h3>Estado Desabilitado</h3>
@@ -904,46 +865,43 @@
                     </table>
                 </div>
 
-                <strong>HTML:</strong>
-                <div class="prettyprint">
-                    <table class="syo-table">
-                        <colgroup>
-                            <col class="col-medium-3">
-                            <col class="col-medium-3">
-                            <col class="col-medium-6">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>Coluna 1</th>
-                                <th>Coluna 2</th>
-                                <th>Coluna 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                            <tr>
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                            </tr>
-                            <tr class="syo-active">
-                                <td>Texto 1</td>
-                                <td>Texto 2</td>
-                                <td>Texto 3</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Footer 1</td>
-                                <td>Footer 2</td>
-                                <td>Footer 3</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-table"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-medium-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-medium-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-medium-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 1<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 2<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 3<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-active"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Footer 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Footer 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Footer 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
             </div>
 
             <section>
@@ -1003,52 +961,9 @@
                         </table>
                     </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
-                        <table class="syo-table syo-table-striped">
-                            <colgroup>
-                                <col class="col-medium-3">
-                                <col class="col-medium-3">
-                                <col class="col-medium-6">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>Coluna 1</th>
-                                    <th>Coluna 2</th>
-                                    <th>Coluna 3</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>Footer 1</td>
-                                    <td>Footer 2</td>
-                                    <td>Footer 3</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                    <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-table syo-table-striped"</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
                 </div>
             </section>
 
@@ -1103,47 +1018,44 @@
                         </table>
                     </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
-                        <table class="syo-table syo-table-hover">
-                            <colgroup>
-                                <col class="col-medium-3">
-                                <col class="col-medium-3">
-                                <col class="col-medium-6">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>Coluna 1</th>
-                                    <th>Coluna 2</th>
-                                    <th>Coluna 3</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 1</td>
-                                    <td>Texto 2</td>
-                                    <td>Texto 3</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td>Footer 1</td>
-                                    <td>Footer 2</td>
-                                    <td>Footer 3</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                    <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-table syo-table-hover"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-medium-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-medium-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-medium-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 1<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 2<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 3<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Footer 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Footer 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Footer 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
                 </div>
             </section>
 
@@ -1202,45 +1114,42 @@
                         </table>
                     </div>
 
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
-                        <table class="syo-table">
-                            <thead>
-                                <tr>
-                                    <th>Coluna 1</th>
-                                    <th>Coluna 2</th>
-                                    <th>Coluna 3</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="syo-error">Erro nesta célula!</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td class="syo-success">1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr class="syo-success">
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr class="syo-active">
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-table"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 1<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 2<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 3<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-error"</span>&gt;</span>Erro nesta célula!<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-success"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-success"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-active"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
                 </div>
             </section>
 
@@ -1292,37 +1201,34 @@
                                  </tr>
                              </tbody>
                         </table>
-                 </div>
-
-                    <strong>HTML:</strong>
-                    <div class="prettyprint">
-                         <table class="syo-table syo-table-responsive">
-                             <thead>
-                                 <tr>
-                                     <th>Coluna 1</th>
-                                     <th>Coluna 2</th>
-                                     <th>Coluna 3</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 <tr>
-                                     <td data-title="Coluna 1">Texto 1</td>
-                                     <td data-title="Coluna 2">Texto 2</td>
-                                     <td data-title="Coluna 3">Texto 3</td>
-                                 </tr>
-                                 <tr>
-                                     <td data-title="Coluna 1">Texto 1</td>
-                                       <td data-title="Coluna 2">Texto 2</td>
-                                     <td data-title="Coluna 3">Texto 3</td>
-                                 </tr>
-                                 <tr>
-                                     <td data-title="Coluna 1">Texto 1</td>
-                                     <td data-title="Coluna 2">Texto 2</td>
-                                     <td data-title="Coluna 3">Texto 3</td>
-                                 </tr>
-                             </tbody>
-                         </table>
                     </div>
+
+                    <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"syo-table syo-table-responsive"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 1<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 2<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Coluna 3<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 1"</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 2"</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 3"</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 1"</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 2"</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 3"</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 1"</span>&gt;</span>Texto 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 2"</span>&gt;</span>Texto 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">data-title</span>=<span class="hljs-value">"Coluna 3"</span>&gt;</span>Texto 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
                 </div>
             </section>
         </article>
@@ -1341,11 +1247,11 @@
             <div class="syo-field">
                 <label for="icon-search">
                     Pesquisar ícone:
-                    <input type="text" id="icon-search" placeholder="Digite o nome do ícone...">
+                    <input type="text" ng-model="iconSearch" placeholder="Digite o nome do ícone...">
                 </label>
             </div>
 
-            <div id="icons-container"></div>
+            <div icons-container filter="iconSearch"></div>
 
             <p>
                 Para utilizar qualquer um deles, basta colocar a classe desejada em seu elemento. Por exemplo:
@@ -1354,7 +1260,7 @@
                 <div class="syo-docs-example-inner">
                     <i class="icon-home"></i>
                 </div>
-                <div class="prettyprint"><i class="icon-home"></i></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-home"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span></pre>
             </div>
 
             <h3>Icone Giratório</h3>
@@ -1367,7 +1273,7 @@
                 <div class="syo-docs-example-inner">
                     <i class="icon-spinner icon-spin"></i>
                 </div>
-                <div class="prettyprint"><i class="icon-spinner icon-spin"></i></div>
+                <pre ng-non-bindable class="highlight language-xml"><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-spinner icon-spin"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span></pre>
             </div>
         </article>
 
@@ -1486,11 +1392,11 @@
 
             <h3>.syo-hidden</h3>
             <p>Oculta um elemento da página.</p>
-            <div class="prettyprint"><div class="syo-hidden"></div></div>
+            <div class="highlight"><div class="syo-hidden"></div></div>
 
             <h3>.clearfix</h3>
             <p>Limpa o <code>float</code> em qualquer elemento.</p>
-            <div class="prettyprint"><div class="clearfix"></div></div>
+            <div class="highlight"><div class="clearfix"></div></div>
 
             <h3>.text-overflow</h3>
             <p>
@@ -1498,7 +1404,7 @@
                 <span class='syo-badge syo-warning'>Importante</span> Elementos que não são <code>display: block</code>
                 precisarão ter uma largura definida.
             </p>
-            <div class="prettyprint">
+            <div class="highlight">
                 <div class="text-overflow">Texto muito longo para este container</div>
                 <!-- Na exibição: "Texto muito longo para es..." -->
             </div>
@@ -1531,11 +1437,10 @@
         </footer>
 
         
-        <script src="assets/vendor/prettify/prettify.js"></script>
-        <script src="assets/vendor/modernizr.js"></script>
         <script src="assets/vendor/jquery.js"></script>
         <script src="assets/vendor/jquery.ui.js"></script>
-        <script src="assets/vendor/jquery.mobile.js"></script>
+        <script src="assets/vendor/angular.js"></script>
+        <script src="dist/syoAngular.js"></script>
         <script src="assets/scripts/main.js"></script>
     </body>
 </html>
