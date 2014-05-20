@@ -1,5 +1,5 @@
 /*!
- * <%= pkg.title || pkg.name %> v<%= pkg.version %> - <%= grunt.template.today('isoDate') %>
+ * <%= pkg.title || pkg.name %> v<%= pkg.version %>
  * <%= pkg.description %>
  * <%= pkg.projectUrl %>
  *
