@@ -79,11 +79,10 @@
 							element.on( currentEvent.in, open );
 							element.on( currentEvent.out, close );
 						} else {
-							element.on( currentEvent.in, function() {
-								controller.isOpen() ? close() : open();
+							element.on( currentEvent.in, function( evt ) {
+								controller.isOpen() ? close( evt ) : open( evt );
 							});
 						}
-
 					}
 				});
 
@@ -121,7 +120,9 @@
 				// Funções utilitárias
 				// ---------------------------------------------------------------------------------
 				// Abre o popover. Se o conteúdo do mesmo ainda não foi atribuido, faz isso agora
-				function open() {
+				function open( evt ) {
+					evt.stopPropagation();
+
 					if ( !loadedContent ) {
 						loadedContent = true;
 						$templatePromise( popoverScope.template, popoverScope.templateUrl ).then(function( template ) {
@@ -159,7 +160,8 @@
 				}
 
 				// Fecha o popover.
-				function close() {
+				function close( evt ) {
+					evt.stopPropagation();
 					controller.close();
 				}
 			};
