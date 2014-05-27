@@ -595,7 +595,7 @@
 				var options = that.option();
 
 				// Garante que max-width e max-height fiquem consistentes
-				var widget = $element.dialog( "widget" ).css({
+				$element.dialog( "widget" ).css({
 					"max-width": options.maxWidth
 				});
 
@@ -684,7 +684,7 @@
 		definition.template = "<div><div ng-transclude></div></div>";
 		definition.scope = Dialog.options;
 
-		definition.link = function( $scope, $element, $attrs ) {
+		definition.link = function( $scope, $element ) {
 			var options = getOptions( $scope );
 			$element.dialog( options );
 
@@ -905,7 +905,7 @@
 !function( $, ng ) {
 	"use strict";
 
-	ng.module( "syonet" ).directive( "syoMaskOverride", [ "$parse", function( $parse ) {
+	ng.module( "syonet" ).directive( "syoMaskOverride", function() {
 		var definition = {};
 
 		definition.restrict = "A";
@@ -933,7 +933,7 @@
 		};
 
 		return definition;
-	}]);
+	});
 
 }( jQuery, angular );
 /**
@@ -947,6 +947,7 @@
 	"use strict";
 
 	ng.module( "syonet" ).directive( "syoMonthpicker", function() {
+		/* jshint boss: true */
 		var definition = {};
 
 		definition.replace = true;
@@ -1227,7 +1228,8 @@
 			definition.scope = {};
 
 			definition.link = function( scope, element, attr ) {
-				var $popover, template, popoverScope, controller, model;
+				/* jshint shadow: true, unused: false */
+				var $popover, popoverScope, controller, model;
 				var loadedContent = false;
 				var currentEvent = {
 					in: "click",
@@ -1281,11 +1283,10 @@
 							element.on( currentEvent.in, open );
 							element.on( currentEvent.out, close );
 						} else {
-							element.on( currentEvent.in, function() {
-								controller.isOpen() ? close() : open();
+							element.on( currentEvent.in, function( evt ) {
+								controller.isOpen() ? close( evt ) : open( evt );
 							});
 						}
-
 					}
 				});
 
@@ -1323,7 +1324,9 @@
 				// Funções utilitárias
 				// ---------------------------------------------------------------------------------
 				// Abre o popover. Se o conteúdo do mesmo ainda não foi atribuido, faz isso agora
-				function open() {
+				function open( evt ) {
+					evt.stopPropagation();
+
 					if ( !loadedContent ) {
 						loadedContent = true;
 						$templatePromise( popoverScope.template, popoverScope.templateUrl ).then(function( template ) {
@@ -1361,7 +1364,8 @@
 				}
 
 				// Fecha o popover.
-				function close() {
+				function close( evt ) {
+					evt.stopPropagation();
 					controller.close();
 				}
 			};
