@@ -225,3 +225,30 @@ textarea:invalid {
   line-height: @input-height;
   vertical-align: middle;
 }
+
+/* =================================================================================================================
+   Forms - Formatação especial input
+   ================================================================================================================= */
+
+.syo-input-icon {
+  @icon-size: ( @padding-base-horizontal * 2 ) + @computed-line-height;
+
+  position: relative;
+
+  input {
+    &:first-child { padding-right: @icon-size; }
+    &:last-child  { padding-left: @icon-size; }
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    position: absolute;
+    top: 0;
+    width: @icon-size;
+    padding: @padding-base-vertical 0;
+    text-align: center;
+
+    &:first-child { left: 0; }
+    &:last-child  { right: 0; }
+  }
+}

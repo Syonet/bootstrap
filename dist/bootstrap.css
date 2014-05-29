@@ -1856,6 +1856,34 @@ textarea:invalid:focus {
   vertical-align: middle;
 }
 /* =================================================================================================================
+   Forms - Formatação especial input
+   ================================================================================================================= */
+.syo-input-icon {
+  position: relative;
+}
+.syo-input-icon input:first-child {
+  padding-right: 40px;
+}
+.syo-input-icon input:last-child {
+  padding-left: 40px;
+}
+.syo-input-icon [class^="icon-"],
+.syo-input-icon [class*=" icon-"] {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  padding: 5px 0;
+  text-align: center;
+}
+.syo-input-icon [class^="icon-"]:first-child,
+.syo-input-icon [class*=" icon-"]:first-child {
+  left: 0;
+}
+.syo-input-icon [class^="icon-"]:last-child,
+.syo-input-icon [class*=" icon-"]:last-child {
+  right: 0;
+}
+/* =================================================================================================================
    Tabelas
    ================================================================================================================= */
 table {
