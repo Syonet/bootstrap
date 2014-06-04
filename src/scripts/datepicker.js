@@ -16,7 +16,7 @@
 
 		definition.link = function( $scope, $element, $attr, ngModel ) {
 			var $button;
-			var options = $scope.$eval( $attr.syoDatepicker );
+			var options = $scope.$eval( $attr.syoDatepicker ) || {};
 			var oldFn = options.onSelect;
 
 			if ( ngModel ) {
