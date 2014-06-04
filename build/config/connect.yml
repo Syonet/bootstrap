@@ -1,5 +1,6 @@
 main:
   options:
+    hostname: "*"
     port: 8001
     livereload: "<%= liveReload %>"
     keepalive: true
