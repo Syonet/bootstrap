@@ -1,0 +1,21 @@
+/* =================================================================================================================
+   Datetime
+   ================================================================================================================= */
+
+.syo-datetime {
+  &:extend( input[type="text"] );
+}
+
+input.syo-datetime-input {
+  height: @input-height - ( @padding-base-vertical * 2 );
+  min-height: @input-height - ( @padding-base-vertical * 2 );
+  padding: 0;
+  border: none;
+
+  &,
+  &:hover,
+  &:focus {
+    background: transparent;
+    .box-shadow( none );
+  }
+}

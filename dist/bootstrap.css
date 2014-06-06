@@ -1588,7 +1588,8 @@ input[type="number"],
 input[type="range"],
 input[type="color"],
 select,
-textarea {
+textarea,
+.syo-datetime {
   min-height: 30px;
   height: 30px;
   padding: 5px 5px;
@@ -4314,6 +4315,22 @@ body.syo-body-navbar {
 .syo-overlay-content .syo-progressbar {
   -webkit-box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
+}
+/* =================================================================================================================
+   Datetime
+   ================================================================================================================= */
+input.syo-datetime-input {
+  height: 20px;
+  min-height: 20px;
+  padding: 0;
+  border: none;
+}
+input.syo-datetime-input,
+input.syo-datetime-input:hover,
+input.syo-datetime-input:focus {
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 /* =================================================================================================================
    Animations
