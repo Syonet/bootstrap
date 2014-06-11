@@ -1809,10 +1809,16 @@ select.syo-success:focus {
   border-color: #3d8b3d;
   color: #5cb85c;
 }
+input.ng-invalid,
+select.ng-invalid,
 input.syo-error,
 select.syo-error,
+input.ng-invalid:hover,
+select.ng-invalid:hover,
 input.syo-error:hover,
 select.syo-error:hover,
+input.ng-invalid:focus,
+select.ng-invalid:focus,
 input.syo-error:focus,
 select.syo-error:focus {
   border-color: #b52b27;
