@@ -1,3 +1,8 @@
+publish:
+  - "bump-only"
+  - "default"
+  - "bump-commit"
+
 default:
   - "icons"   # Gera o mapeamento de icones
   - "less"    # Compila os arquivos LESS
