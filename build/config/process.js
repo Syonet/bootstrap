@@ -4,7 +4,8 @@ module.exports = {
 			"src/images/*",
 
 			// Processa novamente os arquivos JS/CSS para a inclusão do banner
-			"dist/*.css"
+			"dist/*.css",
+			"dist/*.js"
 		],
 		strip: /^dist|^src/,
 		dest: "dist"
