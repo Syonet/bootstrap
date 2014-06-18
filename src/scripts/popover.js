@@ -156,7 +156,7 @@
 				}
 
 				function reposition() {
-					controller.position();
+					controller && controller.position();
 				}
 
 				// Fecha o popover.
