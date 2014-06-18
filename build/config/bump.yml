@@ -1,0 +1,21 @@
+options:
+  files:
+    - package.json
+
+  updateConfigs:
+    - package
+
+  commit: true
+  commitMessage: "Release %VERSION%"
+  commitFiles:
+    - package.json
+    - dist/bootstrap.css
+    - dist/jquery.ui.css
+    - dist/syoAngular.js
+
+  createTag: true
+  tagName: "%VERSION%"
+  tagMessage: "Release %VERSION%"
+
+  push: true
+  pushTo: origin
