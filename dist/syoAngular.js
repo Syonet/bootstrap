@@ -1,3 +1,12 @@
+/*!
+ * Syonet Bootstrap v0.2.3
+ * O conjunto de ferramentas front-end da Syonet
+ * http://syonet.github.com/bootstrap/
+ *
+ * Created by Syonet CRM <syonet@syonet.com>
+ * http://www.syonet.com
+ */
+
 !function( ng ) {
 	"use strict";
 	ng.module( "syonet", [ "ng" ] );
@@ -1360,7 +1369,7 @@
 				}
 
 				function reposition() {
-					controller.position();
+					controller && controller.position();
 				}
 
 				// Fecha o popover.
