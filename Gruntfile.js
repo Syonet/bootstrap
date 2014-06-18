@@ -7,7 +7,6 @@ module.exports = function( grunt ) {
 	require( "load-grunt-config" )( grunt, {
 		configPath: require( "path" ).resolve( "build/config" ),
 		config: {
-			pkg: grunt.file.readJSON( "package.json" ),
 			env: env,
 			liveReload: env === "production" ? false : 35729
 		}

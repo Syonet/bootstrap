@@ -1,9 +1,9 @@
 /*!
- * <%= pkg.title || pkg.name %> v<%= pkg.version %>
- * <%= pkg.description %>
- * <%= pkg.projectUrl %>
+ * <%= package.title || package.name %> v<%= package.version %>
+ * <%= package.description %>
+ * <%= package.projectUrl %>
  *
- * Created by <%= pkg.author.name %> <<%= pkg.author.email %>>
- * <%= pkg.homepage %>
+ * Created by <%= package.author.name %> <<%= package.author.email %>>
+ * <%= package.homepage %>
  */
 
