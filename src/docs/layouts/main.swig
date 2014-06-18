@@ -49,16 +49,16 @@
             <div class="container">
                 <div class="row">
                     <section class="col col-medium-6 text-right">
-                        <a href="{{ pkg.homepage }}">
+                        <a href="{{ package.homepage }}">
                             <img src="assets/images/logo.png" alt="Syonet CRM">
                         </a>
                     </section>
                     <section class="col col-medium-6 text-left">
-                        <p>Criado por <strong>{{ pkg.author.name }}</strong></p>
+                        <p>Criado por <strong>{{ package.author.name }}</strong></p>
                         <ul class="inline">
-                            <li><a href="{{ pkg.homepage }}">Site</a></li>
-                            <li><a href="{{ pkg.github }}">GitHub</a></li>
-                            <li><a href="{{ pkg.blog }}">Blog</a></li>
+                            <li><a href="{{ package.homepage }}">Site</a></li>
+                            <li><a href="{{ package.github }}">GitHub</a></li>
+                            <li><a href="{{ package.blog }}">Blog</a></li>
                         </ul>
                     </section>
                 </div>

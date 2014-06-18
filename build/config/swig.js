@@ -1,7 +1,7 @@
 module.exports = {
 	options: {
 		data: {
-			pkg: "<%= pkg %>"
+			package: "<%= package %>"
 		},
 		tags: require( "../swig-tags" )
 	},
