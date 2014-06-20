@@ -8,13 +8,13 @@
 	"forin": false,
 	"noempty": true,
 	"nonew": true,
-"unused": true,
-"expr": true,
-"maxlen": 120,
-"validthis": true,
+	"unused": true,
+	"expr": true,
+	"maxlen": 120,
+	"validthis": true,
 
-"browser": true,
-"jquery": true,
-"node": true,
-"predef": [ "angular" ]
+	"browser": true,
+	"jquery": true,
+	"node": true,
+	"predef": [ "angular" ]
 }
