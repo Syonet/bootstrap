@@ -1,6 +1,6 @@
 {
 	"strict": true,
-	"bitwise": true,
+	"bitwise": false,
 	"undef": true,
 	"curly": true,
 	"eqeqeq": true,
