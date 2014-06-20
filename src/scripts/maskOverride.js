@@ -18,16 +18,27 @@
 
 		definition.link = function( $scope, $element, $attr, ngModel ) {
 			var viewValue, oldFn;
+			var mask = $attr.uiMask || "";
+			var optional = mask.indexOf( "?" );
 
-			if ( !$attr.uiMask ) {
+			if ( !mask ) {
 				return;
 			}
 
 			oldFn = ngModel.$setViewValue;
 			ngModel.$setViewValue = function( val ) {
-				oldFn.call( this, val );
+				var unfilledIndex;
 
+				oldFn.call( this, val );
 				viewValue = ngModel.$viewValue;
+
+				// Se tem parte da mascara que é opcional e não foi preenchida, corta até ela
+				// e fica com o que tem antes
+				unfilledIndex = viewValue.indexOf( "_", optional );
+				if ( ~optional && ~unfilledIndex ) {
+					viewValue = viewValue.substring( 0, unfilledIndex );
+				}
+
 				ngModel.$parsers.push(function() {
 					return viewValue;
 				});
