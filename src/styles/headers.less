@@ -2,9 +2,9 @@
    Headers
    ================================================================================================================= */
 
-.syo-header {
+.syo-header,
+.syo-subheader {
   display: block;
-  margin-bottom: @computed-line-height;
 
   > h1,
   > h2,
@@ -16,11 +16,19 @@
   }
 }
 
-.syo-header.syo-header-ruler {
+.syo-header {
+  margin-bottom: @computed-line-height;
+}
+
+.syo-subheader {
+  margin-bottom: @computed-line-height / 3;
+}
+
+.syo-header-ruler {
   border-bottom: 1px solid @gray;
 }
 
-.syo-header.syo-header-bar {
+.syo-header-bar {
   padding: @computed-line-height / 2;
   background-color: @brand-default;
 }
