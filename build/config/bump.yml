@@ -9,9 +9,7 @@ options:
   commitMessage: "Release %VERSION%"
   commitFiles:
     - package.json
-    - dist/bootstrap.css
-    - dist/jquery.ui.css
-    - dist/syoAngular.js
+    - dist/**/*
 
   createTag: true
   tagName: "%VERSION%"
