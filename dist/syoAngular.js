@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.2.3
+ * Syonet Bootstrap v0.3.0
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
