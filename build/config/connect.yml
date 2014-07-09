@@ -1,6 +1,10 @@
-main:
-  options:
+dev:
+  options: &DEV-OPTIONS
     hostname: "*"
     port: 8001
     livereload: "<%= liveReload %>"
+
+docs:
+  options:
+    << : *DEV-OPTIONS
     keepalive: true

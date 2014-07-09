@@ -1,3 +1,11 @@
+dev:
+  - "default"     # Faz build inicial de tudo
+  - "connect:dev" # Inicia o servidor de desenvolvimento
+  - "watch"       # Observa as alterações
+
+webserver:
+  - "connect:docs"
+
 publish:
   - "bump-only"
   - "default"
