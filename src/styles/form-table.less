@@ -1,0 +1,104 @@
+/* ==============================================================================================
+   Form Table
+   ============================================================================================== */
+
+.syo-form-table {
+  margin-bottom: @computed-line-height;
+  border: 1px solid @table-border-color;
+  .border-radius( @base-border-radius );
+}
+
+.syo-form-table legend {
+  display: block;
+  width: calc( ~"100% + 3px" );
+  margin: -1px -1px 0;
+  padding: @padding-large-vertical 0;
+  border: 1px solid @table-border-color;
+  font-size: 1em;
+  text-align: center;
+  #gradient .vertical( @form-table-legend-bg-end, @form-table-legend-bg-start );
+  .border-radius-top( @base-border-radius );
+  .border-radius-bottom( 0 );
+
+  @media ( max-width: @screen-tiny-max ) {
+    width: calc( ~"100% + 2px" );
+    margin: -1px;
+  }
+}
+
+.syo-form-table .syo-field {
+  &:extend( .flex-row all );
+  flex-wrap: wrap;
+  margin-bottom: 0;
+
+  > * {
+    padding-top: @padding-large-vertical;
+    padding-bottom: @padding-large-vertical;
+
+    &:after {
+      content: " ";
+      white-space: pre;
+    }
+  }
+
+  @media ( min-width: @screen-small ) {
+    margin-right: -1px;
+
+    &:last-child {
+      margin-bottom: -1px;
+    }
+
+    > * {
+      border-right: 1px solid @table-border-color;
+      border-bottom: 1px solid @table-border-color;
+    }
+  }
+
+  @media ( max-width: @screen-tiny-max ) {
+    display: block;
+
+    > * {
+      width: 100%;
+      border-top: 1px solid @table-border-color;
+    }
+  }
+}
+
+.syo-form-table .syo-field > label {
+  word-wrap: break-word;
+  #gradient .brand();
+}
+
+.syo-form-table > legend,
+.syo-form-table .syo-field > label {
+  color: @form-table-color;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.syo-form-table .syo-field {
+  label,
+  .syo-field-text {
+    line-height: @computed-line-height;
+
+    &.col {
+      text-align: left;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    height: @component-height * @component-small-factor;
+    min-height: @component-height * @component-small-factor;
+    padding: @padding-small-vertical ( @padding-small-horizontal / 2 );
+  }
+
+  input,
+  select,
+  textarea,
+  .syo-radio,
+  .syo-checkbox {
+    margin: -@padding-large-vertical 0;
+  }
+}
