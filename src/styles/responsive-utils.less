@@ -49,16 +49,11 @@
   .visible-medium-above { .responsive-invisible(); }
 }
 
-/* Small e acima */
-@media ( min-width: @screen-small ) {
-  .visible-small-above { .responsive-visible(); }
-  .hidden-small-above  { .responsive-invisible(); }
-}
-
 /* Medium e abaixo */
 @media ( max-width: @screen-medium-max ) {
   .visible-medium-below { .responsive-visible(); }
   .hidden-medium-below  { .responsive-invisible(); }
+  .visible-large-above  { .responsive-invisible(); }
 }
 
 /* Medium e acima */
@@ -66,4 +61,11 @@
   .visible-medium-above { .responsive-visible(); }
   .hidden-medium-above  { .responsive-invisible(); }
   .visible-small-below  { .responsive-invisible(); }
+}
+
+/* Large e acima */
+@media ( min-width: @screen-large ) {
+  .visible-large-above  { .responsive-visible(); }
+  .hidden-large-above   { .responsive-invisible(); }
+  .visible-medium-below { .responsive-invisible(); }
 }

@@ -380,6 +380,8 @@
 .responsive-visible() {
   display: block !important;
 
+  col& { display: table-column !important; }
+
   tr& { display: table-row !important; }
 
   th&,
@@ -389,8 +391,8 @@
 .responsive-invisible() {
   display: none !important;
 
-  tr& { display: none !important; }
-
+  col&,
+  tr&,
   th&,
   td& { display: none !important; }
 }
