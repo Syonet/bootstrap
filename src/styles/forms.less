@@ -100,19 +100,18 @@ input[type="radio"] {
    ---------------------------------- */
 
 fieldset {
-  margin: 2px 2px @computed-line-height / 2;
-  padding: .5em;
-  border: 1px solid @gray-light;
-  .border-radius( @border-radius-large );
+  margin: 0 0 @computed-line-height / 2;
+  padding: 0;
+  border: none;
 }
 
 legend {
-  padding: 0 8px;
-  border: 1px solid @gray-light;
-  font-size: 80%;
+  display: block;
+  width: 100%;
+  margin-bottom: @computed-line-height / 2;
+  border-bottom: 1px solid @gray-light;
+  color: @gray;
   font-weight: bold;
-  background-color: @gray-lighter;
-  .border-radius( @base-border-radius );
 }
 
 /*
