@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.3.0
+ * Syonet Bootstrap v0.4.0
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -493,14 +493,14 @@
 
 				$table.find( "> tbody > tr, > thead > tr" ).not( ".syo-datagrid-grip-row" ).each(function() {
 					var span = 0;
-					$( this ).children( "td, th" ).each(function() {
+					$( this ).children( "td, th" ).filter( ":visible" ).each(function() {
 						span += +$( this ).attr( "colspan" ) || 1;
 					});
 
 					cellCount = Math.max( span, cellCount );
 				});
 
-				$table.find( "> colgroup col" ).each(function() {
+				$table.find( "> colgroup col:visible" ).each(function() {
 					colCount += +$( this ).attr( "span" ) || 1;
 				});
 
