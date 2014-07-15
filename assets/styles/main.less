@@ -63,8 +63,8 @@ div.prettyprint { /* 2 */
 
 .syo-docs-example {
   margin: @computed-line-height 0;
-  padding: ( @computed-line-height * 1.5 ) 0 0;
-  border: 1px solid @gray-light;
+  padding: ( @component-height * @component-large-factor ) 0 0;
+  border: 1px solid @gray-lighter;
   background: #FDFDFD;
   .border-radius( @base-border-radius );
   .box-shadow( 0 1px 4px fade( #000, 10% ) );
@@ -76,14 +76,12 @@ div.prettyprint { /* 2 */
     // @computed-line-height * 1.5 (padding-top do container) - 1px da borda
     top: -( ( @computed-line-height * 1.5 ) - 1px );
     left: -1px;
-    padding: 5px 10px;
-    border: 1px solid @gray-light;
+    padding: ( @padding-large-vertical * 2 ) ( @padding-large-horizontal * 2 );
     line-height: @line-height;
-    color: @gray-dark;
-    font-size: 11px;
+    color: @gray-light;
+    font-size: 12px;
     font-weight: bold;
-    background: @gray-lighter;
-    content: "Exemplo";
+    content: "EXEMPLO";
     .border-radius( @base-border-radius 0 @base-border-radius 0 );
   }
 

@@ -57,8 +57,8 @@ div.prettyprint {
    ================================================================================================================= */
 .syo-docs-example {
   margin: 20px 0;
-  padding: 30px 0 0;
-  border: 1px solid #aaaaaa;
+  padding: 37.5px 0 0;
+  border: 1px solid #eeeeee;
   background: #FDFDFD;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -69,14 +69,12 @@ div.prettyprint {
   position: relative;
   top: -29px;
   left: -1px;
-  padding: 5px 10px;
-  border: 1px solid #aaaaaa;
+  padding: 12.5px 25px;
   line-height: 15px;
-  color: #444444;
-  font-size: 11px;
+  color: #aaaaaa;
+  font-size: 12px;
   font-weight: bold;
-  background: #eeeeee;
-  content: "Exemplo";
+  content: "EXEMPLO";
   -webkit-border-radius: 4px 0 4px 0;
   border-radius: 4px 0 4px 0;
 }
