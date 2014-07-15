@@ -1,4 +1,13 @@
 /*!
+ * Syonet Bootstrap v0.3.0
+ * O conjunto de ferramentas front-end da Syonet
+ * http://syonet.github.com/bootstrap/
+ *
+ * Created by Syonet CRM <syonet@syonet.com>
+ * http://www.syonet.com
+ */
+
+/*!
  * Syonet Bootstrap v0.4.0
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
