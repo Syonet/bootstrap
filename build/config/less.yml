@@ -3,6 +3,7 @@ main:
     "dist/bootstrap.css":
       - "src/styles/vendor/normalize.css"
       - "src/styles/bootstrap.less"
+      - "src/styles/vendor/angular-csp.css"
 
     "dist/jquery.ui.css":
       - "src/styles/vendor/jquery-ui/*.core.css"
