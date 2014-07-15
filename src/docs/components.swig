@@ -9,6 +9,7 @@
             <li><a href="#blocks">Blocos</a></li>
             <li><a href="#buttonset">Buttonset</a></li>
             <li><a href="#checklist">Check List</a></li>
+            <li><a href="#form-table">Form Table</a></li>
             <li><a href="#header">Header</a></li>
             <li><a href="#input-row">Input Row</a></li>
             <li><a href="#nav">Nav</a></li>
@@ -305,6 +306,69 @@
                 checkboxes/radios, bem como um <code>&lt;label&gt;</code> que referencia tal valor no
                 atributo <code>for</code>, assim como está no código do exemplo anterior.
             </p>
+        </article>
+
+        <!-- Form Table -->
+        <article id="form-table">
+            <div class="syo-header syo-header-ruler">
+                <h2>Form Table</h2>
+            </div>
+
+            <p>
+                O form table é um componente para uma exibição de fichas complexas, com muitos campos,
+                no estilo rótulo/valor. Também aceita controles de formulário nas células de valor.
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <form class="syo-form-table">
+                        <legend>Título do formulário</legend>
+
+                        <div class="syo-field">
+                            <label class="col col-medium-2 col-small-4">Label:</label>
+                            <div class="col col-medium-4 col-small-8 syo-field-text">
+                                Valor da célula
+                            </div>
+
+                            <label class="col col-medium-2 col-small-4">Label:</label>
+                            <div class="col col-medium-4 col-small-8">
+                                <input type="text">
+                            </div>
+                        </div>
+
+                        <div class="syo-field">
+                            <label class="col col-medium-2 col-small-4">Label:</label>
+                            <div class="col col-medium-10 col-small-8 syo-field-text">
+                                Valor da célula
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% highlight xml %}
+                    <form class="syo-form-table">
+                        <legend>Título do formulário</legend>
+
+                        <div class="syo-field">
+                            <label class="col col-medium-2 col-small-4">Label:</label>
+                            <div class="col col-medium-4 col-small-8 syo-field-text">
+                                Valor da célula
+                            </div>
+
+                            <label class="col col-medium-2 col-small-4">Label:</label>
+                            <div class="col col-medium-4 col-small-8">
+                                <input type="text">
+                            </div>
+                        </div>
+
+                        <div class="syo-field">
+                            <label class="col col-medium-2 col-small-4">Label:</label>
+                            <div class="col col-medium-10 col-small-8 syo-field-text">
+                                Valor da célula
+                            </div>
+                        </div>
+                    </form>
+                {% endhighlight %}
+            </div>
         </article>
 
         <!-- syo-header -->
