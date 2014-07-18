@@ -21,7 +21,7 @@
 		definition.controllerAs = "$notification";
 
 		definition.link = function( scope, element, attr, $notification ) {
-			var container = allocateNotification( element );
+			allocateNotification( element );
 
 			// Garante que o timeout da notificação nunca seja menor que 0 ms
 			scope.timeout = Math.max( +scope.timeout, 0 );
@@ -83,7 +83,7 @@
 		}
 	});
 
-	syo.controller( "NotificationController", [ "$scope", "$element", function( $scope, $element ) {
+	syo.controller( "NotificationController", [ "$scope", function( $scope ) {
 		var ctrl = this;
 
 		ctrl.close = function() {
@@ -96,8 +96,7 @@
 	syo.factory( "$notification", [
 		"$rootScope",
 		"$compile",
-		"$timeout",
-		function( $rootScope, $compile, $timeout ) {
+		function( $rootScope, $compile ) {
 			var notification = {};
 
 			notification.default = $.proxy( createNotification, null, "" );
