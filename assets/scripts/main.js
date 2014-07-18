@@ -3,6 +3,10 @@
 
 	var module = ng.module( "bootstrap.docs", [ "syonet" ] );
 
+	module.controller( "DocsController", [ "$scope", "$notification", function( $scope, $notification ) {
+		$scope.$notification = $notification;
+	}]);
+
 	module.directive( "iconsContainer", function( $http ) {
 		var definition = {};
 

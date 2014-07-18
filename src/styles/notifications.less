@@ -1,0 +1,37 @@
+/* ==============================================================================================
+   Notifications
+   ============================================================================================== */
+
+.syo-notification {
+  position: absolute;
+  top: 0;
+  z-index: @notification-zindex;
+  display: block;
+  width: 100%;
+  padding: ( @padding-large-vertical * 2 ) ( @grid-gutter-width / 2 );
+  color: @text-color;
+  text-align: center;
+  background: @brand-default;
+  .box-shadow( 0 0 3px 1px fade( #000, 5% ) );
+
+  > div {
+    display: inline;
+  }
+}
+
+.syo-notification-container {
+  position: relative;
+}
+
+/* Notifications - Estilos
+   ----------------------- */
+
+.syo-notification.syo-success {
+  color: #fff;
+  background: @brand-success;
+}
+
+.syo-notification.syo-error {
+  color: #fff;
+  background: @brand-error;
+}

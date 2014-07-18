@@ -4512,6 +4512,38 @@ body.syo-body-navbar {
   margin: -6.25px 0;
 }
 /* ==============================================================================================
+   Notifications
+   ============================================================================================== */
+.syo-notification {
+  position: absolute;
+  top: 0;
+  z-index: 1050;
+  display: block;
+  width: 100%;
+  padding: 12.5px 15px;
+  color: #222222;
+  text-align: center;
+  background: #eeeeee;
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05);
+}
+.syo-notification > div {
+  display: inline;
+}
+.syo-notification-container {
+  position: relative;
+}
+/* Notifications - Estilos
+   ----------------------- */
+.syo-notification.syo-success {
+  color: #fff;
+  background: #5cb85c;
+}
+.syo-notification.syo-error {
+  color: #fff;
+  background: #d9534f;
+}
+/* ==============================================================================================
    Animations
    ============================================================================================== */
 .fade {

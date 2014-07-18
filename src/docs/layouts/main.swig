@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="dist/jquery.ui.css">
         <link rel="stylesheet" href="assets/styles/main.css">
     </head>
-    <body class="syo-body-navbar">
+    <body class="syo-body-navbar" ng-controller="DocsController">
         {# Navbar #}
         <div class="syo-navbar syo-navbar-fixed-top" id="topbar">
             <div class="syo-navbar-inner container">
@@ -35,6 +35,12 @@
                         <a href="components.html">
                             <i class="icon-flag"></i>
                             Componentes
+                        </a>
+                    </li>
+                    <li {{ macros.activeClass( 'angularjs' ) }}>
+                        <a href="angularjs.html">
+                            <i class="icon-cog"></i>
+                            Angular.js
                         </a>
                     </li>
                 </ul>

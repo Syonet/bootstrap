@@ -21,8 +21,6 @@
                 <ul class="syo-nav">
                     <li 
     
-        class="syo-active"
-    
 >
                         <a href="index.html">
                             <i class="icon-home"></i>
@@ -47,6 +45,8 @@
                     </li>
                     <li 
     
+        class="syo-active"
+    
 >
                         <a href="angularjs.html">
                             <i class="icon-cog"></i>
@@ -59,17 +59,62 @@
         </div>
 
         
-	<div class="home">
-        <div class="home-content">
-            <h1>Syonet Bootstrap</h1>
-            <p class="lead">O conjunto de ferramentas front-end da Syonet.</p>
-            <div class="row">
-                <iframe src="http://ghbtns.com/github-btn.html?user=syonet&amp;repo=bootstrap&amp;type=watch&amp;count=true"
-                        style="width:110px;height:20px;border:0"></iframe>
-                <iframe src="http://ghbtns.com/github-btn.html?user=syonet&amp;repo=bootstrap&amp;type=fork&amp;count=true"
-                        style="width:95px;height:20px;border:0"></iframe>
+	
+	<header class="header">
+		<div class="container">
+			<h1>Syonet Bootstrap</h1>
+			<p class="lead">O conjunto de ferramentas front-end da Syonet.</p>
+			<div class="row">
+				<iframe src="http://ghbtns.com/github-btn.html?user=syonet&amp;repo=bootstrap&amp;type=watch&amp;count=true"
+				        style="width:110px;height:20px;border:0"></iframe>
+				<iframe src="http://ghbtns.com/github-btn.html?user=syonet&amp;repo=bootstrap&amp;type=fork&amp;count=true"
+				        style="width:95px;height:20px;border:0"></iframe>
+			</div>
+		</div>
+	</header>
+
+	
+	<div class="container container-vertical" role="main">
+		<div class="row" style="position: relative">
+			
+    <aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
+        <ul class="syo-nav syo-nav-list" id="sidebar">
+            <li class="syo-nav-header"><i class="icon-flag"></i> Angular.js</li>
+            <li><a href="#notifications">Notificações</a></li>
+        </ul>
+    </aside>
+
+    <div class="col col-small-9 col-large-10">
+        <article id="notifications">
+            <div class="syo-header syo-header-ruler">
+                <h2>Notificações</h2>
             </div>
-        </div>
+
+            <p>É possível adicionar notificações à página usando o factory <code>$notification</code>.</p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button class="syo-button"
+                            ng-click="$notification.default( 'Esta é uma notificação padrão.' )">
+                        Enviar notificação padrão
+                    </button>
+                    <button class="syo-button"
+                            ng-click="$notification.success( 'Esta é uma notificação de sucesso.' )">
+                        Enviar notificação de sucesso
+                    </button>
+                    <button class="syo-button"
+                            ng-click="$notification.error( 'Esta é uma notificação de erro.' )">
+                        Enviar notificação de erro
+                    </button>
+                </div>
+            </div>
+            <pre ng-non-bindable class="highlight language-javascript">$notification.default( <span class="hljs-string">'Esta é uma notificação padrão.'</span> );
+$notification.success( <span class="hljs-string">'Esta é uma notificação de sucesso.'</span> );
+$notification.error( <span class="hljs-string">'Esta é uma notificação de erro.'</span> );</pre>
+        </article>
+    </div>
+
+		</div>
 	</div>
 
 

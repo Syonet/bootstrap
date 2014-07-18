@@ -1,4 +1,5 @@
 {% extends "layouts/main.swig" %}
+{% set active = "home" %}
 
 {% block body %}
 	<div class="home">
