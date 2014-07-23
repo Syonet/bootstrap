@@ -5,9 +5,10 @@
 .syo-notification {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: @notification-zindex;
   display: block;
-  width: 100%;
   padding: ( @padding-large-vertical * 2 ) ( @grid-gutter-width / 2 );
   color: @text-color;
   text-align: center;
@@ -16,6 +17,11 @@
 
   > div {
     display: inline;
+  }
+
+  > a {
+    color: @text-color;
+    text-decoration: underline;
   }
 }
 
@@ -29,9 +35,13 @@
 .syo-notification.syo-success {
   color: #fff;
   background: @brand-success;
+
+  a { color: #fff; }
 }
 
 .syo-notification.syo-error {
   color: #fff;
   background: @brand-error;
+
+  a { color: #fff; }
 }
