@@ -74,8 +74,6 @@
 			var height = element.outerHeight();
 
 			element.fadeOut( 500, function() {
-				var container = element.parent();
-
 				element.nextAll( ".syo-notification" ).each(function() {
 					var other = $( this );
 					var top = other.cssUnit( "top" )[ 0 ];
