@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.5.0
+ * Syonet Bootstrap v0.5.1
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -1153,8 +1153,8 @@
 
 		definition.template =
 			"<div class='syo-notification'>" +
-				"<div ng-transclude></div>" +
-				"<a href='#' ng-click='$event.preventDefault(); $notification.close()'></a>" +
+				"<div ng-transclude></div> " +
+				"<a href='#' ng-click='$event.preventDefault(); $notification.close()'>Fechar</a>" +
 			"</div>";
 		definition.replace = true;
 		definition.transclude = true;
@@ -1198,13 +1198,20 @@
 		function allocateNotification( element ) {
 			var height;
 			var container = getContainer();
-			var top = container.cssUnit( "padding-top" )[ 0 ];
 
 			container.prepend( element );
 			height = element.outerHeight();
 
-			element.css( "top", top + "px" );
-			container.css( "padding-top", ( top + height ) + "px" );
+			element.nextAll( ".syo-notification" ).each(function() {
+				var $this = $( this );
+				var top = $this.cssUnit( "top" )[ 0 ];
+				$this.css( "top", ( top + height ) + "px" );
+			});
+
+			if ( container.is( ".syo-body-navbar" ) ) {
+				element.css( "top", container.cssUnit( "padding-top" )[ 0 ] + "px" );
+			}
+
 			return container;
 		}
 
@@ -1212,13 +1219,9 @@
 			var height = element.outerHeight();
 
 			element.fadeOut( 500, function() {
-				var container = element.parent();
-				var top = container.cssUnit( "padding-top" )[ 0 ];
-				container.css( "padding-top", ( top - height ) + "px" );
-
-				element.prevAll( ".syo-notification" ).each(function() {
+				element.nextAll( ".syo-notification" ).each(function() {
 					var other = $( this );
-					top = other.cssUnit( "top" )[ 0 ];
+					var top = other.cssUnit( "top" )[ 0 ];
 
 					other.css( "top", ( top - height ) + "px" );
 				});

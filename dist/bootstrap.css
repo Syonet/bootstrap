@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.5.0
+ * Syonet Bootstrap v0.5.1
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -361,10 +361,12 @@ textarea {
 }
 /* Scaffolding - Body
    ------------------ */
-body {
-  line-height: 1.42857143;
-  color: #222222;
+html {
   font-size: 14px;
+  line-height: 1.42857143;
+}
+body {
+  color: #222222;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #ffffff;
 }
@@ -1540,7 +1542,6 @@ fieldset[disabled] .syo-button.syo-info.syo-active {
    --------------------- */
 .syo-button.syo-button-link {
   border: none;
-  padding: 0;
   background-color: transparent;
   background-image: none;
   color: #336699;
@@ -4517,9 +4518,10 @@ body.syo-body-navbar {
 .syo-notification {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1050;
   display: block;
-  width: 100%;
   padding: 12.5px 15px;
   color: #222222;
   text-align: center;
@@ -4530,6 +4532,10 @@ body.syo-body-navbar {
 .syo-notification > div {
   display: inline;
 }
+.syo-notification > a {
+  color: #222222;
+  text-decoration: underline;
+}
 .syo-notification-container {
   position: relative;
 }
@@ -4539,9 +4545,15 @@ body.syo-body-navbar {
   color: #fff;
   background: #5cb85c;
 }
+.syo-notification.syo-success a {
+  color: #fff;
+}
 .syo-notification.syo-error {
   color: #fff;
   background: #d9534f;
+}
+.syo-notification.syo-error a {
+  color: #fff;
 }
 /* ==============================================================================================
    Animations
