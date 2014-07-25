@@ -90,7 +90,10 @@
                 <h2>Notificações</h2>
             </div>
 
-            <p>É possível adicionar notificações à página usando o factory <code>$notification</code>.</p>
+            <p>
+                É possível adicionar notificações à página usando o factory <code>$notification</code>.
+                As notificações são automaticamente fechadas após 3s.
+            </p>
 
             <div class="syo-docs-example">
                 <div class="syo-docs-example-inner">
@@ -111,6 +114,15 @@
             <pre ng-non-bindable class="highlight language-javascript">$notification.default( <span class="hljs-string">'Esta é uma notificação padrão.'</span> );
 $notification.success( <span class="hljs-string">'Esta é uma notificação de sucesso.'</span> );
 $notification.error( <span class="hljs-string">'Esta é uma notificação de erro.'</span> );</pre>
+
+            <p>
+                É possível configurar o timeout da notificação (em ms) usando a fase de configuração
+                do Angular.js:
+            </p>
+            <pre ng-non-bindable class="highlight language-javascript">app.config([ <span class="hljs-string">"$notificationProvider"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( $notificationProvider )</span> {</span>
+    <span class="hljs-comment">// Toda notificação irá durar 5s, por padrão</span>
+    $notificationProvider.defaultTimeout = <span class="hljs-number">5000</span>;
+}]);</pre>
         </article>
     </div>
 
