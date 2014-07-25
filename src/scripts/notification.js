@@ -26,13 +26,11 @@
 			// Garante que o timeout da notificação nunca seja menor que 0 ms
 			scope.timeout = Math.max( +scope.timeout, 0 );
 
-			// Se for um NaN, então usa 5s de timeout
-			if ( isNaN( scope.timeout ) ) {
-				scope.timeout = 5000;
+			// Se houver um timeout, fecharemos automaticamente a notificação.
+			if ( !isNaN( scope.timeout ) && scope.timeout > 0 ) {
+				// Fecha automaticamente após o timeout
+				setTimeout( $notification.close, scope.timeout );
 			}
-
-			// Fecha automaticamente após o timeout
-			setTimeout( $notification.close, scope.timeout );
 
 			// -------------------------------------------------------------------------------------
 
@@ -96,33 +94,41 @@
 		return ctrl;
 	}]);
 
-	syo.factory( "$notification", [
-		"$rootScope",
-		"$compile",
-		function( $rootScope, $compile ) {
-			var notification = {};
+	syo.provider( "$notification", function() {
+		var provider = {};
 
-			notification.default = $.proxy( createNotification, null, "" );
-			notification.error = $.proxy( createNotification, null, "error" );
-			notification.success = $.proxy( createNotification, null, "success" );
+		provider.defaultTimeout = 3000;
 
-			return notification;
+		provider.$get = [
+			"$rootScope",
+			"$compile",
+			function( $rootScope, $compile ) {
+				var notification = {};
 
-			// -------------------------------------------------------------------------------------
+				notification.default = $.proxy( createNotification, null, "" );
+				notification.error = $.proxy( createNotification, null, "error" );
+				notification.success = $.proxy( createNotification, null, "success" );
 
-			function createNotification( type, content, timeout, scope ) {
-				var elem = $( "<div syo-notification></div>" );
-
-				if ( type ) {
-					elem.addClass( "syo-" + type );
-				}
-
-				elem.attr( "timeout", timeout );
-				elem.html( content );
-
-				elem = $compile( elem )( scope || $rootScope );
 				return notification;
+
+				// -------------------------------------------------------------------------------------
+
+				function createNotification( type, content, timeout, scope ) {
+					var elem = $( "<div syo-notification></div>" );
+
+					if ( type ) {
+						elem.addClass( "syo-" + type );
+					}
+
+					elem.attr( "timeout", timeout || provider.defaultTimeout );
+					elem.html( content );
+
+					elem = $compile( elem )( scope || $rootScope );
+					return notification;
+				}
 			}
-		}
-	]);
+		];
+
+		return provider;
+	});
 }( jQuery, angular );
