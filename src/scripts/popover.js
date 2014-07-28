@@ -54,6 +54,9 @@
 						popoverScope = ( config.scope || $rootScope ).$new();
 						popoverScope.element = element;
 
+						// Estende o escopo com variáveis locais a partir da configuração
+						ng.extend( popoverScope, config.locals );
+
 						// Compila o popover agora e deixa pra setar o conteúdo apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
