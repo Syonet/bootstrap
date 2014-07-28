@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.5.1
+ * Syonet Bootstrap v0.5.2
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -1588,7 +1588,7 @@ textarea {
   height: 30px;
   padding: 5px 5px;
   border: 1px solid #aaaaaa;
-  background-color: #fbfbfb;
+  background-color: #fefefe;
   text-shadow: 0 1px 0 #FFF;
   line-height: normal;
   /* 1 */
@@ -1643,7 +1643,7 @@ textarea:focus {
   outline: none;
   /* 2 */
   border-color: #008000;
-  background-color: #fbfbfb;
+  background-color: #fefefe;
   -webkit-box-shadow: 0 1px 2px #d2d2d2;
   box-shadow: 0 1px 2px #d2d2d2;
 }
