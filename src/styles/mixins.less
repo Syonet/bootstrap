@@ -87,8 +87,8 @@
 }
 
 .box-shadow( @shadow ) {
-  -webkit-box-shadow: @shadow;
-          box-shadow: @shadow;
+  -webkit-box-shadow+: @shadow;
+          box-shadow+: @shadow;
 }
 
 .opacity( @opacity: 1 ) {
@@ -98,16 +98,16 @@
 }
 
 .transform( @transform ) {
-  -webkit-transform: @transform;
-     -moz-transform: @transform;
-          transform: @transform;
+  -webkit-transform+_: @transform;
+     -moz-transform+_: @transform;
+          transform+_: @transform;
 }
 
 .transition( @transition ) {
-  -webkit-transition: @transition;
-     -moz-transition: @transition;
-       -o-transition: @transition;
-          transition: @transition;
+  -webkit-transition+: @transition;
+     -moz-transition+: @transition;
+       -o-transition+: @transition;
+          transition+: @transition;
 }
 
 .animation( @animation ) {
