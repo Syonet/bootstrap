@@ -63,12 +63,13 @@ hr {
 }
 
 /*
- * Estilos de seleção de texto
- * 1. Força o text-shadow: none, afinal texto selecionado com shadow fica péssimo
+ * Estilos de seleção de texto. Eles tem que ficar separados ou não funcionarão.
+ * http://stackoverflow.com/a/19075802/2083599
  */
-::-moz-selection,
+::-moz-selection {
+  .text-selection();
+}
+
 ::selection {
-  color: #FFF;
-  background: #3399FF;
-  text-shadow: none; /* 1 */
+  .text-selection();
 }
