@@ -1,8 +1,8 @@
 # Syonet Bootstrap
 O conjunto de ferramentas front-end da Syonet
 
-[![Build Status](https://travis-ci.org/Syonet/bootstrap.png?branch=master)](https://travis-ci.org/Syonet/bootstrap)
-[![Dependency Status](https://gemnasium.com/Syonet/bootstrap.png)](https://gemnasium.com/Syonet/bootstrap)
+[![Build Status](http://img.shields.io/travis/Syonet/bootstrap.svg?style=flat)](https://travis-ci.org/Syonet/bootstrap)
+[![Dependency Status](http://img.shields.io/gemnasium/Syonet/bootstrap.svg?style=flat)](https://gemnasium.com/Syonet/bootstrap)
 
 ## Documentação
 Para ler a documentação (e também testar o framework), após fazer o build, acesse o arquivo `index.html` em seu browser favorito.
