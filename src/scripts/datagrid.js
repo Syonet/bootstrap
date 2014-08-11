@@ -74,7 +74,7 @@
 							$cells = $cells.add( $cell );
 						});
 
-						$scope.$watch(function() {
+						$scope.$watch(function datagridColumnWatcher() {
 							return getColumnCount( components.body );
 						}, function( count ) {
 							$cells.attr( "colspan", count );
@@ -82,7 +82,7 @@
 					})();
 
 					(function() {
-						var listener = $scope.$watch(function() {
+						var listener = $scope.$watch(function datagridVisibilityWatcher() {
 							return $element.is( ":visible" );
 						}, function( visible ) {
 							// Aguarda até que o elemento esteja vísivel pra fazer alguma coisa
@@ -111,7 +111,7 @@
 					});
 
 					// Observa se a altura do corpo do grid mudou
-					$scope.$watch(function() {
+					$scope.$watch(function datagridBodyHeightWatcher() {
 						return components.body.height();
 					}, function( height ) {
 						$timeout(function() {
@@ -120,7 +120,7 @@
 					});
 
 					// Observa se existem helpers ou não
-					$scope.$watch(function() {
+					$scope.$watch(function datagridFooterWatcher() {
 						return components.helper.find( "tfoot" ).length > 0;
 					}, function( hasHelper ) {
 						components.bodyContainer.toggleClass( "syo-datagrid-with-helper", hasHelper );

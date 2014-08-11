@@ -98,7 +98,7 @@
 				// Scope Watches
 				// ---------------------------------------------------------------------------------
 				// Aguarda o elemento ficar visível/invísivel
-				scope.$watch(function() {
+				scope.$watch(function popoverVisibilityWatcher() {
 					// Retorna true apenas pra não cair no if do listener
 					return $popover ? element.is( ":visible" ) : true;
 				}, function( visible ) {
@@ -108,7 +108,7 @@
 				});
 
 				// Aguarda o elemento ser reposicionado
-				scope.$watch(function() {
+				scope.$watch(function popoverOffsetWatcher() {
 					return element.offset();
 				}, function( newOffset, oldOffset ) {
 					if ( !ng.equals( newOffset, oldOffset ) ) {

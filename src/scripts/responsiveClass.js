@@ -87,7 +87,7 @@
 			def.element = element;
 			classesDefs.push( def );
 
-			scope.$watch(function() {
+			scope.$watch(function responsiveClassWatcher() {
 				return scope.$eval( attr.syoResponsiveClass );
 			}, function( newVal, oldVal ) {
 				newVal = normalize( newVal );
