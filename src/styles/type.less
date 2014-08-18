@@ -29,7 +29,13 @@ small { font-size: 85%; }
 em, i { font-style: italic; }
 strong, b { font-weight: bold; }
 
-
+/* Citações
+   -------- */
+blockquote {
+  margin: 0 0 @computed-line-height;
+  padding: @padding-base-vertical @padding-base-horizontal;
+  border-left: 3px solid @brand-default-border;
+}
 
 /* Descrições
    ---------- */
