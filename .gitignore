@@ -1,4 +1,5 @@
 .idea/
+*.iml
 .project
 node_modules/
 npm-debug.log
