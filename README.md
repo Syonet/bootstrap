@@ -2,7 +2,7 @@
 O conjunto de ferramentas front-end da Syonet
 
 [![Build Status](http://img.shields.io/travis/Syonet/bootstrap.svg?style=flat)](https://travis-ci.org/Syonet/bootstrap)
-[![Dependency Status](http://img.shields.io/gemnasium/Syonet/bootstrap.svg?style=flat)](https://gemnasium.com/Syonet/bootstrap)
+[![Dependency Status](http://img.shields.io/david/dev/Syonet/bootstrap.svg?style=flat)](https://david-dm.org/Syonet/bootstrap#info=devDependencies)
 
 ## Documentação
 Para ler a documentação (e também testar o framework), após fazer o build, acesse o arquivo `index.html` em seu browser favorito.
