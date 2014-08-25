@@ -653,6 +653,25 @@
                                         </ul>
                                     </li>
                                     <li>
+                                        <code>locals</code> Tipo: Object
+                                        <p>
+                                            Um objeto de variáveis para mesclar no escopo do popover.<br>
+                                            Por exemplo, passando a seguinte configuração:
+                                        </p>
+                                        {% highlight js %}
+                                        {
+                                            locals: {
+                                                foo: 123,
+                                                bar: "baz"
+                                            }
+                                        }
+                                        {% endhighlight %}
+                                        <p>
+                                            As variáveis <code>foo</code> e <code>bar</code> ficarão
+                                            disponíveis no escopo do popover com os valores definidos acima.
+                                        </p>
+                                    </li>
+                                    <li>
                                         <code>model</code> Tipo: String
                                         <p>
                                             Determina que propriedade do escopo atual irá receber a instância
