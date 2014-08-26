@@ -412,15 +412,18 @@ hr {
   padding: 0;
 }
 /*
- * Estilos de seleção de texto
- * 1. Força o text-shadow: none, afinal texto selecionado com shadow fica péssimo
+ * Estilos de seleção de texto. Eles tem que ficar separados ou não funcionarão.
+ * http://stackoverflow.com/a/19075802/2083599
  */
-::-moz-selection,
+::-moz-selection {
+  color: #FFF;
+  background: #3399FF;
+  text-shadow: none;
+}
 ::selection {
   color: #FFF;
   background: #3399FF;
   text-shadow: none;
-  /* 1 */
 }
 /* ==============================================================================================
    Grid
@@ -1163,6 +1166,13 @@ strong,
 b {
   font-weight: bold;
 }
+/* Citações
+   -------- */
+blockquote {
+  margin: 0 0 20px;
+  padding: 5px 10px;
+  border-left: 3px solid #c8c8c8;
+}
 /* Descrições
    ---------- */
 dl {
@@ -1868,6 +1878,12 @@ textarea:invalid:focus {
 .syo-input-icon [class^="icon-"]:last-child,
 .syo-input-icon [class*=" icon-"]:last-child {
   right: 0;
+}
+.syo-input-icon [class^="icon-"].icon-spin,
+.syo-input-icon [class*=" icon-"].icon-spin {
+  margin-top: 7px;
+  margin-right: -3px;
+  padding: 0;
 }
 /* ==============================================================================================
    Tabelas
@@ -3301,6 +3317,7 @@ h4 small {
 .syo-navbar-title {
   display: block;
   float: left;
+  max-width: 100%;
   padding: 0 12.5px 0 30px;
   /* 1 */
   color: #666666;
@@ -4926,8 +4943,8 @@ td.hidden-large {
   }
 }
 
-/* Include this file in your html if you are using the CSP mode. */
 @charset "UTF-8";
+/* Include this file in your html if you are using the CSP mode. */
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],

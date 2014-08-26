@@ -334,7 +334,7 @@
 							$cells = $cells.add( $cell );
 						});
 
-						$scope.$watch(function() {
+						$scope.$watch(function datagridColumnWatcher() {
 							return getColumnCount( components.body );
 						}, function( count ) {
 							$cells.attr( "colspan", count );
@@ -342,7 +342,7 @@
 					})();
 
 					(function() {
-						var listener = $scope.$watch(function() {
+						var listener = $scope.$watch(function datagridVisibilityWatcher() {
 							return $element.is( ":visible" );
 						}, function( visible ) {
 							// Aguarda até que o elemento esteja vísivel pra fazer alguma coisa
@@ -371,7 +371,7 @@
 					});
 
 					// Observa se a altura do corpo do grid mudou
-					$scope.$watch(function() {
+					$scope.$watch(function datagridBodyHeightWatcher() {
 						return components.body.height();
 					}, function( height ) {
 						$timeout(function() {
@@ -380,7 +380,7 @@
 					});
 
 					// Observa se existem helpers ou não
-					$scope.$watch(function() {
+					$scope.$watch(function datagridFooterWatcher() {
 						return components.helper.find( "tfoot" ).length > 0;
 					}, function( hasHelper ) {
 						components.bodyContainer.toggleClass( "syo-datagrid-with-helper", hasHelper );
@@ -709,7 +709,7 @@
 		return definition;
 	}]);
 
-	syo.provider( "$dialog", [ function() {
+	syo.provider( "$dialog", function() {
 		var $dialogProvider = {};
 
 		$dialogProvider.defaults = Dialog.defaults;
@@ -729,11 +729,14 @@
 					}
 
 					options = extend( {}, Dialog.defaults, options );
-					extend( scope, options );
+					extend( scope, options, options.locals );
 
 					scope.$provider = new Dialog();
-					promise = $templatePromise( options.template, options.templateUrl ).then(function( template ) {
-						$element = ng.element( "<syo-dialog></syo-dialog>" );
+					promise = $templatePromise(
+						options.template,
+						options.templateUrl
+					).then(function( template ) {
+						$element = $( "<syo-dialog></syo-dialog>" );
 
 						// Seta todos os atributos possíveis na diretiva.
 						ng.forEach( Dialog.options, function( binding, prop ) {
@@ -762,7 +765,7 @@
 		];
 
 		return $dialogProvider;
-	}]);
+	});
 
 }( jQuery, angular );
 /**
@@ -1412,6 +1415,9 @@
 						popoverScope = ( config.scope || $rootScope ).$new();
 						popoverScope.element = element;
 
+						// Estende o escopo com variáveis locais a partir da configuração
+						ng.extend( popoverScope, config.locals );
+
 						// Compila o popover agora e deixa pra setar o conteúdo apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
@@ -1453,7 +1459,7 @@
 				// Scope Watches
 				// ---------------------------------------------------------------------------------
 				// Aguarda o elemento ficar visível/invísivel
-				scope.$watch(function() {
+				scope.$watch(function popoverVisibilityWatcher() {
 					// Retorna true apenas pra não cair no if do listener
 					return $popover ? element.is( ":visible" ) : true;
 				}, function( visible ) {
@@ -1463,7 +1469,7 @@
 				});
 
 				// Aguarda o elemento ser reposicionado
-				scope.$watch(function() {
+				scope.$watch(function popoverOffsetWatcher() {
 					return element.offset();
 				}, function( newOffset, oldOffset ) {
 					if ( !ng.equals( newOffset, oldOffset ) ) {
@@ -1993,7 +1999,7 @@
 			def.element = element;
 			classesDefs.push( def );
 
-			scope.$watch(function() {
+			scope.$watch(function responsiveClassWatcher() {
 				return scope.$eval( attr.syoResponsiveClass );
 			}, function( newVal, oldVal ) {
 				newVal = normalize( newVal );
