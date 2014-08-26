@@ -138,7 +138,7 @@
 		return definition;
 	}]);
 
-	syo.provider( "$dialog", [ function() {
+	syo.provider( "$dialog", function() {
 		var $dialogProvider = {};
 
 		$dialogProvider.defaults = Dialog.defaults;
@@ -158,11 +158,14 @@
 					}
 
 					options = extend( {}, Dialog.defaults, options );
-					extend( scope, options );
+					extend( scope, options, options.locals );
 
 					scope.$provider = new Dialog();
-					promise = $templatePromise( options.template, options.templateUrl ).then(function( template ) {
-						$element = ng.element( "<syo-dialog></syo-dialog>" );
+					promise = $templatePromise(
+						options.template,
+						options.templateUrl
+					).then(function( template ) {
+						$element = $( "<syo-dialog></syo-dialog>" );
 
 						// Seta todos os atributos possíveis na diretiva.
 						ng.forEach( Dialog.options, function( binding, prop ) {
@@ -191,6 +194,6 @@
 		];
 
 		return $dialogProvider;
-	}]);
+	});
 
 }( jQuery, angular );
