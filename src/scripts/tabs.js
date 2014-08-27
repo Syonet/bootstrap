@@ -21,7 +21,7 @@
 
 				$attr.$observe( "syoTabs", function( val ) {
 					var options, heightStyle;
-					val = $scope.$eval( val );
+					val = $scope.$eval( val ) || {};
 
 					if ( init ) {
 						options = $element.tabs( "option" );
