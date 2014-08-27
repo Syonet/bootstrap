@@ -77,8 +77,8 @@
 // =================================================================================================
 
 @font-size-base: 14px;
-@font-size-small: ceil( @font-size-base * @component-small-factor );
-@font-size-large: floor( @font-size-base * @component-large-factor );
+@font-size-small: unit( @component-small-factor, em );
+@font-size-large: unit( @component-large-factor, em );
 
 @text-color: #222;
 @computed-line-height: 20px;
