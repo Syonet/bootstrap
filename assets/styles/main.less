@@ -49,6 +49,12 @@ div.prettyprint { /* 2 */
   }
 }
 
+#content-wrapper article + article {
+  margin-top: @padding-large-vertical;
+  padding-top: @padding-large-vertical;
+  border-top: 1px solid @gray-lighter;
+}
+
 .footer {
   padding-top: @computed-line-height * 1.2;
   padding-bottom: @computed-line-height * 1.2;

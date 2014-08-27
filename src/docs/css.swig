@@ -19,9 +19,9 @@
 {% block content %}
     <!-- Grid -->
     <article id="grid">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Grid</h2>
-        </div>
+        </header>
         <p>
             Grid responsivo, <em>mobile-first</em>, de 12 colunas.
             Funciona bem com dispositivos de resoluções muito pequenas até grandes monitores.<br>
@@ -200,9 +200,9 @@
     <!-- Tipografia -->
     <article id="type">
 
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Tipografia</h2>
-        </div>
+        </header>
 
         <h3>Headings</h3>
         <p>Todos os headings HTML, do <code>h1</code> ao <code>h6</code>.</p>
@@ -333,9 +333,9 @@
     <!-- Listas -->
     <article id="lists">
 
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Listas</h2>
-        </div>
+        </header>
         <p>Elementos <code>ul</code> e <code>ol</code>, como sempre!</p>
 
         <h3>Não ordenadas</h3>
@@ -430,9 +430,9 @@
     <!-- Forms -->
     <article id="forms">
 
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Formulários</h2>
-        </div>
+        </header>
 
         <div class="syo-docs-example">
             <div class="syo-docs-example-inner">
@@ -656,9 +656,9 @@
     <!-- Botões -->
     <article id="buttons">
 
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Botões</h2>
-        </div>
+        </header>
         <p>
             Vários <i>markups</i> possíveis, apenas um estilo. Estilize qualquer tag com a classe
             <code>.syo-button</code> - no entanto, é preferível utilizá-la com as tags <code>&lt;a&gt;</code> e
@@ -759,9 +759,9 @@
 
     <!-- Tabelas -->
     <article id="tables">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Tabelas</h2>
-        </div>
+        </header>
         <p>
             Tabelas devem ser utilizadas apenas para a exibição de dados tabulares. Existe um estilo padrão definido
             para todas as tabelas quando utilizando a classe <code>.syo-table</code>, bem como alguns estilos que
@@ -773,9 +773,9 @@
             =)
         </p>
 
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h4>Base</h4>
-        </div>
+        </header>
         <p>
             Estilo base de todas as tabelas.
         </p>
@@ -863,9 +863,9 @@
         </div>
 
         <section>
-            <div class="syo-header syo-header-ruler">
+            <header>
                 <h4> Striped </h4>
-            </div>
+            </header>
             <p>
                 Este estilo fornece um destaque adicional para cada linha de modo a criar um contraste e facilitar a
                 visualização dos dados. Basta adicionar a classe <code>.syo-table-striped</code> no elemento principal da
@@ -928,9 +928,9 @@
         </section>
 
         <section>
-            <div class="syo-header syo-header-ruler">
+            <header>
                 <h4> Hover </h4>
-            </div>
+            </header>
             <p>
                 Estilo que destaca a linha que está sob o mouse. Utilize a classe <code>.syo-table-hover</code> para obter este estilo.<br>
                 <strong>Nota:</strong> tabelas que também utilizam o estilo "Striped" exibido acima não receberão um destaque acentuado.
@@ -1022,9 +1022,9 @@
         </section>
 
         <section>
-            <div class="syo-header syo-header-ruler">
+            <header>
                 <h4> Estados </h4>
-            </div>
+            </header>
 
             <p>
                 É possível utilizar todos os estados padrão do Syonet Bootstrap em cada célula ou linha de uma tabela.
@@ -1118,9 +1118,9 @@
         </section>
 
         <section>
-            <div class="syo-header syo-header-ruler">
+            <header>
                 <h4> Tabelas Responsivas </h4>
-            </div>
+            </header>
 
             <p>
                 Uma das melhores funcionalidades das tabelas do Syonet Bootstrap é a possibilidade
@@ -1201,9 +1201,9 @@
 
     <!-- Ícones -->
     <article id="icons">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Ícones</h2>
-        </div>
+        </header>
         <p>
             O Syonet Bootstrap vem com as centenas de ícones abaixo, disponibilizados por uma combinação
             de fonte icônicas open source.<br>
@@ -1245,9 +1245,9 @@
 
     <!-- Responsive -->
     <article id="responsive">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Design Responsivo</h2>
-        </div>
+        </header>
         <p>
             Para facilitar o desenvolvimento responsivo, utilize estas classes, que exibem/ocultam
             conteúdo por tamanho de tela.<br>
@@ -1351,9 +1351,9 @@
 
     <!-- Utils -->
     <article id="utils">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Classes Utilitárias</h2>
-        </div>
+        </header>
         <p>Algumas classes que podem lhe ajudar em um desenvolvimento mais rápido.</p>
 
         <h3>.syo-hidden</h3>

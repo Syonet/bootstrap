@@ -16,9 +16,9 @@
 
 {% block content %}
     <article id="notification-service">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Notificações</h2>
-        </div>
+        </header>
 
         <p>
             É possível adicionar notificações à página usando o factory <code>$notification</code>.
@@ -60,9 +60,9 @@
     </article>
 
     <article id="offset-filter">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Filtro <code>offset</code></h2>
-        </div>
+        </header>
 
         <p>
             Corta um array <code>array</code> a partir do índice <code>offset</code> e retorna os itens restantes.
@@ -110,9 +110,9 @@
     </article>
 
     <article id="removeAccents-filter">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Filtro <code>removeAccents</code></h2>
-        </div>
+        </header>
 
         <p>
             Remove acentuação de uma string <code>input</code>, ou da propriedade <code>prop</code>

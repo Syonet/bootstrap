@@ -21,7 +21,7 @@
 			<aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
 				{% block sidebar %}{% endblock %}
 			</aside>
-			<div class="col col-small-9 col-large-10">
+			<div class="col col-small-9 col-large-10" id="content-wrapper">
 				{% block content %}{% endblock %}
 			</div>
 		</div>

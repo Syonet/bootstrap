@@ -22,9 +22,9 @@
 {% block content %}
     <!-- Badges -->
     <article id="badges">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Badges</h2>
-        </div>
+        </header
         <p>
             Útil componente para indicação visual.
             Pode servir, por exemplo, como contador de itens ou indicador de agrupamento.
@@ -68,9 +68,9 @@
 
     <!-- Blocos -->
     <article id="blocks">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Blocos</h2>
-        </div>
+        </header>
         <p>Simples componente para separação visual de título e conteúdo.</p>
 
         <div class="syo-docs-example">
@@ -200,9 +200,9 @@
 
     <!-- Buttonset -->
     <article id="buttonset">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Buttonset</h2>
-        </div>
+        </header>
         <p>Agrupe uma série de botões <code>.syo-button</code> dentro de um <code>.syo-buttonset</code>.</p>
 
         <div class="syo-docs-example">
@@ -225,9 +225,9 @@
 
     <!-- Check List -->
     <article id="checklist">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Check List</h2>
-        </div>
+        </header>
 
         <p>
             Uma ótima substituição para a clássica lista de checkboxes ou radios, que são um
@@ -309,9 +309,9 @@
 
     <!-- Form Table -->
     <article id="form-table">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Form Table</h2>
-        </div>
+        </header>
 
         <p>
             O form table é um componente para uma exibição de fichas complexas, com muitos campos,
@@ -372,9 +372,9 @@
 
     <!-- syo-header -->
     <article id="header">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Headers</h2>
-        </div>
+        </header>
         <p>
             Para utilizar como separador de seções de páginas, você pode utilizar os 2 tipos de headers a seguir.
             Basta utilizar a classe <code>.syo-header</code> e alguma classe dos estilos opcionais:
@@ -405,9 +405,9 @@
 
     <!-- Input Row -->
     <article id="input-row">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Input Row</h2>
-        </div>
+        </header>
         <p>
             Coloque um campo <code>input</code> de texto + botões dentro de um mesmo elemento de
             forma que sempre ocupem toda uma linha.
@@ -462,9 +462,9 @@
 
     <!-- Navbar -->
     <article id="navbar">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Navbar</h2>
-        </div>
+        </header>
         <p>Navbars são componentes para incluir uma navegação básica horizontal.</p>
 
         <div class="syo-docs-example">
@@ -499,9 +499,9 @@
 
     <!-- Nav -->
     <article id="nav">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Nav</h2>
-        </div>
+        </header>
         <p>
             Componentes de navegação com o mesmo HTML base, apenas diferenciando as classes utilizadas. Todos estilos
             estão acessíveis atráves da classe <code>.syo-nav</code>.
@@ -536,9 +536,9 @@
 
     <!-- Paginação -->
     <article id="pagination">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Paginação</h2>
-        </div>
+        </header>
         <p>
             Simples componente de paginação, com uma larga área de clique - o que facilita para interfaces <i>touch
                 sensitive</i>.
@@ -592,9 +592,9 @@
 
     <!-- Popover -->
     <article id="popover">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Popover</h2>
-        </div>
+        </header>
 
         <p>
             Um popover é um balão que serve para exibir qualquer HTML. Ele é utilizado como uma
@@ -735,9 +735,9 @@
 
     <!-- Progressbar -->
     <article id="progressbar">
-        <div class="syo-header syo-header-ruler">
+        <header>
             <h2>Progressbar</h2>
-        </div>
+        </header>
 
         <p>
             Renderize uma progressbar utilizando apenas CSS. Lembre-se de definir uma largura
