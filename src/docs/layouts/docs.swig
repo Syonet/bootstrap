@@ -18,7 +18,12 @@
 	{# Conteúdo #}
 	<div class="container container-vertical" role="main">
 		<div class="row" style="position: relative">
-			{% block content %}{% endblock %}
+			<aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
+				{% block sidebar %}{% endblock %}
+			</aside>
+			<div class="col col-small-9 col-large-10">
+				{% block content %}{% endblock %}
+			</div>
 		</div>
 	</div>
 {% endblock %}
