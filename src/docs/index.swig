@@ -2,7 +2,7 @@
 {% set active = "home" %}
 
 {% block body %}
-	<div class="home">
+    <div class="home">
         <div class="home-content">
             <h1>Syonet Bootstrap</h1>
             <p class="lead">O conjunto de ferramentas front-end da Syonet.</p>
@@ -13,5 +13,5 @@
                         style="width:95px;height:20px;border:0"></iframe>
             </div>
         </div>
-	</div>
+    </div>
 {% endblock %}
