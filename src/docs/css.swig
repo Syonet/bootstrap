@@ -621,8 +621,8 @@
             </p>
             <table class="syo-table">
                 <colgroup>
-                    <col class="col-small-5 col-large-3">
-                    <col class="col-small-7 col-large-9">
+                    <col class="col-small-3">
+                    <col class="col-small-9">
                 </colgroup>
                 <thead>
                     <tr>
