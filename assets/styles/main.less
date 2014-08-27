@@ -61,6 +61,9 @@ div.prettyprint { /* 2 */
    Exemplos
    ================================================================================================================= */
 
+/*
+ * 1. Desconta bordas do container
+ */
 .syo-docs-example {
   margin: @computed-line-height 0;
   padding: ( @component-height * @component-large-factor ) 0 0;
@@ -90,7 +93,7 @@ div.prettyprint { /* 2 */
   }
 
   > pre {
-    margin-top: 5px;
+    margin: 5px -1px -1px; /* 1 */
     .border-radius-bottom( @base-border-radius );
 
     &:last-child {
