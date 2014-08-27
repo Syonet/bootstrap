@@ -4,12 +4,12 @@
 {% block content %}
     <aside class="col col-small-3 col-large-2" id="sidebar-wrapper">
         <ul class="syo-nav syo-nav-list" id="sidebar">
-            <li class="syo-nav-header"><i class="icon-flag"></i> Angular.js - services</li>
+            <li class="syo-nav-header"><i class="icon-cog"></i> Angular.js - services</li>
             <li><a href="#notification-service">Notificações</a></li>
         </ul>
 
         <ul class="syo-nav syo-nav-list" id="sidebar">
-            <li class="syo-nav-header"><i class="icon-flag"></i> Angular.js - filtros</li>
+            <li class="syo-nav-header"><i class="icon-embed"></i> Angular.js - filtros</li>
             <li><a href="#offset-filter">offset</a></li>
         </ul>
     </aside>
