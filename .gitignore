@@ -1,5 +1,10 @@
+# IDE - IntelliJ
 .idea/
 *.iml
+
+# IDE - Eclipse
 .project
+
+# Node.js/NPM
 node_modules/
 npm-debug.log
