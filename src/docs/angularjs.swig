@@ -4,7 +4,8 @@
 {% block sidebar %}
     <ul class="syo-nav syo-nav-list" id="sidebar">
         <li class="syo-nav-header"><i class="icon-cog"></i> Angular.js - services</li>
-        <li><a href="#notification-service">Notificações</a></li>
+        <li><a href="#notification-service">$localStorage</a></li>
+        <li><a href="#notification-service">$notification</a></li>
     </ul>
 
     <ul class="syo-nav syo-nav-list" id="sidebar">
@@ -15,9 +16,42 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Service: $notification -->
+    <article id="localStorage-service">
+        <header>
+            <h2>Service <code>$localStorage</code></h2>
+        </header>
+
+        <p>Service para se trabalhar com a API de localStorage do browser.</p>
+
+        {% highlight javascript %}
+        // Adiciona um valor "value" sob a chave "key"
+        $localStorage.put( "key", "value" );
+
+        // Adiciona um valor JSON sob a chave "key"
+        $localStorage.put( "key", { a: 123, b: true, c: "foo" } );
+
+        // Obtem o valor da chave "key"
+        $localStorage.get( "key" );
+        // => { a: 123, b: true, c: "foo" }
+
+        // Remove a chave "key"
+        $localStorage.remove( "key" );
+
+        // Remove todos itens
+        $localStorage.removeAll();
+        {% endhighlight %}
+
+        <p>
+            À exceção do método <code>.get()</code>, todos os outros retornam o próprio service
+            <code>$localStorage</code>.
+        </p>
+    </article>
+
+    <!-- Service: $notification -->
     <article id="notification-service">
         <header>
-            <h2>Notificações</h2>
+            <h2>Service <code>$notification</code></h2>
         </header>
 
         <p>
@@ -59,6 +93,7 @@
         {% endhighlight %}
     </article>
 
+    <!-- Filtro: offset -->
     <article id="offset-filter">
         <header>
             <h2>Filtro <code>offset</code></h2>
@@ -109,6 +144,7 @@
         </div>
     </article>
 
+    <!-- Filtro: removeAccents -->
     <article id="removeAccents-filter">
         <header>
             <h2>Filtro <code>removeAccents</code></h2>
