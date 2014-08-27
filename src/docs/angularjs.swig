@@ -4,7 +4,7 @@
 {% block sidebar %}
     <ul class="syo-nav syo-nav-list" id="sidebar">
         <li class="syo-nav-header"><i class="icon-cog"></i> Angular.js - services</li>
-        <li><a href="#notification-service">$localStorage</a></li>
+        <li><a href="#localStorage-service">$localStorage</a></li>
         <li><a href="#notification-service">$notification</a></li>
     </ul>
 
