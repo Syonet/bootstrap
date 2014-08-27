@@ -11,6 +11,7 @@
         <ul class="syo-nav syo-nav-list" id="sidebar">
             <li class="syo-nav-header"><i class="icon-embed"></i> Angular.js - filtros</li>
             <li><a href="#offset-filter">offset</a></li>
+            <li><a href="#removeAccents-filter">removeAccents</a></li>
         </ul>
     </aside>
 
@@ -104,6 +105,41 @@
                             Array com offset:
                             <pre>{{ arr | offset: offset }}</pre>
                         </div>
+                    {% endraw %}
+                {% endhighlight %}
+            </div>
+        </article>
+
+        <article id="removeAccents-filter">
+            <div class="syo-header syo-header-ruler">
+                <h2>Filtro <code>removeAccents</code></h2>
+            </div>
+
+            <p>
+                Remove acentuação de uma string <code>input</code>, ou da propriedade <code>prop</code>
+                de um objeto <code>input</code>. Se <code>input</code> for um array, o mesmo ccmportamento é aplicado
+                para cada item do array.
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner" ng-init="str = 'Concentração é importante!'">
+                    {% raw %}
+                        <div class="syo-field syo-field-inline">
+                            <label>Com acentuação:</label>
+                            <input type="text" ng-model="str">
+                        </div>
+
+                        <div>Sem acentuação: {{ str | removeAccents }}</div>
+                    {% endraw %}
+                </div>
+                {% highlight xml %}
+                    {% raw %}
+                        <div class="syo-field syo-field-inline">
+                            <label>Com acentuação:</label>
+                            <input type="text" ng-model="str">
+                        </div>
+
+                        <div>Sem acentuação: {{ str | removeAccents }}</div>
                     {% endraw %}
                 {% endhighlight %}
             </div>
