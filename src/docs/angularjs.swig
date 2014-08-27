@@ -7,6 +7,7 @@
         <li><a href="#localStorage-service">$localStorage</a></li>
         <li><a href="#notification-service">$notification</a></li>
         <li><a href="#templatePromise-service">$templatePromise</a></li>
+        <li><a href="#url-service">$url</a></li>
     </ul>
 
     <ul class="syo-nav syo-nav-list" id="sidebar">
@@ -111,6 +112,67 @@
             console.log( html );
             // => "<div ng-controller='...'>...</div>"
         });
+        {% endhighlight %}
+    </article>
+
+    <!-- Service: $url -->
+    <article id="url-service">
+        <header>
+            <h2>Service <code>$url</code></h2>
+        </header>
+
+        <p>
+            Utilidade para construção e manipulação de URLs. Permite manipular todos os componentes de uma URL
+            (protocolo, usuário/senha, path, query string, etc).
+        </p>
+
+        {% highlight javascript %}
+        var url = $url();
+        // construtor também aceita uma string ou outra instância de $url
+        // var url1 = $url( "http://example.com" );
+        // var url2 = $url( url1 );
+
+        url.protocol( "https" );
+        url.protocol();
+        // => "https"
+
+        url.user( "foo" );
+        url.user();
+        // => "foo"
+
+        url.password( "barbaz" );
+        url.password();
+        // => "barbaz"
+
+        url.host( "example.com" );
+        url.host();
+        // => "example.com"
+
+        url.port( 8080 );
+        url.port();
+        // => 8080
+
+        url.path( "/foo/bar.html" );
+        url.path();
+        // => "/foo/bar"
+
+        url.query( "bar", "foo" );
+        url.query({
+            baz: "quux"
+        });
+
+        url.query( "bar" );
+        // => "foo"
+
+        url.query();
+        // => { bar: "foo", baz: "quux" }
+
+        url.hash( "foobarbaz" );
+        url.hash();
+        // => "foobarbaz"
+
+        url.toString();
+        // => "https://foo:barbaz@example.com:8080/foo/bar?baz=qux#foobarbaz
         {% endhighlight %}
     </article>
 
