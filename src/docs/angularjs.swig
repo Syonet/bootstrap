@@ -6,6 +6,7 @@
         <li class="syo-nav-header"><i class="icon-cog"></i> Angular.js - services</li>
         <li><a href="#localStorage-service">$localStorage</a></li>
         <li><a href="#notification-service">$notification</a></li>
+        <li><a href="#templatePromise-service">$templatePromise</a></li>
     </ul>
 
     <ul class="syo-nav syo-nav-list" id="sidebar">
@@ -90,6 +91,26 @@
             // Toda notificação irá durar 5s, por padrão
             $notificationProvider.defaultTimeout = 5000;
         }]);
+        {% endhighlight %}
+    </article>
+
+    <!-- Service: $templatePromise -->
+    <article id="templatePromise-service">
+        <header>
+            <h2>Service <code>$templatePromise</code></h2>
+        </header>
+
+        <p>
+            Cria uma promise para uma string de template ou uma URL de um template, útil para unificar o recebimento de
+            um template.<br>
+            O retorno da promise é o conteúdo do template no tipo string.
+        </p>
+
+        {% highlight javascript %}
+        var promise = $templatePromise( template, templateUrl ).then(function( html ) {
+            console.log( html );
+            // => "<div ng-controller='...'>...</div>"
+        });
         {% endhighlight %}
     </article>
 
