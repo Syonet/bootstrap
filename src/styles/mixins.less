@@ -167,6 +167,11 @@
     .transition( @button-bg-transition );
   }
 
+  &:focus {
+    outline: 1px dotted fade( #000, 80% );
+    outline-offset: -2px;
+  }
+
   &:hover,
   &:focus,
   &:active,
