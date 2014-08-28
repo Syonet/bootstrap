@@ -124,7 +124,7 @@
 					elem.html( content );
 
 					elem = $compile( elem )( scope || $rootScope );
-					return notification;
+					return elem.controller( "syoNotification" );
 				}
 			}
 		];
