@@ -1,0 +1,4952 @@
+/*!
+ * Syonet Bootstrap v0.6.0
+ * O conjunto de ferramentas front-end da Syonet
+ * http://syonet.github.com/bootstrap/
+ *
+ * Created by Syonet CRM <syonet@syonet.com>
+ * http://www.syonet.com
+ */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+[hidden] {
+  display: none;
+}
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap;
+}
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+}
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0;
+}
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==============================================================================================
+   Scaffolding
+   ============================================================================================== */
+/*
+ * 1. Sobrescreve o box-sizing utilizado no Normalize.css
+ */
+*,
+input[type="search"] {
+  /* 1 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * Redimensionamento horizontal do textarea pode quebrar o layout de maneira inesperada
+ */
+textarea {
+  resize: vertical;
+}
+/* Scaffolding - Body
+   ------------------ */
+html {
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+body {
+  color: #222222;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #ffffff;
+}
+/* Scaffolding - Links
+   ------------------- */
+a {
+  color: #336699;
+  text-decoration: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a:active,
+a:hover {
+  color: #264c73;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+}
+/* Scaffolding - Outros
+   -------------------- */
+/*
+ * Imagens responsivas.
+ * 1. Seta a largura máxima para não ficar maior que seus parentes
+ * 2. Dimensiona a altura de acordo com a largura, senão vai esticar/compactar a imagem
+ */
+img {
+  display: inline-block;
+  max-width: 100%;
+  /* 1 */
+  height: auto;
+  /* 2 */
+}
+/* horizontal rule do HTML5Boilerplate */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Estilos de seleção de texto. Eles tem que ficar separados ou não funcionarão.
+ * http://stackoverflow.com/a/19075802/2083599
+ */
+::-moz-selection {
+  color: #FFF;
+  background: #3399FF;
+  text-shadow: none;
+}
+::selection {
+  color: #FFF;
+  background: #3399FF;
+  text-shadow: none;
+}
+/* ==============================================================================================
+   Grid
+   ============================================================================================== */
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+.row .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+/*
+ * 1. Evita que elementos vazios colapsem
+ */
+.col {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  /* 1 */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Grid - Flexbox
+   -------------- */
+/*
+ * 1. Atualmente só tem efeito se dentro de um elemento posicionado
+ */
+.flex-row,
+.syo-form-table .syo-field {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  height: 100%;
+  /* 1 */
+}
+.flex-row > .col,
+.syo-form-table .syo-field > .col {
+  float: none;
+}
+@media only screen {
+  .col-tiny-12 {
+    width: 100%;
+  }
+  .col-tiny-11 {
+    width: 91.66666667%;
+  }
+  .col-tiny-10 {
+    width: 83.33333333%;
+  }
+  .col-tiny-9 {
+    width: 75%;
+  }
+  .col-tiny-8 {
+    width: 66.66666667%;
+  }
+  .col-tiny-7 {
+    width: 58.33333333%;
+  }
+  .col-tiny-6 {
+    width: 50%;
+  }
+  .col-tiny-5 {
+    width: 41.66666667%;
+  }
+  .col-tiny-4 {
+    width: 33.33333333%;
+  }
+  .col-tiny-3 {
+    width: 25%;
+  }
+  .col-tiny-2 {
+    width: 16.66666667%;
+  }
+  .col-tiny-1 {
+    width: 8.33333333%;
+  }
+  .offset-tiny-12 {
+    margin-left: 100%;
+  }
+  .offset-tiny-11 {
+    margin-left: 91.66666667%;
+  }
+  .offset-tiny-10 {
+    margin-left: 83.33333333%;
+  }
+  .offset-tiny-9 {
+    margin-left: 75%;
+  }
+  .offset-tiny-8 {
+    margin-left: 66.66666667%;
+  }
+  .offset-tiny-7 {
+    margin-left: 58.33333333%;
+  }
+  .offset-tiny-6 {
+    margin-left: 50%;
+  }
+  .offset-tiny-5 {
+    margin-left: 41.66666667%;
+  }
+  .offset-tiny-4 {
+    margin-left: 33.33333333%;
+  }
+  .offset-tiny-3 {
+    margin-left: 25%;
+  }
+  .offset-tiny-2 {
+    margin-left: 16.66666667%;
+  }
+  .offset-tiny-1 {
+    margin-left: 8.33333333%;
+  }
+  .offset-tiny-0 {
+    margin-left: 0%;
+  }
+  .flex-row .col-tiny-12,
+  .syo-form-table .syo-field .col-tiny-12 {
+    flex: 1 1 100%;
+  }
+  .flex-row .col-tiny-11,
+  .syo-form-table .syo-field .col-tiny-11 {
+    flex: 1 1 91.66666667%;
+  }
+  .flex-row .col-tiny-10,
+  .syo-form-table .syo-field .col-tiny-10 {
+    flex: 1 1 83.33333333%;
+  }
+  .flex-row .col-tiny-9,
+  .syo-form-table .syo-field .col-tiny-9 {
+    flex: 1 1 75%;
+  }
+  .flex-row .col-tiny-8,
+  .syo-form-table .syo-field .col-tiny-8 {
+    flex: 1 1 66.66666667%;
+  }
+  .flex-row .col-tiny-7,
+  .syo-form-table .syo-field .col-tiny-7 {
+    flex: 1 1 58.33333333%;
+  }
+  .flex-row .col-tiny-6,
+  .syo-form-table .syo-field .col-tiny-6 {
+    flex: 1 1 50%;
+  }
+  .flex-row .col-tiny-5,
+  .syo-form-table .syo-field .col-tiny-5 {
+    flex: 1 1 41.66666667%;
+  }
+  .flex-row .col-tiny-4,
+  .syo-form-table .syo-field .col-tiny-4 {
+    flex: 1 1 33.33333333%;
+  }
+  .flex-row .col-tiny-3,
+  .syo-form-table .syo-field .col-tiny-3 {
+    flex: 1 1 25%;
+  }
+  .flex-row .col-tiny-2,
+  .syo-form-table .syo-field .col-tiny-2 {
+    flex: 1 1 16.66666667%;
+  }
+  .flex-row .col-tiny-1,
+  .syo-form-table .syo-field .col-tiny-1 {
+    flex: 1 1 8.33333333%;
+  }
+  .syo-field label[class*="col-tiny-"]:not(.col-tiny-12),
+  .syo-field .syo-field-text[class*="col-tiny-"]:not(.col-tiny-12) {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 768px) {
+  .col-small-12 {
+    width: 100%;
+  }
+  .col-small-11 {
+    width: 91.66666667%;
+  }
+  .col-small-10 {
+    width: 83.33333333%;
+  }
+  .col-small-9 {
+    width: 75%;
+  }
+  .col-small-8 {
+    width: 66.66666667%;
+  }
+  .col-small-7 {
+    width: 58.33333333%;
+  }
+  .col-small-6 {
+    width: 50%;
+  }
+  .col-small-5 {
+    width: 41.66666667%;
+  }
+  .col-small-4 {
+    width: 33.33333333%;
+  }
+  .col-small-3 {
+    width: 25%;
+  }
+  .col-small-2 {
+    width: 16.66666667%;
+  }
+  .col-small-1 {
+    width: 8.33333333%;
+  }
+  .offset-small-12 {
+    margin-left: 100%;
+  }
+  .offset-small-11 {
+    margin-left: 91.66666667%;
+  }
+  .offset-small-10 {
+    margin-left: 83.33333333%;
+  }
+  .offset-small-9 {
+    margin-left: 75%;
+  }
+  .offset-small-8 {
+    margin-left: 66.66666667%;
+  }
+  .offset-small-7 {
+    margin-left: 58.33333333%;
+  }
+  .offset-small-6 {
+    margin-left: 50%;
+  }
+  .offset-small-5 {
+    margin-left: 41.66666667%;
+  }
+  .offset-small-4 {
+    margin-left: 33.33333333%;
+  }
+  .offset-small-3 {
+    margin-left: 25%;
+  }
+  .offset-small-2 {
+    margin-left: 16.66666667%;
+  }
+  .offset-small-1 {
+    margin-left: 8.33333333%;
+  }
+  .offset-small-0 {
+    margin-left: 0%;
+  }
+  .flex-row .col-small-12,
+  .syo-form-table .syo-field .col-small-12 {
+    flex: 1 1 100%;
+  }
+  .flex-row .col-small-11,
+  .syo-form-table .syo-field .col-small-11 {
+    flex: 1 1 91.66666667%;
+  }
+  .flex-row .col-small-10,
+  .syo-form-table .syo-field .col-small-10 {
+    flex: 1 1 83.33333333%;
+  }
+  .flex-row .col-small-9,
+  .syo-form-table .syo-field .col-small-9 {
+    flex: 1 1 75%;
+  }
+  .flex-row .col-small-8,
+  .syo-form-table .syo-field .col-small-8 {
+    flex: 1 1 66.66666667%;
+  }
+  .flex-row .col-small-7,
+  .syo-form-table .syo-field .col-small-7 {
+    flex: 1 1 58.33333333%;
+  }
+  .flex-row .col-small-6,
+  .syo-form-table .syo-field .col-small-6 {
+    flex: 1 1 50%;
+  }
+  .flex-row .col-small-5,
+  .syo-form-table .syo-field .col-small-5 {
+    flex: 1 1 41.66666667%;
+  }
+  .flex-row .col-small-4,
+  .syo-form-table .syo-field .col-small-4 {
+    flex: 1 1 33.33333333%;
+  }
+  .flex-row .col-small-3,
+  .syo-form-table .syo-field .col-small-3 {
+    flex: 1 1 25%;
+  }
+  .flex-row .col-small-2,
+  .syo-form-table .syo-field .col-small-2 {
+    flex: 1 1 16.66666667%;
+  }
+  .flex-row .col-small-1,
+  .syo-form-table .syo-field .col-small-1 {
+    flex: 1 1 8.33333333%;
+  }
+  .syo-field label[class*="col-small-"]:not(.col-small-12),
+  .syo-field .syo-field-text[class*="col-small-"]:not(.col-small-12) {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 980px) {
+  .col-medium-12 {
+    width: 100%;
+  }
+  .col-medium-11 {
+    width: 91.66666667%;
+  }
+  .col-medium-10 {
+    width: 83.33333333%;
+  }
+  .col-medium-9 {
+    width: 75%;
+  }
+  .col-medium-8 {
+    width: 66.66666667%;
+  }
+  .col-medium-7 {
+    width: 58.33333333%;
+  }
+  .col-medium-6 {
+    width: 50%;
+  }
+  .col-medium-5 {
+    width: 41.66666667%;
+  }
+  .col-medium-4 {
+    width: 33.33333333%;
+  }
+  .col-medium-3 {
+    width: 25%;
+  }
+  .col-medium-2 {
+    width: 16.66666667%;
+  }
+  .col-medium-1 {
+    width: 8.33333333%;
+  }
+  .offset-medium-12 {
+    margin-left: 100%;
+  }
+  .offset-medium-11 {
+    margin-left: 91.66666667%;
+  }
+  .offset-medium-10 {
+    margin-left: 83.33333333%;
+  }
+  .offset-medium-9 {
+    margin-left: 75%;
+  }
+  .offset-medium-8 {
+    margin-left: 66.66666667%;
+  }
+  .offset-medium-7 {
+    margin-left: 58.33333333%;
+  }
+  .offset-medium-6 {
+    margin-left: 50%;
+  }
+  .offset-medium-5 {
+    margin-left: 41.66666667%;
+  }
+  .offset-medium-4 {
+    margin-left: 33.33333333%;
+  }
+  .offset-medium-3 {
+    margin-left: 25%;
+  }
+  .offset-medium-2 {
+    margin-left: 16.66666667%;
+  }
+  .offset-medium-1 {
+    margin-left: 8.33333333%;
+  }
+  .offset-medium-0 {
+    margin-left: 0%;
+  }
+  .flex-row .col-medium-12,
+  .syo-form-table .syo-field .col-medium-12 {
+    flex: 1 1 100%;
+  }
+  .flex-row .col-medium-11,
+  .syo-form-table .syo-field .col-medium-11 {
+    flex: 1 1 91.66666667%;
+  }
+  .flex-row .col-medium-10,
+  .syo-form-table .syo-field .col-medium-10 {
+    flex: 1 1 83.33333333%;
+  }
+  .flex-row .col-medium-9,
+  .syo-form-table .syo-field .col-medium-9 {
+    flex: 1 1 75%;
+  }
+  .flex-row .col-medium-8,
+  .syo-form-table .syo-field .col-medium-8 {
+    flex: 1 1 66.66666667%;
+  }
+  .flex-row .col-medium-7,
+  .syo-form-table .syo-field .col-medium-7 {
+    flex: 1 1 58.33333333%;
+  }
+  .flex-row .col-medium-6,
+  .syo-form-table .syo-field .col-medium-6 {
+    flex: 1 1 50%;
+  }
+  .flex-row .col-medium-5,
+  .syo-form-table .syo-field .col-medium-5 {
+    flex: 1 1 41.66666667%;
+  }
+  .flex-row .col-medium-4,
+  .syo-form-table .syo-field .col-medium-4 {
+    flex: 1 1 33.33333333%;
+  }
+  .flex-row .col-medium-3,
+  .syo-form-table .syo-field .col-medium-3 {
+    flex: 1 1 25%;
+  }
+  .flex-row .col-medium-2,
+  .syo-form-table .syo-field .col-medium-2 {
+    flex: 1 1 16.66666667%;
+  }
+  .flex-row .col-medium-1,
+  .syo-form-table .syo-field .col-medium-1 {
+    flex: 1 1 8.33333333%;
+  }
+  .syo-field label[class*="col-medium-"]:not(.col-medium-12),
+  .syo-field .syo-field-text[class*="col-medium-"]:not(.col-medium-12) {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .col-large-12 {
+    width: 100%;
+  }
+  .col-large-11 {
+    width: 91.66666667%;
+  }
+  .col-large-10 {
+    width: 83.33333333%;
+  }
+  .col-large-9 {
+    width: 75%;
+  }
+  .col-large-8 {
+    width: 66.66666667%;
+  }
+  .col-large-7 {
+    width: 58.33333333%;
+  }
+  .col-large-6 {
+    width: 50%;
+  }
+  .col-large-5 {
+    width: 41.66666667%;
+  }
+  .col-large-4 {
+    width: 33.33333333%;
+  }
+  .col-large-3 {
+    width: 25%;
+  }
+  .col-large-2 {
+    width: 16.66666667%;
+  }
+  .col-large-1 {
+    width: 8.33333333%;
+  }
+  .offset-large-12 {
+    margin-left: 100%;
+  }
+  .offset-large-11 {
+    margin-left: 91.66666667%;
+  }
+  .offset-large-10 {
+    margin-left: 83.33333333%;
+  }
+  .offset-large-9 {
+    margin-left: 75%;
+  }
+  .offset-large-8 {
+    margin-left: 66.66666667%;
+  }
+  .offset-large-7 {
+    margin-left: 58.33333333%;
+  }
+  .offset-large-6 {
+    margin-left: 50%;
+  }
+  .offset-large-5 {
+    margin-left: 41.66666667%;
+  }
+  .offset-large-4 {
+    margin-left: 33.33333333%;
+  }
+  .offset-large-3 {
+    margin-left: 25%;
+  }
+  .offset-large-2 {
+    margin-left: 16.66666667%;
+  }
+  .offset-large-1 {
+    margin-left: 8.33333333%;
+  }
+  .offset-large-0 {
+    margin-left: 0%;
+  }
+  .flex-row .col-large-12,
+  .syo-form-table .syo-field .col-large-12 {
+    flex: 1 1 100%;
+  }
+  .flex-row .col-large-11,
+  .syo-form-table .syo-field .col-large-11 {
+    flex: 1 1 91.66666667%;
+  }
+  .flex-row .col-large-10,
+  .syo-form-table .syo-field .col-large-10 {
+    flex: 1 1 83.33333333%;
+  }
+  .flex-row .col-large-9,
+  .syo-form-table .syo-field .col-large-9 {
+    flex: 1 1 75%;
+  }
+  .flex-row .col-large-8,
+  .syo-form-table .syo-field .col-large-8 {
+    flex: 1 1 66.66666667%;
+  }
+  .flex-row .col-large-7,
+  .syo-form-table .syo-field .col-large-7 {
+    flex: 1 1 58.33333333%;
+  }
+  .flex-row .col-large-6,
+  .syo-form-table .syo-field .col-large-6 {
+    flex: 1 1 50%;
+  }
+  .flex-row .col-large-5,
+  .syo-form-table .syo-field .col-large-5 {
+    flex: 1 1 41.66666667%;
+  }
+  .flex-row .col-large-4,
+  .syo-form-table .syo-field .col-large-4 {
+    flex: 1 1 33.33333333%;
+  }
+  .flex-row .col-large-3,
+  .syo-form-table .syo-field .col-large-3 {
+    flex: 1 1 25%;
+  }
+  .flex-row .col-large-2,
+  .syo-form-table .syo-field .col-large-2 {
+    flex: 1 1 16.66666667%;
+  }
+  .flex-row .col-large-1,
+  .syo-form-table .syo-field .col-large-1 {
+    flex: 1 1 8.33333333%;
+  }
+  .syo-field label[class*="col-large-"]:not(.col-large-12),
+  .syo-field .syo-field-text[class*="col-large-"]:not(.col-large-12) {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .col-xlarge-12 {
+    width: 100%;
+  }
+  .col-xlarge-11 {
+    width: 91.66666667%;
+  }
+  .col-xlarge-10 {
+    width: 83.33333333%;
+  }
+  .col-xlarge-9 {
+    width: 75%;
+  }
+  .col-xlarge-8 {
+    width: 66.66666667%;
+  }
+  .col-xlarge-7 {
+    width: 58.33333333%;
+  }
+  .col-xlarge-6 {
+    width: 50%;
+  }
+  .col-xlarge-5 {
+    width: 41.66666667%;
+  }
+  .col-xlarge-4 {
+    width: 33.33333333%;
+  }
+  .col-xlarge-3 {
+    width: 25%;
+  }
+  .col-xlarge-2 {
+    width: 16.66666667%;
+  }
+  .col-xlarge-1 {
+    width: 8.33333333%;
+  }
+  .offset-xlarge-12 {
+    margin-left: 100%;
+  }
+  .offset-xlarge-11 {
+    margin-left: 91.66666667%;
+  }
+  .offset-xlarge-10 {
+    margin-left: 83.33333333%;
+  }
+  .offset-xlarge-9 {
+    margin-left: 75%;
+  }
+  .offset-xlarge-8 {
+    margin-left: 66.66666667%;
+  }
+  .offset-xlarge-7 {
+    margin-left: 58.33333333%;
+  }
+  .offset-xlarge-6 {
+    margin-left: 50%;
+  }
+  .offset-xlarge-5 {
+    margin-left: 41.66666667%;
+  }
+  .offset-xlarge-4 {
+    margin-left: 33.33333333%;
+  }
+  .offset-xlarge-3 {
+    margin-left: 25%;
+  }
+  .offset-xlarge-2 {
+    margin-left: 16.66666667%;
+  }
+  .offset-xlarge-1 {
+    margin-left: 8.33333333%;
+  }
+  .offset-xlarge-0 {
+    margin-left: 0%;
+  }
+  .flex-row .col-xlarge-12,
+  .syo-form-table .syo-field .col-xlarge-12 {
+    flex: 1 1 100%;
+  }
+  .flex-row .col-xlarge-11,
+  .syo-form-table .syo-field .col-xlarge-11 {
+    flex: 1 1 91.66666667%;
+  }
+  .flex-row .col-xlarge-10,
+  .syo-form-table .syo-field .col-xlarge-10 {
+    flex: 1 1 83.33333333%;
+  }
+  .flex-row .col-xlarge-9,
+  .syo-form-table .syo-field .col-xlarge-9 {
+    flex: 1 1 75%;
+  }
+  .flex-row .col-xlarge-8,
+  .syo-form-table .syo-field .col-xlarge-8 {
+    flex: 1 1 66.66666667%;
+  }
+  .flex-row .col-xlarge-7,
+  .syo-form-table .syo-field .col-xlarge-7 {
+    flex: 1 1 58.33333333%;
+  }
+  .flex-row .col-xlarge-6,
+  .syo-form-table .syo-field .col-xlarge-6 {
+    flex: 1 1 50%;
+  }
+  .flex-row .col-xlarge-5,
+  .syo-form-table .syo-field .col-xlarge-5 {
+    flex: 1 1 41.66666667%;
+  }
+  .flex-row .col-xlarge-4,
+  .syo-form-table .syo-field .col-xlarge-4 {
+    flex: 1 1 33.33333333%;
+  }
+  .flex-row .col-xlarge-3,
+  .syo-form-table .syo-field .col-xlarge-3 {
+    flex: 1 1 25%;
+  }
+  .flex-row .col-xlarge-2,
+  .syo-form-table .syo-field .col-xlarge-2 {
+    flex: 1 1 16.66666667%;
+  }
+  .flex-row .col-xlarge-1,
+  .syo-form-table .syo-field .col-xlarge-1 {
+    flex: 1 1 8.33333333%;
+  }
+  .syo-field label[class*="col-xlarge-"]:not(.col-xlarge-12),
+  .syo-field .syo-field-text[class*="col-xlarge-"]:not(.col-xlarge-12) {
+    text-align: right;
+  }
+}
+/* ==============================================================================================
+   Layouts
+   ============================================================================================== */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container-vertical {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* ==============================================================================================
+   Tipografia
+   ============================================================================================== */
+/* Parágrafos
+   ---------- */
+p {
+  margin: 0 0 10px;
+}
+p.lead {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+}
+/* Endereços
+   --------- */
+address {
+  font-style: normal;
+}
+/* Ênfase
+   ------ */
+small {
+  font-size: 85%;
+}
+em,
+i {
+  font-style: italic;
+}
+strong,
+b {
+  font-weight: bold;
+}
+/* Citações
+   -------- */
+blockquote {
+  margin: 0 0 20px;
+  padding: 5px 10px;
+  border-left: 3px solid #c8c8c8;
+}
+/* Descrições
+   ---------- */
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 30px;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+.row dl.dl-inline.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+dl.dl-inline dt,
+dl.dl-inline dd {
+  min-height: 30px;
+}
+dl.dl-inline dt {
+  float: left;
+  clear: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+dl.dl-inline dt:not( .col ):not( [ class*="col-" ] ) {
+  width: 160px;
+}
+dl.dl-inline dd {
+  display: block;
+}
+dl.dl-inline dd:not( .col ):not( [ class*="offset-" ] ) {
+  margin-left: 170px;
+}
+/* Alinhamento de texto
+   -------------------- */
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+/* ==============================================================================================
+   Código
+   ============================================================================================== */
+code,
+pre {
+  border: 1px solid #e1e1e1;
+  color: #444444;
+  font-size: 0.9em;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  background-color: #f7f7f7;
+  vertical-align: middle;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+/*
+ * 1. Garante que não quebre em 2 linhas
+ */
+code {
+  padding: 1px 3px;
+  color: #D14;
+  white-space: nowrap;
+  /* 1 */
+}
+pre {
+  display: block;
+  margin-bottom: 20px;
+  padding: 9.5px;
+}
+/* ==============================================================================================
+   Buttons
+   ============================================================================================== */
+/*
+ * 1. Links não devem ter underline algum
+ * 2. Links não tem alinhamento centralizado por padrão
+ * 3. .syo-active é persistente ao contrário de :active, então usa um box-shadow mais leve que o default
+ *    pra notificar que o botão está ativo porém desabilitado
+ */
+.syo-button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 4px 10px;
+  border: 1px solid;
+  line-height: 1.42857143;
+  text-align: center;
+  /* 2 */
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border-color: #aaaaaa;
+  color: #222222;
+  background-color: #f6f6f6;
+  background-image: -webkit-linear-gradient(top, #fbfbfb, #eeeeee);
+  background-image: linear-gradient(to bottom, #fbfbfb, #eeeeee);
+  background-repeat: repeat-x;
+}
+.syo-button:hover {
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.syo-button:focus {
+  outline: 1px dotted rgba(0, 0, 0, 0.8);
+  outline-offset: -2px;
+}
+.syo-button:hover,
+.syo-button:focus,
+.syo-button:active,
+.syo-button.syo-active {
+  border-color: #919191;
+  color: #222222;
+  background: #e1e1e1;
+}
+.syo-button[disabled],
+.syo-button.syo-disabled,
+fieldset[disabled] .syo-button,
+.syo-button[disabled]:hover,
+.syo-button.syo-disabled:hover,
+fieldset[disabled] .syo-button:hover,
+.syo-button[disabled]:focus,
+.syo-button.syo-disabled:focus,
+fieldset[disabled] .syo-button:focus,
+.syo-button[disabled]:active,
+.syo-button.syo-disabled:active,
+fieldset[disabled] .syo-button:active,
+.syo-button[disabled].syo-active,
+.syo-button.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-active {
+  border-color: #aaaaaa;
+  color: #aaaaaa;
+  background: #eeeeee;
+}
+a.syo-button,
+a.syo-button:hover {
+  text-decoration: none;
+  /* 1 */
+}
+.syo-button:active,
+.syo-button.syo-active {
+  outline: 0;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+}
+.syo-button[disabled],
+.syo-button.syo-disabled,
+fieldset[disabled] .syo-button {
+  cursor: not-allowed;
+  opacity: 0.8;
+  filter: Alpha(Opacity=80);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.syo-button[disabled].syo-active,
+.syo-button.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-active {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
+  /* 3 */
+}
+/*
+ * 1. Corrige altura de quando é um elemento input no Firefox
+ */
+input.syo-button {
+  height: 30px;
+  /* 1 */
+}
+input.syo-button.syo-button-large {
+  height: 37.5px;
+}
+/* Buttons - Buttonset
+   ------------------- */
+/*
+ * 1. Evita borda dupla
+ * 2. Usado para considerar o "z-index" de um elemento com "position: static"
+ * 3. Aumentando o z-index faz com que a borda do item ativo/hover fique sobre a dos seus vizinhos
+ * 4. Corrige border-radius no primeiro e no último botões do buttonset
+ * 5. Evita espaçamento vertical se o buttonset tiver "display: inline-block"
+ */
+.syo-buttonset {
+  display: inline-block;
+  vertical-align: middle;
+  /* 5 */
+}
+.syo-buttonset:before,
+.syo-buttonset:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.syo-buttonset:after {
+  clear: both;
+}
+.syo-buttonset > .syo-button {
+  float: left;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.syo-buttonset > .syo-button + .syo-button {
+  margin-left: -1px;
+  /* 1 */
+}
+.syo-buttonset > .syo-button:hover,
+.syo-buttonset > .syo-button:focus {
+  position: relative;
+  /* 2 */
+  z-index: 1;
+  /* 3 */
+}
+.syo-buttonset > .syo-button:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  /* 4 */
+}
+.syo-buttonset > .syo-button:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  /* 4 */
+}
+/* Buttons - Tamanhos
+   ------------------ */
+.syo-button-large {
+  padding: 6.25px 12.5px;
+  font-size: 1.25em;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+/* Buttons - Estados
+   ----------------- */
+.syo-button.syo-success {
+  border-color: #3d8b3d;
+  color: #ffffff;
+  background-color: #67bd67;
+  background-image: -webkit-linear-gradient(top, #6ec06e, #5cb85c);
+  background-image: linear-gradient(to bottom, #6ec06e, #5cb85c);
+  background-repeat: repeat-x;
+}
+.syo-button.syo-success:hover {
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.syo-button.syo-success:focus {
+  outline: 1px dotted rgba(0, 0, 0, 0.8);
+  outline-offset: -2px;
+}
+.syo-button.syo-success:hover,
+.syo-button.syo-success:focus,
+.syo-button.syo-success:active,
+.syo-button.syo-success.syo-active {
+  border-color: #2d672d;
+  color: #ffffff;
+  background: #4cae4c;
+}
+.syo-button.syo-success[disabled],
+.syo-button.syo-success.syo-disabled,
+fieldset[disabled] .syo-button.syo-success,
+.syo-button.syo-success[disabled]:hover,
+.syo-button.syo-success.syo-disabled:hover,
+fieldset[disabled] .syo-button.syo-success:hover,
+.syo-button.syo-success[disabled]:focus,
+.syo-button.syo-success.syo-disabled:focus,
+fieldset[disabled] .syo-button.syo-success:focus,
+.syo-button.syo-success[disabled]:active,
+.syo-button.syo-success.syo-disabled:active,
+fieldset[disabled] .syo-button.syo-success:active,
+.syo-button.syo-success[disabled].syo-active,
+.syo-button.syo-success.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-success.syo-active {
+  border-color: #3d8b3d;
+  color: #3d8b3d;
+  background: #5cb85c;
+}
+.syo-button.syo-error {
+  border-color: #b52b27;
+  color: #ffffff;
+  background-color: #dc5f5c;
+  background-image: -webkit-linear-gradient(top, #de6764, #d9534f);
+  background-image: linear-gradient(to bottom, #de6764, #d9534f);
+  background-repeat: repeat-x;
+}
+.syo-button.syo-error:hover {
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.syo-button.syo-error:focus {
+  outline: 1px dotted rgba(0, 0, 0, 0.8);
+  outline-offset: -2px;
+}
+.syo-button.syo-error:hover,
+.syo-button.syo-error:focus,
+.syo-button.syo-error:active,
+.syo-button.syo-error.syo-active {
+  border-color: #8b211e;
+  color: #ffffff;
+  background: #d43f3a;
+}
+.syo-button.syo-error[disabled],
+.syo-button.syo-error.syo-disabled,
+fieldset[disabled] .syo-button.syo-error,
+.syo-button.syo-error[disabled]:hover,
+.syo-button.syo-error.syo-disabled:hover,
+fieldset[disabled] .syo-button.syo-error:hover,
+.syo-button.syo-error[disabled]:focus,
+.syo-button.syo-error.syo-disabled:focus,
+fieldset[disabled] .syo-button.syo-error:focus,
+.syo-button.syo-error[disabled]:active,
+.syo-button.syo-error.syo-disabled:active,
+fieldset[disabled] .syo-button.syo-error:active,
+.syo-button.syo-error[disabled].syo-active,
+.syo-button.syo-error.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-error.syo-active {
+  border-color: #b52b27;
+  color: #b52b27;
+  background: #d9534f;
+}
+.syo-button.syo-info {
+  border-color: #0e466e;
+  color: #ffffff;
+  background-color: #197ac0;
+  background-image: -webkit-linear-gradient(top, #1a7fc9, #1771b2);
+  background-image: linear-gradient(to bottom, #1a7fc9, #1771b2);
+  background-repeat: repeat-x;
+}
+.syo-button.syo-info:hover {
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.syo-button.syo-info:focus {
+  outline: 1px dotted rgba(0, 0, 0, 0.8);
+  outline-offset: -2px;
+}
+.syo-button.syo-info:hover,
+.syo-button.syo-info:focus,
+.syo-button.syo-info:active,
+.syo-button.syo-info.syo-active {
+  border-color: #082941;
+  color: #ffffff;
+  background: #14639b;
+}
+.syo-button.syo-info[disabled],
+.syo-button.syo-info.syo-disabled,
+fieldset[disabled] .syo-button.syo-info,
+.syo-button.syo-info[disabled]:hover,
+.syo-button.syo-info.syo-disabled:hover,
+fieldset[disabled] .syo-button.syo-info:hover,
+.syo-button.syo-info[disabled]:focus,
+.syo-button.syo-info.syo-disabled:focus,
+fieldset[disabled] .syo-button.syo-info:focus,
+.syo-button.syo-info[disabled]:active,
+.syo-button.syo-info.syo-disabled:active,
+fieldset[disabled] .syo-button.syo-info:active,
+.syo-button.syo-info[disabled].syo-active,
+.syo-button.syo-info.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-info.syo-active {
+  border-color: #0e466e;
+  color: #0e466e;
+  background: #1771b2;
+}
+/* Buttons - Estilo link
+   --------------------- */
+.syo-button.syo-button-link {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  color: #336699;
+  text-decoration: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.syo-button.syo-button-link:active,
+.syo-button.syo-button-link:hover {
+  color: #264c73;
+  text-decoration: underline;
+}
+.syo-button.syo-button-link:focus {
+  outline: thin dotted;
+}
+/* ==============================================================================================
+   Forms
+   ============================================================================================== */
+/*
+ * 1. Tem que usar line-height: normal por causa de um bug do Firefox
+ *    TODO: Qual bug?
+ * 2. Declara antes de tudo para remover o outline azul do safari
+ */
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="range"],
+input[type="color"],
+select,
+textarea {
+  min-height: 30px;
+  height: 30px;
+  padding: 5px 5px;
+  border: 1px solid #aaaaaa;
+  background-color: #fefefe;
+  text-shadow: 0 1px 0 #FFF;
+  line-height: normal;
+  /* 1 */
+  color: #666666;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: box-shadow .15s linear, color .15s linear;
+  -moz-transition: box-shadow .15s linear, color .15s linear;
+  -o-transition: box-shadow .15s linear, color .15s linear;
+  transition: box-shadow .15s linear, color .15s linear;
+}
+input:not([type]):hover,
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover,
+input[type="datetime"]:hover,
+input[type="datetime-local"]:hover,
+input[type="month"]:hover,
+input[type="week"]:hover,
+input[type="email"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+input[type="range"]:hover,
+input[type="color"]:hover,
+select:hover,
+textarea:hover {
+  border-color: #919191;
+  color: #1a1a1a;
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0 1px 2px #d2d2d2;
+  box-shadow: 0 1px 2px #d2d2d2;
+}
+input:not([type]):focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="range"]:focus,
+input[type="color"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  /* 2 */
+  border-color: #008000;
+  background-color: #fefefe;
+  -webkit-box-shadow: 0 1px 2px #d2d2d2;
+  box-shadow: 0 1px 2px #d2d2d2;
+}
+input:not([type]).input-block-level,
+input[type="text"].input-block-level,
+input[type="password"].input-block-level,
+input[type="date"].input-block-level,
+input[type="time"].input-block-level,
+input[type="datetime"].input-block-level,
+input[type="datetime-local"].input-block-level,
+input[type="month"].input-block-level,
+input[type="week"].input-block-level,
+input[type="email"].input-block-level,
+input[type="search"].input-block-level,
+input[type="tel"].input-block-level,
+input[type="number"].input-block-level,
+input[type="range"].input-block-level,
+input[type="color"].input-block-level,
+select.input-block-level,
+textarea.input-block-level {
+  display: block;
+  width: 100%;
+}
+input:not([type])[disabled],
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="date"][disabled],
+input[type="time"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="month"][disabled],
+input[type="week"][disabled],
+input[type="email"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="number"][disabled],
+input[type="range"][disabled],
+input[type="color"][disabled],
+select[disabled],
+textarea[disabled],
+input:not([type]).syo-disabled,
+input[type="text"].syo-disabled,
+input[type="password"].syo-disabled,
+input[type="date"].syo-disabled,
+input[type="time"].syo-disabled,
+input[type="datetime"].syo-disabled,
+input[type="datetime-local"].syo-disabled,
+input[type="month"].syo-disabled,
+input[type="week"].syo-disabled,
+input[type="email"].syo-disabled,
+input[type="search"].syo-disabled,
+input[type="tel"].syo-disabled,
+input[type="number"].syo-disabled,
+input[type="range"].syo-disabled,
+input[type="color"].syo-disabled,
+select.syo-disabled,
+textarea.syo-disabled {
+  border-color: #aaaaaa !important;
+  background: #ffffff !important;
+  color: #aaaaaa !important;
+  cursor: not-allowed;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+/* Reseta o height de select múltiplo/textarea */
+textarea[rows],
+select[size],
+select[multiple] {
+  height: auto;
+}
+/*
+ * 1. Padding necessário para alinhar verticalmente o texto do option selecionado
+ * 2. Safari controla o height baseado no line-height
+ *    TODO: Descobrir pq para o safari precisamos reduzir 6px do line-height
+ * 3. Evita que fique o text-shadow ao botar o mouse sobre um item no select
+ */
+select {
+  line-height: 24px;
+  /* 2 */
+}
+select option {
+  text-shadow: none;
+  /* 3 */
+}
+optgroup {
+  font-style: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  position: relative;
+  top: .3em;
+}
+/* Forms - Labels, fieldsets, legends
+   ---------------------------------- */
+fieldset {
+  margin: 0 0 10px;
+  padding: 0;
+  border: none;
+}
+legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #aaaaaa;
+  color: #666666;
+  font-weight: bold;
+}
+/*
+ * 1. Alinha o checkbox/radio com a primeira linha de texto do label pai
+ */
+label {
+  display: inline-block;
+  line-height: 30px;
+  vertical-align: middle;
+}
+label > input[type="checkbox"],
+label > input[type="radio"] {
+  position: relative;
+  top: -0.1em;
+  /* 1 */
+}
+/* Forms - syo-field
+   ----------------- */
+.syo-field {
+  display: block;
+  margin-bottom: 10px;
+}
+.syo-field.syo-field-inline {
+  display: inline-block;
+}
+.syo-field input,
+.syo-field textarea,
+.syo-field select,
+.syo-field button {
+  vertical-align: middle;
+}
+.syo-field > input[type="radio"],
+.syo-field > input[type="checkbox"] {
+  position: relative;
+  top: .6em;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+/* Forms - Estados
+   --------------- */
+input.syo-success,
+select.syo-success,
+input.syo-success:hover,
+select.syo-success:hover,
+input.syo-success:focus,
+select.syo-success:focus {
+  border-color: #3d8b3d;
+  color: #5cb85c;
+}
+input.syo-error,
+select.syo-error,
+input.syo-error:hover,
+select.syo-error:hover,
+input.syo-error:focus,
+select.syo-error:focus {
+  border-color: #b52b27;
+  color: #d9534f;
+}
+/*
+ * Suporte a validações HTML5
+ * 1. Remove o box-shadow do browser quando o campo está inválido
+ */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none;
+  /* 1 */
+}
+input:invalid:focus,
+select:invalid:focus,
+textarea:invalid:focus {
+  border-color: #b52b27;
+  color: #d9534f;
+}
+/* Forms - Help Block
+   ------------------ */
+.syo-field-help {
+  display: block;
+  color: #666666;
+}
+.syo-field-help.syo-error {
+  color: #d9534f;
+}
+.syo-field-help.syo-success {
+  color: #5cb85c;
+}
+/* Forms - Field Text
+   ------------------ */
+.syo-field .syo-field-text {
+  display: inline-block;
+  line-height: 30px;
+  vertical-align: middle;
+}
+/* Forms - Formatação especial input
+   --------------------------------- */
+.syo-input-icon {
+  position: relative;
+}
+.syo-input-icon input {
+  width: 100%;
+}
+.syo-input-icon input:first-child {
+  padding-right: 40px;
+}
+.syo-input-icon input:last-child {
+  padding-left: 40px;
+}
+.syo-input-icon [class^="icon-"],
+.syo-input-icon [class*=" icon-"] {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  padding: 5px 0;
+  text-align: center;
+}
+.syo-input-icon [class^="icon-"]:first-child,
+.syo-input-icon [class*=" icon-"]:first-child {
+  left: 0;
+}
+.syo-input-icon [class^="icon-"]:last-child,
+.syo-input-icon [class*=" icon-"]:last-child {
+  right: 0;
+}
+.syo-input-icon [class^="icon-"].icon-spin,
+.syo-input-icon [class*=" icon-"].icon-spin {
+  margin-top: 7px;
+  margin-right: -3px;
+  padding: 0;
+}
+/* ==============================================================================================
+   Tabelas
+   ============================================================================================== */
+table {
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table th small {
+  font-weight: normal;
+}
+/* Tabela - principal
+   ------------------ */
+/*
+ * Estilos comuns pra todas as tabelas
+ * 1. Sobrescreve a especificidade de alinhamento de texto com estas classes
+ */
+.syo-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: separate;
+  border: 1px solid #cccccc;
+  border-left: 0;
+  background-color: #ffffff;
+  table-layout: fixed;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  /* Arredonda canto superior esquerdo/direito do primeiro tr */
+  /* Desfaz arredondamento do canto superior esquerdo/direito de table com thead + tbody */
+}
+.syo-table td,
+.syo-table th {
+  /* 1 */
+  padding: 5px 10px;
+  line-height: 1.42857143;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  color: #444444;
+  text-align: left;
+  vertical-align: top;
+}
+.syo-table td.text-center,
+.syo-table th.text-center {
+  text-align: center;
+}
+.syo-table td.text-right,
+.syo-table th.text-right {
+  text-align: right;
+}
+.syo-table td.text-justify,
+.syo-table th.text-justify {
+  text-align: justify;
+}
+.syo-table th {
+  font-weight: bold;
+}
+.syo-table caption + thead tr:first-child th,
+.syo-table caption + tbody tr:first-child th,
+.syo-table caption + tbody tr:first-child td,
+.syo-table colgroup + thead tr:first-child th,
+.syo-table colgroup + tbody tr:first-child th,
+.syo-table colgroup + tbody tr:first-child td,
+.syo-table thead:first-child tr:first-child th,
+.syo-table tbody:first-child tr:first-child th,
+.syo-table tbody:first-child tr:first-child td,
+.syo-table tfoot:first-child tr:first-child td {
+  border-top: 0;
+}
+.syo-table thead:first-of-type,
+.syo-table tbody:first-of-type,
+.syo-table thead:first-of-type tr:first-child,
+.syo-table tbody:first-of-type tr:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.syo-table thead:first-of-type tr:first-child td:first-child,
+.syo-table tbody:first-of-type tr:first-child td:first-child,
+.syo-table thead:first-of-type tr:first-child th:first-child,
+.syo-table tbody:first-of-type tr:first-child th:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.syo-table thead:first-of-type tr:first-child td:last-child,
+.syo-table tbody:first-of-type tr:first-child td:last-child,
+.syo-table thead:first-of-type tr:first-child th:last-child,
+.syo-table tbody:first-of-type tr:first-child th:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.syo-table thead:first-of-type ~ tbody:first-of-type,
+.syo-table thead:first-of-type ~ tbody:first-of-type tr:first-child td,
+.syo-table thead:first-of-type ~ tbody:first-of-type tr:first-child th {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.syo-table tbody:last-child,
+.syo-table tfoot:last-of-type,
+.syo-table tbody:last-child tr:last-child,
+.syo-table tfoot:last-of-type tr:last-child {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.syo-table tbody:last-child tr:last-child td:first-child,
+.syo-table tfoot:last-of-type tr:last-child td:first-child,
+.syo-table tbody:last-child tr:last-child th:first-child,
+.syo-table tfoot:last-of-type tr:last-child th:first-child {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.syo-table tbody:last-child tr:last-child td:last-child,
+.syo-table tfoot:last-of-type tr:last-child td:last-child,
+.syo-table tbody:last-child tr:last-child th:last-child,
+.syo-table tfoot:last-of-type tr:last-child th:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* Tabela - Estados de linha/célula
+   -------------------------------- */
+.syo-table > tbody tr.syo-active td,
+.syo-table > tbody tr.syo-active th,
+.syo-table > tbody th.syo-active,
+.syo-table > tbody td.syo-active {
+  background-color: #d7ede2;
+}
+.syo-table > tbody tr.syo-success td,
+.syo-table > tbody tr.syo-success th,
+.syo-table > tbody th.syo-success,
+.syo-table > tbody td.syo-success {
+  color: #5cb85c;
+  background-color: #eaf6ea;
+}
+.syo-table > tbody tr.syo-error td,
+.syo-table > tbody tr.syo-error th,
+.syo-table > tbody th.syo-error,
+.syo-table > tbody td.syo-error {
+  color: #d9534f;
+  background-color: #f9e2e2;
+}
+/* Tabela - Headers/Footers
+   ------------------------ */
+.syo-table > thead,
+.syo-table > tbody > tr > th,
+.syo-table > tfoot {
+  color: #444444;
+  text-shadow: 0 1px 0 #FFF;
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+}
+/* Tabela - Estilo striped
+   ----------------------- */
+/*
+ * 1. Linhas pares (2, 4, 6...) receberão background para destacar-se das demais
+ */
+.syo-table-striped > tbody {
+  /* 1 */
+}
+.syo-table-striped > tbody > tr:nth-child( even ) > td,
+.syo-table-striped > tbody > tr:nth-child( even ) > th {
+  background-color: #f5f5f5;
+}
+/* Tabela - Estilo hover
+   --------------------- */
+.syo-table-hover > tbody tr:not(.syo-disabled):hover {
+  background-color: #f5f5f5;
+}
+/* Tabela - Tabela responsiva
+   -------------------------- */
+@media screen and (max-width: 767px) {
+  /*
+   * 1. Faz tabelas não se parecerem com tabelas mais
+   * 2. Oculta os headers/footers, mas mantendo a acessibilidade
+   * 3. Evita borda dupla
+   */
+  .syo-table-responsive {
+    border: none;
+  }
+  .syo-table-responsive > tbody {
+    /* 1 */
+  }
+  .syo-table-responsive > tbody > tr:nth-child( even ) > td,
+  .syo-table-responsive > tbody > tr:nth-child( even ) > th {
+    background-color: #f5f5f5;
+  }
+  .syo-table-responsive,
+  .syo-table-responsive thead,
+  .syo-table-responsive tbody,
+  .syo-table-responsive tr,
+  .syo-table-responsive td,
+  .syo-table-responsive th {
+    display: block;
+    /* 1 */
+  }
+  .syo-table-responsive thead,
+  .syo-table-responsive tfoot {
+    /* 2 */
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+  }
+  .syo-table-responsive tr {
+    border: 1px solid #cccccc;
+  }
+  .syo-table-responsive tr + tr {
+    border-top: none;
+    /* 3 */
+  }
+  .syo-table-responsive th,
+  .syo-table-responsive td {
+    position: relative;
+    padding-left: 45%;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    white-space: normal;
+    text-align: left;
+  }
+  .syo-table-responsive th:before,
+  .syo-table-responsive td:before {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    white-space: nowrap;
+    width: 40%;
+    padding-right: 10px;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-title);
+  }
+}
+/* ==============================================================================================
+   Listas
+   ============================================================================================== */
+ul,
+ol {
+  margin: 0 0 0 15px;
+  padding-left: 0;
+}
+ul.inline,
+ol.inline {
+  list-style: none;
+}
+ul.inline > li,
+ol.inline > li {
+  display: inline-block;
+  padding: 0 5px;
+}
+ul.unstyled,
+ol.unstyled {
+  list-style: none;
+  margin-left: 0;
+}
+/* ==============================================================================================
+   Fonte Icônica
+   ============================================================================================== */
+/* Fonte Icônica - @font-face
+   -------------------------- */
+@font-face {
+  font-family: "SyoBootstrap";
+  src: url("fonts/SyoBootstrap.eot");
+  src: url("fonts/SyoBootstrap.eot?#iefix") format("embedded-opentype"), url("fonts/SyoBootstrap.woff") format("woff"), url("fonts/SyoBootstrap.ttf") format("truetype"), url("fonts/SyoBootstrap.svg#SyoBootstrap") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Fonte Icônica - Principal
+   ------------------------- */
+/*
+ * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
+ * 2. Garante que o width acompanhará tamanho de fontes maiores
+ * 3. Melhor renderização da fonte
+ * 4. Alinha exatamente no meio, independente do crisp size da fonte
+ */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  /* 1 */
+  min-width: 14px;
+  display: inline-block;
+  line-height: 1;
+  font-family: "SyoBootstrap";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  vertical-align: -1px;
+  /* 4 */
+  /* 3 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"].icon-large,
+[class*=" icon-"].icon-large {
+  font-size: 150%;
+}
+[class^="icon-"].icon-2x,
+[class*=" icon-"].icon-2x {
+  font-size: 200%;
+}
+[class^="icon-"].icon-3x,
+[class*=" icon-"].icon-3x {
+  font-size: 300%;
+}
+[class^="icon-"].icon-4x,
+[class*=" icon-"].icon-4x {
+  font-size: 400%;
+}
+/* Fonte Icônica - Efeito spin
+   --------------------------- */
+.icon-spin {
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  -webkit-animation: anim-rotate 1s infinite steps(8);
+  -moz-animation: anim-rotate 1s infinite steps(8);
+  -ms-animation: anim-rotate 1s infinite steps(8);
+  -o-animation: anim-rotate 1s infinite steps(8);
+  animation: anim-rotate 1s infinite steps(8);
+}
+@-webkit-keyframes anim-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes anim-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes anim-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes anim-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes anim-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.icon-spin:before {
+  vertical-align: baseline;
+}
+.icon-film:before {
+  content: "\e604";
+}
+.icon-th-large:before {
+  content: "\e6b9";
+}
+.icon-th:before {
+  content: "\e6bc";
+}
+.icon-th-list:before {
+  content: "\e6e4";
+}
+.icon-times:before,
+.icon-delete:before,
+.icon-close:before,
+.icon-remove:before {
+  content: "\e69f";
+}
+.icon-file-o:before {
+  content: "\e6d5";
+}
+.icon-drawer:before {
+  content: "\e63c";
+}
+.icon-align-left:before {
+  content: "\e611";
+}
+.icon-align-center:before {
+  content: "\e635";
+}
+.icon-align-right:before {
+  content: "\e636";
+}
+.icon-align-justify:before {
+  content: "\e637";
+}
+.icon-list:before {
+  content: "\e640";
+}
+.icon-indent-left:before {
+  content: "\e638";
+}
+.icon-indent-right:before {
+  content: "\e639";
+}
+.icon-picture:before {
+  content: "\e603";
+}
+.icon-remove-circle:before {
+  content: "\e624";
+}
+.icon-ok-circle:before,
+.icon-check-circle:before {
+  content: "\e619";
+}
+.icon-plus:before {
+  content: "\e6d0";
+}
+.icon-folder-close:before {
+  content: "\e708";
+}
+.icon-folder-open:before {
+  content: "\e709";
+}
+.icon-cloud:before {
+  content: "\e63b";
+}
+.icon-files:before,
+.icon-copy:before {
+  content: "\e60b";
+}
+.icon-save:before {
+  content: "\e610";
+}
+.icon-menu:before,
+.icon-reorder:before {
+  content: "\e6d4";
+}
+.icon-list-ul:before {
+  content: "\e695";
+}
+.icon-list-ol:before {
+  content: "\e6d3";
+}
+.icon-sort:before {
+  content: "\e70a";
+}
+.icon-sort-down:before {
+  content: "\e714";
+}
+.icon-sort-up:before {
+  content: "\e715";
+}
+.icon-cloud-download:before {
+  content: "\e63d";
+}
+.icon-cloud-upload:before {
+  content: "\e678";
+}
+.icon-ellipsis-horizontal:before {
+  content: "\e608";
+}
+.icon-ellipsis-vertical:before {
+  content: "\e609";
+}
+.icon-file:before {
+  content: "\e6d6";
+}
+.icon-bell:before {
+  content: "\e6fd";
+}
+.icon-issue:before {
+  content: "\e6be";
+}
+.icon-issue-complete:before {
+  content: "\e6bf";
+}
+.icon-issue-reopen:before {
+  content: "\e6c0";
+}
+.icon-zzz:before {
+  content: "\e6c1";
+}
+.icon-edit:before {
+  content: "\e6ae";
+}
+.icon-chevron-right:before {
+  content: "\e6aa";
+}
+.icon-chevron-left:before {
+  content: "\e6ab";
+}
+.icon-chevron-up:before {
+  content: "\e6ac";
+}
+.icon-chevron-down:before {
+  content: "\e6ad";
+}
+.icon-database:before {
+  content: "\e6bd";
+}
+.icon-certificate:before {
+  content: "\e6ff";
+}
+.icon-add-circle:before {
+  content: "\e6ba";
+}
+.icon-delete-circle:before {
+  content: "\e6bb";
+}
+.icon-user:before {
+  content: "\e68b";
+}
+.icon-group:before {
+  content: "\e68a";
+}
+.icon-email:before {
+  content: "\e689";
+}
+.icon-sort-alpha-desc:before {
+  content: "\e70d";
+}
+.icon-sort-alpha-asc:before {
+  content: "\e70e";
+}
+.icon-sort-amount-asc:before {
+  content: "\e710";
+}
+.icon-sort-amount-desc:before {
+  content: "\e70f";
+}
+.icon-font-height:before {
+  content: "\e60e";
+}
+.icon-font-width:before {
+  content: "\e61e";
+}
+.icon-wheel:before {
+  content: "\e6fc";
+}
+.icon-car:before {
+  content: "\e688";
+}
+.icon-male:before {
+  content: "\e70b";
+}
+.icon-female:before {
+  content: "\e70c";
+}
+.icon-money:before {
+  content: "\e711";
+}
+.icon-asterisk:before {
+  content: "\e6fe";
+}
+.icon-quote-left:before {
+  content: "\e60a";
+}
+.icon-quote-right:before {
+  content: "\e60c";
+}
+.icon-home:before {
+  content: "\e600";
+}
+.icon-office:before {
+  content: "\e606";
+}
+.icon-pencil:before {
+  content: "\e605";
+}
+.icon-droplet:before {
+  content: "\e6f3";
+}
+.icon-paint-format:before {
+  content: "\e6f2";
+}
+.icon-camera:before {
+  content: "\e61b";
+}
+.icon-music:before {
+  content: "\e61a";
+}
+.icon-bullhorn:before {
+  content: "\e6b8";
+}
+.icon-books:before {
+  content: "\e607";
+}
+.icon-paste:before {
+  content: "\e60d";
+}
+.icon-stack:before {
+  content: "\e60f";
+}
+.icon-tag:before {
+  content: "\e612";
+}
+.icon-tags:before {
+  content: "\e613";
+}
+.icon-barcode:before {
+  content: "\e614";
+}
+.icon-qrcode:before {
+  content: "\e615";
+}
+.icon-ticket:before {
+  content: "\e616";
+}
+.icon-shopping-cart:before {
+  content: "\e617";
+}
+.icon-coin:before {
+  content: "\e618";
+}
+.icon-credit:before {
+  content: "\e6dc";
+}
+.icon-calculate:before {
+  content: "\e6f4";
+}
+.icon-support:before {
+  content: "\e6a0";
+}
+.icon-phone:before {
+  content: "\e68c";
+}
+.icon-address-book:before {
+  content: "\e700";
+}
+.icon-pushpin:before {
+  content: "\e602";
+}
+.icon-location:before {
+  content: "\e601";
+}
+.icon-compass:before {
+  content: "\e6dd";
+}
+.icon-map:before {
+  content: "\e6df";
+}
+.icon-map-o:before {
+  content: "\e6de";
+}
+.icon-history:before {
+  content: "\e6b7";
+}
+.icon-clock:before {
+  content: "\e6b6";
+}
+.icon-alarm:before {
+  content: "\e62a";
+}
+.icon-calendar:before {
+  content: "\e629";
+}
+.icon-print:before {
+  content: "\e628";
+}
+.icon-keyboard:before {
+  content: "\e627";
+}
+.icon-screen:before {
+  content: "\e626";
+}
+.icon-laptop:before {
+  content: "\e625";
+}
+.icon-mobile:before {
+  content: "\e623";
+}
+.icon-tablet:before {
+  content: "\e622";
+}
+.icon-tv:before {
+  content: "\e621";
+}
+.icon-cabinet:before {
+  content: "\e620";
+}
+.icon-box-add:before {
+  content: "\e6f8";
+}
+.icon-box-remove:before {
+  content: "\e6f9";
+}
+.icon-download:before {
+  content: "\e6fa";
+}
+.icon-upload:before {
+  content: "\e6fb";
+}
+.icon-undo:before {
+  content: "\e6af";
+}
+.icon-redo:before {
+  content: "\e6b0";
+}
+.icon-email-forward:before {
+  content: "\e6b1";
+}
+.icon-reply:before {
+  content: "\e6b2";
+}
+.icon-comment:before {
+  content: "\e61c";
+}
+.icon-comments:before {
+  content: "\e61d";
+}
+.icon-busy:before {
+  content: "\e61f";
+}
+.icon-spinner:before {
+  content: "\e67f";
+}
+.icon-binoculars:before {
+  content: "\e701";
+}
+.icon-search:before {
+  content: "\e668";
+}
+.icon-zoom-in:before {
+  content: "\e667";
+}
+.icon-zoom-out:before {
+  content: "\e666";
+}
+.icon-expand:before {
+  content: "\e662";
+}
+.icon-retract:before {
+  content: "\e663";
+}
+.icon-expand2:before {
+  content: "\e664";
+}
+.icon-retract2:before {
+  content: "\e665";
+}
+.icon-key:before {
+  content: "\e6a9";
+}
+.icon-lock:before {
+  content: "\e669";
+}
+.icon-lock2:before {
+  content: "\e66a";
+}
+.icon-unlocked:before {
+  content: "\e66b";
+}
+.icon-wrench:before {
+  content: "\e66c";
+}
+.icon-settings:before {
+  content: "\e66d";
+}
+.icon-equalizer:before {
+  content: "\e66e";
+}
+.icon-cogs:before {
+  content: "\e630";
+}
+.icon-cog:before {
+  content: "\e62f";
+}
+.icon-medkit:before {
+  content: "\e713";
+}
+.icon-pie:before {
+  content: "\e62e";
+}
+.icon-stats:before {
+  content: "\e62c";
+}
+.icon-bars:before {
+  content: "\e62d";
+}
+.icon-gift:before {
+  content: "\e707";
+}
+.icon-trophy:before {
+  content: "\e62b";
+}
+.icon-glass:before {
+  content: "\e6d9";
+}
+.icon-coffee:before {
+  content: "\e712";
+}
+.icon-leaf:before {
+  content: "\e676";
+}
+.icon-dashboard:before,
+.icon-meter:before {
+  content: "\e675";
+}
+.icon-hammer:before {
+  content: "\e702";
+}
+.icon-fire:before {
+  content: "\e674";
+}
+.icon-lab:before {
+  content: "\e673";
+}
+.icon-trash:before {
+  content: "\e672";
+}
+.icon-briefcase:before {
+  content: "\e671";
+}
+.icon-airplane:before {
+  content: "\e670";
+}
+.icon-truck:before {
+  content: "\e66f";
+}
+.icon-road:before {
+  content: "\e6f1";
+}
+.icon-accessibility:before {
+  content: "\e631";
+}
+.icon-target:before {
+  content: "\e632";
+}
+.icon-lightning:before {
+  content: "\e633";
+}
+.icon-power-off:before {
+  content: "\e6b5";
+}
+.icon-power-cord:before {
+  content: "\e634";
+}
+.icon-signup:before {
+  content: "\e6c7";
+}
+.icon-tree:before {
+  content: "\e63a";
+}
+.icon-earth:before {
+  content: "\e68d";
+}
+.icon-flag:before {
+  content: "\e68e";
+}
+.icon-attachment:before {
+  content: "\e6d2";
+}
+.icon-eye:before {
+  content: "\e703";
+}
+.icon-eye-blocked:before {
+  content: "\e704";
+}
+.icon-bookmark:before {
+  content: "\e6ef";
+}
+.icon-bookmarks:before {
+  content: "\e6f0";
+}
+.icon-star-o:before {
+  content: "\e67c";
+}
+.icon-star-half-o:before {
+  content: "\e67d";
+}
+.icon-star:before {
+  content: "\e67e";
+}
+.icon-heart:before {
+  content: "\e6e0";
+}
+.icon-heart-o:before {
+  content: "\e6e1";
+}
+.icon-heart-broken:before {
+  content: "\e6e2";
+}
+.icon-thumbs-up:before {
+  content: "\e6b3";
+}
+.icon-thumbs-down:before {
+  content: "\e6b4";
+}
+.icon-exclamation-triangle:before {
+  content: "\e6a1";
+}
+.icon-exclamation-circle:before {
+  content: "\e6a2";
+}
+.icon-question:before {
+  content: "\e6a3";
+}
+.icon-info:before {
+  content: "\e6a4";
+}
+.icon-info2:before {
+  content: "\e6a5";
+}
+.icon-blocked:before {
+  content: "\e6a6";
+}
+.icon-cancel-circle:before {
+  content: "\e6a7";
+}
+.icon-spam:before {
+  content: "\e6a8";
+}
+.icon-ok:before,
+.icon-check:before {
+  content: "\e677";
+}
+.icon-ok-o:before,
+.icon-check-o:before {
+  content: "\e679";
+}
+.icon-spell-check:before {
+  content: "\e6e3";
+}
+.icon-minus:before {
+  content: "\e6d1";
+}
+.icon-sign-in:before {
+  content: "\e67a";
+}
+.icon-sign-out:before {
+  content: "\e67b";
+}
+.icon-play:before {
+  content: "\e64d";
+}
+.icon-pause:before {
+  content: "\e64e";
+}
+.icon-stop:before {
+  content: "\e64f";
+}
+.icon-backward:before {
+  content: "\e650";
+}
+.icon-forward:before {
+  content: "\e651";
+}
+.icon-fast-backward:before {
+  content: "\e652";
+}
+.icon-fast-forward:before {
+  content: "\e653";
+}
+.icon-step-backward:before {
+  content: "\e654";
+}
+.icon-step-forward:before {
+  content: "\e655";
+}
+.icon-eject:before {
+  content: "\e656";
+}
+.icon-volume-high:before {
+  content: "\e657";
+}
+.icon-volume-medium:before {
+  content: "\e658";
+}
+.icon-volume-low:before {
+  content: "\e659";
+}
+.icon-volume-off:before {
+  content: "\e65a";
+}
+.icon-volume-mute:before {
+  content: "\e65b";
+}
+.icon-volume-increase:before {
+  content: "\e65c";
+}
+.icon-volume-decrease:before {
+  content: "\e65d";
+}
+.icon-loop:before {
+  content: "\e65f";
+}
+.icon-refresh:before {
+  content: "\e65e";
+}
+.icon-repeat:before {
+  content: "\e660";
+}
+.icon-shuffle:before {
+  content: "\e661";
+}
+.icon-arrow-up-left:before {
+  content: "\e6cf";
+}
+.icon-arrow-up:before {
+  content: "\e6ce";
+}
+.icon-arrow-up-right:before {
+  content: "\e6cd";
+}
+.icon-arrow-right:before {
+  content: "\e6cc";
+}
+.icon-arrow-down-right:before {
+  content: "\e6cb";
+}
+.icon-arrow-down:before {
+  content: "\e6ca";
+}
+.icon-arrow-down-left:before {
+  content: "\e6c9";
+}
+.icon-arrow-left:before {
+  content: "\e6c8";
+}
+.icon-tab:before {
+  content: "\e6d7";
+}
+.icon-checkbox-checked:before {
+  content: "\e648";
+}
+.icon-checkbox-unchecked:before {
+  content: "\e649";
+}
+.icon-checkbox-partial:before {
+  content: "\e64a";
+}
+.icon-radio-checked:before {
+  content: "\e64b";
+}
+.icon-radio-unchecked:before {
+  content: "\e64c";
+}
+.icon-crop:before {
+  content: "\e6d8";
+}
+.icon-scissors:before {
+  content: "\e6eb";
+}
+.icon-filter:before {
+  content: "\e63e";
+}
+.icon-external:before {
+  content: "\e6c2";
+}
+.icon-embed:before {
+  content: "\e6ec";
+}
+.icon-code:before {
+  content: "\e6ed";
+}
+.icon-console:before {
+  content: "\e6ee";
+}
+.icon-share:before {
+  content: "\e6ea";
+}
+.icon-google-plus:before {
+  content: "\e706";
+}
+.icon-google-plus-square:before {
+  content: "\e6db";
+}
+.icon-facebook:before {
+  content: "\e705";
+}
+.icon-facebook-square:before {
+  content: "\e68f";
+}
+.icon-twitter:before {
+  content: "\e690";
+}
+.icon-twitter-square:before {
+  content: "\e691";
+}
+.icon-rss:before {
+  content: "\e692";
+}
+.icon-rss-square:before {
+  content: "\e693";
+}
+.icon-youtube:before {
+  content: "\e694";
+}
+.icon-github:before {
+  content: "\e647";
+}
+.icon-tux:before {
+  content: "\e6c5";
+}
+.icon-apple:before {
+  content: "\e6c6";
+}
+.icon-android:before {
+  content: "\e6c3";
+}
+.icon-windows:before {
+  content: "\e6c4";
+}
+.icon-linkedin:before {
+  content: "\e6da";
+}
+.icon-libreoffice:before {
+  content: "\e69e";
+}
+.icon-file-pdf:before {
+  content: "\e69d";
+}
+.icon-file-openoffice:before {
+  content: "\e69c";
+}
+.icon-file-word:before {
+  content: "\e69b";
+}
+.icon-file-excel:before {
+  content: "\e69a";
+}
+.icon-file-zip:before {
+  content: "\e699";
+}
+.icon-file-powerpoint:before {
+  content: "\e698";
+}
+.icon-file-xml:before {
+  content: "\e697";
+}
+.icon-file-css:before {
+  content: "\e696";
+}
+.icon-html5:before {
+  content: "\e63f";
+}
+.icon-css3:before {
+  content: "\e641";
+}
+.icon-chrome:before {
+  content: "\e642";
+}
+.icon-firefox:before {
+  content: "\e643";
+}
+.icon-IE:before {
+  content: "\e644";
+}
+.icon-opera:before {
+  content: "\e645";
+}
+.icon-safari:before {
+  content: "\e646";
+}
+/* ==============================================================================================
+   Headers
+   ============================================================================================== */
+/* Headers - H1/H6
+   --------------- */
+/*
+ * 1. Corrige o espaçamento de caracteres para headings
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-rendering: optimizelegibility;
+  /* 1 */
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  line-height: 1;
+  font-weight: normal;
+  color: #aaaaaa;
+}
+h1 a:hover small,
+h2 a:hover small,
+h3 a:hover small,
+h4 a:hover small,
+h5 a:hover small,
+h6 a:hover small {
+  color: #666666;
+}
+h1 {
+  font-size: 38.5px;
+}
+h2 {
+  font-size: 31.5px;
+}
+h3 {
+  font-size: 24.5px;
+}
+h4 {
+  font-size: 17.5px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 11.9px;
+}
+h1 small {
+  font-size: 24.5px;
+}
+h2 small {
+  font-size: 17.5px;
+}
+h3 small {
+  font-size: 14px;
+}
+h4 small {
+  font-size: 14px;
+}
+/* Headers - Section Headers
+   ------------------------- */
+.syo-header,
+.syo-subheader {
+  display: block;
+}
+.syo-header h1,
+.syo-subheader h1,
+.syo-header h2,
+.syo-subheader h2,
+.syo-header h3,
+.syo-subheader h3,
+.syo-header h4,
+.syo-subheader h4,
+.syo-header h5,
+.syo-subheader h5,
+.syo-header h6,
+.syo-subheader h6 {
+  margin: 0;
+}
+.syo-header {
+  margin-bottom: 20px;
+}
+.syo-subheader {
+  margin-bottom: 6.66666667px;
+}
+/* Headers - Estilos Section Headers
+   --------------------------------- */
+.syo-header-ruler {
+  border-bottom: 1px solid #666666;
+}
+.syo-header-bar {
+  padding: 10px;
+  background-color: #eeeeee;
+}
+/* ==============================================================================================
+   Navs
+   ============================================================================================== */
+/*
+ * Estilos globais de componentes Nav
+ * 1. Melhora visualização da outline no conteúdo esquerdo da navbar
+ */
+.syo-nav {
+  margin-left: 1px;
+  /* 1 */
+  margin-bottom: 20px;
+  list-style: none;
+}
+.syo-nav a {
+  text-decoration: none;
+}
+/* Navs - Nav list
+   --------------- */
+/*
+ * 1. Estilo do header
+ * 2. Corrige o border-radius do primeiro elemento
+ * 3. Corrige o border-radius do último elemento
+ * 4. Desfaz margin de linhas com .row
+ */
+.syo-nav-list {
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.syo-nav-list > li {
+  border-bottom: 1px solid #e1e1e1;
+  background: #ffffff;
+  /* 1 */
+  /* 2 */
+  /* 3 */
+}
+.syo-nav-list > li.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.syo-nav-list > li > a {
+  display: block;
+  padding: 5px 10px;
+}
+.syo-nav-list > li > a:hover {
+  background: #eeeeee;
+}
+.syo-nav-list > li.syo-nav-header {
+  padding: 5px 10px;
+  color: #444444;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+}
+.syo-nav-list > li:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.syo-nav-list > li:first-child > a:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.syo-nav-list > li:first-child > a:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.syo-nav-list > li:last-child {
+  border-bottom: 0;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.syo-nav-list > li:last-child > a:first-child {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.syo-nav-list > li:last-child > a:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* ==============================================================================================
+   Navbar
+   ============================================================================================== */
+/*
+ * 1. Calcula box-sizing com a borda vertical
+ * 2. Container para conteúdo diversificado
+ */
+.syo-navbar {
+  width: 100%;
+  min-height: 45px;
+  /* 1 */
+  display: block;
+  border: 1px solid #cccccc;
+  font-size: 14px;
+  text-shadow: 0 1px 0 #FFF;
+  -webkit-box-shadow: 0 0 5px 0px rgba(170, 170, 170, 0.3);
+  box-shadow: 0 0 5px 0px rgba(170, 170, 170, 0.3);
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+  /* 2 */
+}
+.syo-navbar a {
+  color: #808080;
+}
+.syo-navbar > .syo-navbar-inner > :first-child {
+  padding-left: 0;
+}
+.syo-navbar > .syo-navbar-inner > :last-child {
+  padding-right: 0;
+}
+.syo-navbar .syo-navbar-content {
+  display: inline-block;
+  padding: 0 12.5px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+/* Navbar - Elemento Title
+   ----------------------- */
+/*
+ * 1. Usa padding-left maior por causa do logo
+ * 2. Garante text-decoration ausente em estado normal e estado hover
+ */
+.syo-navbar-title {
+  display: block;
+  float: left;
+  max-width: 100%;
+  padding: 0 12.5px 0 30px;
+  /* 1 */
+  color: #666666;
+  font-size: 21px;
+  font-weight: bold;
+  vertical-align: middle;
+  background: url("images/logo.svg") no-repeat left center;
+  background-size: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  -webkit-transition: color 0.1s linear, text-shadow 0.1s linear;
+  -moz-transition: color 0.1s linear, text-shadow 0.1s linear;
+  -o-transition: color 0.1s linear, text-shadow 0.1s linear;
+  transition: color 0.1s linear, text-shadow 0.1s linear;
+}
+.syo-navbar-title:hover {
+  color: #222222;
+  text-shadow: 0 1px 3px #FFF;
+}
+.syo-navbar-title,
+.syo-navbar-title:hover {
+  text-decoration: none;
+  /* 2 */
+}
+/* Navbar - Elemento Nav
+   --------------------- */
+.syo-navbar .syo-nav {
+  float: left;
+  margin-bottom: 0;
+}
+.syo-navbar .syo-nav li {
+  display: inline-block;
+}
+.syo-navbar .syo-nav li > a {
+  display: inline-block;
+  padding: 0 12.5px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.syo-navbar .syo-nav li > a:hover {
+  color: #000;
+}
+.syo-navbar .syo-nav li.syo-active > a {
+  color: #000;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 3px 1px #c8c8c8;
+  box-shadow: inset 0 0 3px 1px #c8c8c8;
+}
+.syo-navbar .syo-nav .syo-pull-right {
+  float: right;
+}
+/* Navbar - Botões
+   --------------- */
+/*
+ * 1. Corrige alinhamento dos botões na navbar (eles tem altura maior que uma linha de texto).
+ *    Não se pode usar padding.
+ */
+.syo-navbar-button,
+.syo-button.syo-navbar-menu {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  /* 1 */
+  /* 1 */
+}
+.syo-navbar-button.syo-button-large {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+/*
+ * 1. Herda do .syo-navbar-button
+ * 2. Botão visível apenas para resoluções muito pequenas
+ */
+.syo-button.syo-navbar-menu {
+  /* 1 */
+  float: left;
+}
+@media (min-width: 768px) {
+  .syo-button.syo-navbar-menu {
+    /* 2 */
+    display: none !important;
+  }
+}
+/* Navbar - Estilo fixo
+   -------------------- */
+.syo-navbar.syo-navbar-fixed-top,
+.syo-navbar.syo-navbar-fixed-bottom {
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+.syo-navbar.syo-navbar-fixed-top {
+  top: 0;
+  border-top-width: 0;
+}
+.syo-navbar.syo-navbar-fixed-bottom {
+  bottom: 0;
+  border-bottom-width: 0;
+}
+/* Classe utilitária pra adicionar um padding-top da mesma altura do navbar */
+body.syo-body-navbar {
+  padding-top: 45px;
+}
+/* ==============================================================================================
+   Paginação
+   ============================================================================================== */
+/*
+ * 1. Permite a mudça do z-index
+ * 2. Garante que a borda vai ficar por cima do vizinho quando em destaque
+ * 3. Item ativo na paginação
+ * 4. Item desabilitado na paginação. Sobrescreve algumas propriedades quando estiver :active ou :hover, por exemplo.
+ * 5. Nem itens desabilitados nem itens ativos terão cursor aqui
+ */
+.syo-pagination > ul {
+  list-style: none;
+}
+.syo-pagination > ul li {
+  display: table-cell;
+  -webkit-box-shadow: 0 1px 2px rgba(170, 170, 170, 0.3);
+  box-shadow: 0 1px 2px rgba(170, 170, 170, 0.3);
+  /* 3 */
+  /* 4 */
+  /* 5 */
+}
+.syo-pagination > ul li:before,
+.syo-pagination > ul li:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.syo-pagination > ul li:after {
+  clear: both;
+}
+.syo-pagination > ul li a {
+  margin-right: -1px;
+  padding: 4px 12px;
+  border: 1px solid rgba(170, 170, 170, 0.7);
+  float: left;
+  background-color: #ffffff;
+}
+.syo-pagination > ul li a:hover,
+.syo-pagination > ul li a:active,
+.syo-pagination > ul li a:focus {
+  position: relative;
+  /* 1 */
+  z-index: 1;
+  /* 2 */
+  text-decoration: none;
+  background: #f3f3f3;
+  border-color: #aaaaaa;
+}
+.syo-pagination > ul li:first-child a {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.syo-pagination > ul li:last-child a {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.syo-pagination > ul li.syo-active > a {
+  color: #777777;
+  background: #f3f3f3;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
+}
+.syo-pagination > ul li.syo-disabled > a {
+  border-color: rgba(170, 170, 170, 0.7);
+  color: #aaaaaa;
+  background-color: #ffffff;
+}
+.syo-pagination > ul li.syo-disabled > a:focus {
+  outline: none;
+}
+.syo-pagination > ul li.syo-disabled > a,
+.syo-pagination > ul li.syo-active > a {
+  cursor: default !important;
+}
+/*
+ * Paginação inline - evita que o componente ocupe a linha toda.
+ * 1. Alinha com um possível texto ao lado da paginação
+ */
+.syo-pagination-inline > ul {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: top;
+  /* 1 */
+}
+/*
+ * Quando utilizada como paginação de uma tabela, mudam vários estilos da tabela e do paginador.
+ * 1. Retira todos os paddings
+ * 2. Sobrepõe a paginação sobre as bordas da célula
+ * 3. Corrige border-radius bottom do paginador na última tr da tabela
+ * 4. Seta o line-height correto para o link do paginador
+ */
+.syo-datagrid-helper .syo-pagination {
+  margin: -6px -11px;
+  padding: 0;
+  /* 1 */
+  line-height: 30px;
+  vertical-align: middle;
+  /* 2 */
+}
+.syo-datagrid-helper .syo-pagination > ul {
+  margin: 0 10px 0 0;
+}
+.syo-datagrid-helper .syo-pagination > ul li a {
+  line-height: 1.42857143;
+  /* 4 */
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.syo-datagrid-helper .syo-pagination:last-child ul:first-child li:first-child a {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  /* 3 */
+}
+/* ==============================================================================================
+   Datagrid
+   ============================================================================================== */
+.syo-datagrid {
+  position: relative;
+}
+.syo-datagrid table {
+  margin-bottom: 0;
+}
+/*
+ * 1. Arredonda os cantos superiores do datagrid
+ */
+.syo-datagrid-header {
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /* 1 */
+}
+.syo-datagrid-body-wrapper {
+  position: relative;
+  max-height: 150px;
+}
+/*
+ * 1. (des)arredonda os cantos inferiores do datagrid
+ * 2. Seta cursor em linhas que não estejam desabilitadas, pra informar que há uma ação disponível
+ */
+.syo-datagrid-body {
+  overflow-y: hidden;
+  max-height: inherit;
+}
+.syo-datagrid-body > table {
+  border-width: 0 1px 0 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.syo-datagrid-body > table > tbody tr:not( .syo-disabled ) {
+  cursor: pointer;
+  /* 2 */
+}
+.syo-datagrid-body > table > tbody:first-of-type > tr:first-child > td:first-child,
+.syo-datagrid-body > table > tbody:first-of-type > tr:first-child > td:last-child {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.syo-datagrid-body:not( .syo-datagrid-with-helper ) {
+  border-bottom: 1px solid #cccccc;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  /* 1 */
+}
+.syo-datagrid-body:not( .syo-datagrid-with-helper ) > table tr:last-child > td:first-child {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.syo-datagrid-body:not( .syo-datagrid-with-helper ) > table tr:last-child > td:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.syo-datagrid-body.syo-datagrid-with-helper > table {
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /* 1 */
+}
+.syo-datagrid-helper {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+/*
+ * 1. Pra não ficar em cima da borda
+ */
+.syo-datagrid-overflow {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  /* 1 */
+  z-index: 10;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  min-width: 10px;
+  max-height: inherit;
+}
+/*
+ * 1. A td "placeholder" da linha do grip deve ficar vazia.
+ */
+.syo-datagrid-grip-row td {
+  padding: 0;
+  /* 1 */
+}
+.syo-datagrid-grip-row + tr > td,
+.syo-datagrid-grip-row + tr > th {
+  border-top-width: 0;
+}
+/*
+ * 1. O scroll grip não pode ter padding horizontal, mas vertical pode
+ */
+.syo-datagrid table .syo-datagrid-grip {
+  padding: 5px 0;
+  /* 1 */
+}
+/*
+ * 1. Não há outra forma de sobrescrever especificidade do !important do syo-hidden...
+ */
+.syo-datagrid-grip.syo-hidden {
+  display: table-cell !important;
+  /* 1 */
+  border-width: 0;
+}
+/* Datagrid - Flexbox
+   ------------------ */
+/*
+ * 1. Faz ocupar todo o espaço disponível.
+ * 2. A altura do body é manipulada via JS.
+ */
+.flex-row > .syo-datagrid .syo-datagrid-body-wrapper,
+.syo-form-table .syo-field > .syo-datagrid .syo-datagrid-body-wrapper {
+  /* 2 */
+  position: absolute;
+  max-height: none;
+}
+.flex-row > .syo-datagrid .syo-datagrid-body,
+.syo-form-table .syo-field > .syo-datagrid .syo-datagrid-body {
+  position: relative;
+  max-height: 100%;
+  /* 1 */
+}
+.flex-row > .syo-datagrid .syo-datagrid-helper,
+.syo-form-table .syo-field > .syo-datagrid .syo-datagrid-helper {
+  /* 2 */
+  position: relative;
+  bottom: 0;
+}
+/* ==============================================================================================
+   Blocks
+   ============================================================================================== */
+/*
+ * 1. Espaçamento vertical para não colar 2 blocks seguidos
+ */
+.syo-block {
+  margin-bottom: 20px;
+  /* 1 */
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.syo-block-header,
+.syo-block-footer {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 30px;
+  color: #444444;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #FFF;
+  cursor: default;
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+}
+.syo-block-title,
+.syo-block-toolbar {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+.syo-block-title {
+  width: 100%;
+}
+.syo-block-toolbar {
+  width: 1%;
+  white-space: nowrap;
+}
+.syo-block-toolbar > a,
+.syo-block-toolbar .syo-button-link {
+  color: #808080;
+}
+.syo-block-toolbar > a:hover,
+.syo-block-toolbar .syo-button-link:hover {
+  color: #222222;
+  text-shadow: 0 1px 3px #FFF;
+  text-decoration: none;
+}
+.syo-block-content {
+  padding: 10px;
+}
+/*
+ * 1. Adiciona uma borda separadora entre conteúdo + título ou conteúdo + conteúdo
+ */
+.syo-block-content + .syo-block-content,
+.syo-block-header + .syo-block-content,
+.syo-block-content + .syo-block-footer {
+  border-top: 1px solid #e1e1e1;
+  /* 1 */
+}
+/* Seta o border-radius corretamente */
+.syo-block-header {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* Seta o border-radius corretamente */
+.syo-block-footer {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* Blocks - Combinação com outros componentes
+   ------------------------------------------ */
+/*
+ * Table/Datagrid
+ * 1. Remove bordas externas
+ * 2. Remove cantos arredondados
+ */
+.syo-block {
+  /* 1 */
+  /* 2 */
+}
+.syo-block > .syo-table,
+.syo-block > .syo-datagrid,
+.syo-block > :not(.syo-block-content) > .syo-table {
+  margin-bottom: 0;
+}
+.syo-block .syo-table,
+.syo-block .syo-datagrid table {
+  border-right: 0;
+}
+.syo-block .syo-table td:first-child,
+.syo-block .syo-datagrid table td:first-child,
+.syo-block .syo-table th:first-child,
+.syo-block .syo-datagrid table th:first-child {
+  border-left: 0;
+}
+.syo-block > .syo-table:last-child,
+.syo-block > :last-child:not(.syo-block-content) > .syo-table {
+  border-bottom: 0;
+  /* 1 */
+}
+.syo-block .syo-table thead,
+.syo-block .syo-table tbody th,
+.syo-block .syo-table tfoot {
+  background-image: none;
+}
+.syo-block .syo-block-header + .syo-table,
+.syo-block .syo-block-content + .syo-table,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-table,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table,
+.syo-block .syo-block-header + .syo-table thead:first-of-type,
+.syo-block .syo-block-content + .syo-table thead:first-of-type,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-table thead:first-of-type,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table thead:first-of-type,
+.syo-block .syo-block-header + .syo-table tbody:first-of-type,
+.syo-block .syo-block-content + .syo-table tbody:first-of-type,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-table tbody:first-of-type,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table tbody:first-of-type,
+.syo-block .syo-block-header + .syo-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-content + .syo-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table thead:first-of-type tr:first-child th,
+.syo-block .syo-block-header + .syo-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-content + .syo-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child td,
+.syo-block .syo-block-header + .syo-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-content + .syo-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-header + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child th,
+.syo-block .syo-block-content + :not(.syo-block-content) .syo-table tbody:first-of-type tr:first-child th {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+/*
+ * Nav List
+ * 1. Desfaz border-radius se seguir um elemento header/content
+ * 1. Desfaz border-radius se não for o último elemento do block
+ */
+.syo-block > .syo-nav-list {
+  margin: -1px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.syo-block .syo-block-header + .syo-nav-list,
+.syo-block .syo-block-content + .syo-nav-list,
+.syo-block .syo-block-header + .syo-nav-list > li a,
+.syo-block .syo-block-content + .syo-nav-list > li a {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  /* 1 */
+}
+.syo-block > .syo-nav-list:not( :last-child ),
+.syo-block > .syo-nav-list:not( :last-child ) > li a {
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /* 2 */
+}
+/* ==============================================================================================
+   ProgressBar
+   ============================================================================================== */
+/*
+ * 1. Faz com que o progressbar sempre tenha 100%, mesmo quando dentro de um elemento flexbox.
+ */
+.syo-progressbar {
+  overflow: hidden;
+  width: 100%;
+  /* 1 */
+  height: 2em;
+  border: 1px solid #aaaaaa;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.syo-progressbar > .syo-progressbar-value {
+  float: left;
+  width: 0;
+  height: 100%;
+  border-right: 1px solid #aaaaaa;
+  background-color: #D0D0D0;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(170, 170, 170, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(170, 170, 170, 0.15)), color-stop(0.75, rgba(170, 170, 170, 0.15)), color-stop(0.75, transparent), to(transparent)), -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#eeeeee));
+  background-image: -webkit-linear-gradient(45deg, rgba(170, 170, 170, 0.15) 25%, transparent 25%, transparent 50%, rgba(170, 170, 170, 0.15) 50%, rgba(170, 170, 170, 0.15) 75%, transparent 75%, transparent), -webkit-linear-gradient(top, #fafafa, #e9e9e9);
+  background-image: -moz-linear-gradient(45deg, rgba(170, 170, 170, 0.15) 25%, transparent 25%, transparent 50%, rgba(170, 170, 170, 0.15) 50%, rgba(170, 170, 170, 0.15) 75%, transparent 75%, transparent), -moz-linear-gradient(top, #fafafa, #e9e9e9);
+  background-image: -o-linear-gradient(45deg, rgba(170, 170, 170, 0.15) 25%, transparent 25%, transparent 50%, rgba(170, 170, 170, 0.15) 50%, rgba(170, 170, 170, 0.15) 75%, transparent 75%, transparent), -o-linear-gradient(top, #fafafa, #e9e9e9);
+  background-image: linear-gradient(45deg, rgba(170, 170, 170, 0.15) 25%, transparent 25%, transparent 50%, rgba(170, 170, 170, 0.15) 50%, rgba(170, 170, 170, 0.15) 75%, transparent 75%, transparent), linear-gradient(to bottom, #fafafa, #e9e9e9);
+  -webkit-background-size: 40px 40px;
+  -moz-background-size: 40px 40px;
+  -o-background-size: 40px 40px;
+  background-size: 40px 40px;
+  -webkit-transition: width 0.2s ease;
+  -moz-transition: width 0.2s ease;
+  -o-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+  -webkit-animation: progress-bar-stripes 1.5s linear infinite;
+  -moz-animation: progress-bar-stripes 1.5s linear infinite;
+  -ms-animation: progress-bar-stripes 1.5s linear infinite;
+  -o-animation: progress-bar-stripes 1.5s linear infinite;
+  animation: progress-bar-stripes 1.5s linear infinite;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@-moz-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@-ms-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+/* ==============================================================================================
+   Popover
+   ============================================================================================== */
+.syo-popover {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 120px;
+  padding: 1px;
+  border: 1px solid #c8c8c8;
+  background: #FFF;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+}
+.syo-popover-titlebar {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #c8c8c8;
+  background-color: #eeeeee;
+  vertical-align: middle;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.syo-popover-titlebar > .syo-popover-title {
+  float: left;
+  margin-right: 1em;
+}
+.syo-popover-titlebar > .syo-popover-close {
+  float: right;
+  color: #666666;
+  cursor: pointer;
+  -webkit-transition: color 0.15s linear;
+  -moz-transition: color 0.15s linear;
+  -o-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+.syo-popover-titlebar > .syo-popover-close:hover {
+  color: #222222;
+}
+.syo-popover-content {
+  padding: 5px 10px;
+  background-color: #FFF;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+/* Popover - Seta
+   -------------- */
+.syo-popover-arrow,
+.syo-popover-arrow:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  content: "";
+}
+.syo-popover-arrow:after {
+  border-width: 9px;
+}
+/* Alinha horizontalmente as setas top/bottom */
+[class*="syo-popover-top"] .syo-popover-arrow,
+[class*="syo-popover-bottom"] .syo-popover-arrow {
+  left: 50%;
+  margin-left: -10px;
+}
+[class*="syo-popover-top"] .syo-popover-arrow:after,
+[class*="syo-popover-bottom"] .syo-popover-arrow:after {
+  margin-left: -9px;
+}
+/* Realinha horizontalmente se for top/bottom + start */
+.syo-popover-top-start .syo-popover-arrow,
+.syo-popover-bottom-start .syo-popover-arrow {
+  left: 30px;
+}
+/* Realinha horizontalmente se for top/bottom + end */
+.syo-popover-top-end .syo-popover-arrow,
+.syo-popover-bottom-end .syo-popover-arrow {
+  left: auto;
+  right: 30px;
+}
+/* Alinha verticalmente as setas left/right */
+[class*="syo-popover-left"] .syo-popover-arrow,
+[class*="syo-popover-right"] .syo-popover-arrow {
+  top: 50%;
+  margin-top: -10px;
+}
+[class*="syo-popover-left"] .syo-popover-arrow:after,
+[class*="syo-popover-right"] .syo-popover-arrow:after {
+  margin-top: -9px;
+}
+/* Realinha verticalmente se for left/right + start */
+.syo-popover-left-start .syo-popover-arrow,
+.syo-popover-right-start .syo-popover-arrow {
+  top: 10px;
+  margin-top: 0;
+}
+/* Realinha verticalmente se for left/right + end */
+.syo-popover-left-end .syo-popover-arrow,
+.syo-popover-right-end .syo-popover-arrow {
+  top: auto;
+  bottom: 10px;
+}
+/* Seta embaixo */
+[class*="syo-popover-top"] .syo-popover-arrow {
+  border-top-color: rgba(0, 0, 0, 0.3);
+  top: 100%;
+}
+[class*="syo-popover-top"] .syo-popover-arrow:after {
+  bottom: 1px;
+  border-top-color: #FFF;
+}
+[class*="syo-popover-top"] .syo-popover-arrow,
+[class*="syo-popover-top"] .syo-popover-arrow:after {
+  border-bottom-style: none;
+}
+/* Seta à esquerda */
+[class*="syo-popover-right"] .syo-popover-arrow {
+  border-right-color: rgba(0, 0, 0, 0.3);
+  right: 100%;
+}
+[class*="syo-popover-right"] .syo-popover-arrow:after {
+  left: 1px;
+  border-right-color: #FFF;
+}
+[class*="syo-popover-right"] .syo-popover-arrow,
+[class*="syo-popover-right"] .syo-popover-arrow:after {
+  border-left-style: none;
+}
+/* Seta acima */
+[class*="syo-popover-bottom"] .syo-popover-arrow {
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+  bottom: 100%;
+}
+[class*="syo-popover-bottom"] .syo-popover-arrow:after {
+  top: 1px;
+  border-bottom-color: #FFF;
+}
+[class*="syo-popover-bottom"] .syo-popover-arrow,
+[class*="syo-popover-bottom"] .syo-popover-arrow:after {
+  border-top-style: none;
+}
+/* Seta à direita */
+[class*="syo-popover-left"] .syo-popover-arrow {
+  border-left-color: rgba(200, 200, 200, 0.4);
+  left: 100%;
+}
+[class*="syo-popover-left"] .syo-popover-arrow:after {
+  right: 1px;
+  border-left-color: #FFF;
+}
+[class*="syo-popover-left"] .syo-popover-arrow,
+[class*="syo-popover-left"] .syo-popover-arrow:after {
+  border-right-style: none;
+}
+/* Popover - Combinação com outros componentes
+   ------------------------------------------- */
+/* Nav List */
+.syo-popover-content > .syo-nav.syo-nav-list {
+  margin: -5px -10px;
+  padding: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.syo-popover-content > .syo-nav.syo-nav-list > li:first-child > a {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+/*
+ * Check List.
+ * 1. Desfaz padding do .syo-popover-content
+ * 2. Remove bordas arredondadas do primeiro e do último item do check-list
+ */
+.syo-popover-content > .syo-check-list {
+  margin-left: -10px;
+  /* 1 */
+  margin-right: -10px;
+  /* 1 */
+  border: none;
+  /* 1 */
+  /* 2 */
+  /* 2 */
+}
+.syo-popover-content > .syo-check-list:first-child {
+  margin-top: -5px;
+}
+.syo-popover-content > .syo-check-list:last-child {
+  margin-bottom: -5px;
+}
+.syo-popover-content > .syo-check-list > li:first-child,
+.syo-popover-content > .syo-check-list > li:first-child > a,
+.syo-popover-content > .syo-check-list > li:first-child > label {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.syo-popover-content > .syo-check-list > li:last-child,
+.syo-popover-content > .syo-check-list > li:last-child > a,
+.syo-popover-content > .syo-check-list > li:last-child > label {
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.syo-popover-content > .syo-check-list .syo-check-list-header {
+  background-image: none;
+}
+/* ==============================================================================================
+   Input Row
+   ============================================================================================== */
+/*
+ * 1. Evita que herde borda da tabela, quando for colocado dentro de uma
+ * 2. Deixa um espaçamento entre um elemento e outro
+ */
+.syo-input-row {
+  display: table;
+  border-collapse: separate;
+  /* 1 */
+}
+.syo-input-row > input,
+.syo-input-row > select,
+.syo-input-row > .syo-input-row-addon {
+  display: table-cell;
+}
+.syo-input-row > input,
+.syo-input-row > select {
+  width: 100%;
+}
+.syo-input-row-addon {
+  width: 1%;
+  padding: 0 3px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.syo-input-row-addon:first-child {
+  padding-left: 0;
+}
+.syo-input-row-addon:last-child {
+  padding-right: 0;
+}
+/* ==============================================================================================
+   Check Lists
+   ============================================================================================== */
+/*
+ * 1. Corrige border-radius do primeiro/último item
+ * 2. Limpa margin-left de listas ul/ol
+ */
+.syo-check-list {
+  margin-left: 0;
+  /* 2 */
+  margin-bottom: 20px;
+  border: 1px solid #c8c8c8;
+  list-style: none;
+  /* 2 */
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.syo-check-list > li {
+  border-bottom: 1px solid #c8c8c8;
+  /* 1 */
+  /* 2 */
+}
+.syo-check-list > li label:hover {
+  background-color: #eeeeee;
+}
+.syo-check-list > li:first-child,
+.syo-check-list > li:first-child > label,
+.syo-check-list > li:first-child > a {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.syo-check-list > li:last-child {
+  border-bottom: 0;
+}
+.syo-check-list > li:last-child,
+.syo-check-list > li:last-child > label,
+.syo-check-list > li:last-child > a {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/*
+ * 1. Sobrescreve estilos do label default
+ * 2. Utiliza icones da fonte para
+ *  2.1. Checkbox desmarcado
+ *  2.2. Checkbox marcado
+ *  2.3. Radio desmarcado
+ *  2.4. Radio marcado
+ * 3. Oculta input checkbox/radio original
+ * 4. Sobrescreve line-height default dos labels
+ */
+.syo-checkbox label,
+.syo-radio label,
+.syo-check-list li label {
+  display: block;
+  margin-left: 0;
+  /* 1 */
+  padding: 5px 10px;
+  line-height: 1.42857143;
+  /* 4 */
+  text-align: left;
+  /* 1 */
+  cursor: pointer;
+}
+.syo-checkbox label:before,
+.syo-radio label:before,
+.syo-check-list li label:before {
+  display: inline-block;
+  min-width: 1em;
+  margin-right: 5px;
+  font-family: "SyoBootstrap";
+  font-size: 14px;
+  font-weight: normal;
+}
+.syo-checkbox input[type="checkbox"],
+.syo-radio input[type="checkbox"],
+.syo-check-list li input[type="checkbox"],
+.syo-checkbox input[type="radio"],
+.syo-radio input[type="radio"],
+.syo-check-list li input[type="radio"] {
+  display: none;
+  /* 3 */
+}
+.syo-checkbox input[type="checkbox"],
+.syo-radio input[type="checkbox"],
+.syo-check-list li input[type="checkbox"] {
+  /* 2.1 */
+  /* 2.2 */
+}
+.syo-checkbox input[type="checkbox"] + label:before,
+.syo-radio input[type="checkbox"] + label:before,
+.syo-check-list li input[type="checkbox"] + label:before {
+  content: "\e649";
+}
+.syo-checkbox input[type="checkbox"]:checked + label:before,
+.syo-radio input[type="checkbox"]:checked + label:before,
+.syo-check-list li input[type="checkbox"]:checked + label:before {
+  content: "\e648";
+}
+.syo-checkbox input[type="radio"],
+.syo-radio input[type="radio"],
+.syo-check-list li input[type="radio"] {
+  /* 2.3 */
+  /* 2.4 */
+}
+.syo-checkbox input[type="radio"] + label:before,
+.syo-radio input[type="radio"] + label:before,
+.syo-check-list li input[type="radio"] + label:before {
+  content: "\e64c";
+}
+.syo-checkbox input[type="radio"]:checked + label:before,
+.syo-radio input[type="radio"]:checked + label:before,
+.syo-check-list li input[type="radio"]:checked + label:before {
+  content: "\e64b";
+}
+/*
+ * Faz os checkboxes/radios ficarem lado a lado quando colocados no mesmo container
+ */
+.syo-checkbox,
+.syo-radio {
+  display: inline-block;
+}
+/*
+ * 1. Sobrescreve o label em itens não-headers
+ */
+.syo-check-list .syo-check-list-header {
+  padding: 5px 10px;
+  color: #444444;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+  /* 1 */
+}
+.syo-check-list .syo-check-list-header label {
+  padding: 0;
+  line-height: 1.42857143;
+}
+.syo-check-list .syo-check-list-header label:hover {
+  background-color: transparent;
+}
+/* ==============================================================================================
+   Badges
+   ============================================================================================== */
+.syo-badge {
+  display: inline;
+  white-space: nowrap;
+  padding: .2em .6em .3em;
+  line-height: 1;
+  font-size: 80%;
+  font-weight: bold;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #aeaeae;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+.syo-badge + .syo-badge {
+  margin-left: 3px;
+}
+/* Badges - Estados
+   ---------------- */
+.syo-badge.syo-success {
+  background-color: #5cb85c;
+}
+.syo-badge.syo-error {
+  background-color: #d9534f;
+}
+.syo-badge.syo-warning {
+  background-color: #efd24f;
+}
+.syo-badge.syo-info {
+  background-color: #1771b2;
+}
+/* ==============================================================================================
+   Overlay
+   ============================================================================================== */
+.syo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.2s linear opacity;
+  -moz-transition: 0.2s linear opacity;
+  -o-transition: 0.2s linear opacity;
+  transition: 0.2s linear opacity;
+  opacity: 0;
+  filter: Alpha(Opacity=0);
+}
+.syo-overlay.syo-active {
+  z-index: 1000;
+  opacity: 1;
+  filter: Alpha(Opacity=100);
+}
+.syo-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  -webkit-transform: translateY( -50% );
+  -moz-transform: translateY( -50% );
+  transform: translateY( -50% );
+}
+.syo-overlay-content,
+.syo-overlay-content h1,
+.syo-overlay-content h2,
+.syo-overlay-content h3,
+.syo-overlay-content h4,
+.syo-overlay-content h5,
+.syo-overlay-content h6 {
+  color: #fff;
+}
+.syo-overlay-content .syo-progressbar {
+  -webkit-box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
+}
+/* ==============================================================================================
+   Form Table
+   ============================================================================================== */
+.syo-form-table {
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.syo-form-table legend {
+  display: block;
+  width: calc(100% + 3px);
+  margin: -1px -1px 0;
+  padding: 6.25px 0;
+  border: 1px solid #cccccc;
+  font-size: 1em;
+  text-align: center;
+  background-color: #e4e4e4;
+  background-image: -webkit-linear-gradient(top, #eeeeee, #d5d5d5);
+  background-image: linear-gradient(to bottom, #eeeeee, #d5d5d5);
+  background-repeat: repeat-x;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+@media (max-width: 767px) {
+  .syo-form-table legend {
+    width: calc(100% + 2px);
+    margin: -1px;
+  }
+}
+.syo-form-table .syo-field {
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.syo-form-table .syo-field > * {
+  padding-top: 6.25px;
+  padding-bottom: 6.25px;
+}
+@media (min-width: 768px) {
+  .syo-form-table .syo-field {
+    margin-right: -1px;
+  }
+  .syo-form-table .syo-field:last-child {
+    margin-bottom: -1px;
+  }
+  .syo-form-table .syo-field > * {
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+}
+@media (max-width: 767px) {
+  .syo-form-table .syo-field {
+    display: block;
+  }
+  .syo-form-table .syo-field > * {
+    width: 100%;
+    border-top: 1px solid #cccccc;
+  }
+}
+.syo-form-table .syo-field > label {
+  word-wrap: break-word;
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+  background-repeat: repeat-x;
+}
+.syo-form-table > legend,
+.syo-form-table .syo-field > label {
+  color: #666666;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #fff;
+}
+.syo-form-table .syo-field label,
+.syo-form-table .syo-field .syo-field-text {
+  line-height: 20px;
+}
+.syo-form-table .syo-field label.col,
+.syo-form-table .syo-field .syo-field-text.col {
+  text-align: left;
+}
+.syo-form-table .syo-field input,
+.syo-form-table .syo-field select,
+.syo-form-table .syo-field textarea {
+  height: 27px;
+  min-height: 27px;
+  padding: 4.5px 4.5px;
+}
+.syo-form-table .syo-field input,
+.syo-form-table .syo-field select,
+.syo-form-table .syo-field textarea,
+.syo-form-table .syo-field .syo-radio,
+.syo-form-table .syo-field .syo-checkbox {
+  margin: -6.25px 0;
+}
+/* ==============================================================================================
+   Notifications
+   ============================================================================================== */
+.syo-notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  display: block;
+  padding: 12.5px 15px;
+  color: #222222;
+  text-align: center;
+  background: #eeeeee;
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05);
+}
+.syo-notification > div {
+  display: inline;
+}
+.syo-notification > a {
+  color: #222222;
+  text-decoration: underline;
+}
+.syo-notification-container {
+  position: relative;
+}
+/* Notifications - Estilos
+   ----------------------- */
+.syo-notification.syo-success {
+  color: #fff;
+  background: #5cb85c;
+}
+.syo-notification.syo-success a {
+  color: #fff;
+}
+.syo-notification.syo-error {
+  color: #fff;
+  background: #d9534f;
+}
+.syo-notification.syo-error a {
+  color: #fff;
+}
+/* ==============================================================================================
+   Animations
+   ============================================================================================== */
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+/* ==============================================================================================
+   Classes Utilitárias
+   ============================================================================================== */
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.syo-hidden {
+  display: none !important;
+}
+.syo-pull-left {
+  float: left;
+}
+.syo-pull-right {
+  float: right;
+}
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* ==============================================================================================
+   Utilidades Responsivas
+   ============================================================================================== */
+/* Utilidades Responsivas Restritas
+   -------------------------------- */
+/* Tiny apenas */
+.visible-tiny {
+  display: block !important;
+}
+col.visible-tiny {
+  display: table-column !important;
+}
+tr.visible-tiny {
+  display: table-row !important;
+}
+th.visible-tiny,
+td.visible-tiny {
+  display: table-cell !important;
+}
+.visible-small {
+  display: none !important;
+}
+col.visible-small,
+tr.visible-small,
+th.visible-small,
+td.visible-small {
+  display: none !important;
+}
+.visible-medium {
+  display: none !important;
+}
+col.visible-medium,
+tr.visible-medium,
+th.visible-medium,
+td.visible-medium {
+  display: none !important;
+}
+.visible-large {
+  display: none !important;
+}
+col.visible-large,
+tr.visible-large,
+th.visible-large,
+td.visible-large {
+  display: none !important;
+}
+.hidden-tiny {
+  display: none !important;
+}
+col.hidden-tiny,
+tr.hidden-tiny,
+th.hidden-tiny,
+td.hidden-tiny {
+  display: none !important;
+}
+.hidden-small {
+  display: block !important;
+}
+col.hidden-small {
+  display: table-column !important;
+}
+tr.hidden-small {
+  display: table-row !important;
+}
+th.hidden-small,
+td.hidden-small {
+  display: table-cell !important;
+}
+.hidden-medium {
+  display: block !important;
+}
+col.hidden-medium {
+  display: table-column !important;
+}
+tr.hidden-medium {
+  display: table-row !important;
+}
+th.hidden-medium,
+td.hidden-medium {
+  display: table-cell !important;
+}
+.hidden-large {
+  display: block !important;
+}
+col.hidden-large {
+  display: table-column !important;
+}
+tr.hidden-large {
+  display: table-row !important;
+}
+th.hidden-large,
+td.hidden-large {
+  display: table-cell !important;
+}
+@media (min-width: 768px) {
+  .visible-tiny {
+    display: none !important;
+  }
+  col.visible-tiny,
+  tr.visible-tiny,
+  th.visible-tiny,
+  td.visible-tiny {
+    display: none !important;
+  }
+  .hidden-tiny {
+    display: block !important;
+  }
+  col.hidden-tiny {
+    display: table-column !important;
+  }
+  tr.hidden-tiny {
+    display: table-row !important;
+  }
+  th.hidden-tiny,
+  td.hidden-tiny {
+    display: table-cell !important;
+  }
+}
+/* Small apenas */
+@media (min-width: 768px) and (max-width: 979px) {
+  .visible-small {
+    display: block !important;
+  }
+  col.visible-small {
+    display: table-column !important;
+  }
+  tr.visible-small {
+    display: table-row !important;
+  }
+  th.visible-small,
+  td.visible-small {
+    display: table-cell !important;
+  }
+  .hidden-small {
+    display: none !important;
+  }
+  col.hidden-small,
+  tr.hidden-small,
+  th.hidden-small,
+  td.hidden-small {
+    display: none !important;
+  }
+}
+/* Medium apenas */
+@media (min-width: 980px) and (max-width: 1199px) {
+  .visible-medium {
+    display: block !important;
+  }
+  col.visible-medium {
+    display: table-column !important;
+  }
+  tr.visible-medium {
+    display: table-row !important;
+  }
+  th.visible-medium,
+  td.visible-medium {
+    display: table-cell !important;
+  }
+  .hidden-medium {
+    display: none !important;
+  }
+  col.hidden-medium,
+  tr.hidden-medium,
+  th.hidden-medium,
+  td.hidden-medium {
+    display: none !important;
+  }
+}
+/* Large apenas */
+@media (min-width: 1200px) {
+  .visible-large {
+    display: block !important;
+  }
+  col.visible-large {
+    display: table-column !important;
+  }
+  tr.visible-large {
+    display: table-row !important;
+  }
+  th.visible-large,
+  td.visible-large {
+    display: table-cell !important;
+  }
+  .hidden-large {
+    display: none !important;
+  }
+  col.hidden-large,
+  tr.hidden-large,
+  th.hidden-large,
+  td.hidden-large {
+    display: none !important;
+  }
+}
+/* Utilidades Responsivas Complexas
+   -------------------------------- */
+/* Small e abaixo */
+@media (max-width: 979px) {
+  .visible-small-below {
+    display: block !important;
+  }
+  col.visible-small-below {
+    display: table-column !important;
+  }
+  tr.visible-small-below {
+    display: table-row !important;
+  }
+  th.visible-small-below,
+  td.visible-small-below {
+    display: table-cell !important;
+  }
+  .hidden-small-below {
+    display: none !important;
+  }
+  col.hidden-small-below,
+  tr.hidden-small-below,
+  th.hidden-small-below,
+  td.hidden-small-below {
+    display: none !important;
+  }
+  .visible-medium-above {
+    display: none !important;
+  }
+  col.visible-medium-above,
+  tr.visible-medium-above,
+  th.visible-medium-above,
+  td.visible-medium-above {
+    display: none !important;
+  }
+}
+/* Medium e abaixo */
+@media (max-width: 1199px) {
+  .visible-medium-below {
+    display: block !important;
+  }
+  col.visible-medium-below {
+    display: table-column !important;
+  }
+  tr.visible-medium-below {
+    display: table-row !important;
+  }
+  th.visible-medium-below,
+  td.visible-medium-below {
+    display: table-cell !important;
+  }
+  .hidden-medium-below {
+    display: none !important;
+  }
+  col.hidden-medium-below,
+  tr.hidden-medium-below,
+  th.hidden-medium-below,
+  td.hidden-medium-below {
+    display: none !important;
+  }
+  .visible-large-above {
+    display: none !important;
+  }
+  col.visible-large-above,
+  tr.visible-large-above,
+  th.visible-large-above,
+  td.visible-large-above {
+    display: none !important;
+  }
+}
+/* Medium e acima */
+@media (min-width: 980px) {
+  .visible-medium-above {
+    display: block !important;
+  }
+  col.visible-medium-above {
+    display: table-column !important;
+  }
+  tr.visible-medium-above {
+    display: table-row !important;
+  }
+  th.visible-medium-above,
+  td.visible-medium-above {
+    display: table-cell !important;
+  }
+  .hidden-medium-above {
+    display: none !important;
+  }
+  col.hidden-medium-above,
+  tr.hidden-medium-above,
+  th.hidden-medium-above,
+  td.hidden-medium-above {
+    display: none !important;
+  }
+  .visible-small-below {
+    display: none !important;
+  }
+  col.visible-small-below,
+  tr.visible-small-below,
+  th.visible-small-below,
+  td.visible-small-below {
+    display: none !important;
+  }
+}
+/* Large e acima */
+@media (min-width: 1200px) {
+  .visible-large-above {
+    display: block !important;
+  }
+  col.visible-large-above {
+    display: table-column !important;
+  }
+  tr.visible-large-above {
+    display: table-row !important;
+  }
+  th.visible-large-above,
+  td.visible-large-above {
+    display: table-cell !important;
+  }
+  .hidden-large-above {
+    display: none !important;
+  }
+  col.hidden-large-above,
+  tr.hidden-large-above,
+  th.hidden-large-above,
+  td.hidden-large-above {
+    display: none !important;
+  }
+  .visible-medium-below {
+    display: none !important;
+  }
+  col.visible-medium-below,
+  tr.visible-medium-below,
+  th.visible-medium-below,
+  td.visible-medium-below {
+    display: none !important;
+  }
+}
+
+@charset "UTF-8";
+/* Include this file in your html if you are using the CSP mode. */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+ng\:form {
+  display: block;
+}
+.ng-animate-block-transitions {
+  transition: 0s all!important;
+  -webkit-transition: 0s all!important;
+}
+/* show the element during a show/hide animation when the
+ * animation is ongoing, but the .ng-hide class is active */
+.ng-hide-add-active,
+.ng-hide-remove {
+  display: block!important;
+}
