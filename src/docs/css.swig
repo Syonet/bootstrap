@@ -655,7 +655,6 @@
 
     <!-- Botões -->
     <article id="buttons">
-
         <header>
             <h2>Botões</h2>
         </header>
@@ -707,54 +706,78 @@
             </tbody>
         </table>
 
-        <h3>Várias Tags</h3>
-        <p>
-            É possível criar botões utilizando várias tags: <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>
-            e <code>&lt;a&gt;</code>. Todas elas utilizando a classe <code>.syo-button</code>:
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <button type="button" class="syo-button">button</button>
-                <a href="#" class="syo-button">link</a>
-                <input type="submit" class="syo-button" value="submit">
-                <input type="button" class="syo-button" value="input">
-                <input type="reset" class="syo-button" value="reset">
+        <section>
+            <h3>Várias Tags</h3>
+            <p>
+                É possível criar botões utilizando várias tags: <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>
+                e <code>&lt;a&gt;</code>. Todas elas utilizando a classe <code>.syo-button</code>:
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button type="button" class="syo-button">button</button>
+                    <a href="#" class="syo-button">link</a>
+                    <input type="submit" class="syo-button" value="submit">
+                    <input type="button" class="syo-button" value="input">
+                    <input type="reset" class="syo-button" value="reset">
+                </div>
+
+                {% highlight xml %}
+                    <button type="button" class="syo-button">button</button>
+                    <a href="#" class="syo-button">link</a>
+                    <input type="submit" class="syo-button" value="submit">
+                    <input type="button" class="syo-button" value="input">
+                    <input type="reset" class="syo-button" value="reset">
+                {% endhighlight %}
             </div>
+        </section>
 
-            {% highlight xml %}
-                <button type="button" class="syo-button">button</button>
-                <a href="#" class="syo-button">link</a>
-                <input type="submit" class="syo-button" value="submit">
-                <input type="button" class="syo-button" value="input">
-                <input type="reset" class="syo-button" value="reset">
-            {% endhighlight %}
-        </div>
+        <section>
+            <h3>Tamanho Grande</h3>
+            <p>
+                Precisando utilizar um botão mais chamativo? Utilize a classe <code>.syo-button-large</code>.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
+                </div>
 
-        <h3>Tamanho Grande</h3>
-        <p>
-            Precisando utilizar um botão mais chamativo? Utilize a classe <code>.syo-button-large</code>.
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
+                {% highlight xml %}
+                    <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
+                {% endhighlight %}
             </div>
+        </section>
 
-            {% highlight xml %}
-                <button type="button" class="syo-button syo-button-large">.syo-button-large</button>
-            {% endhighlight %}
-        </div>
+        <section>
+            <h3>Estado Ativo</h3>
+            <p>
+                Para dar o efeito de botão ativo, adicione a classe <code>.syo-active</code>.
+            </p>
 
-        <h3>Estado Desabilitado</h3>
-        <p>
-            Para dar o efeito de botão desabilitado, adicione a classe <code>.syo-disabled</code> ou atribua a
-            propriedade <code>disabled</code> (disponível apenas para a tag <code>&lt;button&gt;</code>).
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <button class="syo-button" type="button" disabled="disabled">Botão Desabilitado</button>
-                <a href="#" class="syo-disabled syo-button">Link Desabilitado</a>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button class="syo-button syo-active" type="button">Botão ativo</button>
+                    <button class="syo-button syo-active" type="button" disabled>Botão ativo desabilitado</button>
+                </div>
+                {% highlight xml %}
+                    <button class="syo-button syo-active" type="button">Botão ativo</button>
+                    <button class="syo-button syo-active" type="button" disabled>Botão ativo desabilitado</button>
+                {% endhighlight %}
             </div>
-        </div>
+        </section>
+
+        <section>
+            <h3>Estado Desabilitado</h3>
+            <p>
+                Para dar o efeito de botão desabilitado, adicione a classe <code>.syo-disabled</code> ou atribua a
+                propriedade <code>disabled</code> (disponível apenas para a tag <code>&lt;button&gt;</code>).
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <button class="syo-button" type="button" disabled="disabled">Botão Desabilitado</button>
+                    <a href="#" class="syo-disabled syo-button">Link Desabilitado</a>
+                </div>
+            </div>
+        </section>
     </article>
 
     <!-- Tabelas -->
