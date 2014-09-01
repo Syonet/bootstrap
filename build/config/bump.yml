@@ -9,7 +9,6 @@ options:
   commitMessage: "chore(release) versão %VERSION%"
   commitFiles:
     - package.json
-    - dist/**/*
 
   createTag: true
   tagName: "%VERSION%"
