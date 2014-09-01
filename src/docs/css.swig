@@ -792,8 +792,8 @@
             É possível definir uma linha como "ativa" adicionando na <code>tr</code> a classe <code>.syo-active</code>.
         </p>
         <p>
-            <b>Dica:</b> Também é possível utilizar as classes do grid com as tabelas dentro de um <code>colgroup</code>
-            =)
+            <b>Dica:</b>
+            Também é possível utilizar as classes do grid com as tabelas dentro de um <code>colgroup</code>.
         </p>
 
         <header>
