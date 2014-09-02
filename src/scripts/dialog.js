@@ -79,6 +79,7 @@
 
 		ctrl.destroy = function() {
 			$scope.$destroy();
+			$element.remove();
 		};
 
 		ctrl.option = function() {
