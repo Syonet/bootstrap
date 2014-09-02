@@ -77,6 +77,10 @@
 			});
 		};
 
+		ctrl.destroy = function() {
+			$scope.$destroy();
+		};
+
 		ctrl.option = function() {
 			var args = [].slice.call( arguments );
 
