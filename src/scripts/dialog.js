@@ -103,7 +103,7 @@
 
 			// Se há um alias pro controller, seta ele no escopo agora, após o compile
 			if ( $attrs.controller && $attrs.controllerAs ) {
-				$scope[ $attrs.controllerAs ] = content.controller( $attrs.controller );
+				$scope[ $attrs.controllerAs ] = content.controller();
 			}
 
 			// Remove o prefixo "on" dos callbacks da dialog
