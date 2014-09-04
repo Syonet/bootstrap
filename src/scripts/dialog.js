@@ -16,132 +16,116 @@
 	var syo = ng.module( "syonet" );
 	var extend = ng.extend;
 
-	function Dialog() {
-		var $element, promise;
-		var that = this;
+	var defaults = {
+		autoOpen: false,
+		modal: false,
+		closeText: "Fechar"
+	};
 
-		this._setPromise = function( _promise ) {
-			promise = _promise.then(function( _element ) {
-				$element = _element;
-			});
+	function getContentElement( element ) {
+		return element.find( ".syo-dialog-content" );
+	}
 
-			return that;
+	syo.directive( "syoDialog", function() {
+		var definition = {};
+
+		definition.restrict = "E";
+		definition.scope = true;
+		definition.transclude = true;
+		definition.replace = true;
+		definition.controller = "syoDialogController";
+		definition.controllerAs = "$dialog";
+		definition.template = "<div><div class='syo-dialog-content'></div></div>";
+
+		definition.link = function( scope, element, attrs, transcludeFn, $dialog ) {
+			var content = getContentElement( element );
+
+			// Seta um controller se estiver disponível
+			if ( attrs.controller ) {
+				content.attr( "ng-controller", attrs.controller );
+			}
+
+			// Se não há uma promise setada no escopo (significando que a dialog está sendo inicializada de uma view),
+			// então vamos fazer o transclude pra setar o conteúdo da dialog
+			if ( !scope.$$promise ) {
+				transcludeFn(function( children ) {
+					$dialog._setContent( children );
+				});
+			}
 		};
 
-		this.open = function() {
-			promise = promise.then(function() {
-				var options = that.option();
+		return definition;
+	});
 
-				// Garante que max-width e max-height fiquem consistentes
+	syo.controller( "syoDialogController", function( $scope, $element, $attrs, $q, $compile ) {
+		var ctrl = this;
+		var initialOptions = $attrs.options;
+
+		ctrl.open = function() {
+			return ctrl.option().then(function( options ) {
 				$element.dialog( "widget" ).css({
 					"max-width": options.maxWidth
 				});
 
 				$element.dialog( "open" );
 			});
-
-			return that;
 		};
 
-		this.close = function() {
-			promise = promise.then(function() {
+		ctrl.close = function() {
+			return ctrl.promise.then(function() {
 				$element.dialog( "close" );
 			});
-
-			return that;
 		};
 
-		this.option = function() {
-			var retVal;
-			var args = Array.prototype.slice.call( arguments );
-
-			args.unshift( "option" );
-			retVal = $element.dialog.apply( $element, args );
-
-			return retVal instanceof $ ? that : retVal;
-		};
-
-		this.destroy = function() {
-			$element.dialog( "destroy" );
+		ctrl.destroy = function() {
+			$scope.$destroy();
 			$element.remove();
 		};
-	}
 
-	Dialog.defaults = {
-		autoOpen: false,
-		modal: false
-	};
+		ctrl.option = function() {
+			var args = [].slice.call( arguments );
 
-	Dialog.options = {
-		ngModel: "@",
-		title: "=",
-		modal: "&",
-		autoOpen: "&",
-		draggable: "&",
-		height: "@",
-		maxHeight: "@",
-		width: "@",
-		maxWidth: "@",
-		onOpen: "&",
-		onClose: "&",
-		onBeforeClose: "&"
-	};
+			// Adiciona o nome do método 'option' pra chamar no elemento que tem a dialog
+			args.unshift( "option" );
 
-	syo.directive( "syoDialog", [ "$q", function( $q ) {
-		var definition = {};
-
-		function getOptions( $scope ) {
-			return {
-				title: $scope.title,
-				modal: $scope.modal(),
-				height: $scope.height,
-				maxHeight: $scope.maxHeight,
-				width: $scope.width,
-				maxWidth: $scope.maxWidth,
-				draggable: $scope.draggable(),
-				autoOpen: $scope.autoOpen(),
-				open: function() {
-					var ret = $scope.onOpen();
-					return typeof ret === "function" ? ret() : ret;
-				},
-				beforeClose: function() {
-					var ret = $scope.onBeforeClose();
-					return typeof ret === "function" ? ret() : ret;
-				},
-				close: function() {
-					var ret = $scope.onClose();
-					return typeof ret === "function" ? ret() : ret;
-				},
-				closeText: "Fechar"
-			};
-		}
-
-		definition.restrict = "E";
-		definition.replace = true;
-		definition.transclude = true;
-		definition.template = "<div><div ng-transclude></div></div>";
-		definition.scope = Dialog.options;
-
-		definition.link = function( $scope, $element ) {
-			var options = getOptions( $scope );
-			$element.dialog( options );
-
-			// Se o escopo atual não tem um provider ainda, cria um e já passa o elemento
-			$scope.$provider = ( $scope.$provider || new Dialog()._setPromise( $q.when( $element ) ) );
-			$scope.$parent[ $scope.ngModel ] = $scope.$provider;
-
-			// Fornece uma maneira mais fácil de fechar o dialog a partir do HTML
-			// Tem que exportar pro $parent ou não fica acessível do conteúdo do dialog
-			$scope.$parent.$close = $scope.$provider.close;
+			return ctrl.promise.then(function() {
+				var ret = $element.dialog.apply( $element, args );
+				return ret instanceof $ ? undefined : ret;
+			});
 		};
 
-		return definition;
-	}]);
+		ctrl.promise = $scope.$$promise || $q.when( null );
+
+		ctrl._setContent = function( template ) {
+			var options = $scope.$eval( initialOptions );
+			var content = getContentElement( $element ).append( template );
+			$compile( content )( $scope );
+
+			// Se há um alias pro controller, seta ele no escopo agora, após o compile
+			if ( $attrs.controller && $attrs.controllerAs ) {
+				$scope[ $attrs.controllerAs ] = content.controller();
+			}
+
+			// Remove o prefixo "on" dos callbacks da dialog
+			[ "BeforeClose", "Close", "Open" ].forEach(function( cb ) {
+				var uncapitalized = cb[ 0 ].toLowerCase() + cb.substr( 1 );
+				options[ uncapitalized ] = options[ "on" + cb ];
+				delete options[ "on" + cb ];
+			});
+
+			$element.dialog( options );
+		};
+
+		$scope.$on( "$destroy", function() {
+			// Destroi a instância da dialog antes de destruir o elemento
+			$element.dialog( "destroy" );
+		});
+	});
 
 	syo.provider( "$dialog", function() {
 		var $dialogProvider = {};
 
-		$dialogProvider.defaults = Dialog.defaults;
+		$dialogProvider.defaults = defaults;
 
 		$dialogProvider.$get = [
 			"$compile",
@@ -149,46 +133,50 @@
 			"$rootScope",
 			"$document",
 			function( $compile, $templatePromise, $rootScope, $document ) {
-				function createDialog( options ) {
-					var promise, $element;
-					var scope = ( options.scope || $rootScope ).$new();
+				var create = function createDialog( options ) {
+					var scope, dialog, element;
+					options = options || {};
 
 					if ( !options.template && !options.templateUrl ) {
 						throw new Error( "Deve ser passada a opção 'template' ou a opção 'templateUrl'!" );
 					}
 
-					options = extend( {}, Dialog.defaults, options );
-					extend( scope, options, options.locals );
+					// Cria um novo escopo intermediário
+					scope = ( options.scope || $rootScope ).$new();
 
-					scope.$provider = new Dialog();
-					promise = $templatePromise(
+					// Estende as opções padrão com os valores passados
+					scope.options = extend( {}, defaults, options );
+
+					// Estende o escopo com as variáveis locais
+					extend( scope, options.locals );
+
+					// Busca o template
+					scope.$$promise = $templatePromise(
 						options.template,
 						options.templateUrl
 					).then(function( template ) {
-						$element = $( "<syo-dialog></syo-dialog>" );
-
-						// Seta todos os atributos possíveis na diretiva.
-						ng.forEach( Dialog.options, function( binding, prop ) {
-							$element.attr(
-								prop.replace( /([A-Z])/g, "-$1" ).toLowerCase(),
-								binding[ 0 ] === "@" ? scope[ prop ] : prop
-							);
-						});
-
-						$element.html( template );
-
-						$document.find( "body" ).eq( 0 ).append( $element );
-						$element = $compile( $element )( scope );
-
-						return $element;
+						// Seta o template e (consequentemente) inicializa a dialog
+						dialog._setContent( template );
 					});
 
-					scope.$provider._setPromise( promise );
-					return scope.$provider;
-				}
+					// Cria o elemento da dialog e seta os atributos principais
+					element = $( "<syo-dialog>" );
+					element.attr({
+						options: "options",
+						controller: options.controller,
+						"controller-as": options.controllerAs
+					});
+
+					$document.find( "body" ).append( element );
+					element = $compile( element )( scope );
+
+					// Recupera o controller da dialog
+					dialog = element.controller( "syoDialog" );
+					return dialog;
+				};
 
 				return {
-					create: createDialog
+					create: create
 				};
 			}
 		];
