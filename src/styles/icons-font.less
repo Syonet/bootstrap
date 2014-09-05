@@ -92,3 +92,23 @@
     vertical-align: baseline;
   }
 }
+
+/* Fonte Icõnica - Estilo "circle"
+   ------------------------------- */
+
+[class^="icon-"].syo-circle,
+[class*=" icon-"].syo-circle {
+  &:before {
+    width: @component-height;
+    height: @component-height;
+    line-height: @component-height;
+    .border-radius( 50% );
+  }
+
+  &             { .icon-style( @brand-default ); }
+  &.syo-active  { .icon-style( @brand-active );  }
+  &.syo-success { .icon-style( @brand-success ); }
+  &.syo-error   { .icon-style( @brand-error );   }
+  &.syo-warning { .icon-style( @brand-warning ); }
+  &.syo-info    { .icon-style( @brand-info );    }
+}

@@ -1285,6 +1285,39 @@
                 {% highlight xml %}<i class="icon-spinner icon-spin"></i>{% endhighlight %}
             </div>
         </section>
+
+        <section>
+            <h3>Estilos de Icones</h3>
+            <p>É possível aplicar alguns estilos aos icones para torná-los diferentes em vários casos.</p>
+
+            <section>
+                <h4>Icone Circular</h4>
+                <p>
+                    Aplique a classe <code>.syo-circle</code> para fazer o icone aparecer dentro de um círculo.<br>
+                    Os estilos de estado também estão disponíveis.
+                </p>
+
+                <div class="syo-docs-example">
+                    <div class="syo-docs-example-inner">
+                        <i class="icon-home syo-circle"></i>
+                        <i class="icon-home syo-circle syo-success"></i>
+                        <i class="icon-home syo-circle syo-error"></i>
+                        <i class="icon-home syo-circle syo-warning"></i>
+                        <i class="icon-home syo-circle syo-info"></i>
+                        <i class="icon-home syo-circle syo-active"></i>
+                    </div>
+
+                    {% highlight xml %}
+                        <i class="icon-home syo-circle"></i>
+                        <i class="icon-home syo-circle syo-success"></i>
+                        <i class="icon-home syo-circle syo-error"></i>
+                        <i class="icon-home syo-circle syo-warning"></i>
+                        <i class="icon-home syo-circle syo-info"></i>
+                        <i class="icon-home syo-circle syo-active"></i>
+                    {% endhighlight %}
+                </div>
+            </section>
+        </section>
     </article>
 
     <!-- Responsive -->
