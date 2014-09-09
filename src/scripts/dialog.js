@@ -79,7 +79,6 @@
 
 		ctrl.destroy = function() {
 			$scope.$destroy();
-			$element.remove();
 		};
 
 		ctrl.option = function() {
@@ -119,6 +118,7 @@
 		$scope.$on( "$destroy", function() {
 			// Destroi a instância da dialog antes de destruir o elemento
 			$element.dialog( "destroy" );
+			$element.remove();
 		});
 	});
 
