@@ -22,10 +22,6 @@
 		closeText: "Fechar"
 	};
 
-	function getContentElement( element ) {
-		return element.find( ".syo-dialog-content" );
-	}
-
 	syo.directive( "syoDialog", function() {
 		var definition = {};
 
@@ -35,14 +31,12 @@
 		definition.replace = true;
 		definition.controller = "syoDialogController";
 		definition.controllerAs = "$dialog";
-		definition.template = "<div><div class='syo-dialog-content'></div></div>";
+		definition.template = "<div class='syo-dialog-content'></div>";
 
 		definition.link = function( scope, element, attrs, transcludeFn, $dialog ) {
-			var content = getContentElement( element );
-
 			// Seta um controller se estiver disponível
 			if ( attrs.controller ) {
-				content.attr( "ng-controller", attrs.controller );
+				element.attr( "ng-controller", attrs.controller );
 			}
 
 			// Se não há uma promise setada no escopo (significando que a dialog está sendo inicializada de uma view),
@@ -93,16 +87,18 @@
 			});
 		};
 
-		ctrl.promise = $scope.$$promise || $q.when( null );
+		ctrl.promise = ( $scope.$$promise || $q.when( null ) ).then(function() {
+			ctrl.$resolved = true;
+		});
 
 		ctrl._setContent = function( template ) {
 			var options = $scope.$eval( initialOptions );
-			var content = getContentElement( $element ).append( template );
-			$compile( content )( $scope );
+			$element.append( template );
+			$compile( $element )( $scope );
 
 			// Se há um alias pro controller, seta ele no escopo agora, após o compile
 			if ( $attrs.controller && $attrs.controllerAs ) {
-				$scope[ $attrs.controllerAs ] = content.controller();
+				$scope[ $attrs.controllerAs ] = $element.controller();
 			}
 
 			// Remove o prefixo "on" dos callbacks da dialog
