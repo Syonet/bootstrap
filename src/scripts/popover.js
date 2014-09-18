@@ -182,6 +182,124 @@
 		}
 	]);
 
+	syo.controller( "SyoPopoverController", [
+		"$scope",
+		"$element",
+		"$timeout",
+		function( $scope, $element, $timeout ) {
+			var open = false;
+
+			this.isOpen = function() {
+				return open;
+			};
+
+			this.open = function() {
+				if ( open ) {
+					return;
+				}
+
+				open = true;
+				$element.show();
+				this.position();
+			};
+
+			this.close = function() {
+				if ( !open ) {
+					return;
+				}
+
+				open = false;
+				$element.hide();
+			};
+
+			this.position = function() {
+				var position = {};
+
+				// Se não há posição, utiliza top, que é o padrão
+				var positionValue = ( $scope.position || "top" ).split( "-" );
+
+				if ( !open ) {
+					return;
+				}
+
+				switch ( positionValue[ 0 ] ) {
+					case "top":
+						position.at = "center top-20";
+						position.my = "center bottom";
+						break;
+
+					case "right":
+						position.at = "right+20 center";
+						position.my = "left center";
+						break;
+
+					case "bottom":
+						position.at = "center bottom+20";
+						position.my = "center top";
+						break;
+
+					case "left":
+						position.at = "left-20 center";
+						position.my = "right center";
+						break;
+				}
+
+				if ( positionValue[ 1 ] ) {
+					var atStart = positionValue[ 1 ] === "start";
+
+					if ( positionValue[ 0 ] === "top" || positionValue[ 0 ] === "bottom" ) {
+						position.at = position.at.replace( "center", atStart ? "left" : "right" );
+					} else {
+						position.at = position.at.replace( "center", atStart ? "top" : "bottom" );
+					}
+
+					position.my = position.my.replace(
+						"center",
+						atStart ? "center+40%" : "center-40%"
+					);
+				}
+
+				position.of = $scope.element;
+				position.within = $scope.element;
+
+				// @FIXME collision = flip não funciona no Firefox Android :'(
+				position.collision = "none";
+
+				// Para setar a posição, deve-se aguardar até que o digest do elemento termine
+				$timeout(function() {
+					var maxWidth, pos;
+
+					$element.position( position );
+					pos = $element.position();
+
+					// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
+					// apenas quando estamos usando left/right. Caso sim, então o elemento será
+					// alterado para ter um max-width que o permita ficar 100% na tela.
+					if ( positionValue[ 0 ] === "left" ) {
+						if ( pos.left < 0 ) {
+							maxWidth = $element.outerWidth() + pos.left;
+						}
+					} else if ( positionValue[ 0 ] === "right" ) {
+						if ( $element.outerWidth() + pos.left > $( window ).width() ) {
+							maxWidth = $( window ).width() + pos.left;
+						}
+					}
+
+					// Se tem um maxWidth calculado, seta este e reposiciona
+					if ( maxWidth ) {
+						$element.css( "max-width", maxWidth );
+						$element.position( position );
+					}
+				});
+			};
+
+			this.destroy = function() {
+				$scope.$destroy();
+				$element.remove();
+			};
+		}
+	]);
+
 	syo.directive( "syoPopoverElement", function() {
 		var definition = {};
 
@@ -199,127 +317,14 @@
 				"<div class='syo-popover-arrow'></div>" +
 				"<div class='syo-popover-titlebar'>" +
 					"<div class='syo-popover-title'>{{ title }}</div>" +
-					"<div class='syo-popover-close' ng-click='$close()'><i class='icon-remove-circle'></i></div>" +
+					"<div class='syo-popover-close' ng-click='$popover.close()'>" +
+						"<i class='icon-remove-circle'></i>" +
+					"</div>" +
 				"</div>" +
 			"</div>";
 
-		definition.controller = [
-			"$scope",
-			"$element",
-			"$timeout",
-			function( $scope, $element, $timeout ) {
-				var open = false;
-
-				this.isOpen = function() {
-					return open;
-				};
-
-				this.open = function() {
-					if ( open ) {
-						return;
-					}
-
-					open = true;
-					$element.show();
-					this.position();
-				};
-
-				this.close = $scope.$close = function() {
-					if ( !open ) {
-						return;
-					}
-
-					open = false;
-					$element.hide();
-				};
-
-				this.position = function() {
-					var position = {};
-
-					// Se não há posição, utiliza top, que é o padrão
-					var positionValue = ( $scope.position || "top" ).split( "-" );
-
-					if ( !open ) {
-						return;
-					}
-
-					switch ( positionValue[ 0 ] ) {
-						case "top":
-							position.at = "center top-20";
-							position.my = "center bottom";
-							break;
-
-						case "right":
-							position.at = "right+20 center";
-							position.my = "left center";
-							break;
-
-						case "bottom":
-							position.at = "center bottom+20";
-							position.my = "center top";
-							break;
-
-						case "left":
-							position.at = "left-20 center";
-							position.my = "right center";
-							break;
-					}
-
-					if ( positionValue[ 1 ] ) {
-						var atStart = positionValue[ 1 ] === "start";
-
-						if ( positionValue[ 0 ] === "top" || positionValue[ 0 ] === "bottom" ) {
-							position.at = position.at.replace( "center", atStart ? "left" : "right" );
-						} else {
-							position.at = position.at.replace( "center", atStart ? "top" : "bottom" );
-						}
-
-						position.my = position.my.replace(
-							"center",
-							atStart ? "center+40%" : "center-40%"
-						);
-					}
-
-					position.of = $scope.element;
-					position.within = $scope.element;
-
-					// @FIXME collision = flip não funciona no Firefox Android :'(
-					position.collision = "none";
-
-					// Para setar a posição, deve-se aguardar até que o digest do elemento termine
-					$timeout(function() {
-						var maxWidth, pos;
-
-						$element.position( position );
-						pos = $element.position();
-
-						// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
-						// apenas quando estamos usando left/right. Caso sim, então o elemento será
-						// alterado para ter um max-width que o permita ficar 100% na tela.
-						if ( positionValue[ 0 ] === "left" ) {
-							if ( pos.left < 0 ) {
-								maxWidth = $element.outerWidth() + pos.left;
-							}
-						} else if ( positionValue[ 0 ] === "right" ) {
-							if ( $element.outerWidth() + pos.left > $( window ).width() ) {
-								maxWidth = $( window ).width() + pos.left;
-							}
-						}
-
-						// Se tem um maxWidth calculado, seta este e reposiciona
-						if ( maxWidth ) {
-							$element.css( "max-width", maxWidth );
-							$element.position( position );
-						}
-					});
-				};
-
-				this.destroy = function() {
-					$scope.$destroy();
-					$element.remove();
-				};
-			}
-		];
+		definition.controller = "SyoPopoverController";
+		definition.controllerAs = "$popover";
 
 		definition.link = function( scope, element, attr ) {
 			attr.$set( "title", "" );
