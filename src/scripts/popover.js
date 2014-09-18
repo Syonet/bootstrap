@@ -169,7 +169,7 @@
 				}
 			};
 
-			// Retorna a qual evento o elemento de origem deverá responder pra fechar o popover.
+			// Retorna qual evento o elemento de origem deverá responder pra fechar o popover.
 			function getOutEvent( eventIn ) {
 				if ( eventIn === "mouseenter" ) {
 					return "mouseleave";
