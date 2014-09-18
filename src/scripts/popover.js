@@ -124,13 +124,21 @@
 				// ---------------------------------------------------------------------------------
 				// Abre o popover. Se o conteúdo do mesmo ainda não foi atribuido, faz isso agora
 				function open( evt ) {
+					var $content;
 					evt.stopPropagation();
 
 					if ( !loadedContent ) {
 						loadedContent = true;
+						$content = $( "<syo-popover-content><div syo-progressbar='100'></div></syo-popover-content>" );
+						$content = $compile( $content )( popoverScope );
+						$content.appendTo( $popover );
+
 						$templatePromise( popoverScope.template, popoverScope.templateUrl ).then(function( template ) {
-							var $content =  $( "<syo-popover-content></syo-popover-content>" );
+							var oldContent = $content;
+							$content =  $( "<syo-popover-content></syo-popover-content>" );
 							$content = $compile( $content.html( template ) )( popoverScope );
+
+							oldContent.remove();
 							$content.appendTo( $popover );
 
 							// Reposiciona e aguarda até o próximo digest pra reposicionar o elemento (de novo).
