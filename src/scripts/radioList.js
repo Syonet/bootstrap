@@ -88,7 +88,7 @@
 			$li.attr( "ng-repeat", "(key, item) in " + expr + trackBy );
 			$input.val( "{{ " + inputVal + " }}" );
 
-			//return definition.link;
+			// return definition.link;
 		};
 
 		return definition;
