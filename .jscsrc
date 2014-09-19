@@ -1,6 +1,6 @@
 {
 	"requireCurlyBraces": [ "if", "else", "switch", "for", "while", "do", "try", "catch" ],
-	"requireSpaceAfterKeywords": [ "if", "else", "do", "while", "for", "try", "catch", "switch", "case", "return", "typeof", "function" ],
+	"requireSpaceAfterKeywords": [ "if", "else", "do", "while", "for", "try", "catch", "switch", "case", "return", "typeof" ],
 	"requireSpaceBeforeBlockStatements": true,
 	"requireSpacesInConditionalExpression": {
 		"afterTest": true,
