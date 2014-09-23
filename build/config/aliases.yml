@@ -1,20 +1,27 @@
 dev:
-  - "default"     # Faz build inicial de tudo
+  - "lint"        # Faz o linting
+  - "package"     # Faz o build de toda a lib
+  - "docs"        # Faz o build da documentação
   - "connect:dev" # Inicia o servidor de desenvolvimento
   - "watch"       # Observa as alterações
 
 webserver:
   - "connect:docs"
 
-publish:
-  - "bump-only"
-  - "default"
-  - "bump-commit"
+package:
+  - "icons"       # Gera o mapeamento de icones
+  - "less:main"   # Compila os .LESS da lib
+  - "concat"      # Concatena alguns arquivos
+  - "process"     # Copia e inclui o banner nos arquivos de distribuição
+
+lint:
+  - "jshint"      # Linting de todos arquivos JS relevantes
+  - "jscs"        # Valida estilos de código JS
+
+docs:
+  - "less:docs"   # Compila os .LESS dos docs
+  - "swig"        # Compila páginas de documentação
 
 default:
-  - "icons"   # Gera o mapeamento de icones
-  - "less"    # Compila os arquivos LESS
-  - "jshint"  # Faz o linting de todos arquivos JS relevantes
-  - "concat"  # Concatena alguns arquivos
-  - "process" # Copia e inclui o banner nos arquivos de distribuição
-  - "swig"    # Compila a documentação do projeto
+  - "lint"
+  - "package"
