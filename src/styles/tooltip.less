@@ -1,0 +1,36 @@
+/* Tooltips
+   ============================================================================================== */
+
+/*
+ * 1. Evita que um mouseover ou algo assim possa acontecer
+ */
+.syo-tooltip {
+  position: fixed;
+  z-index: 99999;
+  max-width: 150px;
+  margin-top: 5px;
+  padding: .4em .75em;
+  font-size: @font-size-small;
+  color: contrast( @tooltip-bg, @text-color );
+  text-align: center;
+  background: @tooltip-bg;
+  pointer-events: none; /* 1 */
+  .opacity( 0 );
+  .border-radius( @base-border-radius );
+  .transform( translateX( -50% ) );
+  .transition( .15s linear opacity );
+
+  &:before {
+    position: absolute;
+    top: -5px;
+    left: calc( ~"50% - 2.5px" );
+    border: 5px solid transparent;
+    border-bottom-color: @tooltip-bg;
+    border-top: none;
+    content: "";
+  }
+
+  &.syo-tooltip-visible {
+    .opacity( @tooltip-opacity );
+  }
+}
