@@ -8,10 +8,10 @@
 !function( $, ng ) {
 	"use strict";
 
-	var syo = ng.module( "syonet" );
+	var module = ng.module( "syonet.popover", [] );
 	var extend = ng.extend;
 
-	syo.directive( "syoPopover", [
+	module.directive( "syoPopover", [
 		"$compile",
 		"$rootScope",
 		"$timeout",
@@ -190,7 +190,7 @@
 		}
 	]);
 
-	syo.controller( "SyoPopoverController", [
+	module.controller( "SyoPopoverController", [
 		"$scope",
 		"$element",
 		"$timeout",
@@ -308,7 +308,7 @@
 		}
 	]);
 
-	syo.directive( "syoPopoverElement", function() {
+	module.directive( "syoPopoverElement", function() {
 		var definition = {};
 
 		definition.replace = true;
@@ -342,7 +342,7 @@
 		return definition;
 	});
 
-	syo.directive( "syoPopoverContent", function() {
+	module.directive( "syoPopoverContent", function() {
 		return {
 			restrict: "E",
 			replace: true,
