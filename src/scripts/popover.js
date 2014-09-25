@@ -124,7 +124,7 @@
 				// ---------------------------------------------------------------------------------
 				// Abre o popover. Se o conteúdo do mesmo ainda não foi atribuido, faz isso agora
 				function open( evt ) {
-					var $content;
+					var $content, tooltip;
 					evt.stopPropagation();
 
 					if ( !loadedContent ) {
@@ -147,6 +147,13 @@
 								reposition();
 							});
 						});
+					}
+
+					// Verifica se há uma diretiva syoTooltip presente no elemento atual.
+					// Se houver, fecha o mesmo para que não sobreponha ao popover.
+					tooltip = element.controller( "syoTooltip" );
+					if ( tooltip ) {
+						tooltip.close();
 					}
 
 					// Devemos bindar o controller a alguma propriedade do escopo pai?
