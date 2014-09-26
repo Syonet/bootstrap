@@ -60,6 +60,7 @@
 						// Compila o popover agora e deixa pra setar o conteúdo apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
+						popoverScope.$popover = controller;
 					} else {
 						if ( scope.event !== currentEvent.in ) {
 							element.off( currentEvent.in );
