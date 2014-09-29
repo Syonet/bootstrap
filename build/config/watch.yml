@@ -15,6 +15,7 @@ js:
   files: "src/scripts/*.js"
   tasks:
     - "concat:main"
+    - "process:main"
 
 icons:
   files: "src/fonts/*.json"
