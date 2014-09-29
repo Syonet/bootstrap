@@ -41,7 +41,6 @@
 
 					if ( !$popover ) {
 						$popover = $( "<syo-popover-element></syo-popover-element>" );
-						$popover.attr( "on-close", "onClose" );
 						$popover.attr( "title", "title" );
 						$popover.attr( "position", "position" );
 						$popover.attr( "element", "element" );
@@ -60,6 +59,10 @@
 						// Compila o popover agora e deixa pra setar o conteúdo apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
+						controller.callbacks.open = config.onOpen;
+						controller.callbacks.close = config.onClose;
+						controller.popoverScope = popoverScope;
+
 						popoverScope.$popover = controller;
 					} else {
 						if ( scope.event !== currentEvent.in ) {
@@ -205,6 +208,9 @@
 		function( $scope, $element, $timeout ) {
 			var open = false;
 
+			this.popoverScope = null;
+			this.callbacks = {};
+
 			this.isOpen = function() {
 				return open;
 			};
@@ -212,6 +218,11 @@
 			this.open = function() {
 				if ( open ) {
 					return;
+				}
+
+				// Executa callback on open
+				if ( ng.isFunction( this.callbacks.open ) ) {
+					this.callbacks.open( this.popoverScope, this );
 				}
 
 				open = true;
@@ -222,6 +233,11 @@
 			this.close = function() {
 				if ( !open ) {
 					return;
+				}
+
+				// Executa callback on close
+				if ( ng.isFunction( this.callbacks.close ) ) {
+					this.callbacks.close( this.popoverScope, this );
 				}
 
 				open = false;
