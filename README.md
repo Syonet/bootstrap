@@ -12,8 +12,9 @@ http://syonet.github.io/bootstrap/
 
 ## Suporte a browsers
 Os seguintes browsers serão suportados:
-* Internet Explorer 10+
-* Firefox 20+
-* Chrome 26+
-* Safari iOS 6+
-* Firefox Android 20+
+* Internet Explorer 11+
+* Firefox 28+
+* Chrome 29+
+* Safari iOS 7.1+
+* Firefox Android 28+
+* Chrome Mobile 29+
