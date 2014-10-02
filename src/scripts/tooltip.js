@@ -48,7 +48,7 @@
 					timeout = null;
 
 					// Se não há nenhum elemento pai, não exibe o tooltip.
-					if ( !target.parent().length ) {
+					if ( !target.parent().length || target.is( ":hidden" ) ) {
 						return;
 					}
 
