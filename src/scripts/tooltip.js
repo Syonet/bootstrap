@@ -44,7 +44,7 @@
 				target.data( "title", title ).attr( "title", "" );
 
 				timeout = setTimeout(function() {
-					var rect = target[ 0 ].getBoundingClientRect();
+					var position, positionConfig;
 					timeout = null;
 
 					// Se não há nenhum elemento pai, não exibe o tooltip.
@@ -52,11 +52,44 @@
 						return;
 					}
 
+					position = target.attr( "syo-tooltip-position" );
+					positionConfig = {
+						of: target,
+						collision: "fit"
+					};
+
+					switch ( position ) {
+						case "top":
+							positionConfig.my = "center bottom";
+							positionConfig.at = "center top-5px";
+							break;
+
+						case "left":
+							positionConfig.my = "right center";
+							positionConfig.at = "left-5px center";
+							break;
+
+						case "right":
+							positionConfig.my = "left center";
+							positionConfig.at = "right+5px center";
+							break;
+
+						default:
+							position = "bottom";
+							positionConfig.my = "center top";
+							positionConfig.at = "center bottom+5px";
+							break;
+					}
+
 					$tooltip.target = target;
-					tooltip.addClass( "syo-tooltip-visible" ).text( title ).css({
-						top: rect.bottom,
-						left: rect.left - ( target.cssUnit( "margin-left" )[ 0 ] / 2 ) + ( rect.width / 2 )
-					});
+
+					// Remove todas as classes de posicionamento
+					tooltip.removeClass([ "top", "left", "right", "bottom" ].map(function( cls ) {
+						return "syo-tooltip-" + cls;
+					}).join( " " ) );
+
+					tooltip.addClass( "syo-tooltip-visible syo-tooltip-" + position ).text( title );
+					tooltip.position( positionConfig );
 
 					target.on( "$destroy", function destroyCb() {
 						$tooltip.close();
