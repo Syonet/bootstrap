@@ -196,29 +196,41 @@
 /*
  * Check List.
  * 1. Desfaz padding do .syo-popover-content
- * 2. Remove bordas arredondadas do primeiro e do último item do check-list
+ * 2. Remove bordas arredondadas do check-list e de seus itens
+ * 3. Remove box-shadow do check-list
  */
 .syo-popover-content > .syo-check-list {
+  overflow: hidden;
   margin-left: -@padding-base-horizontal; /* 1 */
   margin-right: -@padding-base-horizontal; /* 1 */
   border: none;
+  .border-radius-top( 0 ); /* 2 */
+  .box-shadow( none ); /* 3 */
 
   /* 1 */
   &:first-child { margin-top: -@padding-base-vertical; }
   &:last-child { margin-bottom: -@padding-base-vertical; }
 
-  /* 2 */
-  > li:first-child,
-  > li:first-child > a,
-  > li:first-child > label {
-    .border-radius-top( 0 );
+  &:not( :last-child ) {
+    .border-radius-bottom( 0 ); /* 2 */
+
+    li:last-child {
+      border-bottom: 1px solid @checklist-border-color;
+    }
+  }
+
+  &:not( :first-child ) li:first-child {
+    border-top: 1px solid @checklist-border-color;
   }
 
   /* 2 */
-  > li:last-child,
-  > li:last-child > a,
-  > li:last-child > label {
-    .border-radius-top( 0 );
+  li:first-child,
+  li:last-child {
+    &,
+    a,
+    label {
+      .border-radius( 0 );
+    }
   }
 
   .syo-check-list-header {
