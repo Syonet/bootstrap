@@ -245,6 +245,8 @@
 			};
 
 			this.position = function() {
+				// Variáveis utilizadas no cálculo de posicionamento no inicio/fim do elemento
+				var atPos, myPos, atStart;
 				var position = {};
 
 				// Se não há posição, utiliza top, que é o padrão
@@ -256,39 +258,39 @@
 
 				switch ( positionValue[ 0 ] ) {
 					case "top":
-						position.at = "center top-20";
+						position.at = "center top-15";
 						position.my = "center bottom";
 						break;
 
 					case "right":
-						position.at = "right+20 center";
+						position.at = "right+15 center";
 						position.my = "left center";
 						break;
 
 					case "bottom":
-						position.at = "center bottom+20";
+						position.at = "center bottom+15";
 						position.my = "center top";
 						break;
 
 					case "left":
-						position.at = "left-20 center";
+						position.at = "left-15 center";
 						position.my = "right center";
 						break;
 				}
 
 				if ( positionValue[ 1 ] ) {
-					var atStart = positionValue[ 1 ] === "start";
+					atStart = positionValue[ 1 ] === "start";
 
-					if ( positionValue[ 0 ] === "top" || positionValue[ 0 ] === "bottom" ) {
-						position.at = position.at.replace( "center", atStart ? "left" : "right" );
+					if ( /^top|bottom$/.test( positionValue[ 0 ] ) ) {
+						atPos = atStart ? "left" : "right";
+						myPos = atStart ? "left-5" : "right+5";
 					} else {
-						position.at = position.at.replace( "center", atStart ? "top" : "bottom" );
+						atPos = atStart ? "top" : "bottom";
+						myPos = atStart ? "top-5" : "bottom+5";
 					}
 
-					position.my = position.my.replace(
-						"center",
-						atStart ? "center+40%" : "center-40%"
-					);
+					position.at = position.at.replace( "center", atPos );
+					position.my = position.my.replace( "center", myPos );
 				}
 
 				position.of = $scope.element;
