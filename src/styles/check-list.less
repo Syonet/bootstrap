@@ -65,12 +65,8 @@
     cursor: pointer;
 
     &:before {
-      display: inline-block;
-      min-width: 1em;
+      &:extend( [class^="icon-"]:before );
       margin-right: 5px;
-      font-family: "SyoBootstrap";
-      font-size: @font-size-base;
-      font-weight: normal;
     }
   }
 
