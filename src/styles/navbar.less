@@ -119,6 +119,22 @@
   }
 }
 
+/* Navbar - Formulários
+   -------------------- */
+
+/*
+ * 1. Alinha verticalmente componentes de formulário
+ * 2. Evita que syo-field adicione espaçamento na sua parte inferior
+ */
+.syo-navbar-form {
+  float: left;
+  .navbar-spacing( @input-height, margin ); /* 1 */
+
+  .syo-field {
+    margin-bottom: 0; /* 2 */
+  }
+}
+
 /* Navbar - Estilo fixo
    -------------------- */
 
