@@ -62,7 +62,7 @@
 .syo-tooltip-top,
 .syo-tooltip-bottom {
   &:before {
-    left: calc( ~"50% - ( @{tooltip-arrow} / 2 )" );
+    left: calc( ~"50% - @{tooltip-arrow}" );
   }
 }
 
@@ -72,6 +72,6 @@
 .syo-tooltip-left,
 .syo-tooltip-right {
   &:before {
-    top: calc( ~"50% - ( @{tooltip-arrow} / 2 )" );
+    top: calc( ~"50% - @{tooltip-arrow}" );
   }
 }
