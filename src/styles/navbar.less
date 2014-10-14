@@ -37,21 +37,18 @@
    ----------------------- */
 
 /*
- * 1. Usa padding-left maior por causa do logo
- * 2. Garante text-decoration ausente em estado normal e estado hover
+ * 1. Garante text-decoration ausente em estado normal e estado hover
  */
 .syo-navbar-title {
   display: block;
   float: left;
   max-width: 100%;
   min-height: @navbar-height;
-  padding: 0 @navbar-padding-horizontal 0 ( @computed-line-height * 1.5 ); /* 1 */
+  padding: 0 @navbar-padding-horizontal;
   color: @gray;
   font-size: @font-size-base * 1.5;
   font-weight: bold;
   vertical-align: middle;
-  background: url( "images/logo.svg" ) no-repeat left center;
-  background-size: ( @computed-line-height * 1.5 ) - 5px;
 
   .navbar-spacing( @computed-line-height * 1.5 );
   .transition( ~"color 0.1s linear, text-shadow 0.1s linear" );
