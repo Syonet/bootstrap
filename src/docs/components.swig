@@ -534,6 +534,55 @@
                 {% endhighlight %}
             </div>
         </section>
+
+        <section>
+            <h3>Nav Tray</h3>
+            <p>
+                Navegação em bandeja, no estilo das pastas do Android. É possível posicionar até 4 itens por linha
+                utilizando as classes <code>.syo-nav-tray-*</code>.
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner clearfix">
+                    <div class="col col-medium-4 col-large-3 col-xlarge-2">
+                        <ul class="syo-nav syo-nav-tray syo-nav-tray-2">
+                            <li>
+                                <a href>
+                                    <i class="icon-home"></i>
+                                    <span class="syo-nav-tray-label">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href>
+                                    <i class="icon-heart-o"></i>
+                                    <span class="syo-nav-tray-label">Recomendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href>
+                                    <i class="icon-comments"></i>
+                                    <span class="syo-nav-tray-label">Comentários</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href>
+                                    <i class="icon-sign-out"></i>
+                                    <span class="syo-nav-tray-label">Sair</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% highlight xml %}
+                    <ul class="syo-nav syo-nav-tray syo-nav-tray-2">
+                        <li><a href><i class="icon-home"></i><span class="syo-nav-tray-label">Home</span></a></li>
+                        <li><a href><i class="icon-heart-o"></i><span class="syo-nav-tray-label">Recomendar</span></a></li>
+                        <li><a href><i class="icon-comments"></i><span class="syo-nav-tray-label">Comentários</span></a></li>
+                        <li><a href><i class="icon-sign-out"></i><span class="syo-nav-tray-label">Sair</span></a></li>
+                    </ul>
+                {% endhighlight %}
+            </div>
+        </section>
     </article>
 
     <!-- Paginação -->
