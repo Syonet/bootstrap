@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.6.0
+ * Syonet Bootstrap v0.7.2
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -1556,6 +1556,51 @@ fieldset[disabled] .syo-button.syo-info.syo-active {
   color: #0e466e;
   background: #1771b2;
 }
+.syo-button.syo-warning {
+  border-color: #ddb914;
+  color: #222222;
+  background-color: #f0d65d;
+  background-image: -webkit-linear-gradient(top, #f1d866, #efd24f);
+  background-image: linear-gradient(to bottom, #f1d866, #efd24f);
+  background-repeat: repeat-x;
+}
+.syo-button.syo-warning:hover {
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.syo-button.syo-warning:focus {
+  outline: 1px dotted rgba(0, 0, 0, 0.8);
+  outline-offset: -2px;
+}
+.syo-button.syo-warning:hover,
+.syo-button.syo-warning:focus,
+.syo-button.syo-warning:active,
+.syo-button.syo-warning.syo-active {
+  border-color: #af9210;
+  color: #222222;
+  background: #edcc38;
+}
+.syo-button.syo-warning[disabled],
+.syo-button.syo-warning.syo-disabled,
+fieldset[disabled] .syo-button.syo-warning,
+.syo-button.syo-warning[disabled]:hover,
+.syo-button.syo-warning.syo-disabled:hover,
+fieldset[disabled] .syo-button.syo-warning:hover,
+.syo-button.syo-warning[disabled]:focus,
+.syo-button.syo-warning.syo-disabled:focus,
+fieldset[disabled] .syo-button.syo-warning:focus,
+.syo-button.syo-warning[disabled]:active,
+.syo-button.syo-warning.syo-disabled:active,
+fieldset[disabled] .syo-button.syo-warning:active,
+.syo-button.syo-warning[disabled].syo-active,
+.syo-button.syo-warning.syo-disabled.syo-active,
+fieldset[disabled] .syo-button.syo-warning.syo-active {
+  border-color: #ddb914;
+  color: #ddb914;
+  background: #efd24f;
+}
 /* Buttons - Estilo link
    --------------------- */
 .syo-button.syo-button-link {
@@ -2170,12 +2215,14 @@ ol.unstyled {
    ------------------------- */
 /*
  * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
- * 2. Garante que o width acompanhará tamanho de fontes maiores
- * 3. Melhor renderização da fonte
- * 4. Alinha exatamente no meio, independente do crisp size da fonte
+ * 2. Melhor renderização da fonte
+ * 3. Alinha exatamente no meio, independente do crisp size da fonte
  */
 [class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class*=" icon-"]:before,
+.syo-checkbox label:before,
+.syo-radio label:before,
+.syo-check-list li label:before {
   /* 1 */
   min-width: 14px;
   display: inline-block;
@@ -2185,9 +2232,9 @@ ol.unstyled {
   font-weight: normal;
   text-decoration: inherit;
   text-align: center;
-  vertical-align: -1px;
-  /* 4 */
   /* 3 */
+  vertical-align: -1px;
+  /* 2 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -2281,6 +2328,46 @@ ol.unstyled {
 }
 .icon-spin:before {
   vertical-align: baseline;
+}
+/* Fonte Icõnica - Estilo "circle"
+   ------------------------------- */
+[class^="icon-"].syo-circle:before,
+[class*=" icon-"].syo-circle:before {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+[class^="icon-"].syo-circle:before,
+[class*=" icon-"].syo-circle:before {
+  color: #222222;
+  background-color: #eeeeee;
+}
+[class^="icon-"].syo-circle.syo-active:before,
+[class*=" icon-"].syo-circle.syo-active:before {
+  color: #ffffff;
+  background-color: #459a70;
+}
+[class^="icon-"].syo-circle.syo-success:before,
+[class*=" icon-"].syo-circle.syo-success:before {
+  color: #ffffff;
+  background-color: #5cb85c;
+}
+[class^="icon-"].syo-circle.syo-error:before,
+[class*=" icon-"].syo-circle.syo-error:before {
+  color: #ffffff;
+  background-color: #d9534f;
+}
+[class^="icon-"].syo-circle.syo-warning:before,
+[class*=" icon-"].syo-circle.syo-warning:before {
+  color: #222222;
+  background-color: #efd24f;
+}
+[class^="icon-"].syo-circle.syo-info:before,
+[class*=" icon-"].syo-circle.syo-info:before {
+  color: #ffffff;
+  background-color: #1771b2;
 }
 .icon-film:before {
   content: "\e604";
@@ -3284,12 +3371,9 @@ h4 small {
   border: 1px solid #cccccc;
   font-size: 14px;
   text-shadow: 0 1px 0 #FFF;
+  background-color: #f3f3f3;
   -webkit-box-shadow: 0 0 5px 0px rgba(170, 170, 170, 0.3);
   box-shadow: 0 0 5px 0px rgba(170, 170, 170, 0.3);
-  background-color: #f3f3f3;
-  background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
-  background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
-  background-repeat: repeat-x;
   /* 2 */
 }
 .syo-navbar a {
@@ -3304,29 +3388,26 @@ h4 small {
 .syo-navbar .syo-navbar-content {
   display: inline-block;
   padding: 0 12.5px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
 }
 /* Navbar - Elemento Title
    ----------------------- */
 /*
- * 1. Usa padding-left maior por causa do logo
- * 2. Garante text-decoration ausente em estado normal e estado hover
+ * 1. Garante text-decoration ausente em estado normal e estado hover
  */
 .syo-navbar-title {
   display: block;
   float: left;
   max-width: 100%;
-  padding: 0 12.5px 0 30px;
-  /* 1 */
+  min-height: 45px;
+  padding: 0 12.5px;
   color: #666666;
   font-size: 21px;
   font-weight: bold;
   vertical-align: middle;
-  background: url("images/logo.svg") no-repeat left center;
-  background-size: 25px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
   -webkit-transition: color 0.1s linear, text-shadow 0.1s linear;
   -moz-transition: color 0.1s linear, text-shadow 0.1s linear;
   -o-transition: color 0.1s linear, text-shadow 0.1s linear;
@@ -3353,8 +3434,8 @@ h4 small {
 .syo-navbar .syo-nav li > a {
   display: inline-block;
   padding: 0 12.5px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
 }
 .syo-navbar .syo-nav li > a:hover {
   color: #000;
@@ -3376,14 +3457,14 @@ h4 small {
  */
 .syo-navbar-button,
 .syo-button.syo-navbar-menu {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
   /* 1 */
   /* 1 */
 }
 .syo-navbar-button.syo-button-large {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 3.75px;
+  margin-bottom: 3.75px;
 }
 /*
  * 1. Herda do .syo-navbar-button
@@ -3398,6 +3479,22 @@ h4 small {
     /* 2 */
     display: none !important;
   }
+}
+/* Navbar - Formulários
+   -------------------- */
+/*
+ * 1. Alinha verticalmente componentes de formulário
+ * 2. Evita que syo-field adicione espaçamento na sua parte inferior
+ */
+.syo-navbar-form {
+  float: left;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+  /* 1 */
+}
+.syo-navbar-form .syo-field {
+  margin-bottom: 0;
+  /* 2 */
 }
 /* Navbar - Estilo fixo
    -------------------- */
@@ -4011,13 +4108,13 @@ body.syo-body-navbar {
 /* Realinha horizontalmente se for top/bottom + start */
 .syo-popover-top-start .syo-popover-arrow,
 .syo-popover-bottom-start .syo-popover-arrow {
-  left: 30px;
+  left: 9px;
 }
 /* Realinha horizontalmente se for top/bottom + end */
 .syo-popover-top-end .syo-popover-arrow,
 .syo-popover-bottom-end .syo-popover-arrow {
   left: auto;
-  right: 30px;
+  right: 9px;
 }
 /* Alinha verticalmente as setas left/right */
 [class*="syo-popover-left"] .syo-popover-arrow,
@@ -4032,14 +4129,14 @@ body.syo-body-navbar {
 /* Realinha verticalmente se for left/right + start */
 .syo-popover-left-start .syo-popover-arrow,
 .syo-popover-right-start .syo-popover-arrow {
-  top: 10px;
+  top: 5px;
   margin-top: 0;
 }
 /* Realinha verticalmente se for left/right + end */
 .syo-popover-left-end .syo-popover-arrow,
 .syo-popover-right-end .syo-popover-arrow {
   top: auto;
-  bottom: 10px;
+  bottom: 5px;
 }
 /* Seta embaixo */
 [class*="syo-popover-top"] .syo-popover-arrow {
@@ -4112,16 +4209,25 @@ body.syo-body-navbar {
 /*
  * Check List.
  * 1. Desfaz padding do .syo-popover-content
- * 2. Remove bordas arredondadas do primeiro e do último item do check-list
+ * 2. Remove bordas arredondadas do check-list e de seus itens
+ * 3. Remove box-shadow do check-list
  */
 .syo-popover-content > .syo-check-list {
+  overflow: hidden;
   margin-left: -10px;
   /* 1 */
   margin-right: -10px;
   /* 1 */
   border: none;
-  /* 1 */
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
   /* 2 */
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* 3 */
+  /* 1 */
   /* 2 */
 }
 .syo-popover-content > .syo-check-list:first-child {
@@ -4130,21 +4236,27 @@ body.syo-body-navbar {
 .syo-popover-content > .syo-check-list:last-child {
   margin-bottom: -5px;
 }
-.syo-popover-content > .syo-check-list > li:first-child,
-.syo-popover-content > .syo-check-list > li:first-child > a,
-.syo-popover-content > .syo-check-list > li:first-child > label {
-  -webkit-border-top-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  border-top-right-radius: 0;
+.syo-popover-content > .syo-check-list:not( :last-child ) {
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /* 2 */
 }
-.syo-popover-content > .syo-check-list > li:last-child,
-.syo-popover-content > .syo-check-list > li:last-child > a,
-.syo-popover-content > .syo-check-list > li:last-child > label {
-  -webkit-border-top-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  border-top-right-radius: 0;
+.syo-popover-content > .syo-check-list:not( :last-child ) li:last-child {
+  border-bottom: 1px solid #e1e1e1;
+}
+.syo-popover-content > .syo-check-list:not( :first-child ) li:first-child {
+  border-top: 1px solid #e1e1e1;
+}
+.syo-popover-content > .syo-check-list li:first-child,
+.syo-popover-content > .syo-check-list li:last-child,
+.syo-popover-content > .syo-check-list li:first-child a,
+.syo-popover-content > .syo-check-list li:last-child a,
+.syo-popover-content > .syo-check-list li:first-child label,
+.syo-popover-content > .syo-check-list li:last-child label {
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .syo-popover-content > .syo-check-list .syo-check-list-header {
   background-image: none;
@@ -4193,7 +4305,7 @@ body.syo-body-navbar {
   margin-left: 0;
   /* 2 */
   margin-bottom: 20px;
-  border: 1px solid #c8c8c8;
+  border: 1px solid #e1e1e1;
   list-style: none;
   /* 2 */
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -4201,28 +4313,28 @@ body.syo-body-navbar {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-.syo-check-list > li {
-  border-bottom: 1px solid #c8c8c8;
+.syo-check-list li {
+  border-bottom: 1px solid #e1e1e1;
   /* 1 */
   /* 2 */
 }
-.syo-check-list > li label:hover {
+.syo-check-list li label:hover {
   background-color: #eeeeee;
 }
-.syo-check-list > li:first-child,
-.syo-check-list > li:first-child > label,
-.syo-check-list > li:first-child > a {
+.syo-check-list li:first-child,
+.syo-check-list li:first-child label,
+.syo-check-list li:first-child a {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-.syo-check-list > li:last-child {
+.syo-check-list li:last-child {
   border-bottom: 0;
 }
-.syo-check-list > li:last-child,
-.syo-check-list > li:last-child > label,
-.syo-check-list > li:last-child > a {
+.syo-check-list li:last-child,
+.syo-check-list li:last-child label,
+.syo-check-list li:last-child a {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
@@ -4254,12 +4366,7 @@ body.syo-body-navbar {
 .syo-checkbox label:before,
 .syo-radio label:before,
 .syo-check-list li label:before {
-  display: inline-block;
-  min-width: 1em;
   margin-right: 5px;
-  font-family: "SyoBootstrap";
-  font-size: 14px;
-  font-weight: normal;
 }
 .syo-checkbox input[type="checkbox"],
 .syo-radio input[type="checkbox"],
@@ -4372,7 +4479,7 @@ body.syo-body-navbar {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1000;
+  z-index: -1050;
   display: block;
   width: 100%;
   height: 100%;
@@ -4385,7 +4492,7 @@ body.syo-body-navbar {
   filter: Alpha(Opacity=0);
 }
 .syo-overlay.syo-active {
-  z-index: 1000;
+  z-index: 1050;
   opacity: 1;
   filter: Alpha(Opacity=100);
 }
@@ -4520,7 +4627,7 @@ body.syo-body-navbar {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1050;
+  z-index: 1010;
   display: block;
   padding: 12.5px 15px;
   color: #222222;
@@ -4554,6 +4661,76 @@ body.syo-body-navbar {
 }
 .syo-notification.syo-error a {
   color: #fff;
+}
+/* Tooltips
+   ============================================================================================== */
+/*
+ * 1. Evita que um mouseover ou algo assim possa acontecer
+ */
+.syo-tooltip {
+  position: fixed;
+  z-index: 99999;
+  max-width: 150px;
+  padding: .4em .75em;
+  font-size: 0.9em;
+  color: #ffffff;
+  text-align: center;
+  background: #000000;
+  pointer-events: none;
+  /* 1 */
+  opacity: 0;
+  filter: Alpha(Opacity=0);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0.15s linear opacity;
+  -moz-transition: 0.15s linear opacity;
+  -o-transition: 0.15s linear opacity;
+  transition: 0.15s linear opacity;
+}
+.syo-tooltip:before {
+  position: absolute;
+  border: 5px solid transparent;
+  content: "";
+}
+.syo-tooltip.syo-tooltip-visible {
+  opacity: 0.85;
+  filter: Alpha(Opacity=85);
+}
+/* Tooltip - Posicionamento
+   ------------------------ */
+.syo-tooltip-top:before {
+  bottom: -5px;
+  border-bottom: none;
+  border-top-color: #000000;
+}
+.syo-tooltip-left:before {
+  right: -5px;
+  border-right: none;
+  border-left-color: #000000;
+}
+.syo-tooltip-right:before {
+  left: -5px;
+  border-left: none;
+  border-right-color: #000000;
+}
+.syo-tooltip-bottom:before {
+  top: -5px;
+  border-top: none;
+  border-bottom-color: #000000;
+}
+/*
+ * Alinha horizontalmente para posicao top/bottom
+ */
+.syo-tooltip-top:before,
+.syo-tooltip-bottom:before {
+  left: calc(50% - 5px);
+}
+/*
+ * Alinha verticalmente para posicao left/right
+ */
+.syo-tooltip-left:before,
+.syo-tooltip-right:before {
+  top: calc(50% - 5px);
 }
 /* ==============================================================================================
    Animations

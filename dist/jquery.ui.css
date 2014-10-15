@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.6.0
+ * Syonet Bootstrap v0.7.2
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -862,10 +862,9 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #999;
+  border: 1px solid #666666;
   font-weight: normal;
   color: #1a1a1a;
-  border-color: #666666;
   background-color: #f3f3f3;
   background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
   background-image: linear-gradient(to bottom, #f6f6f6, #eeeeee);
@@ -1537,10 +1536,13 @@ body .ui-tooltip {
   border-bottom-right-radius: 4px;
 }
 /* Overlays */
+.ui-front {
+  z-index: 1050;
+}
 .ui-widget-overlay {
   background: rgba(170, 170, 170, 0.4);
-  opacity: 0.3;
-  filter: Alpha(Opacity=30);
+  opacity: 0.5;
+  filter: Alpha(Opacity=50);
 }
 .ui-widget-shadow {
   margin: -8px 0 0 -8px;

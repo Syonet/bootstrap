@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.6.0
+ * Syonet Bootstrap v0.7.2
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -9,7 +9,10 @@
 
 !function( ng ) {
 	"use strict";
-	ng.module( "syonet", [ "ng" ] );
+	ng.module( "syonet", [
+		"syonet.popover",
+		"syonet.tooltip"
+	]);
 }( angular );
 /**
  * syoCheckList
@@ -587,132 +590,112 @@
 	var syo = ng.module( "syonet" );
 	var extend = ng.extend;
 
-	function Dialog() {
-		var $element, promise;
-		var that = this;
+	var defaults = {
+		autoOpen: false,
+		modal: false,
+		closeText: "Fechar"
+	};
 
-		this._setPromise = function( _promise ) {
-			promise = _promise.then(function( _element ) {
-				$element = _element;
-			});
+	syo.directive( "syoDialog", function() {
+		var definition = {};
 
-			return that;
+		definition.restrict = "E";
+		definition.scope = true;
+		definition.transclude = true;
+		definition.replace = true;
+		definition.controller = "syoDialogController";
+		definition.controllerAs = "$dialog";
+		definition.template = "<div class='syo-dialog-content'></div>";
+
+		definition.link = function( scope, element, attrs, transcludeFn, $dialog ) {
+			// Seta um controller se estiver disponível
+			if ( attrs.controller ) {
+				element.attr( "ng-controller", attrs.controller );
+			}
+
+			// Se não há uma promise setada no escopo (significando que a dialog está sendo inicializada de uma view),
+			// então vamos fazer o transclude pra setar o conteúdo da dialog
+			if ( !scope.$$promise ) {
+				transcludeFn(function( children ) {
+					$dialog._setContent( children );
+				});
+			}
 		};
 
-		this.open = function() {
-			promise = promise.then(function() {
-				var options = that.option();
+		return definition;
+	});
 
-				// Garante que max-width e max-height fiquem consistentes
+	syo.controller( "syoDialogController", function( $scope, $element, $attrs, $q, $compile ) {
+		var ctrl = this;
+		var initialOptions = $attrs.options;
+
+		ctrl.open = function() {
+			return ctrl.option().then(function( options ) {
 				$element.dialog( "widget" ).css({
 					"max-width": options.maxWidth
 				});
 
 				$element.dialog( "open" );
 			});
-
-			return that;
 		};
 
-		this.close = function() {
-			promise = promise.then(function() {
+		ctrl.close = function() {
+			return ctrl.promise.then(function() {
 				$element.dialog( "close" );
 			});
-
-			return that;
 		};
 
-		this.option = function() {
-			var retVal;
-			var args = Array.prototype.slice.call( arguments );
+		ctrl.destroy = function() {
+			$scope.$destroy();
+		};
 
+		ctrl.option = function() {
+			var args = [].slice.call( arguments );
+
+			// Adiciona o nome do método 'option' pra chamar no elemento que tem a dialog
 			args.unshift( "option" );
-			retVal = $element.dialog.apply( $element, args );
 
-			return retVal instanceof $ ? that : retVal;
+			return ctrl.promise.then(function() {
+				var ret = $element.dialog.apply( $element, args );
+				return ret instanceof $ ? undefined : ret;
+			});
 		};
 
-		this.destroy = function() {
+		ctrl.promise = ( $scope.$$promise || $q.when( null ) ).then(function() {
+			ctrl.$resolved = true;
+		});
+
+		ctrl._setContent = function( template ) {
+			var options = $scope.$eval( initialOptions );
+			$element.append( template );
+			$compile( $element )( $scope );
+
+			// Se há um alias pro controller, seta ele no escopo agora, após o compile
+			if ( $attrs.controller && $attrs.controllerAs ) {
+				$scope[ $attrs.controllerAs ] = $element.controller();
+			}
+
+			// Remove o prefixo "on" dos callbacks da dialog
+			[ "BeforeClose", "Close", "Open" ].forEach(function( cb ) {
+				var uncapitalized = cb[ 0 ].toLowerCase() + cb.substr( 1 );
+				options[ uncapitalized ] = options[ "on" + cb ];
+				delete options[ "on" + cb ];
+			});
+
+			$element.dialog( options );
+		};
+
+		$scope.$on( "$destroy", function() {
+			// Destroi a instância da dialog antes de destruir o elemento
 			$element.dialog( "destroy" );
 			$element.remove();
-		};
-	}
-
-	Dialog.defaults = {
-		autoOpen: false,
-		modal: false
-	};
-
-	Dialog.options = {
-		ngModel: "@",
-		title: "=",
-		modal: "&",
-		autoOpen: "&",
-		draggable: "&",
-		height: "@",
-		maxHeight: "@",
-		width: "@",
-		maxWidth: "@",
-		onOpen: "&",
-		onClose: "&",
-		onBeforeClose: "&"
-	};
-
-	syo.directive( "syoDialog", [ "$q", function( $q ) {
-		var definition = {};
-
-		function getOptions( $scope ) {
-			return {
-				title: $scope.title,
-				modal: $scope.modal(),
-				height: $scope.height,
-				maxHeight: $scope.maxHeight,
-				width: $scope.width,
-				maxWidth: $scope.maxWidth,
-				draggable: $scope.draggable(),
-				autoOpen: $scope.autoOpen(),
-				open: function() {
-					var ret = $scope.onOpen();
-					return typeof ret === "function" ? ret() : ret;
-				},
-				beforeClose: function() {
-					var ret = $scope.onBeforeClose();
-					return typeof ret === "function" ? ret() : ret;
-				},
-				close: function() {
-					var ret = $scope.onClose();
-					return typeof ret === "function" ? ret() : ret;
-				},
-				closeText: "Fechar"
-			};
-		}
-
-		definition.restrict = "E";
-		definition.replace = true;
-		definition.transclude = true;
-		definition.template = "<div><div ng-transclude></div></div>";
-		definition.scope = Dialog.options;
-
-		definition.link = function( $scope, $element ) {
-			var options = getOptions( $scope );
-			$element.dialog( options );
-
-			// Se o escopo atual não tem um provider ainda, cria um e já passa o elemento
-			$scope.$provider = ( $scope.$provider || new Dialog()._setPromise( $q.when( $element ) ) );
-			$scope.$parent[ $scope.ngModel ] = $scope.$provider;
-
-			// Fornece uma maneira mais fácil de fechar o dialog a partir do HTML
-			// Tem que exportar pro $parent ou não fica acessível do conteúdo do dialog
-			$scope.$parent.$close = $scope.$provider.close;
-		};
-
-		return definition;
-	}]);
+		});
+	});
 
 	syo.provider( "$dialog", function() {
 		var $dialogProvider = {};
 
-		$dialogProvider.defaults = Dialog.defaults;
+		$dialogProvider.defaults = defaults;
 
 		$dialogProvider.$get = [
 			"$compile",
@@ -720,46 +703,50 @@
 			"$rootScope",
 			"$document",
 			function( $compile, $templatePromise, $rootScope, $document ) {
-				function createDialog( options ) {
-					var promise, $element;
-					var scope = ( options.scope || $rootScope ).$new();
+				var create = function createDialog( options ) {
+					var scope, dialog, element;
+					options = options || {};
 
 					if ( !options.template && !options.templateUrl ) {
 						throw new Error( "Deve ser passada a opção 'template' ou a opção 'templateUrl'!" );
 					}
 
-					options = extend( {}, Dialog.defaults, options );
-					extend( scope, options, options.locals );
+					// Cria um novo escopo intermediário
+					scope = ( options.scope || $rootScope ).$new();
 
-					scope.$provider = new Dialog();
-					promise = $templatePromise(
+					// Estende as opções padrão com os valores passados
+					scope.options = extend( {}, defaults, options );
+
+					// Estende o escopo com as variáveis locais
+					extend( scope, options.locals );
+
+					// Busca o template
+					scope.$$promise = $templatePromise(
 						options.template,
 						options.templateUrl
 					).then(function( template ) {
-						$element = $( "<syo-dialog></syo-dialog>" );
-
-						// Seta todos os atributos possíveis na diretiva.
-						ng.forEach( Dialog.options, function( binding, prop ) {
-							$element.attr(
-								prop.replace( /([A-Z])/g, "-$1" ).toLowerCase(),
-								binding[ 0 ] === "@" ? scope[ prop ] : prop
-							);
-						});
-
-						$element.html( template );
-
-						$document.find( "body" ).eq( 0 ).append( $element );
-						$element = $compile( $element )( scope );
-
-						return $element;
+						// Seta o template e (consequentemente) inicializa a dialog
+						dialog._setContent( template );
 					});
 
-					scope.$provider._setPromise( promise );
-					return scope.$provider;
-				}
+					// Cria o elemento da dialog e seta os atributos principais
+					element = $( "<syo-dialog>" );
+					element.attr({
+						options: "options",
+						controller: options.controller,
+						"controller-as": options.controllerAs
+					});
+
+					$document.find( "body" ).append( element );
+					element = $compile( element )( scope );
+
+					// Recupera o controller da dialog
+					dialog = element.controller( "syoDialog" );
+					return dialog;
+				};
 
 				return {
-					create: createDialog
+					create: create
 				};
 			}
 		];
@@ -1369,10 +1356,10 @@
 !function( $, ng ) {
 	"use strict";
 
-	var syo = ng.module( "syonet" );
+	var module = ng.module( "syonet.popover", [] );
 	var extend = ng.extend;
 
-	syo.directive( "syoPopover", [
+	module.directive( "syoPopover", [
 		"$compile",
 		"$rootScope",
 		"$timeout",
@@ -1402,7 +1389,6 @@
 
 					if ( !$popover ) {
 						$popover = $( "<syo-popover-element></syo-popover-element>" );
-						$popover.attr( "on-close", "onClose" );
 						$popover.attr( "title", "title" );
 						$popover.attr( "position", "position" );
 						$popover.attr( "element", "element" );
@@ -1421,6 +1407,11 @@
 						// Compila o popover agora e deixa pra setar o conteúdo apenas quando for abrir
 						$popover = $compile( $popover )( popoverScope );
 						controller = $popover.controller( "syoPopoverElement" );
+						controller.callbacks.open = config.onOpen;
+						controller.callbacks.close = config.onClose;
+						controller.popoverScope = popoverScope;
+
+						popoverScope.$popover = controller;
 					} else {
 						if ( scope.event !== currentEvent.in ) {
 							element.off( currentEvent.in );
@@ -1485,13 +1476,21 @@
 				// ---------------------------------------------------------------------------------
 				// Abre o popover. Se o conteúdo do mesmo ainda não foi atribuido, faz isso agora
 				function open( evt ) {
+					var $content, tooltip;
 					evt.stopPropagation();
 
 					if ( !loadedContent ) {
 						loadedContent = true;
+						$content = $( "<syo-popover-content><div syo-progressbar='100'></div></syo-popover-content>" );
+						$content = $compile( $content )( popoverScope );
+						$content.appendTo( $popover );
+
 						$templatePromise( popoverScope.template, popoverScope.templateUrl ).then(function( template ) {
-							var $content =  $( "<syo-popover-content></syo-popover-content>" );
+							var oldContent = $content;
+							$content =  $( "<syo-popover-content></syo-popover-content>" );
 							$content = $compile( $content.html( template ) )( popoverScope );
+
+							oldContent.remove();
 							$content.appendTo( $popover );
 
 							// Reposiciona e aguarda até o próximo digest pra reposicionar o elemento (de novo).
@@ -1500,6 +1499,13 @@
 								reposition();
 							});
 						});
+					}
+
+					// Verifica se há uma diretiva syoTooltip presente no elemento atual.
+					// Se houver, fecha o mesmo para que não sobreponha ao popover.
+					tooltip = element.controller( "syoTooltip" );
+					if ( tooltip ) {
+						tooltip.close();
 					}
 
 					// Devemos bindar o controller a alguma propriedade do escopo pai?
@@ -1530,7 +1536,7 @@
 				}
 			};
 
-			// Retorna a qual evento o elemento de origem deverá responder pra fechar o popover.
+			// Retorna qual evento o elemento de origem deverá responder pra fechar o popover.
 			function getOutEvent( eventIn ) {
 				if ( eventIn === "mouseenter" ) {
 					return "mouseleave";
@@ -1543,7 +1549,140 @@
 		}
 	]);
 
-	syo.directive( "syoPopoverElement", function() {
+	module.controller( "SyoPopoverController", [
+		"$scope",
+		"$element",
+		"$timeout",
+		function( $scope, $element, $timeout ) {
+			var open = false;
+
+			this.popoverScope = null;
+			this.callbacks = {};
+
+			this.isOpen = function() {
+				return open;
+			};
+
+			this.open = function() {
+				if ( open ) {
+					return;
+				}
+
+				// Executa callback on open
+				if ( ng.isFunction( this.callbacks.open ) ) {
+					this.callbacks.open( this.popoverScope, this );
+				}
+
+				open = true;
+				$element.show();
+				this.position();
+			};
+
+			this.close = function() {
+				if ( !open ) {
+					return;
+				}
+
+				// Executa callback on close
+				if ( ng.isFunction( this.callbacks.close ) ) {
+					this.callbacks.close( this.popoverScope, this );
+				}
+
+				open = false;
+				$element.hide();
+			};
+
+			this.position = function() {
+				// Variáveis utilizadas no cálculo de posicionamento no inicio/fim do elemento
+				var atPos, myPos, atStart;
+				var position = {};
+
+				// Se não há posição, utiliza top, que é o padrão
+				var positionValue = ( $scope.position || "top" ).split( "-" );
+
+				if ( !open ) {
+					return;
+				}
+
+				switch ( positionValue[ 0 ] ) {
+					case "top":
+						position.at = "center top-15";
+						position.my = "center bottom";
+						break;
+
+					case "right":
+						position.at = "right+15 center";
+						position.my = "left center";
+						break;
+
+					case "bottom":
+						position.at = "center bottom+15";
+						position.my = "center top";
+						break;
+
+					case "left":
+						position.at = "left-15 center";
+						position.my = "right center";
+						break;
+				}
+
+				if ( positionValue[ 1 ] ) {
+					atStart = positionValue[ 1 ] === "start";
+
+					if ( /^top|bottom$/.test( positionValue[ 0 ] ) ) {
+						atPos = atStart ? "left" : "right";
+						myPos = atStart ? "left-5" : "right+5";
+					} else {
+						atPos = atStart ? "top" : "bottom";
+						myPos = atStart ? "top-5" : "bottom+5";
+					}
+
+					position.at = position.at.replace( "center", atPos );
+					position.my = position.my.replace( "center", myPos );
+				}
+
+				position.of = $scope.element;
+				position.within = $scope.element;
+
+				// @FIXME collision = flip não funciona no Firefox Android :'(
+				position.collision = "none";
+
+				// Para setar a posição, deve-se aguardar até que o digest do elemento termine
+				$timeout(function() {
+					var maxWidth, pos;
+
+					$element.position( position );
+					pos = $element.position();
+
+					// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
+					// apenas quando estamos usando left/right. Caso sim, então o elemento será
+					// alterado para ter um max-width que o permita ficar 100% na tela.
+					if ( positionValue[ 0 ] === "left" ) {
+						if ( pos.left < 0 ) {
+							maxWidth = $element.outerWidth() + pos.left;
+						}
+					} else if ( positionValue[ 0 ] === "right" ) {
+						if ( $element.outerWidth() + pos.left > $( window ).width() ) {
+							maxWidth = $( window ).width() + pos.left;
+						}
+					}
+
+					// Se tem um maxWidth calculado, seta este e reposiciona
+					if ( maxWidth ) {
+						$element.css( "max-width", maxWidth );
+						$element.position( position );
+					}
+				});
+			};
+
+			this.destroy = function() {
+				$scope.$destroy();
+				$element.remove();
+			};
+		}
+	]);
+
+	module.directive( "syoPopoverElement", function() {
 		var definition = {};
 
 		definition.replace = true;
@@ -1560,127 +1699,14 @@
 				"<div class='syo-popover-arrow'></div>" +
 				"<div class='syo-popover-titlebar'>" +
 					"<div class='syo-popover-title'>{{ title }}</div>" +
-					"<div class='syo-popover-close' ng-click='$close()'><i class='icon-remove-circle'></i></div>" +
+					"<div class='syo-popover-close' ng-click='$popover.close()'>" +
+						"<i class='icon-remove-circle'></i>" +
+					"</div>" +
 				"</div>" +
 			"</div>";
 
-		definition.controller = [
-			"$scope",
-			"$element",
-			"$timeout",
-			function( $scope, $element, $timeout ) {
-				var open = false;
-
-				this.isOpen = function() {
-					return open;
-				};
-
-				this.open = function() {
-					if ( open ) {
-						return;
-					}
-
-					open = true;
-					$element.show();
-					this.position();
-				};
-
-				this.close = $scope.$close = function() {
-					if ( !open ) {
-						return;
-					}
-
-					open = false;
-					$element.hide();
-				};
-
-				this.position = function() {
-					var position = {};
-
-					// Se não há posição, utiliza top, que é o padrão
-					var positionValue = ( $scope.position || "top" ).split( "-" );
-
-					if ( !open ) {
-						return;
-					}
-
-					switch ( positionValue[ 0 ] ) {
-						case "top":
-							position.at = "center top-20";
-							position.my = "center bottom";
-							break;
-
-						case "right":
-							position.at = "right+20 center";
-							position.my = "left center";
-							break;
-
-						case "bottom":
-							position.at = "center bottom+20";
-							position.my = "center top";
-							break;
-
-						case "left":
-							position.at = "left-20 center";
-							position.my = "right center";
-							break;
-					}
-
-					if ( positionValue[ 1 ] ) {
-						var atStart = positionValue[ 1 ] === "start";
-
-						if ( positionValue[ 0 ] === "top" || positionValue[ 0 ] === "bottom" ) {
-							position.at = position.at.replace( "center", atStart ? "left" : "right" );
-						} else {
-							position.at = position.at.replace( "center", atStart ? "top" : "bottom" );
-						}
-
-						position.my = position.my.replace(
-							"center",
-							atStart ? "center+40%" : "center-40%"
-						);
-					}
-
-					position.of = $scope.element;
-					position.within = $scope.element;
-
-					// @FIXME collision = flip não funciona no Firefox Android :'(
-					position.collision = "none";
-
-					// Para setar a posição, deve-se aguardar até que o digest do elemento termine
-					$timeout(function() {
-						var maxWidth, pos;
-
-						$element.position( position );
-						pos = $element.position();
-
-						// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
-						// apenas quando estamos usando left/right. Caso sim, então o elemento será
-						// alterado para ter um max-width que o permita ficar 100% na tela.
-						if ( positionValue[ 0 ] === "left" ) {
-							if ( pos.left < 0 ) {
-								maxWidth = $element.outerWidth() + pos.left;
-							}
-						} else if ( positionValue[ 0 ] === "right" ) {
-							if ( $element.outerWidth() + pos.left > $( window ).width() ) {
-								maxWidth = $( window ).width() + pos.left;
-							}
-						}
-
-						// Se tem um maxWidth calculado, seta este e reposiciona
-						if ( maxWidth ) {
-							$element.css( "max-width", maxWidth );
-							$element.position( position );
-						}
-					});
-				};
-
-				this.destroy = function() {
-					$scope.$destroy();
-					$element.remove();
-				};
-			}
-		];
+		definition.controller = "SyoPopoverController";
+		definition.controllerAs = "$popover";
 
 		definition.link = function( scope, element, attr ) {
 			attr.$set( "title", "" );
@@ -1690,7 +1716,7 @@
 		return definition;
 	});
 
-	syo.directive( "syoPopoverContent", function() {
+	module.directive( "syoPopoverContent", function() {
 		return {
 			restrict: "E",
 			replace: true,
@@ -1821,7 +1847,7 @@
 			$li.attr( "ng-repeat", "(key, item) in " + expr + trackBy );
 			$input.val( "{{ " + inputVal + " }}" );
 
-			//return definition.link;
+			// return definition.link;
 		};
 
 		return definition;
@@ -2223,6 +2249,125 @@
 	});
 
 }( jQuery, angular );
+!function( $, ng ) {
+	"use strict";
+
+	var module = ng.module( "syonet.tooltip", [] );
+
+	module.value( "syoTooltipConfig", {
+		timeout: 300
+	});
+
+	module.controller( "SyoTooltipController", function() {
+		var ctrl = this;
+
+		ctrl.close = function() {
+			if ( ctrl.target ) {
+				ctrl.target.trigger( "mouseleave" );
+			}
+		};
+	});
+
+	module.directive( "syoTooltip", function( syoTooltipConfig ) {
+		var definition = {};
+		var tooltipTpl = $( "<span>" ).addClass( "syo-tooltip" );
+
+		definition.controller = "SyoTooltipController";
+		definition.controllerAs = "$tooltip";
+
+		definition.link = function( scope, element, attr, $tooltip ) {
+			var timeout;
+			var tooltip = tooltipTpl.clone();
+
+			element.append( tooltip );
+			element.on( "mouseenter", "[title]", function( evt ) {
+				var target = $( evt.currentTarget );
+				var title = target.attr( "title" );
+
+				if ( !title ) {
+					return;
+				}
+
+				evt.preventDefault();
+				evt.stopPropagation();
+
+				// Guarda e remove o title
+				target.data( "title", title ).attr( "title", "" );
+
+				timeout = setTimeout(function() {
+					var position, positionConfig;
+					timeout = null;
+
+					// Se não há nenhum elemento pai, não exibe o tooltip.
+					if ( !target.parent().length || target.is( ":hidden" ) ) {
+						return;
+					}
+
+					position = target.attr( "syo-tooltip-position" );
+					positionConfig = {
+						of: target,
+						collision: "fit"
+					};
+
+					switch ( position ) {
+						case "top":
+							positionConfig.my = "center bottom";
+							positionConfig.at = "center top-5px";
+							break;
+
+						case "left":
+							positionConfig.my = "right center";
+							positionConfig.at = "left-5px center";
+							break;
+
+						case "right":
+							positionConfig.my = "left center";
+							positionConfig.at = "right+5px center";
+							break;
+
+						default:
+							position = "bottom";
+							positionConfig.my = "center top";
+							positionConfig.at = "center bottom+5px";
+							break;
+					}
+
+					$tooltip.target = target;
+
+					// Remove todas as classes de posicionamento
+					tooltip.removeClass([ "top", "left", "right", "bottom" ].map(function( cls ) {
+						return "syo-tooltip-" + cls;
+					}).join( " " ) );
+
+					tooltip.addClass( "syo-tooltip-visible syo-tooltip-" + position ).text( title );
+					tooltip.position( positionConfig );
+
+					target.on( "$destroy", function destroyCb() {
+						$tooltip.close();
+						target.off( "$destroy", destroyCb );
+					});
+				}, syoTooltipConfig.timeout );
+			});
+
+			element.on( "mouseleave", "[title]", function( evt ) {
+				var target = $( evt.currentTarget );
+
+				target.attr( "title", target.data( "title" ) );
+
+				if ( timeout ) {
+					clearTimeout( timeout );
+					timeout = null;
+					return;
+				}
+
+				$tooltip.target = null;
+				tooltip.removeClass( "syo-tooltip-visible" );
+			});
+		};
+
+		return definition;
+	});
+}( jQuery, angular );
 /**
  * syoTouchTest
  * ------------
@@ -2512,8 +2657,8 @@
 					querystring.push( encodeUriQuery( key ) + "=" + encodeUriQuery( v ) );
 				});
 			});
-			url += querystring.length ? "?" + querystring.join("&") : "";
-			url += store.hash ? "#"+ store.hash : "";
+			url += querystring.length ? "?" + querystring.join( "&" ) : "";
+			url += store.hash ? "#" + store.hash : "";
 
 			return url;
 		};
