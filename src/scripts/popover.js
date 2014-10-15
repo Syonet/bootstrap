@@ -18,7 +18,15 @@
 		"$templatePromise",
 		"$window",
 		function( $compile, $rootScope, $timeout, $templatePromise, $window ) {
+			var popovers = [];
 			var definition = {};
+
+			// Para cada popover que abre com click, devemos fechar quando houver click noutro lugar da janela
+			$( $window ).on( "click blur", function() {
+				popovers.forEach(function( popover ) {
+					popover.close();
+				});
+			});
 
 			definition.restrict = "A";
 			definition.scope = {};
@@ -87,6 +95,7 @@
 							element.on( currentEvent.out, close );
 						} else {
 							element.on( currentEvent.in, function( evt ) {
+								popovers.push( controller );
 								controller.isOpen() ? close( evt ) : open( evt );
 							});
 						}
