@@ -11,6 +11,7 @@ if [ ! -z "${TRAVIS_TAG}" ]; then
 
     # TODO fazer add de todos *.html na raiz do projeto?
     git checkout gh-pages
+    git merge master --no-edit
     git add -f dist/ {angularjs,css,components,index}.html assets/styles/main.css
     git commit -m "chore(release): docs v${TRAVIS_TAG}"
 
