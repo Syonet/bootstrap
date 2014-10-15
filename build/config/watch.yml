@@ -2,6 +2,9 @@ options:
   spawn: false
   livereload: "<%= liveReload %>"
 
+# Lib watches
+# -----------
+
 css:
   files: "src/styles/**/*.{less,css}"
   tasks:
@@ -12,12 +15,16 @@ js:
   files: "src/scripts/*.js"
   tasks:
     - "concat:main"
+    - "process:main"
 
 icons:
   files: "src/fonts/*.json"
   tasks:
     - "icons"
     - "process:fonts"
+
+# Docs watches
+# ------------
 
 docsHTML:
   files: "src/docs/**/*.swig"

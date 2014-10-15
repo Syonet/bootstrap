@@ -199,109 +199,118 @@
 
     <!-- Tipografia -->
     <article id="type">
-
         <header>
             <h2>Tipografia</h2>
         </header>
 
-        <h3>Headings</h3>
-        <p>Todos os headings HTML, do <code>h1</code> ao <code>h6</code>.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <h1>h1. Heading 1</h1>
-                <h2>h2. Heading 2</h2>
-                <h3>h3. Heading 3</h3>
-                <h4>h4. Heading 4</h4>
-                <h5>h5. Heading 5</h5>
-                <h6>h6. Heading 6</h6>
+        <section>
+            <h3>Headings</h3>
+            <p>Todos os headings HTML, do <code>h1</code> ao <code>h6</code>.</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <h1>h1. Heading 1</h1>
+                    <h2>h2. Heading 2</h2>
+                    <h3>h3. Heading 3</h3>
+                    <h4>h4. Heading 4</h4>
+                    <h5>h5. Heading 5</h5>
+                    <h6>h6. Heading 6</h6>
+                </div>
+                {% highlight xml %}<h1>...</h1>{% endhighlight %}
             </div>
-            {% highlight xml %}<h1>...</h1>{% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Parágrafos</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tristique vehicula.
-                    In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur massa, sit amet egestas
-                    tellus metus eget eros.
-                </p>
-                <p>
-                    Praesent in tellus ut magna tincidunt volutpat. Praesent eleifend erat eget risus gravida cursus
-                    fermentum urna placerat.
-                </p>
-                <p>
-                    Vestibulum interdum orci sed enim egestas quis vehicula mauris accumsan. Donec mattis rhoncus augue,
-                    convallis gravida lacus congue vitae. Pellentesque tortor purus, blandit non consequat at, mattis
-                    elementum enim.
-                </p>
-                <p>
-                    Morbi urna libero, blandit a rutrum sed, rutrum id arcu. Sed ac dolor quis erat fermentum feugiat a
-                    et sapien. Nam sit amet eros ac ipsum varius lacinia. Suspendisse nisi odio, pretium et dictum in,
-                    blandit vitae lectus.
-                </p>
+        <section>
+            <h3>Parágrafos</h3>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tristique vehicula.
+                        In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur massa, sit amet egestas
+                        tellus metus eget eros.
+                    </p>
+                    <p>
+                        Praesent in tellus ut magna tincidunt volutpat. Praesent eleifend erat eget risus gravida cursus
+                        fermentum urna placerat.
+                    </p>
+                    <p>
+                        Vestibulum interdum orci sed enim egestas quis vehicula mauris accumsan. Donec mattis rhoncus augue,
+                        convallis gravida lacus congue vitae. Pellentesque tortor purus, blandit non consequat at, mattis
+                        elementum enim.
+                    </p>
+                    <p>
+                        Morbi urna libero, blandit a rutrum sed, rutrum id arcu. Sed ac dolor quis erat fermentum feugiat a
+                        et sapien. Nam sit amet eros ac ipsum varius lacinia. Suspendisse nisi odio, pretium et dictum in,
+                        blandit vitae lectus.
+                    </p>
+                </div>
+                {% highlight xml %}<p>...</p>{% endhighlight %}
             </div>
-            {% highlight xml %}<p>...</p>{% endhighlight %}
-        </div>
-        <p>Para dar um destaque extra a um parágrafo, adicione a ele a classe <code>.lead</code>.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Para dar um destaque extra a um parágrafo, adicione a ele a classe <code>.lead</code>.</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                {% highlight xml %}<p class="lead">...</p>{% endhighlight %}
             </div>
-            {% highlight xml %}<p class="lead">...</p>{% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Links</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p><a href="#">Lorem ipsum dolor sit amet</a></p>
+        <section>
+            <h3>Links</h3>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p><a href="#">Lorem ipsum dolor sit amet</a></p>
+                </div>
+                {% highlight xml %}<a href="#">...</a>{% endhighlight %}
             </div>
-            {% highlight xml %}<a href="#">...</a>{% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Ênfase</h3>
-        <p>Para dar ênfase a um determinado bloco de texto, pode-se usar qualquer uma das tags abaixo:</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <p><code>em</code>, <code>i</code>: <em>Texto enfatizado em itálico</em></p>
-                <p><code>strong</code>, <code>b</code>: <strong>Texto com muita importância, em negrito.</strong></p>
-                <p><code>small</code>: <small>Texto sem importância, letras pequenas!</small></p>
+        <section>
+            <h3>Ênfase</h3>
+            <p>Para dar ênfase a um determinado bloco de texto, pode-se usar qualquer uma das tags abaixo:</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p><code>em</code>, <code>i</code>: <em>Texto enfatizado em itálico</em></p>
+                    <p><code>strong</code>, <code>b</code>: <strong>Texto com muita importância, em negrito.</strong></p>
+                    <p><code>small</code>: <small>Texto sem importância, letras pequenas!</small></p>
+                </div>
+                {% highlight xml %}
+                    <em>...</em> ou <i>...</i>
+                    <strong>...</strong> ou <b>...</b>
+                    <small>...</small>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <em>...</em> ou <i>...</i>
-                <strong>...</strong> ou <b>...</b>
-                <small>...</small>
-            {% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Descrições</h3>
-        <p>Uma lista de termos e suas descrições associadas.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <dl>
-                    <dt>Marca</dt>
-                    <dd>Lamborghini</dd>
+        <section>
+            <h3>Descrições</h3>
+            <p>Uma lista de termos e suas descrições associadas.</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <dl>
+                        <dt>Marca</dt>
+                        <dd>Lamborghini</dd>
 
-                    <dt>Carro</dt>
-                    <dd>Gallardo</dd>
+                        <dt>Carro</dt>
+                        <dd>Gallardo</dd>
 
-                    <dt>Cor</dt>
-                    <dd>Amarelo</dd>
-                </dl>
+                        <dt>Cor</dt>
+                        <dd>Amarelo</dd>
+                    </dl>
+                </div>
+                {% highlight xml %}
+                    <dl>
+                        <dt>Marca</dt>
+                        <dd>Lamborghini</dd>
+
+                        <dt>Carro</dt>
+                        <dd>Gallardo</dd>
+
+                        <dt>Cor</dt>
+                        <dd>Amarelo</dd>
+                    </dl>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <dl>
-                    <dt>Marca</dt>
-                    <dd>Lamborghini</dd>
-
-                    <dt>Carro</dt>
-                    <dd>Gallardo</dd>
-
-                    <dt>Cor</dt>
-                    <dd>Amarelo</dd>
-                </dl>
-            {% endhighlight %}
-        </div>
+        </section>
 
         <p>
             Para obter uma descrição inline, adicione a classe <code>.dl-inline</code>.
@@ -338,93 +347,100 @@
         </header>
         <p>Elementos <code>ul</code> e <code>ol</code>, como sempre!</p>
 
-        <h3>Não ordenadas</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ul>
-                    </li>
-                </ul>
+        <section>
+            <h3>Não ordenadas</h3>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {% highlight xml %}
+                    <ul>
+                        <li>...</li>
+                    </ul>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <ul>
-                    <li>...</li>
-                </ul>
-            {% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Ordenadas</h3>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ol>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <ol>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ol>
-                    </li>
-                </ol>
+        <section>
+            <h3>Ordenadas</h3>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <ol>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <ol>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+                {% highlight xml %}
+                    <ol>
+                        <li>...</li>
+                    </ol>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <ol>
-                    <li>...</li>
-                </ol>
-            {% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Não estilizadas</h3>
-        <p>
-            Adicione a classe <code>.unstyled</code> para ter listas cujos itens não tem um estilo.
-            <strong>Nota:</strong> Apenas os itens diretos da lista com a classe não serão estilizados.
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ul class="unstyled">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        </ul>
-                    </li>
-                </ul>
+        <section>
+            <h3>Não estilizadas</h3>
+            <p>
+                Adicione a classe <code>.unstyled</code> para ter listas cujos itens não tem um estilo.
+                <strong>Nota:</strong> Apenas os itens diretos da lista com a classe não serão estilizados.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <ul class="unstyled">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {% highlight xml %}
+                    <ul class="unstyled">
+                        <li>...</li>
+                    </ul>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <ul class="unstyled">
-                    <li>...</li>
-                </ul>
-            {% endhighlight %}
-        </div>
+        </section>
 
-        <h3>Inline</h3>
-        <p>Adicione a classe <code>.inline</code> para ter uma lista inline.</p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <ul class="inline">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
+        <section>
+            <h3>Inline</h3>
+            <p>Adicione a classe <code>.inline</code> para ter uma lista inline.</p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <ul class="inline">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
+                {% highlight xml %}
+                    <ul class="inline">
+                        <li>...</li>
+                    </ul>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <ul class="inline">
-                    <li>...</li>
-                </ul>
-            {% endhighlight %}
-        </div>
-
+        </section>
     </article>
 
     <!-- Forms -->
@@ -613,44 +629,45 @@
             {% endhighlight %}
         </div>
 
-        <h3>Estados de sucesso/erro</h3>
-        <p>
-            É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
-            devida no elemento que você deseja aplicar tal estado:
-        </p>
-        <table class="syo-table">
-            <colgroup>
-                <col class="col-small-3">
-                <col class="col-small-9">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th class="text-right">Classe</th>
-                    <th>Exemplo visual</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-right"><code>.syo-success</code></td>
-                    <td>
-                        <input type="text" class="syo-success" value="Campo text preenchido com sucesso">
-                        <select class="syo-success">
-                            <option selected="selected">Estou selecionado!</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-right"><code>.syo-error</code></td>
-                    <td>
-                        <input type="text" class="syo-error" value="Erro ao preencher este campo!">
-                        <select class="syo-error">
-                            <option>Selecione-me</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+        <section>
+            <h3>Estados de sucesso/erro</h3>
+            <p>
+                É possível setar um estado de sucesso/erro em qualquer elemento do formulário. Basta adicionar a classe
+                devida no elemento que você deseja aplicar tal estado:
+            </p>
+            <table class="syo-table">
+                <colgroup>
+                    <col class="col-small-3">
+                    <col class="col-small-9">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="text-right">Classe</th>
+                        <th>Exemplo visual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-right"><code>.syo-success</code></td>
+                        <td>
+                            <input type="text" class="syo-success" value="Campo text preenchido com sucesso">
+                            <select class="syo-success">
+                                <option selected="selected">Estou selecionado!</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"><code>.syo-error</code></td>
+                        <td>
+                            <input type="text" class="syo-error" value="Erro ao preencher este campo!">
+                            <select class="syo-error">
+                                <option>Selecione-me</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </article>
 
     <!-- Botões -->
@@ -697,6 +714,11 @@
                     <td data-title="Botão"><button type="button" class="syo-button syo-info">Info</button></td>
                     <td data-title="Classe"><code>syo-button syo-info</code></td>
                     <td data-title="Descrição">Indica uma ação de informação.</td>
+                </tr>
+                <tr>
+                    <td data-title="Botão"><button type="button" class="syo-button syo-warning">Info</button></td>
+                    <td data-title="Classe"><code>syo-button syo-warning</code></td>
+                    <td data-title="Descrição">Indica uma ação de alteração ou crítica.</td>
                 </tr>
                 <tr>
                     <td data-title="Botão"><button type="button" class="syo-button syo-button-link">Link</button></td>
@@ -796,94 +818,96 @@
             Também é possível utilizar as classes do grid com as tabelas dentro de um <code>colgroup</code>.
         </p>
 
-        <header>
-            <h4>Base</h4>
-        </header>
-        <p>
-            Estilo base de todas as tabelas.
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <table class="syo-table">
-                    <colgroup>
-                        <col class="col-medium-3">
-                        <col class="col-medium-3">
-                        <col class="col-medium-6">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>Coluna 1</th>
-                            <th>Coluna 2</th>
-                            <th>Coluna 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                        <tr class="syo-active">
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Footer 1</td>
-                            <td>Footer 2</td>
-                            <td>Footer 3</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+        <section>
+            <header>
+                <h4>Base</h4>
+            </header>
+            <p>
+                Estilo base de todas as tabelas.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <table class="syo-table">
+                        <colgroup>
+                            <col class="col-medium-3">
+                            <col class="col-medium-3">
+                            <col class="col-medium-6">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Coluna 1</th>
+                                <th>Coluna 2</th>
+                                <th>Coluna 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
+                            </tr>
+                            <tr>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
+                            </tr>
+                            <tr class="syo-active">
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Footer 1</td>
+                                <td>Footer 2</td>
+                                <td>Footer 3</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
 
-            {% highlight xml %}
-                <table class="syo-table">
-                    <colgroup>
-                        <col class="col-medium-3">
-                        <col class="col-medium-3">
-                        <col class="col-medium-6">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>Coluna 1</th>
-                            <th>Coluna 2</th>
-                            <th>Coluna 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                        <tr>
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                        </tr>
-                        <tr class="syo-active">
-                            <td>Texto 1</td>
-                            <td>Texto 2</td>
-                            <td>Texto 3</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Footer 1</td>
-                            <td>Footer 2</td>
-                            <td>Footer 3</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            {% endhighlight %}
-        </div>
+                {% highlight xml %}
+                    <table class="syo-table">
+                        <colgroup>
+                            <col class="col-medium-3">
+                            <col class="col-medium-3">
+                            <col class="col-medium-6">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Coluna 1</th>
+                                <th>Coluna 2</th>
+                                <th>Coluna 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
+                            </tr>
+                            <tr>
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                            </tr>
+                            <tr class="syo-active">
+                                <td>Texto 1</td>
+                                <td>Texto 2</td>
+                                <td>Texto 3</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Footer 1</td>
+                                <td>Footer 2</td>
+                                <td>Footer 3</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                {% endhighlight %}
+            </div>
+        </section>
 
         <section>
             <header>
@@ -1252,18 +1276,53 @@
             {% highlight xml %}<i class="icon-home"></i>{% endhighlight %}
         </div>
 
-        <h3>Icone Giratório</h3>
-        <p>
-            É possivel também obter icones giratórios. Basta adicionar a classe <code>.icon-spin</code>.<br>
-            Note que o melhor resultado pode ser obtido com o icone <code>.icon-spinner</code>.
-        </p>
+        <section>
+            <h3>Icone Giratório</h3>
+            <p>
+                É possivel também obter icones giratórios. Basta adicionar a classe <code>.icon-spin</code>.<br>
+                Note que o melhor resultado pode ser obtido com o icone <code>.icon-spinner</code>.
+            </p>
 
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner">
-                <i class="icon-spinner icon-spin"></i>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <i class="icon-spinner icon-spin"></i>
+                </div>
+                {% highlight xml %}<i class="icon-spinner icon-spin"></i>{% endhighlight %}
             </div>
-            {% highlight xml %}<i class="icon-spinner icon-spin"></i>{% endhighlight %}
-        </div>
+        </section>
+
+        <section>
+            <h3>Estilos de Icones</h3>
+            <p>É possível aplicar alguns estilos aos icones para torná-los diferentes em vários casos.</p>
+
+            <section>
+                <h4>Icone Circular</h4>
+                <p>
+                    Aplique a classe <code>.syo-circle</code> para fazer o icone aparecer dentro de um círculo.<br>
+                    Os estilos de estado também estão disponíveis.
+                </p>
+
+                <div class="syo-docs-example">
+                    <div class="syo-docs-example-inner">
+                        <i class="icon-home syo-circle"></i>
+                        <i class="icon-home syo-circle syo-success"></i>
+                        <i class="icon-home syo-circle syo-error"></i>
+                        <i class="icon-home syo-circle syo-warning"></i>
+                        <i class="icon-home syo-circle syo-info"></i>
+                        <i class="icon-home syo-circle syo-active"></i>
+                    </div>
+
+                    {% highlight xml %}
+                        <i class="icon-home syo-circle"></i>
+                        <i class="icon-home syo-circle syo-success"></i>
+                        <i class="icon-home syo-circle syo-error"></i>
+                        <i class="icon-home syo-circle syo-warning"></i>
+                        <i class="icon-home syo-circle syo-info"></i>
+                        <i class="icon-home syo-circle syo-active"></i>
+                    {% endhighlight %}
+                </div>
+            </section>
+        </section>
     </article>
 
     <!-- Responsive -->
@@ -1347,29 +1406,32 @@
             </tbody>
         </table>
 
-        <h3>Teste das classes responsivas</h3>
-        <p>
-            Redimensione o seu browser ou então carregue esta página noutros dispositivos para testar as classes abaixo.
-            <br>
-            O retângulo com um <i>check</i> verde quer dizer que o efeito está ativo na sua resolução de tela atual.
-        </p>
+        <section>
+            <h3>Teste das classes responsivas</h3>
+            <p>
+                Redimensione o seu browser ou então carregue esta página noutros dispositivos para testar as classes abaixo.
+                <br>
+                O retângulo com um <i>check</i> verde quer dizer que o efeito está ativo na sua resolução de tela atual.
+            </p>
 
-        <h4>Visível em...</h4>
-        <ul class="responsive-test">
-            <li>
-                Smartphones
-                <span class="visible-tiny visible"><i class="ok"></i> Smartphones</span>
-            </li>
-            <li>
-                Tablet
-                <span class="visible-small visible"><i class="ok"></i> Tablet</span>
-            </li>
-            <li>
-                Desktop
-                <span class="visible-medium-above visible"><i class="ok"></i> Desktop</span>
-            </li>
-        </ul>
-
+            <section>
+                <h4>Visível em...</h4>
+                <ul class="responsive-test">
+                    <li>
+                        Smartphones
+                        <span class="visible-tiny visible"><i class="ok"></i> Smartphones</span>
+                    </li>
+                    <li>
+                        Tablet
+                        <span class="visible-small visible"><i class="ok"></i> Tablet</span>
+                    </li>
+                    <li>
+                        Desktop
+                        <span class="visible-medium-above visible"><i class="ok"></i> Desktop</span>
+                    </li>
+                </ul>
+            </section>
+        </section>
     </article>
 
     <!-- Utils -->
@@ -1379,23 +1441,29 @@
         </header>
         <p>Algumas classes que podem lhe ajudar em um desenvolvimento mais rápido.</p>
 
-        <h3>.syo-hidden</h3>
-        <p>Oculta um elemento da página.</p>
-        <div class="highlight"><div class="syo-hidden"></div></div>
+        <section>
+            <h3>.syo-hidden</h3>
+            <p>Oculta um elemento da página.</p>
+            <div class="highlight"><div class="syo-hidden"></div></div>
+        </section>
 
-        <h3>.clearfix</h3>
-        <p>Limpa o <code>float</code> em qualquer elemento.</p>
-        <div class="highlight"><div class="clearfix"></div></div>
+        <section>
+            <h3>.clearfix</h3>
+            <p>Limpa o <code>float</code> em qualquer elemento.</p>
+            <div class="highlight"><div class="clearfix"></div></div>
+        </section>
 
-        <h3>.text-overflow</h3>
-        <p>
-            Adiciona reticências automaticamente a um elemento cujo texto extrapola o seu container. <br>
-            <span class='syo-badge syo-warning'>Importante</span> Elementos que não são <code>display: block</code>
-            precisarão ter uma largura definida.
-        </p>
-        <div class="highlight">
-            <div class="text-overflow">Texto muito longo para este container</div>
-            <!-- Na exibição: "Texto muito longo para es..." -->
-        </div>
+        <section>
+            <h3>.text-overflow</h3>
+            <p>
+                Adiciona reticências automaticamente a um elemento cujo texto extrapola o seu container. <br>
+                <span class='syo-badge syo-warning'>Importante</span> Elementos que não são <code>display: block</code>
+                precisarão ter uma largura definida.
+            </p>
+            <div class="highlight">
+                <div class="text-overflow">Texto muito longo para este container</div>
+                <!-- Na exibição: "Texto muito longo para es..." -->
+            </div>
+        </section>
     </article>
 {% endblock %}

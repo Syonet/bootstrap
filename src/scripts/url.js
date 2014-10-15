@@ -263,8 +263,8 @@
 					querystring.push( encodeUriQuery( key ) + "=" + encodeUriQuery( v ) );
 				});
 			});
-			url += querystring.length ? "?" + querystring.join("&") : "";
-			url += store.hash ? "#"+ store.hash : "";
+			url += querystring.length ? "?" + querystring.join( "&" ) : "";
+			url += store.hash ? "#" + store.hash : "";
 
 			return url;
 		};

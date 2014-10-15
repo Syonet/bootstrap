@@ -20,9 +20,8 @@
 
 /*
  * 1. Utilizamos este seletor para não dar conflito com os icones do jQuery UI (.ui-icon-*)
- * 2. Garante que o width acompanhará tamanho de fontes maiores
- * 3. Melhor renderização da fonte
- * 4. Alinha exatamente no meio, independente do crisp size da fonte
+ * 2. Melhor renderização da fonte
+ * 3. Alinha exatamente no meio, independente do crisp size da fonte
  */
 [class^="icon-"]:before,
 [class*=" icon-"]:before { /* 1 */
@@ -34,9 +33,11 @@
   font-weight: normal;
   text-decoration: inherit;
   text-align: center;
-  vertical-align: ( @font-size-base - @iconic-font-crisp-size ) / 2; /* 4 */
 
   /* 3 */
+  vertical-align: ( @font-size-base - @iconic-font-crisp-size ) / 2;
+
+  /* 2 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -91,4 +92,24 @@
   &:before {
     vertical-align: baseline;
   }
+}
+
+/* Fonte Icõnica - Estilo "circle"
+   ------------------------------- */
+
+[class^="icon-"].syo-circle,
+[class*=" icon-"].syo-circle {
+  &:before {
+    width: @component-height;
+    height: @component-height;
+    line-height: @component-height;
+    .border-radius( 50% );
+  }
+
+  &             { .icon-style( @brand-default ); }
+  &.syo-active  { .icon-style( @brand-active );  }
+  &.syo-success { .icon-style( @brand-success ); }
+  &.syo-error   { .icon-style( @brand-error );   }
+  &.syo-warning { .icon-style( @brand-warning ); }
+  &.syo-info    { .icon-style( @brand-info );    }
 }

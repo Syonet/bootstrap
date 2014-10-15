@@ -24,7 +24,7 @@
     <article id="badges">
         <header>
             <h2>Badges</h2>
-        </header
+        </header>
         <p>
             Útil componente para indicação visual.
             Pode servir, por exemplo, como contador de itens ou indicador de agrupamento.
@@ -507,31 +507,33 @@
             estão acessíveis atráves da classe <code>.syo-nav</code>.
         </p>
 
-        <h3>Nav list</h3>
-        <p>
-            Navegação vertical, que permite um fácil agrupamento com headers opcionais. Melhor utilizados como
-            sidebars.
-        </p>
-        <div class="syo-docs-example">
-            <div class="syo-docs-example-inner clearfix">
-                <div class="span3">
+        <section>
+            <h3>Nav list</h3>
+            <p>
+                Navegação vertical, que permite um fácil agrupamento com headers opcionais. Melhor utilizados como
+                sidebars.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner clearfix">
+                    <div class="span3">
+                        <ul class="syo-nav syo-nav-list">
+                            <li class="syo-nav-header">Título</li>
+                            <li><a href="#">Link 1 </a></li>
+                            <li><a href="#">Link 2</a></li>
+                            <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% highlight xml %}
                     <ul class="syo-nav syo-nav-list">
                         <li class="syo-nav-header">Título</li>
-                        <li><a href="#">Link 1 </a></li>
+                        <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
-                </div>
+                {% endhighlight %}
             </div>
-            {% highlight xml %}
-                <ul class="syo-nav syo-nav-list">
-                    <li class="syo-nav-header">Título</li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
-            {% endhighlight %}
-        </div>
+        </section>
     </article>
 
     <!-- Paginação -->

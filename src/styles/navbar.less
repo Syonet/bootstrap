@@ -13,8 +13,8 @@
   border: 1px solid @navbar-border-color;
   font-size: @font-size-base;
   text-shadow: 0 1px 0 #FFF;
+  background-color: mix( lighten( @brand-default, 3% ), @brand-default, 60% );
   .box-shadow( 0 0 5px 0px fade( @gray-light, 30% ) );
-  #gradient .brand();
 
   a {
     color: lighten( @gray, 10% );
@@ -37,20 +37,18 @@
    ----------------------- */
 
 /*
- * 1. Usa padding-left maior por causa do logo
- * 2. Garante text-decoration ausente em estado normal e estado hover
+ * 1. Garante text-decoration ausente em estado normal e estado hover
  */
 .syo-navbar-title {
   display: block;
   float: left;
   max-width: 100%;
-  padding: 0 @navbar-padding-horizontal 0 ( @computed-line-height * 1.5 ); /* 1 */
+  min-height: @navbar-height;
+  padding: 0 @navbar-padding-horizontal;
   color: @gray;
   font-size: @font-size-base * 1.5;
   font-weight: bold;
   vertical-align: middle;
-  background: url( "images/logo.svg" ) no-repeat left center;
-  background-size: ( @computed-line-height * 1.5 ) - 5px;
 
   .navbar-spacing( @computed-line-height * 1.5 );
   .transition( ~"color 0.1s linear, text-shadow 0.1s linear" );
@@ -118,6 +116,22 @@
   }
 }
 
+/* Navbar - Formulários
+   -------------------- */
+
+/*
+ * 1. Alinha verticalmente componentes de formulário
+ * 2. Evita que syo-field adicione espaçamento na sua parte inferior
+ */
+.syo-navbar-form {
+  float: left;
+  .navbar-spacing( @input-height, margin ); /* 1 */
+
+  .syo-field {
+    margin-bottom: 0; /* 2 */
+  }
+}
+
 /* Navbar - Estilo fixo
    -------------------- */
 
@@ -125,7 +139,7 @@
 .syo-navbar.syo-navbar-fixed-bottom {
   position: fixed;
   left: 0;
-  z-index: @navbar-zindex;
+  z-index: @zindex-navbar;
   border-left-width: 0;
   border-right-width: 0;
 }

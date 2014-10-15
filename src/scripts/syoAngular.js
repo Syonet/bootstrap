@@ -1,4 +1,7 @@
 !function( ng ) {
 	"use strict";
-	ng.module( "syonet", [ "ng" ] );
+	ng.module( "syonet", [
+		"syonet.popover",
+		"syonet.tooltip"
+	]);
 }( angular );

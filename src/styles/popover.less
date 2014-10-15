@@ -4,7 +4,7 @@
 
 .syo-popover {
   position: absolute;
-  z-index: @popover-zindex;
+  z-index: @zindex-popover;
   display: none;
   min-width: 120px;
   padding: 1px;
@@ -79,14 +79,14 @@
 /* Realinha horizontalmente se for top/bottom + start */
 .syo-popover-top-start .syo-popover-arrow,
 .syo-popover-bottom-start .syo-popover-arrow {
-  left: @popover-arrow-size * 3;
+  left: @popover-arrow-size - 1px;
 }
 
 /* Realinha horizontalmente se for top/bottom + end */
 .syo-popover-top-end .syo-popover-arrow,
 .syo-popover-bottom-end .syo-popover-arrow {
   left: auto;
-  right: @popover-arrow-size * 3;
+  right: @popover-arrow-size - 1px;
 }
 
 /* Alinha verticalmente as setas left/right */
@@ -103,7 +103,7 @@
 /* Realinha verticalmente se for left/right + start */
 .syo-popover-left-start .syo-popover-arrow,
 .syo-popover-right-start .syo-popover-arrow {
-  top: @popover-arrow-size;
+  top: @padding-base-vertical;
   margin-top: 0;
 }
 
@@ -111,7 +111,7 @@
 .syo-popover-left-end .syo-popover-arrow,
 .syo-popover-right-end .syo-popover-arrow {
   top: auto;
-  bottom: @popover-arrow-size;
+  bottom: @padding-base-vertical;
 }
 
 /* Seta embaixo */
@@ -196,29 +196,41 @@
 /*
  * Check List.
  * 1. Desfaz padding do .syo-popover-content
- * 2. Remove bordas arredondadas do primeiro e do último item do check-list
+ * 2. Remove bordas arredondadas do check-list e de seus itens
+ * 3. Remove box-shadow do check-list
  */
 .syo-popover-content > .syo-check-list {
+  overflow: hidden;
   margin-left: -@padding-base-horizontal; /* 1 */
   margin-right: -@padding-base-horizontal; /* 1 */
   border: none;
+  .border-radius-top( 0 ); /* 2 */
+  .box-shadow( none ); /* 3 */
 
   /* 1 */
   &:first-child { margin-top: -@padding-base-vertical; }
   &:last-child { margin-bottom: -@padding-base-vertical; }
 
-  /* 2 */
-  > li:first-child,
-  > li:first-child > a,
-  > li:first-child > label {
-    .border-radius-top( 0 );
+  &:not( :last-child ) {
+    .border-radius-bottom( 0 ); /* 2 */
+
+    li:last-child {
+      border-bottom: 1px solid @checklist-border-color;
+    }
+  }
+
+  &:not( :first-child ) li:first-child {
+    border-top: 1px solid @checklist-border-color;
   }
 
   /* 2 */
-  > li:last-child,
-  > li:last-child > a,
-  > li:last-child > label {
-    .border-radius-top( 0 );
+  li:first-child,
+  li:last-child {
+    &,
+    a,
+    label {
+      .border-radius( 0 );
+    }
   }
 
   .syo-check-list-header {

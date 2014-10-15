@@ -74,10 +74,9 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #999;
+  border: 1px solid @jq-border-hover;
   font-weight: normal;
   color: @input-hover-text;
-  border-color: @jq-border-hover;
   #gradient .brand();
 }
 
@@ -421,9 +420,13 @@
 }
 
 /* Overlays */
+.ui-front {
+  z-index: @zindex-jq-overlay;
+}
+
 .ui-widget-overlay {
   background: @jq-overlay;
-  .opacity( .3 );
+  .opacity( .5 );
 }
 
 .ui-widget-shadow {

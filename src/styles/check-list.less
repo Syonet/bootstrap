@@ -9,13 +9,13 @@
 .syo-check-list {
   margin-left: 0; /* 2 */
   margin-bottom: @computed-line-height;
-  border: 1px solid @brand-default-border;
+  border: 1px solid @checklist-border-color;
   list-style: none; /* 2 */
   .box-shadow( 0 1px 4px fade( #000, 10% ) );
   .border-radius( @base-border-radius );
 
-  > li {
-    border-bottom: 1px solid @brand-default-border;
+  li {
+    border-bottom: 1px solid @checklist-border-color;
 
     label:hover {
       background-color: @brand-default-hover;
@@ -24,8 +24,8 @@
     /* 1 */
     &:first-child {
       &,
-      > label,
-      > a {
+      label,
+      a {
         .border-radius-top( @base-border-radius );
       }
     }
@@ -35,8 +35,8 @@
       border-bottom: 0;
 
       &,
-      > label,
-      > a {
+      label,
+      a {
         .border-radius-bottom( @base-border-radius );
       }
     }
@@ -65,12 +65,8 @@
     cursor: pointer;
 
     &:before {
-      display: inline-block;
-      min-width: 1em;
+      &:extend( [class^="icon-"]:before );
       margin-right: 5px;
-      font-family: "SyoBootstrap";
-      font-size: @font-size-base;
-      font-weight: normal;
     }
   }
 

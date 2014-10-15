@@ -1,6 +1,6 @@
 {
 	"name": "syo-bootstrap",
-	"version": "0.6.0",
+	"version": "0.7.2",
 	"title": "Syonet Bootstrap",
 	"description": "O conjunto de ferramentas front-end da Syonet",
 	"author": {
@@ -24,6 +24,7 @@
 		"grunt-contrib-jshint": "~0.10.0",
 		"grunt-contrib-less": "~0.11.0",
 		"grunt-contrib-watch": "~0.6.1",
+		"grunt-jscs": "~0.7.1",
 		"grunt-swig2": "~0.1.3",
 		"highlight.js": "~8.2.0",
 		"load-grunt-config": "~0.13.1"
