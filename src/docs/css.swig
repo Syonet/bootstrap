@@ -1444,13 +1444,41 @@
         <section>
             <h3>.syo-hidden</h3>
             <p>Oculta um elemento da página.</p>
-            <div class="highlight"><div class="syo-hidden"></div></div>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p>Eu estou visível</p>
+                    <p class="syo-hidden">Eu não estou visível</p>
+                </div>
+                {% highlight xml %}
+                    <p>Eu estou visível</p>
+                    <p class="syo-hidden">Eu não estou visível</p>
+                {% endhighlight %}
+            </div>
         </section>
 
         <section>
             <h3>.clearfix</h3>
             <p>Limpa o <code>float</code> em qualquer elemento.</p>
-            <div class="highlight"><div class="clearfix"></div></div>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div class="syo-pull-left">Estou com float e sem clearfix</div>
+                    <div class="clearfix">
+                        <div class="syo-pull-left">Estou com float e clearfix</div>
+                    </div>
+
+                    <div class="syo-pull-left">Não estou com float</div>
+                </div>
+                {% highlight xml %}
+                <div class="syo-pull-left">Estou com float e sem clearfix</div>
+                <div class="clearfix">
+                    <div class="syo-pull-left">Estou com float e clearfix</div>
+                </div>
+
+                <div class="syo-pull-left">Não estou com float</div>
+                {% endhighlight %}
+            </div>
         </section>
 
         <section>
@@ -1460,9 +1488,47 @@
                 <span class='syo-badge syo-warning'>Importante</span> Elementos que não são <code>display: block</code>
                 precisarão ter uma largura definida.
             </p>
-            <div class="highlight">
-                <div class="text-overflow">Texto muito longo para este container</div>
-                <!-- Na exibição: "Texto muito longo para es..." -->
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <p class="text-overflow">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tristique vehicula.
+                        In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur massa, sit amet egestas
+                        tellus metus eget eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue
+                        tristique vehicula. In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur
+                        massa, sit amet egestas tellus metus eget eros.
+                    </p>
+                </div>
+                {% highlight xml %}
+                <p class="text-overflow">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tristique vehicula.
+                    In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur massa, sit amet egestas
+                    tellus metus eget eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue
+                    tristique vehicula. In condimentum, libero volutpat pellentesque suscipit, orci enim consectetur
+                    massa, sit amet egestas tellus metus eget eros.
+                </p>
+                {% endhighlight %}
+            </div>
+        </section>
+
+        <section>
+            <h3>.syo-pull-left e .syo-pull-right</h3>
+            <p>
+                Aplica ao elemento um <code>float: left</code> ou <code>float: right</code>, respectivamente.
+            </p>
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner">
+                    <div class="clearfix" style="max-width: 50%">
+                        <div class="syo-pull-left">Estou com float à esquerda</div>
+                        <div class="syo-pull-right">Estou com float à direita</div>
+                    </div>
+                </div>
+                {% highlight xml %}
+                <div class="clearfix" style="max-width: 50%">
+                    <div class="syo-pull-left">Estou com float à esquerda</div>
+                    <div class="syo-pull-right">Estou com float à direita</div>
+                </div>
+                {% endhighlight %}
             </div>
         </section>
     </article>
