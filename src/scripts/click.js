@@ -38,7 +38,7 @@
 				result = $scope.$eval( $attr.syoClick );
 				e.preventDefault();
 
-				if ( typeof result.then === "function" ) {
+				if ( result && typeof result.then === "function" ) {
 					lock = true;
 
 					result.then(function() {
