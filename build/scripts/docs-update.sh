@@ -15,5 +15,5 @@ if [ ! -z "${TRAVIS_TAG}" ]; then
     git add -f dist/ {angularjs,css,components,index}.html assets/styles/main.css
     git commit -m "chore(release): docs v${TRAVIS_TAG}"
 
-    git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@${GH_REF}" master:gh-pages > /dev/null 2>&1
+    git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@${GH_REF}" gh-pages:gh-pages > /dev/null 2>&1
 fi
