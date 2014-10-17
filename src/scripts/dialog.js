@@ -102,11 +102,13 @@
 			}
 
 			// Remove o prefixo "on" dos callbacks da dialog
-			[ "BeforeClose", "Close", "Open" ].forEach(function( cb ) {
-				var uncapitalized = cb[ 0 ].toLowerCase() + cb.substr( 1 );
-				options[ uncapitalized ] = options[ "on" + cb ];
-				delete options[ "on" + cb ];
-			});
+			if ( options ) {
+				[ "BeforeClose", "Close", "Open" ].forEach(function( cb ) {
+					var uncapitalized = cb[ 0 ].toLowerCase() + cb.substr( 1 );
+					options[ uncapitalized ] = options[ "on" + cb ];
+					delete options[ "on" + cb ];
+				});
+			}
 
 			$element.dialog( options );
 		};
