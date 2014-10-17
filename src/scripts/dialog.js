@@ -33,7 +33,7 @@
 		definition.controllerAs = "$dialog";
 		definition.template = "<div class='syo-dialog-content'></div>";
 
-		definition.link = function( scope, element, attrs, transcludeFn, $dialog ) {
+		definition.link = function( scope, element, attrs, $dialog, transcludeFn ) {
 			// Seta um controller se estiver disponível
 			if ( attrs.controller ) {
 				element.attr( "ng-controller", attrs.controller );
