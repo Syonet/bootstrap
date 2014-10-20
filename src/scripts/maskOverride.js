@@ -14,10 +14,10 @@
 
 		definition.restrict = "A";
 		definition.require = "ngModel";
-		definition.priority = 10;
+		definition.priority = 1000;
 
 		definition.link = function( $scope, $element, $attr, ngModel ) {
-			var viewValue, oldFn;
+			var viewValue;
 			var mask = $attr.uiMask || "";
 			var optional = mask.indexOf( "?" );
 
@@ -25,11 +25,10 @@
 				return;
 			}
 
-			oldFn = ngModel.$setViewValue;
-			ngModel.$setViewValue = function( val ) {
-				var unfilledIndex;
+			ngModel.$parsers.push( parser );
 
-				oldFn.call( this, val );
+			function parser() {
+				var unfilledIndex;
 				viewValue = ngModel.$viewValue;
 
 				// Se tem parte da mascara que é opcional e não foi preenchida, corta até ela
@@ -39,12 +38,8 @@
 					viewValue = viewValue.substring( 0, unfilledIndex );
 				}
 
-				ngModel.$parsers.push(function() {
-					return viewValue;
-				});
-				oldFn.call( this, val );
-				ngModel.$parsers.pop();
-			};
+				return viewValue;
+			}
 		};
 
 		return definition;
