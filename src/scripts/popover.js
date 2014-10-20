@@ -232,7 +232,7 @@
 			scope.$watch( "config.position", reposition );
 			scope.$watch( "$popover.target", reposition );
 			scope.$watch( "$popover.$isOpen", function( open ) {
-				var tooltip, content;
+				var content;
 
 				if ( open === undefined ) {
 					return;
