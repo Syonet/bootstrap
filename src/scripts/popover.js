@@ -51,6 +51,15 @@
 				out: getOutEvent( "click" )
 			};
 
+			element.parents().on( "scroll", function( evt ) {
+				// Fecha o popover se ele estiver aberto e aplica um digest
+				if ( controller.$isOpen ) {
+					evt.stopPropagation();
+					controller.close();
+					scope.$apply();
+				}
+			});
+
 			scope.$on( "$destroy", function() {
 				instances.splice( instances.indexOf( controller ), 1 );
 
