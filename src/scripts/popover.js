@@ -269,7 +269,7 @@
 						tooltip.close();
 					}
 
-					$timeout( reposition );
+					reposition();
 				}
 			});
 
