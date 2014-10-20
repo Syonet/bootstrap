@@ -1,10 +1,13 @@
 !function( $, ng ) {
 	"use strict";
 
-	var syo = ng.module( "syonet" );
+	var NOTIFICATION_TOP_KEY = "notificationTop";
 
-	syo.directive( "syoNotification", function() {
+	var module = ng.module( "syonet.notification", [] );
+
+	module.directive( "syoNotification", function( $document ) {
 		var definition = {};
+		var container = $document.find( "body" );
 
 		definition.template =
 			"<div class='syo-notification'>" +
@@ -43,28 +46,24 @@
 
 		// -----------------------------------------------------------------------------------------
 
-		function getContainer() {
-			var container = $( ".syo-notification-container" );
-			return container.length ? container.eq( 0 ) : $( "body" );
-		}
-
 		function allocateNotification( element ) {
 			var height;
-			var container = getContainer();
 
 			container.prepend( element );
 			height = element.outerHeight();
 
 			element.nextAll( ".syo-notification" ).each(function() {
-				var $this = $( this );
-				var top = $this.cssUnit( "top" )[ 0 ];
-				$this.css( "top", ( top + height ) + "px" );
+				var other = $( this );
+				var top = other.cssUnit( "top" )[ 0 ];
+				other.css( "top", ( top + height ) + "px" );
+				persistPosition( other );
 			});
 
 			if ( container.is( ".syo-body-navbar" ) ) {
 				element.css( "top", container.cssUnit( "padding-top" )[ 0 ] + "px" );
 			}
 
+			persistPosition( element );
 			return container;
 		}
 
@@ -77,6 +76,7 @@
 					var top = other.cssUnit( "top" )[ 0 ];
 
 					other.css( "top", ( top - height ) + "px" );
+					persistPosition( other );
 				});
 
 				element.remove();
@@ -84,7 +84,7 @@
 		}
 	});
 
-	syo.controller( "NotificationController", [ "$scope", function( $scope ) {
+	module.controller( "NotificationController", [ "$scope", function( $scope ) {
 		var ctrl = this;
 
 		ctrl.close = function() {
@@ -94,10 +94,10 @@
 		return ctrl;
 	}]);
 
-	syo.provider( "$notification", function() {
+	module.provider( "$notification", function() {
 		var provider = {};
 
-		provider.defaultTimeout = 3000;
+		provider.defaultTimeout = 30000;
 
 		provider.$get = [
 			"$rootScope",
@@ -131,4 +131,26 @@
 
 		return provider;
 	});
+
+	function persistPosition( element ) {
+		element.data( NOTIFICATION_TOP_KEY, element.cssUnit( "top" )[ 0 ] );
+	}
+
+	function throttle( fn, ms ) {
+		var timeout;
+
+		return function() {
+			var ctx = this;
+			var args = arguments;
+
+			if ( timeout ) {
+				return;
+			}
+
+			timeout = setTimeout(function() {
+				timeout = null;
+				fn.apply( this, args );
+			}, ms );
+		};
+	}
 }( jQuery, angular );
