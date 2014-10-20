@@ -51,9 +51,13 @@
 				out: getOutEvent( "click" )
 			};
 
-			element.parents().on( "scroll", function( evt ) {
-				evt.stopPropagation();
-				controller.close();
+			scope.$on( "$destroy", function() {
+				instances.splice( instances.indexOf( controller ), 1 );
+
+				// Se esta era a última instância do controller, então vamos destruir ele
+				if ( !~instances.indexOf( controller ) ) {
+					controller.destroy();
+				}
 			});
 
 			attrs.$observe( "syoPopover", function( config ) {
@@ -72,7 +76,6 @@
 					popover = $( "<syo-popover-element config='$config'>" );
 					popover = $compile( popover )( scope );
 					controller = popover.controller( "syoPopoverElement" );
-					instances.push( controller );
 
 					// Coloca o popover no DOM
 					$document.find( "body" ).append( popover );
@@ -87,6 +90,8 @@
 						mustBind = false;
 					}
 				}
+
+				instances.push( controller );
 
 				if ( mustBind ) {
 					// Binda o evento de entrada
@@ -174,6 +179,11 @@
 
 		ctrl.reposition = function() {
 			$scope.$emit( "reposition" );
+		};
+
+		ctrl.destroy = function() {
+			$scope.$destroy();
+			$element.remove();
 		};
 	});
 
