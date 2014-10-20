@@ -261,14 +261,8 @@
 					});
 				}
 
+				// Reposiciona
 				if ( open ) {
-					// Verifica se há uma diretiva syoTooltip presente no elemento atual.
-					// Se houver, fecha o mesmo para que não sobreponha ao popover
-					tooltip = $popover.target.controller( "syoTooltip" );
-					if ( tooltip ) {
-						tooltip.close();
-					}
-
 					reposition();
 				}
 			});
@@ -332,6 +326,9 @@
 				// @FIXME collision = flip não funciona no Firefox Android :'(
 				position.collision = "none";
 
+				// Fecha tooltip se necessário
+				closeTooltip();
+
 				// Para setar a posição, deve-se aguardar até que o digest do elemento termine
 				$timeout(function() {
 					var maxWidth, pos;
@@ -358,6 +355,15 @@
 						element.position( position );
 					}
 				});
+			}
+
+			function closeTooltip() {
+				// Verifica se há uma diretiva syoTooltip presente no elemento atual.
+				// Se houver, fecha o mesmo para que não sobreponha ao popover
+				var tooltip = $popover.target.controller( "syoTooltip" );
+				if ( tooltip ) {
+					tooltip.close();
+				}
 			}
 		};
 
