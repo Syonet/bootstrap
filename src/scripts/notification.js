@@ -97,7 +97,7 @@
 	module.provider( "$notification", function() {
 		var provider = {};
 
-		provider.defaultTimeout = 30000;
+		provider.defaultTimeout = 3000;
 
 		provider.$get = [
 			"$rootScope",
