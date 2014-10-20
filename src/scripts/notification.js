@@ -135,22 +135,4 @@
 	function persistPosition( element ) {
 		element.data( NOTIFICATION_TOP_KEY, element.cssUnit( "top" )[ 0 ] );
 	}
-
-	function throttle( fn, ms ) {
-		var timeout;
-
-		return function() {
-			var ctx = this;
-			var args = arguments;
-
-			if ( timeout ) {
-				return;
-			}
-
-			timeout = setTimeout(function() {
-				timeout = null;
-				fn.apply( this, args );
-			}, ms );
-		};
-	}
 }( jQuery, angular );
