@@ -335,7 +335,8 @@
 				$timeout(function() {
 					var maxWidth, pos;
 
-					element.position( position );
+					// Posiciona o elemento e também seta o z-index
+					element.position( position ).css( "z-index", findZIndex( $popover.target[ 0 ] ) );
 					pos = element.position();
 
 					// Calcula se o posicionamento colocou o elemento pra fora da tela, mas
@@ -357,6 +358,18 @@
 						element.position( position );
 					}
 				});
+			}
+
+			// Encontra o z-index acumulado do elemento alvo e retorna um valor propício para posicionar o popover
+			function findZIndex( target ) {
+				var index = 0;
+
+				do {
+					index += Math.max( +$( target ).css( "z-index" ) || 0, 0 );
+					target = target.parentNode;
+				} while ( target != null && target.nodeType === 1 );
+
+				return index + 1;
 			}
 
 			function closeTooltip() {
