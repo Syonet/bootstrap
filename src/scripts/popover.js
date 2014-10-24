@@ -100,6 +100,8 @@
 					}
 				}
 
+				currentEvent.in = config.event;
+				currentEvent.out = getOutEvent( config.event );
 				instances.push( controller );
 
 				if ( mustBind ) {
