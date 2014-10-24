@@ -45,11 +45,7 @@
 		definition.scope = true;
 		definition.restrict = "A";
 		definition.link = function( scope, element, attrs ) {
-			var popover, controller;
-			var currentEvent = {
-				in: "click",
-				out: getOutEvent( "click" )
-			};
+			var popover, controller, currentEvent;
 
 			element.parents().on( "scroll", function( evt ) {
 				// Fecha o popover se ele estiver aberto e aplica um digest
@@ -72,6 +68,7 @@
 			attrs.$observe( "syoPopover", function( config ) {
 				var mustBind = true;
 				config = scope.$eval( config );
+				config.event = config.event || "click";
 
 				controller = findByConfig( config );
 				if ( controller ) {
@@ -88,7 +85,7 @@
 
 					// Coloca o popover no DOM
 					$document.find( "body" ).append( popover );
-				} else {
+				} else if ( currentEvent ) {
 					// O evento mudou?
 					if ( currentEvent.in !== config.event ) {
 						// Sim, então vamos remover os listeners que adicionamos
@@ -100,9 +97,11 @@
 					}
 				}
 
-				currentEvent.in = config.event;
-				currentEvent.out = getOutEvent( config.event );
 				instances.push( controller );
+				currentEvent = {
+					in: config.event,
+					out: getOutEvent( config.event )
+				};
 
 				if ( mustBind ) {
 					// Binda o evento de entrada
