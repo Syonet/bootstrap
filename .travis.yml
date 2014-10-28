@@ -9,7 +9,7 @@ env:
   - GH_REF: github.com/Syonet/bootstrap.git
 
   # GH_TOKEN
-  - secure: KoiNHYq3lE0iz0T0Snt39uzasWMQDoN9YWm5KVHWB86RV4Okwg420Kre8xohREzxXc7nsOQP5TWnMJlGWmxjibx9FGnDsMPhHh8m7lIvi69liW69RPrQ3t/phhD1rjohWQ4/y8S/tKQtfIZwkJU8Tl0YAl5T0pNmo8XPoVR6FWg=
+  - secure: fhji+OFnObAO+hH+3O4cv6S09ZXBFGyx4Nx2l8pW/1mS9Bg7hRUMYQsYAXFJrn9miIwioYhtsfQC4bNhy0r8R7J6Gh/MWsbvH9Rr3xSqHxVqWc+2lNJIefu7SiXILGOlg82Vg6a++G7YsX/r8gvu+SQmp44RGwmh2LQ5+zIj03E=
 
 after_success:
   - chmod +x build/scripts/docs-update.sh
