@@ -91,9 +91,12 @@
 					tooltip.addClass( "syo-tooltip-visible syo-tooltip-" + position ).text( title );
 					tooltip.position( positionConfig );
 
-					target.on( "$destroy", function destroyCb() {
+					// Adiciona evento $destroy no target e nos seus elementos pai
+					target.parents().addBack().on( "$destroy", function destroyCb() {
 						$tooltip.close();
-						target.off( "$destroy", destroyCb );
+
+						// Remove o evento $destroy do target e seus elementos pai
+						target.parents().addBack().off( "$destroy", destroyCb );
 					});
 				}, syoTooltipConfig.timeout );
 			});
