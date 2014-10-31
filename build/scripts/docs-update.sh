@@ -9,9 +9,12 @@ if [ ! -z "${TRAVIS_TAG}" ]; then
     git config user.name "${GIT_NAME}"
     git config user.email "${GIT_MAIL}"
 
-    # TODO fazer add de todos *.html na raiz do projeto?
+    # Baixa o conteúdo do branch gh-pages (indisponível quando fazendo shallow clone) e faz o merge
+    git fetch -n origin gh-pages:gh-pages
     git checkout gh-pages
-    git merge master --no-edit
+    git merge ${TRAVIS_COMMIT} --no-edit
+
+    # TODO fazer add de todos *.html na raiz do projeto?
     git add -f dist/ {angularjs,css,components,index}.html assets/styles/main.css
     git commit -m "chore(release): docs v${TRAVIS_TAG}"
 
