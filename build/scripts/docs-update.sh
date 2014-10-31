@@ -19,4 +19,6 @@ if [ ! -z "${TRAVIS_TAG}" ]; then
     git commit -m "chore(release): docs v${TRAVIS_TAG}"
 
     git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@${GH_REF}" gh-pages:gh-pages > /dev/null 2>&1
+else
+    echo "Not a tagged build"
 fi
