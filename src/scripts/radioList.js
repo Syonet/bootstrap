@@ -1,10 +1,3 @@
-/**
- * syoRadioList
- * ------------
- * Diretiva para criar Check Lists do Syonet Bootstrap, utilizando radio buttons.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

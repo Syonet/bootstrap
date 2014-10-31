@@ -1,11 +1,4 @@
 /* jshint unused: false */
-/**
- * $urlbuilder
- * -----------
- * Construtor de URLs, convertendo um objeto na query string.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

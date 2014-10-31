@@ -1,11 +1,3 @@
-/**
- * contains
- * --------
- * Filtro que retorna um boolean sugerindo a existência de um elemento passado por argumento em um
- * array de entrada.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

@@ -1,8 +1,3 @@
-/**
- * syoPopover
- * ----------
- * Diretiva para criar um popover que abrirá ao interagir com o elemento (clique, mouseover, etc).
- */
 !function( $, ng ) {
 	"use strict";
 

@@ -1,15 +1,3 @@
-/**
- * $dialog
- * -------
- * Provider para criar um jQuery UI Dialog programaticamente.
- *
- * syoDialog
- * ---------
- * Diretiva que instancia um jQuery UI Dialog no elemento atual, podendo opcionalmente bindar um
- * objeto de controle no escopo atual.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

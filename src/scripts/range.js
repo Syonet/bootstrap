@@ -1,11 +1,3 @@
-/**
- * range
- * -----
- * Filtro que retorna um array do tamanho especificado, útil para utilizar com ng-repeat de forma
- * arbitrária.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

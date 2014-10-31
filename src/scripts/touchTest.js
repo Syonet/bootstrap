@@ -1,10 +1,3 @@
-/**
- * syoTouchTest
- * ------------
- * Diretiva que adiciona uma classe no elemento, caso o browser seja touch sensitive.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

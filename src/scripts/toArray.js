@@ -1,10 +1,3 @@
-/**
- * toArray
- * -------
- * Filtro que converte os dados de entrada em um array.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

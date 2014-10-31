@@ -1,10 +1,3 @@
-/**
- * syoMonthpicker
- * --------------
- * Diretiva para criar um seletor de ano/mês.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

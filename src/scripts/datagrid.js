@@ -1,10 +1,3 @@
-/**
- * syoDataGrid
- * -----------
- * Diretiva para criar data grids do Syonet Bootstrap.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

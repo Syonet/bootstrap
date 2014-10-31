@@ -1,10 +1,3 @@
-/**
- * offset
- * ------
- * Filtro para fazer o offset dos dados de um array de entrada.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

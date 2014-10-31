@@ -1,10 +1,3 @@
-/**
- * syoFieldError
- * -------------
- * Diretiva para rapidamente criar um erro de campo de formulário padrão da Syonet.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

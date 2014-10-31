@@ -1,10 +1,3 @@
-/**
- * syoCheckList
- * ------------
- * Diretiva para criar Check Lists do Syonet Bootstrap, utilizando checkboxes.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

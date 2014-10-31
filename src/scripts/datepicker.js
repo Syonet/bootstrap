@@ -1,10 +1,3 @@
-/**
- * syoDatepicker
- * -------------
- * Diretiva que instancia um jQuery UI Datepicker no elemento.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 
