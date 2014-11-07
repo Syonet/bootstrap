@@ -72,8 +72,16 @@
                     Enviar notificação de sucesso
                 </button>
                 <button class="syo-button"
+                        ng-click="$notification.warning( 'Esta é uma notificação de atenção.' )">
+                    Enviar notificação de atenção
+                </button>
+                <button class="syo-button"
                         ng-click="$notification.error( 'Esta é uma notificação de erro.' )">
                     Enviar notificação de erro
+                </button>
+                <button class="syo-button"
+                        ng-click="$notification.info( 'Esta é uma notificação de informação.' )">
+                    Enviar notificação de informação
                 </button>
             </div>
         </div>

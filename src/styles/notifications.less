@@ -20,7 +20,7 @@
   }
 
   > a {
-    color: @text-color;
+    color: inherit;
     text-decoration: underline;
   }
 }
@@ -28,16 +28,22 @@
 /* Notifications - Estilos
    ----------------------- */
 
+.syo-notification.syo-info {
+  color: #fff;
+  background: @brand-info;
+}
+
 .syo-notification.syo-success {
   color: #fff;
   background: @brand-success;
+}
 
-  a { color: #fff; }
+.syo-notification.syo-warning {
+  color: @text-color;
+  background: @brand-warning;
 }
 
 .syo-notification.syo-error {
   color: #fff;
   background: @brand-error;
-
-  a { color: #fff; }
 }

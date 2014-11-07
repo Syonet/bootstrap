@@ -106,8 +106,11 @@
 				var notification = {};
 
 				notification.default = $.proxy( createNotification, null, "" );
-				notification.error = $.proxy( createNotification, null, "error" );
-				notification.success = $.proxy( createNotification, null, "success" );
+
+				// Cria métodos pra todos os estilos do Bootstrap
+				[ "error", "success", "warning", "info" ].forEach(function( style ) {
+					notification[ style ] = $.proxy( createNotification, null, style );
+				});
 
 				return notification;
 
