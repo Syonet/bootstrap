@@ -106,18 +106,25 @@
 					if ( currentEvent.in !== currentEvent.out ) {
 						element.on( currentEvent.out, toggle );
 					}
+
+					// Binda eventos de abertura/fechamento do popover
+					element.on( "popoveropen", config.onOpen );
+					element.on( "popoverclose", config.onClose );
 				}
 			});
 
 			function toggle( evt ) {
 				var isEventIn = evt.type === currentEvent.in;
+				var otherTarget = controller.target !== element;
 
 				// Para a propagação
 				evt.stopPropagation();
 
+				// Aponta pro nosso elemento atual
+				controller.target = element;
+
 				// Se o controller está apontando para outro elemento, vamos abrir o popover.
-				// Faremos o controller apontar para o elemento atual mais pra frente
-				if ( controller.target !== element ) {
+				if ( otherTarget ) {
 					// Se o evento for de abertura do popover, faremos isso
 					if ( isEventIn ) {
 						controller.open();
@@ -129,9 +136,6 @@
 					// Eventos diferentes, abre se for evento de entrada, ou o contrário
 					isEventIn ? controller.open() : controller.close();
 				}
-
-				// Manda ele apontar pro nosso elemento atual
-				controller.target = element;
 
 				// Executa um digest
 				scope.$apply();
@@ -160,26 +164,37 @@
 		ctrl.$isOpen = false;
 
 		ctrl.open = function() {
+			var evt;
+
 			if ( ctrl.$isOpen ) {
 				return;
 			}
 
-			ctrl.$isOpen = true;
+			evt = new $.Event( "popoveropen" );
+			ctrl.target.trigger( evt, [ $scope, ctrl ] );
 
-			if ( ng.isFunction( ctrl.config.onOpen ) ) {
-				ctrl.config.onOpen( ctrl.config.scope, ctrl );
+			if ( evt.isDefaultPrevented() ) {
+				return;
 			}
+
+			ctrl.$isOpen = true;
 		};
 
 		ctrl.close = function() {
+			var evt;
+
 			if ( !ctrl.$isOpen ) {
 				return;
 			}
 
-			ctrl.$isOpen = false;
-			if ( ng.isFunction( ctrl.config.onClose ) ) {
-				ctrl.config.onClose( ctrl.config.scope, ctrl );
+			evt = new $.Event( "popoverclose" );
+			ctrl.target.trigger( evt, [ $scope, ctrl ] );
+
+			if ( evt.isDefaultPrevented() ) {
+				return;
 			}
+
+			ctrl.$isOpen = false;
 		};
 
 		ctrl.reposition = function() {
