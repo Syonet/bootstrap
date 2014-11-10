@@ -1531,5 +1531,46 @@
                 {% endhighlight %}
             </div>
         </section>
+
+        <section>
+            <h3>Cor de texto</h3>
+            <p>
+                Também é possível usar classes que aplicam uma cor de contexto ao texto de um elemento, usando quaisquer
+                dos contextos difundidos no Syonet Bootstrap.
+            </p>
+            <table class="syo-table syo-table-striped">
+                <colgroup>
+                    <col class="col-small-4 col-large-3">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th>Estilo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>.syo-text-success</code></td>
+                        <td><span class="syo-text-success">Lorem ipsum dolor sit amet</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>.syo-text-warning</code></td>
+                        <td><span class="syo-text-warning">Lorem ipsum dolor sit amet</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>.syo-text-error</code></td>
+                        <td><span class="syo-text-error">Lorem ipsum dolor sit amet</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>.syo-text-info</code></td>
+                        <td><span class="syo-text-info">Lorem ipsum dolor sit amet</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>.syo-text-default</code></td>
+                        <td><span class="syo-text-default">Lorem ipsum dolor sit amet</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </article>
 {% endblock %}
