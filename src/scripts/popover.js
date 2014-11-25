@@ -171,7 +171,7 @@
 			}
 
 			evt = new $.Event( "popoveropen" );
-			ctrl.target.trigger( evt, [ $scope, ctrl ] );
+			ctrl.target.trigger( evt, [ ctrl.config.scope, ctrl ] );
 
 			if ( evt.isDefaultPrevented() ) {
 				return;
@@ -188,7 +188,7 @@
 			}
 
 			evt = new $.Event( "popoverclose" );
-			ctrl.target.trigger( evt, [ $scope, ctrl ] );
+			ctrl.target.trigger( evt, [ ctrl.config.scope, ctrl ] );
 
 			if ( evt.isDefaultPrevented() ) {
 				return;
