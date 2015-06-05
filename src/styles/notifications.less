@@ -3,16 +3,12 @@
    ============================================================================================== */
 
 .syo-notification {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: @zindex-notification;
   display: block;
+  margin-bottom: @padding-base-vertical;
   padding: ( @padding-large-vertical * 2 ) ( @grid-gutter-width / 2 );
-  color: @text-color;
-  text-align: center;
-  background: @brand-default;
+  border: 1px solid;
+  .notification-bg( @brand-default );
   .box-shadow( 0 0 3px 1px fade( #000, 5% ) );
 
   > div {
@@ -28,22 +24,18 @@
 /* Notifications - Estilos
    ----------------------- */
 
-.syo-notification.syo-info {
-  color: #fff;
-  background: @brand-info;
-}
+.syo-notification.syo-info    { .notification-bg( @brand-info ); }
+.syo-notification.syo-success { .notification-bg( @brand-success ); }
+.syo-notification.syo-warning { .notification-bg( @brand-warning ); }
+.syo-notification.syo-error   { .notification-bg( @brand-error ); }
 
-.syo-notification.syo-success {
-  color: #fff;
-  background: @brand-success;
-}
-
-.syo-notification.syo-warning {
-  color: @text-color;
-  background: @brand-warning;
-}
-
-.syo-notification.syo-error {
-  color: #fff;
-  background: @brand-error;
+/* Notifications - Fixada
+   ---------------------- */
+.syo-notification-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border: 0;
 }

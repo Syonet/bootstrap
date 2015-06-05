@@ -10,7 +10,7 @@
 		var container = $document.find( "body" );
 
 		definition.template =
-			"<div class='syo-notification'>" +
+			"<div class='syo-notification syo-notification-fixed'>" +
 				"<div ng-transclude></div> " +
 				"<a href='#' ng-click='$event.preventDefault(); $notification.close()'>Fechar</a>" +
 			"</div>";

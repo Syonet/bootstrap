@@ -13,6 +13,7 @@
 		<li><a href="#input-row">Input Row</a></li>
 		<li><a href="#nav">Nav</a></li>
 		<li><a href="#navbar">Navbar</a></li>
+		<li><a href="#notification">Notificação</a></li>
 		<li><a href="#pagination">Paginação</a></li>
 		<li><a href="#popover">Popover</a></li>
 		<li><a href="#progressbar">Progressbar</a></li>
@@ -584,6 +585,31 @@
             </div>
         </section>
     </article>
+
+		<!-- Paginação -->
+		<article id="notification">
+				<header>
+						<h2>Notificação</h2>
+				</header>
+				<p>Cria um componente de notificação estático, útil para alertar o usuário de alguma coisa.</p>
+
+				<div class="syo-docs-example">
+						<div class="syo-docs-example-inner">
+								<div class="syo-notification">Notificação padrão</div>
+								<div class="syo-notification syo-info">Informação</div>
+								<div class="syo-notification syo-error">Erro</div>
+								<div class="syo-notification syo-warning">Alerta</div>
+								<div class="syo-notification syo-success">Sucesso</div>
+						</div>
+						{% highlight xml %}
+								<div class="syo-notification">Notificação padrão</div>
+								<div class="syo-notification syo-info">Informação</div>
+								<div class="syo-notification syo-error">Erro</div>
+								<div class="syo-notification syo-warning">Alerta</div>
+								<div class="syo-notification syo-success">Sucesso</div>
+						{% endhighlight %}
+				</div>
+		</article>
 
     <!-- Paginação -->
     <article id="pagination">
