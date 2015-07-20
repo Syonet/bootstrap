@@ -11,7 +11,7 @@ if [ ! -z "${TRAVIS_TAG}" ]; then
 
     # Baixa o conteúdo do branch gh-pages (indisponível quando fazendo shallow clone) e faz o merge
     git fetch -n origin gh-pages:gh-pages
-    git checkout gh-pages
+    git checkout -f gh-pages
     git merge ${TRAVIS_COMMIT} --no-edit
 
     # TODO fazer add de todos *.html na raiz do projeto?
