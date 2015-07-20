@@ -76,3 +76,48 @@
     }
   }
 }
+
+/* Navs - Nav tray
+   --------------- */
+
+.syo-nav-tray {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  li {
+    align-self: center;
+    position: relative;
+    text-align: center;
+
+    a {
+      display: block;
+      padding: @padding-base-vertical @padding-base-horizontal;
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    &:hover a {
+      background-color: @brand-default-hover;
+    }
+  }
+
+  .syo-nav-tray-label {
+    display: block;
+    line-height: 1;
+    font-size: .65em;
+  }
+
+  // Geração de Tamanhos de Tray
+  // ---------------------------
+  .tray-size( @index ) when ( @index > 0 ) {
+    @size: extract( @nav-tray-sizes, @index );
+    &.syo-nav-tray-@{size} li {
+      flex: 0 0 ( 100% / @size );
+    }
+
+    .tray-size( @index - 1 );
+  }
+
+  .tray-size( length( @nav-tray-sizes ) );
+}

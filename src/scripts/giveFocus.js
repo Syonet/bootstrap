@@ -1,10 +1,3 @@
-/**
- * syoGiveFocus
- * ------------
- * Diretiva para dar foco a um elemento utilizando data-binding.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

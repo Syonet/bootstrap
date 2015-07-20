@@ -1,10 +1,3 @@
-/**
- * removeAccents
- * -------------
- * Filtro que remove acentuação da string de entrada.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

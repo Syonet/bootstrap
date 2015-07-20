@@ -1,14 +1,7 @@
-/**
- * syoDatepicker
- * -------------
- * Diretiva que instancia um jQuery UI Datepicker no elemento.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 
-	ng.module( "syonet" ).directive( "syoDatepicker", function() {
+	ng.module( "syonet" ).directive( "syoDatepicker", [ "$timeout", function( $timeout ) {
 		var definition = {};
 
 		definition.restrict = "A";
@@ -38,7 +31,9 @@
 			}
 
 			// Instancia o datepicker
-			$element.datepicker( options );
+			$timeout(function() {
+				$element.datepicker( options );
+			});
 
 			// Quando há um botão para exibir o datepicker...
 			$button = $element.next( ".ui-datepicker-trigger" );
@@ -54,6 +49,6 @@
 		};
 
 		return definition;
-	});
+	}]);
 
 }( jQuery, angular );

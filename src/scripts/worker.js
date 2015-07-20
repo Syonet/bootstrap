@@ -1,10 +1,3 @@
-/**
- * $worker
- * -------
- * Provider para instanciar Web Workers.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

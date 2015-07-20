@@ -1,10 +1,3 @@
-/**
- * $templatePromise
- * ----------------
- * Provider para retornar uma promise para um template HTML ou para uma URL de um template.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

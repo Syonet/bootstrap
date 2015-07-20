@@ -1,10 +1,3 @@
-/**
- * syoProgressbar
- * --------------
- * Diretiva para criar e controlar a porcentagem de uma progressbar do Syonet Bootstrap.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

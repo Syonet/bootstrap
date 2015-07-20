@@ -1,10 +1,3 @@
-/**
- * syoTabs
- * -------
- * Diretiva que instancia um jQuery UI Tabs.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

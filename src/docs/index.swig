@@ -4,7 +4,7 @@
 {% block body %}
     <div class="home">
         <div class="home-content">
-            <h1>Syonet Bootstrap</h1>
+            <h1>Syonet Bootstrap <span class="version">v{{ package.version }}</span></h1>
             <p class="lead">O conjunto de ferramentas front-end da Syonet.</p>
             <div class="row">
                 <iframe src="http://ghbtns.com/github-btn.html?user=syonet&amp;repo=bootstrap&amp;type=watch&amp;count=true"

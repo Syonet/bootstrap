@@ -1,10 +1,3 @@
-/**
- * syoInitData
- * -----------
- * Diretiva para facilmente setar variáveis no escopo atual. Útil para dados inicializados com a página.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

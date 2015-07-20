@@ -1,10 +1,3 @@
-/**
- * syoSlider
- * ---------
- * Diretiva que instancia um jQuery UI Slider.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

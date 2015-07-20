@@ -1,15 +1,3 @@
-/**
- * $dialog
- * -------
- * Provider para criar um jQuery UI Dialog programaticamente.
- *
- * syoDialog
- * ---------
- * Diretiva que instancia um jQuery UI Dialog no elemento atual, podendo opcionalmente bindar um
- * objeto de controle no escopo atual.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 
@@ -33,7 +21,7 @@
 		definition.controllerAs = "$dialog";
 		definition.template = "<div class='syo-dialog-content'></div>";
 
-		definition.link = function( scope, element, attrs, transcludeFn, $dialog ) {
+		definition.link = function( scope, element, attrs, $dialog, transcludeFn ) {
 			// Seta um controller se estiver disponível
 			if ( attrs.controller ) {
 				element.attr( "ng-controller", attrs.controller );
@@ -102,11 +90,13 @@
 			}
 
 			// Remove o prefixo "on" dos callbacks da dialog
-			[ "BeforeClose", "Close", "Open" ].forEach(function( cb ) {
-				var uncapitalized = cb[ 0 ].toLowerCase() + cb.substr( 1 );
-				options[ uncapitalized ] = options[ "on" + cb ];
-				delete options[ "on" + cb ];
-			});
+			if ( options ) {
+				[ "BeforeClose", "Close", "Open" ].forEach(function( cb ) {
+					var uncapitalized = cb[ 0 ].toLowerCase() + cb.substr( 1 );
+					options[ uncapitalized ] = options[ "on" + cb ];
+					delete options[ "on" + cb ];
+				});
+			}
 
 			$element.dialog( options );
 		};

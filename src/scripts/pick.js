@@ -1,10 +1,3 @@
-/**
- * pick
- * ----
- * Filtro que retorna um objeto contendo apenas a chave informada por argumento.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

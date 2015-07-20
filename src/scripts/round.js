@@ -1,10 +1,3 @@
-/**
- * round
- * -----
- * Arredonda um numero para um determinado número de casas decimais.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 

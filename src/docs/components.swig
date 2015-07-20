@@ -13,6 +13,7 @@
 		<li><a href="#input-row">Input Row</a></li>
 		<li><a href="#nav">Nav</a></li>
 		<li><a href="#navbar">Navbar</a></li>
+		<li><a href="#notification">Notificação</a></li>
 		<li><a href="#pagination">Paginação</a></li>
 		<li><a href="#popover">Popover</a></li>
 		<li><a href="#progressbar">Progressbar</a></li>
@@ -534,7 +535,81 @@
                 {% endhighlight %}
             </div>
         </section>
+
+        <section>
+            <h3>Nav Tray</h3>
+            <p>
+                Navegação em bandeja, no estilo das pastas do Android. É possível posicionar até 4 itens por linha
+                utilizando as classes <code>.syo-nav-tray-*</code>.
+            </p>
+
+            <div class="syo-docs-example">
+                <div class="syo-docs-example-inner clearfix">
+                    <div class="col col-medium-4 col-large-3 col-xlarge-2">
+                        <ul class="syo-nav syo-nav-tray syo-nav-tray-2">
+                            <li>
+                                <a href>
+                                    <i class="icon-home"></i>
+                                    <span class="syo-nav-tray-label">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href>
+                                    <i class="icon-heart-o"></i>
+                                    <span class="syo-nav-tray-label">Recomendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href>
+                                    <i class="icon-comments"></i>
+                                    <span class="syo-nav-tray-label">Comentários</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href>
+                                    <i class="icon-sign-out"></i>
+                                    <span class="syo-nav-tray-label">Sair</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% highlight xml %}
+                    <ul class="syo-nav syo-nav-tray syo-nav-tray-2">
+                        <li><a href><i class="icon-home"></i><span class="syo-nav-tray-label">Home</span></a></li>
+                        <li><a href><i class="icon-heart-o"></i><span class="syo-nav-tray-label">Recomendar</span></a></li>
+                        <li><a href><i class="icon-comments"></i><span class="syo-nav-tray-label">Comentários</span></a></li>
+                        <li><a href><i class="icon-sign-out"></i><span class="syo-nav-tray-label">Sair</span></a></li>
+                    </ul>
+                {% endhighlight %}
+            </div>
+        </section>
     </article>
+
+		<!-- Paginação -->
+		<article id="notification">
+				<header>
+						<h2>Notificação</h2>
+				</header>
+				<p>Cria um componente de notificação estático, útil para alertar o usuário de alguma coisa.</p>
+
+				<div class="syo-docs-example">
+						<div class="syo-docs-example-inner">
+								<div class="syo-notification">Notificação padrão</div>
+								<div class="syo-notification syo-info">Informação</div>
+								<div class="syo-notification syo-error">Erro</div>
+								<div class="syo-notification syo-warning">Alerta</div>
+								<div class="syo-notification syo-success">Sucesso</div>
+						</div>
+						{% highlight xml %}
+								<div class="syo-notification">Notificação padrão</div>
+								<div class="syo-notification syo-info">Informação</div>
+								<div class="syo-notification syo-error">Erro</div>
+								<div class="syo-notification syo-warning">Alerta</div>
+								<div class="syo-notification syo-success">Sucesso</div>
+						{% endhighlight %}
+				</div>
+		</article>
 
     <!-- Paginação -->
     <article id="pagination">

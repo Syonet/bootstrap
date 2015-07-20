@@ -1,12 +1,3 @@
-/**
- * syoClick
- * --------
- * Diretiva para links que faz eval de uma expressão no escopo atual e depois acessa o atributo href
- * do elemento. Se a expressão retornar uma promise, então syoClick irá aguardar a promise ser
- * resolvida.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 
@@ -38,7 +29,7 @@
 				result = $scope.$eval( $attr.syoClick );
 				e.preventDefault();
 
-				if ( typeof result.then === "function" ) {
+				if ( result && typeof result.then === "function" ) {
 					lock = true;
 
 					result.then(function() {

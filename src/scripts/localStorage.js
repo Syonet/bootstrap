@@ -1,10 +1,3 @@
-/**
- * $localStorage
- * -------------
- * API para interagir com o localStorage no Angular.js.
- *
- * @docs-link
- */
 !function( $, ng ) {
 	"use strict";
 
