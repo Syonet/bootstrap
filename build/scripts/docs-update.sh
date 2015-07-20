@@ -14,6 +14,9 @@ if [ ! -z "${TRAVIS_TAG}" ]; then
     git checkout gh-pages
     git merge ${TRAVIS_COMMIT} --no-edit
 
+    # Infelizmente temos que regerar o conteúdo
+    grunt package docs
+
     # TODO fazer add de todos *.html na raiz do projeto?
     git add -f dist/ {angularjs,css,components,index}.html assets/styles/main.css
     git commit -m "chore(release): docs v${TRAVIS_TAG}"
