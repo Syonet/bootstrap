@@ -11,6 +11,11 @@ div.prettyprint {
   display: none;
   /* 1 */
 }
+.version {
+  color: #aaaaaa;
+  font-weight: normal;
+  font-size: 1rem;
+}
 .home {
   position: absolute;
   width: 100%;

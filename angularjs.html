@@ -62,7 +62,7 @@
     
     <header class="header">
         <div class="container">
-            <h1>Syonet Bootstrap</h1>
+            <h1>Syonet Bootstrap <span class="version">v0.9.3</span></h1>
             <p class="lead">O conjunto de ferramentas front-end da Syonet.</p>
             <div class="row">
                 <iframe src="http://ghbtns.com/github-btn.html?user=syonet&amp;repo=bootstrap&amp;type=watch&amp;count=true"
@@ -147,8 +147,16 @@ $localStorage.removeAll();</pre>
                     Enviar notificação de sucesso
                 </button>
                 <button class="syo-button"
+                        ng-click="$notification.warning( 'Esta é uma notificação de atenção.' )">
+                    Enviar notificação de atenção
+                </button>
+                <button class="syo-button"
                         ng-click="$notification.error( 'Esta é uma notificação de erro.' )">
                     Enviar notificação de erro
+                </button>
+                <button class="syo-button"
+                        ng-click="$notification.info( 'Esta é uma notificação de informação.' )">
+                    Enviar notificação de informação
                 </button>
             </div>
         </div>

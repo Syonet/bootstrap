@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.7.2
+ * Syonet Bootstrap v0.9.3
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -460,9 +460,8 @@ hr {
  */
 .flex-row,
 .syo-form-table .syo-field {
-  display: -webkit-flex;
-  display: -moz-flex;
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
   /* 1 */
 }
@@ -1226,6 +1225,23 @@ dl.dl-inline dd:not( .col ):not( [ class*="offset-" ] ) {
 }
 .text-justify {
   text-align: justify;
+}
+/* Cores de texto
+   -------------- */
+.syo-text-success {
+  color: #5cb85c;
+}
+.syo-text-warning {
+  color: #efd24f;
+}
+.syo-text-error {
+  color: #d9534f;
+}
+.syo-text-info {
+  color: #1771b2;
+}
+.syo-text-default {
+  color: #222222;
 }
 /* ==============================================================================================
    Código
@@ -3356,6 +3372,44 @@ h4 small {
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+/* Navs - Nav tray
+   --------------- */
+.syo-nav-tray {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.syo-nav-tray li {
+  align-self: center;
+  position: relative;
+  text-align: center;
+}
+.syo-nav-tray li a {
+  display: block;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  color: #777;
+}
+.syo-nav-tray li:hover a {
+  background-color: #eeeeee;
+}
+.syo-nav-tray .syo-nav-tray-label {
+  display: block;
+  line-height: 1;
+  font-size: .65em;
+}
+.syo-nav-tray.syo-nav-tray-4 li {
+  flex: 0 0 25%;
+}
+.syo-nav-tray.syo-nav-tray-3 li {
+  flex: 0 0 33.33333333%;
+}
+.syo-nav-tray.syo-nav-tray-2 li {
+  flex: 0 0 50%;
+}
+.syo-nav-tray.syo-nav-tray-1 li {
+  flex: 0 0 100%;
+}
 /* ==============================================================================================
    Navbar
    ============================================================================================== */
@@ -4035,7 +4089,6 @@ body.syo-body-navbar {
 .syo-popover {
   position: absolute;
   z-index: 1000;
-  display: none;
   min-width: 120px;
   padding: 1px;
   border: 1px solid #c8c8c8;
@@ -4192,15 +4245,18 @@ body.syo-body-navbar {
 }
 /* Popover - Combinação com outros componentes
    ------------------------------------------- */
-/* Nav List */
-.syo-popover-content > .syo-nav.syo-nav-list {
+/* Nav (todos estilos) */
+.syo-popover-content > .syo-nav {
   margin: -5px -10px;
   padding: 0;
+}
+/* Nav List */
+.syo-popover-content > .syo-nav-list {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.syo-popover-content > .syo-nav.syo-nav-list > li:first-child > a {
+.syo-popover-content > .syo-nav-list > li:first-child > a {
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
   -webkit-border-top-right-radius: 0;
@@ -4623,16 +4679,14 @@ body.syo-body-navbar {
    Notifications
    ============================================================================================== */
 .syo-notification {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1010;
   display: block;
+  margin-bottom: 5px;
   padding: 12.5px 15px;
+  border: 1px solid;
   color: #222222;
-  text-align: center;
-  background: #eeeeee;
+  border-color: #d5d5d5;
+  background-color: #eeeeee;
   -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05);
 }
@@ -4640,27 +4694,40 @@ body.syo-body-navbar {
   display: inline;
 }
 .syo-notification > a {
-  color: #222222;
+  color: inherit;
   text-decoration: underline;
-}
-.syo-notification-container {
-  position: relative;
 }
 /* Notifications - Estilos
    ----------------------- */
-.syo-notification.syo-success {
-  color: #fff;
-  background: #5cb85c;
+.syo-notification.syo-info {
+  color: #ffffff;
+  border-color: #115485;
+  background-color: #1771b2;
 }
-.syo-notification.syo-success a {
-  color: #fff;
+.syo-notification.syo-success {
+  color: #ffffff;
+  border-color: #449d44;
+  background-color: #5cb85c;
+}
+.syo-notification.syo-warning {
+  color: #222222;
+  border-color: #ebc620;
+  background-color: #efd24f;
 }
 .syo-notification.syo-error {
-  color: #fff;
-  background: #d9534f;
+  color: #ffffff;
+  border-color: #c9302c;
+  background-color: #d9534f;
 }
-.syo-notification.syo-error a {
-  color: #fff;
+/* Notifications - Fixada
+   ---------------------- */
+.syo-notification-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border: 0;
 }
 /* Tooltips
    ============================================================================================== */
