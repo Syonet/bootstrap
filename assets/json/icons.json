@@ -2,99 +2,363 @@
 	"Setas": {
 		"description": "Indicação e Manipulação",
 		"icons": [
-			"arrow-left", "arrow-right", "arrow-up", "arrow-down",
-			"arrow-down-left", "arrow-down-right", "arrow-up-left", "arrow-up-right",
-			"chevron-right", "chevron-left", "chevron-up", "chevron-down"
+			"arrow-left",
+			"arrow-right",
+			"arrow-up",
+			"arrow-down",
+			"arrow-down-left",
+			"arrow-down-right",
+			"arrow-up-left",
+			"arrow-up-right",
+
+			"chevron-right",
+			"chevron-left",
+			"chevron-up",
+			"chevron-down"
 		]
 	},
 	"Texto e Arquivos": {
 		"description": "Ferramentas de edição de texto e outros",
 		"icons": [
-			"file", "file-o", "files", "spell-check",
-			"folder-close", "folder-open", "copy", "paste",
-			"align-left", "align-center", "align-right", "align-justify",
-			"indent-left", "indent-right",
-			"undo", "redo", "attachment", "tab",
-			"list-ul", "list", "list-ol", "th",
-			"th-large", "th-list", "libreoffice", "file-css",
-			"file-xml", "file-powerpoint", "file-zip", "file-excel",
-			"file-word", "file-openoffice", "file-pdf"
+			"file",
+			"file-o",
+			"files",
+
+			"spell-check",
+
+			"folder-close",
+			"folder-open",
+
+			"copy",
+			"paste",
+
+			"align-left",
+			"align-center",
+			"align-right",
+			"align-justify",
+			"indent-left",
+			"indent-right",
+			"undo",
+			"redo",
+			"attachment",
+			"tab",
+			"list-ul",
+			"list",
+			"list-ol",
+			"th",
+			"th-large",
+			"th-list",
+
+			"libreoffice",
+			"file-css",
+			"file-xml",
+			"file-powerpoint",
+			"file-zip",
+			"file-excel",
+			"file-word",
+			"file-openoffice",
+			"file-pdf"
 		]
 	},
 	"Logos": {
 		"description": "Empresas e serviços",
 		"icons": [
-			"facebook", "facebook-square", "twitter", "twitter-square",
-			"rss", "rss-square", "google-plus", "google-plus-square",
-			"youtube", "linkedin", "github", "html5", "css3",
-			"android", "windows", "tux", "apple",
-			"chrome", "firefox", "IE", "opera", "safari"
+			"facebook",
+			"facebook-square",
+			"twitter",
+			"twitter-square",
+			"rss",
+			"rss-square",
+			"google-plus",
+			"google-plus-square",
+			"youtube",
+			"linkedin",
+			"github",
+			"html5",
+			"css3",
+			"android",
+			"windows",
+			"tux",
+			"apple",
+			"chrome",
+			"firefox",
+			"IE",
+			"opera",
+			"safari"
 		]
 	},
 	"Controles de Mídia": {
 		"description": "Áudio e Vídeo",
 		"icons": [
-			"play", "pause", "stop", "eject",
-			"backward", "forward", "fast-backward", "fast-forward",
-			"step-backward", "step-forward", "repeat", "shuffle",
-			"volume-high", "volume-medium", "volume-low", "volume-off",
-			"volume-mute", "volume-increase", "volume-decrease", "equalizer",
-			"expand", "expand2", "retract", "retract2",
-			"refresh", "loop"
+			"play",
+			"pause",
+			"stop",
+			"eject",
+			"backward",
+			"forward",
+			"fast-backward",
+			"fast-forward",
+			"step-backward",
+			"step-forward",
+			"repeat",
+			"shuffle",
+
+			"volume-high",
+			"volume-medium",
+			"volume-low",
+			"volume-off",
+			"volume-mute",
+			"volume-increase",
+			"volume-decrease",
+			"equalizer",
+
+			"expand",
+			"expand2",
+			"retract",
+			"retract2",
+
+			"refresh",
+			"loop"
 		]
 	},
 	"Comunicação": {
 		"description": "Ferramentas, serviços ou conceitos",
 		"icons": [
-			"sort-alpha-desc", "sort-alpha-asc", "sort-amount-desc", "sort-amount-asc",
-			"sort", "sort-up", "sort-down", "bullhorn",
-			"zoom-out", "zoom-in", "search", "external",
-			"lock", "lock2", "unlocked", "share",
-			"sign-in", "sign-out", "thumbs-up", "thumbs-down",
-			"download", "upload", "cloud-download", "cloud-upload",
-			"comment", "comments", "ellipsis-vertical", "ellipsis-horizontal",
-			"menu"
+			"sort-alpha-desc",
+			"sort-alpha-asc",
+			"sort-amount-desc",
+			"sort-amount-asc",
+			"sort",
+			"sort-up",
+			"sort-down",
+
+			"zoom-out",
+			"zoom-in",
+			"search",
+
+			"lock",
+			"lock2",
+			"unlocked",
+
+			"bullhorn",
+			"external",
+			"menu",
+			"share",
+
+			"sign-in",
+			"sign-out",
+
+			"thumbs-up",
+			"thumbs-down",
+
+			"download",
+			"upload",
+			"cloud-download",
+			"cloud-upload",
+
+			"comment",
+			"comments",
+
+			"ellipsis-vertical",
+			"ellipsis-horizontal",
+
+			"call-incoming",
+			"call-outgoing",
+			"call-missed"
+		]
+	},
+	"Ações": {
+		"description": "Ações comuns em web apps",
+		"icons": [
+			"check",
+			"ok",
+			"check-o",
+			"ok-o",
+			"check-circle",
+
+			"remove",
+			"remove-circle",
+			"delete-circle",
+			"cancel-circle",
+			"remove-circle-o",
+			"delete-circle-o",
+			"cancel-circle-o",
+
+			"cog",
+			"cogs",
+			"wrench",
+			"filter",
+			"settings",
+
+			"star-o",
+			"star-half-o",
+			"star",
+
+			"close",
+			"trash",
+			"edit",
+			"save",
+			"plus",
+			"minus",
+			"add-circle",
+			"minus-circle"
 		]
 	},
 	"Outros": {
 		"description": "Sem categoria específica",
 		"icons": [
-			"home", "location", "pushpin", "pencil",
-			"picture", "office", "books", "wheel",
-			"tag", "tags", "barcode", "qrcode",
-			"stack", "ticket", "shopping-cart", "medkit",
-			"film", "music", "camera", "busy",
-			"quote-left", "quote-right", "cabinet", "calendar",
-			"tv", "tablet", "mobile", "laptop",
-			"screen", "keyboard", "print", "reorder",
-			"clock", "alarm", "zzz", "cloud",
-			"meter", "dashboard", "male", "female",
-			"database", "trophy", "briefcase", "accessibility",
-			"filter", "stats", "bars", "pie",
-			"cog", "cogs", "wrench", "settings",
-			"checkbox-checked", "checkbox-unchecked", "checkbox-partial", "hammer",
-			"radio-checked", "radio-unchecked", "target", "lightning",
-			"check", "ok", "check-o", "ok-o",
-			"truck", "airplane", "car", "tree",
-			"fire", "leaf", "save", "lab",
-			"remove", "remove-circle", "close", "times",
-			"trash", "spam", "glass", "coffee",
-			"star-o", "star-half-o", "star", "address-book",
-			"drawer", "email", "group", "user",
-			"phone", "earth", "flag", "support",
-			"exclamation-triangle", "exclamation-circle", "question", "blocked",
-			"info", "info2", "power-cord", "power-off",
-			"key", "edit", "email-forward", "reply",
-			"add-circle", "delete-circle", "check-circle", "bell",
-			"history", "issue", "issue-complete", "issue-reopen",
-			"plus", "minus", "crop", "credit",
-			"compass", "map", "map-o", "binoculars",
-			"heart", "heart-o", "heart-broken", "scissors",
-			"embed", "code", "console", "gift",
-			"bookmark", "bookmarks", "road", "certificate",
-			"paint-format", "droplet", "calculate", "asterisk",
-			"eye", "eye-blocked", "box-add", "box-remove",
-			"money", "coin"
+			"home",
+			"office",
+
+			"road",
+			"compass",
+			"map",
+			"map-o",
+			"binoculars",
+			"location",
+			"pushpin",
+
+			"tag",
+			"tags",
+
+			"barcode",
+			"qrcode",
+
+			"picture",
+			"film",
+			"music",
+			"camera",
+
+			"quote-left",
+			"quote-right",
+
+			"cabinet",
+			"calendar",
+
+			"tv",
+			"tablet",
+			"mobile",
+			"laptop",
+			"screen",
+
+			"keyboard",
+			"print",
+			"reorder",
+
+			"clock",
+			"alarm",
+
+			"male",
+			"female",
+
+			"dashboard",
+			"database",
+			"meter",
+			"stats",
+			"bars",
+			"pie",
+
+			"checkbox-checked",
+			"checkbox-unchecked",
+			"checkbox-partial",
+			"radio-checked",
+			"radio-unchecked",
+
+			"truck",
+			"airplane",
+			"car",
+
+			"hammer",
+			"target",
+			"lightning",
+			"tree",
+			"fire",
+			"leaf",
+
+			"lab",
+			"times",
+			"spam",
+			"glass",
+			"coffee",
+
+			"address-book",
+			"drawer",
+			"email",
+			"group",
+			"user",
+			"phone",
+			"earth",
+			"flag",
+			"support",
+
+			"exclamation-triangle",
+			"exclamation-circle",
+			"question",
+
+			"blocked",
+			"info",
+			"info2",
+
+			"power-cord",
+			"power-off",
+
+			"key",
+
+			"email-forward",
+			"reply",
+
+			"bell",
+			"history",
+
+			"issue",
+			"issue-complete",
+			"issue-reopen",
+
+			"crop",
+			"credit",
+
+			"heart",
+			"heart-o",
+			"heart-broken",
+
+			"bookmarks",
+			"bookmark",
+
+			"busy",
+			"pencil",
+			"stack",
+			"ticket",
+			"shopping-cart",
+			"briefcase",
+			"medkit",
+			"books",
+			"wheel",
+			"zzz",
+			"cloud",
+			"trophy",
+			"accessibility",
+			"embed",
+			"code",
+			"console",
+			"scissors",
+			"gift",
+			"certificate",
+			"paint-format",
+			"droplet",
+			"calculate",
+			"asterisk",
+			"eye",
+			"eye-blocked",
+			"box-add",
+			"box-remove",
+			"hdd",
+			"beaker",
+			"broom",
+
+			"money",
+			"coin",
+			"credit-card",
+			"wallet"
 		]
 	}
 }
