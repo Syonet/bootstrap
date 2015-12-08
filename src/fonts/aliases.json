@@ -5,5 +5,9 @@
 	"meter":        [ "dashboard" ],
 	"remove":       [ "times", "delete", "close" ],
 	"copy":         [ "files" ],
-	"reorder":      [ "menu" ]
+	"reorder":      [ "menu" ],
+	"plus-sign":    [ "add-circle" ],
+	"minus-sign":   [ "minus-circle" ],
+	"remove-circle": [ "cancel-circle", "delete-circle" ],
+	"remove-circle-o": [ "cancel-circle-o", "delete-circle-o" ]
 }
