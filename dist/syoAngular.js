@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.9.4
+ * Syonet Bootstrap v0.9.5
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -755,7 +755,7 @@
 !function( $, ng ) {
 	"use strict";
 
-	ng.module( "syonet" ).directive( "syoInitData", function() {
+	ng.module( "syonet" ).directive( "syoInitData", function( $parse ) {
 		return {
 			restrict: "E",
 			replace: true,
@@ -775,7 +775,7 @@
 				} catch ( e ) {}
 
 				// Seta a chave no escopo
-				$scope[ key ] = value;
+				$parse( key ).assign( $scope, value );
 			}
 		};
 	});
