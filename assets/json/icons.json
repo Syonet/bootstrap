@@ -258,6 +258,7 @@
 			"bars",
 			"pie",
 
+			"circle",
 			"checkbox-checked",
 			"checkbox-unchecked",
 			"checkbox-partial",
