@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.9.5
+ * Syonet Bootstrap v0.9.6
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -2513,6 +2513,9 @@ ol.unstyled {
 }
 .icon-file-text-o:before {
   content: "\e90f";
+}
+.icon-circle:before {
+  content: "\e911";
 }
 .icon-ellipsis-horizontal:before {
   content: "\e608";
