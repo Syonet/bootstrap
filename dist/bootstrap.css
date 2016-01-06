@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.9.6
+ * Syonet Bootstrap v0.9.7
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -4583,7 +4583,7 @@ body.syo-body-navbar {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1050;
+  z-index: -1100;
   display: block;
   width: 100%;
   height: 100%;
@@ -4596,7 +4596,7 @@ body.syo-body-navbar {
   filter: Alpha(Opacity=0);
 }
 .syo-overlay.syo-active {
-  z-index: 1050;
+  z-index: 1100;
   opacity: 1;
   filter: Alpha(Opacity=100);
 }
