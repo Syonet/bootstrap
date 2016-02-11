@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.9.8
+ * Syonet Bootstrap v0.9.9
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -2301,7 +2301,7 @@
 
 			return {
 				href: anchor.href,
-				protocol: anchor.protocol,
+				protocol: anchor.protocol.substr( 0, anchor.protocol.length - 1 ),
 				user: anchor.username,
 				password: anchor.password,
 				host: anchor.hostname,
