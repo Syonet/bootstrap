@@ -162,7 +162,7 @@
 
         url.path( "/foo/bar.html" );
         url.path();
-        // => "/foo/bar"
+        // => "/foo/bar.html"
 
         url.query( "bar", "foo" );
         url.query({
