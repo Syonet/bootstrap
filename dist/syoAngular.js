@@ -1,5 +1,5 @@
 /*!
- * Syonet Bootstrap v0.9.7
+ * Syonet Bootstrap v0.9.8
  * O conjunto de ferramentas front-end da Syonet
  * http://syonet.github.com/bootstrap/
  *
@@ -2249,27 +2249,7 @@
 	"use strict";
 
 	var syo = ng.module( "syonet" );
-	syo.factory( "$url", function() {
-		var urlRegex = new RegExp(
-			"^" +
-				// Protocolo, sem incluir ://
-				"(?:(https?|ftp)?://)?" +
-				// Usuário e senha
-				"(?:([^\\s:]+)(?::([^\\s@]*))?@)?" +
-				// Host
-				"([a-z0-9\\.-]+)?" +
-				// Porta
-				"(?::(\\d{1,}))?" +
-				// Path
-				"(/[^\\s\\?\\#]*)?" +
-				// Query string
-				"(?:\\?([^\\s\\#]+))?" +
-				// Hash
-				"(?:#(\\S*))?" +
-			"$",
-			"i"
-		);
-
+	syo.factory( "$url", function( $document ) {
 		function encodeUriQuery( val, pctEncodeSpaces ) {
 			return encodeURIComponent( val )
 					.replace( /%40/gi, "@" )
@@ -2297,15 +2277,12 @@
 
 		URL.parse = function( url ) {
 			var query = {};
-			var match = url.match( urlRegex );
-
-			if ( !match ) {
-				throw new Error( "URL inválida!" );
-			}
+			var anchor = $document[ 0 ].createElement( "a" );
+			anchor.href = url;
 
 			// Itera sobre os parâmetros da query string
-			if ( match[ 7 ] ) {
-				match[ 7 ].split( "&" ).forEach(function( param ) {
+			if ( anchor.search ) {
+				anchor.search.substr( 1 ).split( "&" ).forEach(function( param ) {
 					var name, value;
 					param = param.split( "=" ).map( decodeURIComponent );
 					name = param[ 0 ];
@@ -2323,15 +2300,15 @@
 			}
 
 			return {
-				href: url,
-				protocol: match[ 1 ],
-				user: match[ 2 ],
-				password: match[ 3 ],
-				host: match[ 4 ],
-				port: +match[ 5 ] || 0,
-				path: match[ 6 ],
+				href: anchor.href,
+				protocol: anchor.protocol,
+				user: anchor.username,
+				password: anchor.password,
+				host: anchor.hostname,
+				port: +anchor.port || 0,
+				path: anchor.pathname,
 				query: query,
-				hash: match[ 8 ]
+				hash: anchor.hash.substr( 1 )
 			};
 		};
 
