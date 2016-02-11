@@ -55,7 +55,7 @@
 
 			return {
 				href: anchor.href,
-				protocol: anchor.protocol,
+				protocol: anchor.protocol.substr( 0, anchor.protocol.length - 1 ),
 				user: anchor.username,
 				password: anchor.password,
 				host: anchor.hostname,
