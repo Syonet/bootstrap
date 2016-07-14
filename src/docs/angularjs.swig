@@ -12,6 +12,7 @@
 
     <ul class="syo-nav syo-nav-list" id="sidebar">
         <li class="syo-nav-header"><i class="icon-embed"></i> Angular.js - filtros</li>
+        <li><a href="#autodate-filter">autodate</a></li>
         <li><a href="#offset-filter">offset</a></li>
         <li><a href="#removeAccents-filter">removeAccents</a></li>
     </ul>
@@ -182,6 +183,53 @@
         url.toString();
         // => "https://foo:barbaz@example.com:8080/foo/bar?baz=qux#foobarbaz
         {% endhighlight %}
+    </article>
+
+    <!-- Filtro: autodate -->
+    <article id="autodate-filter">
+        <header>
+            <h2>Filtro <code>autodate</code></h2>
+        </header>
+
+        <p>
+            Formata qualquer valor válido do filtro <code>date</code> ao formato brasileiro de
+            data e hora. Se a hora for <code>00:00</code>, a mesma não é mostrada.
+            <br>
+            Opcionalmente, pode-se usar o adjunto "às" separando a data e a hora.
+        </p>
+
+        <div class="syo-docs-example">
+            <div class="syo-docs-example-inner" ng-init="autodate1 = Date.now()">
+                {% raw %}
+                    <p>
+                        Data: <code>2016-07-14 20:00</code><br>
+                        Data filtrada: <code>{{ '2016-07-14T20:00:00Z' | autodate }}</code><br>
+                        Data filtrada com adjunto "às": <code>{{ '2016-07-14T20:00:00Z' | autodate: true }}</code>
+                    </p>
+
+                    <p>
+                        Data: <code>2016-07-14</code><br>
+                        Data filtrada: <code>{{ '2016-07-14' | autodate }}</code><br>
+                        Data filtrada com adjunto "às": <code>{{ '2016-07-14' | autodate: true }}</code>
+                    </p>
+                {% endraw %}
+            </div>
+            {% highlight xml %}
+                {% raw %}
+                    <p>
+                        Data: <code>2016-07-14 20:00</code><br>
+                        Data filtrada: <code>{{ '2016-07-14T20:00:00Z' | autodate }}</code><br>
+                        Data filtrada com adjunto "às": <code>{{ '2016-07-14T20:00:00Z' | autodate: true }}</code>
+                    </p>
+
+                    <p>
+                        Data: <code>2016-07-14</code><br>
+                        Data filtrada: <code>{{ '2016-07-14' | autodate }}</code><br>
+                        Data filtrada com adjunto "às": <code>{{ '2016-07-14' | autodate: true }}</code>
+                    </p>
+                {% endraw %}
+            {% endhighlight %}
+        </div>
     </article>
 
     <!-- Filtro: offset -->
