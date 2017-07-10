@@ -94,28 +94,19 @@ module.exports = function( grunt ) {
 				file.src.map(function( filepath ) {
 					return grunt.file.readJSON( filepath );
 				}).forEach(function( cfg ) {
-					var icons = [];
-
-					_.pluck( cfg.iconSets, "selection" ).forEach(function( selection ) {
-						selection.forEach(function( icon ) {
-							if ( icon.order > 0 ) {
-								icons.push( icon );
-							}
-						});
-					});
-
-					icons.forEach(function( icon ) {
-						var code = Number( icon.code ).toString( 16 );
+					cfg.icons.forEach(function( icon ) {
+						var code = Number( icon.properties.code ).toString( 16 );
+						var name = icon.properties.name;
 						code = pad( "left", code, 4, "0" );
 
 						// Seta os aliases antes, é mais fácil
-						if ( aliases[ icon.name ] && aliases[ icon.name ].length ) {
-							_.forEach( aliases[ icon.name ], function( alias ) {
+						if ( aliases[ name ] && aliases[ name ].length ) {
+							_.forEach( aliases[ name ], function( alias ) {
 								contents += ".icon-" + alias + ",\n";
 							});
 						}
 
-						contents += pad( "right", ".icon-" + icon.name, 40 );
+						contents += pad( "right", ".icon-" + name, 40 );
 						contents += "{ &:before { content: \"\\" + code + "\"; } }";
 						contents += "\n";
 					});
