@@ -16,5 +16,5 @@
 	"browser": true,
 	"jquery": true,
 	"node": true,
-	"predef": [ "angular" ]
+	"predef": [ "angular", "_" ]
 }
